@@ -5,7 +5,7 @@ title: "Introdução à Visualização de Dados"
 author: Prof. Gustavo Oliveira
 logo: "figs/logo-dataviz.png" # Leave it with "" for none
 copyright: "2022"
-exclude_patterns: [_build,Thumds.db,.DS_Store,"**.ipynb_checkpoints","templates/short-paper"]
+exclude_patterns: [_build,README.md,Thumds.db,.DS_Store,"**.ipynb_checkpoints","templates/short-paper"]
 
 # Change this to "on" to have notebooks executed
 execute:

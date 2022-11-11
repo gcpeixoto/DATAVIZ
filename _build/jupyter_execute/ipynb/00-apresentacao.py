@@ -3,7 +3,16 @@
 
 # # Apresentação do curso
 # 
+# Este curso integra o rol obrigatório do Bacharelado em Ciência de Dados e Inteligência Artificial da Universidade Fedaral da Paraíba.
+# 
 # ## Objetivos
+# 
+# - Elencar os marcos históricos de desenvolvimento da área denominada _visualização de dados_;
+# - Reconhecer conceitos de representação visual, percepção, estética, cores e seus impactos ao observador;
+# - Discutir técnicas diversas para representação visual de quantidades, proporções, tendências, redes e informações gerais, bem como de _storytelling_ e _business storytelling_;
+# - Desenvolver códigos para visualização de dados multidimensionais e científicos;
+# - Experimentar ferramentas e plataformas modernas para construção de painéis analíticos (_dashboards_) e geração de relatórios automatizados;
+# - Propor soluções de _data reporting_ para cases de negócio aplicáveis aos diversos setores da economia. 
 
 # ## Estrutura
 # 
@@ -19,9 +28,9 @@
 #     - Conteúdo (14h)
 #     - Avaliação: Estudo de caso 2 (6h)
 # 
-# A divisão geral acima pode ser visualizada graficamente pelo _treemap_ abaixo.
+# A divisão geral acima pode ser visualizada graficamente pelo _treemap_ abaixo, em que as áreas dos retângulo representam, proporcionalmente, a carga horária total de 60h dedicada ao curso.
 
-# In[35]:
+# In[4]:
 
 
 import plotly.graph_objects as go
@@ -36,7 +45,7 @@ labels = ['Visualização de Dados',
 
 parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
 
-values = [0] +     [.3,.3,.4] +     [.9,.1,.9,.1] +     [.7,.3]
+values = [0] +     [.33,.33,.33] +     [.9,.1,.9,.1] +     [.7,.3]
 
 f = go.Figure(go.Treemap(
     labels = labels,
@@ -61,6 +70,8 @@ display(HTML('course-treemap.html'))
 #     - [História da Visualização de Dados](01-historia.ipynb) (1h)
 # - Avaliação (2h)
 #     - Relatório de estudo de caso 1 (2h)
+# 
+# _**More coming soon...**_
 # 
 # <!--
 # ### Módulo 2: Técnicas (20h)
@@ -100,3 +111,35 @@ display(HTML('course-treemap.html'))
 # - Nota do módulo 3 ($N_3$): nota do projeto final
 # 
 # - Nota final: $0,3N_1 + 0,3N_2 + 0,4N_3$
+
+# ## Autoria
+# 
+# Este material é desenvolvido e mantido pelo Prof. Gustavo Oliveira (DCC/CI/UFPB). Acesse a página pessoal pelo link:
+# 
+# - [Website pessoal](http://gcpeixoto.github.io/)
+# 
+# Para saber sobre demais ações em ensino e pesquisa, projetos e oportunidades, consulte o site do grupo de pesquisa em Engenharia Computacional pelo link: 
+# 
+# - [TRIL Lab](http://tril.ci.ufpb.br)
+# 
+# 
+# <hr>
+
+# ## Outros livros e apostilas do professor
+# 
+# ### Grupo 1
+# - [Fundamentos de Matemática e Estatística para Ciência de Dados](https://gcpeixoto.github.io/FMECD/ipynb/00-apresentacao.html), com Andrea Rocha (UFPB)
+#     - Curso elementar para alunos de primeiro ano em áreas afins à Matemática, Estatística e Ciência de Dados que buscam aprimorar conhecimentos do ensino médio e desenvolvê-los sob a ótica computacional.
+# 
+# - [Introdução à Ciência de Dados](https://gcpeixoto.github.io/ICD)
+#     - Curso para alunos do primeiro período de CDIA/UFPB contendo uma visão geral sobre os principais temas abordados ao longo do curso.
+# 
+# ### Grupo 2
+# - [Introdução a Python para Ciências Computacionais e Engenharia](https://gcpeixoto.github.io/lecture-ipynb/indice.html), traduzido de Hans Fanghor (Southampton/UK)
+#     - Apostila suplementar de aprendizagem de linguagem Python para alunos de cursos de ciências exatas, com ênfase em aplicações de engenharia.
+# 
+# - [Laboratório Virtual de Métodos Numéricos](https://gcpeixoto.github.io/ipynb-lab-metodos-numericos/conteudo.html)
+#     - Laboratório de aplicações computacionais diversas para suporte a cursos de cálculo numérico, ou métodos numéricos, aplicável a todos os nichos de exatas. Contém miscelânea de estudos de caso, códigos práticos e materiais de consulta.
+# 
+# - [Métodos Computacionais](https://gcpeixoto.github.io/METCOMP/)
+#     - Curso elaborado para atendimento a estudantes do primeiro ano de Engenharia de Produção, com conteúdo misto herdado dos cursos básicos dos Grupos 1 e 2. Diferencia por adentrar em conceitos particulares de álgebra linear e otimização.
