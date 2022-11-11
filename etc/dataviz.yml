@@ -1,0 +1,21 @@
+name: dataviz
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - dash
+  - bokeh
+  - hvplot
+  - datashader
+  - dask
+  - h5py
+  - geoviews
+  - pandas
+  - matplotlib
+  - seaborn
+  - plotly
+  - geopandas
+  - networkx
+

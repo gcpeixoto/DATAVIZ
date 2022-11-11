@@ -1,0 +1,11 @@
+format: jb-book
+root: ipynb/00-apresentacao.ipynb
+parts:
+  - caption: Fundamentos
+    numbered: true
+    chapters:
+    - file: ipynb/01-historia.ipynb
+  - caption: Avaliação
+    numbered: false
+    chapters:
+    - file: ipynb/capstone-template.ipynb
