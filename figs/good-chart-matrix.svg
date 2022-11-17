@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   sodipodi:docname="good-chart-matrix.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.90583672"
+     inkscape:cx="373.13568"
+     inkscape:cy="371.47975"
+     inkscape:window-width="1765"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g30139">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleOutL"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="EmptyTriangleOutL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(-6,0)"
+         style="fill-rule:evenodd;fill:context-fill;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path1353" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleInL"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="EmptyTriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8) translate(-6,0)"
+         style="fill-rule:evenodd;fill:context-fill;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path1344" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path1338" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleInL-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="EmptyTriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,4.8,0)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1344-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleOutL-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="EmptyTriangleOutL"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,-4.8,0)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1353-4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g30139"
+       transform="matrix(0.9,0,0,0.9,-15.120343,5.2707555)">
+      <g
+         id="g42886"
+         transform="translate(5.6884842)"
+         inkscape:export-filename="/Users/gustavo/g42886.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
+        <rect
+           style="fill:#bfdf53;fill-opacity:0.5;stroke:none;stroke-width:0.880942"
+           id="rect848"
+           width="159.11905"
+           height="159.11906"
+           x="26.546026"
+           y="31.837694" />
+        <rect
+           style="fill:#8eb353;fill-opacity:1;stroke:none;stroke-width:0.440472"
+           id="rect848-9"
+           width="79.559532"
+           height="79.559525"
+           x="106.10555"
+           y="31.837694" />
+        <path
+           style="fill:#000000;fill-opacity:0.982262;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#EmptyTriangleInL);marker-end:url(#EmptyTriangleOutL)"
+           d="M 105.83333,31.75 V 190.5"
+           id="path1111" />
+        <path
+           style="fill:#000000;fill-opacity:0.982262;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#EmptyTriangleInL);marker-end:url(#EmptyTriangleOutL)"
+           d="m 185.20833,111.125 h -158.75"
+           id="path2161" />
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+           x="89.730957"
+           y="28.727711"
+           id="text2715-0"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="89.730957"
+             y="28.727711"
+             id="tspan2719-0" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:4.93889px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="89.730957"
+             y="37.550011"
+             id="tspan2717-3">EXCELENTE</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+           x="92.501846"
+           y="179.95512"
+           id="text2715-0-9"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="92.501846"
+             y="179.95512"
+             id="tspan2719-0-1" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:4.93889px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="92.501846"
+             y="188.77742"
+             id="tspan2717-3-0">PÉSSIMA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+           x="34.32988"
+           y="110.66422"
+           id="text2715-0-9-8"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="34.32988"
+             y="110.66422"
+             id="tspan2719-0-1-1" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:4.93889px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="34.32988"
+             y="119.48652"
+             id="tspan2717-3-0-0">BAIXA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+           x="178.76991"
+           y="110.66422"
+           id="text2715-0-9-8-5"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="178.76991"
+             y="110.66422"
+             id="tspan2719-0-1-1-0" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:4.93889px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Condensed';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="178.76991"
+             y="119.48652"
+             id="tspan2717-3-0-0-8">ALTA</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:4.23333px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';fill:#f0f0f0;fill-opacity:1;stroke-width:0.264583"
+           x="168.9512"
+           y="47.54261"
+           id="text2715-4"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.23333px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#f0f0f0;fill-opacity:1;stroke-width:0.264583"
+             x="168.9512"
+             y="47.54261"
+             id="tspan2717-4">PLOT</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.23333px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#f0f0f0;fill-opacity:1;stroke-width:0.264583"
+             x="168.9512"
+             y="52.835983"
+             id="tspan15709">PERFEITO</tspan></text>
+        <path
+           style="fill:#f0f0f0;fill-opacity:1;stroke:none;stroke-width:0.173593px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 183.88542,33.072917 -9.81991,-7e-6 2.45498,2.454976 -4.90996,4.909959 4.90996,4.909958 4.90996,-4.909958 2.45497,2.454975 z"
+           id="path10073" />
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';fill:#000000;fill-opacity:1;stroke-width:0.264583"
+           x="209.10027"
+           y="101.0042"
+           id="text2715"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="209.10027"
+             y="101.0042"
+             id="tspan2719" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="209.10027"
+             y="109.8265"
+             id="tspan32694">PERCEPÇÃO</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="209.10027"
+             y="118.6488"
+             id="tspan33472">DE CONTEXTO</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';fill:#000000;fill-opacity:1;stroke-width:0.264583"
+           x="105.63084"
+           y="193.67653"
+           id="text2715-7"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="105.63084"
+             y="193.67653"
+             id="tspan2719-5" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="105.63084"
+             y="202.49883"
+             id="tspan32694-5">EXECUÇÃO</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+             x="105.63084"
+             y="211.32112"
+             id="tspan33472-2">DE PROJETO</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:7.05556px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';fill:#ffffff;fill-opacity:0.982262;stroke-width:0.264583"
+           x="145.8147"
+           y="56.496391"
+           id="text2715-41"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.982262;stroke-width:0.264583"
+             x="145.8147"
+             y="56.496391"
+             id="tspan2719-7" /><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.982262;stroke-width:0.264583"
+             x="145.8147"
+             y="65.318687"
+             id="tspan17677-1">ZONA DAS</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.982262;stroke-width:0.264583"
+             x="145.8147"
+             y="74.140991"
+             id="tspan17679-3">REPRESENTAÇÕES</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.05556px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.982262;stroke-width:0.264583"
+             x="145.8147"
+             y="82.963287"
+             id="tspan2717-48">VISUAIS &quot;BOAS&quot;</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

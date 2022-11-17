@@ -1,0 +1,36 @@
+
+p {
+    text-align: justify;
+}
+
+
+/* customized admonitions */
+
+.admonition-curiosidade {
+    border-left-color: #117029;
+}
+.admonition-curiosidade .admonition-title {
+    background-color: rgba(191, 223, 83, .4);
+}
+.admonition-curiosidade .admonition-title:before {
+    color: #117029;
+    content: '\f19d';
+}
+
+
+/* Color refs */
+
+.dataviz_green_1 {
+    width: 100%;
+    background-color: #117029; /* (17,112,41) green logo style 1 */
+}
+
+.dataviz_green_2 {
+    width: 100%;
+    background-color: #8EB353; /* (142,179,83) green logo style 2 */
+}
+
+.dataviz_green_3 {
+    width: 100%;
+    background-color: #BFDF53; /* (191,223,83) green logo style 2 */
+}

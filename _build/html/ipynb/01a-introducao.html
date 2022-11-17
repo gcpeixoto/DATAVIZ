@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Introdução à Visualização de Dados &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. História da Visualização de Dados" href="01b-historico.html" />
+    <link rel="prev" title="Apresentação do curso" href="00-apresentacao.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-historico.html">
+   2. História da Visualização de Dados
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliação
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capstone-template.html">
+   Modelo para Relátorio de Projeto Final
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/01a-introducao.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/01a-introducao.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pontos-de-equilibrio">
+   1.1. Pontos de equilíbrio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visao-geral-do-curso">
+   1.2. Visão geral do curso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arquitetura-visual-x-engenharia-visual">
+   1.3. Arquitetura visual x engenharia visual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definindo-visualizacao-de-dados">
+   1.4. Definindo
+   <em>
+    Visualização de Dados
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figuras-feias-ruins-e-erradas">
+     1.4.1. Figuras feias, ruins e erradas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataviz-o-pensamento-visual-e-o-bom-plot">
+     1.4.2.
+     <em>
+      Dataviz
+     </em>
+     , o pensamento visual e o bom plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-tecnicas-do-curso">
+   1.5. Ferramentas técnicas do curso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criacao-do-novo-ambiente">
+     1.5.1. Criação do novo ambiente
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplo-aplicado">
+     1.5.2. Exemplo aplicado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminologias">
+   1.6. Terminologias
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-pessoas">
+     1.6.1. Termos para pessoas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-dados">
+     1.6.2. Termos para dados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-visualizacao">
+     1.6.3. Termos para visualização
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   1.7. Referências
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introdução à Visualização de Dados</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pontos-de-equilibrio">
+   1.1. Pontos de equilíbrio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visao-geral-do-curso">
+   1.2. Visão geral do curso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arquitetura-visual-x-engenharia-visual">
+   1.3. Arquitetura visual x engenharia visual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definindo-visualizacao-de-dados">
+   1.4. Definindo
+   <em>
+    Visualização de Dados
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figuras-feias-ruins-e-erradas">
+     1.4.1. Figuras feias, ruins e erradas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataviz-o-pensamento-visual-e-o-bom-plot">
+     1.4.2.
+     <em>
+      Dataviz
+     </em>
+     , o pensamento visual e o bom plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-tecnicas-do-curso">
+   1.5. Ferramentas técnicas do curso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criacao-do-novo-ambiente">
+     1.5.1. Criação do novo ambiente
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplo-aplicado">
+     1.5.2. Exemplo aplicado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminologias">
+   1.6. Terminologias
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-pessoas">
+     1.6.1. Termos para pessoas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-dados">
+     1.6.2. Termos para dados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-visualizacao">
+     1.6.3. Termos para visualização
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   1.7. Referências
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introducao-a-visualizacao-de-dados">
+<h1><span class="section-number">1. </span>Introdução à Visualização de Dados<a class="headerlink" href="#introducao-a-visualizacao-de-dados" title="Permalink to this headline">#</a></h1>
+<p>A visualização de dados é uma disciplina interdisciplinar de interesse a qualquer pessoa interessada em manusear ou apresentar dados de forma qualitativa ou quantitativa. Ela não se restringe a áreas de formação específica, mas algumas características essenciais para o desenvolvivmento de habilidades na disciplina são:</p>
+<ul class="simple">
+<li><p>Familiaridade com <em>estatística</em>;</p></li>
+<li><p><em>Vontade</em> de aprender coisas novas;</p></li>
+<li><p><em>Curiosidade</em> para descobrir respostas;</p></li>
+<li><p>Apetite por <em>princípios de design</em>;</p></li>
+<li><p>Disposição para aumentar seu <em>rigor analítico</em> e</p></li>
+<li><p><em>Conhecimento técnico</em> de pelo menos uma ferramenta.</p></li>
+</ul>
+<section id="pontos-de-equilibrio">
+<h2><span class="section-number">1.1. </span>Pontos de equilíbrio<a class="headerlink" href="#pontos-de-equilibrio" title="Permalink to this headline">#</a></h2>
+<p>A visualização de dados gera diversas dicotomias em sua trilha de aprendizagem. Podemos enviesar seu estudo para uma direção ou outra, dependendo dos interesses. Algumas perguntas que suscitam a busca por pontos de equilíbrio são as seguintes:</p>
+<ol class="simple">
+<li><p>É melhor aprender visualização de dados através de um guia ou manual, que discute princípios, conceitos e orientações, ou através de um tutorial, que contém exemplos de código e demonstrações de gráficos incríveis?</p></li>
+<li><p>Devemos dissertar sobre as nuances artísticas, com toda a beleza do design, ou sobre a elegância simples e útil do cotidiano?</p></li>
+<li><p>Faz sentido compreender conceitos teóricos da visualização de dados, ou ser apenas pragmático?</p></li>
+<li><p>Vale seguir o exemplo dos livros pioneiros e clássicos históricos, ou avalizar o contemporâneo?</p></li>
+<li><p>O que queremos com os dados: prover um arcabouço analítico de exploração e interatividade (visualização para análise), ou apenas comunicá-los a uma audiência para gerar impacto e atratividade (visualização para comunicação)?</p></li>
+</ol>
+<p>As respostas para essas questões não são binárias. Futuros profissionais que farão uso de tudo o que a visualização de dados tem a oferecer devem ser suficientemente flexíveis para encontrar seus pontos de equilíbrio particulares para cada situação apresentada.</p>
+</section>
+<section id="visao-geral-do-curso">
+<h2><span class="section-number">1.2. </span>Visão geral do curso<a class="headerlink" href="#visao-geral-do-curso" title="Permalink to this headline">#</a></h2>
+<p>Levando em consideração a necessidade por pontos de equilíbrio, este curso pretende abordar a visualização de dados a partir de três grandes módulos.</p>
+<ul class="simple">
+<li><p><strong>Fundamentos</strong>: módulo dedicado ao estudo dos conceitos primários da visualização de dados, tais como seu desenvolvimento histórico, princípios, percepção, estética e cores.</p></li>
+<li><p><strong>Técnicas</strong>: módulo dedicado à discussão de técnicas diversas para representação visual de quantidades, proporções, tendências, redes e informações gerais, através de exemplos de códigos.</p></li>
+<li><p><strong>Aplicações</strong>: módulo dedicado à apresentação de ferramentas e plataformas modernas para construção de painéis analíticos (<em>dashboards</em>) e soluções de <em>data reporting</em> com tutoriais simplificados.</p></li>
+</ul>
+</section>
+<section id="arquitetura-visual-x-engenharia-visual">
+<h2><span class="section-number">1.3. </span>Arquitetura visual x engenharia visual<a class="headerlink" href="#arquitetura-visual-x-engenharia-visual" title="Permalink to this headline">#</a></h2>
+<p>A audiência deste curso não deve esperar que ele seja puramente técnico, tampouco integralmente teórico. Entretanto, os objetivos de formação miram estudantes com razoável conhecimento de técnicas estatísticas e de programação. Portanto, não haverá aprofundamento em temas inerentes à arte e ao <em>design</em>. Se chamássemos de <em>arquitetura visual</em> a área profissional que cuida da especificação dos projetos de visualização de dados, e de <em>engenharia visual</em> aquela que executa tais projetos, diríamos que este curso abrange majoritariamente a segunda área.</p>
+</section>
+<section id="definindo-visualizacao-de-dados">
+<h2><span class="section-number">1.4. </span>Definindo <em>Visualização de Dados</em><a class="headerlink" href="#definindo-visualizacao-de-dados" title="Permalink to this headline">#</a></h2>
+<p>A disciplina <em>visualização de dados</em> é considerada recente sob o prisma teórico. Existem muito mais recomendações de princípios a serem seguidos do que, efetivamente, uma organização estruturada de conhecimento para lhe dar sustentação científica. A maioria dos praticantes na área entende que visualizar dados é um misto entre arte e técnica, até porque a humanidade é composta de seres substancialmente visuais. Não por acaso o clichê <em>“uma imagem vale mais que mil palavras”</em> tornou-se popular.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>A origem da expressão <em>“uma imagem vale mais que mil palavras”</em> (<a class="reference external" href="https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words"><em>“a picture is worth a thousand words</em>”</a>) deriva de um provérbio chinês supostamente propagado pelo filósofo Confúcio (551 - 479 AEC). Na América do século XX, a forma moderna desse adágio é atribuída a Fred Barnard, anunciante que viveu na década de 1920.</p>
+</div>
+<p>Saber encontrar a dosagem entre arte e técnica (ou ciência) é fundamental para que dados sejam comunicados com máxima precisão e eficiência, assim evitando equívocos e distorções. De certa forma, a representação visual da informação deve ser suficientemente agradável aos olhos de seu espectador sem, no entanto, interferir na mensagem que ela retrata. Um pouco mais adiante, discutiremos melhor esse contraste.</p>
+<p>Neste curso, usaremo a seguinte definição, adaptada de <a class="reference external" href="https://twitter.com/visualisingdata">Andy Kirk</a>:</p>
+<blockquote>
+<div><p><em>Visualização de dados é a arte de combinar representações visuais e apresentações para facilitar a compreensão dos dados.</em></p>
+</div></blockquote>
+<p>A <em>representação visual</em> (<em>chart</em>) é o elemento que melhor se adéqua ao que se pretende comunicar. <em>Charts</em> têm <em>marcadores</em> e <em>atributos</em> como seus fundamentos, como veremos em capítulos posteriores. A <em>apresentação visual</em> concerne a todas as outras tomadas de decisão de design que constituem a anatomia da visualização, tais como a seleção da paleta de cores, a composição da obra e as características das anotações. Ambas constituem a parcela artística do autor e o âmago da disciplina. A execução disso tudo independe da ferramenta técnica utilizada. Existem diversos sistemas, pacotes, bibliotecas e linguagens disponíveis, sendo R e Python as linguagens de programação preferidas dos analistas de dados.</p>
+<p>Por outro lado, a parte final da definição, que diz respeito à <em>compreensão facilitada</em> dos dados, tem a ver com o processo de captura da mensagem lançada pelo contador de história (<em>storyteller</em>) ao espectador (<em>viewer</em>). Este processo envolve 3 etapas cognitivas (<a class="reference internal" href="#fig-comprehension"><span class="std std-numref">Fig. 1.1</span></a>, adaptada de <span id="id1">[<a class="reference internal" href="#id5" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>):</p>
+<ol class="simple">
+<li><p><em>Percepção</em> (o que vejo?)</p></li>
+<li><p><em>Interpretação</em> (o que significa?)</p></li>
+<li><p><em>Compreensão</em> (o que significa para mim?)</p></li>
+</ol>
+<figure class="align-center" id="fig-comprehension">
+<a class="reference internal image-reference" href="../_images/3-steps-cognition.png"><img alt="As 3 fases da compreensão de uma representação visual." src="../_images/3-steps-cognition.png" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">As 3 fases da compreensão de uma representação visual. Preparada por: G.P. Oliveira.</span><a class="headerlink" href="#fig-comprehension" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="figuras-feias-ruins-e-erradas">
+<h3><span class="section-number">1.4.1. </span>Figuras feias, ruins e erradas<a class="headerlink" href="#figuras-feias-ruins-e-erradas" title="Permalink to this headline">#</a></h3>
+<p>Diferentes versões de figuras com a mesma representação visual subjacente podem existir (<a class="reference internal" href="#fig-ugly"><span class="std std-numref">Fig. 1.2</span></a>, adaptada de <span id="id2">[<a class="reference internal" href="#id6" title="Claus O Wilke. Fundamentals of data visualization: a primer on making informative and compelling figures. O'Reilly Media, 2019.">Wilke, 2019</a>]</span>). Porém, uma delas pode ser <em>feia</em>, outra pode ser <em>ruim</em> e outra pode ser <em>errada</em>. Esse mecanismo tripartite é um exemplo de como podemos fazer julgamentos de trabalhos visuais. Segundo Claus Wilke, uma figura:</p>
+<ul class="simple">
+<li><p><em>feia</em> é aquela que tem problemas estéticos, apesar de clara e informativa.</p></li>
+<li><p><em>ruim</em> é aquela que tem problemas relacionados à percepção, tais como obscuridade, confusão, complicações e enganação.</p></li>
+<li><p><em>errada</em> é aquela que tem problemas relacionados à matemática e é objetivamente incorreta.</p></li>
+</ul>
+<figure class="align-center" id="fig-ugly">
+<a class="reference internal image-reference" href="../_images/hists-lodo.png"><img alt="Comparação de figuras." src="../_images/hists-lodo.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Comparação de figuras: A) adequada, sem problemas aparentes graves; B) versão “feia”, tecnicamente correta, mas colorida inutilmente; C) versão “ruim”, também tecnicamente correta, mas com marcações e gradeado destoantes; D) versão “errada”, sem escala explícita e aparentemente díspar em quantidade. Preparada por: G.P. Oliveira.</span><a class="headerlink" href="#fig-ugly" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p><a class="reference external" href="https://pt.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly"><em>The Good, the Bad and the Ugly</em></a>, em português “Três homens em conflito”, filme clássico de <em>western</em> lançado em 1966 que consagrou <a class="reference external" href="https://www.youtube.com/watch?v=1AyxDVBX2o0">a trilha sonora do “assobio”</a> de Ennio Morricone, conta a história de três homens, Tuco, Lourinho e Angel Eyes, que procuram por um tesouro. Dois deles (Tuco e Lourinho) apenas têm conhecimento de uma parte da sua localização, ao passo que Angel Eyes somente persegue os outros dois por não ter informação nenhuma. No final, o <em>Bom</em> é o “mais ético”, o <em>Feio</em> é o “mais rude e de aparência tosca” e o “mau” é o “mais displicente”.</p>
+</div>
+</section>
+<section id="dataviz-o-pensamento-visual-e-o-bom-plot">
+<h3><span class="section-number">1.4.2. </span><em>Dataviz</em>, o pensamento visual e o bom plot<a class="headerlink" href="#dataviz-o-pensamento-visual-e-o-bom-plot" title="Permalink to this headline">#</a></h3>
+<p>A era da informação hoje entende que a visualização de dados, comumente conhecida pelo pseudônimo <em>dataviz</em> (de <em>data visualization</em>), é uma disciplina obrigatória para um novo modo de pensar: o <em>pensamento visual</em> – a propósito, deste ponto em diante, vamos nos referir à visualização de dados por essa forma elegante reduzida. No mundo dos negócios, pensar visualmente é ser capaz de construir representações visuais com grande potencial atrativo. Para empresas competitivas, a mensagem clara e acessível transmitida graficamente é uma das grandes vantagens de <em>marketing</em>.</p>
+<p>Como já dissemos, adjetivar um plot com características visuais apreciáveis como “bom” é uma questão de seguir princípios que ajudam a definir por que construi-lo de um jeito e não de outro. A <em>Matriz da Boa Representação Visual</em> (<a class="reference internal" href="#fig-good-charts"><span class="std std-numref">Fig. 1.3</span></a>, adaptada de <span id="id3">[<a class="reference internal" href="#id7" title="Scott Berinato. The Harvard Business Review Good Charts Collection: Tips, tools, and exercises for creating powerful data visualizations. Harvard Business Press, 2019.">Berinato, 2019</a>]</span>), sugere que um plot considerado “bom” deve aproximar-se cada vez mais da quina superior direita, onde reside a perfeição.</p>
+<figure class="align-center" id="fig-good-charts">
+<a class="reference internal image-reference" href="../_images/good-chart-matrix.png"><img alt="Matrix da Boa Representação Visual." src="../_images/good-chart-matrix.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Matrix da Boa Representação Visual. Preparada por: G.P. Oliveira.</span><a class="headerlink" href="#fig-good-charts" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="ferramentas-tecnicas-do-curso">
+<h2><span class="section-number">1.5. </span>Ferramentas técnicas do curso<a class="headerlink" href="#ferramentas-tecnicas-do-curso" title="Permalink to this headline">#</a></h2>
+<p>Neste curso, trabalharemos essencialmente com Python 3.x como a linguagem de programação básica e com uma diversidade de pacotes para construção de plotagens e utilidades. A forma recomendada de prosseguir com a instalação das ferramentas é criando um ambiente virtual <code class="docutils literal notranslate"><span class="pre">conda</span></code> a partir do arquivo de configurações disponibilizado pelo professor e trabalhar as tarefas como um projeto de desenvolvimento.</p>
+<section id="criacao-do-novo-ambiente">
+<h3><span class="section-number">1.5.1. </span>Criação do novo ambiente<a class="headerlink" href="#criacao-do-novo-ambiente" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Execute o comando:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">dataviz</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Dica</p>
+<p>Crie um novo arquivo com <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">dataviz.yml</span></code>, então copie o conteúdo do arquivo YAML abaixo e cole.</p>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataviz.yml</span><span class="w"></span>
+
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dataviz</span><span class="w"></span>
+<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
+<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scipy</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dash</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bokeh</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hvplot</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">datashader</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dask</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h5py</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoviews</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">seaborn</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geopandas</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkx</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Habilite o ambiente:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">dataviz</span>
+</pre></div>
+</div>
+<p>As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> e <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Os demais serão eventualmente utilizados para tarefas especializadas.</p>
+</section>
+<section id="exemplo-aplicado">
+<h3><span class="section-number">1.5.2. </span>Exemplo aplicado<a class="headerlink" href="#exemplo-aplicado" title="Permalink to this headline">#</a></h3>
+<p>O código abaixo usa comandos do <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> e <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> para produzir um tipo de plot conhecido em Estatística como <em>boxplot agrupado</em> para visualizarmos a variação do preço por litro, em R$, de 6 tipos de combustíveis comercializados no estado da Paraíba por 8 operadoras durante o primeiro semestre de 2022.</p>
+<p>Para a plotagem, usamos parte do <a class="reference external" href="https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda/resource/a1e1955b-f340-415d-83bf-bbce710d142b"><em>dataset</em></a> correspondente disponibilizado pela ANP no portal <a class="reference external" href="https://dados.gov.br">Dados Abertos</a> do Governo Federal.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/preco-combs-pb-2022-02.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># matplotlib</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Preço de combustíveis - PB - Semestre 2022/01. Fonte: ANP&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;litro (R$)&#39;</span><span class="p">)</span>
+
+<span class="c1"># seaborn</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Bandeira&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Valor de Venda&quot;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Produto&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s2">&quot;deep&quot;</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">move_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s2">&quot;upper center&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.11</span><span class="p">,</span> <span class="mf">.8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01a-introducao_11_0.png" src="../_images/01a-introducao_11_0.png" />
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Exercício</p>
+<p>Siga as etapas propostas por Kirk (<a class="reference internal" href="#fig-comprehension"><span class="std std-numref">Fig. 1.1</span></a>) e faça uma análise do plot acima. O que ele diz? Ele é “feio”, “ruim”? O que você interpreta a partir dos dados apresentados? A representação visual pode ser aperfeiçoada?</p>
+</div>
+</section>
+</section>
+<section id="terminologias">
+<h2><span class="section-number">1.6. </span>Terminologias<a class="headerlink" href="#terminologias" title="Permalink to this headline">#</a></h2>
+<p>Qualquer campo do conhecimento científico é dotado de conceitos, definições, taxonomias e glossários, constituindo terminologias próprias. Em visualização de dados, pelo fato de muitos termos procederem da língua inglesa, suas traduções para a língua portuguesa podem gerar sinonímia confusa. A fim de evitar percalços semânticos, utilizaremos, neste curso, alguns termos próprios (embora não desvinculados do uso comum) separados em diferentes grupos.</p>
+<section id="termos-para-pessoas">
+<h3><span class="section-number">1.6.1. </span>Termos para pessoas<a class="headerlink" href="#termos-para-pessoas" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Storyteller</em>: você, que está construindo o produto de visualização (cf. <em>visualiser</em>, <em>analyst</em>,<em>visualist</em>, <em>designer</em>).</p></li>
+<li><p><em>Viewer</em>: a pessoa que visualiza o produto construído (cf. <em>consumer</em>, <em>reader</em>, <em>user</em>).</p></li>
+<li><p><em>Audiência</em>: um grupo de espectadores ou coorte social a quem o produto de visualização é direcionado (cf. <em>audience</em>).</p></li>
+</ul>
+</section>
+<section id="termos-para-dados">
+<h3><span class="section-number">1.6.2. </span>Termos para dados<a class="headerlink" href="#termos-para-dados" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Dado bruto</em>: estado inicial de um dado coletado, recebido ou baixado de um repositório ainda não tratado ou sujeito a análises (cf. <em>raw data</em>).</p></li>
+<li><p><em>Fonte</em>: origem do dado bruto utilizado para a visualização (cf. <em>data source</em>).</p></li>
+<li><p><em>Dataset</em>: uma tabela ou coleção de tabelas dispostas como um <em>array</em> computacional e organizadas em linhas (registros, instâncias ou itens) e colunas (variáveis, detalhes dos itens).</p></li>
+<li><p><em>Tipo</em>: a especificação de uma variável de tabela. Geralmente, um dado é <em>ordinal</em> (obedece a uma relação de ordem), <em>quantitativo</em> (manipulável por operações aritméticas) ou <em>categórico</em> (identificado por um atributo que o difere de outro).</p></li>
+<li><p><em>Série</em>: sequência de valores assumidos por uma mesma variável em um <em>dataset</em>.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>A taxonomia de dados para fins de visualização da informação proposta por Ben Schneiderman em seu artigo
+científico <a class="reference external" href="https://ieeexplore.ieee.org/document/545307"><em>The eyes have it: a task by data type taxonomy for information visualizations</em></a>, de 1996, oferece 7 tipos: unidimensional, bidimensional, tridimensional, temporal, multidimensional, árvore e rede. Uma versão em PDF está disponível na <a class="reference external" href="https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf">página</a> do autor.</p>
+</div>
+</section>
+<section id="termos-para-visualizacao">
+<h3><span class="section-number">1.6.3. </span>Termos para visualização<a class="headerlink" href="#termos-para-visualizacao" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Projeto de visualização</em>: conjunto de etapas progressivas que culminam na geração de um produto de visualização.</p></li>
+<li><p><em>Produto de visualização</em>: entregável de um projeto de visualização. Em geral, será uma <em>representação visual de dados</em>.</p></li>
+<li><p><em>Representação visual de dados</em>: termo genérico que abrange as diversas formas de disposição visual de dados, que chamaremos de <em>plot</em>. Um <em>plot</em> pode ser um traçado representativo de uma quantitidade matemática univariada (gráfico), ou a aplicação de figuras geométricas planas ou espaciais, ou ainda a impressão de formas e símbolos para fins quantitativos ou qualitativos em várias dimensões. Assim, <em>plots</em> incorporarão diagramas, fluxogramas, dendrogramas, superfícies, infográficos, dispersões, correlações, mapas etc.</p></li>
+<li><p><em>Outlier</em>: valores em uma representação visual que escapam do intervalo normal e chamam atenção do espectador por serem ou muito menores ou muito maiores do que o esperado.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>Na língua inglesa, <em>chart</em>, <em>graph</em> e <em>plot</em> são considerados sinônimos, apesar de serem encontrados em contextos distintos. O <em>gráfico de barras</em>, por exemplo, é comumente chamado de <em>bar chart</em> e não de <em>bar graph</em>. Todavia, <em>chart</em> e <em>graph</em> são ambos costumeiramente traduzidos para português como “gráfico”. Além disso, <em>graph</em> também é traduzido como “grafo”, um conceito matemático que destoa da simples aplicação à visualização. O _gráfico de dispersão é outro exemplo que causa imprecisão semântica, visto que, em inglês, ele é conhecido como <em>scatter plot</em> e não como <em>scatter graph</em>. Enquanto algumas representações possuem traduções imediatas, isto não é o caso para outras. Por esta razão, usar <em>plot</em>, ou <em>plotagem</em>, como hiperônimo para todas as representações discutidas neste curso é uma escolha justificada. Discussões sobre diferenças desses termos em inglês podem ser encontradas <a class="reference external" href="https://www.wallstreetmojo.com/graphs-vs-charts/">aqui</a> e <a class="reference external" href="https://english.stackexchange.com/questions/43027/whats-the-difference-between-a-graph-a-chart-and-a-plot">aqui</a>.</p>
+</div>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">1.7. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id4">
+<dl class="citation">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">Ber19</a></span></dt>
+<dd><p>Scott Berinato. <em>The Harvard Business Review Good Charts Collection: Tips, tools, and exercises for creating powerful data visualizations</em>. Harvard Business Press, 2019.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">Kir16</a></span></dt>
+<dd><p>Andy Kirk. <em>Data visualisation: A handbook for data driven design</em>. Sage, 2016.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">Wil19</a></span></dt>
+<dd><p>Claus O Wilke. <em>Fundamentals of data visualization: a primer on making informative and compelling figures</em>. O'Reilly Media, 2019.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="00-apresentacao.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Apresentação do curso</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01b-historico.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>História da Visualização de Dados</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

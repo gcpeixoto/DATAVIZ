@@ -4,7 +4,8 @@ parts:
   - caption: Fundamentos
     numbered: true
     chapters:
-    - file: ipynb/01-historia.ipynb
+    - file: ipynb/01a-introducao.ipynb
+    - file: ipynb/01b-historico.ipynb
   - caption: Avaliação
     numbered: false
     chapters:
