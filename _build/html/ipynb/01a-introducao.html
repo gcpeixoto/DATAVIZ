@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. História da Visualização de Dados" href="01b-historico.html" />
+    <link rel="next" title="2. Marcos Históricos da Visualização de Dados" href="01b-historico.html" />
     <link rel="prev" title="Apresentação do curso" href="00-apresentacao.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -127,7 +127,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01b-historico.html">
-   2. História da Visualização de Dados
+   2. Marcos Históricos da Visualização de Dados
   </a>
  </li>
 </ul>
@@ -635,7 +635,9 @@ title="Print to PDF"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">dataviz</span>
 </pre></div>
 </div>
-<p>As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> e <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Os demais serão eventualmente utilizados para tarefas especializadas.</p>
+<p>As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, para manipulação de <em>arrays</em> e computação vetorizada, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, para manipulação de séries e <em>datasets</em>,  e <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, para plotagem estática de dados. Os demais são utilizados para tarefas especializadas. <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> é útil para análise exploratória de dados e para visualização de dados estatísticos. <code class="docutils literal notranslate"><span class="pre">bokeh</span></code> e <code class="docutils literal notranslate"><span class="pre">plotly</span></code> servem para propósitos de visualização interativa. <code class="docutils literal notranslate"><span class="pre">scipy</span></code> é um pacote de computação científica, com diversos métodos numéricos. <code class="docutils literal notranslate"><span class="pre">hvplot</span></code> e <code class="docutils literal notranslate"><span class="pre">datashader</span></code> são utilidades para construção de visualização interativa para grandes <em>datasets</em>. <code class="docutils literal notranslate"><span class="pre">h5py</span></code> manipula arquivos no formato HDF5 (<em>Hierarchical Data Format</em>), bastante utilizados em visualização científica e armazenamento de grandes estruturas de dados. <code class="docutils literal notranslate"><span class="pre">dash</span></code> é uma API para construção de <em>dashboards</em>. <code class="docutils literal notranslate"><span class="pre">geoviews</span></code> e <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> suportam a visualização de dados geográficos e mapas. <code class="docutils literal notranslate"><span class="pre">networkx</span></code> oferece meios de plotagem de grafos e de redes complexas.</p>
+<p>O ferramental Python disponível para visualização de dados é bastante vasto. Já existem hoje muitos outros pacotes baseados na linguagem para trabalhar com <em>big data</em> multipropósito (e.g. <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, <code class="docutils literal notranslate"><span class="pre">dask</span></code>, <code class="docutils literal notranslate"><span class="pre">numba</span></code>, etc.) e cada um possui pontos positivos e negativos. Em sua atividade profissional, uma ferramenta poderá ser mais adequada do que outra e será você quem dará o veredito final.</p>
+<p>Para manter uma linha mínima de ação no escopo técnico, neste curso utilizaremos <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> e <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> para a visualização estática de dados, e <code class="docutils literal notranslate"><span class="pre">plotly</span></code> para a visualização interativa. Os demais pacotes serão utilizados sob demanda ao discutirmos  aplicações e exemplos mais elaborados.</p>
 </section>
 <section id="exemplo-aplicado">
 <h3><span class="section-number">1.5.2. </span>Exemplo aplicado<a class="headerlink" href="#exemplo-aplicado" title="Permalink to this headline">#</a></h3>
@@ -707,7 +709,7 @@ científico <a class="reference external" href="https://ieeexplore.ieee.org/docu
 <ul class="simple">
 <li><p><em>Projeto de visualização</em>: conjunto de etapas progressivas que culminam na geração de um produto de visualização.</p></li>
 <li><p><em>Produto de visualização</em>: entregável de um projeto de visualização. Em geral, será uma <em>representação visual de dados</em>.</p></li>
-<li><p><em>Representação visual de dados</em>: termo genérico que abrange as diversas formas de disposição visual de dados, que chamaremos de <em>plot</em>. Um <em>plot</em> pode ser um traçado representativo de uma quantitidade matemática univariada (gráfico), ou a aplicação de figuras geométricas planas ou espaciais, ou ainda a impressão de formas e símbolos para fins quantitativos ou qualitativos em várias dimensões. Assim, <em>plots</em> incorporarão diagramas, fluxogramas, dendrogramas, superfícies, infográficos, dispersões, correlações, mapas etc.</p></li>
+<li><p><em>Representação visual de dados</em>: termo genérico que abrange as diversas formas de disposição visual de dados, que chamaremos de <em>plot</em>. Um <em>plot</em> pode ser um traçado representativo de uma quantitidade matemática univariada (gráfico), ou a aplicação de figuras geométricas planas ou espaciais, ou ainda a impressão de formas e símbolos para fins quantitativos ou qualitativos em várias dimensões. Assim, <em>plots</em> incorporarão diagramas, fluxogramas, dendrogramas, superfícies, dispersões, correlações, mapas etc.</p></li>
 <li><p><em>Outlier</em>: valores em uma representação visual que escapam do intervalo normal e chamam atenção do espectador por serem ou muito menores ou muito maiores do que o esperado.</p></li>
 </ul>
 <div class="dropdown admonition">
@@ -771,7 +773,7 @@ científico <a class="reference external" href="https://ieeexplore.ieee.org/docu
     <a class='right-next' id="next-link" href="01b-historico.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>História da Visualização de Dados</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Marcos Históricos da Visualização de Dados</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

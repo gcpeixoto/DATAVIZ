@@ -260,7 +260,11 @@ plt.savefig('../figs/hists-lodo.png',dpi=300)
 # conda activate dataviz
 # ```
 # 
-# As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são `numpy`, `pandas` e `matplotlib`. Os demais serão eventualmente utilizados para tarefas especializadas.
+# As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são `numpy`, para manipulação de _arrays_ e computação vetorizada, `pandas`, para manipulação de séries e _datasets_,  e `matplotlib`, para plotagem estática de dados. Os demais são utilizados para tarefas especializadas. `seaborn` é útil para análise exploratória de dados e para visualização de dados estatísticos. `bokeh` e `plotly` servem para propósitos de visualização interativa. `scipy` é um pacote de computação científica, com diversos métodos numéricos. `hvplot` e `datashader` são utilidades para construção de visualização interativa para grandes _datasets_. `h5py` manipula arquivos no formato HDF5 (_Hierarchical Data Format_), bastante utilizados em visualização científica e armazenamento de grandes estruturas de dados. `dash` é uma API para construção de _dashboards_. `geoviews` e `geopandas` suportam a visualização de dados geográficos e mapas. `networkx` oferece meios de plotagem de grafos e de redes complexas.
+# 
+# O ferramental Python disponível para visualização de dados é bastante vasto. Já existem hoje muitos outros pacotes baseados na linguagem para trabalhar com _big data_ multipropósito (e.g. `xarray`, `dask`, `numba`, etc.) e cada um possui pontos positivos e negativos. Em sua atividade profissional, uma ferramenta poderá ser mais adequada do que outra e será você quem dará o veredito final.
+# 
+# Para manter uma linha mínima de ação no escopo técnico, neste curso utilizaremos `numpy`, `pandas`, `matplotlib` e `seaborn` para a visualização estática de dados, e `plotly` para a visualização interativa. Os demais pacotes serão utilizados sob demanda ao discutirmos  aplicações e exemplos mais elaborados.
 
 # ### Exemplo aplicado
 # 
@@ -327,7 +331,7 @@ sns.set_style()
 # 
 # - _Projeto de visualização_: conjunto de etapas progressivas que culminam na geração de um produto de visualização.
 # - _Produto de visualização_: entregável de um projeto de visualização. Em geral, será uma _representação visual de dados_.
-# - _Representação visual de dados_: termo genérico que abrange as diversas formas de disposição visual de dados, que chamaremos de _plot_. Um _plot_ pode ser um traçado representativo de uma quantitidade matemática univariada (gráfico), ou a aplicação de figuras geométricas planas ou espaciais, ou ainda a impressão de formas e símbolos para fins quantitativos ou qualitativos em várias dimensões. Assim, _plots_ incorporarão diagramas, fluxogramas, dendrogramas, superfícies, infográficos, dispersões, correlações, mapas etc.
+# - _Representação visual de dados_: termo genérico que abrange as diversas formas de disposição visual de dados, que chamaremos de _plot_. Um _plot_ pode ser um traçado representativo de uma quantitidade matemática univariada (gráfico), ou a aplicação de figuras geométricas planas ou espaciais, ou ainda a impressão de formas e símbolos para fins quantitativos ou qualitativos em várias dimensões. Assim, _plots_ incorporarão diagramas, fluxogramas, dendrogramas, superfícies, dispersões, correlações, mapas etc.
 # - _Outlier_: valores em uma representação visual que escapam do intervalo normal e chamam atenção do espectador por serem ou muito menores ou muito maiores do que o esperado.
 # 
 # ```{admonition} Curiosidade
