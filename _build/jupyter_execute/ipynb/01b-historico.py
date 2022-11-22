@@ -7,9 +7,17 @@
 # 
 # Mapear os fatos históricos de uma determinada área da ciência de forma meticulosa é uma tarefa quase impossível. Neste capítulo, faremos um breve resumo dos principais eventos que marcaram época no desenvolvimento da visualização de dados. O material baseia-se em um capítulo escrito por Michael Friendly {cite:p}`friendly2005`, Professor da Universidade de York, Canadá.
 # 
-# Registros da informação quantitativa técnica mais especializada são conhecidos desde o século XV, principalmente motivados pela cartografia e pelo pensamento estatístico. Entretanto, os relatos são incompletos e organizados em obras de autores fortemente ligados à matemática, astronomia e estatística. 
+# Registros da informação quantitativa técnica mais especializada são conhecidos desde o século XV ({numref}`fig-milestones`), principalmente motivados pela cartografia e pelo pensamento estatístico. Entretanto, os relatos são incompletos e organizados em obras de autores fortemente ligados à matemática, astronomia e estatística. Na presente cronologia, consideramos apenas eventos ocorridos a partir do século XVII.
 # 
-# Na presente cronologia, consideramos apenas eventos ocorridos a partir do século XVII. 
+# ```{figure} ../figs/dataviz-milestones.png
+# ---
+# name: fig-milestones
+# alt: Marcos históricos da dataviz. 
+# align: center
+# width: 500px
+# ---
+# Marcos históricos da dataviz. 
+# ```
 
 # ### Período de 1600 - 1699
 # 
@@ -20,7 +28,7 @@
 # name: fig-langren
 # alt: Carte Figurative de Minard. Original.
 # align: center
-# width: 600px
+# width: 500px
 # ---
 # Gráfico de van Langren (1644) para determinação de distância, em longitude, da cidade de Toledo a Roma.
 # ```
@@ -94,7 +102,7 @@
 # name: fig-minard1
 # alt: Carte Figurative de Minard. Original.
 # align: center
-# width: 600px
+# width: 500px
 # ---
 # _Carte Figurative_ de Minard: ilustra a campanha militar de 1812 de Napoleão Bonaparte.  Original: ENPC, Multimedia Library
 # ```
@@ -104,7 +112,7 @@
 # name: fig-minard2
 # alt: Carte Figurative de Minard. Revision.
 # align: center
-# width: 600px
+# width: 500px
 # ---
 # _Carte Figurative_ de Minard: ilustra a campanha militar de 1812 de Napoleão Bonaparte. Revisão: Friendly, M.
 # ```
@@ -116,7 +124,7 @@
 # name: fig-playfair1
 # alt: Balança Comercial da Inglaterra.
 # align: center
-# width: 600px
+# width: 500px
 # ---
 # Balança comercial da Inglaterra.
 # ```
@@ -126,7 +134,7 @@
 # name: fig-playfair2
 # alt: Série temporal de preços e salários.
 # align: center
-# width: 600px
+# width: 500px
 # ---
 # Série temporal tripla: variação de preço do trigo, do salário semanal e do monarca reinante ao longo de 250 anos (1565 - 1820).
 # ```
@@ -139,6 +147,28 @@
 # width: 200px
 # ---
 # Dívida pública inglesa.
+# ```
+
+# - Gráfico circular ("coxcomb") de [Florence Nightingale](https://en.wikipedia.org/wiki/Florence_Nightingale) (1820 - 1910) sobre causas de mortalidade no exército britânico ({numref}`fig-nightingale1`, {numref}`fig-nightingale2`), disponíveis [aqui](https://www.datavis.ca/gallery/historical.php).
+# 
+# ```{figure} ../figs/nightingale1.png
+# ---
+# name: fig-nightingale1
+# alt: Gráfico circular ("coxcomb") - original de 1858.
+# align: center
+# width: 500px
+# ---
+# Gráfico circular ("coxcomb") - original de 1858. Nightingale, enfermeira no exército britânico descobriu que a mortalidade das tropas era causada principalmente por fatores não ligados às batalhas.
+# ```
+# 
+# ```{figure} ../figs/nightingale2.png
+# ---
+# name: fig-nightingale2
+# alt: Gráfico circular ("coxcomb") - reconstrução.
+# align: center
+# width: 500px
+# ---
+# Gráfico circular ("coxcomb") - reconstrução.
 # ```
 
 # ## Referências
