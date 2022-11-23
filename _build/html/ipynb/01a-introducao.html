@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Marcos Históricos da Visualização de Dados" href="01b-historico.html" />
@@ -340,6 +342,11 @@ title="Print to PDF"
      , o pensamento visual e o bom plot
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#os-principios-de-tufte">
+     1.4.3. Os princípios de Tufte
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -440,6 +447,11 @@ title="Print to PDF"
       Dataviz
      </em>
      , o pensamento visual e o bom plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#os-principios-de-tufte">
+     1.4.3. Os princípios de Tufte
     </a>
    </li>
   </ul>
@@ -547,7 +559,7 @@ title="Print to PDF"
 <div><p><em>Visualização de dados é a arte de combinar representações visuais e apresentações para facilitar a compreensão dos dados.</em></p>
 </div></blockquote>
 <p>A <em>representação visual</em> (<em>chart</em>) é o elemento que melhor se adéqua ao que se pretende comunicar. <em>Charts</em> têm <em>marcadores</em> e <em>atributos</em> como seus fundamentos, como veremos em capítulos posteriores. A <em>apresentação visual</em> concerne a todas as outras tomadas de decisão de design que constituem a anatomia da visualização, tais como a seleção da paleta de cores, a composição da obra e as características das anotações. Ambas constituem a parcela artística do autor e o âmago da disciplina. A execução disso tudo independe da ferramenta técnica utilizada. Existem diversos sistemas, pacotes, bibliotecas e linguagens disponíveis, sendo R e Python as linguagens de programação preferidas dos analistas de dados.</p>
-<p>Por outro lado, a parte final da definição, que diz respeito à <em>compreensão facilitada</em> dos dados, tem a ver com o processo de captura da mensagem lançada pelo contador de história (<em>storyteller</em>) ao espectador (<em>viewer</em>). Este processo envolve 3 etapas cognitivas (<a class="reference internal" href="#fig-comprehension"><span class="std std-numref">Fig. 1.1</span></a>, adaptada de <span id="id1">[<a class="reference internal" href="#id5" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>):</p>
+<p>Por outro lado, a parte final da definição, que diz respeito à <em>compreensão facilitada</em> dos dados, tem a ver com o processo de captura da mensagem lançada pelo contador de história (<em>storyteller</em>) ao espectador (<em>viewer</em>). Este processo envolve 3 etapas cognitivas (<a class="reference internal" href="#fig-comprehension"><span class="std std-numref">Fig. 1.1</span></a>, adaptada de <span id="id1">[<a class="reference internal" href="#id7" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>):</p>
 <ol class="simple">
 <li><p><em>Percepção</em> (o que vejo?)</p></li>
 <li><p><em>Interpretação</em> (o que significa?)</p></li>
@@ -561,7 +573,7 @@ title="Print to PDF"
 </figure>
 <section id="figuras-feias-ruins-e-erradas">
 <h3><span class="section-number">1.4.1. </span>Figuras feias, ruins e erradas<a class="headerlink" href="#figuras-feias-ruins-e-erradas" title="Permalink to this headline">#</a></h3>
-<p>Diferentes versões de figuras com a mesma representação visual subjacente podem existir (<a class="reference internal" href="#fig-ugly"><span class="std std-numref">Fig. 1.2</span></a>, adaptada de <span id="id2">[<a class="reference internal" href="#id6" title="Claus O Wilke. Fundamentals of data visualization: a primer on making informative and compelling figures. O'Reilly Media, 2019.">Wilke, 2019</a>]</span>). Porém, uma delas pode ser <em>feia</em>, outra pode ser <em>ruim</em> e outra pode ser <em>errada</em>. Esse mecanismo tripartite é um exemplo de como podemos fazer julgamentos de trabalhos visuais. Segundo Claus Wilke, uma figura:</p>
+<p>Diferentes versões de figuras com a mesma representação visual subjacente podem existir (<a class="reference internal" href="#fig-ugly"><span class="std std-numref">Fig. 1.2</span></a>, adaptada de <span id="id2">[<a class="reference internal" href="#id8" title="Claus O Wilke. Fundamentals of data visualization: a primer on making informative and compelling figures. O'Reilly Media, 2019.">Wilke, 2019</a>]</span>). Porém, uma delas pode ser <em>feia</em>, outra pode ser <em>ruim</em> e outra pode ser <em>errada</em>. Esse mecanismo tripartite é um exemplo de como podemos fazer julgamentos de trabalhos visuais. Segundo Claus Wilke, uma figura:</p>
 <ul class="simple">
 <li><p><em>feia</em> é aquela que tem problemas estéticos, apesar de clara e informativa.</p></li>
 <li><p><em>ruim</em> é aquela que tem problemas relacionados à percepção, tais como obscuridade, confusão, complicações e enganação.</p></li>
@@ -581,13 +593,40 @@ title="Print to PDF"
 <section id="dataviz-o-pensamento-visual-e-o-bom-plot">
 <h3><span class="section-number">1.4.2. </span><em>Dataviz</em>, o pensamento visual e o bom plot<a class="headerlink" href="#dataviz-o-pensamento-visual-e-o-bom-plot" title="Permalink to this headline">#</a></h3>
 <p>A era da informação hoje entende que a visualização de dados, comumente conhecida pelo pseudônimo <em>dataviz</em> (de <em>data visualization</em>), é uma disciplina obrigatória para um novo modo de pensar: o <em>pensamento visual</em> – a propósito, deste ponto em diante, vamos nos referir à visualização de dados por essa forma elegante reduzida. No mundo dos negócios, pensar visualmente é ser capaz de construir representações visuais com grande potencial atrativo. Para empresas competitivas, a mensagem clara e acessível transmitida graficamente é uma das grandes vantagens de <em>marketing</em>.</p>
-<p>Como já dissemos, adjetivar um plot com características visuais apreciáveis como “bom” é uma questão de seguir princípios que ajudam a definir por que construi-lo de um jeito e não de outro. A <em>Matriz da Boa Representação Visual</em> (<a class="reference internal" href="#fig-good-charts"><span class="std std-numref">Fig. 1.3</span></a>, adaptada de <span id="id3">[<a class="reference internal" href="#id7" title="Scott Berinato. The Harvard Business Review Good Charts Collection: Tips, tools, and exercises for creating powerful data visualizations. Harvard Business Press, 2019.">Berinato, 2019</a>]</span>), sugere que um plot considerado “bom” deve aproximar-se cada vez mais da quina superior direita, onde reside a perfeição.</p>
+<p>Como já dissemos, adjetivar um plot com características visuais apreciáveis como “bom” é uma questão de seguir princípios que ajudam a definir por que construi-lo de um jeito e não de outro. A <em>Matriz da Boa Representação Visual</em> (<a class="reference internal" href="#fig-good-charts"><span class="std std-numref">Fig. 1.3</span></a>, adaptada de <span id="id3">[<a class="reference internal" href="#id9" title="Scott Berinato. The Harvard Business Review Good Charts Collection: Tips, tools, and exercises for creating powerful data visualizations. Harvard Business Press, 2019.">Berinato, 2019</a>]</span>), sugere que um plot considerado “bom” deve aproximar-se cada vez mais da quina superior direita, onde reside a perfeição.</p>
 <figure class="align-center" id="fig-good-charts">
 <a class="reference internal image-reference" href="../_images/good-chart-matrix.png"><img alt="Matrix da Boa Representação Visual." src="../_images/good-chart-matrix.png" style="width: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Matrix da Boa Representação Visual. Preparada por: G.P. Oliveira.</span><a class="headerlink" href="#fig-good-charts" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="os-principios-de-tufte">
+<h3><span class="section-number">1.4.3. </span>Os princípios de Tufte<a class="headerlink" href="#os-principios-de-tufte" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://www.edwardtufte.com/tufte/">Edward Tufte</a>, um estatístico americano reconhecido como o maior expert em visualização de dados estatísticos da atualidade, escreveu diversos livros sobre excelência visual, visualização da informação quantitativa e arte em imagens. Tufte destaca uma série de critérios que, se obedecidos, garantirão excelentes plots e gráficos. Ele defende que uma representação visual eficaz mistura substância, estatística e arte (design), caracterizando-se como uma apresentação bem elaborada de dados interessantes. Para Tufte, o espectador deve compreender o maior número de ideias em um intervalo de tempo curto olhando para algo que usa pouca tinta e ocupa o menor espaço possível.</p>
+<p>Na visão de Tufte (<span id="id4">[<a class="reference internal" href="#id12" title="Edward R Tufte. The visual display of quantitative information. The Journal for Healthcare Quality (JHQ), 7(3):15, 1985.">Tufte, 1985</a>]</span>,<span id="id5">[<a class="reference internal" href="#id13" title="Edward R Tufte, Nora Hillman Goeler, and Richard Benson. Envisioning information. Volume 126. Graphics press Cheshire, CT, 1990.">Tufte <em>et al.</em>, 1990</a>]</span>), a representação visual excelente deve:</p>
+<ul class="simple">
+<li><p>apresentar dados;</p></li>
+<li><p>induzir o espectador a pensar a substância da representação visual e não os métodos ou técnicas que a estruturaram;</p></li>
+<li><p>evitar distorcer os dados;</p></li>
+<li><p>apresentar muitos números em um espaço mínimo;</p></li>
+<li><p>tornar grandes dados coerentes;</p></li>
+<li><p>encorajar os olhos a compararem diferentes partes dos dados;</p></li>
+<li><p>revelar os dados em vários níveis de detalhe, do mais amplo ao mais específico;</p></li>
+<li><p>servir a um propósito claro: descrever, explorar, tabelar e decorar; e</p></li>
+<li><p>estar estreitamente vinculada às descrições estatísticas e verbais dos dados.</p></li>
+</ul>
+<p>Alguns princípios fundamentais de Tufte incorporam todas as expectativas acima:</p>
+<ul class="simple">
+<li><p><em>Integridade visual</em>: a figura não deve, de forma alguma, distorcer ou criar falsas interpretações dos dados. Isto significa que quantidades numéricas devem ser proporcionais aos elementos contidos na superfície da figura. Variações nos dados são permitidas, mas variações da figura não. Adicionalmente, deve-se manter o número de dimensões da imagem em quantidade igual ou inferior as contidas nos dados. Legendas devem ser usadas sem distorção ou ambiguidade. Tufte enfatiza que representações visuais de excelência projetadas por artistas sem nenhuma competência estatística são raras, já que a tendência de se produzir artefatos artísticos ambíguos é consideravelmente alta.</p></li>
+<li><p><em>Maximização da razão “tinta-dados”: para Tufte, o <em>storyteller</em> precisa atentar para a quantidade de elementos agregados em uma representação visual. Sobrecarregar a interpretação do leitor com elementos geométricos, bordas, cores de fundo, efeitos 3D, entre outros adereços, é um ponto negativo para a compreensão final. A maneira sugerida de controlar a superfluidade visual é calcular a quantidade de tinta necessária para representar os dados reais sem ambiguidade e comparar com a quantidade de tinta utilizada para enriquecer a figura com decorações. A equação para o que Tufte chamou de razão “tinta-dados”</em> (<em>data-ink ratio</em>), aqui denotada por <span class="math notranslate nohighlight">\(\text{RTD}\)</span> é:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{RTD} = \dfrac{d - t}{T},\]</div>
+<p>onde <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, e <span class="math notranslate nohighlight">\(T\)</span> denotam, nesta ordem, a quantidade de tinta usada para os dados, para os adereços e para ambos, no total. Maximizar a <span class="math notranslate nohighlight">\(\text{RTD}\)</span> implica em eliminar do visual aquilo que é inútil ou não essencial.</p>
+<ul class="simple">
+<li><p><em>Estética</em>: a elegância visual só pode ser atingida ao se equilibrar a complexidade dos dados com a simplicidade do design. Para criarmos representações visuais com alto nível de profisssionalismo, é preciso muita dedicação, atenção e esmero de projeto. Ou seja, a estética perfeita só é atingida com pleno domínio do ferramental técnico e criatividade.</p></li>
+</ul>
 </section>
 </section>
 <section id="ferramentas-tecnicas-do-curso">
@@ -669,7 +708,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01a-introducao_11_0.png" src="../_images/01a-introducao_11_0.png" />
+<img alt="../_images/01a-introducao_12_0.png" src="../_images/01a-introducao_12_0.png" />
 </div>
 </div>
 <div class="important admonition">
@@ -720,15 +759,21 @@ científico <a class="reference external" href="https://ieeexplore.ieee.org/docu
 </section>
 <section id="referencias">
 <h2><span class="section-number">1.7. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id4">
+<div class="docutils container" id="id6">
 <dl class="citation">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">Ber19</a></span></dt>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id3">Ber19</a></span></dt>
 <dd><p>Scott Berinato. <em>The Harvard Business Review Good Charts Collection: Tips, tools, and exercises for creating powerful data visualizations</em>. Harvard Business Press, 2019.</p>
 </dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">Kir16</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">Kir16</a></span></dt>
 <dd><p>Andy Kirk. <em>Data visualisation: A handbook for data driven design</em>. Sage, 2016.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">Wil19</a></span></dt>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">Tuf85</a></span></dt>
+<dd><p>Edward R Tufte. The visual display of quantitative information. <em>The Journal for Healthcare Quality (JHQ)</em>, 7(3):15, 1985.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id5">TGB90</a></span></dt>
+<dd><p>Edward R Tufte, Nora Hillman Goeler, and Richard Benson. <em>Envisioning information</em>. Volume 126. Graphics press Cheshire, CT, 1990.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">Wil19</a></span></dt>
 <dd><p>Claus O Wilke. <em>Fundamentals of data visualization: a primer on making informative and compelling figures</em>. O'Reilly Media, 2019.</p>
 </dd>
 </dl>
