@@ -61,13 +61,12 @@ display(HTML('course-treemap.html'))
 
 # ## Conteúdo 
 # 
-# 
-# 
 # ### Módulo 1: Fundamentos (20h)
 # 
 # - Conteúdo (18h)
 #     - [Introdução à Visualização de Dados](01a-introducao.ipynb) (1h)
 #     - [Marcos Históricos da Visualização de Dados](01b-historico.ipynb) (1h)
+#     - [Criação de Representações Visuais e Estética](01b-historico.ipynb) (2h)
 # - Avaliação (2h)
 #     - Relatório de estudo de caso 1 (2h)
 # 

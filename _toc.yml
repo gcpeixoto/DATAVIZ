@@ -6,6 +6,7 @@ parts:
     chapters:
     - file: ipynb/01a-introducao.ipynb
     - file: ipynb/01b-historico.ipynb
+    - file: ipynb/02-estetica.ipynb
   - caption: Avaliação
     numbered: false
     chapters:
