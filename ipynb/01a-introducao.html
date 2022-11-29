@@ -132,6 +132,11 @@ const thebe_selector_output = ".output, .cell_output"
    2. Marcos Históricos da Visualização de Dados
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -619,7 +624,7 @@ title="Print to PDF"
 <p>Alguns princípios fundamentais de Tufte incorporam todas as expectativas acima:</p>
 <ul class="simple">
 <li><p><em>Integridade visual</em>: a figura não deve, de forma alguma, distorcer ou criar falsas interpretações dos dados. Isto significa que quantidades numéricas devem ser proporcionais aos elementos contidos na superfície da figura. Variações nos dados são permitidas, mas variações da figura não. Adicionalmente, deve-se manter o número de dimensões da imagem em quantidade igual ou inferior as contidas nos dados. Legendas devem ser usadas sem distorção ou ambiguidade. Tufte enfatiza que representações visuais de excelência projetadas por artistas sem nenhuma competência estatística são raras, já que a tendência de se produzir artefatos artísticos ambíguos é consideravelmente alta.</p></li>
-<li><p><em>Maximização da razão “tinta-dados”: para Tufte, o <em>storyteller</em> precisa atentar para a quantidade de elementos agregados em uma representação visual. Sobrecarregar a interpretação do leitor com elementos geométricos, bordas, cores de fundo, efeitos 3D, entre outros adereços, é um ponto negativo para a compreensão final. A maneira sugerida de controlar a superfluidade visual é calcular a quantidade de tinta necessária para representar os dados reais sem ambiguidade e comparar com a quantidade de tinta utilizada para enriquecer a figura com decorações. A equação para o que Tufte chamou de razão “tinta-dados”</em> (<em>data-ink ratio</em>), aqui denotada por <span class="math notranslate nohighlight">\(\text{RTD}\)</span> é:</p></li>
+<li><p><em>Maximização da razão “tinta-dados”</em>: para Tufte, o <em>storyteller</em> precisa atentar para a quantidade de elementos agregados em uma representação visual. Sobrecarregar a interpretação do leitor com elementos geométricos, bordas, cores de fundo, efeitos 3D, entre outros adereços, é um ponto negativo para a compreensão final. A maneira sugerida de controlar a superfluidade visual é calcular a quantidade de tinta necessária para representar os dados reais sem ambiguidade e comparar com a quantidade de tinta utilizada para enriquecer a figura com decorações. A equação para o que Tufte chamou de razão “tinta-dados” (<em>data-ink ratio</em>), aqui denotada por <span class="math notranslate nohighlight">\(\text{RTD}\)</span> é:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\text{RTD} = \dfrac{d - t}{T},\]</div>
@@ -729,12 +734,12 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="termos-para-dados">
-<h3><span class="section-number">1.6.2. </span>Termos para dados<a class="headerlink" href="#termos-para-dados" title="Permalink to this headline">#</a></h3>
+<span id="sec-termos-dados"></span><h3><span class="section-number">1.6.2. </span>Termos para dados<a class="headerlink" href="#termos-para-dados" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><em>Dado bruto</em>: estado inicial de um dado coletado, recebido ou baixado de um repositório ainda não tratado ou sujeito a análises (cf. <em>raw data</em>).</p></li>
 <li><p><em>Fonte</em>: origem do dado bruto utilizado para a visualização (cf. <em>data source</em>).</p></li>
 <li><p><em>Dataset</em>: uma tabela ou coleção de tabelas dispostas como um <em>array</em> computacional e organizadas em linhas (registros, instâncias ou itens) e colunas (variáveis, detalhes dos itens).</p></li>
-<li><p><em>Tipo</em>: a especificação de uma variável de tabela. Geralmente, um dado é <em>ordinal</em> (obedece a uma relação de ordem), <em>quantitativo</em> (manipulável por operações aritméticas) ou <em>categórico</em> (identificado por um atributo que o difere de outro).</p></li>
+<li><p><em>Tipo</em>: a especificação de uma variável de tabela. Geralmente, um dado é <em>ordinal</em> (obedece a uma relação de ordem), <em>numérico</em> (manipulável por operações aritméticas) ou <em>categórico</em> (identificado por um atributo que o difere de outro).</p></li>
 <li><p><em>Série</em>: sequência de valores assumidos por uma mesma variável em um <em>dataset</em>.</p></li>
 </ul>
 <div class="dropdown admonition">

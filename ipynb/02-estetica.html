@@ -1,0 +1,1280 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Criação de Representações Visuais e Estética &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modelo para Relátorio de Projeto Final" href="capstone-template.html" />
+    <link rel="prev" title="2. Marcos Históricos da Visualização de Dados" href="01b-historico.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliação
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capstone-template.html">
+   Modelo para Relátorio de Projeto Final
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/02-estetica.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/02-estetica.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelo-referencial">
+   3.1. Modelo referencial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dado-bruto">
+     3.1.1. Dado bruto
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-1-registros-cirurgicos-e-obstetricos-de-um-hospital">
+       3.1.1.1. Exemplo 1: registros cirúrgicos e obstétricos de um hospital
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-2-monitoramento-climatico-em-tempo-real">
+       3.1.1.2. Exemplo 2: monitoramento climático em tempo real
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#introspectando-arquivos-hdf">
+         3.1.1.2.1. Introspectando arquivos
+         <em>
+          HDF
+         </em>
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processamento">
+     3.1.2. Pré-Processamento
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-1-reorganizando-o-arquivo-de-registros-cirurgicos-e-obstetricos">
+       3.1.2.1. Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-2-acessando-dados-de-temperatura">
+       3.1.2.2. Exemplo 2: acessando dados de temperatura
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mapeamento">
+     3.1.3. Mapeamento
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#categorias-e-tipos-de-dados">
+       3.1.3.1. Categorias e tipos de dados
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#atributos-e-elementos-visuais">
+       3.1.3.2. Atributos e elementos visuais
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   3.2. Referências
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Criação de Representações Visuais e Estética</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelo-referencial">
+   3.1. Modelo referencial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dado-bruto">
+     3.1.1. Dado bruto
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-1-registros-cirurgicos-e-obstetricos-de-um-hospital">
+       3.1.1.1. Exemplo 1: registros cirúrgicos e obstétricos de um hospital
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-2-monitoramento-climatico-em-tempo-real">
+       3.1.1.2. Exemplo 2: monitoramento climático em tempo real
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#introspectando-arquivos-hdf">
+         3.1.1.2.1. Introspectando arquivos
+         <em>
+          HDF
+         </em>
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processamento">
+     3.1.2. Pré-Processamento
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-1-reorganizando-o-arquivo-de-registros-cirurgicos-e-obstetricos">
+       3.1.2.1. Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-2-acessando-dados-de-temperatura">
+       3.1.2.2. Exemplo 2: acessando dados de temperatura
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mapeamento">
+     3.1.3. Mapeamento
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#categorias-e-tipos-de-dados">
+       3.1.3.1. Categorias e tipos de dados
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#atributos-e-elementos-visuais">
+       3.1.3.2. Atributos e elementos visuais
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   3.2. Referências
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="criacao-de-representacoes-visuais-e-estetica">
+<h1><span class="section-number">3. </span>Criação de Representações Visuais e Estética<a class="headerlink" href="#criacao-de-representacoes-visuais-e-estetica" title="Permalink to this headline">#</a></h1>
+<p>Neste capítulo, consideraremos o modelo básico para representação visual, rudimentos das representações visuais em uma, duas e três dimensões, tipos de dados e estética.</p>
+<section id="modelo-referencial">
+<h2><span class="section-number">3.1. </span>Modelo referencial<a class="headerlink" href="#modelo-referencial" title="Permalink to this headline">#</a></h2>
+<p>A geração de representações visuais através do computador segue um modelo referencial geralmente descrito pelas seguintes componentes:</p>
+<ul class="simple">
+<li><p><em>Entrada</em>: dado bruto à disposição do <em>storyteller</em> que será manipulado para produzir um visual.</p></li>
+<li><p><em>Pré-Processamento</em>: etapa secundária de preparação e tratamento dos dados.</p></li>
+<li><p><em>Mapeamento</em>: etapa terciária onde são definidos o projeto gráfico, as estruturas visuais e o mapeamento de valores em formas quantificadas que determinarão a <em>estética</em>.</p></li>
+<li><p><em>Visualização</em>: etapa finalística que entrega o produto final, isto é, a própria representação visual.</p></li>
+</ul>
+<p>A figura abaixo – criada através de objetos <code class="docutils literal notranslate"><span class="pre">patch</span></code> do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> – ilustra o fluxograma do modelo referencial. Como podemos ver pelo código acompanhante, a representação visual é totalmente gerada via Python e não passou por nenhum outro software de desenho. Este exemplo é uma constatação de quão poderoso o <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> é. Porém, criar figuras de maneira elementar exige tempo e dedicação. Nem sempre será necessário seguir este caminho para criarmos bons gráficos, mas aplicar-se a conhecer a ferramenta em profundidade enaltece a capacidade técnica de engenharia visual.</p>
+<p>Detalharemos as etapas importantes nas subseções a seguir.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">clr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">pch</span>
+<span class="kn">from</span> <span class="nn">matplotlib.path</span> <span class="kn">import</span> <span class="n">Path</span>
+
+
+<span class="k">def</span> <span class="nf">draw_my_arrow</span><span class="p">(</span><span class="n">A1</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">B1</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">C1</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">D</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">C2</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">B2</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">A2</span><span class="p">:</span><span class="nb">tuple</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Desenha uma seta com 7 vértices com largura e comprimento controláveis.</span>
+
+<span class="sd">                C1</span>
+<span class="sd">                o .</span>
+<span class="sd">      A1      B1|   .</span>
+<span class="sd">      o - - - - o     .</span>
+<span class="sd">      |                 o D</span>
+<span class="sd">      o - - - - o     .</span>
+<span class="sd">      A2      B2|   .    </span>
+<span class="sd">                o .   </span>
+<span class="sd">                C2</span>
+
+<span class="sd">      Larg. corpo: m(A1A2)</span>
+<span class="sd">      Compr. corpo: m(A1B1)</span>
+<span class="sd">      Larg. cabeça: m(B1C1)</span>
+<span class="sd">      Compr. cabeça: m(B1D)</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+
+      <span class="c1"># pontos</span>
+      <span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">A1</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">B2</span><span class="p">,</span> <span class="n">A2</span><span class="p">]</span> 
+      
+      <span class="c1"># caminho</span>
+      <span class="n">moves</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">MOVETO</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">]</span>
+
+      <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">moves</span><span class="p">)</span>
+
+<span class="c1"># mapa de cores XKCD</span>
+<span class="n">xkcd</span> <span class="o">=</span> <span class="n">clr</span><span class="o">.</span><span class="n">XKCD_COLORS</span>
+
+<span class="c1"># parâmetros</span>
+<span class="n">x0</span><span class="p">,</span><span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>  <span class="c1"># origem</span>
+<span class="n">xa</span><span class="p">,</span><span class="n">ya</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="c1"># 100% da área da figura</span>
+<span class="n">L</span><span class="p">,</span><span class="n">H</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span>   <span class="c1"># tamanho da figura (polegadas)</span>
+
+<span class="c1"># propriedades de my_arrow</span>
+<span class="n">xmid</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.5</span>
+<span class="n">body_width</span><span class="p">,</span> <span class="n">body_length</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.02</span>
+<span class="n">head_width</span><span class="p">,</span> <span class="n">head_length</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.03</span>
+
+<span class="c1"># figura e eixo</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">H</span><span class="p">))</span> 
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xa</span><span class="p">,</span> <span class="n">ya</span><span class="p">],</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+<span class="sd">&#39;&#39;&#39;CRIAÇÃO DE ELEMENTOS VISUAIS&#39;&#39;&#39;</span>
+
+<span class="c1"># DADO BRUTO</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span> 
+        <span class="n">s</span><span class="o">=</span><span class="s1">&#39;Dado bruto&#39;</span><span class="p">,</span> 
+        <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+        <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:nasty green&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+              <span class="s1">&#39;boxstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pad&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+
+
+<span class="c1"># SETA 1</span>
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">draw_my_arrow</span><span class="p">(</span><span class="n">A1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">B1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">C1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">D</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span> <span class="o">+</span> <span class="n">head_length</span><span class="p">,</span> <span class="n">ymid</span><span class="p">),</span>
+              <span class="n">C2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">B2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">A2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+              <span class="p">)</span>
+
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">pch</span><span class="o">.</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">arrow</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span><span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
+
+
+<span class="c1"># PRÉ-PROCESSAMENTO</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.22</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span> 
+        <span class="n">s</span><span class="o">=</span><span class="s1">&#39;Pré-processamento&#39;</span><span class="p">,</span> 
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:algae green&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> 
+              <span class="s1">&#39;boxstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pad&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+
+
+<span class="c1"># SETA 2</span>
+<span class="n">xmid</span> <span class="o">+=</span> <span class="mf">0.29</span>
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">draw_my_arrow</span><span class="p">(</span><span class="n">A1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">B1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">C1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">D</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span> <span class="o">+</span> <span class="n">head_length</span><span class="p">,</span> <span class="n">ymid</span><span class="p">),</span>
+              <span class="n">C2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">B2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">A2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+              <span class="p">)</span>
+
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">pch</span><span class="o">.</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">arrow</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span><span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
+
+<span class="c1"># MAPEAMENTO</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span> 
+        <span class="n">s</span><span class="o">=</span><span class="s1">&#39;Mapeamento&#39;</span><span class="p">,</span> 
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:nasty green&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> 
+              <span class="s1">&#39;boxstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pad&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+
+<span class="c1"># SETA 3</span>
+<span class="n">xmid</span> <span class="o">+=</span> <span class="mf">0.23</span>
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">draw_my_arrow</span><span class="p">(</span><span class="n">A1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">B1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">C1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">D</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span> <span class="o">+</span> <span class="n">head_length</span><span class="p">,</span> <span class="n">ymid</span><span class="p">),</span>
+              <span class="n">C2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">B2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">A2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+              <span class="p">)</span>
+
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">pch</span><span class="o">.</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">arrow</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span><span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
+
+
+<span class="c1"># VISUALIZAÇÃO</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.74</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span> 
+        <span class="n">s</span><span class="o">=</span><span class="s1">&#39;Visualização&#39;</span><span class="p">,</span> 
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:dark green&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> 
+              <span class="s1">&#39;boxstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pad&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+
+<span class="c1"># SETA 4</span>
+<span class="n">xmid</span> <span class="o">+=</span> <span class="mf">0.22</span>
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">draw_my_arrow</span><span class="p">(</span><span class="n">A1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">B1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">C1</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">+</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">D</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span> <span class="o">+</span> <span class="n">head_length</span><span class="p">,</span> <span class="n">ymid</span><span class="p">),</span>
+              <span class="n">C2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">head_width</span><span class="p">),</span>
+              <span class="n">B2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span> <span class="o">+</span> <span class="n">body_length</span><span class="p">,</span> <span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+              <span class="n">A2</span><span class="o">=</span><span class="p">(</span><span class="n">xmid</span><span class="p">,</span><span class="n">ymid</span> <span class="o">-</span> <span class="n">body_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+              <span class="p">)</span>
+
+<span class="n">arrow</span> <span class="o">=</span> <span class="n">pch</span><span class="o">.</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">arrow</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span><span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arrow</span><span class="p">)</span>
+
+
+<span class="c1"># FIM</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.96</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span> 
+        <span class="n">s</span><span class="o">=</span><span class="s1">&#39;Fim&#39;</span><span class="p">,</span> 
+        <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+        <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:army green&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="n">xkcd</span><span class="p">[</span><span class="s1">&#39;xkcd:almost black&#39;</span><span class="p">],</span> 
+              <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+              <span class="s1">&#39;boxstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pad&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-estetica_3_0.png" src="../_images/02-estetica_3_0.png" />
+</div>
+</div>
+<section id="dado-bruto">
+<h3><span class="section-number">3.1.1. </span>Dado bruto<a class="headerlink" href="#dado-bruto" title="Permalink to this headline">#</a></h3>
+<p>Empregamos o termo “dado bruto” (ou “dado cru”) para fazer referência a toda sorte de dado disponível no mundo que não passou por nenhum processo de tratamento ou limpeza. Dados brutos raramente possuem uma estrutura lógica que facilita a compreensão de como estão organizados. Quando minimamente organizados, a melhor forma de manipulá-los é através de tabelas, serializações, ou outro formato apropriado capaz de gerar <em>datasets</em>.</p>
+<section id="exemplo-1-registros-cirurgicos-e-obstetricos-de-um-hospital">
+<h4><span class="section-number">3.1.1.1. </span>Exemplo 1: registros cirúrgicos e obstétricos de um hospital<a class="headerlink" href="#exemplo-1-registros-cirurgicos-e-obstetricos-de-um-hospital" title="Permalink to this headline">#</a></h4>
+<p>O arquivo <code class="docutils literal notranslate"><span class="pre">raw-data-hospital.txt</span></code> a seguir mostra um exemplo de dado bruto. Nele foram registrados os números de cirurgias (C) e partos (P) realizados nos blocos 1 (BLC1), 2 (BLC2) e 3 (BLC3) de um hospital público de grande porte no primeiro semestre de 2021 que levaram até 2 horas (I) ou mais do que 2 horas (II) de intervenção.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">raw</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">hospital</span><span class="o">.</span><span class="n">txt</span>
+<span class="p">:</span><span class="n">BLC1</span> <span class="mi">01</span><span class="o">/</span><span class="n">Fev</span><span class="o">/</span><span class="mi">2021</span> <span class="n">I</span> <span class="mi">30</span><span class="n">C</span> <span class="mi">2</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC2</span> <span class="mi">20</span><span class="o">/</span><span class="n">Fev</span><span class="o">/</span><span class="mi">2021</span> <span class="n">II</span> <span class="mi">0</span><span class="n">C</span> <span class="mi">3</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC1</span> <span class="mi">02</span><span class="o">/</span><span class="n">Mar</span><span class="o">/</span><span class="mi">2021</span> <span class="n">I</span> <span class="mi">0</span><span class="n">C</span> <span class="mi">1</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC3</span> <span class="mi">03</span><span class="o">/</span><span class="n">Mar</span><span class="o">/</span><span class="mi">2021</span> <span class="n">II</span> <span class="mi">0</span><span class="n">C</span> <span class="mi">0</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC1</span> <span class="mi">22</span><span class="o">/</span><span class="n">Abr</span><span class="o">/</span><span class="mi">2021</span> <span class="n">I</span> <span class="mi">7</span><span class="n">C</span> <span class="mi">2</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC1</span> <span class="mi">21</span><span class="o">-</span><span class="n">Abr</span><span class="o">/</span><span class="mi">2021</span> <span class="n">II</span> <span class="mi">1</span><span class="n">C</span> <span class="mi">0</span><span class="n">p</span>
+<span class="p">:</span><span class="n">BLC2</span> <span class="mi">12</span><span class="o">-</span><span class="n">Mai</span><span class="o">/</span><span class="mi">2021</span> <span class="n">I</span> <span class="mi">22</span><span class="n">C</span> <span class="mi">10</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC3</span> <span class="mi">22</span><span class="o">-</span><span class="n">Mai</span><span class="o">/</span><span class="mi">2021</span> <span class="n">II</span> <span class="mi">1</span><span class="n">C</span> <span class="mi">5</span><span class="n">P</span>
+<span class="p">:</span><span class="n">BLC3</span> <span class="mi">11</span><span class="o">/</span><span class="mi">06</span><span class="o">/</span><span class="mi">2021</span> <span class="n">I</span> <span class="mi">36</span><span class="n">C</span> <span class="mi">1</span><span class="n">P</span>
+<span class="p">:</span><span class="n">blc2</span> <span class="mi">01</span><span class="o">/</span><span class="mi">06</span><span class="o">/</span><span class="mi">2021</span> <span class="n">II</span> <span class="mi">11</span><span class="n">C</span> <span class="mi">22</span><span class="n">P</span>
+<span class="o">.</span><span class="n">blc1</span> <span class="mf">12.</span><span class="n">Jun</span><span class="mf">.2021</span> <span class="n">I</span> <span class="mi">33</span><span class="n">c</span> <span class="mi">20</span><span class="n">P</span>
+<span class="o">.</span><span class="n">blc2</span> <span class="mf">30.</span><span class="n">Jun</span><span class="mf">.2021</span> <span class="n">II</span> <span class="mi">0</span><span class="n">C</span> <span class="mi">17</span><span class="n">P</span>
+<span class="o">.</span><span class="n">blc1</span> <span class="mf">15.</span><span class="n">Jun</span><span class="mf">.2021</span> <span class="n">I</span> <span class="mi">42</span><span class="n">c</span> <span class="mi">32</span><span class="n">P</span>
+</pre></div>
+</div>
+<p>Como podemos ver pelo conteúdo, é difícil ter uma visualização clara das informações nele contidas. Além disso, ele possui uma diversidade de inconsistências de caracteres, produzindo uma formatação não padronizada. Antes de o utilizarmos para propósitos de visualização, devemos realizar operações de tratamento.</p>
+</section>
+<section id="exemplo-2-monitoramento-climatico-em-tempo-real">
+<h4><span class="section-number">3.1.1.2. </span>Exemplo 2: monitoramento climático em tempo real<a class="headerlink" href="#exemplo-2-monitoramento-climatico-em-tempo-real" title="Permalink to this headline">#</a></h4>
+<p>Há ocasiões em que arquivos bem estruturados estão disponíveis, mas, mesmo assim, é preciso algum tipo de manipulação para extrair deles a visualização desejada. Abaixo temos um extrato do arquivo <code class="docutils literal notranslate"><span class="pre">NEONDSTowerTemperatureData.hdf5</span></code>, que possui registros de temperatura coletados por sensores localizados em torres de captação (<a class="reference internal" href="#fig-neontower"><span class="std std-numref">Fig. 3.1</span></a>) de dois domínios ecoclimáticos terrestres dos EUA (03: Flórida e 10: Colorado).</p>
+<p>O arquivo pleno pode ser baixado do site da <a class="reference external" href="https://www.neonscience.org/resources/learning-hub/tutorials/explore-data-hdfview">National Ecolological Observatory Network</a>. Trata-se de um dado formatado hierarquicamente, com extensão <code class="docutils literal notranslate"><span class="pre">hdf</span></code> (<em>Hierarchical Data Format</em>). Arquivos HDF podem ser entendidos como um grande diretório compactado que pode conter uma árvore de subdiretórios em muitos níveis. Eles possuem <em>datasets</em> contendo objetos e atributos que podem ser agrupados e linkados internamente de forma variada. Neste curso, não faremos uma análise profunda sobre este formato, mas daremos exemplos de uso.</p>
+<figure class="align-center" id="fig-neontower">
+<a class="reference internal image-reference" href="../_images/NEONtower.png"><img alt="Torre de monitoramento." src="../_images/NEONtower.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Torre de monitoramento climático com sensores (<em>boom</em>) distribuídos em 4 diferentes alturas e o quinto sensor posicionado no topo da torre, para captação de temperatura dos domínios ecoclimáticos terrestres americanos. Fonte: National Ecological Observatory Network/EUA.</span><a class="headerlink" href="#fig-neontower" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importa módulo para ler HDF</span>
+<span class="kn">import</span> <span class="nn">h5py</span> <span class="k">as</span> <span class="nn">h5</span>
+
+<span class="c1"># lê arquivo</span>
+<span class="n">file_hdf</span> <span class="o">=</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;../data/NEONDSTowerTemperatureData.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="c1"># imprime valores na hierarquia do domínio &#39;03: Flórida&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file_hdf</span><span class="p">[</span><span class="s1">&#39;Domain_03&#39;</span><span class="p">][</span><span class="s1">&#39;OSBS&#39;</span><span class="p">][</span><span class="s1">&#39;min_1&#39;</span><span class="p">][</span><span class="s1">&#39;boom_1&#39;</span><span class="p">][</span><span class="s1">&#39;temperature&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(b&#39;2014-04-01 00:00:00.0&#39;, 60, 15.061538, 14.968861, 15.156247, 0.002655, 0.006652, 0.016203)
+(b&#39;2014-04-01 00:01:00.0&#39;, 60, 14.998578, 14.937197, 15.042743, 0.001254, 0.004572, 0.013061)
+(b&#39;2014-04-01 00:02:00.0&#39;, 60, 15.262313, 15.035021, 15.566826, 0.041438, 0.02628, 0.053497)
+(b&#39;2014-04-01 00:03:00.0&#39;, 60, 15.453514, 15.385535, 15.534492, 0.001175, 0.004425, 0.012868)
+(b&#39;2014-04-01 00:04:00.0&#39;, 60, 15.353062, 15.237991, 15.423458, 0.003526, 0.007666, 0.017884)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A tupla armazena, nesta ordem: data e hora da medição, número de pontos de cálculo das estatísticas (60 segundos), temperaturas média, mínima e máxima (por minuto), variância, erro e incerteza. Mesmo assim, para produzirmos alguma visualização útil, temos que perscrutar o arquivo e entender cada um de seus atributos.</p>
+<section id="introspectando-arquivos-hdf">
+<h5><span class="section-number">3.1.1.2.1. </span>Introspectando arquivos <em>HDF</em><a class="headerlink" href="#introspectando-arquivos-hdf" title="Permalink to this headline">#</a></h5>
+<p>A visualização da “árvore” de um arquivo HDF é possível via interface ou linha de comando. No primeiro caso, basta fazer o download da ferramenta <a class="reference external" href="https://www.hdfgroup.org/downloads/hdfview/">HDF View</a> e seguir o guia do usuário. No segundo caso, há pelo menos dois modos práticos:</p>
+<ul class="simple">
+<li><p><strong>Modo 1</strong>: usando uma função definida pelo usuário para impressão dos objetos e atributos:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># leitura do arquivo</span>
+<span class="n">file_hdf</span> <span class="o">=</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;../data/NEONDSTowerTemperatureData.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="c1"># função para imprimir conteúdo do arquivo &#39;file_hdf&#39;</span>
+<span class="k">def</span> <span class="nf">print_h5_tree</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">attrs</span><span class="p">))</span>
+
+<span class="c1"># chamada</span>
+<span class="n">file_hdf</span><span class="o">.</span><span class="n">visititems</span><span class="p">(</span><span class="n">print_h5_tree</span><span class="p">)</span>    
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Modo 2</strong>: usando o pacote <code class="docutils literal notranslate"><span class="pre">nexusformat</span></code> – instalável via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nexusformat</span></code> —, que lida com o formato <a class="reference external" href="https://www.nexusformat.org">NeXus</a>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># importação da função `nxload`</span>
+<span class="kn">from</span> <span class="nn">nexusformat.nexus</span> <span class="kn">import</span> <span class="n">nxload</span>
+
+<span class="c1"># leitura do arquivo</span>
+<span class="n">hdf5</span> <span class="o">=</span> <span class="n">nxload</span><span class="p">(</span><span class="s1">&#39;../data/NEONDSTowerTemperatureData.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># impressão</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hdf5</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="pre-processamento">
+<h3><span class="section-number">3.1.2. </span>Pré-Processamento<a class="headerlink" href="#pre-processamento" title="Permalink to this headline">#</a></h3>
+<p>Como já é sabido de cursos prévios sobre análise de dados, podemos realizar o <em>workflow</em> tradicional com <code class="docutils literal notranslate"><span class="pre">pandas</span></code> e outros módulos necessários para extração, limpeza, tratamento e carregamento dos dados, a fim de torná-los adequados para manuseio. Podemos aplicar operações de filtragem, <em>casting</em>, <em>splitting</em> de strings, renomeação de atributos, salvamento em formatos tabelares etc.</p>
+<p>Exercitando técnicas que já constam em nosso portifólio de conhecimento, podemos trabalhar sobre os arquivos dos exemplos anteriores para obter versões mais claras.</p>
+<section id="exemplo-1-reorganizando-o-arquivo-de-registros-cirurgicos-e-obstetricos">
+<h4><span class="section-number">3.1.2.1. </span>Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos<a class="headerlink" href="#exemplo-1-reorganizando-o-arquivo-de-registros-cirurgicos-e-obstetricos" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># leitura de arquivo</span>
+<span class="n">df_h</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/raw-data-hospital.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span><span class="s1">&#39;Cirurgias&#39;</span><span class="p">,</span><span class="s1">&#39;Partos&#39;</span><span class="p">])</span>
+
+<span class="c1"># remoção de inconsistências nas séries</span>
+<span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Bloco&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Bloco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;:BLC&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.BLC&#39;</span><span class="p">)</span>
+<span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="o">.</span>\
+                <span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;06&#39;</span><span class="p">,</span><span class="s1">&#39;Jun&#39;</span><span class="p">)</span><span class="o">.</span>\
+                <span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([A-Z][a-z][a-z])&#39;</span><span class="p">,</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Cirurgias&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Cirurgias&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Partos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_h</span><span class="p">[</span><span class="s1">&#39;Partos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+
+<span class="c1"># reindexação</span>
+<span class="n">df_h</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A tabela que resulta do processamento realizado pelo código acima é a seguinte:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bloco</th>
+      <th>Porte</th>
+      <th>Cirurgias</th>
+      <th>Partos</th>
+    </tr>
+    <tr>
+      <th>Data</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>01-fev-2021</th>
+      <td>1</td>
+      <td>I</td>
+      <td>30</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>20-fev-2021</th>
+      <td>2</td>
+      <td>II</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>02-mar-2021</th>
+      <td>1</td>
+      <td>I</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>03-mar-2021</th>
+      <td>3</td>
+      <td>II</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22-abr-2021</th>
+      <td>1</td>
+      <td>I</td>
+      <td>7</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>21-abr-2021</th>
+      <td>1</td>
+      <td>II</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12-mai-2021</th>
+      <td>2</td>
+      <td>I</td>
+      <td>22</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>22-mai-2021</th>
+      <td>3</td>
+      <td>II</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>11-jun-2021</th>
+      <td>3</td>
+      <td>I</td>
+      <td>36</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>01-jun-2021</th>
+      <td>2</td>
+      <td>II</td>
+      <td>11</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>12-jun-2021</th>
+      <td>1</td>
+      <td>I</td>
+      <td>33</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>30-jun-2021</th>
+      <td>2</td>
+      <td>II</td>
+      <td>0</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>15-jun-2021</th>
+      <td>1</td>
+      <td>I</td>
+      <td>42</td>
+      <td>32</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="exemplo-2-acessando-dados-de-temperatura">
+<h4><span class="section-number">3.1.2.2. </span>Exemplo 2: acessando dados de temperatura<a class="headerlink" href="#exemplo-2-acessando-dados-de-temperatura" title="Permalink to this headline">#</a></h4>
+<p>Como o arquivo HDF possui uma hierarquia bem definida, podemos usar <code class="docutils literal notranslate"><span class="pre">keys</span></code> para acessar os <em>datasets</em> e usar métodos do <code class="docutils literal notranslate"><span class="pre">numpy</span></code> e do <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para recuperar a estrutura e criar os <em>dataframes</em> diretamente.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
+
+<span class="c1"># conversão para array e posterior criação do dataframe</span>
+<span class="n">df_t</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">file_hdf</span><span class="p">[</span><span class="s1">&#39;Domain_10&#39;</span><span class="p">][</span><span class="s1">&#39;STER&#39;</span><span class="p">][</span><span class="s1">&#39;min_1&#39;</span><span class="p">][</span><span class="s1">&#39;boom_2&#39;</span><span class="p">][</span><span class="s1">&#39;temperature&#39;</span><span class="p">]))</span>
+<span class="n">df_t</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>numPts</th>
+      <th>mean</th>
+      <th>min</th>
+      <th>max</th>
+      <th>variance</th>
+      <th>stdErr</th>
+      <th>uncertainty</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b'2014-04-01 00:00:00.0'</th>
+      <td>60</td>
+      <td>6.398707</td>
+      <td>6.347253</td>
+      <td>6.440027</td>
+      <td>0.001093</td>
+      <td>0.004269</td>
+      <td>0.012512</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-01 00:01:00.0'</th>
+      <td>60</td>
+      <td>6.375695</td>
+      <td>6.305179</td>
+      <td>6.439385</td>
+      <td>0.002014</td>
+      <td>0.005793</td>
+      <td>0.014728</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-01 00:02:00.0'</th>
+      <td>60</td>
+      <td>6.360941</td>
+      <td>6.293467</td>
+      <td>6.430070</td>
+      <td>0.002428</td>
+      <td>0.006361</td>
+      <td>0.015624</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-01 00:03:00.0'</th>
+      <td>60</td>
+      <td>6.384913</td>
+      <td>6.336319</td>
+      <td>6.418260</td>
+      <td>0.000289</td>
+      <td>0.002193</td>
+      <td>0.010185</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-01 00:04:00.0'</th>
+      <td>60</td>
+      <td>6.283479</td>
+      <td>6.236615</td>
+      <td>6.332181</td>
+      <td>0.000531</td>
+      <td>0.002975</td>
+      <td>0.010937</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-03 23:56:00.0'</th>
+      <td>60</td>
+      <td>6.495163</td>
+      <td>6.486047</td>
+      <td>6.513575</td>
+      <td>0.000053</td>
+      <td>0.000941</td>
+      <td>0.009399</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-03 23:57:00.0'</th>
+      <td>60</td>
+      <td>6.475617</td>
+      <td>6.460469</td>
+      <td>6.497839</td>
+      <td>0.000119</td>
+      <td>0.001411</td>
+      <td>0.009627</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-03 23:58:00.0'</th>
+      <td>60</td>
+      <td>6.464438</td>
+      <td>6.456761</td>
+      <td>6.471775</td>
+      <td>0.000020</td>
+      <td>0.000573</td>
+      <td>0.009280</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-03 23:59:00.0'</th>
+      <td>60</td>
+      <td>6.483857</td>
+      <td>6.464980</td>
+      <td>6.511195</td>
+      <td>0.000177</td>
+      <td>0.001716</td>
+      <td>0.009820</td>
+    </tr>
+    <tr>
+      <th>b'2014-04-04 00:00:00.0'</th>
+      <td>60</td>
+      <td>6.534577</td>
+      <td>6.512014</td>
+      <td>6.543662</td>
+      <td>0.000088</td>
+      <td>0.001208</td>
+      <td>0.009519</td>
+    </tr>
+  </tbody>
+</table>
+<p>4323 rows × 7 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="mapeamento">
+<h3><span class="section-number">3.1.3. </span>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h3>
+<p>O mapeamento visual é definido pelo processo de transferir os dados para a área de visualização e exibi-los através de estruturas visuais adequadas. Há muitos dados <em>abstratos</em>, cuja natureza não se vincula a uma estrutura topológica (forma) ou a uma localização geográfica. Nesses casos, a estrutura visual mais adequada pode não ser imediata.</p>
+<p>Por exemplo, as temperaturas coletadas do monitoramento ambiental são diretamente associadas com uma localização geográfica dentro do território americano. Os dados de registro hospitalar, embora também possam ser associados a um local físico (hospital), o local é desconhecido. Casos como este não possuem correspondência imediaata com dimensões. Outro exemplo de dado abstrato é, por exemplo, o consumo quilômetro/litro de automóveis que rodam a gasolina.</p>
+<p>Há três estruturas fundamentais que consolidam o mapeamento visual:</p>
+<ul class="simple">
+<li><p><em>substrato espacial</em>: define as dimensões do espaço físico onde a representação visual é criada (eixos Cartesianos, por exemplo);</p></li>
+<li><p><em>elementos gráficos</em>: caracterizam os elementos visuais que aparecem no espaço;</p></li>
+<li><p><em>propriedades gráficas</em>: definem-se pelas propriedades dos elementos gráficos às quais o olho humano (retina) são sensíveis. São também conhecidos como <em>atributos visuais</em>.</p></li>
+</ul>
+<section id="categorias-e-tipos-de-dados">
+<h4><span class="section-number">3.1.3.1. </span>Categorias e tipos de dados<a class="headerlink" href="#categorias-e-tipos-de-dados" title="Permalink to this headline">#</a></h4>
+<p>Na <a class="reference internal" href="01a-introducao.html#sec-termos-dados"><span class="std std-numref">Seção 1.6.2</span></a>, elencamos algumas definições para tipos de dados. Neste ponto, vale acomodar o espectro das definições para considerar duas categorias principais e algumas subcategorias da seguinte forma:</p>
+<ul class="simple">
+<li><p><strong>Dado quantitativo</strong></p>
+<ul>
+<li><p><em>Numérico contínuo</em>: valores numéricos (inteiros, racionais, reais);</p></li>
+<li><p><em>Numérico discreto</em>: comumemente inteiros, mas podem ser fracionários quando não há valores intervalares a considerar;</p></li>
+</ul>
+</li>
+<li><p><strong>Dado qualitativo</strong></p>
+<ul>
+<li><p><em>Categórico não ordenado</em>: discretos e sem ordem natural. Também chamado de <em>fatores</em>.</p></li>
+<li><p><em>Categório ordenado</em> (ordinal): discretos e ordenados. Também chamado de <em>fatores ordenados</em>.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Data</em>, <em>hora</em> e <em>texto</em> são casos especiais que não categorizaremos por, às vezes, se comportarem como quantitativos, qualitativos ou nenhuma das duas categorias.</p>
+<p>Alguns exemplos são vistos na <a class="reference internal" href="#tbl-tipos-dados"><span class="std std-numref">Tabela 3.1</span></a>.</p>
+<table class="colwidths-auto table" id="tbl-tipos-dados">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Tipos e categorias de dados.</span><a class="headerlink" href="#tbl-tipos-dados" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Categoria</p></th>
+<th class="text-align:left head"><p>Tipo</p></th>
+<th class="text-align:left head"><p>Exemplo</p></th>
+<th class="text-align:left head"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Quantitativo</p></td>
+<td class="text-align:left"><p>Numérico contínuo</p></td>
+<td class="text-align:left"><p>2.7,1.22,10,1e-5</p></td>
+<td class="text-align:left"><p>Valores numéricos arbitrários.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Quantitativo</p></td>
+<td class="text-align:left"><p>Numérico discreto</p></td>
+<td class="text-align:left"><p>1,2,3; 0.5,1.5, 2.5</p></td>
+<td class="text-align:left"><p>Números em unidades discretas. Fracionários em escalas especiais.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Qualitativo</p></td>
+<td class="text-align:left"><p>Categórico não ordenado</p></td>
+<td class="text-align:left"><p>mamífero, crustáceo, aracnídeo</p></td>
+<td class="text-align:left"><p>Categoria únicas, discretas e sem ordem aparente.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Qualitativo</p></td>
+<td class="text-align:left"><p>Categórico ordenado</p></td>
+<td class="text-align:left"><p>Péssimo, razoável, excelente</p></td>
+<td class="text-align:left"><p>Categoria únicas, discretas e com ordenamento por significado. “Razoável” é algo entre “péssimo” e “excelente”.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>-</p></td>
+<td class="text-align:left"><p>Numérico contínuo/Discreto</p></td>
+<td class="text-align:left"><p>23/03/1996, 13:22</p></td>
+<td class="text-align:left"><p>Podem ser “contínuos” se considerados em intervalos contíguos (datas sucessivas), ou discretos, se tomados particularmente.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>-</p></td>
+<td class="text-align:left"><p>-</p></td>
+<td class="text-align:left"><p>Tempos vividos não retornam; sim/talvez/não; jamais/sempre.</p></td>
+<td class="text-align:left"><p>Texto em formato livre não possui categoria definida. Em outras situações, pode ser considerado categórico, discreto.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="atributos-e-elementos-visuais">
+<h4><span class="section-number">3.1.3.2. </span>Atributos e elementos visuais<a class="headerlink" href="#atributos-e-elementos-visuais" title="Permalink to this headline">#</a></h4>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Jacques_Bertin">Jacques Bertin</a> estabeleceu os fundamentos teóricos para a visualização da informação elencando 7 atributos visuais:</p>
+<ul class="simple">
+<li><p>posição;</p></li>
+<li><p>tamanho;</p></li>
+<li><p>valor;</p></li>
+<li><p>textura;</p></li>
+<li><p>cor;</p></li>
+<li><p>orientação; e</p></li>
+<li><p>forma.</p></li>
+</ul>
+<p>Os elementos visuais possíveis são 4:</p>
+<ul class="simple">
+<li><p>ponto;</p></li>
+<li><p>linha;</p></li>
+<li><p>superfície; e</p></li>
+<li><p>volume.</p></li>
+</ul>
+<p>Entretanto, pesquisas mostram que a acurácia do olho humano para perceber valores quantitativos mapeados em elementos visuais varia progressivamente na seguinte ordem: cor e textura &gt; volume &gt; área &gt; orientação &gt; tamanho &gt; comprimento (<span id="id1">[<a class="reference internal" href="#id10" title="William S Cleveland and Robert McGill. Graphical perception: theory, experimentation, and application to the development of graphical methods. Journal of the American statistical association, 79(387):531–554, 1984.">Cleveland and McGill, 1984</a>]</span>).</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/02-estetica_22_0.png" src="../_images/02-estetica_22_0.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/02-estetica_23_0.png" src="../_images/02-estetica_23_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">3.2. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">CM84</a></span></dt>
+<dd><p>William S Cleveland and Robert McGill. Graphical perception: theory, experimentation, and application to the development of graphical methods. <em>Journal of the American statistical association</em>, 79(387):531–554, 1984.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01b-historico.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Marcos Históricos da Visualização de Dados</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="capstone-template.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modelo para Relátorio de Projeto Final</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
