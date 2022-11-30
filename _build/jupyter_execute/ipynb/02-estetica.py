@@ -289,7 +289,7 @@ for i in range(5):
 
 # #### Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos
 
-# In[221]:
+# In[665]:
 
 
 import pandas as pd
@@ -309,7 +309,7 @@ df_h.set_index('Data',inplace=True)
 
 # A tabela que resulta do processamento realizado pelo código acima é a seguinte:
 
-# In[253]:
+# In[666]:
 
 
 df_h
@@ -319,7 +319,7 @@ df_h
 # 
 # Como o arquivo HDF possui uma hierarquia bem definida, podemos usar `keys` para acessar os _datasets_ e usar métodos do `numpy` e do `pandas` para recuperar a estrutura e criar os _dataframes_ diretamente.
 
-# In[250]:
+# In[771]:
 
 
 from pandas import DataFrame
@@ -372,15 +372,163 @@ df_t.set_index('date')
 
 # #### Atributos e elementos visuais
 # 
-# [Jacques Bertin](https://en.wikipedia.org/wiki/Jacques_Bertin) estabeleceu os fundamentos teóricos para a visualização da informação elencando 7 atributos visuais:
+# [Jacques Bertin](https://en.wikipedia.org/wiki/Jacques_Bertin) estabeleceu os fundamentos teóricos para a visualização da informação elencando 7 atributos visuais, ou _canais_, ({numref}`Tabela %s <tbl-visual-bertin>`):
 # 
 # - posição;
 # - tamanho;
+# - orientação;
 # - valor;
-# - textura;
-# - cor;
-# - orientação; e
+# - textura (ou granularidade);
+# - cor; e
 # - forma.
+# 
+# A figura abaixo, produzida unicamente com `matplotlib`, ilustra esses conceitos.
+
+# In[661]:
+
+
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(4,2,figsize=(10,6))
+
+# 1
+ax[0,0].set_axis_off()
+ax[0,0].set_ylim([0.4,0.5])
+ax[0,0].plot(.5,.46,'o',color='k')
+ax[0,0].axhline(y=.45,xmin=0.3,xmax=0.7,c='k',lw=1.0)
+ax[0,0].axvline(x=0.49,ymin=0.45,ymax=0.5,c='k',lw=1.0)
+ax[0,0].axvline(x=0.50,ymin=0.45,ymax=0.5,c='k',lw=1.0)
+ax[0,0].axvline(x=0.51,ymin=0.45,ymax=0.5,c='k',lw=1.0)
+
+ax[0,0].text(0.4965,0.41, s='Posição', size=9, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5})
+
+
+# 2
+ax[0,1].set_axis_off()
+ax[0,1].set_ylim([0.4,0.5])
+ax[0,1].axhline(y=.46,xmin=0.3,xmax=0.7,c='k',lw=1.0)
+ax[0,1].axhline(y=.45,xmin=0.3,xmax=0.8,c='k',lw=1.0)
+ax[0,1].axhline(y=.44,xmin=0.3,xmax=0.9,c='k',lw=1.0)
+
+ax[0,1].text(0.496,0.41, s='Tamanho', size=9, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5})
+
+# 3
+ax[1,0].set_axis_off()
+ax[1,0].set_ylim([0.4,0.5])
+ax[1,0].plot([0.49,0.495],[0.46,0.46],c='k')
+ax[1,0].plot([0.5,0.5],[0.44,0.48],c='k')
+ax[1,0].plot([0.505,0.51],[0.48,0.44],c='k')
+
+ax[1,0].text(0.498,0.41, s='Orientação', size=9, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5});
+
+
+# 4
+ax[1,1].set_axis_off()
+ax[1,1].set_ylim([0,0.3])
+ax[1,1].add_patch(ptc.Rectangle(xy=(0.26,0.15),width=.1, height=.1, color='k',alpha=0.3))
+ax[1,1].add_patch(ptc.Rectangle(xy=(0.51,0.15),width=.1, height=.1, color='k',alpha=0.6))
+ax[1,1].add_patch(ptc.Rectangle(xy=(0.76,0.15),width=.1, height=.1, color='k'))
+
+ax[1,1].text(0.51,0.03, s='Valor', size=10, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5})
+
+# 5
+ax[2,0].set_axis_off()
+ax[2,0].set_xlim([0,5])
+ax[2,0].set_ylim([0,0.3])
+
+dh = 0.05
+for i in range(8):
+      xo = 0.1 + i*2*dh
+      ax[2,0].add_patch(ptc.Rectangle(xy=(xo,0.1),width=.1-dh/2, height=.18, color='k'))
+
+
+dh = 0.08
+for i in range(8):
+      xo = 1.2 + i*2*dh
+      ax[2,0].add_patch(ptc.Rectangle(xy=(xo,0.1),width=.1-dh/2, height=.18, color='k'))
+
+dh = 0.15
+for i in range(8):
+      xo = 2.8 + i*2*dh
+      ax[2,0].add_patch(ptc.Rectangle(xy=(xo,0.1),width=.1-dh/2, height=.18, color='k'))
+
+ax[2,0].text(2.1,0.02, s='Textura', size=10, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5})
+
+
+# 6
+ax[2,1].set_axis_off()
+ax[2,1].set_ylim([0,0.3])
+ax[2,1].add_patch(ptc.Rectangle(xy=(0.26,0.15),width=.1, height=.1, color='r'))
+ax[2,1].add_patch(ptc.Rectangle(xy=(0.51,0.15),width=.1, height=.1, color='g'))
+ax[2,1].add_patch(ptc.Rectangle(xy=(0.76,0.15),width=.1, height=.1, color='b'))
+
+ax[2,1].text(0.53,0.03, s='Cor', size=10, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5})
+
+
+# 7
+ax[3,0].set_axis_off()
+ax[3,0].set_ylim([0,0.3])
+ax[3,0].add_patch(ptc.Circle(xy=(0.24,0.15),radius=0.05, color='k'))
+ax[3,0].add_patch(ptc.Rectangle(xy=(0.44,0.1),width=.1, height=.1, color='k'))
+x0,y0 = 0.65,0.15
+h = 0.1
+ax[3,0].add_patch(ptc.Polygon(xy=[[x0,y0],[x0+h/2,y0+h/2],[x0+h,y0],[x0+h/2,y0-h/2]],color='k'))
+
+ax[3,0].text(0.43,0.01, s='Forma', size=10, style='normal',
+        bbox={'facecolor': xkcd['xkcd:nasty green'], 
+              'edgecolor':xkcd['xkcd:almost black'], 
+              'alpha': 0.5,
+              'boxstyle': 'round',
+              'pad': 0.5})
+
+# 8
+ax[3,1].set_axis_off()
+
+
+# ```{table} Designações para os atributos visuais de Bertin.
+# :name: tbl-visual-bertin
+# 
+# | Atributo    | Designações | 
+# |:-------------|:-----------|
+# | Posição | esquerda, centro, direita etc. |
+# | Tamanho | pequeno, médio, grande etc.|
+# | Orientação | horizontal, vertical, oblíqua |            
+# | Valor | claro, médio, escuro (tons de cinza) |
+# | Textura | fina, média, grossa |            
+# | Cor | vermelho, verde, azul etc. |            
+# | Forma | círculo, retângulo, polígono de n lados etc. |            
+# ```
 # 
 # Os elementos visuais possíveis são 4:
 # 
@@ -389,9 +537,9 @@ df_t.set_index('date')
 # - superfície; e
 # - volume.
 # 
-# Entretanto, pesquisas mostram que a acurácia do olho humano para perceber valores quantitativos mapeados em elementos visuais varia progressivamente na seguinte ordem: cor e textura > volume > área > orientação > tamanho > comprimento ({cite:p}`cleveland1984graphical`).
+# Exemplos desses elementos visuais também puramente criados com `matplotlib` são desenhados a seguir.
 
-# In[488]:
+# In[512]:
 
 
 import matplotlib.pyplot as plt
@@ -442,15 +590,15 @@ ax[1,0].text(0.35,0.24, s='Superfícies', size=10, style='normal',
 
 # 4 
 ax[1,1].set_axis_off()
-h = 0.3
+h, dh = 0.3, 0.005
 x,y = 0.25,0.5
 Q1 = [ [x,y], [x,y+h], [x+h, y+h], [x+h,y] ]
-Q2 = [ [x+h,y], [x+4/3*h,y+h/3], [x+4/3*h,y+4/3*h], [x+h,y+h] ]
-Q3 = [ [x,y+h], [x+h/3,y+4/3*h], [x+4/3*h, y+4/3*h], [x+h,y+h] ]
+Q2 = [ [x+h+dh ,y], [x+4/3*h+dh,y+h/3], [x+4/3*h+dh,y+4/3*h], [x+h+dh,y+h] ]
+Q3 = [ [x,y+h+3*dh], [x+h/3,y+4/3*h+3*dh], [x+4/3*h, y+4/3*h+3*dh], [x+h,y+h+3*dh] ]
 
-ax[1,1].add_patch(ptc.Polygon(xy=Q1,color='k',alpha=0.5))
-ax[1,1].add_patch(ptc.Polygon(xy=Q2,color='k',alpha=0.6))
-ax[1,1].add_patch(ptc.Polygon(xy=Q3,color='k',alpha=0.3))
+ax[1,1].add_patch(ptc.Polygon(xy=Q1,color='k',alpha=1.0))
+ax[1,1].add_patch(ptc.Polygon(xy=Q2,color='k',alpha=1.0))
+ax[1,1].add_patch(ptc.Polygon(xy=Q3,color='k',alpha=1.0))
 
 
 ax[1,1].text(0.38,0.0, s='Volumes', size=10, style='normal',
@@ -461,62 +609,95 @@ ax[1,1].text(0.38,0.0, s='Volumes', size=10, style='normal',
               'pad': 0.5});
 
 
-# In[489]:
+# ### Visualização
+# 
+# A representação visual é o produto final obtido quando se segue o modelo referencial apresentado anteriormente. Para atingirmos uma visualização eficaz, além de levar em conta todos os aspectos já discutidos na etapa do mapeamento, devemos nos atentar para o bom _design_ e para o propósito da visualização que desenvolveremos ({cite:p}`mazza2009introduction`).
+# 
+# Duas características cruciais a observar em um projeto de visualização são: 
+# - reproduzir a informação com fidelidade; 
+# - facilitar a compreensão do espectador; 
+# - analisar o tipo e a natureza dos dados que serão representados; e
+# - entender a audiência a quem os dados serão direcionados.
+# 
+# Elaborando-se um plano preliminar para a representação visual almejada, a probabilidade de sucesso do projeto é maior. Este plano deve considerar as seguintes variáveis e questões ({numref}`Tabela %s <tbl-projeto-visualizacao>`,adaptada deste [site](https://adenilsongiovanini.com.br/blog/semiologia-grafica-aplicada-e-cartografia-tematica/)):
+# 
+# 1. _Definição do problema_: que representação é necessária? O que desejo comunicar?
+# 2. _Exame da natureza dos dados_: os dados são quantitativos ou qualitativos? Como mapeá-los?
+# 3. _Dimensões_: qual é o número de dimensões dos dados (atributos)? Quais são independentes e quais são dependentes? Os dados são _univariados_ (uma dimensão varia com respeito a outra)? _Bivariados_ (uma dimensão varia com respeito a outras duas)? _Trivariados_ (uma dimensão varia com respeito a outras três)? _Multivariados_ (uma dimensão varia com respeito a quatro ou mais dimensões independentes)?
+# 4. _Estrutura de dados_: os dados são _lineares_ (codificados em vetores, tabelas, matrizes, coleções etc.)? São _temporais_ (mudam com o tempo)? São _geográficos_ ou _espaciais_ (possuem correspondência com algo físico, como mapas, plantas, projeções de terreno etc.)? São _hierárquicos_ (sugerem organizações, diretórios, genealogias etc.)? Ou são em forma de _redes_ (descrevem relacionamento entre entidades)?
+# 5. _Tipo de interação_: a visualização é _estática_ (imagem impressa fisicamente ou em tela de computadores)? _Transformável_ (usuário altera parâmetros que modificam e transformam os dados)? Ou é _manipulável_ (usuário tem possibilidade de girar elementos 3D, aplicar _zoom_)?
+# 
+# ```{table} Etapas do projeto preliminar de visualização de dados.
+# :name: tbl-projeto-visualizacao
+# 
+# | Problema | Tipo de dado | Dimensões | Estrutura de dados |  Tipo de interação |
+# |:-------------|:-----------|:-----------|:-----------|:-----------|
+# |comunicar<br>explorar<br>confirmar|quantitativo<br>qualitativo|univariado<br>bivariado<br>trivariado<br>multivariado|linear<br>temporal<br>espacial<br>hierárquico<br>rede|estático<br>transformável<br>manipulável| 
+# ```
+
+# #### Exemplo 1: visualizando o número de cirurgias e partos por bloco
+
+# In[740]:
 
 
+import seaborn as sns
 
-import matplotlib.pyplot as plt
+# reindexação
+df_h2 = df_h.reset_index()
 
-fig, ax = plt.subplots(2,2,figsize=(10,3))
+# conversão do tipo de dados
+df_h2['Cirurgias'] = df_h2['Cirurgias'].astype(int)
+df_h2['Partos'] = df_h2['Partos'].astype(int)
 
-# 1
-ax[0,0].set_axis_off()
-ax[0,0].set_ylim([0.4,0.5])
-ax[0,0].plot(.5,.46,'o',color='k')
-ax[0,0].axhline(y=.45,xmin=0.3,xmax=0.7,c='k',lw=1.0)
-ax[0,0].axvline(x=0.49,ymin=0.45,ymax=0.5,c='k',lw=1.0)
-ax[0,0].axvline(x=0.50,ymin=0.45,ymax=0.5,c='k',lw=1.0)
-ax[0,0].axvline(x=0.51,ymin=0.45,ymax=0.5,c='k',lw=1.0)
+# plotagem principal
+fig, ax = plt.subplots(1,2,figsize=(10,2),sharey=True)
+ax[0].grid(alpha=0.5)
+ax[1].grid(alpha=0.5)
+p1 = sns.barplot(x='Bloco',y='Cirurgias',hue='Porte',data=df_h2,errorbar=None,palette='Blues',ax=ax[0])
+p2 = sns.barplot(x='Bloco',y='Partos',hue='Porte',data=df_h2,errorbar=None,palette='Blues',ax=ax[1])
 
-ax[0,0].text(0.4965,0.41, s='Posição', size=9, style='normal',
-        bbox={'facecolor': xkcd['xkcd:nasty green'], 
-              'edgecolor':xkcd['xkcd:almost black'], 
-              'alpha': 0.5,
-              'boxstyle': 'round',
-              'pad': 0.5})
+# eixos
+p1.spines['top'].set_visible(False)
+p1.spines['right'].set_visible(False)
+p1.spines['bottom'].set_position(('axes', -0.1))
 
+p2.spines['top'].set_visible(False)
+p2.spines['right'].set_visible(False)
+p2.spines['bottom'].set_position(('axes', -0.1))
 
-# 2
-ax[0,1].set_axis_off()
-ax[0,1].set_ylim([0.4,0.5])
-ax[0,1].axhline(y=.46,xmin=0.3,xmax=0.7,c='k',lw=1.0)
-ax[0,1].axhline(y=.45,xmin=0.3,xmax=0.8,c='k',lw=1.0)
-ax[0,1].axhline(y=.44,xmin=0.3,xmax=0.9,c='k',lw=1.0)
-
-ax[0,1].text(0.496,0.41, s='Tamanho', size=9, style='normal',
-        bbox={'facecolor': xkcd['xkcd:nasty green'], 
-              'edgecolor':xkcd['xkcd:almost black'], 
-              'alpha': 0.5,
-              'boxstyle': 'round',
-              'pad': 0.5})
-
-# 3
-ax[1,0].set_axis_off()
-ax[1,0].set_ylim([0.4,0.5])
-ax[1,0].plot([0.49,0.495],[0.44,0.48],c='k')
-ax[1,0].plot([0.5,0.5],[0.44,0.48])
-ax[1,0].plot([0.505,0.51],[0.48,0.44])
-
-ax[1,0].text(0.498,0.41, s='Orientação', size=9, style='normal',
-        bbox={'facecolor': xkcd['xkcd:nasty green'], 
-              'edgecolor':xkcd['xkcd:almost black'], 
-              'alpha': 0.5,
-              'boxstyle': 'round',
-              'pad': 0.5});
+# legenda
+p1.get_legend().remove()
+p2.legend(title='Porte',bbox_to_anchor=(1.2,1.0));
 
 
-# 4
-ax[1,1].set_axis_off()
+# #### Exemplo 2: plotando série temporal de temperatura
+
+# In[928]:
+
+
+import numpy as np
+
+df_hours = df_t['date'][0::60].index
+df_ti = df_t.iloc[df_hours][:48]
+
+fig, ax = plt.subplots(figsize=(10,2))
+ax.plot(df_ti['mean'],c='#be5631',lw=1.5)
+
+da = np.array(list((df_ti['mean'].index)))
+db = np.array(2*[str(i) + 'h' for i in range(0,24)])
+ax.set_xticks(da,db,fontsize=5)
+
+half = int(len(da)/2)
+
+ax.axvline(0,ls='--',lw=1,c='#d1886e',alpha=0.4)
+ax.axvline(da[half],ls='--',lw=1,c='#d1886e',alpha=0.4)
+ax.grid(axis='y',ls=':',c='k',alpha=0.4)
+
+ax.set_xlabel('Tempo',fontsize=9)
+ax.set_ylabel('Temperatura',fontsize=9)
+
+ax.text(10,-4,s='01/04/2014',fontsize=7,c='#d1886e')
+ax.text(1450,-4,s='02/04/2014',fontsize=7,c='#d1886e');
 
 
 # ## Referências
