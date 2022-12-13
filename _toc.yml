@@ -7,6 +7,8 @@ parts:
     - file: ipynb/01a-introducao.ipynb
     - file: ipynb/01b-historico.ipynb
     - file: ipynb/02-estetica.ipynb
+    - file: ipynb/03-eixos.ipynb
+    - file: ipynb/03b-percepcao.ipynb
   - caption: Avaliação
     numbered: false
     chapters:
