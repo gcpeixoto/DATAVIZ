@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Percepção Visual &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modelo para Relátorio de Projeto Final" href="capstone-template.html" />
+    <link rel="prev" title="4. Eixos, Escalas e Sistemas de Coordenadas" href="03-eixos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Percepção Visual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliação
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="capstone-template.html">
+   Modelo para Relátorio de Projeto Final
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/03b-percepcao.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/03b-percepcao.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-mecanica-da-visao">
+   5.1. A mecânica da visão
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-memoria">
+     5.1.1. Tipos de memória
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percepcao-nao-controlada">
+     5.1.2. Percepção não controlada
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#propriedades-nao-controladas">
+       5.1.2.1. Propriedades não controladas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percepcao-controlada">
+     5.1.3. Percepção controlada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cegueira-a-mudanca-change-blindness">
+     5.1.4. Cegueira à mudança (
+     <em>
+      change blindness
+     </em>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   5.2. Referências
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Percepção Visual</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-mecanica-da-visao">
+   5.1. A mecânica da visão
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-memoria">
+     5.1.1. Tipos de memória
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percepcao-nao-controlada">
+     5.1.2. Percepção não controlada
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#propriedades-nao-controladas">
+       5.1.2.1. Propriedades não controladas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percepcao-controlada">
+     5.1.3. Percepção controlada
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cegueira-a-mudanca-change-blindness">
+     5.1.4. Cegueira à mudança (
+     <em>
+      change blindness
+     </em>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   5.2. Referências
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="percepcao-visual">
+<h1><span class="section-number">5. </span>Percepção Visual<a class="headerlink" href="#percepcao-visual" title="Permalink to this headline">#</a></h1>
+<p>Estudos científicos mostram que cerca de 70% da informação captada por um humano ocorre por meio da visão e os outros 30% dividem-se entre os demais receptores sensoriais (audição, olfato, paladar e tato). Adquirir algum conhecimento sobre a mecânica da visão é útil para que saibamos construir melhor nossas representações visuais e desenvolver projetos visuais melhores. Não é por acaso que termos como <em>insight</em>, <em>iluminação</em> e <em>esclarecimento</em>, todos relacionados à visão, são utilizados para dar sentido de recebimento de informação e trazer descrições apuradas sobre algo. Por esta razão, percepção visual e visualização de dados são assuntos vinculados.</p>
+<section id="a-mecanica-da-visao">
+<h2><span class="section-number">5.1. </span>A mecânica da visão<a class="headerlink" href="#a-mecanica-da-visao" title="Permalink to this headline">#</a></h2>
+<p>A mecânica da visão pode ser dividida em dois estágios principais:</p>
+<ol class="simple">
+<li><p><em>Sensação</em> (processo físico): ocorre quando nossos olhos são estimulados por um objeto emissor ou refletor de luz.</p></li>
+<li><p><em>Percepção</em> (processo cognitivo): ocorre com a entrada de luz pelos olhos, a qual é absorvida por células nervosas que a traduzem em sinais neurais (pulsos eletroquímicos) que são transmitidos diretamente ao cérebro, onde aquilo que foi sentido torna-se percebido.</p></li>
+</ol>
+<p>No centro de nossas retinas encontra-se a <em>fóvea</em>, região onde são reconhecidos os diferentes espectros de cor (vermelho, azul ou verde) e onde a acuidade visual é máxima. Entretanto, a fóvea é capaz de focar em apenas uma área limitada durante um intervalo de tempo. Quando nossos olhos fixam-se em um ponto particular e observamos seus detalhes, outros eventos podem passar despercebidos pelo nosso campo de visão. Por esta razão, quando construímos uma representação visual abarrotada de cores e elementos, os olhos do espectador ficam dispersos e sem saber para onde direcionar o foco.</p>
+<section id="tipos-de-memoria">
+<h3><span class="section-number">5.1.1. </span>Tipos de memória<a class="headerlink" href="#tipos-de-memoria" title="Permalink to this headline">#</a></h3>
+<p>A neurologia hoje reconhece diversos tipos de memória, tais como episódica, semântica, icônica, háptica, entre outras. Quanto à temporalidade, há duas classes importantes: a <em>memória de curto prazo (MCP)</em> e a <em>memória de longo prazo (MLP)</em>.</p>
+<p>Toda informação recebida pelos olhos é, primeiramente, roteada pelo nervo óptico para a memória icônica (MI), também chamada de <em>registro sensorial</em>. A informação permanece na MI por menos de um segundo antes de passar para a MCP. A MCP é similar à memoria RAM de um computador. Ela é temporária e com capacidade de armazenamento limitada. O cérebro lida com pedaços da informação visual. Parte é armazenada e parte é esquecida. Quando de fato, aprendemos, o que fazemos é transferir a informação da MCP para a MLP. Assim, para que uma informação seja seguramente transferida e aprendida, é preciso treinar o nosso cérebro para “esculpir” a informação em nossa MLP. A MLP é, portanto, uma analogia do disco rígido do computador.</p>
+<p>Trabalhar com produtos visuais é, de certa forma, equilibrar estímulos para que o receptor da informação possa capturar a informação e absorvê-la de forma adequada. O lado negativo disso é a “exploração” visual através do <em>marketing</em> coercitivo, que propõe máxima atratividade ao público. A finalidade do projeto visual dará a direção a ser seguida, mas sempre deve-se ter em mente que a audiência deve ter sua cognição minimamente respeitada.</p>
+</section>
+<section id="percepcao-nao-controlada">
+<h3><span class="section-number">5.1.2. </span>Percepção não controlada<a class="headerlink" href="#percepcao-nao-controlada" title="Permalink to this headline">#</a></h3>
+<p>O termo <em>percepção não controlada</em> (<em>pre-attentive perception</em>) é usado para se referir a propriedades visuais que são detectadas rapidamente (em frações de segundo) antes do processo da percepção propriamente dita. Este tipo de percepção manifesta-se, por exemplo, durante a identificação imediata de elementos visuais (<a class="reference internal" href="#fig-wordcloud"><span class="std std-numref">Fig. 5.1</span></a>).</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<figure class="align-center" id="fig-wordcloud">
+<a class="reference internal image-reference" href="../_images/wordcloud.png"><img alt="Nuvem de palavras." src="../_images/wordcloud.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Nuvem de palavras. Nossos olhos detectam rapidamente a palavra <em>et</em> em vermelho.</span><a class="headerlink" href="#fig-wordcloud" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="propriedades-nao-controladas">
+<h4><span class="section-number">5.1.2.1. </span>Propriedades não controladas<a class="headerlink" href="#propriedades-nao-controladas" title="Permalink to this headline">#</a></h4>
+<p>Segundo Colin Ware <span id="id1">[<a class="reference internal" href="#id12" title="Colin Ware. Information visualization: perception for design. Morgan Kaufmann, 2019.">Ware, 2019</a>]</span>, essas propriedades podem ser postas em quatro categorias: <em>cor</em>, <em>formato</em>, <em>movimento</em> e <em>posição espacial</em>.</p>
+<p>Quanto à cor, há três atributos principais, que definem o espaço primário de cores chamado de <em>HSL</em> (<a class="reference internal" href="#tbl-atributos-cor"><span class="std std-numref">Tabela 5.1</span></a>). Discutiremos cores com mais detalhes em um capítulo específico.</p>
+<table class="colwidths-auto table" id="tbl-atributos-cor">
+<caption><span class="caption-number">Table 5.1 </span><span class="caption-text">Atributos não controlados de cor.</span><a class="headerlink" href="#tbl-atributos-cor" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Atributo</p></th>
+<th class="text-align:left head"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Matiz (<em>Hue</em>)</p></td>
+<td class="text-align:left"><p>Caracteriza o comprimento de onda dominante da cor (também chamado de tonalidade cromática)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Saturação (<em>Saturation</em>)</p></td>
+<td class="text-align:left"><p>Medida de pureza da cor, isto é, a quantidade de luz branca</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Luminância (<em>Lightness</em>)</p></td>
+<td class="text-align:left"><p>Grau de brilho de uma imagem, em escala de branco a preto (também chamada de intensidade luminosa)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Quanto ao formato, há pelo menos dez atributos reconhecíveis, dos quais alguns já apresentamos (<a class="reference internal" href="#tbl-atributos-forma"><span class="std std-numref">Tabela 5.2</span></a>).</p>
+<table class="colwidths-auto table" id="tbl-atributos-forma">
+<caption><span class="caption-number">Table 5.2 </span><span class="caption-text">Atributos não controlados de formato.</span><a class="headerlink" href="#tbl-atributos-forma" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Atributo</p></th>
+<th class="text-align:left head"><p>Exemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Orientação</p></td>
+<td class="text-align:left"><p>Linha destacando-se de outras por ter orientação diferente</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Comprimento</p></td>
+<td class="text-align:left"><p>Gráfico com barras de comprimentos variáveis</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Largura</p></td>
+<td class="text-align:left"><p>Largura de uma linha usada para destaque</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Tamanho</p></td>
+<td class="text-align:left"><p>Tamanho de uma forma geométrica para destacar quantidade (elemento visual)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Colinearidade</p></td>
+<td class="text-align:left"><p>Linhas paralelas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Curvatura</p></td>
+<td class="text-align:left"><p>Contornos de formas</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Agrupamento</p></td>
+<td class="text-align:left"><p>Objetos dispostos em grupos (clusters)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Marcações</p></td>
+<td class="text-align:left"><p>Anotações em objetos por meio de marcações</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Forma</p></td>
+<td class="text-align:left"><p>Triângulo entre quadrados</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Numerosidade</p></td>
+<td class="text-align:left"><p>Número de objetos (cardinalidade) em um grupo</p></td>
+</tr>
+</tbody>
+</table>
+<p>Quanto à posição espacial, podemos detectar três atributos (<a class="reference internal" href="#tbl-atributos-posicao"><span class="std std-numref">Tabela 5.3</span></a>).</p>
+<table class="colwidths-auto table" id="tbl-atributos-posicao">
+<caption><span class="caption-number">Table 5.3 </span><span class="caption-text">Atributos não controlados de posição espacial.</span><a class="headerlink" href="#tbl-atributos-posicao" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Atributo</p></th>
+<th class="text-align:left head"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Posição 2D</p></td>
+<td class="text-align:left"><p>Codifica dados quantitativos em representações visuais</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Profundidade estereoscópica</p></td>
+<td class="text-align:left"><p>Permite termos uma noção de profundidade espacial em uma imagem plana (ver <a class="reference external" href="https://pt.wikipedia.org/wiki/Estereoscopia">estereoscopia</a>).</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Concavidade/convexidade</p></td>
+<td class="text-align:left"><p>Cria efeitos de superfície através de sombreamentos.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Quanto ao movimento, há dois atributos (<a class="reference internal" href="#tbl-atributos-movimento"><span class="std std-numref">Tabela 5.4</span></a>): <em>flickering</em> e <em>motion</em>. O <em>flickering</em> pode ser abusivamente utilizado em páginas da internet. Quando monitores tremulam, alguns efeitos adversos aos olhos são cansaço, irritação e lacrimação. <em>Motion</em> é a característica básica de deslocamento de objetos em tela.</p>
+<table class="colwidths-auto table" id="tbl-atributos-movimento">
+<caption><span class="caption-number">Table 5.4 </span><span class="caption-text">Atributos não controlados de movimento.</span><a class="headerlink" href="#tbl-atributos-movimento" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Atributo</p></th>
+<th class="text-align:left head"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><em>Flickering</em></p></td>
+<td class="text-align:left"><p>Objetos “tremidos” em websites com forte apelo visual ou <em>dashboards</em></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Motion</em></p></td>
+<td class="text-align:left"><p>Objetos em movimento.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="percepcao-controlada">
+<h3><span class="section-number">5.1.3. </span>Percepção controlada<a class="headerlink" href="#percepcao-controlada" title="Permalink to this headline">#</a></h3>
+<p>A percepção controlada é consciente, sequencial, e lenta. Dá-se pela procura de foco. Para acentuar a diferença entre percepções, vejamos a figura abaixo, em contexto similar ao da anterior. Ambas as sequências de dígitos são idênticas. Se fôssemos procurar por todas as aparições do dígito “5” na primeira linha demoraríamos muito mais do que na segunda, na qual as aparições estão destacadas em preto. Ou seja, analisar a primeira linha exigirá de nós um certo controle focal; a segunda linha, não. No primeiro caso, a percepção controlada predomina, ao passo que no segundo predomina a não controlada.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># gera sequencia aleatória</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="c1"># casting</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">ss</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">ss</span><span class="p">;</span> <span class="k">del</span> <span class="n">ss</span>
+
+<span class="c1"># figura</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="c1"># anotação</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">;</span> <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">si</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">si</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">si</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">si</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03b-percepcao_7_0.png" src="../_images/03b-percepcao_7_0.png" />
+</div>
+</div>
+</section>
+<section id="cegueira-a-mudanca-change-blindness">
+<h3><span class="section-number">5.1.4. </span>Cegueira à mudança (<em>change blindness</em>)<a class="headerlink" href="#cegueira-a-mudanca-change-blindness" title="Permalink to this headline">#</a></h3>
+<p>O fenômeno da “cegueira à mudança” (<em>change blindness</em>) ocorre quando, visualmente, somos incapazes de notar mudanças sensíveis no ambiente quando reposicionamos nosso foco instantaneamente de um objeto para outro. Por exemplo, se passarmos um período de tempo observando fixamente uma fotografia e, durante o nosso piscar de olhos, alguém alterá-la de maneira sutil, é bastante provável que não captemos a mudança. Esta incapacidade momentânea de perceber a mudança é similar a uma cegueira temporária.</p>
+<p>Detalhes de duas cenas iguais são, em geral, lembrados apenas quando se olha para áreas específicas. Existem resultados científicos que mostram que um espectador pode olhar várias vezes para uma imagem suficientemente “poluída” e não compreender a totalidade da informação, mesmo depositando nela plena atenção focal. Isto significa que projetos visuais devem dar à audiência indicações claras do que se quer destacar. As imagens na <a class="reference internal" href="#fig-globe"><span class="std std-numref">Fig. 5.2</span></a> abaixo retratam o fenômeno da <em>change blindness</em>. Na imagem à direita, o galho de árvore é o objeto sutil que escapa à percepção de uma rápida piscadela.</p>
+<figure class="align-center" id="fig-globe">
+<a class="reference internal image-reference" href="../_images/Globe_and_high_court_(Spot_the_difference).jpg"><img alt="Imagens retratando o fenômeno da cegueira à mudança." src="../_images/Globe_and_high_court_(Spot_the_difference).jpg" style="width: 650px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Imagens retratando o fenômeno da “cegueira à mudança”. Atribuição: Globe_and_high_court.jpg, WikiCantona, CC BY-SA 3.0, via Wikimedia Commons.</span><a class="headerlink" href="#fig-globe" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">5.2. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">War19</a></span></dt>
+<dd><p>Colin Ware. <em>Information visualization: perception for design</em>. Morgan Kaufmann, 2019.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="03-eixos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Eixos, Escalas e Sistemas de Coordenadas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="capstone-template.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modelo para Relátorio de Projeto Final</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
