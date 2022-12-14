@@ -144,7 +144,7 @@ def render_wordcloud(text_file):
 # |Curvatura|Contornos de formas|
 # |Agrupamento|Objetos dispostos em grupos (clusters)|
 # |Marcações|Anotações em objetos por meio de marcações|
-# |Forma|Triângulo entre quadrados|
+# |Formato|Triângulo entre quadrados|
 # |Numerosidade|Número de objetos (cardinalidade) em um grupo|
 # ```
 # 
@@ -212,7 +212,7 @@ for si in text:
 # 
 # O fenômeno da "cegueira à mudança" (_change blindness_) ocorre quando, visualmente, somos incapazes de notar mudanças sensíveis no ambiente quando reposicionamos nosso foco instantaneamente de um objeto para outro. Por exemplo, se passarmos um período de tempo observando fixamente uma fotografia e, durante o nosso piscar de olhos, alguém alterá-la de maneira sutil, é bastante provável que não captemos a mudança. Esta incapacidade momentânea de perceber a mudança é similar a uma cegueira temporária. 
 # 
-# Detalhes de duas cenas iguais são, em geral, lembrados apenas quando se olha para áreas específicas. Existem resultados científicos que mostram que um espectador pode olhar várias vezes para uma imagem suficientemente "poluída" e não compreender a totalidade da informação, mesmo depositando nela plena atenção focal. Isto significa que projetos visuais devem dar à audiência indicações claras do que se quer destacar. As imagens na {numref}`fig-globe` abaixo retratam o fenômeno da _change blindness_. Na imagem à direita, o galho de árvore é o objeto sutil que escapa à percepção de uma rápida piscadela.
+# Detalhes de duas cenas iguais são, em geral, lembrados apenas quando se olha para áreas específicas. Existem resultados científicos que mostram que um espectador pode olhar várias vezes para uma imagem suficientemente "poluída" e não compreender a totalidade da informação, mesmo depositando nela plena atenção focal. Em outras palavras, a atenção não tem efeitos cumulativos sobre a percepção. Isto significa que projetos visuais devem dar à audiência indicações claras do que se quer destacar. As imagens na {numref}`fig-globe` abaixo retratam o fenômeno da _change blindness_. Nelas existem vários objetos sutis que escapam a uma piscadela de olhos e que não estão presentes, em particular, na imagem à direita, nos mesmos moldes de um "jogo de 7 erros". Deixamos ao leitor a identificação desses objetos, localizáveis apenas por percepção controlada.
 
 # ```{figure} ../figs/Globe_and_high_court_(Spot_the_difference).jpg
 # ---
@@ -223,6 +223,34 @@ for si in text:
 # ---
 # Imagens retratando o fenômeno da "cegueira à mudança". Atribuição: Globe_and_high_court.jpg, WikiCantona, CC BY-SA 3.0, via Wikimedia Commons.
 # ```
+
+# A adequação dos atributos de percepção às representações visuais varia de acordo com a categoria dos dados, como vemos na {numref}`Tabela %s <tbl-atributos-adequacao>`). Os símbolos `-`, `+` e `++`, nesta ordem, significam _adequação insuficiente_, _adequação limitada_, _adequação suficiente_.
+# 
+# ```{table} Relação entre adequabilidade de atributos e categoria de dados.
+# :name: tbl-atributos-adequacao
+# 
+# |Categoria do atributo| Atributo | Quantitativo | Qualitativo categórico | Qualitativo não categórico  | 
+# |:-------------|:-----------|:-----------|:---------|:-----------|
+# |Cor|Matiz| - | - | ++ |
+# |Cor|Luminância| + | ++ | - |
+# |Forma|Orientação| + | + | - |
+# |Forma|Comprimento| ++ | + | - |
+# |Forma|Largura| + | + | - |
+# |Forma|Tamanho| + | + | - |
+# |Forma|Colinearidade| - | - | - |
+# |Forma|Curvatura| + | + | - |
+# |Forma|Agrupamento| - | - | - |
+# |Forma|Marcações| - | - | ++ |
+# |Forma|Formato| - | - | ++ |
+# |Forma|Numerosidade| ++ | ++ | - |
+# |Posição|Posição 2D| ++ | ++ | + |
+# |Posição|Profundidade estereoscópica| - | - | - |
+# |Posição|Concavidade<br>convexidade| + | + | - |
+# |Movimento|Flickering| - | - | + |
+# |Movimento|Motion| + | + | - |
+# ```
+
+# ## Princípios da Gestalt
 
 # ## Referências
 # 
