@@ -26,7 +26,7 @@
 # 
 # O termo _percepção não controlada_ (_pre-attentive perception_) é usado para se referir a propriedades visuais que são detectadas rapidamente (em frações de segundo) antes do processo da percepção propriamente dita. Este tipo de percepção manifesta-se, por exemplo, durante a identificação imediata de elementos visuais ({numref}`fig-wordcloud`). 
 
-# In[78]:
+# In[1]:
 
 
 # Para geração da nuvem de palavras é necessário instalar o `wordcloud` 
@@ -175,7 +175,7 @@ def render_wordcloud(text_file):
 # 
 # A percepção controlada é consciente, sequencial, e lenta. Dá-se pela procura de foco. Para acentuar a diferença entre percepções, vejamos a figura abaixo, em contexto similar ao da anterior. Ambas as sequências de dígitos são idênticas. Se fôssemos procurar por todas as aparições do dígito "5" na primeira linha demoraríamos muito mais do que na segunda, na qual as aparições estão destacadas em preto. Ou seja, analisar a primeira linha exigirá de nós um certo controle focal; a segunda linha, não. No primeiro caso, a percepção controlada predomina, ao passo que no segundo predomina a não controlada.
 
-# In[142]:
+# In[2]:
 
 
 import matplotlib.pyplot as plt
@@ -251,6 +251,46 @@ for si in text:
 # ```
 
 # ## Princípios da Gestalt
+# 
+# _Gestalt_, palavra alemã que, em tradução aproximada, seria algo como "forma total", é a alcunha de uma teoria também conhecida como _psicologia da forma_. Ela explica que, como o ser humano enxerga o "todo" e não as "partes" do todo, aquilo que vemos é compreendido de forma diferente pela mente e, por esta razão, antes precisamos entender a totalidade, para então compreender a particularidade.
+# 
+# A composição de elementos e formas permite que formemos concepções distintas daquilo que vemos e não percebamos particularidades. Vejamos a {numref}`fig-gestalt`. Ao analisar seus elementos, podemos ter diversas percepções. Na primeira linha, o primeiro objeto é um mero quadrado; o segundo é um quadrado "picotado" em quatro; o terceiro é o mesmo quadrado picotado em quatro partes, porém com vãos largos (vemos apenas um "X"?); o último é um quadrado inserido em outro (vemos um  "losango circunscrito"?), porém girado. 
+# 
+# ```{figure} ../figs/gestalt.png
+# ---
+# name: fig-gestalt
+# alt: Composições de formas e efeitos sobre a percepção (teoria da Gestalt).
+# align: center
+# width: 500px
+# ---
+# Composições de formas e efeitos sobre a percepção (teoria da Gestalt). Preparada por: G. P. Oliveira.
+# ```
+# 
+# 
+# Na segunda linha, o que vemos? O primeiro objeto representa um abajur? Uma minka (casa japonesa)? O segundo objeto representa uma casinha com neve no telhado? O terceiro uma casinha com janelas? O último uma fábrica com chaminé? Alguns ou todos esses conceitos podem ter passado pela sua cabeça. Mas será que você percebeu que todos os elementos gráficos são apenas composições de triângulos e quadrados? 
+# 
+# Esse efeito provocado pelas formas, que nos faz ver o todo e não as partes, à primeira vista, é o que a teoria da _Gestalt_ explica. Os princípios da Gestalt são aplicados ao _design_ até hoje para facilitar a comunicação das informações e, muitas vezes, de forma intuitiva.
+# 
+# É possível encontrar os princípios da Gestalt declarados de forma variada hoje em dia. Neste texto, atentaremos para seis:
+# 
+# 1. _Figura/Fundo_: o olho humano é capaz de distinguir entre o objeto núcleo e a área que o rodeia.
+# 2. _Continuidade_: o olho humano é compelido a "seguir" o objeto, movendo-se do início dele ao fim.
+# 3. _Proximidade_: quando dois objetos são postos juntos, o olho humano tende a percebê-los como um único grupo.
+# 4. _Similaridade_: quando vários objetos tem aparência similar, o olho humano os percebe como um grupo ou padrão.
+# 5. _Fechamento_: o olho humano tende a perceber um objeto "completo" ou "fechado", mesmo quando é "incompleto" ou não perfeitamento "fechado".
+# 6. _Simetria e ordem_: também chamado de princípio da "boa figura" ou "pregnância" (do alemão _prägnanz_), manifesta-se quando o olho humano percebe formas ambíguas da maneira mais simples possível.
+# 
+# Aplicações desses princípios são exploradas na {numref}`fig-gestalt-principles`, adaptada desta [página](https://www.simplypsychology.org/what-is-gestalt-psychology.html).
+# 
+# ```{figure} ../figs/gestalt-principles.png
+# ---
+# name: fig-gestalt-principles
+# alt: Princípio da Gestalt.
+# align: center
+# width: 650px
+# ---
+# Princípio fundamentais da Gestal. Preparada por: G. P. Oliveira.
+# ```
 
 # ## Referências
 # 

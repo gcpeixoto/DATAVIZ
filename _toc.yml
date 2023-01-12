@@ -9,6 +9,8 @@ parts:
     - file: ipynb/02-estetica.ipynb
     - file: ipynb/03-eixos.ipynb
     - file: ipynb/03b-percepcao.ipynb
+    - file: ipynb/04-cores.ipynb
+    - file: ipynb/05-lounge.ipynb
   - caption: Avaliação
     numbered: false
     chapters:
