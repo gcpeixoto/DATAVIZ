@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Cores: Escalas, Modelos e Usos
+# # Cores
 
 # Cores são constituintes fundamentais da aparência das representações visuais. Com elas, conseguimos enaltecer o estímulo visual da audiência e impactar a percepção visual dos espectadores. Variar matizes e colorações traz compreensões àquilo que desejamos mostrar. As cores, por sua vez, podem ser usadas para, principalmente:
 # 
@@ -327,6 +327,7 @@ color_palette('rainbow',n_colors=12)
 # Diversos pacotes que lidam com mapas de cores podem ser encontrados (https://matplotlib.org/mpl-third-party/#colormaps-and-styles)[aqui].
 # ```
 
+# (sec:aplicado-quantitativo)=
 # ##### Exemplo aplicado: dado quantitativo numérico
 # 
 # Neste segundo exemplo aplicado, recuperamos os valores das áreas (em quilômetros quadrados) de todos os municípios do estado da Paraíba a partir dos arquivos de geolocalização e construímos um gráfico de dispersão ordenado. A representação visual mostra a variação do escore padronizado (também conhecido como Fator Z, ou _Z-score_) das áreas dos municípios. Um Fator Z igual a zero representa a média do conjunto. Valores de Fator Z negativos representam municípios cuja área é menor do que a média do estado; positivos, municípios com área acima da média. 
@@ -992,7 +993,7 @@ for k in range(1,5):
 # ```{bibliography}
 # :filter: docname in docnames
 # ```
-# 
+
 # ## Referências complementares
 # 
 # - [Color space](https://en.wikipedia.org/wiki/Color_space)
@@ -1002,6 +1003,3 @@ for k in range(1,5):
 # - [Colour spaces - perceptual, historical and applicational background, Tkalcic M. e Tasic, J.](https://web.archive.org/web/20090306063001/http://ldos.fe.uni-lj.si/docs/documents/20030929092037_markot.pdf)
 # - [Color Spaces, Rolf Kuehni](https://web.archive.org/web/20090306062959/http://www4.ncsu.edu/~rgkuehni/PDFs/ColSp.pdf)
 # - [Bruce Lindbloom.com](http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html)
-# 
-# 
-# 
