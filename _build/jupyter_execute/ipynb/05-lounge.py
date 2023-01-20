@@ -567,7 +567,30 @@ display(HTML('course-treemap.html'))
 
 # ## _Plots_ para visualizar correlações
 
+# Correlação é qualquer associação estatística entre um par de variáveis. Quanto mais correlacionadas estão duas variáveis, mais "alinhamento" há entre elas. Isto é, uma análise de correlação fornece um número que resume o grau de relacionamento linear entre duas variáveis. Introduziremos este assunto com alguns conceitos fundamentais. 
 # 
+# Podemos interpretar a _correlação_ também pelo ponto de vista de "dependência linear". Duas variáveis perfeitamente correlacionadas são similares a dois vetores paralelos, ou seja, linearmente dependentes. Por outro lado, duas variáveis totalmente não correlacionadas são similares a dois vetores perpendiculares, ou seja, linearmente independentes.
+# 
+# Neste grupo também não apresentaremos uma divisão enfática dos tipos de representações dada a sua variedade. Estão incluídos aqui os seguintes _plots_: 
+# 
+# - dispersão (_scatter plot_), bolhas (_bubble chart_), inclinação (_slopegraph_), linhas;
+# - contornos de densidade, classes 2D (_2D bins_), classes hexagonais (_hex bins_);
+# - correlograma.
+# 
+# Para grandes dados, plots de dispersão tornam-se pouco informativos devido ao emaranhado de pontos. Em um cenário como este, são preferíveis os _plots_ de contornos e classes. Para mais do que duas quantidades, correlogramas são recomendados.
+# 
+# Discutiremos apenas alguns exemplos.
+
+# ## _Plots_ para visualizar dados geoespaciais
+# 
+# Dados geoespaciais são melhor dispostos através de mapas que projetam coordenadas do globo terrestre em superfícies planas. Geralmente, os mapas seguem o formato e as fronteiras de territórios. Neste grupo encontram-se:
+# 
+# - coropletas, ou mapas coropléticos (_choropleth_), que colorem regiões do mapa para realizar associações com quantidades ou categorias.
+# - cartogramas, que se constituem em representações distorcidas ou simplificadas das regiões. Por exemplo, associar estados da federação a formas retangulares menores arranjadas sobre uma forma poligonal maior próxima ao formato do Brasil.
+
+# ## _Plots_ para visualizar incertezas
+# 
+# Incertezas são inerentes a medições experimentais e laboratoriais, bem como a cálculos que envolvem estimativas e previsões sobre ocorrências futuras. Geralmente, incertezas são representadas por barras ou áreas que se estendem em torno de um ponto ou linha de referência. Neste grupo, incluem-se os plots acompanhados de barras de erro de intervalos de confiança.
 
 # ## Referências
 # 

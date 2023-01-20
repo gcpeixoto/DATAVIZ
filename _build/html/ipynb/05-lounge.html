@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Modelo para Relátorio de Projeto Final" href="capstone-template.html" />
@@ -473,8 +473,26 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-para-visualizar-dados-geoespaciais">
+   7.5.
+   <em>
+    Plots
+   </em>
+   para visualizar dados geoespaciais
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-para-visualizar-incertezas">
+   7.6.
+   <em>
+    Plots
+   </em>
+   para visualizar incertezas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   7.5. Referências
+   7.7. Referências
   </a>
  </li>
 </ul>
@@ -635,8 +653,26 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-para-visualizar-dados-geoespaciais">
+   7.5.
+   <em>
+    Plots
+   </em>
+   para visualizar dados geoespaciais
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-para-visualizar-incertezas">
+   7.6.
+   <em>
+    Plots
+   </em>
+   para visualizar incertezas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   7.5. Referências
+   7.7. Referências
   </a>
  </li>
 </ul>
@@ -2326,9 +2362,31 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </section>
 <section id="plots-para-visualizar-correlacoes">
 <h2><span class="section-number">7.4. </span><em>Plots</em> para visualizar correlações<a class="headerlink" href="#plots-para-visualizar-correlacoes" title="Permalink to this headline">#</a></h2>
+<p>Correlação é qualquer associação estatística entre um par de variáveis. Quanto mais correlacionadas estão duas variáveis, mais “alinhamento” há entre elas. Isto é, uma análise de correlação fornece um número que resume o grau de relacionamento linear entre duas variáveis. Introduziremos este assunto com alguns conceitos fundamentais.</p>
+<p>Podemos interpretar a <em>correlação</em> também pelo ponto de vista de “dependência linear”. Duas variáveis perfeitamente correlacionadas são similares a dois vetores paralelos, ou seja, linearmente dependentes. Por outro lado, duas variáveis totalmente não correlacionadas são similares a dois vetores perpendiculares, ou seja, linearmente independentes.</p>
+<p>Neste grupo também não apresentaremos uma divisão enfática dos tipos de representações dada a sua variedade. Estão incluídos aqui os seguintes <em>plots</em>:</p>
+<ul class="simple">
+<li><p>dispersão (<em>scatter plot</em>), bolhas (<em>bubble chart</em>), inclinação (<em>slopegraph</em>), linhas;</p></li>
+<li><p>contornos de densidade, classes 2D (<em>2D bins</em>), classes hexagonais (<em>hex bins</em>);</p></li>
+<li><p>correlograma.</p></li>
+</ul>
+<p>Para grandes dados, plots de dispersão tornam-se pouco informativos devido ao emaranhado de pontos. Em um cenário como este, são preferíveis os <em>plots</em> de contornos e classes. Para mais do que duas quantidades, correlogramas são recomendados.</p>
+<p>Discutiremos apenas alguns exemplos.</p>
+</section>
+<section id="plots-para-visualizar-dados-geoespaciais">
+<h2><span class="section-number">7.5. </span><em>Plots</em> para visualizar dados geoespaciais<a class="headerlink" href="#plots-para-visualizar-dados-geoespaciais" title="Permalink to this headline">#</a></h2>
+<p>Dados geoespaciais são melhor dispostos através de mapas que projetam coordenadas do globo terrestre em superfícies planas. Geralmente, os mapas seguem o formato e as fronteiras de territórios. Neste grupo encontram-se:</p>
+<ul class="simple">
+<li><p>coropletas, ou mapas coropléticos (<em>choropleth</em>), que colorem regiões do mapa para realizar associações com quantidades ou categorias.</p></li>
+<li><p>cartogramas, que se constituem em representações distorcidas ou simplificadas das regiões. Por exemplo, associar estados da federação a formas retangulares menores arranjadas sobre uma forma poligonal maior próxima ao formato do Brasil.</p></li>
+</ul>
+</section>
+<section id="plots-para-visualizar-incertezas">
+<h2><span class="section-number">7.6. </span><em>Plots</em> para visualizar incertezas<a class="headerlink" href="#plots-para-visualizar-incertezas" title="Permalink to this headline">#</a></h2>
+<p>Incertezas são inerentes a medições experimentais e laboratoriais, bem como a cálculos que envolvem estimativas e previsões sobre ocorrências futuras. Geralmente, incertezas são representadas por barras ou áreas que se estendem em torno de um ponto ou linha de referência. Neste grupo, incluem-se os plots acompanhados de barras de erro de intervalos de confiança.</p>
 </section>
 <section id="referencias">
-<h2><span class="section-number">7.5. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.7. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">SRB+13</a></span></dt>
