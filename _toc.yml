@@ -5,13 +5,16 @@ parts:
     numbered: true
     chapters:
     - file: ipynb/01a-introducao.ipynb
-    - file: ipynb/01b-historico.ipynb
-    - file: ipynb/02-estetica.ipynb
-    - file: ipynb/03-eixos.ipynb
-    - file: ipynb/03b-percepcao.ipynb
-    - file: ipynb/04-cores.ipynb
-    - file: ipynb/05-lounge.ipynb
-  - caption: Avaliação
+    - file: ipynb/02a-historico.ipynb
+    - file: ipynb/03a-estetica.ipynb
+    - file: ipynb/04a-eixos.ipynb
+    - file: ipynb/05a-percepcao.ipynb
+    - file: ipynb/06a-cores.ipynb
+    - file: ipynb/07a-lounge.ipynb
+    - file: ipynb/08a-storytelling.ipynb
+    - file: ipynb/09a-matplotlib-imersao.ipynb
+  - caption: Avaliações
     numbered: false
     chapters:
-    - file: ipynb/capstone-template.ipynb
+    - file: ipynb/10a-ecvd1.ipynb
+    #- file: ipynb/capstone-template.ipynb

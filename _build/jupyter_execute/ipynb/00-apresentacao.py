@@ -26,7 +26,7 @@
 #     - Avaliação: Estudo de caso 2 (2h)
 # - Módulo 3 (20h)
 #     - Conteúdo (14h)
-#     - Avaliação: Estudo de caso 2 (6h)
+#     - Avaliação: Projeto de visualização (6h)
 # 
 # A divisão geral acima pode ser visualizada graficamente pelo _treemap_ abaixo, em que as áreas dos retângulo representam, proporcionalmente, a carga horária total de 60h dedicada ao curso.
 
@@ -41,7 +41,7 @@ labels = ['Visualização de Dados',
     'Módulo 1','Módulo 2','Módulo 3',
     'Conteúdo 1','Estudo de caso 1',
     'Conteúdo 2','Estudo de caso 2',
-    'Conteúdo 3','Relatório Final']
+    'Conteúdo 3','Projeto de visualização']
 
 parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
 
@@ -65,14 +65,16 @@ display(HTML('course-treemap.html'))
 # 
 # - Conteúdo (18h)
 #     - [Introdução à Visualização de Dados](01a-introducao.ipynb) 
-#     - [Marcos Históricos da Visualização de Dados](01b-historico.ipynb) 
-#     - [Criação de Representações Visuais e Estética](02-estetica.ipynb) 
-#     - [Eixos, Escalas e Sistemas de Coordenadas](03-eixos.ipynb) 
-#     - [Percepção Visual](03b-percepcao.ipynb) 
-#     - [Cores](04-cores.ipynb)
-#     - [_Lounge_ das Representações Visuais](05-lounge.ipynb)
+#     - [Marcos Históricos da Visualização de Dados](02a-historico.ipynb) 
+#     - [Criação de Representações Visuais e Estética](03a-estetica.ipynb) 
+#     - [Eixos, Escalas e Sistemas de Coordenadas](04a-eixos.ipynb) 
+#     - [Percepção Visual](05a-percepcao.ipynb) 
+#     - [Cores](06a-cores.ipynb)
+#     - [_Lounge_ das Representações Visuais](07a-lounge.ipynb)
+#     - [Técnicas de _Storytelling_](08a-storytelling.ipynb)
+#     - [Imersão em _matplotlib_](09a-matplotlib-imersao.ipynb)
 # - Avaliação (2h)
-#     - Relatório de estudo de caso 1 (2h)
+#     - [Estudo de Caso de Visualização de Dados (ECVD1)](10a-ecvd1.ipynb) (2h)
 # 
 # _**More coming soon...**_
 # 
@@ -97,7 +99,7 @@ display(HTML('course-treemap.html'))
 # ## Metodologia de avaliação
 
 # 
-# A metodologia de avaliação será guiada pela <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf"> Rubrica de Avaliação</a>.
+# A metodologia de avaliação será guiada pela <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf"> Rubrica de Avaliação</a>, salvo adaptações pontuais e previamente informadas.
 # 
 # ### Templates 
 # 
