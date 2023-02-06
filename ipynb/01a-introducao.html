@@ -51,11 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Marcos Históricos da Visualização de Dados" href="01b-historico.html" />
+    <link rel="next" title="2. Marcos Históricos da Visualização de Dados" href="02a-historico.html" />
     <link rel="prev" title="Apresentação do curso" href="00-apresentacao.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -128,32 +128,32 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01b-historico.html">
+  <a class="reference internal" href="02a-historico.html">
    2. Marcos Históricos da Visualização de Dados
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-estetica.html">
+  <a class="reference internal" href="03a-estetica.html">
    3. Criação de Representações Visuais e Estética
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-eixos.html">
+  <a class="reference internal" href="04a-eixos.html">
    4. Eixos, Escalas e Sistemas de Coordenadas
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03b-percepcao.html">
+  <a class="reference internal" href="05a-percepcao.html">
    5. Percepção Visual
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04-cores.html">
+  <a class="reference internal" href="06a-cores.html">
    6. Cores
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="05-lounge.html">
+  <a class="reference internal" href="07a-lounge.html">
    7.
    <em>
     Lounge
@@ -161,16 +161,32 @@ const thebe_selector_output = ".output, .cell_output"
    das Representações Visuais
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Avaliação
+  Avaliações
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="capstone-template.html">
-   Modelo para Relátorio de Projeto Final
+  <a class="reference internal" href="10a-ecvd1.html">
+   Estudo de Caso de Visualização de Dados - ECVD 1
   </a>
  </li>
 </ul>
@@ -541,7 +557,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introducao-a-visualizacao-de-dados">
 <h1><span class="section-number">1. </span>Introdução à Visualização de Dados<a class="headerlink" href="#introducao-a-visualizacao-de-dados" title="Permalink to this headline">#</a></h1>
-<p>A visualização de dados é uma disciplina interdisciplinar de interesse a qualquer pessoa interessada em manusear ou apresentar dados de forma qualitativa ou quantitativa. Ela não se restringe a áreas de formação específica, mas algumas características essenciais para o desenvolvimento de habilidades na disciplina são:</p>
+<p>A visualização de dados é uma disciplina interdisciplinar e agregadora a qualquer pessoa interessada em manusear ou apresentar dados de forma qualitativa ou quantitativa. Ela não se restringe a áreas de formação específica, mas algumas características essenciais para o desenvolvimento de habilidades na disciplina são:</p>
 <ul class="simple">
 <li><p>Familiaridade com <em>estatística</em>;</p></li>
 <li><p><em>Vontade</em> de aprender coisas novas;</p></li>
@@ -588,7 +604,7 @@ title="Print to PDF"
 <div><p><em>Visualização de dados é a arte de combinar representações visuais e apresentações para facilitar a compreensão dos dados.</em></p>
 </div></blockquote>
 <p>A <em>representação visual</em> (<em>chart</em>) é o elemento que melhor se adéqua ao que se pretende comunicar. <em>Charts</em> têm <em>marcadores</em> e <em>atributos</em> como seus fundamentos, como veremos em capítulos posteriores. A <em>apresentação visual</em> concerne a todas as outras tomadas de decisão de design que constituem a anatomia da visualização, tais como a seleção da paleta de cores, a composição da obra e as características das anotações. Ambas constituem a parcela artística do autor e o âmago da disciplina. A execução disso tudo independe da ferramenta técnica utilizada. Existem diversos sistemas, pacotes, bibliotecas e linguagens disponíveis, sendo R e Python as linguagens de programação preferidas dos analistas de dados.</p>
-<p>Por outro lado, a parte final da definição, que diz respeito à <em>compreensão facilitada</em> dos dados, tem a ver com o processo de captura da mensagem lançada pelo contador de história (<em>storyteller</em>) ao espectador (<em>viewer</em>). Este processo envolve 3 etapas cognitivas (<a class="reference internal" href="#fig-comprehension"><span class="std std-numref">Fig. 1.1</span></a>, adaptada de <span id="id1">[<a class="reference internal" href="04-cores.html#id3" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>):</p>
+<p>Por outro lado, a parte final da definição, que diz respeito à <em>compreensão facilitada</em> dos dados, tem a ver com o processo de captura da mensagem lançada pelo contador de história (<em>storyteller</em>) ao espectador (<em>viewer</em>). Este processo envolve 3 etapas cognitivas (<a class="reference internal" href="#fig-comprehension"><span class="std std-numref">Fig. 1.1</span></a>, adaptada de <span id="id1">[<a class="reference internal" href="06a-cores.html#id3" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>):</p>
 <ol class="simple">
 <li><p><em>Percepção</em> (o que vejo?)</p></li>
 <li><p><em>Interpretação</em> (o que significa?)</p></li>
@@ -673,28 +689,28 @@ title="Print to PDF"
 <p class="admonition-title">Dica</p>
 <p>Crie um novo arquivo com <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">dataviz.yml</span></code>, então copie o conteúdo do arquivo YAML abaixo e cole.</p>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataviz.yml</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataviz.yml</span><span class="w"></span>
 
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dataviz</span>
-<span class="nt">channels</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-<span class="nt">dependencies</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scipy</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dash</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bokeh</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hvplot</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">datashader</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">h5py</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">geoviews</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pandas</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">matplotlib</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">seaborn</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">plotly</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">geopandas</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">networkx</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dataviz</span><span class="w"></span>
+<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
+<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scipy</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dash</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bokeh</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hvplot</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">datashader</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dask</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h5py</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoviews</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">seaborn</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geopandas</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkx</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -844,7 +860,7 @@ científico <a class="reference external" href="https://ieeexplore.ieee.org/docu
             <p class="prev-next-title">Apresentação do curso</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01b-historico.html" title="next page">
+    <a class='right-next' id="next-link" href="02a-historico.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">2. </span>Marcos Históricos da Visualização de Dados</p>
@@ -860,7 +876,7 @@ científico <a class="reference external" href="https://ieeexplore.ieee.org/docu
   
     By Prof. Gustavo Oliveira<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

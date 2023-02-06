@@ -1,0 +1,1925 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6. Cores &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Lounge das Representações Visuais" href="07a-lounge.html" />
+    <link rel="prev" title="5. Percepção Visual" href="05a-percepcao.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10a-ecvd1.html">
+   Estudo de Caso de Visualização de Dados - ECVD 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/06a-cores.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/06a-cores.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escalas-de-cor">
+   6.1. Escalas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paletas-predefinidas">
+     6.1.1. Paletas predefinidas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-qualitativas">
+       6.1.1.1. Paletas qualitativas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-de-aplicacao-dado-qualitativo-categorico">
+         6.1.1.1.1. Exemplo de aplicação: dado qualitativo categórico
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-continuas-e-demais-paletas-predefinidas">
+       6.1.1.2. Paletas contínuas e demais paletas predefinidas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-com-percepcao-de-uniformidade">
+         6.1.1.2.1. Sequenciais com percepção de uniformidade
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-1">
+         6.1.1.2.2. Sequenciais do grupo 1
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-2">
+         6.1.1.2.3. Sequenciais do grupo 2
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#divergentes">
+         6.1.1.2.4. Divergentes
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ciclicas">
+         6.1.1.2.5. Cíclicas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#genericas">
+         6.1.1.2.6. Genéricas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-aplicado-dado-quantitativo-numerico">
+         6.1.1.2.7. Exemplo aplicado: dado quantitativo numérico
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelos-de-cor">
+   6.2. Modelos de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optica-ondas-e-cores">
+     6.2.1. Óptica, ondas e cores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-aditivos-e-subtrativos">
+     6.2.2. Modelos aditivos e subtrativos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rgb">
+       6.2.2.1. RGB
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cmyk">
+       6.2.2.2. CMYK
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-geometricos">
+     6.2.3. Modelos geométricos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hsl">
+       6.2.3.1. HSL
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cores-em-codigo-hex">
+     6.2.4. Cores em código HEX
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-de-conversao-rgb-hex">
+       6.2.4.1. Exemplo de conversão RGB &gt; HEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplos-de-cores-css">
+       6.2.4.2. Exemplos de cores CSS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#misturas-de-cor">
+     6.2.5. Misturas de cor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outros-esquemas-de-cor">
+   6.3. Outros esquemas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#esquemas-de-propriedade-comercial">
+     6.3.1. Esquemas de propriedade comercial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teoria-dos-espacos-de-cor">
+   6.4. Teoria dos espaços de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espacos-de-cor-cie">
+     6.4.1. Espaços de cor CIE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espectro-e-componentes">
+     6.4.2. Espectro e componentes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relacionamento-com-a-algebra-linear">
+     6.4.3. Relacionamento com a Álgebra Linear
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   6.5. Referências
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias-complementares">
+   6.6. Referências complementares
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cores</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escalas-de-cor">
+   6.1. Escalas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paletas-predefinidas">
+     6.1.1. Paletas predefinidas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-qualitativas">
+       6.1.1.1. Paletas qualitativas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-de-aplicacao-dado-qualitativo-categorico">
+         6.1.1.1.1. Exemplo de aplicação: dado qualitativo categórico
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-continuas-e-demais-paletas-predefinidas">
+       6.1.1.2. Paletas contínuas e demais paletas predefinidas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-com-percepcao-de-uniformidade">
+         6.1.1.2.1. Sequenciais com percepção de uniformidade
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-1">
+         6.1.1.2.2. Sequenciais do grupo 1
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-2">
+         6.1.1.2.3. Sequenciais do grupo 2
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#divergentes">
+         6.1.1.2.4. Divergentes
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ciclicas">
+         6.1.1.2.5. Cíclicas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#genericas">
+         6.1.1.2.6. Genéricas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-aplicado-dado-quantitativo-numerico">
+         6.1.1.2.7. Exemplo aplicado: dado quantitativo numérico
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelos-de-cor">
+   6.2. Modelos de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optica-ondas-e-cores">
+     6.2.1. Óptica, ondas e cores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-aditivos-e-subtrativos">
+     6.2.2. Modelos aditivos e subtrativos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rgb">
+       6.2.2.1. RGB
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cmyk">
+       6.2.2.2. CMYK
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-geometricos">
+     6.2.3. Modelos geométricos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hsl">
+       6.2.3.1. HSL
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cores-em-codigo-hex">
+     6.2.4. Cores em código HEX
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-de-conversao-rgb-hex">
+       6.2.4.1. Exemplo de conversão RGB &gt; HEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplos-de-cores-css">
+       6.2.4.2. Exemplos de cores CSS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#misturas-de-cor">
+     6.2.5. Misturas de cor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outros-esquemas-de-cor">
+   6.3. Outros esquemas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#esquemas-de-propriedade-comercial">
+     6.3.1. Esquemas de propriedade comercial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teoria-dos-espacos-de-cor">
+   6.4. Teoria dos espaços de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espacos-de-cor-cie">
+     6.4.1. Espaços de cor CIE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espectro-e-componentes">
+     6.4.2. Espectro e componentes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relacionamento-com-a-algebra-linear">
+     6.4.3. Relacionamento com a Álgebra Linear
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   6.5. Referências
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias-complementares">
+   6.6. Referências complementares
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="cores">
+<h1><span class="section-number">6. </span>Cores<a class="headerlink" href="#cores" title="Permalink to this headline">#</a></h1>
+<p>Cores são constituintes fundamentais da aparência das representações visuais. Com elas, conseguimos enaltecer o estímulo visual da audiência e impactar a percepção visual dos espectadores. Variar matizes e colorações traz compreensões àquilo que desejamos mostrar. As cores, por sua vez, podem ser usadas para, principalmente:</p>
+<ul class="simple">
+<li><p>distinguir grupos de dados;</p></li>
+<li><p>representar valores; e</p></li>
+<li><p>produzir destaques (<em>highlights</em>).</p></li>
+</ul>
+<p>Entretanto, antes de se preocupar com a decoração de nossas representações visuais, é preciso se dedicar ao significado delas <span id="id1">[<a class="reference internal" href="#id3" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>.</p>
+<section id="escalas-de-cor">
+<span id="sec-escalas-cor"></span><h2><span class="section-number">6.1. </span>Escalas de cor<a class="headerlink" href="#escalas-de-cor" title="Permalink to this headline">#</a></h2>
+<p>Como enunciamos, um dos objetivos de usar cores em visualização de dados é distinguir grupos através da plotagem de dados qualitativos categóricos. Para esta finalidade, podemos usar paletas de cores discretas, também chamadas de <em>escalas de cor qualitativas</em>. Essas paletas são compostas de uma quantidade limitada de cores que produzem uma percepção de “grupos finitos” de informação.</p>
+<p>Usando a função <code class="docutils literal notranslate"><span class="pre">seaborn.color_palette()</span></code>, por exemplo, podemos invocar uma enorme quantidade de escalas de cores qualitativas do próprio módulo, ou qualquer outro <em>mapa de cores</em> predefinido ou mesmo construído por nós. Entenderemos <em>mapas de cores</em> mais à frente.</p>
+<p>A seguir, exibimos 3 escalas qualitativas com 6, 10 e 14 cores segundo a paleta padrão.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">color_palette</span>
+<span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="330" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#1f77b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ff7f0e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#2ca02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d62728;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#9467bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8c564b;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#1f77b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ff7f0e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#2ca02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d62728;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#9467bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8c564b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#e377c2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#7f7f7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#bcbd22;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#17becf;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="770" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#1f77b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ff7f0e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#2ca02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d62728;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#9467bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8c564b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#e377c2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#7f7f7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#bcbd22;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#17becf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#1f77b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#ff7f0e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="660" y="0" width="55" height="55" style="fill:#2ca02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="715" y="0" width="55" height="55" style="fill:#d62728;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<p>Podemos reduzir as saturações dessas paletas por uma certa proporção para criar cores menos vívidas incorporando o parâmetro <code class="docutils literal notranslate"><span class="pre">desat</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">desat</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="330" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#626b71;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#93867a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#606c60;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#877676;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#928e96;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#6f6968;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">desat</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#44708f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#c3834a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#498349;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#aa5353;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#937ca8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#7c615b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#c892b7;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#7f7f7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#969649;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#4598a1;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">desat</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="770" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#2676ad;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#f3801a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#329a32;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#cd3031;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#946bb9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#89584e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#de7cc0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#7f7f7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#b4b52a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#20b6c6;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#2676ad;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#f3801a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="660" y="0" width="55" height="55" style="fill:#329a32;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="715" y="0" width="55" height="55" style="fill:#cd3031;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<section id="paletas-predefinidas">
+<h3><span class="section-number">6.1.1. </span>Paletas predefinidas<a class="headerlink" href="#paletas-predefinidas" title="Permalink to this headline">#</a></h3>
+<p>O <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> possui algumas paletas de cores predefinidas que alteram as tonalidades das cores. São elas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">muted</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bright</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pastel</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dark</span></code>; e</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">colorblind</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;muted&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#4878d0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ee854a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#6acc64;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d65f5f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#956cb4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8c613c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#dc7ec0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#797979;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#d5bb67;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#82c6e2;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;bright&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#023eff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ff7c00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#1ac938;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#e8000b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#8b2be2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#9f4800;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#f14cc1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#a3a3a3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ffc400;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#00d7ff;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;pastel&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#a1c9f4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ffb482;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#8de5a1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#ff9f9b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#d0bbff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#debb9b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fab0e4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#cfcfcf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#fffea3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#b9f2f0;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;dark&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#001c7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#b1400d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#12711c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#8c0800;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#591e71;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#592f0d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#a23582;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#3c3c3c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#b8850a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#006374;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;colorblind&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#0173b2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#de8f05;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#029e73;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d55e00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#cc78bc;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#ca9161;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fbafe4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#949494;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ece133;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#56b4e9;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<section id="paletas-qualitativas">
+<h4><span class="section-number">6.1.1.1. </span>Paletas qualitativas<a class="headerlink" href="#paletas-qualitativas" title="Permalink to this headline">#</a></h4>
+<p>O <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> também possui uma série de paletas de cores. Em particular, as qualitativas são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pastel1</span></code>, <code class="docutils literal notranslate"><span class="pre">Pastel2</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Paired</span></code>, <code class="docutils literal notranslate"><span class="pre">Accent</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dark2</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Set1</span></code>, <code class="docutils literal notranslate"><span class="pre">Set2</span></code>, <code class="docutils literal notranslate"><span class="pre">Set3</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tab10</span></code>, <code class="docutils literal notranslate"><span class="pre">tab20</span></code>, <code class="docutils literal notranslate"><span class="pre">tab20b</span></code>, <code class="docutils literal notranslate"><span class="pre">tab20c</span></code>.</p></li>
+</ul>
+<p>Cada uma pode ser invocada pela função <code class="docutils literal notranslate"><span class="pre">seaborn.color_palette()</span></code> naturalmente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#a6cee3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#1f78b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#b2df8a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#33a02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#fb9a99;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#e31a1c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fdbf6f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#ff7f00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#cab2d6;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#6a3d9a;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#e41a1c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#377eb8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#4daf4a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#984ea3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#ff7f00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#ffff33;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#a65628;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#f781bf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#999999;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#e41a1c;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;tab20b&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#393b79;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#5254a3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#6b6ecf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#9c9ede;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#637939;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8ca252;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#b5cf6b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#cedb9c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#8c6d31;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#bd9e39;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<section id="exemplo-de-aplicacao-dado-qualitativo-categorico">
+<h5><span class="section-number">6.1.1.1.1. </span>Exemplo de aplicação: dado qualitativo categórico<a class="headerlink" href="#exemplo-de-aplicacao-dado-qualitativo-categorico" title="Permalink to this headline">#</a></h5>
+<p>Para um exemplo aplicado, vamos plotar a malha geográfica de municípios do estado da Paraíba usando uma das escalas de cor disponíveis no <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Definiremos a função <code class="docutils literal notranslate"><span class="pre">plot_municipios_PB(escala)</span></code>; para trabalhar com sistemas de coordenadas existentes no módulo <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>, a qual gerará uma paleta de 223 cores (uma para cada município) com base na <code class="docutils literal notranslate"><span class="pre">escala</span></code> escolhida pelo usuário e, em seguida, fará a representação visual dos dados categorizados.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.shapereader</span> <span class="k">as</span> <span class="nn">shpreader</span>
+<span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">color_palette</span>
+
+<span class="k">def</span> <span class="nf">plot_municipios_PB</span><span class="p">(</span><span class="n">plte</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Plota a malha de municípios do estado da Paraíba a partir</span>
+<span class="sd">       de uma escala de cores escolhida pelo usuário.&#39;&#39;&#39;</span>
+
+    <span class="c1"># eixo e projeções</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.8</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mf">35.5</span><span class="p">,</span><span class="o">-</span><span class="mf">38.5</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mf">8.5</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>  <span class="c1"># (lat1,lat2,lon1,lon2); cobertura JPA</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+    <span class="c1"># malha geográfica da PB (IBGE)</span>
+    <span class="c1"># requer diretório de arquivos SHP</span>
+    <span class="c1"># https://www.ibge.gov.br/en/geosciences/territorial-organization/territorial-meshes/18890-municipal-mesh.html?=&amp;t=acesso-ao-produto</span>
+    <span class="n">shapename</span> <span class="o">=</span> <span class="s1">&#39;../data/PB_Municipios_2021/&#39;</span>
+    <span class="n">shp</span> <span class="o">=</span> <span class="n">shpreader</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="n">shapename</span><span class="p">)</span>
+    <span class="n">nmun</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span> <span class="c1"># no. municípios</span>
+
+    <span class="c1"># plotagem dos polígonos dos municípios</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Municípios da Paraíba&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">color_palette</span><span class="p">(</span><span class="n">plte</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="n">nmun</span><span class="p">)</span> <span class="c1"># paleta de 223 cores</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">shp</span><span class="o">.</span><span class="n">geometries</span><span class="p">()):</span>    
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">s</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span><span class="n">facecolor</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">shp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotagem com escala de cores escolhida pelo usuário</span>
+<span class="n">plot_municipios_PB</span><span class="p">(</span><span class="s1">&#39;Paired&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_23_0.png" src="../_images/06a-cores_23_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="paletas-continuas-e-demais-paletas-predefinidas">
+<h4><span class="section-number">6.1.1.2. </span>Paletas contínuas e demais paletas predefinidas<a class="headerlink" href="#paletas-continuas-e-demais-paletas-predefinidas" title="Permalink to this headline">#</a></h4>
+<p>O <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> dispõe de outras dezenas de paletas com características diversas. Em particular, <em>paletas contínuas</em> são aquelas que geram uma percepção de continuidade e são bastante úteis para a plotagem de dados quantitativos numéricos e dados onde prevaleça algum ordenamento. As classes de paletas do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> são:</p>
+<ol class="simple">
+<li><p>Sequenciais com percepção de uniformidade: <code class="docutils literal notranslate"><span class="pre">viridis</span></code>, <code class="docutils literal notranslate"><span class="pre">plasma</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno</span></code>, <code class="docutils literal notranslate"><span class="pre">magma</span></code> e <code class="docutils literal notranslate"><span class="pre">cividis</span></code></p></li>
+<li><p>Sequenciais do grupo 1: <code class="docutils literal notranslate"><span class="pre">Greys</span></code>, <code class="docutils literal notranslate"><span class="pre">Purples</span></code>, <code class="docutils literal notranslate"><span class="pre">Blues</span></code>, <code class="docutils literal notranslate"><span class="pre">Greens</span></code>, <code class="docutils literal notranslate"><span class="pre">Oranges</span></code>, <code class="docutils literal notranslate"><span class="pre">Reds</span></code>, <code class="docutils literal notranslate"><span class="pre">YlOrBr</span></code>, <code class="docutils literal notranslate"><span class="pre">YlOrRd</span></code>, <code class="docutils literal notranslate"><span class="pre">OrRd</span></code>, <code class="docutils literal notranslate"><span class="pre">PuRd</span></code>, <code class="docutils literal notranslate"><span class="pre">RdPu</span></code>, <code class="docutils literal notranslate"><span class="pre">BuPu</span></code>, <code class="docutils literal notranslate"><span class="pre">GnBu</span></code>, <code class="docutils literal notranslate"><span class="pre">PuBu</span></code>, <code class="docutils literal notranslate"><span class="pre">YlGnBu</span></code>, <code class="docutils literal notranslate"><span class="pre">PuBuGn</span></code>, <code class="docutils literal notranslate"><span class="pre">BuGn</span></code> e <code class="docutils literal notranslate"><span class="pre">YlGn</span></code>;</p></li>
+<li><p>Sequenciais do grupo 2: <code class="docutils literal notranslate"><span class="pre">binary</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_yarg</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_gray</span></code>, <code class="docutils literal notranslate"><span class="pre">gray</span></code>, <code class="docutils literal notranslate"><span class="pre">bone</span></code>, <code class="docutils literal notranslate"><span class="pre">pink</span></code>, <code class="docutils literal notranslate"><span class="pre">spring</span></code>, <code class="docutils literal notranslate"><span class="pre">summer</span></code>, <code class="docutils literal notranslate"><span class="pre">autumn</span></code>, <code class="docutils literal notranslate"><span class="pre">winter</span></code>, <code class="docutils literal notranslate"><span class="pre">cool</span></code>, <code class="docutils literal notranslate"><span class="pre">Wistia</span></code>, <code class="docutils literal notranslate"><span class="pre">hot</span></code>, <code class="docutils literal notranslate"><span class="pre">afmhot</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_heat</span></code> e <code class="docutils literal notranslate"><span class="pre">copper</span></code>;</p></li>
+<li><p>Divergentes: <code class="docutils literal notranslate"><span class="pre">PiYG</span></code>, <code class="docutils literal notranslate"><span class="pre">PRGn</span></code>, <code class="docutils literal notranslate"><span class="pre">BrBG</span></code>, <code class="docutils literal notranslate"><span class="pre">PuOr</span></code>, <code class="docutils literal notranslate"><span class="pre">RdGy</span></code>, <code class="docutils literal notranslate"><span class="pre">RdBu</span></code>, <code class="docutils literal notranslate"><span class="pre">RdYlBu</span></code>, <code class="docutils literal notranslate"><span class="pre">RdYlGn</span></code>, <code class="docutils literal notranslate"><span class="pre">Spectral</span></code>, <code class="docutils literal notranslate"><span class="pre">coolwarm</span></code>, <code class="docutils literal notranslate"><span class="pre">bwr</span></code> e <code class="docutils literal notranslate"><span class="pre">seismic</span></code>;</p></li>
+<li><p>Cíclicas: <code class="docutils literal notranslate"><span class="pre">twilight</span></code>, <code class="docutils literal notranslate"><span class="pre">twilight_shifted</span></code>, <code class="docutils literal notranslate"><span class="pre">hsv</span></code>;</p></li>
+<li><p>Qualitativas: já vistas anteriormente.</p></li>
+<li><p>Genéricas: <code class="docutils literal notranslate"><span class="pre">flag</span></code>, <code class="docutils literal notranslate"><span class="pre">prism</span></code>, <code class="docutils literal notranslate"><span class="pre">ocean</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_earth</span></code>, <code class="docutils literal notranslate"><span class="pre">terrain</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_stern</span></code>, <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>, <code class="docutils literal notranslate"><span class="pre">gnuplot2</span></code>, <code class="docutils literal notranslate"><span class="pre">CMRmap</span></code>, <code class="docutils literal notranslate"><span class="pre">cubehelix</span></code>, <code class="docutils literal notranslate"><span class="pre">brg</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_rainbow</span></code>, <code class="docutils literal notranslate"><span class="pre">rainbow</span></code>, <code class="docutils literal notranslate"><span class="pre">jet</span></code>, <code class="docutils literal notranslate"><span class="pre">turbo</span></code>, <code class="docutils literal notranslate"><span class="pre">nipy_spectral</span></code> e <code class="docutils literal notranslate"><span class="pre">gist_ncar</span></code>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>A maioria das escalas de cor admitem uma versão “reversa” obtida adicionando-se o sufixo <code class="docutils literal notranslate"><span class="pre">_r</span></code> à <em>string</em> que define a escala (<code class="docutils literal notranslate"><span class="pre">cividis_r</span></code>, <code class="docutils literal notranslate"><span class="pre">hsv_r</span></code> etc.).</p>
+</div>
+<p>Não é nossa intenção explorar cada uma das paletas aqui, mas mostrar algumas aplicações. É importante notar que a escolha de paletas de cores depende de inúmeros fatores tais como:</p>
+<ul class="simple">
+<li><p>natureza dos dados (p.ex. qualitativo, quantitativo, discreto, contínuo);</p></li>
+<li><p>destaque (p.ex. destacar valor médio e outliers);</p></li>
+<li><p>intuição (p.ex. tons de verde para tratar parâmetros métricos de sustentabilidade);</p></li>
+<li><p>necessidades especiais (p.ex. público com particularidades visuais); e</p></li>
+<li><p>tradição do campo do conhecimento (p.ex. cores binárias em imagens médicas).</p></li>
+</ul>
+<p>Segundo a documentação do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, as escalas de cor são explicadas da seguinte forma:</p>
+<ol class="simple">
+<li><p>Sequenciais: mudanças incrementais na luminosidade e na saturação de cor, muitas vezes usando um único matiz; deve ser usado para representar dados que possuam alguma ordenação.</p></li>
+<li><p>Divergentes: mudança na luminosidade e possivelmente na saturação de duas cores diferentes que se encontram no meio a uma cor insaturada; deve ser usada quando a informação que está sendo plotada tem um valor médio crítico ou quando os dados se desviam em relação a zero.</p></li>
+<li><p>Cíclicas: mudança na luminosidade de duas cores diferentes que se encontram no meio e início/fim em uma cor insaturada; deve ser usado para valores relativos a fenômenos cíclicos/periódicos, tais como ângulo de fase, direção do vento ou hora do dia.</p></li>
+<li><p>Qualitativas: cores diversas; deve ser usada para representar informações que não possuem ordem ou relacionamentos.</p></li>
+</ol>
+<p>A seguir mostramos o visual de algumas dessas escalas:</p>
+<section id="sequenciais-com-percepcao-de-uniformidade">
+<h5><span class="section-number">6.1.1.2.1. </span>Sequenciais com percepção de uniformidade<a class="headerlink" href="#sequenciais-com-percepcao-de-uniformidade" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#481c6e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#453581;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#3d4d8a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#34618d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#2b748e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#24878e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#1f998a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#25ac82;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#40bd72;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#67cc5c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#98d83e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#cde11d;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#0d0a29;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#271258;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#491078;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#671b80;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#862781;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#a6317d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#c53c74;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#e34e65;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#f66c5c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#fc9065;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#feb67c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#fdda9c;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+</section>
+<section id="sequenciais-do-grupo-1">
+<h5><span class="section-number">6.1.1.2.2. </span>Sequenciais do grupo 1<a class="headerlink" href="#sequenciais-do-grupo-1" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;Oranges&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#feecda;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#fee1c4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#fdd3a9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#fdc189;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#fdac67;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#fd974a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#f98230;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#f26c16;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#e45709;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#d14501;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#b13a03;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#963003;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#e8f1fa;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#d9e7f5;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#caddf0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#b4d3e9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#9ac8e0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#7ab6d9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#5fa6d1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#4594c7;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#3080bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#1d6cb1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#0e58a2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#084488;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#fff4b2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ffe997;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#fedc7c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#fec863;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#feaf4b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#fd9841;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fd7a37;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#fc532b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ee3122;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#dd161d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#c50624;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#a40026;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+</section>
+<section id="sequenciais-do-grupo-2">
+<h5><span class="section-number">6.1.1.2.3. </span>Sequenciais do grupo 2<a class="headerlink" href="#sequenciais-do-grupo-2" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;bone&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#111117;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#22222f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#343448;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#44445f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#565776;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#676f87;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#788698;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#899ea9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#9bb6bb;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#aecbcb;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#cadddd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#e5eeee;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#3c0000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#710000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#a50000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d70000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#ff0d00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#ff4100;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#ff7300;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#ffa800;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ffdc00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#ffff17;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#ffff65;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#ffffb4;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;copper&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#170f09;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#301e13;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#492e1d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#603d27;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#794d31;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#925c3b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#a96b44;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#c27b4e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#db8a58;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#f29962;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#ffa96b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#ffb875;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+</section>
+<section id="divergentes">
+<h5><span class="section-number">6.1.1.2.4. </span>Divergentes<a class="headerlink" href="#divergentes" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;RdBu&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#9f1228;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#c53e3d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#df765e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#f5a886;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#fcd3bc;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#f9ede5;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#e9f0f4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#c7e0ed;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#96c7df;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#5ca3cb;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#337eb8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#1a5899;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#c72e4c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#e55749;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#f7814c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#fdb163;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#fed884;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#fff3ac;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#f6fbb0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#ddf19a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#aedea3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#7ccaa5;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#4ea7b0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#3d79b6;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;seismic&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#000082;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#0000ba;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#0000f2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#3939ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#8989ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#d9d9ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#ffd9d9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#ff8989;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ff3939;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#f60000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#ce0000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#a60000;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+</section>
+<section id="ciclicas">
+<h5><span class="section-number">6.1.1.2.5. </span>Cíclicas<a class="headerlink" href="#ciclicas" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;twilight&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#b8c9d0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#82a7c3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#6580bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#5e54ae;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#572588;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#3b114a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#3d113c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#6d1b4e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#9b3850;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#b86255;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#c89174;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#d5bfb1;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;twilight_shifted&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#4c1669;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#5d3ca0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#606ab7;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#7094c0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#9cb9c8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#d3d6db;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#ddd1d1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#cea991;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#c17960;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#ab4b50;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#862750;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#541546;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;hsv&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#ff7000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ffe600;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#a2ff00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#31ff00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#00ff45;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#00ffbb;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#00d3ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#005dff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#1900ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#8a00ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#fa00f9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#ff0088;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+</section>
+<section id="genericas">
+<h5><span class="section-number">6.1.1.2.6. </span>Genéricas<a class="headerlink" href="#genericas" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;prism&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#3e00ff;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#0074a2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#78ff00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#ffa700;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#ff0000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#7c00f1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#0061b9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#66ff00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ffde00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#ff0000;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#8f00e1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#001df7;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#1a66cc;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#009afa;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#00c382;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#39d771;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#89e781;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#d9f791;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#ece78f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#c4b379;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#9c8064;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#896861;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#b19b96;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#d9cecc;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="660" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#5a3bfd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#3176f8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#09a9ee;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#1dd1e2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#44eed2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#6dfdbf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#92fda9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#bbee91;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#e2d176;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#ffa95b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#ff763d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#ff3b1e;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>Diversos pacotes que lidam com mapas de cores podem ser encontrados (<a class="reference external" href="https://matplotlib.org/mpl-third-party/#colormaps-and-styles">https://matplotlib.org/mpl-third-party/#colormaps-and-styles</a>)[aqui].</p>
+</div>
+</section>
+<section id="exemplo-aplicado-dado-quantitativo-numerico">
+<span id="sec-aplicado-quantitativo"></span><h5><span class="section-number">6.1.1.2.7. </span>Exemplo aplicado: dado quantitativo numérico<a class="headerlink" href="#exemplo-aplicado-dado-quantitativo-numerico" title="Permalink to this headline">#</a></h5>
+<p>Neste segundo exemplo aplicado, recuperamos os valores das áreas (em quilômetros quadrados) de todos os municípios do estado da Paraíba a partir dos arquivos de geolocalização e construímos um gráfico de dispersão ordenado. A representação visual mostra a variação do escore padronizado (também conhecido como Fator Z, ou <em>Z-score</em>) das áreas dos municípios. Um Fator Z igual a zero representa a média do conjunto. Valores de Fator Z negativos representam municípios cuja área é menor do que a média do estado; positivos, municípios com área acima da média.</p>
+<p>Além disso, escolhemos uma escala de cor divergente que muda a tonalidade consoante variação do Fator Z. Os dados ordenados permitem que detectemos rapidamente os municípios de menor e maior extensão territorial.Observa-se pelo visual que, Bonito de Santa Fé, Mãe D’Água e Araçagi parecem disputar a posição média, mas é evidente que Lucena e Pombal possuem, nesta ordem, a menor e maior variação em relação à média.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">set_palette</span><span class="p">,</span> <span class="n">lineplot</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">zscore</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.shapereader</span> <span class="k">as</span> <span class="nn">shpreader</span>
+
+<span class="c1"># recupera dados do shapefile</span>
+<span class="n">shp</span> <span class="o">=</span> <span class="n">shpreader</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="s1">&#39;../data/PB_Municipios_2021/&#39;</span><span class="p">)</span>
+<span class="n">nmun</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span>
+<span class="n">CD</span><span class="p">,</span> <span class="n">NM</span><span class="p">,</span> <span class="n">AREA</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span> 
+<span class="k">for</span> <span class="n">mun</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmun</span><span class="p">):</span>
+    <span class="n">CD</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shp</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">mun</span><span class="p">][</span><span class="s1">&#39;CD_MUN&#39;</span><span class="p">])</span>
+    <span class="n">NM</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shp</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">mun</span><span class="p">][</span><span class="s1">&#39;NM_MUN&#39;</span><span class="p">])</span>
+    <span class="n">AREA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shp</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">mun</span><span class="p">][</span><span class="s1">&#39;AREA_KM2&#39;</span><span class="p">])</span>
+    
+<span class="c1"># converte dados de área para float e cálcula escore padronizado</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;CD&#39;</span><span class="p">:</span><span class="n">CD</span><span class="p">,</span><span class="s1">&#39;NM&#39;</span><span class="p">:</span><span class="n">NM</span><span class="p">,</span><span class="s1">&#39;AREA&#39;</span><span class="p">:</span><span class="n">AREA</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;AREA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AREA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zscore</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AREA&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+<span class="c1"># paleta de cores</span>
+<span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;PiYG&quot;</span><span class="p">)</span>
+
+<span class="c1"># figura</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;NM&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># linha média </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#CE408E&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="c1"># decoração</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">);</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">);</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">nmun</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Escore padronizado: área [km2]&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Z-score&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Município - PB&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_50_0.png" src="../_images/06a-cores_50_0.png" />
+</div>
+</div>
+<p>De fato, uma rápida investigação no <em>dataframe</em> permite-nos asseverar o que foi dito sobre Lucena e Pombal e afirmar com mais certeza que Araçagi disputa, na verdade, com Solânea a extensão média, visto que a inflexão do Fator Z ocorre entre as duas localidades.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NM&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AREA&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Lucena&#39;, 938.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NM&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AREA&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Pombal&#39;, 894099.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.005</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CD</th>
+      <th>NM</th>
+      <th>AREA</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>2500809</td>
+      <td>Araçagi</td>
+      <td>232177.0</td>
+      <td>-0.003269</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>2516003</td>
+      <td>Solânea</td>
+      <td>233043.0</td>
+      <td>0.001250</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="modelos-de-cor">
+<h2><span class="section-number">6.2. </span>Modelos de cor<a class="headerlink" href="#modelos-de-cor" title="Permalink to this headline">#</a></h2>
+<p>As cores podem ser representadas de forma abstrata através de um modelo matemático baseado em ênuplas geralmente de 3 ou 4 coordenadas. Ou seja, de forma mais geral, uma cor é uma estrutura do tipo <span class="math notranslate nohighlight">\(c = (c_1,c_2,c_3)\)</span>, ou <span class="math notranslate nohighlight">\(c = (c_1,c_2,c_3,c_4)\)</span>. Quando cada uma das componentes <span class="math notranslate nohighlight">\(c_i\)</span> são associadas a aspectos da percepção visual, elas podem ter diferentes interpretações e dar origens a um <em>espaço de cores</em>. Porém, antes de adentrarmos em particularidades, vamos entender brevemente o aspecto físico das cores e o que, de fato, é uma cor.</p>
+<section id="optica-ondas-e-cores">
+<span id="sec-optica-cor"></span><h3><span class="section-number">6.2.1. </span>Óptica, ondas e cores<a class="headerlink" href="#optica-ondas-e-cores" title="Permalink to this headline">#</a></h3>
+<p><em>Cor</em> é o nome que damos à qualidade perceptiva da luz, que se dá por uma resposta subjetiva do cérebro quando a retina de nossos olhos é estimulada. A nossa percepção das cores baseia-se em nossa sensibilidade a ondas eletromagnéticas com frequencias distintas que se misturam para produzir respostas em nossos “cones visuais” (células receptoras localizadas na retina). O espectro de energia visível – gráfico de intensidade vs. comprimento de onda (ou frequencia) – é caracterizado por comprimentos de onda na faixa de 400 - 700 nm. Esta faixa de valores determina o que chamamos de “luz visível”, que cobre matizes que vão do violeta ao vermelho. Valores abaixo do espectro visível constituem a chamada “luz ultravioleta” e acima, a “luz infravermelha”.</p>
+<p>Na retina, temos 3 “cones” (células fotoreceptoras) que respondem a estímulos em três regiões do espectro visível:</p>
+<ul class="simple">
+<li><p>Cone <em>S</em> (<em>short</em>), que é sensível a ondas curtas com pico em torno de 440 nm (azul).</p></li>
+<li><p>Cone <em>M</em> (<em>medium</em>), que é sensível a ondas médias com pico em torno de 540 nm (verde).</p></li>
+<li><p>Cone <em>L</em> (<em>long</em>), que é sensível a ondas longas com pico em torno de 580 nm (vermelho).</p></li>
+</ul>
+<p>Os cones <em>M</em> e <em>L</em> respondem a praticamente todos os comprimentos de onda do espectro visível, enquanto o cone <em>S</em> é limitado a comprimentos de até 550 nm. Descrevendo-se por <span class="math notranslate nohighlight">\((S,M,L)\)</span> a tripleta de estímulos no em um espaço Euclidiano 3D, é possível definir o <em>espaço de cores dos triestimular</em> (<em>tristimulus color space</em>), o qual determina o espaço de cores do olho humano. Como veremos adiante, cores e espaços de cor estão intimamente ligados ao conceito de <em>espaço vetorial</em>, estudados na disciplina Álgebra Linear.</p>
+<p>As figuras abaixo simulam o comportamento do espectro e dos cones. A partir daí, algumas cores <em>monocromáticas</em> (únicas) foram historicamente definidas, embora os comprimentos de onda de fronteira que as definem possuam variação. De acordo com o <em>CRC Handbook of Physics (1966)</em>, as 6 bandas de ondas do espectro que atribuem nomes a cores fundamentais que conhecemos são:</p>
+<ul class="simple">
+<li><p>Vermelho: 647 - 700;</p></li>
+<li><p>Laranja: 585 - 647;</p></li>
+<li><p>Amarelo: 575 - 585;</p></li>
+<li><p>Verde: 491 - 575;</p></li>
+<li><p>Azul: 424 - 491; e</p></li>
+<li><p>Violeta: 400 - 424.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>As cores familiares citadas anteriormente são aquelas exibidas no fenômeno do arco-íris, também chamadas de <em>cores espectrais</em>. <em>Spectrum</em> é a palavra latina para “aparência”, usada por Isaac Newton no final do século XVII para caracterizar as cores produzidas pela luz visível. Essas cores são monocromáticas, no sentido de que existem por apenas um comprimento de onda único, possuem 100% de pureza e são completamente saturadas. Misturando as cores espectrais, podemos descrever qualquer cor. Os nomes das cores espectrais possuem raízes históricas anglo-saxãs e provêm de monossílabos. Uma discussão interessante sobre as cores pode ser encontrada <a class="reference external" href="https://physics.info/color/">aqui</a>.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_58_0.png" src="../_images/06a-cores_58_0.png" />
+</div>
+</div>
+<p>A cor da luz que emana de objetos origina-se por processos físicos. Podemos citar, por exemplo</p>
+<ul class="simple">
+<li><p><em>emissão</em>, quando o objeto é uma fonte de luz com cor determinada pelo seu espectro;</p></li>
+<li><p><em>reflexão</em>, quando algumas frequencias são refletidas pelo objeto;</p></li>
+<li><p><em>transmissão</em>, quando algumas frequencias são transmitidas através do objeto;</p></li>
+<li><p><em>interferência</em>, quando algumas frequencias são amplificadas e outras atenuadas;</p></li>
+</ul>
+</section>
+<section id="modelos-aditivos-e-subtrativos">
+<h3><span class="section-number">6.2.2. </span>Modelos aditivos e subtrativos<a class="headerlink" href="#modelos-aditivos-e-subtrativos" title="Permalink to this headline">#</a></h3>
+<section id="rgb">
+<h4><span class="section-number">6.2.2.1. </span>RGB<a class="headerlink" href="#rgb" title="Permalink to this headline">#</a></h4>
+<p>O modelo de cor <em>RGB</em> assume que uma cor é identificada por uma tripleta do tipo <span class="math notranslate nohighlight">\(c = (r,g,b)\)</span>, em que <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span> correspondem a proporções de vermelho, verde e azul, respectivamente, que são consideradas cores primárias. Quando <span class="math notranslate nohighlight">\(0 \leq r,g,b \leq 1\)</span>, podemos representar cada cor no modelo <em>RGB</em> por um vetor do espaço 3D com origem em <span class="math notranslate nohighlight">\((0,0,0)\)</span> e extremidade imersa no “cubo unitário” formado pelos eixos <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>Geometricamente, a cor preta seria então representada justamente pelo vetor <span class="math notranslate nohighlight">\(\vec{o} = (r=0,g=0,b=0)\)</span>, o que remete à ausência de luz, em certo sentido, razão pela qual preto não é considerada uma cor propriamente dita. Analogamente aos vetores canônicos <span class="math notranslate nohighlight">\(\vec{i}\)</span>, <span class="math notranslate nohighlight">\(\vec{j}\)</span> e <span class="math notranslate nohighlight">\(\vec{k}\)</span> do espaço 3D, os vetores <span class="math notranslate nohighlight">\((1,0,0)\)</span>, <span class="math notranslate nohighlight">\((0,1,0)\)</span> e <span class="math notranslate nohighlight">\((0,0,1)\)</span> formariam uma base para que, a partir de tonalidades das cores vermelho, verde e azul. A partir disso, é imeditado reconhecer que, segundo o modelo <em>RGB</em>, qualquer cor é dada por uma combinação linear de tonalidades de <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span>, ou seja:</p>
+<div class="math notranslate nohighlight">
+\[\vec{c} = r(1,0,0) + g(0,1,0) + b(0,0,1)\]</div>
+<p>Nestes termos, o vetor <span class="math notranslate nohighlight">\(\vec{c_0} = (0,0,0)\)</span> seria a cor “preto”, o vetor <span class="math notranslate nohighlight">\(\vec{c_1} = (1,1,1)\)</span> seria “branco”, a família de vetores <span class="math notranslate nohighlight">\(\vec{c_g} = k\vec{c_0}, \ \ 0 &lt; k &lt; 1\)</span>, determinaria os “tons de cinza”, e qualquer outra combinação, as demais cores. Entretanto, vale ressaltar que o olho humano é limitado. Ele consegue distinguir cerca de 7 - 10 milhões de cores. Embora seja uma quantidade extremamente grande, isso impõe, de certa forma, finitude sobre os valores de <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>Nos sistemas digitais modernos, os valores de <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span> limitam-se aos números inteiros positivos entre 0 e 255, inclusive. Isto é, em termos de “voxels” discretos (“pixels volumétricos”), o nosso “cubo unitário” de cores infinitas seria reduzido a uma espécie de cubo mágico capaz de identificar, no máximo 256 x 256 x 256 = 16.777.216 cores (aproximadamente 16 milhões!). A <a class="reference internal" href="#fig-rgb-cube"><span class="std std-numref">Fig. 6.1</span></a> (veja <a class="reference external" href="https://social.technet.microsoft.com/wiki/contents/articles/20990.vb-net-generate-color-sequences-using-rgb-color-cube.aspx">aqui</a>), traz uma representação geométrica do cubo RGB.</p>
+<figure class="align-center" id="fig-rgb-cube">
+<a class="reference internal image-reference" href="../_images/rgb-cube.jpg"><img alt="Cubo RGB." src="../_images/rgb-cube.jpg" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Cubo de cores RGB: representação geométrica do espectro de cores possíveis para valores 0 - 255.</span><a class="headerlink" href="#fig-rgb-cube" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-curiosidade admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>As mais de 16 milhões de cores <em>RGB</em> que vemos em qualquer tela <em>True Color</em> moderna equivalem a ter imagens processadas com 8 bits por canal, i.e. <span class="math notranslate nohighlight">\((2^8)^3\)</span> cores. Veja uma discussão interessante entre <em>bits</em> e cores neste <a class="reference external" href="https://docs.krita.org/en/general_concepts/colors/bit_depth.html">post</a>.</p>
+</div>
+<p>RGB é um <em>modelo aditivo</em> (<a class="reference internal" href="#fig-cores-aditivas"><span class="std std-numref">Fig. 6.2</span></a>), significando que a cor percebida pode ser representada pela soma de valores numéricos de suas componentes, como já fizemos acima. Neste modelo, vermelho, verde e azul são chamadas <em>cores primárias</em>. Como a cor preta equivale a um “elemento neutro”, pelo modelo aditivo, podemos escrever, algebricamente,</p>
+<ul class="simple">
+<li><p>preto + vermelho = vermelho</p></li>
+<li><p>preto + verde = verde</p></li>
+<li><p>preto + azul = azul.</p></li>
+</ul>
+<p>Entretanto,</p>
+<ul class="simple">
+<li><p>vermelho + verde = amarelo</p></li>
+<li><p>verde + azul = ciano</p></li>
+<li><p>azul + vermelho = magenta</p></li>
+<li><p>vermelho + verde + azul = branco</p></li>
+</ul>
+<figure class="align-center" id="fig-cores-aditivas">
+<a class="reference internal image-reference" href="../_images/cores-aditivas.png"><img alt="Cores aditivas." src="../_images/cores-aditivas.png" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Modelo fundamental de mistura aditiva de cores RGB.</span><a class="headerlink" href="#fig-cores-aditivas" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cmyk">
+<h4><span class="section-number">6.2.2.2. </span>CMYK<a class="headerlink" href="#cmyk" title="Permalink to this headline">#</a></h4>
+<p>Diferentemente do modelo <em>RGB</em>, o modelo de cor <em>CMYK</em> assume que uma cor é identificada por uma quadripleta do tipo <span class="math notranslate nohighlight">\(c = (c,m,y,k)\)</span>, em que <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, e <span class="math notranslate nohighlight">\(k\)</span> correspondem a proporções de ciano, magenta, amarelo e preto, respectivamente. As três primeiras são consideradas <em>cores subtrativas primárias</em> e preto uma quarta componente que gera tonalidades escuras. Por isso, este modelo também é conhecido como <em>CMY</em>.</p>
+<p>As cores subtrativas (<a class="reference internal" href="#fig-cores-subtrativas"><span class="std std-numref">Fig. 6.3</span></a>) agem em complementaridade às aditivas primárias e servem como filtros que as absorvem. Assim, ciano, magenta e amarelo são cores complementares a vermelho, verde e azul, nesta ordem. O modelo CMYK é preferível para impressão porque o espectro de cores CMYK é significativamente menor e composto por pigmentos, ao passo que RGB é preferível para telas e dispositivos eletrônicos por ser composto por luz.</p>
+<p>A ausência de pigmentos é o papel branco. Isto significa que o papel permanece “branco” quando iluminado pela luz branca. Adicionar pigmentos a ele é como subtrair certos comprimentos de onda. Então, algebricamente:</p>
+<ul class="simple">
+<li><p>branco - vermelho = ciano</p></li>
+<li><p>branco - verde = magenta</p></li>
+<li><p>branco - azul = amarelo.</p></li>
+</ul>
+<p>Porém,</p>
+<ul class="simple">
+<li><p>vermelho + ciano = branco</p></li>
+<li><p>verde + magenta = branco</p></li>
+<li><p>azul + amarelo = branco</p></li>
+</ul>
+<p>e</p>
+<ul class="simple">
+<li><p>ciano + magenta = azul</p></li>
+<li><p>magenta + amarelo = vermelho</p></li>
+<li><p>amarelo + ciano = verde</p></li>
+<li><p>ciano + magenta + amarelo = preto</p></li>
+</ul>
+<figure class="align-center" id="fig-cores-subtrativas">
+<a class="reference internal image-reference" href="../_images/cores-subtrativas.png"><img alt="Cores subtrativas." src="../_images/cores-subtrativas.png" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Modelo fundamental de mistura subtrativa de cores CMY/K.</span><a class="headerlink" href="#fig-cores-subtrativas" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="modelos-geometricos">
+<h3><span class="section-number">6.2.3. </span>Modelos geométricos<a class="headerlink" href="#modelos-geometricos" title="Permalink to this headline">#</a></h3>
+<p>Outros diversos modelos de cor tridimensionais em formatos cônicos, cilíndricos ou esféricos foram desenvolvidos ao longo do tempo, tais como HSL, HSV, HSI, HCL, HSB, NCS, XYZ, entre outros. A <a class="reference internal" href="#fig-color-solid-comparison"><span class="std std-numref">Fig. 6.4</span></a> (disponível <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Color_solid_comparison_hsl_hsv_rgb_cone_sphere_cube_cylinder.png">aqui</a>) exibe os modelos HSL e HSV em formas geométricas diferentes. Desses, o HSL (<em>Hue</em>, <em>Saturation</em>, <em>Luminosity</em>) é considerado um dos mais acessíveis para aplicação em visualização de dados. Ele é uma representação cilíndrica do modelo RGB. Portanto, nós o consideraremos para estudo.</p>
+<figure class="align-center" id="fig-color-solid-comparison">
+<a class="reference internal image-reference" href="../_images/color-solid-comparison.png"><img alt="Comparador de modelos." src="../_images/color-solid-comparison.png" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Modelos HSL e HSV com variadas representações geométricas.</span><a class="headerlink" href="#fig-color-solid-comparison" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="hsl">
+<h4><span class="section-number">6.2.3.1. </span>HSL<a class="headerlink" href="#hsl" title="Permalink to this headline">#</a></h4>
+<p>O modelo HSL também é tridimensional. Suas componentes são:</p>
+<ul class="simple">
+<li><p><em>Hue</em> (matiz), que varia na direção azimutal do cilindro e define a cor “verdadeira”. Para o modelo CIECAM02 de colorimetria, o matiz é tecnicamente definido como <em>“o grau com que um estímulo pode ser descrito como semelhante ou diferente de estímulos descritos como vermelho, laranja, amarelo, verde, azul ou violeta”</em>. No sistema cilíndrico de coordenadas, a cor vermelha primária (matiz puro) está na coordenada 0 grau, a cor verde primária em 120 graus e a azul em 240 graus. O matiz é um atributo qualitativo da cor porque é definido por diferença e não por escala. Não existem <em>tints</em>, <em>shades</em> ou <em>tints</em> (vide <a class="reference internal" href="#sec-misturas-cor"><span class="std std-numref">Seção 6.2.5</span></a>).</p></li>
+<li><p><em>Saturation</em> (saturação), que varia na direção radial do cilindro e define a pureza do matiz. A cor plenamente saturada é <em>vívida</em> (<em>vivid</em>). À medida que a insaturamos até o estado de tons de cinza, ou <em>acromaticidade</em>, ou <em>neutralidade</em> (eixo central do cilindro), a cor torna-se <em>muda</em> (<em>muted</em>). Portanto, um matiz com 0% de saturação neutro (mudo), ao passo que um matiz com 100% de saturação é puro (vívido). A saturação é um parâmetro quantitativo da cor.</p></li>
+<li><p><em>Luminosity</em> (luminosidade), que define a direção axial do cilindro e define o contraste do matiz. A luminosidade, tecnicamente, não é sinônimo de brilho, mas ela pode ser entendida como um controlador entre tons claros e escuros. Assim como a saturação, a luminosidade também é um parâmetro quantitativo da cor.</p></li>
+</ul>
+<p>Abaixo, utilizamos as funções <code class="docutils literal notranslate"><span class="pre">seaborn.palplot()</span></code> e <code class="docutils literal notranslate"><span class="pre">seaborn.hls_palette</span></code> para demonstrar variações dos valores das componentes <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(s\)</span>, e <span class="math notranslate nohighlight">\(l\)</span> no modelo de HSL, no qual a cor é uma tripleta em coordenadas cilíndricas dada por <span class="math notranslate nohighlight">\(c=(h,s,l)\)</span>.</p>
+<ul class="simple">
+<li><p>Variação de matizes com 100% de saturação e luminosidade média.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">palplot</span><span class="p">,</span> <span class="n">hls_palette</span>
+<span class="c1"># cores puras do arco-íris</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_63_0.png" src="../_images/06a-cores_63_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matiz 33%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_64_0.png" src="../_images/06a-cores_64_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matiz 66%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_65_0.png" src="../_images/06a-cores_65_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Matiz 100% com variação de saturação e luminosidade média.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># saturação 80%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">.75</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_67_0.png" src="../_images/06a-cores_67_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># saturação 50%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_68_0.png" src="../_images/06a-cores_68_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># saturação 10%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_69_0.png" src="../_images/06a-cores_69_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Matiz e saturação 100% e luminosidade variável.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># luminosidade 90%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">.9</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_71_0.png" src="../_images/06a-cores_71_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># luminosidade 40%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">.4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_72_0.png" src="../_images/06a-cores_72_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># luminosidade 10%</span>
+<span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">.1</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_73_0.png" src="../_images/06a-cores_73_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="cores-em-codigo-hex">
+<h3><span class="section-number">6.2.4. </span>Cores em código HEX<a class="headerlink" href="#cores-em-codigo-hex" title="Permalink to this headline">#</a></h3>
+<p>A representação de cores por código hexadecimal (<em>hex codes</em>) emergiu como um sistema prático para trabalhar com desenvolvimento <em>web</em>. Entretanto, passou a ser utilizado para diversos fins em visualização de dados devido à sua simplicidade de uso e facilidade de compreensão. Uma tripleta HEX é um número de 6 dígitos (3 bytes) hexadecimais do tipo <code class="docutils literal notranslate"><span class="pre">AABB00</span></code> bastante utilizada em linguagens HTML e CSS para estilizar páginas da internet e também em artes gráficas. Em geral, usa-se uma tralha (<code class="docutils literal notranslate"><span class="pre">#</span></code>) antes do código por razões sintáticas.</p>
+<p>O código HEX nada mais é do que uma representação implícita do modelo RGB. Os dígitos 1 e 2 (byte 1) controlam a proporção de vermelho, 3 e 4 a proporção de verde (byte 2), e 5 e 6 a proporção de azul (byte 3). Como o sistema hexadecimal admite os dígitos de 0 a 9 e as letras de A a F (equivalentes aos dígitos de 10 a 15), existem exatamente 16 possibilidades por dígito de <em>hex code</em>, ou seja até <span class="math notranslate nohighlight">\(16^6 = 16.777.216\)</span> cores representáveis.</p>
+<p>Para se converter valores RGB em HEX, devemos adotar as coordenadas discretas de 0 a 255 ou converter a escala 0 - 1 para 0 - 255 multiplicando o número por 255 e, então realizar a divisão inteira por 16. O quociente da divisão equivale ao primeiro dígito, o resto ao segundo. Fazendo o mesmo para cada coordenada, obteremos o <em>hex code</em> correspondente.</p>
+<section id="exemplo-de-conversao-rgb-hex">
+<h4><span class="section-number">6.2.4.1. </span>Exemplo de conversão RGB &gt; HEX<a class="headerlink" href="#exemplo-de-conversao-rgb-hex" title="Permalink to this headline">#</a></h4>
+<p>Para a cor RGB(1,0.5,0.3):</p>
+<ul class="simple">
+<li><p>multiplicamos por 255 para ter RGB(255,127,76). <em>Obs.: se a tupla já for inteira, este passo é ignorado.</em></p></li>
+<li><p>realizamos a divisão inteira por componente para obter a tupla de quocientes (15,7,4);</p></li>
+<li><p>tomamos o resto da divisão inteira por componente para obter a tupla de restos (15,15,12);</p></li>
+<li><p>convertemos os dígitos maiores do que 9 para letras nas tuplas para obter (F,7,4) e (F,F,C);</p></li>
+<li><p>juntamos as tuplas elemento a elemento para formar os bytes chegando ao <em>hex code</em> FF7F4C</p></li>
+</ul>
+<p>Abaixo, plotamos dois retângulos especificando as cores por tupla RGB e código HEX para compararmos o resultado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># tupla de cor (r,g,b,a), com a = opacidade</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="s1">&#39;RGB(255,127,76)&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">})</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+<span class="c1"># cor com hex code</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FF7F4C&#39;</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="s1">&#39;#FF7F4C&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">})</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_75_0.png" src="../_images/06a-cores_75_0.png" />
+</div>
+</div>
+<p>Uma função para converter tuplas RGB em código HEX poderia ser codificada conforme abaixo. Você pode aperfeiçoá-la para tratar a exceção do caso em que o usuário entra com valores numéricos válidos, porém misturados entre tipos <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">float</span></code>, ou modificar os argumentos de entrada para a forma <code class="docutils literal notranslate"><span class="pre">(r:</span> <span class="pre">int,</span> <span class="pre">g:</span> <span class="pre">int,</span> <span class="pre">b:</span> <span class="pre">int)</span></code>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rgb2hex</span><span class="p">(</span><span class="n">rgb</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Conversor simples de cor RGB para HEX code&#39;&#39;&#39;</span>
+
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">asarray</span><span class="p">,</span> <span class="n">array</span>
+
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+
+    <span class="c1"># checking</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">rgb</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rgb</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)):</span>
+        <span class="n">rgb</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">rgb</span><span class="o">*</span><span class="mi">255</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="nb">all</span><span class="p">((</span><span class="n">rgb</span><span class="o">/</span><span class="mi">255</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rgb</span><span class="o">/</span><span class="mi">255</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)):</span> <span class="c1">#TODO caso (int,float,float)</span>
+        <span class="k">pass</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Tupla RGB deve conter valores entre [0,1] ou [0,255].&#39;</span><span class="p">)</span>
+
+    <span class="c1"># conversão</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">rgb</span> <span class="o">//</span> <span class="mi">16</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">qi</span><span class="p">)</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="s1">&#39;0x&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">qi</span> <span class="ow">in</span> <span class="n">q</span><span class="p">]</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">rgb</span> <span class="o">%</span> <span class="mi">16</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="s1">&#39;0x&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ri</span> <span class="ow">in</span> <span class="n">r</span><span class="p">]</span>
+
+    <span class="c1"># string</span>
+    <span class="n">hex_</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">hex_</span> <span class="o">+=</span> <span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">hex_</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pelos testes abaixo, conseguimos verificar que a função se comporta como esperaríamos tanto para tuplas de valores fracionados quanto para tuplas de valores inteiros (0 - 255).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># teste 1</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">rgb2hex</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#ff7f4c&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># teste 2</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">76</span><span class="p">)</span>
+<span class="n">rgb2hex</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#ff7f4c&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplos-de-cores-css">
+<h4><span class="section-number">6.2.4.2. </span>Exemplos de cores CSS<a class="headerlink" href="#exemplos-de-cores-css" title="Permalink to this headline">#</a></h4>
+<p>A seguir plotamos um mosaico das cores CSS predefinidas do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> e seus <em>hex codes</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">CSS4_COLORS</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Cores CSS predefinidas do matplotlib e seus hex codes&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># cores CSS</span>
+<span class="n">css</span> <span class="o">=</span> <span class="n">CSS4_COLORS</span>
+<span class="n">ck</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">css</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span><span class="nb">list</span><span class="p">(</span><span class="n">css</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="c1"># mosaico de cores: len(css)/4 = 37 x 4</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">nms</span> <span class="o">=</span> <span class="n">ck</span><span class="p">[(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">37</span><span class="p">:</span><span class="n">k</span><span class="o">*</span><span class="mi">37</span><span class="p">]</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">cv</span><span class="p">[(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">37</span><span class="p">:</span><span class="n">k</span><span class="o">*</span><span class="mi">37</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">37</span><span class="p">):</span>         
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">a</span><span class="p">]))</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="si">{</span><span class="n">nms</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="si">}</span><span class="se">\&#39;</span><span class="s1">: </span><span class="si">{</span><span class="n">cols</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;va&#39;</span><span class="p">:</span><span class="s1">&#39;center&#39;</span><span class="p">})</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06a-cores_82_0.png" src="../_images/06a-cores_82_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="misturas-de-cor">
+<span id="sec-misturas-cor"></span><h3><span class="section-number">6.2.5. </span>Misturas de cor<a class="headerlink" href="#misturas-de-cor" title="Permalink to this headline">#</a></h3>
+<p>Alguns termos utilizados para fazer referência a misturas de cor decorrentes de <em>cores puras</em> (cores que não podem ser obtidas a partir de outras) são empregados pelos teóricos da cor. Esses termos não possuem tradução imediata para o português, mas podem ser especificados com auxílio de prefixo “tons de”. São eles:</p>
+<ul class="simple">
+<li><p><em>Tints</em> (tons de branco): são cores que, misturadas com branco, produzem variações de luminosidade;</p></li>
+<li><p><em>Shades</em> (tons de preto): são cores que, misturadas com preto, produzem variações de escuridão;</p></li>
+<li><p><em>Tones</em> (tons): são cores misturadas com cinza, preto ou branco.</p></li>
+</ul>
+<p>O diagrama da <a class="reference internal" href="#fig-tint-tone-shade"><span class="std std-numref">Fig. 6.5</span></a> descreve a relação entre esses termos.</p>
+<figure class="align-center" id="fig-tint-tone-shade">
+<a class="reference internal image-reference" href="../_images/tint-tone-shade.png"><img alt="Cores aditivas." src="../_images/tint-tone-shade.png" style="width: 450px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Diagrama de termos relativos a tonalidades de cor.</span><a class="headerlink" href="#fig-tint-tone-shade" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="outros-esquemas-de-cor">
+<h2><span class="section-number">6.3. </span>Outros esquemas de cor<a class="headerlink" href="#outros-esquemas-de-cor" title="Permalink to this headline">#</a></h2>
+<p>As escalas de cor que estudamos na <a class="reference internal" href="#sec-escalas-cor"><span class="std std-numref">Seção 6.1</span></a> às vezes são chamadas de <em>esquemas de cor</em>. Existem diversos esquemas com aplicações e usos específicos (p.ex. triádico, tetrádico, análogo) que não exploraremos com detalhes neste capítulo.Porém, vale ressaltar ainda alguns deles, que também sugerem terminologias úteis:</p>
+<ul class="simple">
+<li><p><em>Esquema monocromático</em>: composto por cores derivadas de um único matiz adicionadas de branco, cinza ou preto, isto é, seus <em>tints</em>, <em>tones</em> e <em>shades</em>.</p></li>
+<li><p><em>Esquema complementar</em>: composto pelas cores que cancelam os matizes de outras, segundo o princípio subtrativo.</p></li>
+<li><p><em>Esquema acromático</em>: composto por cores insaturadas, acromáticas, ou aproximadamente neutras. Cores acromáticas puras incluem preto, branco, cinzas e beges. Cores aproximadamente neutras incluem marrons, tons canelados, pastéis e escurecidos. Cores neutras podem ser produzidas pela mistura de cores puras com preto, branco, cinza, ou com duas cores complementares.</p></li>
+</ul>
+<p>Outros termos úteis neste contexto são relacionados a paletas de cores, a exemplo de <em>color swatch</em> e <em>color wheel</em>.</p>
+<section id="esquemas-de-propriedade-comercial">
+<h3><span class="section-number">6.3.1. </span>Esquemas de propriedade comercial<a class="headerlink" href="#esquemas-de-propriedade-comercial" title="Permalink to this headline">#</a></h3>
+<p>No cenário internacional, muitas empresas disputam o “mercado da cor” e das artes gráficas. Algumas delas possuem sistemas de classificação de cor próprios e patenteados. Uma parte delas é bastante conhecida no Brasil, outra nem tanto. Para efeito de expansão de conhecimento, seguem abaixo links para algumas marcas devotadas às cores:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.faber-castell.com">Faber-Castell©</a> (veja tabela de cores <a class="reference external" href="https://www.faber-castell.com/-/media/Faber-Castell-new/PDF/en/Farbtabelle-AG-ENG-0214.ashx">aqui</a></p></li>
+<li><p><a class="reference external" href="https://www.pantone.com/">Pantone©</a> (veja sistemas de cores <a class="reference external" href="https://www.pantone.com/color-systems/pantone-color-systems-explained">aqui</a>)</p></li>
+<li><p><a class="reference external" href="https://www.prismacolor.com">Prisma Color©</a></p></li>
+<li><p><a class="reference external" href="https://www.spectrumnoir.com">Spectrum Noir©</a></p></li>
+<li><p><a class="reference external" href="https://www.stabilo.com/">Stabilo©</a></p></li>
+<li><p><a class="reference external" href="https://www.staedtler.com/intl/en/">Staedtler©</a></p></li>
+<li><p><a class="reference external" href="https://www.tombowusa.com">Tombow©</a></p></li>
+</ul>
+<p>Uma tabela de conversão de cores entre alguns dos sistemas acima pode ser encontrada nesta <a class="reference external" href="https://www.colourwithclaire.com/latest/pantoner-spring-2018-colour-conversion-chart">página</a>.</p>
+</section>
+</section>
+<section id="teoria-dos-espacos-de-cor">
+<h2><span class="section-number">6.4. </span>Teoria dos espaços de cor<a class="headerlink" href="#teoria-dos-espacos-de-cor" title="Permalink to this headline">#</a></h2>
+<section id="espacos-de-cor-cie">
+<h3><span class="section-number">6.4.1. </span>Espaços de cor CIE<a class="headerlink" href="#espacos-de-cor-cie" title="Permalink to this headline">#</a></h3>
+<p>Modelos de cor e espaços de cor às vezes são terminologias que se confundem, embora existam propriedades intrínsecas a serem destacadas para que um espaço de cor seja realmente definido. Um <em>espaço de cor</em>, compreendido de maneira direta, é uma estrutura de organização de cores. Porém, esta resposta pode ser pouco esclarecedora, levando-nos a adentrar um pouco mais no conhecimento teórico.</p>
+<p>O que separa um modelo de cor, como o RGB, por exemplo, de um espaço de cor, como o CIELAB, é uma espécie de <em>função de mapeamento de cor</em> que está vinculada à percepção real do olho humano das cores. Em 1931, a <a class="reference external" href="http://cie.co.at"><em>International Commission on Illumination</em></a> (em francês, <em>Commission Internationale de l’Éclairage</em> - CIE), a autoridade internacional em matéria de padrões para luz e cor, estabeleceu o <em>observador padrão (colorimétrico)</em> como a função de mapeamento. Uma vez que os cones triestimulares S, M, L (veja a <a class="reference internal" href="#sec-escalas-cor"><span class="std std-numref">Seção 6.1</span></a>) dependem do campo de visão do observador, o observador padrão é uma ponderação das respostas aos estímulos da visão considerando parâmetros experimentais e a ciência da colorimetria, que forma a base para descrever uma cor como três numeros.</p>
+<p>No princípio, o experimento do observador padrão tratou as componentes de cromaticidade formadoras da cor como <span class="math notranslate nohighlight">\(L^{*}\)</span>, <span class="math notranslate nohighlight">\(a^{*}\)</span> e <span class="math notranslate nohighlight">\(b^{*}\)</span>, representando nesta ordem, a luminosidade, a resposta a estímulos de verde/vermelho e a resposta a estímulos de azul-amarelo. Da junção de CIE com as iniciais utilizadas decorre o nome <em>CIELAB</em>, ou espaço <em>CIE 1931</em>, que é um espaço de cor <em>independente de dispositivo</em>. Na prática, monitores, telas e dispositivos eletrônicos para visualização de imagens coloridas representam as cores de maneira diferente, razão pela qual a necessidade por um padrão emergiu.</p>
+<p>Relacionados ao espaço <em>CIELAB</em>, estão os espaços <em>CIEXYZ</em> e <em>CIERGB</em>. No espaço CIEXYZ, <span class="math notranslate nohighlight">\(Z\)</span> é a componente da luminosidade, <span class="math notranslate nohighlight">\(Z\)</span> é a componente “quase-azul” (equivalente a azul no CIERGB) e <span class="math notranslate nohighlight">\(X\)</span> é a componente das misturas das cores RGB.</p>
+</section>
+<section id="espectro-e-componentes">
+<h3><span class="section-number">6.4.2. </span>Espectro e componentes<a class="headerlink" href="#espectro-e-componentes" title="Permalink to this headline">#</a></h3>
+<p>A energia física (radiância) é expressa em um espectro de 31 componentes representando bandas de 10 nanômetros, o que leva à faixa do espectro visível de aproximadamente 400 - 700 nm. Isto significa que, a rigor, uma cor seria representada por 31 componentes. Uma vez que isso é irrazoável, a ponderação dessas componentes no espectro permite que reduzamos sua complexidade a apenas 3 componentes.</p>
+<p>As 3 componentes geralmente utilizadas dependerão, por sua vez, do espectro de energia. Nos experimentos primários da CIE, as funções de mapeamento – também chamadas de <em>color matching functions</em> (CMFs) – para o observador padrão foram definidas como superposições de curvas gaussianas dadas pela expressão</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathcal{G}(\lambda;\mu,\sigma_1,\sigma_2) = 
+\begin{cases}
+e^{-\frac{1}{2}\left(\frac{ \lambda - \mu}{\sigma_1}\right)^2}, \ \ \text{se} \ \ \lambda \le \mu \\
+e^{-\frac{1}{2}\left(\frac{ \lambda - \mu}{\sigma_2}\right)^2}, \ \ \text{se} \ \ \lambda \geq \mu
+\end{cases},
+\end{split}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\lambda \, [nm]\)</span> é o comprimento de onda, <span class="math notranslate nohighlight">\(\mu\)</span> o valor médio da distribuição, <span class="math notranslate nohighlight">\(\sigma_1\)</span> o desvio à esquerda da média e <span class="math notranslate nohighlight">\(\sigma_2\)</span> o desvio à direita da média.</p>
+<p>Por sua vez, as CMFs para as respostas triestimulares XYZ para o espaço CIEXYZ, foram dadas pelas ponderações a seguir:</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{x}(\lambda) = 1.056\mathcal{G}(\lambda;599.8,37.9,31.0) + 0.362\mathcal{G}(\lambda;442.0,16.0,26.7) - 0.065\mathcal{G}(\lambda;501.1,20.4,26.2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\bar{y}(\lambda) = 0.821\mathcal{G}(\lambda;568.8,46.9,40.5) + 0.286\mathcal{G}(\lambda;530.9,16.3,31.1)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\bar{z}(\lambda) = 1.217\mathcal{G}(\lambda;437.0,11.8,36.0) + 0.681\mathcal{G}(\lambda;459.0,26.0,13.8) \\
+\end{split}\]</div>
+<p>A partir daí, definindo-se o espectro de energia por uma função <span class="math notranslate nohighlight">\(p(\lambda)\)</span>, uma cor é definida pelo vetor</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{c} = \left( 
+    \int_{\lambda_{min}}^{\lambda_{max}} p(\lambda) \bar{x}(\lambda) \, d\lambda,
+    \int_{\lambda_{min}}^{\lambda_{max}} p(\lambda) \bar{y}(\lambda) \, d\lambda,
+    \int_{\lambda_{min}}^{\lambda_{max}} p(\lambda) \bar{z}(\lambda) \, d\lambda
+    \right),
+\]</div>
+<p>para o espectro compreendido entre comprimentos de onda no intervalo <span class="math notranslate nohighlight">\([\lambda_{min},\lambda_{max}]\)</span>.</p>
+</section>
+<section id="relacionamento-com-a-algebra-linear">
+<h3><span class="section-number">6.4.3. </span>Relacionamento com a Álgebra Linear<a class="headerlink" href="#relacionamento-com-a-algebra-linear" title="Permalink to this headline">#</a></h3>
+<p>Tendo em vista que a interpretação triestimular dependerá do espaço de cor considerado, haja vista os parâmetros que o definem, uma cor, genericamente, é função de um espectro de distribuição da luz, <span class="math notranslate nohighlight">\(p(\lambda)\)</span>, e da sensibilidade dos 3 cones de percepção visual. Escrevendo a função de sensibilidade do i-ésimo cone como <span class="math notranslate nohighlight">\(s_i(\lambda)\)</span> para um espaço de cor <span class="math notranslate nohighlight">\(E\)</span>, podemos expressar as componentes de uma cor <span class="math notranslate nohighlight">\(c\)</span> em <span class="math notranslate nohighlight">\(E\)</span> como</p>
+<div class="math notranslate nohighlight">
+\[
+c_i = \int_{\lambda_{min}}^{\lambda_{max}} p(\lambda) s_i(\lambda) \, d\lambda
+\]</div>
+<p>Notemos, porém, que o vetor <span class="math notranslate nohighlight">\(\vec{c}\)</span> do qual <span class="math notranslate nohighlight">\(c_i\)</span> são suas componentes, é, na verdade, um vetor que possui integrais definidas com integrandos “contínuos”. Na prática, as cores são representadas por <em>pixels</em> e <em>canais de cor</em> discretos, sendo necessário trabalhar com <em>arrays</em> de dimensão até 3, o que nos remete a operações matriz-vetor.</p>
+<p>Assim, em termos de matemática discreta, a cor, grosso modo, é representada por uma operação algébrica do tipo</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{c} = \mathbf{S}^T \mathbf{p},
+\]</div>
+<p>com <span class="math notranslate nohighlight">\(\mathbf{c} \in \mathbb{R}^3\)</span>, <span class="math notranslate nohighlight">\(\mathbf{S} \in \mathbb{R}^{n \times 3}\)</span> e <span class="math notranslate nohighlight">\(\mathbf{p} \in \mathbb{R}^n\)</span>.</p>
+<p>De igual modo, a conversão entre espaços de cor dá-se por meio de operações matriciais, porque, no final das contas, cada cor é identificada como um vetor <span class="math notranslate nohighlight">\(c\)</span> de 3 coordenadas identificado com uma posição de um subespaço vetorial tridimensional <span class="math notranslate nohighlight">\(\mathcal{E}\)</span>. Por exemplo, para converter cores do sistema RGB para XYZ, devemos resolver uma equação matricial do tipo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+X \\
+Y \\
+Z \\
+\end{bmatrix}
+= \mathbf{M}
+\begin{bmatrix}
+R \\
+G \\
+B \\
+\end{bmatrix},
+\end{split}\]</div>
+<p>onde <span class="math notranslate nohighlight">\([X \, Y \, Z]^T\)</span> é o vetor de coordenadas da cor no sistema XYZ, <span class="math notranslate nohighlight">\([R \, G \, B]^T\)</span> o vetor equivalente no sistema RGB e <span class="math notranslate nohighlight">\(\mathbf{M}\)</span> a matriz de transformação. A conversão no sentido inverso depende da inversa de <span class="math notranslate nohighlight">\(\mathbf{M}\)</span>. Entretanto, como existem diversos espaços RGB, as matrizes <span class="math notranslate nohighlight">\(\mathbf{M}\)</span> e <span class="math notranslate nohighlight">\(\mathbf{M}^{-1}\)</span> também diferirão caso a caso.</p>
+<p>A seguir, mostramos os pares de matrizes para conversão RGB-XYZ para dois espaços RGB comuns considerando a referência de cor branca <span class="math notranslate nohighlight">\(D_{65}\)</span> (chamada de <em>reference white</em>):</p>
+<ul class="simple">
+<li><p>Adobe RGB (1998)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+\mathbf{M}=
+\begin{bmatrix}
+0.5767309 &amp; 0.1855540 &amp; 0.1881852 \\
+0.2973769 &amp; 0.6273491 &amp; 0.0752741 \\
+0.0270343 &amp; 0.0706872 &amp; 0.9911085 \\
+\end{bmatrix}
+&amp;
+\mathbf{M}^{-1}=
+\begin{bmatrix}
+2.0413690  &amp;-0.5649464 &amp; -0.3446944 \\
+-0.9692660 &amp; 1.8760108 &amp; 0.0415560 \\
+0.0134474  &amp;-0.1183897 &amp; 1.0154096
+\end{bmatrix}
+\end{array}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Apple RGB</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+\mathbf{M}=
+\begin{bmatrix}
+0.4497288 &amp; 0.3162486 &amp; 0.1844926 \\
+0.2446525 &amp; 0.6720283 &amp; 0.0833192 \\
+0.0251848 &amp; 0.1411824 &amp; 0.9224628
+\end{bmatrix}
+&amp;
+\mathbf{M}^{-1}=
+\begin{bmatrix}
+2.9515373  &amp; -1.2894116 &amp; -0.4738445 \\
+-1.0851093 &amp; 1.9908566  &amp; 0.0372026 \\
+0.0854934  &amp; -0.2694964 &amp; 1.0912975
+\end{bmatrix}
+\end{array}
+\end{split}\]</div>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">6.5. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">Kir16</a></span></dt>
+<dd><p>Andy Kirk. <em>Data visualisation: A handbook for data driven design</em>. Sage, 2016.</p>
+</dd>
+</dl>
+</div>
+</section>
+<section id="referencias-complementares">
+<h2><span class="section-number">6.6. </span>Referências complementares<a class="headerlink" href="#referencias-complementares" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Color_space">Color space</a></p></li>
+<li><p><a class="reference external" href="http://docs-hoffmann.de/ciexyz29082000.pdf">CIE Color Space, Gernot Hoffmann</a></p></li>
+<li><p><a class="reference external" href="https://poynton.ca/PDFs/Guided_tour.pdf">A Guided Tour of Color Space, Charles Poynton</a></p></li>
+<li><p><a class="reference external" href="https://www.maths.manchester.ac.uk/~higham/talks/digphot_long.pdf">Mathematics and Colour, Nick Higham</a></p></li>
+<li><p><a class="reference external" href="https://web.archive.org/web/20090306063001/http://ldos.fe.uni-lj.si/docs/documents/20030929092037_markot.pdf">Colour spaces - perceptual, historical and applicational background, Tkalcic M. e Tasic, J.</a></p></li>
+<li><p><a class="reference external" href="https://web.archive.org/web/20090306062959/http://www4.ncsu.edu/~rgkuehni/PDFs/ColSp.pdf">Color Spaces, Rolf Kuehni</a></p></li>
+<li><p><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html">Bruce Lindbloom.com</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="05a-percepcao.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Percepção Visual</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="07a-lounge.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span><em>Lounge</em> das Representações Visuais</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
