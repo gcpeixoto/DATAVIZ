@@ -1,3 +1,5 @@
 /todo/**
 .ipynb_checkpoints
 .DS_Store
+.pytest_cache
+/rise/__pycache__
