@@ -13,6 +13,10 @@ parts:
     - file: ipynb/07a-lounge.ipynb
     - file: ipynb/08a-storytelling.ipynb
     - file: ipynb/09a-matplotlib-imersao.ipynb
+  - caption: Técnica
+    numbered: true
+    chapters:
+    - file: ipynb/24-dcs-multidimensional.ipynb
   - caption: Avaliações
     numbered: false
     chapters:

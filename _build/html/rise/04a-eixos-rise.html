@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Eixos, Escalas e Sistemas de Coordenadas &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../ipynb/00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/06a-cores.html">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Técnica
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/10a-ecvd1.html">
+   Estudo de Caso de Visualização de Dados - ECVD 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/04a-eixos-rise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/rise/04a-eixos-rise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">
+   Sistema de coordenadas cartesianas e razões de aspecto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-aleatoria">
+     Série temporal aleatória
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-de-temperatura-aula-3">
+     Série temporal de temperatura (Aula 3)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escalas">
+     Escalas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-polares">
+   Sistema de coordenadas polares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulacao-de-teste-de-balistica">
+     Simulação de teste de balística
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-de-coordenadas-geoespaciais">
+   Sistemas de coordenadas geoespaciais
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacoes-3d">
+   Visualizações 3D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-funcoes-matematicas">
+     Visualização de funções matemáticas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-dados-multidimensionais-categoricos">
+     Visualização de dados multidimensionais categóricos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Eixos, Escalas e Sistemas de Coordenadas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">
+   Sistema de coordenadas cartesianas e razões de aspecto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-aleatoria">
+     Série temporal aleatória
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-de-temperatura-aula-3">
+     Série temporal de temperatura (Aula 3)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escalas">
+     Escalas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-polares">
+   Sistema de coordenadas polares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulacao-de-teste-de-balistica">
+     Simulação de teste de balística
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-de-coordenadas-geoespaciais">
+   Sistemas de coordenadas geoespaciais
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacoes-3d">
+   Visualizações 3D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-funcoes-matematicas">
+     Visualização de funções matemáticas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-dados-multidimensionais-categoricos">
+     Visualização de dados multidimensionais categóricos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="eixos-escalas-e-sistemas-de-coordenadas">
+<h1>Eixos, Escalas e Sistemas de Coordenadas<a class="headerlink" href="#eixos-escalas-e-sistemas-de-coordenadas" title="Permalink to this headline">#</a></h1>
+<p>Prof. Gustavo Oliveira</p>
+<p>CI/DCC/UFPB</p>
+<p><span class="xref myst">gcpeixoto.github.com/DATAVIZ</span></p>
+<ul class="simple">
+<li><p>Definir escalas de posição é imprescindível para visualizar informações, especialmente quantitativas</p></li>
+<li><p>Escalas de posição em conjunto com um arranjo geométrico formam um <em>sistema de coordenadas</em></p></li>
+<li><p>Escalas ajudam a posicionar a informação e a criar representações visuais com <em>razões de aspecto</em> distintas. Ex.:</p>
+<ul>
+<li><p>Figuras esticadas na vertical e estreitas na horizontal enfatizam “crescimento para cima”</p></li>
+<li><p>Figuras compridas na horizontal e encurtadas na vertical podem dar uma ideia de algo que se “prolonga para o lado”</p></li>
+</ul>
+</li>
+<li><p>Razões de aspecto são totalmente dependentes do projeto visual</p></li>
+</ul>
+<section id="sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">
+<h2>Sistema de coordenadas cartesianas e razões de aspecto<a class="headerlink" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto" title="Permalink to this headline">#</a></h2>
+<section id="serie-temporal-aleatoria">
+<h3>Série temporal aleatória<a class="headerlink" href="#serie-temporal-aleatoria" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">test_aspect_ratio</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="n">fator</span><span class="p">,</span><span class="n">tag</span><span class="p">):</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="n">fator</span><span class="o">*</span><span class="n">Lx</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">) Lx = </span><span class="si">{</span><span class="n">Lx</span><span class="si">}</span><span class="s1">; Ly = </span><span class="si">{</span><span class="n">fator</span><span class="o">*</span><span class="n">Lx</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">2</span> <span class="p">,</span> <span class="mf">0.1</span> <span class="p">,</span> <span class="s1">&#39;a&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_4_0.png" src="../_images/04a-eixos-rise_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">2</span> <span class="p">,</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_5_0.png" src="../_images/04a-eixos-rise_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_6_0.png" src="../_images/04a-eixos-rise_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="s1">&#39;d&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_7_0.png" src="../_images/04a-eixos-rise_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">4</span> <span class="p">,</span> <span class="mf">0.1</span> <span class="p">,</span> <span class="s1">&#39;e&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_8_0.png" src="../_images/04a-eixos-rise_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">4</span> <span class="p">,</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="s1">&#39;f&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_9_0.png" src="../_images/04a-eixos-rise_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">4</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="s1">&#39;g&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_10_0.png" src="../_images/04a-eixos-rise_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_aspect_ratio</span><span class="p">(</span> <span class="mi">4</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_11_0.png" src="../_images/04a-eixos-rise_11_0.png" />
+</div>
+</div>
+</section>
+<section id="serie-temporal-de-temperatura-aula-3">
+<h3>Série temporal de temperatura (Aula 3)<a class="headerlink" href="#serie-temporal-de-temperatura-aula-3" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">h5py</span> <span class="k">as</span> <span class="nn">h5</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">plot_temperature</span><span class="p">(</span><span class="n">__horiz</span><span class="p">,</span><span class="n">__vert</span><span class="p">):</span>
+    <span class="n">file_hdf</span> <span class="o">=</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;../data/NEONDSTowerTemperatureData.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">df_t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">file_hdf</span><span class="p">[</span><span class="s1">&#39;Domain_10&#39;</span><span class="p">][</span><span class="s1">&#39;STER&#39;</span><span class="p">][</span><span class="s1">&#39;min_1&#39;</span><span class="p">][</span><span class="s1">&#39;boom_2&#39;</span><span class="p">][</span><span class="s1">&#39;temperature&#39;</span><span class="p">]))</span>
+    <span class="n">df_hours</span> <span class="o">=</span> <span class="n">df_t</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">::</span><span class="mi">60</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">df_ti</span> <span class="o">=</span> <span class="n">df_t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df_hours</span><span class="p">][:</span><span class="mi">24</span><span class="p">]</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">__horiz</span><span class="p">,</span><span class="n">__vert</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_ti</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#be5631&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+    <span class="n">da</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">((</span><span class="n">df_ti</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)))</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;h&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">)])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">da</span><span class="p">,</span><span class="n">db</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Tempo&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">plot_temperature</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_14_0.png" src="../_images/04a-eixos-rise_14_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_temperature</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_15_0.png" src="../_images/04a-eixos-rise_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_temperature</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_16_0.png" src="../_images/04a-eixos-rise_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_temperature</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_17_0.png" src="../_images/04a-eixos-rise_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_temperature</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_18_0.png" src="../_images/04a-eixos-rise_18_0.png" />
+</div>
+</div>
+</section>
+<section id="escalas">
+<h3>Escalas<a class="headerlink" href="#escalas" title="Permalink to this headline">#</a></h3>
+<p>A visualização abaixo corresponde a dados reais de montantes repassados pela Petrobras ao Fundo Amazônia - BNDES entre 2012 e 2018 de acordo com o Ministério do Meio Ambiente.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># dados </span>
+<span class="n">f_amaz</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/petr-repasse-redd-amazonia.csv&#39;</span><span class="p">)</span>
+<span class="n">f_amaz</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f_amaz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ano</th>
+      <th>repasse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2012</td>
+      <td>324160.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013</td>
+      <td>495328.65</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>601357.20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2015</td>
+      <td>880310.00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2016</td>
+      <td>276642.00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2017</td>
+      <td>578063.10</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2018</td>
+      <td>347037.35</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualização</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Repasses para Fundo Amazônia - BNDES: Petrobras&#39;</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;ano&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;repasse&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">f_amaz</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Escala linear&#39;</span><span class="p">);</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;repasse (R$)&#39;</span><span class="p">);</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;ano&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;repasse&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">f_amaz</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> <span class="c1"># &#39;linear&#39;, &#39;log&#39;, &#39;symlog&#39;, &#39;logit&#39;, &#39;function&#39;, &#39;functionlog&#39;</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Escala logarítmica&#39;</span><span class="p">);</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_21_0.png" src="../_images/04a-eixos-rise_21_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Primeiro caso, a escala do eixo <em>y</em> é linear; no segundo, é <em>logarítmica</em>, isto é, não linear.</p></li>
+<li><p>Há situações em que escalas não lineares para os eixos mostram-se mais adequadas do que escalas não lineares.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_23_0.png" src="../_images/04a-eixos-rise_23_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="sistema-de-coordenadas-polares">
+<h2>Sistema de coordenadas polares<a class="headerlink" href="#sistema-de-coordenadas-polares" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Funções matemáticas</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="c1"># configuração do eixo</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="s1">&#39;polar&#39;</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_rmax</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Plotagem da função $</span><span class="se">\\</span><span class="s1">theta(r) = </span><span class="se">\\</span><span class="s1">frac</span><span class="si">{1}{2}</span><span class="s1">r sen(r)$&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_25_0.png" src="../_images/04a-eixos-rise_25_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Rosáceas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">magnitude</span><span class="p">,</span> <span class="n">petals</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">6</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">magnitude</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">petals</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="c1"># configuração do eixo</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="s1">&#39;polar&#39;</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Plotagem da função $r = </span><span class="si">{</span><span class="n">magnitude</span><span class="si">:</span><span class="s1">0.1f</span><span class="si">}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">, cos(</span><span class="si">{</span><span class="n">petals</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1">r)$&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_27_0.png" src="../_images/04a-eixos-rise_27_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Segmentos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">theta1</span> <span class="o">=</span> <span class="n">r1</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="mf">1.5</span>
+
+<span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">theta2</span> <span class="o">=</span> <span class="n">r2</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">r3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">theta3</span> <span class="o">=</span> <span class="n">r3</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">6</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="s1">&#39;polar&#39;</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta1</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta2</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;#997029&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta3</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;#441029&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_29_0.png" src="../_images/04a-eixos-rise_29_0.png" />
+</div>
+</div>
+<section id="simulacao-de-teste-de-balistica">
+<h3>Simulação de teste de balística<a class="headerlink" href="#simulacao-de-teste-de-balistica" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">r4</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">theta4</span> <span class="o">=</span> <span class="n">r4</span> <span class="o">-</span> <span class="mf">10.4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">r4</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="s1">&#39;polar&#39;</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta4</span><span class="p">,</span> <span class="n">r4</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;#1029aa&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_31_0.png" src="../_images/04a-eixos-rise_31_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="sistemas-de-coordenadas-geoespaciais">
+<h2>Sistemas de coordenadas geoespaciais<a class="headerlink" href="#sistemas-de-coordenadas-geoespaciais" title="Permalink to this headline">#</a></h2>
+<p>Sistemas geoespaciais são úteis para plotagem de dados cartográficos, mapas e geolocalizações.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mercator</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_33_0.png" src="../_images/04a-eixos-rise_33_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_34_0.png" src="../_images/04a-eixos-rise_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">();</span>
+
+<span class="n">jpa_lon</span><span class="p">,</span> <span class="n">jpa_lat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">34.94875494445774</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.1456365022219215</span>
+<span class="n">lis_lon</span><span class="p">,</span> <span class="n">lis_lat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.135034107925277</span><span class="p">,</span> <span class="mf">38.775693950446474</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">jpa_lon</span><span class="p">,</span> <span class="n">lis_lon</span><span class="p">],</span> <span class="p">[</span><span class="n">jpa_lat</span><span class="p">,</span> <span class="n">lis_lat</span><span class="p">],</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+         <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">());</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">jpa_lon</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">jpa_lat</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;JPA&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">lis_lon</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">lis_lat</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-13.135034107925277, 40.775693950446474, &#39;LIS&#39;)
+</pre></div>
+</div>
+<img alt="../_images/04a-eixos-rise_35_1.png" src="../_images/04a-eixos-rise_35_1.png" />
+</div>
+</div>
+</section>
+<section id="visualizacoes-3d">
+<h2>Visualizações 3D<a class="headerlink" href="#visualizacoes-3d" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Visualizações 2D preferíveis a 3D devido à carga cognitiva exigida para interpretação</p></li>
+<li><p>Entretanto, nem sempre é possível atingir RVs satisfatórias em 2D</p>
+<ul>
+<li><p>Ex.: Superfície descrita como <span class="math notranslate nohighlight">\(z = f(x,y)\)</span> em que <span class="math notranslate nohighlight">\(z\)</span> é uma elevação de terreno</p></li>
+</ul>
+</li>
+<li><p>Eixos 3D são particularmente excelentes quando se quer interagir ou manipular o visual</p></li>
+</ul>
+<section id="visualizacao-de-funcoes-matematicas">
+<h3>Visualização de funções matemáticas<a class="headerlink" href="#visualizacao-de-funcoes-matematicas" title="Permalink to this headline">#</a></h3>
+<p>O exemplo abaixo mostra como plotar a função dada por
+$<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
+     \left[ \left( x -  \frac{a+b}{2} \right)^2  + \
+             \left( y -  \frac{c+d}{2} \right)^2 \right] },\)</span>$</p>
+<p>para o domínio bidimensional <span class="math notranslate nohighlight">\([a,b] \times [c,d]\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">aux04a2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04a-eixos-rise_39_0.png" src="../_images/04a-eixos-rise_39_0.png" />
+</div>
+</div>
+</section>
+<section id="visualizacao-de-dados-multidimensionais-categoricos">
+<h3>Visualização de dados multidimensionais categóricos<a class="headerlink" href="#visualizacao-de-dados-multidimensionais-categoricos" title="Permalink to this headline">#</a></h3>
+<p>A representação visual abaixo lida com os preços de combustíveis aplicados em diversos municípios da Paraíba por diferentes operadoras (bandeiras).</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./rise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

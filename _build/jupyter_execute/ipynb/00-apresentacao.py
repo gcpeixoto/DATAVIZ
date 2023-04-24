@@ -76,6 +76,14 @@ display(HTML('course-treemap.html'))
 # - Avaliação (2h)
 #     - [Estudo de Caso de Visualização de Dados (ECVD1)](10a-ecvd1.ipynb) (2h)
 # 
+# ### Módulo 2: Técnica (20h)
+# 
+# - Conteúdo (18h)
+#     - [_Dataviz Code Session_: Dados Multidimensionais](24-dcs-multidimensional.ipynb)
+# 
+# - Avaliação (2h)
+#     - Estudo de Caso de Visualização de Dados (ECVD1) (2h)
+# 
 # _**More coming soon...**_
 # 
 # <!--

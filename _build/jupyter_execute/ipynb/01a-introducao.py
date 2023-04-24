@@ -3,14 +3,14 @@
 
 # # Introdução à Visualização de Dados
 
-# A visualização de dados é uma disciplina interdisciplinar e agregadora a qualquer pessoa interessada em manusear ou apresentar dados de forma qualitativa ou quantitativa. Ela não se restringe a áreas de formação específica, mas algumas características essenciais para o desenvolvimento de habilidades na disciplina são:
+# A visualização de dados é interdisciplinar e agregadora a qualquer pessoa interessada em manusear ou apresentar dados de forma qualitativa ou quantitativa. Ela não se restringe a áreas de formação específica, mas algumas características essenciais para o desenvolvimento de habilidades na disciplina são:
 # 
 # - Familiaridade com _estatística_;
 # - _Vontade_ de aprender coisas novas; 
 # - _Curiosidade_ para descobrir respostas;
 # - Apetite por _princípios de design_;
 # - Disposição para aumentar seu _rigor analítico_ e
-# - _Conhecimento técnico_ de pelo menos uma ferramenta.
+# - _Conhecimento técnico_ de pelo menos uma ferramenta para plotagem.
 
 # 
 # ## Pontos de equilíbrio
