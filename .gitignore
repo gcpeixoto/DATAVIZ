@@ -3,3 +3,4 @@
 .DS_Store
 .pytest_cache
 /rise/__pycache__
+/data/comex-*
