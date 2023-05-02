@@ -22,4 +22,5 @@ parts:
     numbered: false
     chapters:
     - file: ipynb/10a-ecvd1.ipynb
+    - file: ipynb/20a-ecvd2.ipynb
     #- file: ipynb/capstone-template.ipynb
