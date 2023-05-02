@@ -41,7 +41,7 @@ plt.style.use('../etc/gcpeixoto-datavis.mplstyle') # style sheet
 
 # - Carregamento de dados
 
-# In[2]:
+# In[16]:
 
 
 # carrega valores para ano y
@@ -49,7 +49,7 @@ y = 2020
 
 # planilhas
 # imp: importação; exp: exportação; cc: códigos de países/blocos; tgt_dir: diretório-fonte dos dados
-imp, exp, cc, tgt_dir = dcs24.get_comex(y)
+imp, exp, cc, _, tgt_dir = dcs24.get_comex(y)
 
 # remove entradas duplicadas de países
 cc = cc.drop_duplicates()
@@ -162,6 +162,28 @@ FOB_GDP_2020
 #     - Considerações preliminares
 
 # In[7]:
+
+
+import plotly.express as px
+from plotly.offline import plot
+import numpy as np
+import pandas as pd
+from IPython.display import display, HTML
+
+fig = px.scatter_3d(FOB_GDP_2020, 
+                    x='FOB_imp/GDP_bra', 
+                    y='FOB_exp/GDP', 
+                    z='GDP 2020 scaled', 
+                    size='GDP 2020 scaled', 
+                    color='Bloco',
+                    hover_data=['País','FOB importado (USD) scaled','FOB exportado (USD) scaled'])
+fig.update_layout(margin=dict(l=50, r=50, t=50, b=50),
+                  font=dict(size=10))
+plot(fig, show_link=False,filename=os.path.join(tgt_dir,'comex-example.html'))
+display(HTML(os.path.join(tgt_dir,'comex-example.html')))
+
+
+# In[8]:
 
 
 fig, ax = plt.subplots(figsize=(6,4),constrained_layout=True)

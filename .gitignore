@@ -1,6 +1,8 @@
 /todo/**
-.ipynb_checkpoints
+/ipynb/.ipynb_checkpoints
 .DS_Store
 .pytest_cache
 /rise/__pycache__
 /data/comex-*
+/dcs/__pycache__
+/rise/.pytest_cache

@@ -1,0 +1,1648 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>11. Dataviz Code Session: Redes Complexas &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Estudo de Caso de Visualização de Dados - ECVD 1" href="10a-ecvd1.html" />
+    <link rel="prev" title="10. Dataviz Code Session: Dados Multidimensionais" href="24-dcs-multidimensional.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06a-cores.html">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Técnica
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10a-ecvd1.html">
+   Estudo de Caso de Visualização de Dados - ECVD 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/25-dcs-redes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/25-dcs-redes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivos-da-dcs">
+   11.1. Objetivos da DCS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-utilizadas">
+   11.2. Ferramentas utilizadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
+   11.3. Aplicação do modelo referencial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
+     11.3.1. Dados de entrada pré-processados
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#processamento-adicional">
+       11.3.1.1. Processamento adicional
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapeamento">
+   11.4. Mapeamento
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacao">
+   11.5. Visualização
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterando-em-rvs-primarias">
+     11.5.1. Iterando em RVs primárias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rv-finalistica">
+   11.6. RV finalística
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dataviz Code Session: Redes Complexas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivos-da-dcs">
+   11.1. Objetivos da DCS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-utilizadas">
+   11.2. Ferramentas utilizadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
+   11.3. Aplicação do modelo referencial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
+     11.3.1. Dados de entrada pré-processados
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#processamento-adicional">
+       11.3.1.1. Processamento adicional
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapeamento">
+   11.4. Mapeamento
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacao">
+   11.5. Visualização
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterando-em-rvs-primarias">
+     11.5.1. Iterando em RVs primárias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rv-finalistica">
+   11.6. RV finalística
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dataviz-code-session-redes-complexas">
+<h1><span class="section-number">11. </span><em>Dataviz Code Session</em>: Redes Complexas<a class="headerlink" href="#dataviz-code-session-redes-complexas" title="Permalink to this headline">#</a></h1>
+<section id="objetivos-da-dcs">
+<h2><span class="section-number">11.1. </span>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Aplicar técnicas de dataviz para plotagem e manipulação de representações visuais de redes simples e complexas.</p></li>
+<li><p>Elaborar RV para dados do comércio exterior, enfatizando fluxos de importação/exportação por meio de grafos.</p></li>
+</ul>
+</section>
+<section id="ferramentas-utilizadas">
+<h2><span class="section-number">11.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Módulos Python</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">networkx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sys</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="aplicacao-do-modelo-referencial">
+<h2><span class="section-number">11.3. </span>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Vide <a class="reference internal" href="03a-estetica.html#cap-estetica"><span class="std std-numref">Capítulo 3</span></a>.</p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Patch</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="o">,</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span><span class="o">,</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sb</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;../dcs&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">dcs24</span><span class="o">,</span> <span class="nn">dcs25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dados-de-entrada-pre-processados">
+<h3><span class="section-number">11.3.1. </span>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Carregamento de dados</p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># carrega valores para ano y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2020</span>
+
+<span class="c1"># planilhas</span>
+<span class="c1"># imp: importação; exp: exportação; cc: códigos de países/blocos; tgt_dir: diretório-fonte dos dados</span>
+<span class="n">imp</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">tgt_dir</span> <span class="o">=</span> <span class="n">dcs24</span><span class="o">.</span><span class="n">get_comex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># remove entradas duplicadas de países</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>COMEX files successfuly loaded from: ../data/comex-2020
+</pre></div>
+</div>
+</div>
+</div>
+<section id="processamento-adicional">
+<h4><span class="section-number">11.3.1.1. </span>Processamento adicional<a class="headerlink" href="#processamento-adicional" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Fusões por código de país e meio de transporte</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># meio de transporte</span>
+<span class="n">via</span> <span class="o">=</span> <span class="n">via</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Código da via&#39;</span><span class="p">:</span><span class="s1">&#39;Meio de transporte&#39;</span><span class="p">})</span> 
+
+<span class="c1"># importação</span>
+<span class="n">imp</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;País de origem&#39;</span><span class="p">:</span><span class="s1">&#39;Código do país&#39;</span><span class="p">})</span>
+<span class="n">imp</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Código do país&#39;</span><span class="p">)</span>
+<span class="n">imp</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">via</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Meio de transporte&#39;</span><span class="p">)</span>
+
+<span class="c1"># exportação</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;País de destino&#39;</span><span class="p">:</span><span class="s1">&#39;Código do país&#39;</span><span class="p">})</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Código do país&#39;</span><span class="p">)</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">via</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Meio de transporte&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Restrição de dados por escolha de via e bloco geográfico</p></li>
+</ul>
+<p><strong>Nota:</strong> execute <code class="docutils literal notranslate"><span class="pre">imp['Nome</span> <span class="pre">do</span> <span class="pre">bloco'].unique()</span></code> para a listagem de blocos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seletor de via e bloco</span>
+<span class="n">via_e</span> <span class="o">=</span> <span class="s1">&#39;MARITIMA&#39;</span>
+<span class="n">bloco_e</span> <span class="o">=</span> <span class="s1">&#39;União Europeia - UE&#39;</span>
+
+<span class="c1"># filtros</span>
+<span class="n">imp_p_via</span> <span class="o">=</span> <span class="n">imp</span><span class="p">[(</span><span class="n">imp</span><span class="p">[</span><span class="s1">&#39;Descrição da via&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">via_e</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">imp</span><span class="p">[</span><span class="s1">&#39;Nome do bloco&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bloco_e</span><span class="p">)]</span>
+<span class="n">exp_p_via</span> <span class="o">=</span> <span class="n">exp</span><span class="p">[(</span><span class="n">exp</span><span class="p">[</span><span class="s1">&#39;Descrição da via&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">via_e</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">exp</span><span class="p">[</span><span class="s1">&#39;Nome do bloco&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bloco_e</span><span class="p">)]</span>
+
+<span class="c1">#imp[&#39;Nome do bloco&#39;].unique()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Agrupamento por FOB</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imp_p_via_e</span> <span class="o">=</span> <span class="n">imp_p_via</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Nome do país&#39;</span><span class="p">)[</span><span class="s1">&#39;Valor Free On Board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">exp_p_via_e</span> <span class="o">=</span> <span class="n">exp_p_via</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Nome do país&#39;</span><span class="p">)[</span><span class="s1">&#39;Valor Free On Board&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">df_g</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">imp_p_via_e</span><span class="p">,</span><span class="n">exp_p_via_e</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Nome do país&#39;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_g</span> <span class="o">=</span> <span class="n">df_g</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Valor Free On Board_x&#39;</span><span class="p">:</span><span class="s1">&#39;FOB_imp&#39;</span><span class="p">,</span><span class="s1">&#39;Valor Free On Board_y&#39;</span><span class="p">:</span><span class="s1">&#39;FOB_exp&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="mapeamento">
+<h2><span class="section-number">11.4. </span>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Criação de grafo para visualizar a rede de parcerias bilaterais do Brasil;</p></li>
+<li><p>Cada nó representa um país e cada aresta dirigida o fluxo de mercadorias;</p></li>
+<li><p>Para cada nó de origem <span class="math notranslate nohighlight">\(v_i\)</span> e de destino <span class="math notranslate nohighlight">\(v_j\)</span>, a aresta <span class="math notranslate nohighlight">\(e_{ij}\)</span> liga <span class="math notranslate nohighlight">\(v_i\)</span> a <span class="math notranslate nohighlight">\(v_j\)</span> nesta direção;</p></li>
+<li><p>Logo, fazemos o seguinte:</p>
+<ul>
+<li><p>tomando <span class="math notranslate nohighlight">\(i \in I = \{0\}\)</span>, <span class="math notranslate nohighlight">\(v_0\)</span> passa a ser o nó correspondente ao Brasil e <span class="math notranslate nohighlight">\(e_{0j}\)</span> são arestas de exportação;</p></li>
+<li><p><span class="math notranslate nohighlight">\(e_{j0}\)</span> são arestas de importação;</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Separação de conjuntos para criação de lista de arestas e atributos</p></li>
+</ul>
+<p><strong>Notas:</strong></p>
+<ul class="simple">
+<li><p>Como o modelo trata-se de um <em>grafo dirigido</em>, a criação de dois conjuntos independentes é necessária para fins de visualização.</p></li>
+<li><p>Valores de FOB como <code class="docutils literal notranslate"><span class="pre">nan</span></code> significam que não houve fluxo entre o Brasil e o país <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># grafo de importação</span>
+<span class="n">df_g_imp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;node_from&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_g</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                         <span class="s1">&#39;node_to&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df_g</span><span class="p">),</span>
+                         <span class="s1">&#39;FOB&#39;</span><span class="p">:</span><span class="n">df_g</span><span class="p">[</span><span class="s1">&#39;FOB_imp&#39;</span><span class="p">],</span>
+                         <span class="s1">&#39;from_name&#39;</span><span class="p">:</span><span class="n">df_g</span><span class="p">[</span><span class="s1">&#39;Nome do país&#39;</span><span class="p">],</span>
+                         <span class="s1">&#39;to_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Brasil&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df_g</span><span class="p">)})</span>
+
+<span class="c1"># grafo de exportação</span>
+<span class="n">df_g_exp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;node_to&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_g</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                         <span class="s1">&#39;node_from&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df_g</span><span class="p">),</span>
+                         <span class="s1">&#39;FOB&#39;</span><span class="p">:</span><span class="n">df_g</span><span class="p">[</span><span class="s1">&#39;FOB_exp&#39;</span><span class="p">],</span>
+                         <span class="s1">&#39;from_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Brasil&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df_g</span><span class="p">),</span>
+                         <span class="s1">&#39;to_name&#39;</span><span class="p">:</span><span class="n">df_g</span><span class="p">[</span><span class="s1">&#39;Nome do país&#39;</span><span class="p">]})</span>                         
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_g_imp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>node_from</th>
+      <th>node_to</th>
+      <th>FOB</th>
+      <th>from_name</th>
+      <th>to_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>8.781000e+03</td>
+      <td>Aland, Ilhas</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0</td>
+      <td>6.949722e+09</td>
+      <td>Alemanha</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0</td>
+      <td>4.393028e+07</td>
+      <td>Bulgária</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0</td>
+      <td>1.051285e+09</td>
+      <td>Bélgica</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>1.828693e+06</td>
+      <td>Chipre</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>0</td>
+      <td>6.364156e+06</td>
+      <td>Croácia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0</td>
+      <td>5.977325e+08</td>
+      <td>Dinamarca</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>0</td>
+      <td>1.359530e+08</td>
+      <td>Eslováquia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>0</td>
+      <td>5.303828e+07</td>
+      <td>Eslovênia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0</td>
+      <td>2.250628e+09</td>
+      <td>Espanha</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>0</td>
+      <td>1.967509e+07</td>
+      <td>Estônia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>0</td>
+      <td>4.093947e+08</td>
+      <td>Finlândia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>0</td>
+      <td>2.325253e+09</td>
+      <td>França</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>0</td>
+      <td>5.690164e+07</td>
+      <td>Grécia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>0</td>
+      <td>2.539416e+08</td>
+      <td>Hungria</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>0</td>
+      <td>3.324200e+04</td>
+      <td>Ilha de Man</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>0</td>
+      <td>9.659275e+07</td>
+      <td>Irlanda</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>0</td>
+      <td>3.011262e+09</td>
+      <td>Itália</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>0</td>
+      <td>1.864000e+03</td>
+      <td>Jersey</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>0</td>
+      <td>1.576157e+07</td>
+      <td>Letônia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>0</td>
+      <td>2.681213e+07</td>
+      <td>Lituânia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>0</td>
+      <td>3.333120e+07</td>
+      <td>Luxemburgo</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>0</td>
+      <td>6.870955e+06</td>
+      <td>Malta</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>0</td>
+      <td>1.175004e+09</td>
+      <td>Países Baixos (Holanda)</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>0</td>
+      <td>4.566596e+08</td>
+      <td>Polônia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>0</td>
+      <td>7.575676e+08</td>
+      <td>Portugal</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>0</td>
+      <td>2.007139e+08</td>
+      <td>Romênia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>0</td>
+      <td>1.014024e+09</td>
+      <td>Suécia</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>0</td>
+      <td>3.509817e+08</td>
+      <td>Tcheca, República</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>0</td>
+      <td>5.760617e+08</td>
+      <td>Áustria</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Terras Austrais Francesas</td>
+      <td>Brasil</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_g_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>node_to</th>
+      <th>node_from</th>
+      <th>FOB</th>
+      <th>from_name</th>
+      <th>to_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1063</td>
+      <td>Brasil</td>
+      <td>Aland, Ilhas</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0</td>
+      <td>3649010919</td>
+      <td>Brasil</td>
+      <td>Alemanha</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0</td>
+      <td>83124262</td>
+      <td>Brasil</td>
+      <td>Bulgária</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0</td>
+      <td>2353187476</td>
+      <td>Brasil</td>
+      <td>Bélgica</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>55978584</td>
+      <td>Brasil</td>
+      <td>Chipre</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>0</td>
+      <td>57711795</td>
+      <td>Brasil</td>
+      <td>Croácia</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0</td>
+      <td>253726959</td>
+      <td>Brasil</td>
+      <td>Dinamarca</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>0</td>
+      <td>22001890</td>
+      <td>Brasil</td>
+      <td>Eslováquia</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>0</td>
+      <td>313247810</td>
+      <td>Brasil</td>
+      <td>Eslovênia</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>0</td>
+      <td>3915915046</td>
+      <td>Brasil</td>
+      <td>Espanha</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>0</td>
+      <td>16562226</td>
+      <td>Brasil</td>
+      <td>Estônia</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>0</td>
+      <td>289599966</td>
+      <td>Brasil</td>
+      <td>Finlândia</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>0</td>
+      <td>1590076188</td>
+      <td>Brasil</td>
+      <td>França</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>0</td>
+      <td>195895631</td>
+      <td>Brasil</td>
+      <td>Grécia</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>0</td>
+      <td>44012682</td>
+      <td>Brasil</td>
+      <td>Hungria</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>0</td>
+      <td>6630332</td>
+      <td>Brasil</td>
+      <td>Ilha de Man</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>0</td>
+      <td>163591759</td>
+      <td>Brasil</td>
+      <td>Irlanda</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>0</td>
+      <td>2667290634</td>
+      <td>Brasil</td>
+      <td>Itália</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>0</td>
+      <td>5346</td>
+      <td>Brasil</td>
+      <td>Jersey</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>0</td>
+      <td>23305014</td>
+      <td>Brasil</td>
+      <td>Letônia</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>0</td>
+      <td>25383200</td>
+      <td>Brasil</td>
+      <td>Lituânia</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>0</td>
+      <td>32453798</td>
+      <td>Brasil</td>
+      <td>Luxemburgo</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>0</td>
+      <td>108266774</td>
+      <td>Brasil</td>
+      <td>Malta</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>0</td>
+      <td>6539357475</td>
+      <td>Brasil</td>
+      <td>Países Baixos (Holanda)</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>0</td>
+      <td>802316074</td>
+      <td>Brasil</td>
+      <td>Polônia</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>0</td>
+      <td>1537907566</td>
+      <td>Brasil</td>
+      <td>Portugal</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>0</td>
+      <td>282244028</td>
+      <td>Brasil</td>
+      <td>Romênia</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>0</td>
+      <td>357842582</td>
+      <td>Brasil</td>
+      <td>Suécia</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>0</td>
+      <td>35718952</td>
+      <td>Brasil</td>
+      <td>Tcheca, República</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>0</td>
+      <td>104228312</td>
+      <td>Brasil</td>
+      <td>Áustria</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>0</td>
+      <td>219383</td>
+      <td>Brasil</td>
+      <td>Terras Austrais Francesas</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Construção do grafos como objetos <code class="docutils literal notranslate"><span class="pre">Graph</span></code> do <code class="docutils literal notranslate"><span class="pre">networkx</span></code></p></li>
+</ul>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_imp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_g_imp</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;node_from&#39;</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;node_to&#39;</span><span class="p">,</span><span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;FOB&#39;</span><span class="p">)</span>   
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_g_imp</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">G_imp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;node_from&#39;</span><span class="p">]][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;from_name&#39;</span><span class="p">]</span>
+    
+<span class="n">G_exp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_g_exp</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;node_from&#39;</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;node_to&#39;</span><span class="p">,</span><span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;FOB&#39;</span><span class="p">)</span>   
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_g_exp</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">G_exp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;node_from&#39;</span><span class="p">]][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;from_name&#39;</span><span class="p">]</span>    
+    
+<span class="c1"># impressão auxiliar</span>
+<span class="n">G_imp</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">G_exp</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(NodeDataView({1: {&#39;country&#39;: &#39;Aland, Ilhas&#39;}, 0: {}, 2: {&#39;country&#39;: &#39;Alemanha&#39;}, 3: {&#39;country&#39;: &#39;Bulgária&#39;}, 4: {&#39;country&#39;: &#39;Bélgica&#39;}, 5: {&#39;country&#39;: &#39;Chipre&#39;}, 6: {&#39;country&#39;: &#39;Croácia&#39;}, 7: {&#39;country&#39;: &#39;Dinamarca&#39;}, 8: {&#39;country&#39;: &#39;Eslováquia&#39;}, 9: {&#39;country&#39;: &#39;Eslovênia&#39;}, 10: {&#39;country&#39;: &#39;Espanha&#39;}, 11: {&#39;country&#39;: &#39;Estônia&#39;}, 12: {&#39;country&#39;: &#39;Finlândia&#39;}, 13: {&#39;country&#39;: &#39;França&#39;}, 14: {&#39;country&#39;: &#39;Grécia&#39;}, 15: {&#39;country&#39;: &#39;Hungria&#39;}, 16: {&#39;country&#39;: &#39;Ilha de Man&#39;}, 17: {&#39;country&#39;: &#39;Irlanda&#39;}, 18: {&#39;country&#39;: &#39;Itália&#39;}, 19: {&#39;country&#39;: &#39;Jersey&#39;}, 20: {&#39;country&#39;: &#39;Letônia&#39;}, 21: {&#39;country&#39;: &#39;Lituânia&#39;}, 22: {&#39;country&#39;: &#39;Luxemburgo&#39;}, 23: {&#39;country&#39;: &#39;Malta&#39;}, 24: {&#39;country&#39;: &#39;Países Baixos (Holanda)&#39;}, 25: {&#39;country&#39;: &#39;Polônia&#39;}, 26: {&#39;country&#39;: &#39;Portugal&#39;}, 27: {&#39;country&#39;: &#39;Romênia&#39;}, 28: {&#39;country&#39;: &#39;Suécia&#39;}, 29: {&#39;country&#39;: &#39;Tcheca, República&#39;}, 30: {&#39;country&#39;: &#39;Áustria&#39;}, 31: {&#39;country&#39;: &#39;Terras Austrais Francesas&#39;}}),
+ EdgeDataView([(0, 1, {&#39;FOB&#39;: 1063}), (0, 2, {&#39;FOB&#39;: 3649010919}), (0, 3, {&#39;FOB&#39;: 83124262}), (0, 4, {&#39;FOB&#39;: 2353187476}), (0, 5, {&#39;FOB&#39;: 55978584}), (0, 6, {&#39;FOB&#39;: 57711795}), (0, 7, {&#39;FOB&#39;: 253726959}), (0, 8, {&#39;FOB&#39;: 22001890}), (0, 9, {&#39;FOB&#39;: 313247810}), (0, 10, {&#39;FOB&#39;: 3915915046}), (0, 11, {&#39;FOB&#39;: 16562226}), (0, 12, {&#39;FOB&#39;: 289599966}), (0, 13, {&#39;FOB&#39;: 1590076188}), (0, 14, {&#39;FOB&#39;: 195895631}), (0, 15, {&#39;FOB&#39;: 44012682}), (0, 16, {&#39;FOB&#39;: 6630332}), (0, 17, {&#39;FOB&#39;: 163591759}), (0, 18, {&#39;FOB&#39;: 2667290634}), (0, 19, {&#39;FOB&#39;: 5346}), (0, 20, {&#39;FOB&#39;: 23305014}), (0, 21, {&#39;FOB&#39;: 25383200}), (0, 22, {&#39;FOB&#39;: 32453798}), (0, 23, {&#39;FOB&#39;: 108266774}), (0, 24, {&#39;FOB&#39;: 6539357475}), (0, 25, {&#39;FOB&#39;: 802316074}), (0, 26, {&#39;FOB&#39;: 1537907566}), (0, 27, {&#39;FOB&#39;: 282244028}), (0, 28, {&#39;FOB&#39;: 357842582}), (0, 29, {&#39;FOB&#39;: 35718952}), (0, 30, {&#39;FOB&#39;: 104228312}), (0, 31, {&#39;FOB&#39;: 219383})]))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizacao">
+<h2><span class="section-number">11.5. </span>Visualização<a class="headerlink" href="#visualizacao" title="Permalink to this headline">#</a></h2>
+<section id="iterando-em-rvs-primarias">
+<h3><span class="section-number">11.5.1. </span>Iterando em RVs primárias<a class="headerlink" href="#iterando-em-rvs-primarias" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Vamos plotar os grafos de importação e exportação para a via e bloco escolhidos</p>
+<ul>
+<li><p>Nós e arestas com cores padronizadas</p></li>
+<li><p>Legendas por número (pouco claras)</p></li>
+<li><p>Fluxo (“pesos”) não especificados</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rede de importação: </span><span class="si">{</span><span class="n">bloco_e</span><span class="si">}</span><span class="s1"> $</span><span class="se">\\</span><span class="s1">rightarrow$ Brasil&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rede de exportação: Brasil $</span><span class="se">\\</span><span class="s1">rightarrow$ </span><span class="si">{</span><span class="n">bloco_e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25-dcs-redes_24_0.png" src="../_images/25-dcs-redes_24_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Controle de layout, tamanho de nós e legendas</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># controle de randomização das coordenadas dos vértices/nós</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">12</span> 
+<span class="n">coords</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span> <span class="c1"># layout</span>
+
+
+<span class="c1"># --- IMPORTAÇÃO</span>
+
+<span class="c1"># plotagem de nós</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                       <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="c1"># controle de layout</span>
+                       <span class="n">node_size</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="c1"># tamanho do nó</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="c1"># cor do nó</span>
+                       <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                       <span class="p">)</span>
+
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                       <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>                       
+                       <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="c1"># cor de aresta</span>
+                       <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                       <span class="p">)</span>
+
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                        <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                        <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span> <span class="c1"># atributo (nome do país)</span>
+                        <span class="n">font_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="c1"># tamanho da fonte</span>
+                        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>                        
+                        <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rede de importação: </span><span class="si">{</span><span class="n">bloco_e</span><span class="si">}</span><span class="s1"> $</span><span class="se">\\</span><span class="s1">rightarrow$ Brasil&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># --- EXPORTAÇÃO</span>
+
+<span class="c1"># plotagem de nós</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                       <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="c1"># controle de layout</span>
+                       <span class="n">node_size</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="c1"># tamanho do nó</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="c1"># cor do nó</span>
+                       <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                       <span class="p">)</span>
+
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                       <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>                       
+                       <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="c1"># cor de aresta</span>
+                       <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                       <span class="p">)</span>
+
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                        <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                        <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span> <span class="c1"># atributo (nome do país)</span>
+                        <span class="n">font_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="c1"># tamanho da fonte</span>
+                        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>                        
+                        <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rede de exportação: Brasil $</span><span class="se">\\</span><span class="s1">rightarrow$ </span><span class="si">{</span><span class="n">bloco_e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25-dcs-redes_26_0.png" src="../_images/25-dcs-redes_26_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Sobrepondo os grafos</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># --- IMPORTAÇÃO</span>
+
+
+<span class="n">fob</span><span class="p">,</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">dcs25</span><span class="o">.</span><span class="n">base_data</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="n">fob_scale</span><span class="o">=</span><span class="mf">1e8</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span>
+
+<span class="c1"># opções de nós</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span>
+                               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                               <span class="n">edgecolors</span><span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                               <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                               <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># opções de arestas</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                               <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span>
+                               <span class="n">edge_cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                               <span class="n">width</span><span class="o">=</span><span class="n">fob</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+<span class="c1"># opções de legendas de nós</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                                 <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                                 <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span>
+                                 <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                                 <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                                 <span class="n">bbox</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ec&#39;</span><span class="p">:</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;fc&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
+                                 <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+<span class="n">edge_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                                           <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                                           <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                                           <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+                                           <span class="n">bbox</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fc&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+                                           <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;#aa0000&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- EXPORTAÇÃO</span>
+
+<span class="n">fob</span><span class="p">,</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">dcs25</span><span class="o">.</span><span class="n">base_data</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span><span class="n">fob_scale</span><span class="o">=</span><span class="mf">1e8</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span>
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span>
+                               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                               <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+                               <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                               <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                               <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span>
+                               <span class="n">edge_cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                               <span class="n">width</span><span class="o">=</span><span class="n">fob</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                                 <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                                 <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span>
+                                 <span class="n">font_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+                                 <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">edge_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                                           <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                                           <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                                           <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                                           <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;#00aa00&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25-dcs-redes_28_0.png" src="../_images/25-dcs-redes_28_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="rv-finalistica">
+<h2><span class="section-number">11.6. </span>RV finalística<a class="headerlink" href="#rv-finalistica" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Graph plot com adaptações</p></li>
+<li><p>Inclusão de legenda via patches</p></li>
+<li><p>Remoção do indicador FOB</p>
+<ul>
+<li><p>Onde colocar?</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># --- IMPORTAÇÃO</span>
+
+<span class="n">fob</span><span class="p">,</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">dcs25</span><span class="o">.</span><span class="n">base_data</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="n">fob_scale</span><span class="o">=</span><span class="mf">1e8</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span>
+
+<span class="c1"># opções de nós</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span>
+                               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                               <span class="n">edgecolors</span><span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                               <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                               <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># opções de arestas</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                               <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span>
+                               <span class="n">edge_cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                               <span class="n">width</span><span class="o">=</span><span class="n">fob</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+<span class="c1"># opções de legendas de nós</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
+                                 <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                                 <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span>
+                                 <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                                 <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                                 <span class="n">bbox</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ec&#39;</span><span class="p">:</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;fc&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+                                 <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+<span class="c1"># edge_labels = nx.draw_networkx_edge_labels(G_imp,</span>
+<span class="c1">#                                            pos=coords,</span>
+<span class="c1">#                                            font_size=6,</span>
+<span class="c1">#                                            verticalalignment=&#39;top&#39;,</span>
+<span class="c1">#                                            bbox = {&#39;fc&#39;: &#39;white&#39;, &quot;alpha&quot;: 0.05},</span>
+<span class="c1">#                                            font_color=&#39;#aa0000&#39;)</span>
+
+<span class="c1"># --- EXPORTAÇÃO</span>
+
+<span class="n">fob</span><span class="p">,</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">dcs25</span><span class="o">.</span><span class="n">base_data</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span><span class="n">fob_scale</span><span class="o">=</span><span class="mf">1e8</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span>
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span>
+                               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                               <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+                               <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                               <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">edges</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                               <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                               <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                               <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span>
+                               <span class="n">edge_cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                               <span class="n">width</span><span class="o">=</span><span class="n">fob</span><span class="p">,</span>
+                               <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span>
+                                 <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+                                 <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span>
+                                 <span class="n">font_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+                                 <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># desativa eixos</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+<span class="c1"># legenda</span>
+<span class="n">leg</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#00aa00&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fluxo de exportação&#39;</span><span class="p">),</span>
+       <span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#aa0000&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fluxo de importação&#39;</span><span class="p">)]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">leg</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># título</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Rede bilateral: Brasil/países (Fluxo de importação/exportação FOB em bi USD)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Via de transporte: </span><span class="si">{</span><span class="n">via_e</span><span class="si">}</span><span class="s1">; Bloco:</span><span class="si">{</span><span class="n">bloco_e</span><span class="si">}</span><span class="s1">; Ano: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25-dcs-redes_31_0.png" src="../_images/25-dcs-redes_31_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="24-dcs-multidimensional.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">10. </span><em>Dataviz Code Session</em>: Dados Multidimensionais</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="10a-ecvd1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Estudo de Caso de Visualização de Dados - ECVD 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

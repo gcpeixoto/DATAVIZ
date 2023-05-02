@@ -11,10 +11,11 @@ def load_files(year: int,path: str):
     imp = read_csv(os.path.join(path,'imports.csv'))
     exp = read_csv(os.path.join(path,'exports.csv'))
     cc = read_csv(os.path.join(path,'country-codes.csv'))
+    via = read_csv(os.path.join(path,'via-codes.csv'))
     
     print(f'COMEX files successfuly loaded from: {path}')
     
-    return imp, exp, cc
+    return imp, exp, cc, via, path
 
 def get_comex(year: int):
     """Try to load pre-stored foreign trade (COMEXStats) files. Otherwise, pull from MDIC.GOV.BR"""
@@ -24,7 +25,7 @@ def get_comex(year: int):
     try:
 
         # pre-stored files
-        imp, exp, cc = load_files(year,target_dir)
+        imp, exp, cc, via, target_dir = load_files(year,target_dir)
 
     except:
         
@@ -36,6 +37,7 @@ def get_comex(year: int):
         exp = 'comexstat-bd/ncm/' + 'EXP_' + str(year) + '.csv' # exports
         bc = 'tabelas/PAIS_BLOCO.csv' # block codes
         cc = 'tabelas/PAIS.csv' # country codes
+        via = 'tabelas/VIA.csv' # transport vias
 
         # SSL verification not necessary for this class example
         trade = lambda x: read_csv(io.StringIO(requests.get(root + x,verify=False).content.decode('utf-8')),sep=';')
@@ -45,6 +47,9 @@ def get_comex(year: int):
         bc = read_csv(io.StringIO(requests.get(root + bc,verify=False).content.decode('ISO-8859-1')), sep =';', usecols = [0,2])
         cc = read_csv(io.StringIO(requests.get(root + cc,verify=False).content.decode('ISO-8859-1')), sep =';', usecols = [0,3])
         cc = cc.merge(bc, on = 'CO_PAIS')
+        
+        # transport vias
+        via = read_csv(io.StringIO(requests.get(root + via,verify=False).content.decode('ISO-8859-1')), sep =';')
 
         # rename
         imp = imp.rename(columns=dict(zip(imp.keys(),
@@ -58,17 +63,20 @@ def get_comex(year: int):
         'Valor Free On Board','Valor de frete','Valor de seguro'])))
 
         cc = cc.rename(columns=dict(zip(cc.keys(),['Código do país','Nome do país','Nome do bloco'])))
-        #cc = dict(zip(cc['Código do país'],cc['Nome do país']))
+        
+        via = via.rename(columns=dict(zip(via.keys(),['Código da via','Descrição da via'])))
 
         # save to dir
-        os.makedirs(target_dir,exist_ok=False)
+        os.makedirs(target_dir,exist_ok=True)
+        
         imp.to_csv(os.path.join(target_dir,'imports.csv'),index=False)
         exp.to_csv(os.path.join(target_dir,'exports.csv'),index=False)
         cc.to_csv(os.path.join(target_dir,'country-codes.csv'),index=False)
+        via.to_csv(os.path.join(target_dir,'via-codes.csv'),index=False)
 
         # load saved files
-        imp, exp, cc = load_files(year,target_dir)
+        imp, exp, cc, via, target_dir = load_files(year,target_dir)
         
     finally:
         
-        return imp, exp, cc, target_dir
+        return imp, exp, cc, via, target_dir
