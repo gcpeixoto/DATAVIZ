@@ -18,6 +18,7 @@ parts:
     chapters:
     - file: ipynb/24-dcs-multidimensional.ipynb
     - file: ipynb/25-dcs-redes.ipynb
+    - file: ipynb/26-dcs-cientifica.ipynb
   - caption: Avaliações
     numbered: false
     chapters:
