@@ -81,6 +81,7 @@ display(HTML('course-treemap.html'))
 # - Conteúdo (18h)
 #     - [_Dataviz Code Session_: Dados Multidimensionais](24-dcs-multidimensional.ipynb)
 #     - [_Dataviz Code Session_: Redes Complexas](25-dcs-redes.ipynb)
+#     - [_Dataviz Code Session_: Visualização Científica](26-dcs-cientifica.ipynb)
 # 
 # - Avaliação (2h)
 #     - Estudo de Caso de Visualização de Dados (ECVD1) (2h)
