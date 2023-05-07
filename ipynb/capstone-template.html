@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Modelo para Relátorio de Projeto Final &#8212; Introdução à Visualização de Dados</title>
+    <title>Projeto Final de Visualização de Dados - PFVD &#8212; Introdução à Visualização de Dados</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Guia rápido de plotagem - seaborn" href="A-quick-guide-seaborn.html" />
+    <link rel="prev" title="Estudo de Caso de Visualização de Dados - ECVD 2" href="20a-ecvd2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -176,13 +178,93 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Avaliações
+  Técnica
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-dcs-redes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-dcs-cientifica.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Visualização Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-dcs-serietemporal.html">
+   13.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Séries Temporais
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
   <a class="reference internal" href="10a-ecvd1.html">
    Estudo de Caso de Visualização de Dados - ECVD 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20a-ecvd2.html">
+   Estudo de Caso de Visualização de Dados - ECVD 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Projeto Final de Visualização de Dados - PFVD
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Suplemento
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="A-quick-guide-seaborn.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="B-quick-guide-matplotlib.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -346,40 +428,134 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#identificacao">
-   Identificação
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Projeto Final de Visualização de Dados - PFVD
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#orientacoes-gerais">
+     Orientações Gerais
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definicao">
+       Definição
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objetivo">
+       Objetivo
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#escopo">
+       Escopo
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tema">
+       Tema
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ativos">
+       Ativos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#relatorio-formal">
+         Relatório formal
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#produto-de-visualizacao-material">
+         Produto de visualização material
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nota">
+       Nota
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resumo">
-   Resumo
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estrutura-proposta-para-o-relatorio">
+   Estrutura proposta para o relatório
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#descricao-do-estudo-de-caso">
-   Descrição do estudo de caso
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metodologia-de-solucao">
-   Metodologia de solução
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resultados-analise-e-discussao">
-   Resultados, análise e discussão
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias-bibliograficas">
-   Referências bibliográficas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio">
-   Ajuda (esta seção não deve ser incluída no relatório!)
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identificacao">
+     Identificação
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resumo">
+     Resumo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conteudo-do-relatorio">
+     Conteúdo do Relatório
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Escopo
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#desafio">
+       Desafio
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#projeto-de-visualizacao">
+       Projeto de visualização
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mapeamento">
+       Mapeamento
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#representacoes-visuais">
+       Representações visuais
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analise-de-dados">
+       Análise de dados
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#takeaways">
+       <em>
+        Takeaways
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#caracterizacao-do-produto-minimo-viavel">
+       <em>
+        Caracterização do produto mínimo viável
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#referencias-bibliograficas">
+       Referências bibliográficas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -390,7 +566,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Modelo para Relátorio de Projeto Final</h1>
+                <h1>Projeto Final de Visualização de Dados - PFVD</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -400,40 +576,134 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#identificacao">
-   Identificação
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Projeto Final de Visualização de Dados - PFVD
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#orientacoes-gerais">
+     Orientações Gerais
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definicao">
+       Definição
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objetivo">
+       Objetivo
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#escopo">
+       Escopo
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tema">
+       Tema
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ativos">
+       Ativos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#relatorio-formal">
+         Relatório formal
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#produto-de-visualizacao-material">
+         Produto de visualização material
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nota">
+       Nota
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resumo">
-   Resumo
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estrutura-proposta-para-o-relatorio">
+   Estrutura proposta para o relatório
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#descricao-do-estudo-de-caso">
-   Descrição do estudo de caso
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metodologia-de-solucao">
-   Metodologia de solução
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resultados-analise-e-discussao">
-   Resultados, análise e discussão
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias-bibliograficas">
-   Referências bibliográficas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio">
-   Ajuda (esta seção não deve ser incluída no relatório!)
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identificacao">
+     Identificação
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resumo">
+     Resumo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conteudo-do-relatorio">
+     Conteúdo do Relatório
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Escopo
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#desafio">
+       Desafio
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#projeto-de-visualizacao">
+       Projeto de visualização
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mapeamento">
+       Mapeamento
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#representacoes-visuais">
+       Representações visuais
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analise-de-dados">
+       Análise de dados
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#takeaways">
+       <em>
+        Takeaways
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#caracterizacao-do-produto-minimo-viavel">
+       <em>
+        Caracterização do produto mínimo viável
+       </em>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#referencias-bibliograficas">
+       Referências bibliográficas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -445,57 +715,132 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="modelo-para-relatorio-de-projeto-final">
-<h1>Modelo para Relátorio de Projeto Final<a class="headerlink" href="#modelo-para-relatorio-de-projeto-final" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="projeto-final-de-visualizacao-de-dados-pfvd">
+<h1>Projeto Final de Visualização de Dados - PFVD<a class="headerlink" href="#projeto-final-de-visualizacao-de-dados-pfvd" title="Permalink to this headline">#</a></h1>
+<p>Siga este documento orientador para saber como organizar-se para a avaliação do Módulo 3 do curso.</p>
+<section id="orientacoes-gerais">
+<h2>Orientações Gerais<a class="headerlink" href="#orientacoes-gerais" title="Permalink to this headline">#</a></h2>
+<section id="definicao">
+<h3>Definição<a class="headerlink" href="#definicao" title="Permalink to this headline">#</a></h3>
+<p>O Projeto Final de Visualização de Dados (PFVD) é uma tarefa desempenhada de forma individual ou grupal (no máximo 4 integrantes) que aplica todo o conhecimento adquirido no curso para a entrega de dois ativos: i) relatório formal e ii) produto de visualização material.</p>
+</section>
+<section id="objetivo">
+<h3>Objetivo<a class="headerlink" href="#objetivo" title="Permalink to this headline">#</a></h3>
+<p>Empregar o conhecimento adquirido para elaborar um produto de visualização útil a uma audiência pré-selecionada cuja materialização dá-se, mas não se limita, por:</p>
+<ul class="simple">
+<li><p>relatórios ou laudos automatizados; ou</p></li>
+<li><p>projetos visuais aplicados ou <em>dashboards</em>; ou</p></li>
+<li><p>ideação de gráficos ou elementos visuais inovadores.</p></li>
+</ul>
+</section>
+<section id="escopo">
+<h3>Escopo<a class="headerlink" href="#escopo" title="Permalink to this headline">#</a></h3>
+<p>O PFVD deverá se sustentar pela base de conhecimento adquirida a partir dos Módulos 1 a 3 do curso, bem como pela disponível em fontes externas.</p>
+</section>
+<section id="tema">
+<h3>Tema<a class="headerlink" href="#tema" title="Permalink to this headline">#</a></h3>
+<p>Livre.</p>
+</section>
+<section id="ativos">
+<h3>Ativos<a class="headerlink" href="#ativos" title="Permalink to this headline">#</a></h3>
+<section id="relatorio-formal">
+<h4>Relatório formal<a class="headerlink" href="#relatorio-formal" title="Permalink to this headline">#</a></h4>
+<p>O documento formal (relatório) que sustentará a base de conhecimento teórico-metodológica do PFVD deverá ser redigido em até 4 páginas, contendo as seguintes seções:</p>
+<ul class="simple">
+<li><p><em>Escopo</em>: campo de conhecimento científico ou domínio de expertise no qual o projeto se insere;</p></li>
+<li><p><em>Desafio</em>: descrição do desafio (científico, tecnológico, operacional etc.) que o projeto busca solucionar;</p></li>
+<li><p><em>Projeto de visualização</em>: descrição das etapas a serem tomadas para atingimento da representação visual (documento descritivo do modelo referencial);</p></li>
+<li><p><em>Mapeamento</em>: codificação resumida utilizada para o mapeamento dos dados de entrada;</p></li>
+<li><p><em>Representação(ões) visual(is)</em> (RV(s)): plotagem(ns) obtida(s) após a execução do previsto no projeto de visualização;</p></li>
+<li><p><em>Análise de dados</em>: discussão resumida da leitura analítica que pode ser feita a partir da(s) RV(s);</p></li>
+<li><p><em>Takeaways</em>: síntese do mini-projeto em três pontos de destaque principais (“mensagem a ser levada para casa”);</p></li>
+<li><p><em>Caracterização do produto mínimo viável</em>: síntese das funções práticas do produto de visualização proposto.</p></li>
+</ul>
+</section>
+<section id="produto-de-visualizacao-material">
+<h4>Produto de visualização material<a class="headerlink" href="#produto-de-visualizacao-material" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>O produto material e suas funcionalidades será demonstrado por meio de apresentação (em até 12 minutos) para a classe.</p></li>
+</ul>
+</section>
+</section>
+<section id="nota">
+<h3>Nota<a class="headerlink" href="#nota" title="Permalink to this headline">#</a></h3>
+<p>No PFVD, a ênfase está na <strong>entrega de um produto de visualização</strong> que demonstre de maneira clara uma oferta de solução para o desafio proposto.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="estrutura-proposta-para-o-relatorio">
+<h1>Estrutura proposta para o relatório<a class="headerlink" href="#estrutura-proposta-para-o-relatorio" title="Permalink to this headline">#</a></h1>
 <section id="identificacao">
 <h2>Identificação<a class="headerlink" href="#identificacao" title="Permalink to this headline">#</a></h2>
 <p><strong>Título:</strong></p>
 <ul class="simple">
-<li><p>Título do Relatório</p></li>
+<li><p>Título do relatório no formato “PFVD: NOME DA APLICAÇÃO / PRODUTO / SOLUÇÃO. Exemplo:</p>
+<ul>
+<li><p><em>PFVD: DATA REPORTING APLICADO AO DIAGNÓSTICO DE CÂNCER DE MAMA</em></p></li>
+</ul>
+</li>
 </ul>
 <p><strong>Equipe:</strong></p>
 <ul class="simple">
+<li><p>Nomes e emails de contato dos membros da equipe. Exemplo:</p>
+<ul>
 <li><p>Euclides de Alexandria, ‘euclides.alexandria&#64;nome.edu.br’</p></li>
 <li><p>Rei Henrique VII, ‘henry&#64;eu.com’</p></li>
 <li><p>Cosme de Médici, ‘cmedici&#64;yuhh.com.br’</p></li>
 </ul>
+</li>
+</ul>
 </section>
 <section id="resumo">
 <h2>Resumo<a class="headerlink" href="#resumo" title="Permalink to this headline">#</a></h2>
-<p>Escreva em uma ou duas sentenças, no máximo, a finalidade do relatório ou estudo de caso. (Por quê?)</p>
+<p>Escreva em uma ou duas sentenças, no máximo, a finalidade do relatório.</p>
 </section>
-<section id="descricao-do-estudo-de-caso">
-<h2>Descrição do estudo de caso<a class="headerlink" href="#descricao-do-estudo-de-caso" title="Permalink to this headline">#</a></h2>
-<p>Descreva o problema a ser tratado em até 3 parágrafos. (O quê?)</p>
+<section id="conteudo-do-relatorio">
+<h2>Conteúdo do Relatório<a class="headerlink" href="#conteudo-do-relatorio" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Escopo<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Defina o campo ou domínio de conhecimento que o produto visa alcançar.</p>
 </section>
-<section id="metodologia-de-solucao">
-<h2>Metodologia de solução<a class="headerlink" href="#metodologia-de-solucao" title="Permalink to this headline">#</a></h2>
-<p>Descreva a metodologia utilizada para resolver o problema proposto. (Como?)</p>
+<section id="desafio">
+<h3>Desafio<a class="headerlink" href="#desafio" title="Permalink to this headline">#</a></h3>
+<p>Descreva a situação-problema ou a lacuna que o produto visa resolver, corrigir ou aperfeiçoar.</p>
 </section>
-<section id="resultados-analise-e-discussao">
-<h2>Resultados, análise e discussão<a class="headerlink" href="#resultados-analise-e-discussao" title="Permalink to this headline">#</a></h2>
-<p>Adicione gráficos, figuras, tabelas e informações necessárias (E então?)</p>
+<section id="projeto-de-visualizacao">
+<h3>Projeto de visualização<a class="headerlink" href="#projeto-de-visualizacao" title="Permalink to this headline">#</a></h3>
+<p>Ilustre o fluxo de processos que foram seguidos para a geração do produto.</p>
+</section>
+<section id="mapeamento">
+<h3>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h3>
+<p>Explique como o produto fará a associação entre os dados fundamentais de que ele depende para funcionar e os elementos visuais que produzirá.</p>
+</section>
+<section id="representacoes-visuais">
+<h3>Representações visuais<a class="headerlink" href="#representacoes-visuais" title="Permalink to this headline">#</a></h3>
+<p>Descreva que tipo(s) de RV(s) o produto abordará e exemplifique a aplicabilidade delas.</p>
+</section>
+<section id="analise-de-dados">
+<h3>Análise de dados<a class="headerlink" href="#analise-de-dados" title="Permalink to this headline">#</a></h3>
+<p>Discuta o que a(s) RV(s) produzidas pelo produto mostram quando aplicadas a um caso particular, interpretando-a(s) minimamente.</p>
+</section>
+<section id="takeaways">
+<h3><em>Takeaways</em><a class="headerlink" href="#takeaways" title="Permalink to this headline">#</a></h3>
+<p>Sintetize em até três pontos de destaque principais (“mensagem a ser levada para casa”) porque o produto de visualização é relevante.</p>
+</section>
+<section id="caracterizacao-do-produto-minimo-viavel">
+<h3><em>Caracterização do produto mínimo viável</em><a class="headerlink" href="#caracterizacao-do-produto-minimo-viavel" title="Permalink to this headline">#</a></h3>
+<p>Especifique resumidamente as ferramentas tecnológicas utilizadas para a elaboração do produto, plataforma, metadados, modo de utilização, repositório de hospedagem de código ou demais informações relevantes, no que couber.</p>
 </section>
 <section id="referencias-bibliograficas">
-<h2>Referências bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">#</a></h2>
-<p>Registre todas as referências utilizadas no formato utilizado no template do mini-artigo. Referências incluem:</p>
+<h3>Referências bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">#</a></h3>
+<p>Referencie todas as fontes utilizadas que não forem de sua autoria, as quais podem incluir, mas não se limitam a:</p>
 <ul class="simple">
-<li><p>Livro</p></li>
-<li><p>Artigo</p></li>
-<li><p>Site</p></li>
-<li><p>Post</p></li>
+<li><p>Aplicações e software de terceiros;</p></li>
+<li><p>Artigos técnicos e opiniões de experts;</p></li>
+<li><p>Blogs e posts;</p></li>
 <li><p>etc.</p></li>
 </ul>
 </section>
-<section id="ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio">
-<h2>Ajuda (esta seção não deve ser incluída no relatório!)<a class="headerlink" href="#ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio" title="Permalink to this headline">#</a></h2>
-<p>Recursos para aprender como escrever o relatório. Caso queira fazer algo e não saiba, pergunte ao professor. Se ele souber, orientará como fazer.</p>
-<ul class="simple">
-<li><p>O que é Markdown?: <a class="reference external" href="https://pt.wikipedia.org/wiki/Markdown">link</a></p></li>
-<li><p>Dicas rápidas de Markdown: <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">link</a></p></li>
-<li><p>Editor online para aprender Markdown: <a class="reference external" href="https://stackedit.io/app">link</a></p></li>
-<li><p>Como inserir texto, imagens e tabelas em notebooks: <a class="reference external" href="https://www.earthdatascience.org/courses/intro-to-earth-data-science/file-formats/use-text-files/format-text-with-markdown-jupyter-notebook/">link</a></p></li>
-</ul>
 </section>
 </section>
 
@@ -526,6 +871,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="20a-ecvd2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Estudo de Caso de Visualização de Dados - ECVD 2</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="A-quick-guide-seaborn.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
