@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Guia rápido de plotagem - seaborn" href="A-quick-guide-seaborn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,35 +125,140 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01b-historico.html">
+  <a class="reference internal" href="02a-historico.html">
    2. Marcos Históricos da Visualização de Dados
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-estetica.html">
+  <a class="reference internal" href="03a-estetica.html">
    3. Criação de Representações Visuais e Estética
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-eixos.html">
+  <a class="reference internal" href="04a-eixos.html">
    4. Eixos, Escalas e Sistemas de Coordenadas
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03b-percepcao.html">
+  <a class="reference internal" href="05a-percepcao.html">
    5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06a-cores.html">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Avaliação
+  Técnica
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="capstone-template.html">
-   Modelo para Relátorio de Projeto Final
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-dcs-redes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-dcs-cientifica.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Visualização Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-dcs-serietemporal.html">
+   13.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Séries Temporais
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10a-ecvd1.html">
+   Estudo de Caso de Visualização de Dados - ECVD 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20a-ecvd2.html">
+   Estudo de Caso de Visualização de Dados - ECVD 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Suplemento
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="A-quick-guide-seaborn.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -334,6 +440,21 @@ title="Print to PDF"
    Marcadores
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controle-de-ticklabels">
+   Controle de ticklabels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impressao-de-propriedades-padronizadas-customizadas">
+   Impressão de propriedades padronizadas/customizadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impressao-de-paletas-de-cores-disponiveis">
+   Impressão de paletas de cores disponíveis
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -369,6 +490,21 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#marcadores">
    Marcadores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controle-de-ticklabels">
+   Controle de ticklabels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impressao-de-propriedades-padronizadas-customizadas">
+   Impressão de propriedades padronizadas/customizadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impressao-de-paletas-de-cores-disponiveis">
+   Impressão de paletas de cores disponíveis
   </a>
  </li>
 </ul>
@@ -511,7 +647,7 @@ title="Print to PDF"
 </div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gridspec</span></code> com larguras e alturas variáveis</p></li>
+<li><p>‘gridspec’ com larguras e alturas variáveis</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,7 +673,7 @@ title="Print to PDF"
 </div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">subgridspec</span></code></p></li>
+<li><p>‘subgridspec’</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -680,7 +816,80 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/B-quick-guide-matplotlib_21_0.png" src="../_images/B-quick-guide-matplotlib_21_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9f20cef0d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/B-quick-guide-matplotlib_21_1.png" src="../_images/B-quick-guide-matplotlib_21_1.png" />
+</div>
+</div>
+</section>
+<section id="controle-de-ticklabels">
+<h2>Controle de ticklabels<a class="headerlink" href="#controle-de-ticklabels" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span><span class="o">,</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">mticker</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">mticker</span><span class="o">.</span><span class="n">FixedLocator</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">4.5</span><span class="p">]))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="c1"># Other solution: ax.tick_params(axis=&#39;x&#39;, rotation=25)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/B-quick-guide-matplotlib_23_0.png" src="../_images/B-quick-guide-matplotlib_23_0.png" />
+</div>
+</div>
+</section>
+<section id="impressao-de-propriedades-padronizadas-customizadas">
+<h2>Impressão de propriedades padronizadas/customizadas<a class="headerlink" href="#impressao-de-propriedades-padronizadas-customizadas" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_prop</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+    <span class="kn">from</span> <span class="nn">re</span> <span class="kn">import</span> <span class="n">match</span>
+
+    <span class="n">props</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">rcParams</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">match</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>                    
+            <span class="n">props</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">props</span>
+
+<span class="c1"># get_prop(&#39;axes&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="impressao-de-paletas-de-cores-disponiveis">
+<h2>Impressão de paletas de cores disponíveis<a class="headerlink" href="#impressao-de-paletas-de-cores-disponiveis" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_palette</span><span class="p">(</span><span class="n">opt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Print matplotlib color pallete according to category.</span>
+<span class="sd">       </span>
+<span class="sd">       Parameters:</span>
+<span class="sd">       opt (int): option for palette</span>
+<span class="sd">            1: uniform; 2: divergent; 3: ciclic; 4: generic</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+        
+    <span class="n">seq_uniform</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;plasma&#39;</span><span class="p">,</span> <span class="s1">&#39;inferno&#39;</span><span class="p">,</span> <span class="s1">&#39;magma&#39;</span><span class="p">,</span> <span class="s1">&#39;cividis&#39;</span><span class="p">}</span>
+    <span class="n">seq_grp_1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Greys&#39;</span><span class="p">,</span> <span class="s1">&#39;Purples&#39;</span><span class="p">,</span> <span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="s1">&#39;Greens&#39;</span><span class="p">,</span> <span class="s1">&#39;Oranges&#39;</span><span class="p">,</span> <span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="s1">&#39;YlOrBr&#39;</span><span class="p">,</span> <span class="s1">&#39;YlOrRd&#39;</span><span class="p">,</span> <span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> <span class="s1">&#39;PuRd&#39;</span><span class="p">,</span> <span class="s1">&#39;RdPu&#39;</span><span class="p">,</span> <span class="s1">&#39;BuPu&#39;</span><span class="p">,</span> <span class="s1">&#39;GnBu&#39;</span><span class="p">,</span> <span class="s1">&#39;PuBu&#39;</span><span class="p">,</span> <span class="s1">&#39;YlGnBu&#39;</span><span class="p">,</span> <span class="s1">&#39;PuBuGn&#39;</span><span class="p">,</span> <span class="s1">&#39;BuGn&#39;</span><span class="p">,</span><span class="s1">&#39;YlGn&#39;</span><span class="p">}</span>
+    <span class="n">seq_grp_2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_yarg&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_gray&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;bone&#39;</span><span class="p">,</span> <span class="s1">&#39;pink&#39;</span><span class="p">,</span> <span class="s1">&#39;spring&#39;</span><span class="p">,</span> <span class="s1">&#39;summer&#39;</span><span class="p">,</span> <span class="s1">&#39;autumn&#39;</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">,</span> <span class="s1">&#39;cool&#39;</span><span class="p">,</span> <span class="s1">&#39;Wistia&#39;</span><span class="p">,</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="s1">&#39;afmhot&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_heat&#39;</span><span class="p">,</span><span class="s1">&#39;copper&#39;</span><span class="p">}</span>
+    <span class="n">sequential</span> <span class="o">=</span> <span class="n">seq_uniform</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">seq_grp_1</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">seq_grp_2</span><span class="p">)</span>
+    <span class="n">divergent</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PiYG&#39;</span><span class="p">,</span> <span class="s1">&#39;PRGn&#39;</span><span class="p">,</span> <span class="s1">&#39;BrBG&#39;</span><span class="p">,</span> <span class="s1">&#39;PuOr&#39;</span><span class="p">,</span> <span class="s1">&#39;RdGy&#39;</span><span class="p">,</span> <span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="s1">&#39;RdYlBu&#39;</span><span class="p">,</span> <span class="s1">&#39;RdYlGn&#39;</span><span class="p">,</span> <span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="s1">&#39;bwr&#39;</span><span class="p">,</span><span class="s1">&#39;seismic&#39;</span><span class="p">}</span>
+    <span class="n">ciclic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;twilight&#39;</span><span class="p">,</span> <span class="s1">&#39;twilight_shifted&#39;</span><span class="p">,</span> <span class="s1">&#39;hsv&#39;</span><span class="p">}</span>
+    <span class="n">generic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;flag&#39;</span><span class="p">,</span> <span class="s1">&#39;prism&#39;</span><span class="p">,</span> <span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_earth&#39;</span><span class="p">,</span> <span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_stern&#39;</span><span class="p">,</span> <span class="s1">&#39;gnuplot&#39;</span><span class="p">,</span> <span class="s1">&#39;gnuplot2&#39;</span><span class="p">,</span> <span class="s1">&#39;CMRmap&#39;</span><span class="p">,</span> <span class="s1">&#39;cubehelix&#39;</span><span class="p">,</span> <span class="s1">&#39;brg&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_rainbow&#39;</span><span class="p">,</span> <span class="s1">&#39;rainbow&#39;</span><span class="p">,</span> <span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="s1">&#39;turbo&#39;</span><span class="p">,</span> <span class="s1">&#39;nipy_spectral&#39;</span><span class="p">,</span><span class="s1">&#39;gist_ncar&#39;</span><span class="p">}</span>
+
+    <span class="n">selector</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="n">sequential</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="n">divergent</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="n">ciclic</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="n">generic</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">selector</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">opt</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -713,6 +922,13 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="A-quick-guide-seaborn.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
@@ -722,7 +938,7 @@ title="Print to PDF"
   
     By Prof. Gustavo Oliveira<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

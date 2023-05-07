@@ -79,32 +79,34 @@ display(HTML('course-treemap.html'))
 # ### Módulo 2: Técnica (20h)
 # 
 # - Conteúdo (18h)
+#     - _Dataviz Code Session_: Quantidades
+#     - _Dataviz Code Session_: Distribuições
+#     - _Dataviz Code Session_: Proporções
+#     - _Dataviz Code Session_: Dados Geoespaciais
 #     - [_Dataviz Code Session_: Dados Multidimensionais](24-dcs-multidimensional.ipynb)
 #     - [_Dataviz Code Session_: Redes Complexas](25-dcs-redes.ipynb)
 #     - [_Dataviz Code Session_: Visualização Científica](26-dcs-cientifica.ipynb)
+#     - [_Dataviz Code Session_: Séries Temporais e Tendências](27-dcs-serietemporal.ipynb)
 # 
 # - Avaliação (2h)
-#     - Estudo de Caso de Visualização de Dados (ECVD1) (2h)
-# 
-# _**More coming soon...**_
-# 
-# <!--
-# ### Módulo 2: Técnicas (20h)
-# 
-# - Conteúdo (18h)
-#     - 
-#     - 
-# - Avaliação (2h)
-#     - Relatório de estudo de caso 2 (2h)
+#     - [Estudo de Caso de Visualização de Dados (ECVD2)](20a-ecvd2.ipynb) (2h)
 # 
 # ### Módulo 3: Aplicações (20h)
 # 
 # - Conteúdo (14h)
-#     - 
-#     - 
+#     - _Dashboarding_ (6h)
+#     - _Reporting_ (4h)
+#     - _Business Intelligence_ (4h)
+# 
 # - Avaliação (6h)
-#     - Relatório Final (6h)
-# -->
+#     - [Projeto Final de Visualização de Dados (PFVD)](capstone-template.ipynb) (6h)
+# 
+# ### Suplemento
+# 
+# - [Guia rápido de plotagem: _seaborn_ *](A-quick-guide-seaborn.ipynb)
+# - [Guia rápido de plotagem: _matplotlib_ *](B-quick-guide-matplotlib.ipynb)
+# 
+# **Obs./(*):** capítulos não linkados estão em construção.
 
 # ## Metodologia de avaliação
 

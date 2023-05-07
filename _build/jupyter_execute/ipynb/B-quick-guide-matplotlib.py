@@ -5,7 +5,7 @@
 
 # - Plotagem genérica em modo explícito (interface "OO-like")
 
-# In[37]:
+# In[2]:
 
 
 import matplotlib.pyplot as plt
@@ -59,7 +59,7 @@ ax[5].set_xlim(-3,5); ax[5].set_ylim(-2,4); # 2a. forma
 
 # - Visibilidade de eixos
 
-# In[39]:
+# In[8]:
 
 
 fig, ax = plt.subplots(1,5,figsize=(10,2),constrained_layout=True)
@@ -106,7 +106,7 @@ for eixo in fig.axes:
     eixo.plot(1,1,'rs')
 
 
-# - `gridspec` com larguras e alturas variáveis
+# - 'gridspec' com larguras e alturas variáveis
 
 # In[78]:
 
@@ -127,7 +127,7 @@ for row in range(3):
         ax.annotate(label, (0.1, 0.5), xycoords='axes fraction', va='center')
 
 
-# - `subgridspec`
+# - 'subgridspec'
 
 # In[86]:
 
@@ -163,7 +163,7 @@ ax2.get_yaxis().set_visible(False)
 
 # - Eixos apensados
 
-# In[159]:
+# In[4]:
 
 
 import numpy as np
@@ -231,7 +231,7 @@ ax[1].yaxis.set_visible(False)
 
 # ## Marcadores
 
-# In[223]:
+# In[6]:
 
 
 markers = ['.','o','s','P','X','*','p','D','<','>','^','v',              '1','2','3','4','+','x','|','_',4,5,6,7,          '$\\int$','$\\dagger$' ]
@@ -247,8 +247,63 @@ for i in range(len(markers)):
 ax.axis('tight');
 
 
+# ## Controle de ticklabels
+
+# In[3]:
+
+
+import matplotlib.pyplot as plt, matplotlib.ticker as mticker
+
+x = list(range(10))
+
+fig, ax = plt.subplots(figsize=(3,3))
+ax.plot(x,x)
+ax.xaxis.set_major_locator(mticker.FixedLocator([1.5,2.5,4.5]))
+ax.xaxis.set_tick_params(rotation=90, labelsize=16) # Other solution: ax.tick_params(axis='x', rotation=25)
+
+
+# ## Impressão de propriedades padronizadas/customizadas
+
 # In[ ]:
 
 
+def get_prop(prop):
+    from matplotlib import rcParams
+    from re import match
 
+    props = {}
+    for k,v in rcParams.items():
+        if match(prop,k):                    
+            props[k] = v
+    return props
+
+# get_prop('axes')
+
+
+# ## Impressão de paletas de cores disponíveis
+
+# In[13]:
+
+
+def print_palette(opt):
+    """Print matplotlib color pallete according to category.
+       
+       Parameters:
+       opt (int): option for palette
+            1: uniform; 2: divergent; 3: ciclic; 4: generic
+        
+    """
+        
+    seq_uniform = {'viridis', 'plasma', 'inferno', 'magma', 'cividis'}
+    seq_grp_1 = {'Greys', 'Purples', 'Blues', 'Greens', 'Oranges', 'Reds', 'YlOrBr', 'YlOrRd', 'OrRd', 'PuRd', 'RdPu', 'BuPu', 'GnBu', 'PuBu', 'YlGnBu', 'PuBuGn', 'BuGn','YlGn'}
+    seq_grp_2 = {'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink', 'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia', 'hot', 'afmhot', 'gist_heat','copper'}
+    sequential = seq_uniform.union(seq_grp_1).union(seq_grp_2)
+    divergent = {'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu', 'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr','seismic'}
+    ciclic = {'twilight', 'twilight_shifted', 'hsv'}
+    generic = {'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern', 'gnuplot', 'gnuplot2', 'CMRmap', 'cubehelix', 'brg', 'gist_rainbow', 'rainbow', 'jet', 'turbo', 'nipy_spectral','gist_ncar'}
+
+    selector = {1:sequential, 2:divergent, 3:ciclic, 4:generic}
+
+    for k,v in selector.items():
+        if k == opt: print(v)
 

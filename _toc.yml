@@ -19,9 +19,16 @@ parts:
     - file: ipynb/24-dcs-multidimensional.ipynb
     - file: ipynb/25-dcs-redes.ipynb
     - file: ipynb/26-dcs-cientifica.ipynb
+    - file: ipynb/27-dcs-serietemporal.ipynb
   - caption: Avaliações
     numbered: false
     chapters:
     - file: ipynb/10a-ecvd1.ipynb
     - file: ipynb/20a-ecvd2.ipynb
-    #- file: ipynb/capstone-template.ipynb
+    - file: ipynb/capstone-template.ipynb
+  - caption: Suplemento
+    numbered: false
+    chapters:
+    - file: ipynb/A-quick-guide-seaborn.ipynb
+    - file: ipynb/B-quick-guide-matplotlib.ipynb
+    
