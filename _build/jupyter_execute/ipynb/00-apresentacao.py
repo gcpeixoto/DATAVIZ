@@ -43,9 +43,16 @@ labels = ['Visualização de Dados',
     'Conteúdo 2','Estudo de caso 2',
     'Conteúdo 3','Projeto de visualização']
 
-parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
+parents = [''] + \
+    3*['Visualização de Dados'] + \
+    2*['Módulo 1'] + \
+    2*['Módulo 2'] + \
+    2*['Módulo 3'] 
 
-values = [0] +     [.33,.33,.33] +     [.9,.1,.9,.1] +     [.7,.3]
+values = [0] + \
+    [.33,.33,.33] + \
+    [.9,.1,.9,.1] + \
+    [.7,.3]
 
 f = go.Figure(go.Treemap(
     labels = labels,
@@ -95,6 +102,7 @@ display(HTML('course-treemap.html'))
 # 
 # - Conteúdo (14h)
 #     - _Dashboarding_ (6h)
+#         - [_Dashboarding_ com _Dash_](30-dw-dash.ipynb)
 #     - _Reporting_ (4h)
 #     - _Business Intelligence_ (4h)
 # 

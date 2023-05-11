@@ -210,7 +210,9 @@ Z = 4*np.exp(-( ( X - (a+b)/2 )**2 + ( Y - (c+d)/2 )**2 ))
 
 # plotagem
 fig = plt.figure(figsize=(10,4),constrained_layout=True)
-fig.suptitle('$f(x,y) = 4e^{ -      \\left[ \\left( x -  \\frac{a+b}{2} \\right)^2  +              \\left( y -  \\frac{c+d}{2} \\right)^2 \\right] }$')
+fig.suptitle('$f(x,y) = 4e^{ - \
+     \\left[ \\left( x -  \\frac{a+b}{2} \\right)^2  + \
+             \\left( y -  \\frac{c+d}{2} \\right)^2 \\right] }$')
 
 gs = fig.add_gridspec(1,3) 
 ax1 = fig.add_subplot(gs[0],projection='3d')

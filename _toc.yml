@@ -20,6 +20,10 @@ parts:
     - file: ipynb/25-dcs-redes.ipynb
     - file: ipynb/26-dcs-cientifica.ipynb
     - file: ipynb/27-dcs-serietemporal.ipynb
+  - caption: Aplicações
+    numbered: true
+    chapters:
+    - file: ipynb/30-dw-dash.ipynb
   - caption: Avaliações
     numbered: false
     chapters:

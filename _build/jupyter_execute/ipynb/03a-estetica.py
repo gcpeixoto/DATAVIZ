@@ -300,7 +300,9 @@ df_h = pd.read_csv('../data/raw-data-hospital.txt',sep=' ',names=['Bloco','Data'
 
 # remoção de inconsistências nas séries
 df_h['Bloco'] = df_h['Bloco'].str.upper().str.strip(':BLC').str.strip('.BLC')
-df_h['Data'] = df_h['Data'].str.replace('-','/').str.replace('.','/').                str.replace('/','-').str.replace('06','Jun').                str.replace(r'([A-Z][a-z][a-z])',lambda x: x.group().lower(),regex=True)
+df_h['Data'] = df_h['Data'].str.replace('-','/').str.replace('.','/').\
+                str.replace('/','-').str.replace('06','Jun').\
+                str.replace(r'([A-Z][a-z][a-z])',lambda x: x.group().lower(),regex=True)
 df_h['Cirurgias'] = df_h['Cirurgias'].str.strip('C').str.strip('c')
 df_h['Partos'] = df_h['Partos'].str.strip('P').str.strip('p')
 
@@ -386,7 +388,6 @@ df_t.set_index('date')
 # A figura abaixo, produzida unicamente com `matplotlib`, ilustra esses conceitos.
 
 # In[661]:
-
 
 
 import matplotlib.pyplot as plt
