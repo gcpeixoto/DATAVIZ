@@ -64,6 +64,53 @@
 # - Demonstração básica: `python ../dw/dw1a.py`
 # - Plataforma CVLI: `python ../dw/dw1b.py`
 
-# ## Referência
+# ### Execução com _JupyterDash_
 # 
-# [Dash User Guide](https://dash.plotly.com)
+# A execução diretamente via Jupyter notebook pode ser feita com a ajuda do módulo [JupyterDash](https://github.com/plotly/jupyter-dash) por meio da opção `app.run_server(mode='inline')`. Abaixo, criamos um _demo app_ nesses moldes.
+
+# In[6]:
+
+
+# boilerplate imports 
+import plotly.express as px
+from jupyter_dash import JupyterDash
+from dash import html, dcc, Output, Input
+from pandas import read_csv
+
+# carrega dados
+df = read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
+
+# constroi app
+app = JupyterDash(__name__)
+app.layout = html.Div([
+    html.H1(children='Crescimento populacional por país', 
+            style={'color':'#117029'}),
+    dcc.Dropdown(df.country.unique(), 'Brazil', id='dropdown-selection'),
+    dcc.Graph(id='graph-content')
+])
+
+# callback de atualização
+@app.callback(
+    Output('graph-content', 'figure'),
+    Input('dropdown-selection', 'value')
+)
+def update_graph(value):
+    dff = df[df.country==value]
+    return px.line(dff, x='year', y='pop')
+
+# executa app e mostra resultado inline
+app.run_server(mode='inline')
+
+
+# ### Modos de visualização
+# 
+# Há três modos disponíveis para visualizar um app com JupyterDash:
+# 
+# - `app.run_server(mode='external')`: saída para browser.
+# - `app.run_server(mode='inline')`: saída para notebook.
+# - `app.run_server(mode='jupyterlab')`: saída para JupyterLab.
+
+# ## Referências
+# 
+# - [Dash User Guide](https://dash.plotly.com)
+# - [Introducing JupyterDash](https://medium.com/plotly/introducing-jupyterdash-811f1f57c02e)

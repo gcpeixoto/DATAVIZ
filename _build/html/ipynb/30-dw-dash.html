@@ -221,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Prática
+  Aplicações
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -490,10 +490,25 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exemplos">
    14.4. Exemplos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#execucao-com-jupyterdash">
+     14.4.1. Execução com
+     <em>
+      JupyterDash
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modos-de-visualizacao">
+     14.4.2. Modos de visualização
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencia">
-   14.5. Referência
+  <a class="reference internal nav-link" href="#referencias">
+   14.5. Referências
   </a>
  </li>
 </ul>
@@ -554,10 +569,25 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exemplos">
    14.4. Exemplos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#execucao-com-jupyterdash">
+     14.4.1. Execução com
+     <em>
+      JupyterDash
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modos-de-visualizacao">
+     14.4.2. Modos de visualização
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencia">
-   14.5. Referência
+  <a class="reference internal nav-link" href="#referencias">
+   14.5. Referências
   </a>
  </li>
 </ul>
@@ -645,10 +675,75 @@ title="Print to PDF"
 <li><p>Demonstração básica: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">../dw/dw1a.py</span></code></p></li>
 <li><p>Plataforma CVLI: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">../dw/dw1b.py</span></code></p></li>
 </ul>
+<section id="execucao-com-jupyterdash">
+<h3><span class="section-number">14.4.1. </span>Execução com <em>JupyterDash</em><a class="headerlink" href="#execucao-com-jupyterdash" title="Permalink to this headline">#</a></h3>
+<p>A execução diretamente via Jupyter notebook pode ser feita com a ajuda do módulo <a class="reference external" href="https://github.com/plotly/jupyter-dash">JupyterDash</a> por meio da opção <code class="docutils literal notranslate"><span class="pre">app.run_server(mode='inline')</span></code>. Abaixo, criamos um <em>demo app</em> nesses moldes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># boilerplate imports </span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">jupyter_dash</span> <span class="kn">import</span> <span class="n">JupyterDash</span>
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">html</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">Input</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+
+<span class="c1"># carrega dados</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># constroi app</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">JupyterDash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="s1">&#39;Crescimento populacional por país&#39;</span><span class="p">,</span> 
+            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;#117029&#39;</span><span class="p">}),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="s1">&#39;Brazil&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;dropdown-selection&#39;</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;graph-content&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># callback de atualização</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;graph-content&#39;</span><span class="p">,</span> <span class="s1">&#39;figure&#39;</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s1">&#39;dropdown-selection&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_graph</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">dff</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">country</span><span class="o">==</span><span class="n">value</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">dff</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;pop&#39;</span><span class="p">)</span>
+
+<span class="c1"># executa app e mostra resultado inline</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dash is running on http://127.0.0.1:8050/
+</pre></div>
+</div>
+<div class="output text_html">
+<iframe
+    width="100%"
+    height="650"
+    src="http://127.0.0.1:8050/"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
-<section id="referencia">
-<h2><span class="section-number">14.5. </span>Referência<a class="headerlink" href="#referencia" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://dash.plotly.com">Dash User Guide</a></p>
+<section id="modos-de-visualizacao">
+<h3><span class="section-number">14.4.2. </span>Modos de visualização<a class="headerlink" href="#modos-de-visualizacao" title="Permalink to this headline">#</a></h3>
+<p>Há três modos disponíveis para visualizar um app com JupyterDash:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">app.run_server(mode='external')</span></code>: saída para browser.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app.run_server(mode='inline')</span></code>: saída para notebook.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app.run_server(mode='jupyterlab')</span></code>: saída para JupyterLab.</p></li>
+</ul>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">14.5. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dash.plotly.com">Dash User Guide</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/plotly/introducing-jupyterdash-811f1f57c02e">Introducing JupyterDash</a></p></li>
+</ul>
 </section>
 </section>
 
