@@ -1,0 +1,43 @@
+<html>
+<head>
+    <style>
+        @page {
+            size: a4 portrait;
+            /* Descomente para depuração */            
+            background-image: url('../dw/reporting/watermark.pdf');
+            @frame content_frame {
+                left: 50pt; 
+                width: 505pt; 
+                top: 50pt; 
+                height: 700pt;
+                /*-pdf-frame-border: 1;*/
+            }               
+            @frame footer_frame {                    
+                left: 50pt; 
+                width: 505pt; 
+                top: 772pt; 
+                height: 30pt;                   
+                -pdf-frame-content: footer_content; /* estático */
+                -pdf-frame-border: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="footer_content">
+        <p>Pág. <pdf:pagenumber> de <pdf:pagecount></p>
+    </div>   
+    <div id="content">
+        <div id="header_info">
+            <h1>Relatório: Crimes Violentos Letais Intencionais (CVLI)</h1>
+            <p>Flatmetrics Analytics S/A<br>
+            João Pessoa - PB - Brasil<br>
+            CNPJ: 00.000.000/0001-99
+            </p>
+        </div>
+        <div id="header_logo">
+            <img src="../dw/reporting/flatmetrics_logo.png" width="120" height="50">
+        </div>
+    </div>
+</body>
+</html>

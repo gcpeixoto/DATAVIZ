@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>15. Dataviz Workshop: Data Reporting com HTML/PDF &#8212; Introdução à Visualização de Dados</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Estudo de Caso de Visualização de Dados - ECVD 1" href="10a-ecvd1.html" />
+    <link rel="prev" title="14. Dataviz Workshop: Dashboarding com Dash" href="30-dw-dash.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00-apresentacao.html">
+                    Apresentação do curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06a-cores.html">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Técnica
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-dcs-redes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-dcs-cientifica.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Visualização Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-dcs-serietemporal.html">
+   13.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Séries Temporais
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicações
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-dw-dash.html">
+   14.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Dashboarding
+   </em>
+   com
+   <em>
+    Dash
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   15.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com HTML/PDF
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10a-ecvd1.html">
+   Estudo de Caso de Visualização de Dados - ECVD 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20a-ecvd2.html">
+   Estudo de Caso de Visualização de Dados - ECVD 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="capstone-template.html">
+   Projeto Final de Visualização de Dados - PFVD
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Suplemento
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="A-quick-guide-seaborn.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="B-quick-guide-matplotlib.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/31-dw-reporting.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivos-do-workshop">
+   15.1. Objetivos do workshop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-utilizadas">
+   15.2. Ferramentas utilizadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-reporting">
+   15.3.
+   <em>
+    Data reporting
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xhtml2pdf">
+     15.3.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       xhtml2pdf
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instalacao">
+     15.3.2. Instalação
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflow-demonstrativo">
+   15.4.
+   <em>
+    Workflow
+   </em>
+   demonstrativo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   15.5. Referências
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dataviz Workshop: Data Reporting com HTML/PDF</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivos-do-workshop">
+   15.1. Objetivos do workshop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-utilizadas">
+   15.2. Ferramentas utilizadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-reporting">
+   15.3.
+   <em>
+    Data reporting
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xhtml2pdf">
+     15.3.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       xhtml2pdf
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instalacao">
+     15.3.2. Instalação
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflow-demonstrativo">
+   15.4.
+   <em>
+    Workflow
+   </em>
+   demonstrativo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   15.5. Referências
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dataviz-workshop-data-reporting-com-html-pdf">
+<h1><span class="section-number">15. </span><em>Dataviz Workshop</em>: <em>Data Reporting</em> com HTML/PDF<a class="headerlink" href="#dataviz-workshop-data-reporting-com-html-pdf" title="Permalink to this headline">#</a></h1>
+<section id="objetivos-do-workshop">
+<h2><span class="section-number">15.1. </span>Objetivos do workshop<a class="headerlink" href="#objetivos-do-workshop" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Apresentar o módulo <code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code> para conversão de código HTML para PDF;</p></li>
+<li><p>Converter DataFrame para código HTML;</p></li>
+<li><p>Desenvolver <em>workflow</em> básico para geração de relatórios automatizados utilizando templates HTML atualizáveis utilizando dados sobre crimes violentos letais intencionais em João Pessoa.</p></li>
+</ul>
+</section>
+<section id="ferramentas-utilizadas">
+<h2><span class="section-number">15.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Módulos Python</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="data-reporting">
+<h2><span class="section-number">15.3. </span><em>Data reporting</em><a class="headerlink" href="#data-reporting" title="Permalink to this headline">#</a></h2>
+<p>Existem diversas ferramentas para operacionalizar PDFs, seja para análise (<em>parsing</em>), extração, encriptação ou conversão de informações. Algumas delas, com suporte em Python são:</p>
+<ul class="simple">
+<li><p>pdfminer.six</p></li>
+<li><p>pyPDF2</p></li>
+<li><p>reportlab</p></li>
+<li><p>json2pdf</p></li>
+<li><p>pymupdf</p></li>
+<li><p>pikepdf</p></li>
+</ul>
+<p>Entretanto a arte do <em>data reporting</em>, que consiste em gerar relatórios automatizados a partir de dados e exportá-los, principalmente em arquivos PDF ma forma de brochuras, portfólios, ou <em>one-pagers</em>, depende da um misto de habilidades e, às vezes, da integração de mais de uma API.</p>
+<p>Cada uma das bibliotecas acima possuem forças e fraquezas, de maneira que, raramente, teremos à mão, soluções imediatas para gerarmos nossos relatórios.</p>
+<p>A proposta deste capítulo é apresentar o módulo <code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code> como uma primeira aproximação ao tema.</p>
+<section id="xhtml2pdf">
+<h3><span class="section-number">15.3.1. </span><code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code><a class="headerlink" href="#xhtml2pdf" title="Permalink to this headline">#</a></h3>
+<p>O módulo <code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code> oferece uma maneira ágil de automatizar a geração de PDFs a partir de conteúdo HTML.  Ele utiliza a a biblioteca <code class="docutils literal notranslate"><span class="pre">reportlab</span></code> como <em>backbone</em>.</p>
+<p>Ele funciona com base em <em>templates</em> mínimos de layouts inspirados em estilos CSS. As partes principais são os objetos <code class="docutils literal notranslate"><span class="pre">&#64;page</span></code> e <code class="docutils literal notranslate"><span class="pre">&#64;frame</span></code>, os quais emolduram o conteúdo em página. Além disso, são disponíveis <em>tags</em> do tipo PDF-vendor, que habilitam o desenvolvedor a inserir informações nativas de arquivos PDF, tais como paginação, sumário e idioma.</p>
+<p>Em termos de gráficos, o módulo fornece algumas representações visuais, tais como gráficos de linhas e de barras, mas é bastante limitado.</p>
+<p>Algumas suas vantagens são:</p>
+<ul class="simple">
+<li><p>flexibilidade para gerar múltiplos <em>templates</em> de página;</p></li>
+<li><p>encriptação e assinatura;</p></li>
+<li><p>superposição de marca d’água;</p></li>
+</ul>
+</section>
+<section id="instalacao">
+<h3><span class="section-number">15.3.2. </span>Instalação<a class="headerlink" href="#instalacao" title="Permalink to this headline">#</a></h3>
+<p>Recomenda-se utilizar <em>pip</em> com: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xhtml2pdf</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xhtml2pdf</span> <span class="kn">import</span> <span class="n">pisa</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="o">,</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="workflow-demonstrativo">
+<h2><span class="section-number">15.4. </span><em>Workflow</em> demonstrativo<a class="headerlink" href="#workflow-demonstrativo" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Primeiramente, geramos um conteúdo básico em HTML que, na prática, seria a composição de um <em>briefing</em> atualizável periodicamente e dados obtidos de um DataFrame.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># geração de HTML atualizável</span>
+<span class="k">def</span> <span class="nf">html_data</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">        &lt;h2&gt;Dados&lt;/h2&gt;</span><span class="se">\</span>
+<span class="s1">        &lt;p&gt;Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean.</span><span class="se">\</span>
+<span class="s1">        Sit amet cursus sit amet. Varius vel pharetra vel turpis nunc eget lorem. Enim lobortis scelerisque fermentum dui faucibus.</span><span class="se">\</span>
+<span class="s1">        Nibh tellus molestie nunc non blandit massa enim nec dui. Non nisi est sit amet facilisis magna.</span><span class="se">\</span>
+<span class="s1">        </span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="se">\</span>
+<span class="s1">        &lt;/p&gt;</span><span class="se">\</span>
+<span class="s1">        &lt;h2&gt;Análise&lt;/h2&gt;</span><span class="se">\</span>
+<span class="s1">        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span><span class="se">\</span>
+<span class="s1">        Viverra ipsum nunc aliquet bibendum enim facilisis. Dui nunc mattis enim ut tellus elementum sagittis vitae. Sed adipiscing diam donec adipiscing tristique.</span><span class="se">\</span>
+<span class="s1">        Ut sem nulla pharetra diam sit. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet.</span><span class="se">\</span>
+<span class="s1">        Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Pharetra convallis posuere morbi leo. Et magnis dis parturient montes nascetur.</span><span class="se">\</span>
+<span class="s1">        Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Amet justo donec enim diam vulputate ut pharetra sit amet. Tempor nec feugiat nisl pretium fusce id velit.</span><span class="se">\</span>
+<span class="s1">        Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Ultrices vitae auctor eu augue ut.</span><span class="se">\</span>
+<span class="s1">        Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Urna condimentum mattis pellentesque id. Quisque non tellus orci ac auctor augue.</span><span class="se">\</span>
+<span class="s1">        Dolor sed viverra ipsum nunc aliquet bibendum enim.</span><span class="se">\</span>
+<span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">        Et malesuada fames ac turpis egestas. Pretium nibh ipsum consequat nisl vel pretium. Consectetur adipiscing elit ut aliquam purus.</span><span class="se">\</span>
+<span class="s1">        Duis at consectetur lorem donec massa. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. In iaculis nunc sed augue lacus viverra.</span><span class="se">\</span>
+<span class="s1">        Malesuada fames ac turpis egestas maecenas pharetra convallis. Massa sed elementum tempus egestas. Turpis egestas maecenas pharetra convallis posuere morbi. </span><span class="se">\</span>
+<span class="s1">        Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Tempus iaculis urna id volutpat.</span><span class="se">\</span>
+<span class="s1">        </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+    <span class="k">return</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Em seguida fazemos o carregamento dos dados que serão usados para compor o relatório. Na prática, poderia já ser um gráfico pós-processado.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/crimes-pb-2015-2018.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fazemos o carregamento de um <em>template</em> HTML para o relatório. Podemos ter tantos modelos para quantas forem as necessidades de projeto.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># carregamento do modelo</span>
+<span class="n">html_report_template</span> <span class="o">=</span> <span class="s1">&#39;../dw/reporting/report_template.html&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Por fim, escrevemos uma função de utilidade para converter o conteúdo de HTML para produzir o nosso PDF.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># função de utilidade para conversão</span>
+<span class="k">def</span> <span class="nf">html_to_pdf</span><span class="p">(</span><span class="n">html_in</span><span class="p">,</span> <span class="n">pdf_out</span><span class="p">):</span>
+    
+    <span class="c1"># arquivo de saída</span>
+    <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">pdf_out</span><span class="p">,</span> <span class="s1">&#39;w+b&#39;</span><span class="p">)</span>
+
+    <span class="c1"># conversão</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">pisa</span><span class="o">.</span><span class="n">CreatePDF</span><span class="p">(</span><span class="n">html_in</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">outfile</span><span class="p">)</span>
+
+    <span class="c1"># fecha arquivo</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c1"># retorna True se houver erro; False, senão</span>
+    <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">err</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A execução da função de utilidade é melhor disposta em <em>script</em>. Aqui para fins de demonstração, o meio é indiferente.</p></li>
+</ul>
+<p>No código abaixo, fazemos uma leve inserção de conteúdo no <em>template</em>, modificando o código-fonte HTML e exportando a saída para o documento <code class="docutils literal notranslate"><span class="pre">dw-report.pdf</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">pisa</span><span class="o">.</span><span class="n">showLogging</span><span class="p">()</span>
+    
+    <span class="c1"># inserção de dado no modelo</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_report_template</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+        <span class="n">source_html</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">cutoff</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;(&lt;/body&gt;)&#39;</span><span class="p">,</span><span class="n">source_html</span><span class="p">)</span><span class="o">.</span><span class="n">span</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">source_html</span><span class="p">[:</span><span class="n">cutoff</span><span class="p">]</span>    
+        <span class="n">tail</span> <span class="o">=</span> <span class="n">source_html</span><span class="p">[</span><span class="n">cutoff</span><span class="p">:]</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">html_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>    
+        <span class="n">source_html</span> <span class="o">=</span> <span class="n">head</span> <span class="o">+</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">tail</span>
+    
+        <span class="n">html_to_pdf</span><span class="p">(</span><span class="n">source_html</span><span class="p">,</span><span class="s1">&#39;../dw/reporting/pdf-output/dw-report.pdf&#39;</span><span class="p">)</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A exibição do PDF pode ser conferida abaixo.</p></li>
+</ul>
+<p><em>Obs.</em>: parte deste material é fictício. Qualquer semelhança com nomes, pessoas, factos ou situações da vida real terá sido mera coincidência.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="600"
+    height="500"
+    src="http://gcpeixoto.github.io/DATAVIZ/dw/reporting/pdf-output/dw-report.pdf"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="referencias">
+<h2><span class="section-number">15.5. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://xhtml2pdf.readthedocs.io/en/latest/index.html">Documentação: <code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code></a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/html/default.asp">W3 Schools</a></p></li>
+<li><p><a class="reference external" href="https://docs.reportlab.com/reportlab/userguide/ch1_intro/">Reportlab</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="30-dw-dash.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">14. </span><em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="10a-ecvd1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Estudo de Caso de Visualização de Dados - ECVD 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

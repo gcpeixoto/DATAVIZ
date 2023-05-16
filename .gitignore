@@ -6,3 +6,4 @@
 /data/comex-*
 /dcs/__pycache__
 /rise/.pytest_cache
+.vscode

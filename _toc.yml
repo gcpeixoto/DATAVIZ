@@ -24,6 +24,7 @@ parts:
     numbered: true
     chapters:
     - file: ipynb/30-dw-dash.ipynb
+    - file: ipynb/31-dw-reporting.ipynb
   - caption: Avaliações
     numbered: false
     chapters:

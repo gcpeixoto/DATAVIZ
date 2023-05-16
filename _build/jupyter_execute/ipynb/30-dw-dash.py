@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # _Dataviz Workshop_:_Dashboarding_ com _Dash_
+# # _Dataviz Workshop_: _Dashboarding_ com _Dash_
 
 # ## Objetivos do workshop
 # 
@@ -13,7 +13,7 @@
 # 
 # - Módulos Python    
 #     - `dash`
-#     - `dash_bootstrap_componentes`
+#     - `dash_bootstrap_components`
 #     - `plotly`
 #     - `os`
 #     - `pandas`
