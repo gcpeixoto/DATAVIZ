@@ -25,6 +25,7 @@ parts:
     chapters:
     - file: ipynb/30-dw-dash.ipynb
     - file: ipynb/31-dw-reporting.ipynb
+    - file: ipynb/32-dw-reportlab.ipynb
   - caption: Avaliações
     numbered: false
     chapters:

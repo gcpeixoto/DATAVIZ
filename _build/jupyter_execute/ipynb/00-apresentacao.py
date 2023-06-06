@@ -105,6 +105,7 @@ display(HTML('course-treemap.html'))
 #         - [_Dashboarding_ com _Dash_](30-dw-dash.ipynb)
 #     - _Reporting_ (4h)
 #         - [_Data Reporting_ com HTML/PDF](31-dw-reporting.ipynb)
+#         - [_Data Reporting_ com `reportlab`](32-dw-reportlab.ipynb)
 #     - _Business Intelligence_ (4h)
 # 
 # - Avaliação (6h)

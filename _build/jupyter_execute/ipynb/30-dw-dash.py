@@ -68,7 +68,7 @@
 # 
 # A execução diretamente via Jupyter notebook pode ser feita com a ajuda do módulo [JupyterDash](https://github.com/plotly/jupyter-dash) por meio da opção `app.run_server(mode='inline')`. Abaixo, criamos um _demo app_ nesses moldes.
 
-# In[6]:
+# In[2]:
 
 
 # boilerplate imports 

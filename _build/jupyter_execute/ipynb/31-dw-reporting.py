@@ -1,7 +1,57 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # _Dataviz Workshop_: _Reporting_ com _xhtml2pdf_
+# (cap:reporting-html)=
+# 
+# # _Dataviz Workshop_: _Data Reporting_ com HTML/PDF
+
+# ## Objetivos do workshop
+# 
+# - Apresentar o módulo `xhtml2pdf` para conversão de código HTML para PDF;
+# - Converter DataFrame para código HTML;
+# - Desenvolver _workflow_ básico para geração de relatórios automatizados utilizando templates HTML atualizáveis utilizando dados sobre crimes violentos letais intencionais em João Pessoa.
+
+# ## Ferramentas utilizadas
+# 
+# - Módulos Python    
+#     - `xhtml2pdf`
+#     - `re`
+#     - `pandas`
+
+# ## _Data reporting_
+# 
+# Existem diversas ferramentas para operacionalizar PDFs, seja para análise (_parsing_), extração, encriptação ou conversão de informações. Algumas delas, com suporte em Python são: 
+# 
+# - pdfminer.six
+# - pyPDF2
+# - reportlab
+# - json2pdf
+# - pymupdf
+# - pikepdf
+# 
+# Entretanto a arte do _data reporting_, que consiste em gerar relatórios automatizados a partir de dados e exportá-los, principalmente em arquivos PDF ma forma de brochuras, portfólios, ou _one-pagers_, depende da um misto de habilidades e, às vezes, da integração de mais de uma API.
+# 
+# Cada uma das bibliotecas acima possuem forças e fraquezas, de maneira que, raramente, teremos à mão, soluções imediatas para gerarmos nossos relatórios.
+# 
+# A proposta deste capítulo é apresentar os módulos `xhtml2pdf` e `reportlab` como primeiras aproximações ao tema.
+
+# ### `xhtml2pdf`
+# 
+# O módulo `xhtml2pdf` oferece uma maneira ágil de automatizar a geração de PDFs a partir de conteúdo HTML.  Ele utiliza a a biblioteca `reportlab` como _backbone_.
+# 
+# Ele funciona com base em _templates_ mínimos de layouts inspirados em estilos CSS. As partes principais são os objetos `@page` e `@frame`, os quais emolduram o conteúdo em página. Além disso, são disponíveis _tags_ do tipo PDF-vendor, que habilitam o desenvolvedor a inserir informações nativas de arquivos PDF, tais como paginação, sumário e idioma.
+# 
+# Em termos de gráficos, o módulo fornece algumas representações visuais, tais como gráficos de linhas e de barras, mas é bastante limitado.
+# 
+# Algumas suas vantagens são: 
+# 
+# - flexibilidade para gerar múltiplos _templates_ de página;
+# - encriptação e assinatura;
+# - superposição de marca d'água;
+
+# ### Instalação
+# 
+# Recomenda-se utilizar _pip_ com: `pip install xhtml2pdf`.
 
 # In[1]:
 
@@ -9,6 +59,10 @@
 from xhtml2pdf import pisa
 import pandas as pd, re
 
+
+# ## _Workflow_ demonstrativo
+
+# - Primeiramente, geramos um conteúdo básico em HTML que, na prática, seria a composição de um _briefing_ atualizável periodicamente e dados obtidos de um DataFrame.
 
 # In[2]:
 
@@ -41,11 +95,15 @@ def html_data(table):
     return text
 
 
+# - Em seguida fazemos o carregamento dos dados que serão usados para compor o relatório. Na prática, poderia já ser um gráfico pós-processado.
+
 # In[3]:
 
 
 df = pd.read_csv('../data/crimes-pb-2015-2018.csv')
 
+
+# - Fazemos o carregamento de um _template_ HTML para o relatório. Podemos ter tantos modelos para quantas forem as necessidades de projeto.
 
 # In[4]:
 
@@ -53,6 +111,8 @@ df = pd.read_csv('../data/crimes-pb-2015-2018.csv')
 # carregamento do modelo
 html_report_template = '../dw/reporting/report_template.html'
 
+
+# - Por fim, escrevemos uma função de utilidade para converter o conteúdo de HTML para produzir o nosso PDF.
 
 # In[5]:
 
@@ -73,7 +133,11 @@ def html_to_pdf(html_in, pdf_out):
     return c.err
 
 
-# In[11]:
+# - A execução da função de utilidade é melhor disposta em _script_. Aqui para fins de demonstração, o meio é indiferente.
+# 
+# No código abaixo, fazemos uma leve inserção de conteúdo no _template_, modificando o código-fonte HTML e exportando a saída para o documento `dw-report.pdf`.
+
+# In[6]:
 
 
 if __name__ == "__main__":
@@ -88,127 +152,16 @@ if __name__ == "__main__":
         mid = html_data(df)    
         source_html = head + mid + tail
     
-        html_to_pdf(source_html,'../dw/reporting/dw-report.pdf')
+        html_to_pdf(source_html,'../dw/reporting/pdf-output/dw-report.pdf')
         
 
 
-# In[17]:
+# _Obs._: parte deste material é fictício. Qualquer semelhança com nomes, pessoas, factos ou situações da vida real terá sido mera coincidência.
 
-
-from IPython.display import IFrame
-
-IFrame(src='http://gcpeixoto.github.io/DATAVIZ/dw/reporting/dw-report.pdf',
-       width=600,height=400)
-
-
-# ## Objetivos do workshop
 # 
-# - Apresentar o ecossistema _Dash_ para criação de aplicações web para exploração e visualização de dados;
-# - Compreender o processo básico de criação de um _dashboard_ utilizando _Dash_;
-# - Desenvolver um _dashboard_ simples para exploração de dados sobre crimes violentos letais intencionais em João Pessoa.
-
-# ## Ferramentas utilizadas
-# 
-# - Módulos Python    
-#     - `dash`
-#     - `dash_bootstrap_componentes`
-#     - `plotly`
-#     - `os`
-#     - `pandas`
-#     - `python` (interpretador)
-
-# ## Sobre o _Dash_
-
-# > _Dash is the original low-code framework for rapidly building data apps in Python._
-# 
-# - Ou seja, _Dash_ é um ecossistema que nos permite criar aplicações para exploração e visualização de dados para a web de forma rápida e totalmente em Python. 
-# 
-# - Basicamente, o _Dash_ é uma possui três componentes fundamentais:
-#     - [_Flask_](https://flask.palletsprojects.com/en/2.3.x/): a ferramenta de _backend_;
-#     - [_Plotly_](https://plotly.com/python/): a feramenta que provê as bibliotecas de plotagem (em nosso caso, usamos Python);
-#     - [_React_](https://react.dev): a ferramenta que fornece o arcabouço interativo e de _frontend_;
-# 
-# - Uma vez que o Dash tem a vantagem de facilitar o desenvolvimento de aplicações puramente em Python, não é necessário conhecer profundamente HTML, CSS ou Javascript, por exemplo.
-# 
-# - Figuras feitas em matplotlib podem ser convertidas para _Dash_ com 
-# `plotly.tools.mpl_to_plotly` (checar)
-
-# ### Instalação
-# 
-# É recomendável instalar o _Dash_ através do _pip_: `pip install dash`.
-
-# ### Pacotes essenciais
-# 
-# O _Dash_ contém alguns pacotes essenciais dedicados a funcionalidades específicas, a saber:
-# - `Dash`: pacote principal e _backbone_ de qualquer aplicação a ser criada;
-# - `Dash Core Components`: pacote de componentes interativas de manipulação (botões, _dropdowns_, _sliders_ etc.);
-# - `Dash HTML Components`: pacote que fornece elementos HTML como classes Python;
-# - `Dash Bootstrap Components`: pacote mantido por terceiros que cuida das opções _bootstrap_ (controle visual, opções de layout, interface etc.)
-
-# ### Processo geral de criação de apps em Dash
-# 
-# - _Importações_ (_boilerplate_): receita básica de importação de módulos.
-# - _Instanciamento_: criação do app via `Dash`;
-# - _Chamada de layout_: formação dos contêineres e elementos básicos do _frontend_, principalmente via HTML. 
-# - _Chamada de callbacks_: uso de decoradores Python que se aplicam a funções mais genéricas que tratam da disposição das representações visuais e da interatividade.
-# - _Execução_: _deployment_ via comando Python.
-# 
-
-# ## Exemplos
-# 
-# Os exemplos são gerados por execução dos scripts acessórios localizados no diretório `dw`.
-# 
-# 
-# - Demonstração básica: `python ../dw/dw1a.py`
-# - Plataforma CVLI: `python ../dw/dw1b.py`
-
-# ### Execução com _JupyterDash_
-# 
-# A execução diretamente via Jupyter notebook pode ser feita com a ajuda do módulo [JupyterDash](https://github.com/plotly/jupyter-dash) por meio da opção `app.run_server(mode='inline')`. Abaixo, criamos um _demo app_ nesses moldes.
-
-# In[ ]:
-
-
-# boilerplate imports 
-import plotly.express as px
-from jupyter_dash import JupyterDash
-from dash import html, dcc, Output, Input
-from pandas import read_csv
-
-# carrega dados
-df = read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
-
-# constroi app
-app = JupyterDash(__name__)
-app.layout = html.Div([
-    html.H1(children='Crescimento populacional por país', 
-            style={'color':'#117029'}),
-    dcc.Dropdown(df.country.unique(), 'Brazil', id='dropdown-selection'),
-    dcc.Graph(id='graph-content')
-])
-
-# callback de atualização
-@app.callback(
-    Output('graph-content', 'figure'),
-    Input('dropdown-selection', 'value')
-)
-def update_graph(value):
-    dff = df[df.country==value]
-    return px.line(dff, x='year', y='pop')
-
-# executa app e mostra resultado inline
-app.run_server(mode='inline')
-
-
-# ### Modos de visualização
-# 
-# Há três modos disponíveis para visualizar um app com JupyterDash:
-# 
-# - `app.run_server(mode='external')`: saída para browser.
-# - `app.run_server(mode='inline')`: saída para notebook.
-# - `app.run_server(mode='jupyterlab')`: saída para JupyterLab.
 
 # ## Referências
 # 
-# - [Dash User Guide](https://dash.plotly.com)
-# - [Introducing JupyterDash](https://medium.com/plotly/introducing-jupyterdash-811f1f57c02e)
+# - [Documentação: `xhtml2pdf`](https://xhtml2pdf.readthedocs.io/en/latest/index.html)
+# - [W3 Schools](https://www.w3schools.com/html/default.asp)
+# - [Reportlab](https://docs.reportlab.com/reportlab/userguide/ch1_intro/)
