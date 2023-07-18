@@ -69,28 +69,7 @@ import pandas as pd, re
 
 # geração de HTML atualizável
 def html_data(table):
-    text = f'\
-        <h2>Dados</h2>\
-        <p>Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean.\
-        Sit amet cursus sit amet. Varius vel pharetra vel turpis nunc eget lorem. Enim lobortis scelerisque fermentum dui faucibus.\
-        Nibh tellus molestie nunc non blandit massa enim nec dui. Non nisi est sit amet facilisis magna.\
-        {table.to_html(index=False)}\
-        </p>\
-        <h2>Análise</h2>\
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
-        Viverra ipsum nunc aliquet bibendum enim facilisis. Dui nunc mattis enim ut tellus elementum sagittis vitae. Sed adipiscing diam donec adipiscing tristique.\
-        Ut sem nulla pharetra diam sit. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet.\
-        Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Pharetra convallis posuere morbi leo. Et magnis dis parturient montes nascetur.\
-        Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Amet justo donec enim diam vulputate ut pharetra sit amet. Tempor nec feugiat nisl pretium fusce id velit.\
-        Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Ultrices vitae auctor eu augue ut.\
-        Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Urna condimentum mattis pellentesque id. Quisque non tellus orci ac auctor augue.\
-        Dolor sed viverra ipsum nunc aliquet bibendum enim.\
-        \n\
-        Et malesuada fames ac turpis egestas. Pretium nibh ipsum consequat nisl vel pretium. Consectetur adipiscing elit ut aliquam purus.\
-        Duis at consectetur lorem donec massa. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. In iaculis nunc sed augue lacus viverra.\
-        Malesuada fames ac turpis egestas maecenas pharetra convallis. Massa sed elementum tempus egestas. Turpis egestas maecenas pharetra convallis posuere morbi. \
-        Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Tempus iaculis urna id volutpat.\
-        \n'
+    text = f'        <h2>Dados</h2>        <p>Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean.        Sit amet cursus sit amet. Varius vel pharetra vel turpis nunc eget lorem. Enim lobortis scelerisque fermentum dui faucibus.        Nibh tellus molestie nunc non blandit massa enim nec dui. Non nisi est sit amet facilisis magna.        {table.to_html(index=False)}        </p>        <h2>Análise</h2>        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        Viverra ipsum nunc aliquet bibendum enim facilisis. Dui nunc mattis enim ut tellus elementum sagittis vitae. Sed adipiscing diam donec adipiscing tristique.        Ut sem nulla pharetra diam sit. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet.        Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Pharetra convallis posuere morbi leo. Et magnis dis parturient montes nascetur.        Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Amet justo donec enim diam vulputate ut pharetra sit amet. Tempor nec feugiat nisl pretium fusce id velit.        Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Ultrices vitae auctor eu augue ut.        Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Urna condimentum mattis pellentesque id. Quisque non tellus orci ac auctor augue.        Dolor sed viverra ipsum nunc aliquet bibendum enim.        \n        Et malesuada fames ac turpis egestas. Pretium nibh ipsum consequat nisl vel pretium. Consectetur adipiscing elit ut aliquam purus.        Duis at consectetur lorem donec massa. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. In iaculis nunc sed augue lacus viverra.        Malesuada fames ac turpis egestas maecenas pharetra convallis. Massa sed elementum tempus egestas. Turpis egestas maecenas pharetra convallis posuere morbi.         Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Tempus iaculis urna id volutpat.        \n'
     
     return text
 

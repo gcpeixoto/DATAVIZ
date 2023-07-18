@@ -57,7 +57,6 @@ ax[5].set_xlim(-3,5); ax[5].set_ylim(-2,4); # 2a. forma
 
 
 
-
 # - Visibilidade de eixos
 
 # In[8]:
@@ -162,7 +161,6 @@ ax2.get_xaxis().set_visible(False)
 ax2.get_yaxis().set_visible(False)
 
 
-
 # - Eixos apensados
 
 # In[4]:
@@ -236,9 +234,7 @@ ax[1].yaxis.set_visible(False)
 # In[6]:
 
 
-markers = ['.','o','s','P','X','*','p','D','<','>','^','v', \
-             '1','2','3','4','+','x','|','_',4,5,6,7, \
-         '$\\int$','$\\dagger$' ]
+markers = ['.','o','s','P','X','*','p','D','<','>','^','v',              '1','2','3','4','+','x','|','_',4,5,6,7,          '$\\int$','$\\dagger$' ]
 
 fig, ax = plt.subplots(figsize=(5,8),constrained_layout=True)
 

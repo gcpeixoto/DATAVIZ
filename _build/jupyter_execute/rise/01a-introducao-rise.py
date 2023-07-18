@@ -260,27 +260,27 @@
 # conda activate dataviz
 # ```
 # dataviz.yml
-
 name: dataviz
 channels:
-  - defaults
+  - anaconda
   - conda-forge
+  - defaults
 dependencies:
   - numpy
-  - scipy
-  - dash
-  - bokeh
-  - hvplot
-  - datashader
-  - dask
-  - h5py
-  - geoviews
   - pandas
   - matplotlib
   - seaborn
   - plotly
+  - scipy
+  - h5py
+  - dash
+  - geoviews
   - geopandas
   - networkx
+pip:
+  - matplotlib-venn
+  - xhtml2pdf
+  - reportlab
 # ### Exemplo aplicado
 # 
 # - Visualizando a variação do preço por litro, em R$, de 6 tipos de combustíveis comercializados no estado da Paraíba por 8 operadoras durante o primeiro semestre de 2022. 

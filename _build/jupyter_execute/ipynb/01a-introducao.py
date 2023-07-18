@@ -5,12 +5,12 @@
 
 # A visualização de dados é interdisciplinar e agregadora a qualquer pessoa interessada em manusear ou apresentar dados de forma qualitativa ou quantitativa. Ela não se restringe a áreas de formação específica, mas algumas características essenciais para o desenvolvimento de habilidades na disciplina são:
 # 
-# - Familiaridade com _estatística_;
-# - _Vontade_ de aprender coisas novas; 
-# - _Curiosidade_ para descobrir respostas;
-# - Apetite por _princípios de design_;
-# - Disposição para aumentar seu _rigor analítico_ e
-# - _Conhecimento técnico_ de pelo menos uma ferramenta para plotagem.
+# - familiaridade com _estatística_;
+# - _vontade_ de aprender coisas novas; 
+# - _curiosidade_ para descobrir respostas;
+# - apetite por _princípios de design_;
+# - disposição para aumentar seu _rigor analítico_ e
+# - _conhecimento técnico_ de pelo menos uma ferramenta para plotagem.
 
 # 
 # ## Pontos de equilíbrio
@@ -20,7 +20,7 @@
 # 1. É melhor aprender visualização de dados através de um guia ou manual, que discute princípios, conceitos e orientações, ou através de um tutorial, que contém exemplos de código e demonstrações de gráficos incríveis?
 # 2. Devemos dissertar sobre as nuances artísticas, com toda a beleza do design, ou sobre a elegância simples e útil do cotidiano?
 # 3. Faz sentido compreender conceitos teóricos da visualização de dados, ou ser apenas pragmático?
-# 4. Vale seguir o exemplo dos livros pioneiros e clássicos históricos, ou avalizar o contemporâneo?
+# 4. Vale seguir o exemplo dos livros pioneiros e clássicos ou prezar pelo contemporâneo?
 # 5. O que queremos com os dados: prover um arcabouço analítico de exploração e interatividade (visualização para análise), ou apenas comunicá-los a uma audiência para gerar impacto e atratividade (visualização para comunicação)?
 # 
 # As respostas para essas questões não são binárias. Futuros profissionais que farão uso de tudo o que a visualização de dados tem a oferecer devem ser suficientemente flexíveis para encontrar seus pontos de equilíbrio particulares para cada situação apresentada. 
@@ -28,15 +28,15 @@
 # 
 # ## Visão geral do curso
 # 
-# Levando em consideração a necessidade por pontos de equilíbrio, este curso pretende abordar a visualização de dados a partir de três grandes módulos.  
+# Levando em consideração a necessidade por pontos de equilíbrio, este curso pretende abordar a visualização de dados em três módulos:
 # 
-# - **Fundamentos**: módulo dedicado ao estudo dos conceitos primários da visualização de dados, tais como seu desenvolvimento histórico, princípios, percepção, estética e cores.
-# - **Técnicas**: módulo dedicado à discussão de técnicas diversas para representação visual de quantidades, proporções, tendências, redes e informações gerais, através de exemplos de códigos.
-# - **Aplicações**: módulo dedicado à apresentação de ferramentas e plataformas modernas para construção de painéis analíticos (_dashboards_) e soluções de _data reporting_ com tutoriais simplificados.
+# - **Fundamentos**: dedicado ao estudo dos conceitos primários da visualização de dados, tais como desenvolvimento histórico, princípios, percepção, estética e cores.
+# - **Técnicas**: focado na discussão de técnicas diversas para representação visual de quantidades, proporções, tendências, redes e outros tipos de dados através de exemplos de códigos.
+# - **Aplicações**: dedicado à apresentação de ferramentas e plataformas modernas para construção de painéis analíticos (_dashboards_), soluções de _data reporting_ e inteligência de negócios (_business intelligence_) por meio de tutoriais simplificados ou _workshops_.
 
 # ## Arquitetura visual x engenharia visual
 # 
-# A audiência deste curso não deve esperar que ele seja puramente técnico, tampouco integralmente teórico. Entretanto, os objetivos de formação miram estudantes com razoável conhecimento de técnicas estatísticas e de programação. Portanto, não haverá aprofundamento em temas inerentes à arte e ao _design_. Se chamássemos de _arquitetura visual_ a área profissional que cuida da especificação dos projetos de visualização de dados, e de _engenharia visual_ aquela que executa tais projetos, diríamos que este curso abrange majoritariamente a segunda área.
+# A audiência deste curso não deve esperar que ele seja puramente técnico, tampouco integralmente teórico. Entretanto, os objetivos de formação miram estudantes com razoável conhecimento de técnicas estatísticas e de programação. Portanto, não haverá aprofundamento em temas inerentes à arte e ao _design_. Se chamássemos de _arquitetura visual_ a área profissional que cuida da especificação dos projetos de visualização de dados, e de _engenharia visual_ a área que executa tais projetos, diríamos que este curso abrange majoritariamente a segunda.
 
 # ## Definindo _Visualização de Dados_
 # 
@@ -49,11 +49,11 @@
 # 
 # Saber encontrar a dosagem entre arte e técnica (ou ciência) é fundamental para que dados sejam comunicados com máxima precisão e eficiência, assim evitando equívocos e distorções. De certa forma, a representação visual da informação deve ser suficientemente agradável aos olhos de seu espectador sem, no entanto, interferir na mensagem que ela retrata. Um pouco mais adiante, discutiremos melhor esse contraste.
 # 
-# Neste curso, usaremo a seguinte definição, adaptada de [Andy Kirk](https://twitter.com/visualisingdata):
+# Neste curso, usaremos a seguinte definição, adaptada de [Andy Kirk](https://twitter.com/visualisingdata):
 # 
 # > _Visualização de dados é a arte de combinar representações visuais e apresentações para facilitar a compreensão dos dados._
 # 
-# A _representação visual_ (_chart_) é o elemento que melhor se adéqua ao que se pretende comunicar. _Charts_ têm _marcadores_ e _atributos_ como seus fundamentos, como veremos em capítulos posteriores. A _apresentação visual_ concerne a todas as outras tomadas de decisão de design que constituem a anatomia da visualização, tais como a seleção da paleta de cores, a composição da obra e as características das anotações. Ambas constituem a parcela artística do autor e o âmago da disciplina. A execução disso tudo independe da ferramenta técnica utilizada. Existem diversos sistemas, pacotes, bibliotecas e linguagens disponíveis, sendo R e Python as linguagens de programação preferidas dos analistas de dados.
+# A _representação visual_ (_chart_), ou simplesmente RV, é o elemento que melhor se adéqua ao que se pretende comunicar. _Charts_ têm _marcadores_ e _atributos_ como seus fundamentos, como veremos em capítulos posteriores. A _apresentação visual_ concerne a todas as outras tomadas de decisão de design que constituem a anatomia da visualização, tais como a seleção da paleta de cores, a composição da obra e as características das anotações. Ambas constituem a parcela artística do autor e o âmago da disciplina. A execução disso tudo independe da ferramenta técnica utilizada. Existem diversos sistemas, pacotes, bibliotecas e linguagens disponíveis, sendo R e Python as linguagens de programação preferidas dos analistas de dados.
 # 
 # Por outro lado, a parte final da definição, que diz respeito à _compreensão facilitada_ dos dados, tem a ver com o processo de captura da mensagem lançada pelo contador de história (_storyteller_) ao espectador (_viewer_). Este processo envolve 3 etapas cognitivas ({numref}`fig-comprehension`, adaptada de {cite:p}`kirk2016data`):
 # 
@@ -74,7 +74,7 @@
 
 # ### Figuras feias, ruins e erradas
 # 
-# Diferentes versões de figuras com a mesma representação visual subjacente podem existir ({numref}`fig-ugly`, adaptada de {cite:p}`wilke2019fundamentals`). Porém, uma delas pode ser _feia_, outra pode ser _ruim_ e outra pode ser _errada_. Esse mecanismo tripartite é um exemplo de como podemos fazer julgamentos de trabalhos visuais. Segundo Claus Wilke, uma figura:
+# Diferentes versões de figuras com a mesma RV subjacente podem existir ({numref}`fig-ugly`, adaptada de {cite:p}`wilke2019fundamentals`). Porém, uma delas pode ser _feia_, outra pode ser _ruim_ e outra pode ser _errada_. Esse mecanismo tripartite é um exemplo de como podemos fazer julgamentos de trabalhos visuais. Segundo Claus Wilke, uma figura:
 # 
 # - _feia_ é aquela que tem problemas estéticos, apesar de clara e informativa.
 # - _ruim_ é aquela que tem problemas relacionados à percepção, tais como obscuridade, confusão, complicações e enganação.
@@ -193,12 +193,12 @@ ax[1,1].set_yticks = []
 
 ax[1,1].set_title('D',fontsize=10)
 
-plt.savefig('../figs/hists-lodo.png',dpi=300)
+plt.savefig('../figs/hists-lodo.png',dpi=300);
 
 
 # ### _Dataviz_, o pensamento visual e o bom plot
 # 
-# A era da informação hoje entende que a visualização de dados, comumente conhecida pelo pseudônimo _dataviz_ (de _data visualization_), é uma disciplina obrigatória para um novo modo de pensar: o _pensamento visual_ – a propósito, deste ponto em diante, vamos nos referir à visualização de dados por essa forma elegante reduzida. No mundo dos negócios, pensar visualmente é ser capaz de construir representações visuais com grande potencial atrativo. Para empresas competitivas, a mensagem clara e acessível transmitida graficamente é uma das grandes vantagens de _marketing_.
+# A era da informação hoje entende que a visualização de dados, comumente conhecida pelo pseudônimo _dataviz_ (de _data visualization_), é uma disciplina obrigatória para um novo modo de pensar: o _pensamento visual_. No mundo dos negócios, pensar visualmente é ser capaz de construir representações visuais com grande potencial atrativo. Para empresas competitivas, a mensagem clara e acessível transmitida graficamente é uma das grandes vantagens de _marketing_.
 # 
 # Como já dissemos, adjetivar um plot com características visuais apreciáveis como "bom" é uma questão de seguir princípios que ajudam a definir por que construi-lo de um jeito e não de outro. A _Matriz da Boa Representação Visual_ ({numref}`fig-good-charts`, adaptada de {cite:p}`berinato2019harvard`), sugere que um plot considerado "bom" deve aproximar-se cada vez mais da quina superior direita, onde reside a perfeição.
 # 
@@ -214,12 +214,12 @@ plt.savefig('../figs/hists-lodo.png',dpi=300)
 
 # ### Os princípios de Tufte
 # 
-# [Edward Tufte](https://www.edwardtufte.com/tufte/), um estatístico americano reconhecido como o maior expert em visualização de dados estatísticos da atualidade, escreveu diversos livros sobre excelência visual, visualização da informação quantitativa e arte em imagens. Tufte destaca uma série de critérios que, se obedecidos, garantirão excelentes plots e gráficos. Ele defende que uma representação visual eficaz mistura substância, estatística e arte (design), caracterizando-se como uma apresentação bem elaborada de dados interessantes. Para Tufte, o espectador deve compreender o maior número de ideias em um intervalo de tempo curto olhando para algo que usa pouca tinta e ocupa o menor espaço possível. 
+# [Edward Tufte](https://www.edwardtufte.com/tufte/), um estatístico americano reconhecido como o maior expert em visualização de dados estatísticos da atualidade, escreveu diversos livros sobre excelência visual, visualização da informação quantitativa e arte em imagens. Tufte destaca uma série de critérios que, se obedecidos, garantirão excelentes plots e gráficos. Ele defende que uma RV eficaz mistura substância, estatística e arte (design), caracterizando-se como uma apresentação bem elaborada de dados interessantes. Para Tufte, o espectador deve compreender o maior número de ideias em um intervalo de tempo curto olhando para algo que usa pouca tinta e ocupa o menor espaço possível. 
 # 
-# Na visão de Tufte ({cite:p}`tufte1985visual`,{cite:p}`tufte1990envisioning`), a representação visual excelente deve:
+# Na visão de Tufte ({cite:p}`tufte1985visual`,{cite:p}`tufte1990envisioning`), a RV excelente deve:
 # 
 # - apresentar dados;
-# - induzir o espectador a pensar a substância da representação visual e não os métodos ou técnicas que a estruturaram;
+# - induzir o espectador a pensar a substância da RV e não os métodos ou técnicas que a estruturaram;
 # - evitar distorcer os dados;
 # - apresentar muitos números em um espaço mínimo;
 # - tornar grandes dados coerentes;
@@ -231,12 +231,167 @@ plt.savefig('../figs/hists-lodo.png',dpi=300)
 # Alguns princípios fundamentais de Tufte incorporam todas as expectativas acima:
 # 
 # - _Integridade visual_: a figura não deve, de forma alguma, distorcer ou criar falsas interpretações dos dados. Isto significa que quantidades numéricas devem ser proporcionais aos elementos contidos na superfície da figura. Variações nos dados são permitidas, mas variações da figura não. Adicionalmente, deve-se manter o número de dimensões da imagem em quantidade igual ou inferior as contidas nos dados. Legendas devem ser usadas sem distorção ou ambiguidade. Tufte enfatiza que representações visuais de excelência projetadas por artistas sem nenhuma competência estatística são raras, já que a tendência de se produzir artefatos artísticos ambíguos é consideravelmente alta.
-# - _Maximização da razão "tinta-dados"_: para Tufte, o _storyteller_ precisa atentar para a quantidade de elementos agregados em uma representação visual. Sobrecarregar a interpretação do leitor com elementos geométricos, bordas, cores de fundo, efeitos 3D, entre outros adereços, é um ponto negativo para a compreensão final. A maneira sugerida de controlar a superfluidade visual é calcular a quantidade de tinta necessária para representar os dados reais sem ambiguidade e comparar com a quantidade de tinta utilizada para enriquecer a figura com decorações. A equação para o que Tufte chamou de razão "tinta-dados" (_data-ink ratio_), aqui denotada por $\text{RTD}$ é: 
+# - _Maximização da razão "tinta-dados"_: para Tufte, o _storyteller_ precisa atentar para a quantidade de elementos agregados em uma RV. Sobrecarregar a interpretação do leitor com elementos geométricos, bordas, cores de fundo, efeitos 3D, entre outros adereços, é um ponto negativo para a compreensão final. A maneira sugerida de controlar a superfluidade visual é calcular a quantidade de tinta necessária para representar os dados reais sem ambiguidade e comparar com a quantidade de tinta utilizada para enriquecer a figura com decorações. A equação para o que Tufte chamou de razão "tinta-dados" (_data-ink ratio_), aqui denotada por $\text{RTD}$ é: 
 # 
 # $$\text{RTD} = \dfrac{d - t}{T},$$
 # 
 # onde $d$, $t$, e $T$ denotam, nesta ordem, a quantidade de tinta usada para os dados, para os adereços e para ambos, no total. Maximizar a $\text{RTD}$ implica em eliminar do visual aquilo que é inútil ou não essencial.
 # - _Estética_: a elegância visual só pode ser atingida ao se equilibrar a complexidade dos dados com a simplicidade do design. Para criarmos representações visuais com alto nível de profisssionalismo, é preciso muita dedicação, atenção e esmero de projeto. Ou seja, a estética perfeita só é atingida com pleno domínio do ferramental técnico e criatividade. 
+
+# #### Integridade ou falta dela?
+# 
+# A {numref}`fig-integrity1` é uma representação visual que mistura gráficos de barras com a fotografia do ilustre Cristiano Ronaldo. Nada contra o lendário "CR7", mas, será que, em termos de integridade visual, seria necessária a estampa gigantesca de sua imagem ali? Ela é útil para os dados. Torna-se evidente que há muito mais peso de _marketing_ do que de dados.
+# 
+# Em segundo lugar, você consegue notar que a escala de valores é grosseiramente desproporcional? A barra indicadora de 10.000 unidades vendidas para o nosso "brazuca" Neymar está bastante esticada em relação às outras duas, não é?
+# 
+# ```{figure} ../figs/integrity1.jpeg
+# ---
+# name: fig-integrity1
+# alt: Exemplo de falta de integridade em dados.
+# align: center
+# width: 400px
+# ---
+# Número de camisas _jersey_ de alguns jogadores vendidas. Fonte: clique [aqui](https://www.linkedin.com/pulse/edward-tuftes-six-principles-graphical-integrity-radhika-raghu/).
+# ```
+# 
+# Diante desse problema de desproporcionalidade e marketing apelativo, há duas coisas a fazer para darmos integridade visual à nossa representação visual: elminar a imagem do jogador e corrigir a escala. Um gráfico _clean_, porém íntegro, seria como o da 
+# A {numref}`fig-integrity2`
+# 
+# ```{figure} ../figs/integrity2.jpeg
+# ---
+# name: fig-integrity2
+# alt: Gráfico corrigido com integridade em dados.
+# align: center
+# width: 500px
+# ---
+# Número de camisas _jersey_ de alguns jogadores vendidas. Versão corrigida para integridade visual.
+# ```
+
+# #### Maximizando a razão tinta-dados na prática
+# 
+# Maximizar a RTD é um processo puramente experimental e iterativo. Só chegamos a bom termo em uma RV após alterações, remoções, adições, reestruturações. O gráfico de barras da {numref}`fig-rtd1` mostra a distribuição calórica de algumas comidas "sujas". Em sua versão original, a RV é abarrotada de cores e redundâncias.
+# 
+# ```{figure} ../figs/rtd1.png
+# ---
+# name: fig-rtd1
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV 1. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+# 
+# Consideremos agora um processo iterativo que gerará uma RV minimalista a partir do melhoramento sucessivo das anteriores. Os passos são os seguintes:
+# 
+# - {numref}`fig-rtd2`: removemos as cores de _background_ (figura e eixos), pois nada acrescentam.
+# 
+# ```{figure} ../figs/rtd2.png
+# ---
+# name: fig-rtd2
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV 2. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+# 
+# - {numref}`fig-rtd3`: removemos redundâncias (título, legenda e designações de eixo).
+# 
+# ```{figure} ../figs/rtd3.png
+# ---
+# name: fig-rtd3
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV 3. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+# 
+# - {numref}`fig-rtd4`: removemos bordas, visto que adicionam apenas tinta.
+# 
+# ```{figure} ../figs/rtd4.png
+# ---
+# name: fig-rtd4
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV 4. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+# 
+# - {numref}`fig-rtd5`: reduzimos as cores e damos destaque a uma comida específica. No caso, _bacon_.
+# 
+# ```{figure} ../figs/rtd5.png
+# ---
+# name: fig-rtd5
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV 5. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+# 
+# - {numref}`fig-rtd6`: neste ponto, a RTD aumentou consideravelmente. Porém, podemos otimizá-la retirando efeitos 3D e sombras.
+# 
+# ```{figure} ../figs/rtd6.png
+# ---
+# name: fig-rtd6
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV 6. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+# 
+# - {numref}`fig-rtd7`: por fim, retiramos o gradeado, já que podemos indicar valores embutidos. Enfim, chegamos a uma RV minimalista.
+# 
+# ```{figure} ../figs/rtd7.png
+# ---
+# name: fig-rtd7
+# alt: Exemplo de maximização da razão tinta-dados.
+# align: center
+# width: 400px
+# ---
+# Exemplo de maximização da razão tinta-dados em dados sobre comidas "sujas" - RV final. Fonte: clique [aqui](https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/).
+# ```
+
+# #### Estética: quem ajuda não deve atrapalhar
+# 
+# A elegância visual só pode ser atingida ao se equilibrar a complexidade dos dados com a simplicidade do design. Nas RVs representadas na {numref}`fig-aesthetics1a` e
+# {numref}`fig-aesthetics1b`, o gradeado é um elemento adicional que agrava a estética dos dados representados. Porém, se ele for retirado, juntamente com outros dados, nada pode ser dito sobre as curvas. Removê-lo ajuda em algo, mas também implica em obscurecimento do que se pretende comunicar.
+# 
+# ```{figure} ../figs/aesthetics1a.jpg
+# ---
+# name: fig-aesthetics1a
+# alt: Exemplo de estética.
+# align: center
+# width: 400px
+# ---
+# Exemplo de estética depauperada - com gradeado. Fonte: clique [aqui](https://jcsites.juniata.edu/faculty/rhodes/ida/graphicalIntRedes.html).
+# ```
+# 
+# ```{figure} ../figs/aesthetics1b.jpg
+# ---
+# name: fig-aesthetics1b
+# alt: Exemplo de estética.
+# align: center
+# width: 400px
+# ---
+# Exemplo de estética depauperada - sem gradeado. Fonte: clique [aqui](https://jcsites.juniata.edu/faculty/rhodes/ida/graphicalIntRedes.html).
+# ```
+# 
+# O caso da {numref}`fig-aesthetics2` já é de desequilíbrio nas escalas dos eixos de lateralidade e de profundidade em virtude da visualização tridimensional. O gráfico lembra uma cidade infestada de prédios. A questão é: dá para ver o que tem atrás dos "arranha-céus" alaranjados? Este é um exemplo de visualização multidimensional que poderia ser melhor representada menor dimensão.
+# 
+# ```{figure} ../figs/aesthetics2.jpg
+# ---
+# name: fig-aesthetics2
+# alt: Exemplo de estética.
+# align: center
+# width: 400px
+# ---
+# Exemplo de estética depauperada - gráfico de barras em 3D com dadoos obscuros.
+# ```
+# 
 
 # ## Ferramentas técnicas do curso
 # 
@@ -244,7 +399,7 @@ plt.savefig('../figs/hists-lodo.png',dpi=300)
 # 
 # ### Criação do novo ambiente
 # 
-# - Execute o comando: 
+# Para criar um ambiente mínimo para o curso, execute o comando: 
 # 
 # ```
 # conda env create --file dataviz.yml
@@ -260,35 +415,36 @@ plt.savefig('../figs/hists-lodo.png',dpi=300)
 # 
 # name: dataviz
 # channels:
-#   - defaults
+#   - anaconda
 #   - conda-forge
+#   - defaults
 # dependencies:
 #   - numpy
-#   - scipy
-#   - dash
-#   - bokeh
-#   - hvplot
-#   - datashader
-#   - dask
-#   - h5py
-#   - geoviews
 #   - pandas
 #   - matplotlib
 #   - seaborn
 #   - plotly
+#   - scipy
+#   - h5py
+#   - dash
+#   - geoviews
 #   - geopandas
 #   - networkx
+# pip:
+#   - matplotlib-venn
+#   - xhtml2pdf
+#   - reportlab 
 #   ```
 # 
-# - Habilite o ambiente:
+# Então,habilite o ambiente:
 # 
 # ```
 # conda activate dataviz
 # ```
 # 
-# As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são `numpy`, para manipulação de _arrays_ e computação vetorizada, `pandas`, para manipulação de séries e _datasets_,  e `matplotlib`, para plotagem estática de dados. Os demais são utilizados para tarefas especializadas. `seaborn` é útil para análise exploratória de dados e para visualização de dados estatísticos. `bokeh` e `plotly` servem para propósitos de visualização interativa. `scipy` é um pacote de computação científica, com diversos métodos numéricos. `hvplot` e `datashader` são utilidades para construção de visualização interativa para grandes _datasets_. `h5py` manipula arquivos no formato HDF5 (_Hierarchical Data Format_), bastante utilizados em visualização científica e armazenamento de grandes estruturas de dados. `dash` é uma API para construção de _dashboards_. `geoviews` e `geopandas` suportam a visualização de dados geográficos e mapas. `networkx` oferece meios de plotagem de grafos e de redes complexas.
+# As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são `numpy`, para manipulação de _arrays_ e computação vetorizada, `pandas`, para manipulação de séries e _datasets_,  e `matplotlib`, para plotagem estática de dados. Os demais são utilizados para tarefas especializadas. `seaborn` é útil para análise exploratória de dados e para visualização de dados estatísticos. `plotly` serve para propósitos de visualização interativa. `scipy` é um pacote de computação científica, com diversos métodos numéricos. `h5py` manipula arquivos no formato HDF5 (_Hierarchical Data Format_), bastante utilizados em visualização científica e armazenamento de grandes estruturas de dados. `dash` é uma API para construção de _dashboards_. `geoviews` e `geopandas` suportam a visualização de dados geográficos e mapas. `networkx` oferece meios de plotagem de grafos e de redes complexas. `matplotlib-venn` gera diagramas de Venn. `xhtml2pdf` e `reportlab` são dedicados à manipulação de PDFs e úteis para geração de relatórios.
 # 
-# O ferramental Python disponível para visualização de dados é bastante vasto. Já existem hoje muitos outros pacotes baseados na linguagem para trabalhar com _big data_ multipropósito (e.g. `xarray`, `dask`, `numba`, etc.) e cada um possui pontos positivos e negativos. Em sua atividade profissional, uma ferramenta poderá ser mais adequada do que outra e será você quem dará o veredito final.
+# O ferramental Python disponível para visualização de dados é bastante vasto. Já existem hoje muitos outros pacotes baseados na linguagem para trabalhar com _big data_ multipropósito (e.g. `hvplot`, `datashader`, `xarray`, `dask` etc.) e cada um possui pontos positivos e negativos. Em sua atividade profissional, uma ferramenta poderá ser mais adequada do que outra e será você quem dará o veredito final.
 # 
 # Para manter uma linha mínima de ação no escopo técnico, neste curso utilizaremos `numpy`, `pandas`, `matplotlib` e `seaborn` para a visualização estática de dados, e `plotly` para a visualização interativa. Os demais pacotes serão utilizados sob demanda ao discutirmos  aplicações e exemplos mais elaborados.
 
@@ -334,7 +490,7 @@ sns.set_style()
 # 
 # ### Termos para pessoas
 # 
-# - _Storyteller_: você, que está construindo o produto de visualização (cf. _visualiser_, _analyst_,_visualist_, _designer_).
+# - _Storyteller_: você, que está construindo o produto de visualização (cf. _visualiser_, _analyst_, _visualist_, _designer_).
 # - _Viewer_: a pessoa que visualiza o produto construído (cf. _consumer_, _reader_, _user_).
 # - _Audiência_: um grupo de espectadores ou coorte social a quem o produto de visualização é direcionado (cf. _audience_).
 # 
@@ -351,7 +507,7 @@ sns.set_style()
 # :class: dropdown
 # 
 # A taxonomia de dados para fins de visualização da informação proposta por Ben Schneiderman em seu artigo
-# científico [_The eyes have it: a task by data type taxonomy for information visualizations_](https://ieeexplore.ieee.org/document/545307), de 1996, oferece 7 tipos: unidimensional, bidimensional, tridimensional, temporal, multidimensional, árvore e rede. Uma versão em PDF está disponível na [página](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf) do autor.
+# científico [_The eyes have it: a task by data type taxonomy for information visualizations_](https://ieeexplore.ieee.org/document/545307), de 1996, oferece 7 tipos de dados: unidimensional, bidimensional, tridimensional, temporal, multidimensional, árvore e rede. Uma versão em PDF está disponível na [página](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf) do autor.
 # ```
 # 
 # ### Termos para visualização
