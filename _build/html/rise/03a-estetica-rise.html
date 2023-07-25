@@ -797,7 +797,7 @@ title="Print to PDF"
 <h1>Criação de Representações Visuais e Estética<a class="headerlink" href="#criacao-de-representacoes-visuais-e-estetica" title="Permalink to this headline">#</a></h1>
 <p>Prof. Gustavo Oliveira</p>
 <p>CI/DCC/UFPB</p>
-<p><span class="xref myst">gcpeixoto.github.com/DATAVIZ</span></p>
+<p><a class="reference external" href="http://gcpeixoto.github.com/DATAVIZ">gcpeixoto.github.com/DATAVIZ</a></p>
 <section id="modelo-referencial">
 <h2>Modelo referencial<a class="headerlink" href="#modelo-referencial" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -817,9 +817,6 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">aux03a</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/03a-estetica-rise_2_0.png" src="../_images/03a-estetica-rise_2_0.png" />
 </div>
 </div>
 <section id="dado-bruto">
@@ -996,7 +993,7 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ll/g0vl8b194pbfyp4cwpzz4p740000gn/T/ipykernel_96488/1688322632.py:7: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ll/g0vl8b194pbfyp4cwpzz4p740000gn/T/ipykernel_12862/1688322632.py:7: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
   df_h[&#39;Data&#39;] = df_h[&#39;Data&#39;].str.replace(&#39;-&#39;,&#39;/&#39;).str.replace(&#39;.&#39;,&#39;/&#39;).\
 </pre></div>
 </div>
@@ -1505,9 +1502,6 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 <li><p>forma.</p></li>
 </ul>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<img alt="../_images/03a-estetica-rise_41_0.png" src="../_images/03a-estetica-rise_41_0.png" />
-</div>
 </div>
 </section>
 <section id="designacoes-para-os-atributos-visuais-de-bertin">
@@ -1552,9 +1546,6 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 <li><p>volume.</p></li>
 </ul>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<img alt="../_images/03a-estetica-rise_44_0.png" src="../_images/03a-estetica-rise_44_0.png" />
-</div>
 </div>
 </section>
 <section id="visualizacao">
@@ -1628,7 +1619,7 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 <h4>Exemplo 1: visualizando o número de cirurgias e partos por bloco<a class="headerlink" href="#exemplo-1-visualizando-o-numero-de-cirurgias-e-partos-por-bloco" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="c1"># reindexação</span>
 <span class="n">df_h2</span> <span class="o">=</span> <span class="n">df_h</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -1641,6 +1632,8 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># ci=None deprecated? Try errorbar=None</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Cirurgias&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df_h2</span><span class="p">,</span><span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Partos&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df_h2</span><span class="p">,</span><span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
@@ -1669,6 +1662,7 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">mticker</span>
 
 <span class="n">df_hours</span> <span class="o">=</span> <span class="n">df_t</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">::</span><span class="mi">60</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
 <span class="n">df_ti</span> <span class="o">=</span> <span class="n">df_t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df_hours</span><span class="p">][:</span><span class="mi">48</span><span class="p">]</span>
@@ -1678,7 +1672,10 @@ Domain_10/STER/min_30/boom_3/temperature {&#39;Product ID&#39;: &#39;NEON.D10.RS
 
 <span class="n">da</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">((</span><span class="n">df_ti</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)))</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;h&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">)])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">da</span><span class="p">,</span><span class="n">db</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">mticker</span><span class="o">.</span><span class="n">FixedLocator</span><span class="p">(</span><span class="n">da</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
 
 <span class="n">half</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">da</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 

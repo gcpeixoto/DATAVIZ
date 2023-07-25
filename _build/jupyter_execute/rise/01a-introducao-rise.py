@@ -8,7 +8,7 @@
 # CI/DCC/UFPB
 # 
 # 
-# [gcpeixoto.github.com/DATAVIZ](gcpeixoto.github.com/DATAVIZ)
+# [gcpeixoto.github.com/DATAVIZ](http://gcpeixoto.github.com/DATAVIZ)
 
 # Características essenciais para o desenvolvimento de habilidades na disciplina:
 # 

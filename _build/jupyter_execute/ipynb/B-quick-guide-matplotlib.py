@@ -5,7 +5,7 @@
 
 # - Plotagem genérica em modo explícito (interface "OO-like")
 
-# In[2]:
+# In[28]:
 
 
 import matplotlib.pyplot as plt
@@ -25,7 +25,7 @@ fig, ax = plt.subplots(nrows=3,
 
 # - Controle da escala de eixos
 
-# In[38]:
+# In[29]:
 
 
 fig, ax = plt.subplots(1,6,figsize=(10,2),constrained_layout=True)
@@ -56,10 +56,9 @@ ax[5].axis([-3,5,-2,4]) # 1a. forma
 ax[5].set_xlim(-3,5); ax[5].set_ylim(-2,4); # 2a. forma
 
 
-
 # - Visibilidade de eixos
 
-# In[8]:
+# In[30]:
 
 
 fig, ax = plt.subplots(1,5,figsize=(10,2),constrained_layout=True)
@@ -90,7 +89,7 @@ ax[4].spines.right.set_visible(False)
 #     - `gs = fig.add_gridspec(m,n)`: cria mosaico
 #     - `fig.add_subplot(gs[m:,n:])`: posiciona plot no mosaico
 
-# In[71]:
+# In[31]:
 
 
 fig = plt.figure(figsize=(6,2),constrained_layout=True) # figura de background
@@ -108,7 +107,7 @@ for eixo in fig.axes:
 
 # - 'gridspec' com larguras e alturas variáveis
 
-# In[78]:
+# In[32]:
 
 
 fig = plt.figure(constrained_layout=True)
@@ -129,7 +128,7 @@ for row in range(3):
 
 # - 'subgridspec'
 
-# In[86]:
+# In[33]:
 
 
 f = plt.figure(constrained_layout=True)
@@ -149,7 +148,7 @@ for a in range(2):
 
 # - Eixos embutidos
 
-# In[99]:
+# In[34]:
 
 
 fig, ax = plt.subplots(figsize=(2,2),constrained_layout=True)
@@ -163,7 +162,7 @@ ax2.get_yaxis().set_visible(False)
 
 # - Eixos apensados
 
-# In[4]:
+# In[35]:
 
 
 import numpy as np
@@ -200,7 +199,7 @@ ax_bot.get_xaxis().set_visible(False); ax_top.get_yaxis().set_visible(False)
 
 # ## Estilo de linha e _cap_
 
-# In[178]:
+# In[36]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(6,2),constrained_layout=True)
@@ -231,7 +230,7 @@ ax[1].yaxis.set_visible(False)
 
 # ## Marcadores
 
-# In[6]:
+# In[37]:
 
 
 markers = ['.','o','s','P','X','*','p','D','<','>','^','v',              '1','2','3','4','+','x','|','_',4,5,6,7,          '$\\int$','$\\dagger$' ]
@@ -247,9 +246,33 @@ for i in range(len(markers)):
 ax.axis('tight');
 
 
-# ## Controle de ticklabels
+# ## Controle de ticks e labels
 
-# In[3]:
+# In[38]:
+
+
+from matplotlib.ticker import MultipleLocator as ML
+from matplotlib.ticker import ScalarFormatter as SF
+
+fig, ax = plt.subplots(1,2,figsize=(8,1))
+ax[0].set_xlim(0,3)
+ax[0].xaxis.set_minor_locator (ML(0.05))
+ax[1].set_xlim(1,2)
+ax[1].xaxis.set_minor_locator (ML(0.01))
+
+
+# In[52]:
+
+
+fig, ax = plt.subplots(figsize=(8,1))
+ax.set_xlim(0,3)
+ax.xaxis.set_minor_locator (ML(0.1))
+ax.xaxis.set_minor_formatter (SF())
+ax.tick_params(axis='x' ,which='minor', rotation=90, labelsize=8)
+ax.set_xticklabels(ax.get_xticks(),weight='bold');
+
+
+# In[40]:
 
 
 import matplotlib.pyplot as plt, matplotlib.ticker as mticker
@@ -259,12 +282,15 @@ x = list(range(10))
 fig, ax = plt.subplots(figsize=(3,3))
 ax.plot(x,x)
 ax.xaxis.set_major_locator(mticker.FixedLocator([1.5,2.5,4.5]))
-ax.xaxis.set_tick_params(rotation=90, labelsize=16) # Other solution: ax.tick_params(axis='x', rotation=25)
+ax.set_xticklabels(['a','b','c'])
+ax.xaxis.set_tick_params(rotation=45, labelsize=16) # Other solution: ax.tick_params(axis='x', rotation=25)
 
+
+# ##
 
 # ## Impressão de propriedades padronizadas/customizadas
 
-# In[ ]:
+# In[41]:
 
 
 def get_prop(prop):
@@ -282,7 +308,7 @@ def get_prop(prop):
 
 # ## Impressão de paletas de cores disponíveis
 
-# In[13]:
+# In[42]:
 
 
 def print_palette(opt):
@@ -306,4 +332,24 @@ def print_palette(opt):
 
     for k,v in selector.items():
         if k == opt: print(v)
+
+
+# ## Renderização de Latex
+
+# In[62]:
+
+
+from matplotlib.pyplot import xlabel, ylabel
+from matplotlib import rc
+
+# ativa Latex
+rc('text', usetex=True)
+rc('axes', linewidth=2)
+rc('font', weight='bold')
+
+
+fig, ax = plt.subplots(figsize=(3,3))
+ax.plot(x,x)
+xlabel(r'\textbf{X-AXIS}', fontsize=10);
+ylabel(r'f(x)', fontsize=10);
 
