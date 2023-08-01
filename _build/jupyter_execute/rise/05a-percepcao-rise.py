@@ -40,7 +40,7 @@
 
 # ### Tipos de memória
 # 
-# - A neurologia hoje reconhece diversos (episódica, semântica, icônica (MI), háptica, entre outras)
+# - A neurologia hoje reconhece várias memórias (episódica, semântica, icônica (MI), háptica, entre outras)
 # - Quanto à temporalidade, duas classes importantes: 
 #     - _memória de curto prazo (MCP)_
 #     - _memória de longo prazo (MLP)_

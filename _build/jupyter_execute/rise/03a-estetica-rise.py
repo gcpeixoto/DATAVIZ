@@ -10,6 +10,12 @@
 # 
 # [gcpeixoto.github.com/DATAVIZ](http://gcpeixoto.github.com/DATAVIZ)
 
+# In[ ]:
+
+
+
+
+
 # ## Modelo referencial
 # 
 # - Componentes do modelo para geração de RVs:
@@ -21,7 +27,7 @@
 # Nota: mapeamento de valores em formas quantificadas determinarão a estética.
 # 
 
-# In[23]:
+# In[1]:
 
 
 # RV produzida por código (ver site do curso)
@@ -67,7 +73,7 @@ import aux03a
 # 
 # Fonte: [National Ecolological Observatory Network](https://www.neonscience.org/resources/learning-hub/tutorials/explore-data-hdfview).
 
-# In[24]:
+# In[2]:
 
 
 import h5py as h5
@@ -86,7 +92,7 @@ for i in range(5):
 
 # - **Modo 1**: UDF para impressão dos objetos e atributos:
 
-# In[25]:
+# In[3]:
 
 
 def print_h5_tree(name, obj):
@@ -116,7 +122,7 @@ file_hdf.visititems(print_h5_tree)
 
 # #### Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos
 
-# In[26]:
+# In[17]:
 
 
 import pandas as pd
@@ -133,7 +139,7 @@ df_h['Partos'] = df_h['Partos'].str.strip('P').str.strip('p')
 df_h.set_index('Data',inplace=True)
 
 
-# In[27]:
+# In[5]:
 
 
 df_h
@@ -145,7 +151,7 @@ df_h
 # 
 # - Pdemos usar `keys` para acessar os _datasets_ e usar métodos do `numpy` e do `pandas` para recuperar a estrutura e criar os _dataframes_ diretamente.
 
-# In[28]:
+# In[27]:
 
 
 from pandas import DataFrame
@@ -174,7 +180,7 @@ df_t.set_index('date')
 
 # ### Substrato retilinear
 
-# In[29]:
+# In[7]:
 
 
 from matplotlib.pyplot import figure
@@ -185,7 +191,7 @@ fig.add_axes((0,0,1,1),projection='rectilinear');
 
 # ### Substrato polar
 
-# In[30]:
+# In[8]:
 
 
 from matplotlib.pyplot import figure
@@ -196,7 +202,7 @@ fig.add_axes((0,0,1,1),projection='polar');
 
 # ### Substrato 3D
 
-# In[31]:
+# In[9]:
 
 
 from matplotlib.pyplot import figure
@@ -207,7 +213,7 @@ fig.add_axes((0,0,1,1),projection='3d');
 
 # ### Substrato Lambert
 
-# In[32]:
+# In[10]:
 
 
 from matplotlib.pyplot import figure
@@ -218,7 +224,7 @@ fig.add_axes((0,0,1,1),projection='lambert');
 
 # ### Substrato Hammer
 
-# In[33]:
+# In[11]:
 
 
 from matplotlib.pyplot import figure
@@ -229,7 +235,7 @@ fig.add_axes((0,0,1,1),projection='hammer');
 
 # ### Substrato composto
 
-# In[34]:
+# In[12]:
 
 
 import matplotlib.pyplot as plt
@@ -282,7 +288,7 @@ fig.add_axes((1.5,0.8,1.0,1.2),projection='polar');
 # - cor; e
 # - forma.
 
-# In[35]:
+# In[13]:
 
 
 import aux03a2
@@ -307,7 +313,7 @@ import aux03a2
 # - superfície; e
 # - volume.
 
-# In[36]:
+# In[14]:
 
 
 import aux03a3
@@ -358,7 +364,7 @@ import aux03a3
 
 # #### Exemplo 1: visualizando o número de cirurgias e partos por bloco
 
-# In[37]:
+# In[15]:
 
 
 import seaborn as sns
@@ -376,8 +382,8 @@ ax[0].grid(alpha=0.5)
 ax[1].grid(alpha=0.5)
 
 # ci=None deprecated? Try errorbar=None
-p1 = sns.barplot(x='Bloco',y='Cirurgias',hue='Porte',data=df_h2,errorbar=None,palette='Blues',ax=ax[0])
-p2 = sns.barplot(x='Bloco',y='Partos',hue='Porte',data=df_h2,errorbar=None,palette='Blues',ax=ax[1])
+p1 = sns.barplot(x='Bloco',y='Cirurgias',hue='Porte',data=df_h2,ci=None,palette='Blues',ax=ax[0])
+p2 = sns.barplot(x='Bloco',y='Partos',hue='Porte',data=df_h2,ci=None,palette='Blues',ax=ax[1])
 
 # eixos
 p1.spines['top'].set_visible(False)
@@ -395,7 +401,7 @@ p2.legend(title='Porte',bbox_to_anchor=(1.2,1.0));
 
 # #### Exemplo 2: plotando série temporal de temperatura
 
-# In[39]:
+# In[16]:
 
 
 import numpy as np
@@ -413,7 +419,6 @@ ax.xaxis.set_major_locator(mticker.FixedLocator(da))
 ax.set_xticklabels(db,fontsize=5)
 ax.tick_params(axis='x', labelsize=6)
 
-
 half = int(len(da)/2)
 
 ax.axvline(0,ls='--',lw=1,c='#d1886e',alpha=0.4)
@@ -425,10 +430,4 @@ ax.set_ylabel('Temperatura',fontsize=9)
 
 ax.text(10,-4,s='01/04/2014',fontsize=7,c='#d1886e')
 ax.text(1450,-4,s='02/04/2014',fontsize=7,c='#d1886e');
-
-
-# In[ ]:
-
-
-
 

@@ -3,24 +3,24 @@
 
 # # Percepção Visual
 # 
-# Estudos científicos mostram que cerca de 70% da informação captada por um humano ocorre por meio da visão e os outros 30% dividem-se entre os demais receptores sensoriais (audição, olfato, paladar e tato). Adquirir algum conhecimento sobre a mecânica da visão é útil para que saibamos construir melhor nossas representações visuais e desenvolver projetos visuais melhores. Não é por acaso que termos como _insight_, _iluminação_ e _esclarecimento_, todos relacionados à visão, são utilizados para dar sentido de recebimento de informação e trazer descrições apuradas sobre algo. Por esta razão, percepção visual e visualização de dados são assuntos vinculados. 
+# Estudos científicos mostram que cerca de 70% da informação captada por um humano ocorre por meio da visão e os outros 30% dividem-se entre os demais receptores sensoriais (audição, olfato, paladar e tato). Adquirir algum conhecimento sobre a mecânica da visão é útil para que saibamos construir melhor nossas representações visuais e desenvolver projetos visuais melhores. Não é por acaso que termos como _insight_, _iluminação_ e _esclarecimento_, todos relacionados à visão, são utilizados para fazer referência à recepção e descrição apurada de uma informação. É neste sentido que a percepção visual e a visualização de dados vinculam-se. 
 
 # ## A mecânica da visão
 # 
 # A mecânica da visão pode ser dividida em dois estágios principais:
 # 
 # 1. _Sensação_ (processo físico): ocorre quando nossos olhos são estimulados por um objeto emissor ou refletor de luz.
-# 2. _Percepção_ (processo cognitivo): ocorre com a entrada de luz pelos olhos, a qual é absorvida por células nervosas que a traduzem em sinais neurais (pulsos eletroquímicos) que são transmitidos diretamente ao cérebro, onde aquilo que foi sentido torna-se percebido. 
+# 2. _Percepção_ (processo cognitivo): ocorre com a entrada de luz pelos olhos, a qual é absorvida por células nervosas que a traduzem em sinais neurais (pulsos eletroquímicos) e, estes, por sua vez, são transmitidos diretamente ao cérebro, onde aquilo que foi sentido torna-se percebido. 
 # 
-# No centro de nossas retinas encontra-se a _fóvea_, região onde são reconhecidos os diferentes espectros de cor (vermelho, azul ou verde) e onde a acuidade visual é máxima. Entretanto, a fóvea é capaz de focar em apenas uma área limitada durante um intervalo de tempo. Quando nossos olhos fixam-se em um ponto particular e observamos seus detalhes, outros eventos podem passar despercebidos pelo nosso campo de visão. Por esta razão, quando construímos uma representação visual abarrotada de cores e elementos, os olhos do espectador ficam dispersos e sem saber para onde direcionar o foco.
+# No centro de nossas retinas encontra-se a _fóvea_, região onde são reconhecidos os diferentes espectros de cor (vermelho, azul ou verde) e onde a acuidade visual é máxima. Entretanto, a fóvea é capaz de focar em apenas uma área limitada durante um intervalo de tempo. Quando nossos olhos fixam-se em um ponto particular e o observam de modo atencioso, outros eventos podem passar despercebidos pelo nosso campo de visão. Por esta razão, quando construímos uma representação visual abarrotada de cores e elementos, os olhos do espectador ficam dispersos e sem saber para onde direcionar o foco.
 # 
 # ### Tipos de memória
 # 
 # A neurologia hoje reconhece diversos tipos de memória, tais como episódica, semântica, icônica, háptica, entre outras. Quanto à temporalidade, há duas classes importantes: a _memória de curto prazo (MCP)_ e a _memória de longo prazo (MLP)_.  
 # 
-# Toda informação recebida pelos olhos é, primeiramente, roteada pelo nervo óptico para a memória icônica (MI), também chamada de _registro sensorial_. A informação permanece na MI por menos de um segundo antes de passar para a MCP. A MCP é similar à memoria RAM de um computador. Ela é temporária e com capacidade de armazenamento limitada. O cérebro lida com pedaços da informação visual. Parte é armazenada e parte é esquecida. Quando de fato, aprendemos, o que fazemos é transferir a informação da MCP para a MLP. Assim, para que uma informação seja seguramente transferida e aprendida, é preciso treinar o nosso cérebro para "esculpir" a informação em nossa MLP. A MLP é, portanto, uma analogia do disco rígido do computador.
+# Toda informação recebida pelos olhos é, primeiramente, roteada pelo nervo óptico para a memória icônica (MI), também chamada de _registro sensorial_. A informação permanece na MI por menos de um segundo antes de passar para a MCP. A MCP é similar à memoria RAM de um computador. Ela é temporária e tem capacidade de armazenamento limitada. O cérebro lida com pedaços da informação visual. Parte é armazenada e parte é esquecida. Quando aprendemos coisas novas, o que fazemos é transferir a informação da MCP para a MLP. Assim, para que uma informação seja seguramente transferida e aprendida, é preciso treinar o nosso cérebro para "esculpir" a informação em nossa MLP. A MLP é, portanto, uma analogia do disco rígido do computador.
 # 
-# Trabalhar com produtos visuais é, de certa forma, equilibrar estímulos para que o receptor da informação possa capturar a informação e absorvê-la de forma adequada. O lado negativo disso é a "exploração" visual através do _marketing_ coercitivo, que propõe máxima atratividade ao público. A finalidade do projeto visual dará a direção a ser seguida, mas sempre deve-se ter em mente que a audiência deve ter sua cognição minimamente respeitada.
+# Trabalhar com produtos visuais é, de certa forma, equilibrar estímulos para que o receptor da informação possa capturar a informação e absorvê-la de forma adequada. O lado negativo disso é a exploração visual através do _marketing_ coercitivo, que propõe máxima atratividade ao público. A finalidade do projeto visual dará a direção a ser seguida, mas sempre deve-se ter em mente que a audiência deve ter sua cognição minimamente respeitada.
 
 # ### Percepção não controlada 
 # 
@@ -115,9 +115,9 @@ def render_wordcloud(text_file):
 
 # #### Propriedades não controladas
 # 
-# Segundo Colin Ware {cite:p}`ware2019information`, essas propriedades podem ser postas em quatro categorias: _cor_, _formato_, _movimento_ e _posição espacial_. 
+# As propriedades não controladas podem ser postas em quatro categorias ({cite:p}`ware2019information`). São elas: _cor_, _formato_, _movimento_ e _posição espacial_. 
 # 
-# Quanto à cor, há três atributos principais, que definem o espaço primário de cores chamado de _HSL_ ({numref}`Tabela %s <tbl-atributos-cor>`). Discutiremos cores com mais detalhes em um capítulo específico. 
+# Quanto à cor, há três atributos principais definidores do espaço primário de cores, chamado de _HSL_ ({numref}`Tabela %s <tbl-atributos-cor>`) – discutiremos as cores com mais detalhes no capítulo posterior.
 # 
 # ```{table} Atributos não controlados de cor.
 # :name: tbl-atributos-cor
@@ -129,7 +129,7 @@ def render_wordcloud(text_file):
 # |Luminância (_Lightness_)|Grau de brilho de uma imagem, em escala de branco a preto (também chamada de intensidade luminosa)|
 # ```
 # 
-# Quanto ao formato, há pelo menos dez atributos reconhecíveis, dos quais alguns já apresentamos ({numref}`Tabela %s <tbl-atributos-forma>`).
+# Quanto ao formato, há pelo menos dez atributos reconhecíveis ({numref}`Tabela %s <tbl-atributos-forma>`). Alguns, inclusive, já abordamos ao falar sobre os atributos visuais de Bertin.
 # 
 # ```{table} Atributos não controlados de formato.
 # :name: tbl-atributos-forma
@@ -173,7 +173,7 @@ def render_wordcloud(text_file):
 
 # ### Percepção controlada
 # 
-# A percepção controlada é consciente, sequencial, e lenta. Dá-se pela procura de foco. Para acentuar a diferença entre percepções, vejamos a figura abaixo, em contexto similar ao da anterior. Ambas as sequências de dígitos são idênticas. Se fôssemos procurar por todas as aparições do dígito "5" na primeira linha demoraríamos muito mais do que na segunda, na qual as aparições estão destacadas em preto. Ou seja, analisar a primeira linha exigirá de nós um certo controle focal; a segunda linha, não. No primeiro caso, a percepção controlada predomina, ao passo que no segundo predomina a não controlada.
+# A percepção controlada é consciente, sequencial e lenta. Dá-se pela procura de foco. Para acentuar a diferença entre percepções, vejamos a figura abaixo, em contexto similar ao da anterior. Ambas as sequências de dígitos são idênticas. Se fôssemos procurar por todas as aparições do dígito "5" na primeira linha demoraríamos muito mais do que na segunda, na qual as aparições estão destacadas em preto. Ou seja, analisar a primeira linha exigirá de nós um certo controle focal. Por outro lado, a análise da segunda linha dispensa  esforços adicionais. No primeiro caso, a percepção controlada predomina; no segundo predomina a percepção não controlada.
 
 # In[2]:
 
@@ -210,9 +210,9 @@ for si in text:
 
 # ### Cegueira à mudança (_change blindness_)
 # 
-# O fenômeno da "cegueira à mudança" (_change blindness_) ocorre quando, visualmente, somos incapazes de notar mudanças sensíveis no ambiente quando reposicionamos nosso foco instantaneamente de um objeto para outro. Por exemplo, se passarmos um período de tempo observando fixamente uma fotografia e, durante o nosso piscar de olhos, alguém alterá-la de maneira sutil, é bastante provável que não captemos a mudança. Esta incapacidade momentânea de perceber a mudança é similar a uma cegueira temporária. 
+# O fenômeno da "cegueira à mudança" (_change blindness_) ocorre quando, visualmente, somos incapazes de notar mudanças sensíveis no ambiente ao reposicionarmos nosso foco instantaneamente de um objeto para outro. Por exemplo, se passarmos um período de tempo observando detidamente uma fotografia e, durante um piscar de olhos, ela for alterada de maneira sutil, é bastante provável que não captemos essa mudança. Essa incapacidade momentânea de perceber a mudança é similar a uma cegueira temporária. 
 # 
-# Detalhes de duas cenas iguais são, em geral, lembrados apenas quando se olha para áreas específicas. Existem resultados científicos que mostram que um espectador pode olhar várias vezes para uma imagem suficientemente "poluída" e não compreender a totalidade da informação, mesmo depositando nela plena atenção focal. Em outras palavras, a atenção não tem efeitos cumulativos sobre a percepção. Isto significa que projetos visuais devem dar à audiência indicações claras do que se quer destacar. As imagens na {numref}`fig-globe` abaixo retratam o fenômeno da _change blindness_. Nelas existem vários objetos sutis que escapam a uma piscadela de olhos e que não estão presentes, em particular, na imagem à direita, nos mesmos moldes de um "jogo de 7 erros". Deixamos ao leitor a identificação desses objetos, localizáveis apenas por percepção controlada.
+# Detalhes de duas cenas iguais são, em geral, lembrados apenas quando se olha para áreas específicas. Existem resultados científicos que mostram que um espectador pode olhar várias vezes para uma imagem suficientemente "poluída" e não compreender a totalidade da informação, mesmo depositando nela plena atenção focal. Em outras palavras, a atenção não tem efeitos cumulativos sobre a percepção. Isto significa que projetos visuais devem dar à audiência indicações claras do que se quer destacar. As imagens na {numref}`fig-globe` abaixo retratam o fenômeno da _change blindness_. Nelas existem vários objetos sutis que escapam a uma piscadela de olhos e que não estão presentes. Sem supresas, vemos o molde de um "jogo de 7 erros". Fica para você a tarefa de identificar os elementos furtivos ("erros") nas imagens, localizáveis apenas por percepção controlada.
 
 # ```{figure} ../figs/Globe_and_high_court_(Spot_the_difference).jpg
 # ---
@@ -254,7 +254,7 @@ for si in text:
 # 
 # _Gestalt_, palavra alemã que, em tradução aproximada, seria algo como "forma total", é a alcunha de uma teoria também conhecida como _psicologia da forma_. Ela explica que, como o ser humano enxerga o "todo" e não as "partes" do todo, aquilo que vemos é compreendido de forma diferente pela mente e, por esta razão, antes precisamos entender a totalidade, para então compreender a particularidade.
 # 
-# A composição de elementos e formas permite que formemos concepções distintas daquilo que vemos e não percebamos particularidades. Vejamos a {numref}`fig-gestalt`. Ao analisar seus elementos, podemos ter diversas percepções. Na primeira linha, o primeiro objeto é um mero quadrado; o segundo é um quadrado "picotado" em quatro; o terceiro é o mesmo quadrado picotado em quatro partes, porém com vãos largos (vemos apenas um "X"?); o último é um quadrado inserido em outro (vemos um  "losango circunscrito"?), porém girado. 
+# A composição de elementos e formas faz com que tenhamos concepções distintas daquilo que vemos e não percebamos particularidades. Vejamos a {numref}`fig-gestalt`. Ao analisar seus elementos, podemos ter diversas percepções. Na primeira linha, o primeiro objeto é um mero quadrado; o segundo é um quadrado "picotado" em quatro; o terceiro é o mesmo quadrado picotado em quatro partes, porém com vãos largos (vemos apenas um "X"?); o último é um quadrado inserido em outro (vemos um "losango circunscrito"?), porém girado. 
 # 
 # ```{figure} ../figs/gestalt.png
 # ---
@@ -266,10 +266,9 @@ for si in text:
 # Composições de formas e efeitos sobre a percepção (teoria da Gestalt). Preparada por: G. P. Oliveira.
 # ```
 # 
+# Na segunda linha, o que vemos? O primeiro objeto representa um abajur? Uma _minka_ (casa japonesa)? O segundo objeto representa uma choupana com neve no telhado? O terceiro uma maloca com janelas? O último uma fábrica com chaminé? Alguns ou todos esses conceitos podem ter passado pela sua cabeça. Mas será que você percebeu que todos os elementos gráficos são apenas composições de triângulos e quadrados? 
 # 
-# Na segunda linha, o que vemos? O primeiro objeto representa um abajur? Uma minka (casa japonesa)? O segundo objeto representa uma casinha com neve no telhado? O terceiro uma casinha com janelas? O último uma fábrica com chaminé? Alguns ou todos esses conceitos podem ter passado pela sua cabeça. Mas será que você percebeu que todos os elementos gráficos são apenas composições de triângulos e quadrados? 
-# 
-# Esse efeito provocado pelas formas, que nos faz ver o todo e não as partes, à primeira vista, é o que a teoria da _Gestalt_ explica. Os princípios da Gestalt são aplicados ao _design_ até hoje para facilitar a comunicação das informações e, muitas vezes, de forma intuitiva.
+# Esse efeito indutor provocado pelas formas, que nos faz ver o todo e não as partes, à primeira vista, é o que a teoria da _Gestalt_ explica. Os princípios da Gestalt são aplicados ao _design_ até hoje para facilitar a comunicação das informações e, muitas vezes, de forma intuitiva.
 # 
 # É possível encontrar os princípios da Gestalt declarados de forma variada hoje em dia. Neste texto, atentaremos para seis:
 # 
@@ -289,7 +288,7 @@ for si in text:
 # align: center
 # width: 650px
 # ---
-# Princípio fundamentais da Gestal. Preparada por: G. P. Oliveira.
+# Princípio fundamentais da Gestalt. Preparada por: G. P. Oliveira.
 # ```
 
 # ## Referências

@@ -318,7 +318,7 @@ import aux04a2
 # 
 # A representação visual abaixo lida com os preços de combustíveis aplicados em diversos municípios da Paraíba por diferentes operadoras (bandeiras).
 
-# In[27]:
+# In[1]:
 
 
 import plotly.express as px
