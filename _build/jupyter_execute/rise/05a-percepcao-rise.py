@@ -157,7 +157,7 @@
 #     - 1a. linha exige controle focal (percepção controlada)
 #     - 2a. linha, não (percepção não controlada)
 
-# In[3]:
+# In[1]:
 
 
 import aux05a

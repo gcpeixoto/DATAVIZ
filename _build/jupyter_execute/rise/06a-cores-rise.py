@@ -29,20 +29,20 @@
 # 
 # - Várias escalas de cores qualitativas ou _mapas de cores_ (ex. 6, 10 e 14 cores segundo a paleta padrão)
 
-# In[1]:
+# In[2]:
 
 
 from seaborn import color_palette
 color_palette(n_colors=6)
 
 
-# In[2]:
+# In[3]:
 
 
 color_palette(n_colors=10)
 
 
-# In[3]:
+# In[4]:
 
 
 color_palette(n_colors=14)
@@ -50,19 +50,19 @@ color_palette(n_colors=14)
 
 # ### Insaturação proporcional com `desat`
 
-# In[4]:
+# In[5]:
 
 
 color_palette(n_colors=6,desat=0.1)
 
 
-# In[5]:
+# In[6]:
 
 
 color_palette(n_colors=10,desat=0.5)
 
 
-# In[6]:
+# In[7]:
 
 
 color_palette(n_colors=14,desat=0.9)
@@ -77,31 +77,31 @@ color_palette(n_colors=14,desat=0.9)
 #     - `dark`
 #     - `colorblind`
 
-# In[7]:
+# In[9]:
 
 
 color_palette('muted')
 
 
-# In[8]:
+# In[10]:
 
 
 color_palette('bright')
 
 
-# In[9]:
+# In[11]:
 
 
 color_palette('pastel')
 
 
-# In[10]:
+# In[12]:
 
 
 color_palette('dark')
 
 
-# In[11]:
+# In[8]:
 
 
 color_palette('colorblind')
@@ -120,19 +120,19 @@ color_palette('colorblind')
 
 # Cada uma pode ser invocada pela função `seaborn.color_palette()` naturalmente:
 
-# In[12]:
+# In[13]:
 
 
 color_palette('Paired',n_colors=10)
 
 
-# In[13]:
+# In[14]:
 
 
 color_palette('Set1',n_colors=10)
 
 
-# In[14]:
+# In[15]:
 
 
 color_palette('tab20b',n_colors=10)
@@ -223,13 +223,13 @@ plot_municipios_PB('Paired');
 
 # ### Sequenciais com percepção de uniformidade
 
-# In[17]:
+# In[16]:
 
 
 color_palette('viridis',n_colors=12)
 
 
-# In[18]:
+# In[17]:
 
 
 color_palette('magma',n_colors=12)
@@ -237,39 +237,39 @@ color_palette('magma',n_colors=12)
 
 # ### Sequenciais do grupo 1
 
-# In[19]:
+# In[23]:
 
 
-color_palette('Oranges',n_colors=12)
+color_palette('Oranges',n_colors=35)
 
 
-# In[20]:
+# In[24]:
 
 
-color_palette('Blues',n_colors=12)
+color_palette('Blues',n_colors=35)
 
 
-# In[21]:
+# In[25]:
 
 
-color_palette('YlOrRd',n_colors=12)
+color_palette('YlOrRd',n_colors=35)
 
 
 # ### Sequenciais do grupo 2
 
-# In[22]:
+# In[26]:
 
 
 color_palette('bone',n_colors=12)
 
 
-# In[23]:
+# In[27]:
 
 
 color_palette('hot',n_colors=12)
 
 
-# In[24]:
+# In[28]:
 
 
 color_palette('copper',n_colors=12)
@@ -277,19 +277,19 @@ color_palette('copper',n_colors=12)
 
 # ### Divergentes
 
-# In[25]:
+# In[29]:
 
 
-color_palette('RdBu',n_colors=12)
+color_palette('RdBu',n_colors=12) 
 
 
-# In[26]:
+# In[30]:
 
 
 color_palette('Spectral',n_colors=12)
 
 
-# In[27]:
+# In[31]:
 
 
 color_palette('seismic',n_colors=12)
@@ -297,39 +297,39 @@ color_palette('seismic',n_colors=12)
 
 # ### Cíclicas
 
-# In[28]:
+# In[36]:
 
 
-color_palette('twilight',n_colors=12)
+color_palette('twilight',n_colors=25)
 
 
-# In[29]:
+# In[33]:
 
 
 color_palette('twilight_shifted',n_colors=12)
 
 
-# In[30]:
+# In[38]:
 
 
-color_palette('hsv',n_colors=12)
+color_palette('hsv',n_colors=25)
 
 
 # ### Genéricas
 
-# In[31]:
+# In[42]:
 
 
 color_palette('prism',n_colors=12)
 
 
-# In[32]:
+# In[40]:
 
 
 color_palette('terrain',n_colors=12)
 
 
-# In[33]:
+# In[41]:
 
 
 color_palette('rainbow',n_colors=12)

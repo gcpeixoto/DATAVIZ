@@ -20,11 +20,17 @@
 # 
 # A seguir, exibimos 3 escalas qualitativas com 6, 10 e 14 cores segundo a paleta padrão.
 
-# In[1]:
+# In[18]:
 
 
 from seaborn import color_palette
 color_palette(n_colors=6)
+
+
+# In[16]:
+
+
+get_ipython().system('open /Users/gustavo/opt/anaconda3/envs/dataviz/lib/python3.9/site-packages/seaborn/palettes.py')
 
 
 # In[2]:
@@ -38,6 +44,20 @@ color_palette(n_colors=10)
 
 color_palette(n_colors=14)
 
+
+# Observe que neste exemplo de 14 cores, as últimas 4 são as mesmas que as primeiras 4. Isto acontece porque a paleta padrão que estamos utilizando possui apenas 10 cores. Quando solicitamos mais, ela simplesmente entra em um ciclo repetitivo. 
+# 
+# A paleta padrão utilizada pelo `seaborn`, chamada de `prop_cycle`, é herdada do `matplotlib 2.0`, quando passou a substituir a paleta circular anterior, baseada em 7 cores: azul, verde, vermelho, ciano, magenta, amarelo e preto (`bgrcmyk`). As cores da paleta padrão podem ser prontamente obtidas com as seguintes instruções.
+
+# In[32]:
+
+
+from matplotlib import rcParams
+for c in rcParams['axes.prop_cycle'].by_key()['color']:
+    print(c, end = ' ')
+
+
+# A alteração das propriedades "circulares" de cor depende da API [`cycler`](https://matplotlib.org/cycler/), a qual serve para estilizações customizadas. Para maior detalhamento, consulte este [link](https://matplotlib.org/stable/tutorials/intermediate/color_cycle.html). Para uma apresentação dos motivos por trás da escala padrão, assista este [vídeo](https://www.youtube.com/watch?v=xAoljeRJ3lU&t=1s).
 
 # Podemos reduzir as saturações dessas paletas por uma certa proporção para criar cores menos vívidas incorporando o parâmetro `desat`. 
 
