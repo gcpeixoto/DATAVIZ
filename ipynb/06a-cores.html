@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Lounge das Representações Visuais" href="07a-lounge.html" />
@@ -889,6 +889,13 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>open /Users/gustavo/opt/anaconda3/envs/dataviz/lib/python3.9/site-packages/seaborn/palettes.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -905,6 +912,23 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html"><svg  width="770" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#1f77b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#ff7f0e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#2ca02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d62728;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#9467bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8c564b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#e377c2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#7f7f7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#bcbd22;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#17becf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#1f77b4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#ff7f0e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="660" y="0" width="55" height="55" style="fill:#2ca02c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="715" y="0" width="55" height="55" style="fill:#d62728;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
 </div>
+<p>Observe que neste exemplo de 14 cores, as últimas 4 são as mesmas que as primeiras 4. Isto acontece porque a paleta padrão que estamos utilizando possui apenas 10 cores. Quando solicitamos mais, ela simplesmente entra em um ciclo repetitivo.</p>
+<p>A paleta padrão utilizada pelo <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, chamada de <code class="docutils literal notranslate"><span class="pre">prop_cycle</span></code>, é herdada do <code class="docutils literal notranslate"><span class="pre">matplotlib</span> <span class="pre">2.0</span></code>, quando passou a substituir a paleta circular anterior, baseada em 7 cores: azul, verde, vermelho, ciano, magenta, amarelo e preto (<code class="docutils literal notranslate"><span class="pre">bgrcmyk</span></code>). As cores da paleta padrão podem ser prontamente obtidas com as seguintes instruções.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#1f77b4 #ff7f0e #2ca02c #d62728 #9467bd #8c564b #e377c2 #7f7f7f #bcbd22 #17becf 
+</pre></div>
+</div>
+</div>
+</div>
+<p>A alteração das propriedades “circulares” de cor depende da API <a class="reference external" href="https://matplotlib.org/cycler/"><code class="docutils literal notranslate"><span class="pre">cycler</span></code></a>, a qual serve para estilizações customizadas. Para maior detalhamento, consulte este <a class="reference external" href="https://matplotlib.org/stable/tutorials/intermediate/color_cycle.html">link</a>. Para uma apresentação dos motivos por trás da escala padrão, assista este <a class="reference external" href="https://www.youtube.com/watch?v=xAoljeRJ3lU&amp;t=1s">vídeo</a>.</p>
 <p>Podemos reduzir as saturações dessas paletas por uma certa proporção para criar cores menos vívidas incorporando o parâmetro <code class="docutils literal notranslate"><span class="pre">desat</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1072,7 +1096,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_23_0.png" src="../_images/06a-cores_23_0.png" />
+<img alt="../_images/06a-cores_27_0.png" src="../_images/06a-cores_27_0.png" />
 </div>
 </div>
 </section>
@@ -1342,7 +1366,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_50_0.png" src="../_images/06a-cores_50_0.png" />
+<img alt="../_images/06a-cores_54_0.png" src="../_images/06a-cores_54_0.png" />
 </div>
 </div>
 <p>De fato, uma rápida investigação no <em>dataframe</em> permite-nos asseverar o que foi dito sobre Lucena e Pombal e afirmar com mais certeza que Araçagi disputa, na verdade, com Solânea a extensão média, visto que a inflexão do Fator Z ocorre entre as duas localidades.</p>
@@ -1452,7 +1476,7 @@ title="Print to PDF"
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_58_0.png" src="../_images/06a-cores_58_0.png" />
+<img alt="../_images/06a-cores_62_0.png" src="../_images/06a-cores_62_0.png" />
 </div>
 </div>
 <p>A cor da luz que emana de objetos origina-se por processos físicos. Podemos citar, por exemplo</p>
@@ -1564,7 +1588,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_63_0.png" src="../_images/06a-cores_63_0.png" />
+<img alt="../_images/06a-cores_67_0.png" src="../_images/06a-cores_67_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1575,7 +1599,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_64_0.png" src="../_images/06a-cores_64_0.png" />
+<img alt="../_images/06a-cores_68_0.png" src="../_images/06a-cores_68_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1586,7 +1610,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_65_0.png" src="../_images/06a-cores_65_0.png" />
+<img alt="../_images/06a-cores_69_0.png" src="../_images/06a-cores_69_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1600,7 +1624,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_67_0.png" src="../_images/06a-cores_67_0.png" />
+<img alt="../_images/06a-cores_71_0.png" src="../_images/06a-cores_71_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1611,7 +1635,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_68_0.png" src="../_images/06a-cores_68_0.png" />
+<img alt="../_images/06a-cores_72_0.png" src="../_images/06a-cores_72_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1622,7 +1646,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_69_0.png" src="../_images/06a-cores_69_0.png" />
+<img alt="../_images/06a-cores_73_0.png" src="../_images/06a-cores_73_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1636,7 +1660,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_71_0.png" src="../_images/06a-cores_71_0.png" />
+<img alt="../_images/06a-cores_75_0.png" src="../_images/06a-cores_75_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1647,7 +1671,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_72_0.png" src="../_images/06a-cores_72_0.png" />
+<img alt="../_images/06a-cores_76_0.png" src="../_images/06a-cores_76_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1658,7 +1682,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_73_0.png" src="../_images/06a-cores_73_0.png" />
+<img alt="../_images/06a-cores_77_0.png" src="../_images/06a-cores_77_0.png" />
 </div>
 </div>
 </section>
@@ -1699,7 +1723,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_75_0.png" src="../_images/06a-cores_75_0.png" />
+<img alt="../_images/06a-cores_79_0.png" src="../_images/06a-cores_79_0.png" />
 </div>
 </div>
 <p>Uma função para converter tuplas RGB em código HEX poderia ser codificada conforme abaixo. Você pode aperfeiçoá-la para tratar a exceção do caso em que o usuário entra com valores numéricos válidos, porém misturados entre tipos <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">float</span></code>, ou modificar os argumentos de entrada para a forma <code class="docutils literal notranslate"><span class="pre">(r:</span> <span class="pre">int,</span> <span class="pre">g:</span> <span class="pre">int,</span> <span class="pre">b:</span> <span class="pre">int)</span></code>.</p>
@@ -1799,7 +1823,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06a-cores_82_0.png" src="../_images/06a-cores_82_0.png" />
+<img alt="../_images/06a-cores_86_0.png" src="../_images/06a-cores_86_0.png" />
 </div>
 </div>
 </section>
