@@ -80,7 +80,7 @@ display(HTML('course-treemap.html'))
 # 
 # - Conteúdo (18h)
 #     - [_Dataviz Code Session_: Quantidades](20-dcs-quantidade.ipynb)
-#     - _Dataviz Code Session_: Distribuições
+#     - [_Dataviz Code Session_: Distribuições](21-dcs-distribuicoes.ipynb)
 #     - _Dataviz Code Session_: Proporções
 #     - _Dataviz Code Session_: Dados Geoespaciais
 #     - [_Dataviz Code Session_: Dados Multidimensionais](24-dcs-multidimensional.ipynb)
