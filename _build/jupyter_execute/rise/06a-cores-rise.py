@@ -29,20 +29,20 @@
 # 
 # - Várias escalas de cores qualitativas ou _mapas de cores_ (ex. 6, 10 e 14 cores segundo a paleta padrão)
 
-# In[2]:
+# In[4]:
 
 
 from seaborn import color_palette
 color_palette(n_colors=6)
 
 
-# In[3]:
+# In[5]:
 
 
 color_palette(n_colors=10)
 
 
-# In[4]:
+# In[6]:
 
 
 color_palette(n_colors=14)

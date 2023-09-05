@@ -61,15 +61,15 @@ df_br
 # - A maneira mais direta de comparar esses números é plotando um gráfico de barras. 
 # - Vamos testar a disposição vertical.
 
-# In[3]:
+# In[5]:
 
 
 import matplotlib.pyplot as plt
 import seaborn as sb
 
 fig, ax = plt.subplots(1,2,figsize=(12,3),constrained_layout=True)
-g1 = sb.barplot(data=df_us,x='Filme',y='Bilheteria (M US$)',hue=None,errorbar=None,orient='v',ax=ax[0])
-g2 = sb.barplot(data=df_br,x='Filme',y='Bilheteria (M US$)',hue=None,errorbar=None,orient='v',ax=ax[1])
+g1 = sb.barplot(data=df_us,x='Filme',y='Bilheteria (M US$)',hue=None,ci=None,orient='v',ax=ax[0])
+g2 = sb.barplot(data=df_br,x='Filme',y='Bilheteria (M US$)',hue=None,ci=None,orient='v',ax=ax[1])
 
 g1.set_title('Top 10 do cinema 2022 - EUA')
 g2.set_title('Top 10 do cinema 2022 - Brasil');
@@ -78,12 +78,12 @@ g2.set_title('Top 10 do cinema 2022 - Brasil');
 # - A pergunta é: quais são os filmes?! A identificação dos nomes dos filmes está prejudicada porque são legendas longas. 
 # - Vamos testar com rotação.
 
-# In[4]:
+# In[6]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(12,6),constrained_layout=True)
-g1 = sb.barplot(data=df_us,x='Filme',y='Bilheteria (M US$)',hue=None,errorbar=None,orient='v',ax=ax[0])
-g2 = sb.barplot(data=df_br,x='Filme',y='Bilheteria (M US$)',hue=None,errorbar=None,orient='v',ax=ax[1])
+g1 = sb.barplot(data=df_us,x='Filme',y='Bilheteria (M US$)',hue=None,ci=None,orient='v',ax=ax[0])
+g2 = sb.barplot(data=df_br,x='Filme',y='Bilheteria (M US$)',hue=None,ci=None,orient='v',ax=ax[1])
 
 g1.set_title('Top 10 do cinema 2022 - EUA')
 ax[0].tick_params(axis='x',rotation=90)
@@ -94,12 +94,12 @@ ax[1].tick_params(axis='x',rotation=90);
 # - O visual não parece bom porque os nomes ainda são difíceis de ler. 
 # - Vamos tentar com barras horizontais.
 
-# In[5]:
+# In[7]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(12,5),constrained_layout=True)
-g1 = sb.barplot(data=df_us,y='Filme',x='Bilheteria (M US$)',hue=None,errorbar=None,orient='h',ax=ax[0])
-g2 = sb.barplot(data=df_br,y='Filme',x='Bilheteria (M US$)',hue=None,errorbar=None,orient='h',ax=ax[1])
+g1 = sb.barplot(data=df_us,y='Filme',x='Bilheteria (M US$)',hue=None,ci=None,orient='h',ax=ax[0])
+g2 = sb.barplot(data=df_br,y='Filme',x='Bilheteria (M US$)',hue=None,ci=None,orient='h',ax=ax[1])
 
 g1.set_title('Top 10 do cinema 2022 - EUA')
 g2.set_title('Top 10 do cinema 2022 - Brasil');
@@ -118,7 +118,7 @@ g2.set_title('Top 10 do cinema 2022 - Brasil');
 
 # - Primeiramente, vamos localizar os filmes intersectantes
 
-# In[6]:
+# In[8]:
 
 
 df_merge = pd.merge(df_us,df_br,how='inner',on='Filme'); 
@@ -127,7 +127,7 @@ df_merge
 
 # - Vamos converter os valores das bilheterias em dólares para reais utilizando a taxa de câmbio PTAX 1:5.2171 (dezembro de 2022) e renomear as variáveis de dados.
 
-# In[7]:
+# In[9]:
 
 
 df_merge['Bilheteria - BR'] = df_merge['Bilheteria (M US$)_y']*5.2171
@@ -139,7 +139,7 @@ df_merge
 
 # - Em seguida, manipularemos os nossos dados para identificar cada filme e seu valor pela categoria "Local".
 
-# In[8]:
+# In[10]:
 
 
 # recria Dataframe para ter categoria 'Local'
@@ -169,7 +169,7 @@ g3.set_xlabels('Bilheteria (M R$)');
 #     - cada barra representa a soma, em reais, angariada por cada filme nos dois países e cada segmento as parcelas desta soma por localidade
 #     - interpretar resultados
 
-# In[9]:
+# In[11]:
 
 
 ax = sb.histplot(df_f,
@@ -191,7 +191,7 @@ ax.set_xlabel('Bilheteria (M R$)');
 # - Na RV abaixo, utilizamos a mesma fonte de dados para plotar as áreas de uma amostra de 35 municípios. 
 # - A escala logarítmica permite que tenhamos uma visão ampla da extensão em quilômetros quadrados por meio de potências de 10.
 
-# In[10]:
+# In[12]:
 
 
 from matplotlib.pyplot import subplots
@@ -224,7 +224,7 @@ set_palette("PiYG")
 fig, ax = subplots(1,1,figsize=(2,6),constrained_layout=False)
 f = lineplot(data=df,y='NM',x='AREA',marker='o',hue='AREA',markersize=7,linewidth=0,ax=ax)
 f.set(xscale='log')
-
+  
 # decoração
 ax.axis('tight'); 
 ax.grid(axis='both',which='both',alpha=0.5,); 
@@ -386,7 +386,7 @@ hq_7 = histplot(data=df_mq7,x='Peso (g)',stat='count',binwidth=0.1,ax=ax[1])
 #     - o último _plot_ contém as duas distribuições
 #     - vê-se que a curva "imita" o comportamento já visualizado no gráfico 
 
-# In[16]:
+# In[22]:
 
 
 from seaborn import kdeplot
@@ -398,7 +398,7 @@ ax[0].set_title('Matriz 2',fontsize=9)
 ax[1].set_title('Matriz 7',fontsize=9)
 ax[2].set_title('Matrizes 2 e 7',fontsize=9)
 
-bw=0.9
+bw=.8
 hq_2 = kdeplot(data=df_mq2,x='Peso (g)',fill=True,ax=ax[0],bw_adjust=bw,color='#ff8800',label=f'larg. banda={bw}')
 hq_2.legend(fontsize=6,loc='upper left')
 
@@ -412,7 +412,7 @@ kdeplot(data=df_mq7,x='Peso (g)',fill=True,ax=ax[2],bw_adjust=bw,label=f'larg. b
 
 # - No próximo exemplo, plotamos os histogramas juntamente com a curva estimada por _KDE_
 
-# In[17]:
+# In[24]:
 
 
 fig,ax = subplots(1,2,figsize=(8,2),constrained_layout=True,sharey=True)
@@ -435,12 +435,13 @@ hq_7 = histplot(data=df_mq7,x='Peso (g)',kde=True,stat='probability',binwidth=0.
 # - Exemplo: 
 #     - Notas auferidas por estudantes de uma classe de Engenharia formada por 60 pessoas na primeira avaliação
 
-# In[18]:
+# In[25]:
 
 
 df_est = pd.read_csv('../data/estudantes-notas.csv')
 
-df_est
+df_est      
+
 # display
 #display(Markdown(df_est.to_markdown(index=False)))
 

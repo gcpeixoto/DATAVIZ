@@ -79,7 +79,7 @@ display(HTML('course-treemap.html'))
 # ### Módulo 2: Técnica (20h)
 # 
 # - Conteúdo (18h)
-#     - _Dataviz Code Session_: Quantidades
+#     - [_Dataviz Code Session_: Quantidades](20-dcs-quantidade.ipynb)
 #     - _Dataviz Code Session_: Distribuições
 #     - _Dataviz Code Session_: Proporções
 #     - _Dataviz Code Session_: Dados Geoespaciais
