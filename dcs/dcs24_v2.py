@@ -9,7 +9,7 @@ def import_comex_data(start_year = 2023, end_year = 2023) -> tuple:
    Importa os dados do Comexstats geral (http://comexstat.mdic.gov.br/pt/geral)
    de Importação e Exportação.
    
-   Parametros
+   Parâmetros
    -------------
    start_year: int
       Ano inicial da pesquisa.
