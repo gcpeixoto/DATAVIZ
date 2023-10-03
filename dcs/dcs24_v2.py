@@ -4,12 +4,26 @@ import pandas as pd
 import asyncio
 import aiohttp
 
-def import_comex_data(start_year = 2023, end_year = 2023) -> tuple:
+async def fetch(s, url):
+   async with s.get(url) as r:
+      if r.status != 200:
+         return 0
+      return await r.text()
+
+async def fetch_all(s, urls):
+   tasks = []
+   for url in urls:
+      task = asyncio.create_task(fetch(s, url))
+      tasks.append(task)
+   res = await asyncio.gather(*tasks)
+   return res
+
+async def import_comex_data(start_year = 2023, end_year = 2023) -> tuple:
    """
    Importa os dados do Comexstats geral (http://comexstat.mdic.gov.br/pt/geral)
    de Importação e Exportação.
    
-   Parâmetros
+   Parametros
    -------------
    start_year: int
       Ano inicial da pesquisa.
@@ -21,7 +35,6 @@ def import_comex_data(start_year = 2023, end_year = 2023) -> tuple:
    tuple
       Tupla com dataframe exportação e dataframe importação, respectivamente.
    """
-   
    estados_url = "http://api.comexstat.mdic.gov.br/pt/location/states?filter=%7B%22id%22:%22noUf%22,%22text%22:%22UF%20do%20Produto%22,%22route%22:%22/pt/location/states%22,%22type%22:%221%22,%22group%22:%22gerais%22,%22groupText%22:%22Gerais%22,%22hint%22:%22fieldsForm.general.noUf.description%22,%22placeholder%22:%22UFs%20do%20Produto%22%7D"
    lista_estados = [x["id"] for x in json.loads(requests.get(estados_url).text)]
 
@@ -31,30 +44,14 @@ def import_comex_data(start_year = 2023, end_year = 2023) -> tuple:
 
    exp_urls = list(map(base_exp_url, lista_estados))
    imp_urls = list(map(base_imp_url, lista_estados))
-
-   async def fetch(s, url):
-      async with s.get(url) as r:
-         if r.status != 200:
-            return 0
-         return await r.text()
-
-   async def fetch_all(s, urls):
-      tasks = []
-      for url in urls:
-         task = asyncio.create_task(fetch(s, url))
-         tasks.append(task)
-      res = await asyncio.gather(*tasks)
-      return res
-
-   async def main():
-      async with aiohttp.ClientSession() as session:
-         exp_dfs, imp_dfs = await fetch_all(session, exp_urls), await fetch_all(session, imp_urls)
    
-         return (
-            pd.concat([pd.DataFrame(json.loads(x)['data']['list']) for x in exp_dfs if x != 0], ignore_index = True),
-            pd.concat([pd.DataFrame(json.loads(x)['data']['list']) for x in imp_dfs if x != 0], ignore_index = True),
-         )
-            
-   return asyncio.run(main())
+   async with aiohttp.ClientSession() as session:
+      exp_dfs, imp_dfs = await fetch_all(session, exp_urls), await fetch_all(session, imp_urls)
 
-# df_exp, df_imp = import_comex_data()
+      return (
+         pd.concat([pd.DataFrame(json.loads(x)['data']['list']) for x in exp_dfs if x != 0], ignore_index = True),
+         pd.concat([pd.DataFrame(json.loads(x)['data']['list']) for x in imp_dfs if x != 0], ignore_index = True),
+      )
+
+# df_exp, df_imp = asyncio.run(import_comex_data()) --> for .py scripts
+# df_exp, df_imp = asyncio.run(await import_comex_data()) --> for .ipynb script
