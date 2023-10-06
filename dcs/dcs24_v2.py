@@ -42,7 +42,8 @@ async def import_comex_data(year=2023) -> tuple:
     meses = [("01", "Janeiro"), ("02", "Fevereiro"), ("03", "Mar"), ("04", "Abril"), ("05", "Maio"), ("06", "Junho"), ("07", "Julho"), 
              ("08", "Agosto"), ("09", "Setempro"), ("10", "Outubro"), ("11", "Novembro"), ("12", "Dezembro")]
     
-    exp_urls = imp_urls = list()
+    exp_urls = list()
+    imp_urls = list()
     
     for id_estado in lista_estados:
         for mes_num, mes in meses:
