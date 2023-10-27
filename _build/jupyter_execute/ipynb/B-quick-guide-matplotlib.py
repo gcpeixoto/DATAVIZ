@@ -5,7 +5,7 @@
 
 # - Plotagem genérica em modo explícito (interface "OO-like")
 
-# In[28]:
+# In[1]:
 
 
 import matplotlib.pyplot as plt
@@ -25,7 +25,7 @@ fig, ax = plt.subplots(nrows=3,
 
 # - Controle da escala de eixos
 
-# In[29]:
+# In[2]:
 
 
 fig, ax = plt.subplots(1,6,figsize=(10,2),constrained_layout=True)
@@ -58,7 +58,7 @@ ax[5].set_xlim(-3,5); ax[5].set_ylim(-2,4); # 2a. forma
 
 # - Visibilidade de eixos
 
-# In[30]:
+# In[3]:
 
 
 fig, ax = plt.subplots(1,5,figsize=(10,2),constrained_layout=True)
@@ -89,7 +89,7 @@ ax[4].spines.right.set_visible(False)
 #     - `gs = fig.add_gridspec(m,n)`: cria mosaico
 #     - `fig.add_subplot(gs[m:,n:])`: posiciona plot no mosaico
 
-# In[31]:
+# In[4]:
 
 
 fig = plt.figure(figsize=(6,2),constrained_layout=True) # figura de background
@@ -107,7 +107,7 @@ for eixo in fig.axes:
 
 # - 'gridspec' com larguras e alturas variáveis
 
-# In[32]:
+# In[5]:
 
 
 fig = plt.figure(constrained_layout=True)
@@ -128,7 +128,7 @@ for row in range(3):
 
 # - 'subgridspec'
 
-# In[33]:
+# In[6]:
 
 
 f = plt.figure(constrained_layout=True)
@@ -148,7 +148,7 @@ for a in range(2):
 
 # - Eixos embutidos
 
-# In[34]:
+# In[7]:
 
 
 fig, ax = plt.subplots(figsize=(2,2),constrained_layout=True)
@@ -162,7 +162,7 @@ ax2.get_yaxis().set_visible(False)
 
 # - Eixos apensados
 
-# In[35]:
+# In[8]:
 
 
 import numpy as np
@@ -199,7 +199,7 @@ ax_bot.get_xaxis().set_visible(False); ax_top.get_yaxis().set_visible(False)
 
 # ## Estilo de linha e _cap_
 
-# In[36]:
+# In[9]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(6,2),constrained_layout=True)
@@ -230,7 +230,7 @@ ax[1].yaxis.set_visible(False)
 
 # ## Marcadores
 
-# In[37]:
+# In[10]:
 
 
 markers = ['.','o','s','P','X','*','p','D','<','>','^','v',              '1','2','3','4','+','x','|','_',4,5,6,7,          '$\\int$','$\\dagger$' ]
@@ -247,8 +247,15 @@ ax.axis('tight');
 
 
 # ## Controle de ticks e labels
+# 
+# - Controle de ticks dado pelo módulo `matplotlib.ticker`
+# - Customização baseada em 4 pares de métodos básicos de _locators_ e _formatters_:
+#     - `ax.xaxis.set_major_locator()` e `ax.yaxis.set_major_locator()`
+#     - `ax.xaxis.set_minor_locator()` e `ax.yaxis.set_minor_locator()`
+#     - `ax.xaxis.set_major_formatter()` e `ax.yaxis.set_major_formatter()`
+#     - `ax.xaxis.set_minor_formatter()` e `ax.yaxis.set_minor_formatter()`
 
-# In[38]:
+# In[11]:
 
 
 from matplotlib.ticker import MultipleLocator as ML
@@ -261,7 +268,7 @@ ax[1].set_xlim(1,2)
 ax[1].xaxis.set_minor_locator (ML(0.01))
 
 
-# In[52]:
+# In[12]:
 
 
 fig, ax = plt.subplots(figsize=(8,1))
@@ -272,7 +279,7 @@ ax.tick_params(axis='x' ,which='minor', rotation=90, labelsize=8)
 ax.set_xticklabels(ax.get_xticks(),weight='bold');
 
 
-# In[40]:
+# In[13]:
 
 
 import matplotlib.pyplot as plt, matplotlib.ticker as mticker
@@ -286,11 +293,99 @@ ax.set_xticklabels(['a','b','c'])
 ax.xaxis.set_tick_params(rotation=45, labelsize=16) # Other solution: ax.tick_params(axis='x', rotation=25)
 
 
-# ##
+# ### Controle de ticks em formato de datas
+# 
+# - Controle dado pelo método `matplotlib.dates`
+# - Aplicar _locators_ para dia, mês, ano, dia de semana etc.
+
+# In[14]:
+
+
+import matplotlib.dates as mdates
+import numpy as np
+import datetime
+
+period = 60
+x = [datetime.date(2023,1,1) + datetime.timedelta(days=i) for i in range(period)]
+y = np.random.rand(period)
+
+fig, ax = plt.subplots(4,1,figsize=(8,4),constrained_layout=True)
+
+# dia
+ax[0].plot(x,y)
+ax[0].xaxis.set_major_locator(mdates.DayLocator(interval=2)) # intervalo de 2 dias
+ax[0].tick_params(axis='x' ,which='major', rotation=90, labelsize=8)
+
+# semana
+ax[1].plot(x,y)
+ax[1].xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+ax[1].tick_params(axis='x' ,which='major', rotation=90, labelsize=8)
+
+# mês
+ax[2].plot(x,y)
+ax[2].xaxis.set_major_locator(mdates.MonthLocator(interval=1))
+
+# ano
+period = 720
+x2 = [datetime.date(2023,1,1) + datetime.timedelta(days=i) for i in range(period)]
+y2 = np.random.rand(period)
+ax[3].plot(x2,y2)
+ax[3].xaxis.set_major_locator(mdates.YearLocator())
+
+fig.suptitle('Controle de datas: dia; semana; mês; ano');
+
+
+# - Aplicar _formatters_ para tipos de strings. Placeholders aceitos:
+#     - `%Y`: Ano com século como um número decimal (por exemplo, 2023).
+#     - `%y`: Ano sem o século como um número decimal (por exemplo, 23 para 2023).
+#     - `%m`: Mês como um número decimal com zero à esquerda (por exemplo, 04 para abril).
+#     - `%d`: Dia do mês como um número decimal com zero à esquerda (por exemplo, 15).
+#     - `%H`: Hora (relógio de 24 horas) como um número decimal com zero à esquerda (por exemplo, 09).
+#     - `%M`: Minuto como um número decimal com zero à esquerda (por exemplo, 05).
+#     - `%S`: Segundo como um número decimal com zero à esquerda (por exemplo, 07).
+#     - `%A`: Nome completo do dia da semana (por exemplo, "Domingo").
+#     - `%a`: Nome abreviado do dia da semana (por exemplo, "Dom").
+#     - `%B`: Nome completo do mês (por exemplo, "Abril").
+#     - `%b` ou `%h`: Nome abreviado do mês (por exemplo, "Abr").
+#     - `%j`: Dia do ano como um número decimal com zero à esquerda (por exemplo, 105 para 15 de abril).
+#     - `%U`: Número da semana do ano (domingo como o primeiro dia da semana) como um número decimal com zero à esquerda.
+#     - `%W`: Número da semana do ano (segunda-feira como o primeiro dia da semana) como um número decimal com zero à esquerda.
+#     - `%Z`: Nome do fuso horário (por exemplo, "UTC" ou "EST").
+#     - `%%`: Um caractere '%' literal.
+# 
+
+# In[15]:
+
+
+fig, ax = plt.subplots(4,1,figsize=(8,4),constrained_layout=True)
+
+# dia
+ax[0].plot(x,y)
+ax[0].xaxis.set_major_locator(mdates.DayLocator(interval=5)) 
+ax[0].xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+ax[0].tick_params(axis='x' ,which='major', rotation=45, labelsize=8)
+
+ax[1].plot(x,y)
+ax[1].xaxis.set_major_locator(mdates.DayLocator(interval=5)) 
+ax[1].xaxis.set_major_formatter(mdates.DateFormatter('%A-%d'))
+ax[1].tick_params(axis='x' ,which='major', rotation=45, labelsize=8)
+
+ax[2].plot(x,y)
+ax[2].xaxis.set_major_locator(mdates.DayLocator(interval=7)) 
+ax[2].xaxis.set_major_formatter(mdates.DateFormatter('%Y, w%U d%j (%a) : %Z'))
+ax[2].tick_params(axis='x' ,which='major', rotation=30, labelsize=8)
+
+ax[3].plot(x,y)
+ax[3].xaxis.set_major_locator(mdates.DayLocator(interval=10)) 
+ax[3].xaxis.set_major_formatter(mdates.DateFormatter('%d/%b'))
+ax[3].tick_params(axis='x' ,which='major', rotation=30, labelsize=8)
+
+fig.suptitle('Formatação de datas');
+
 
 # ## Impressão de propriedades padronizadas/customizadas
 
-# In[41]:
+# In[16]:
 
 
 def get_prop(prop):
@@ -308,7 +403,7 @@ def get_prop(prop):
 
 # ## Impressão de paletas de cores disponíveis
 
-# In[42]:
+# In[17]:
 
 
 def print_palette(opt):
@@ -336,7 +431,7 @@ def print_palette(opt):
 
 # ## Renderização de Latex
 
-# In[62]:
+# In[19]:
 
 
 from matplotlib.pyplot import xlabel, ylabel
@@ -347,7 +442,8 @@ rc('text', usetex=True)
 rc('axes', linewidth=2)
 rc('font', weight='bold')
 
-
+x = np.arange(4)
+y = x
 fig, ax = plt.subplots(figsize=(3,3))
 ax.plot(x,x)
 xlabel(r'\textbf{X-AXIS}', fontsize=10);
