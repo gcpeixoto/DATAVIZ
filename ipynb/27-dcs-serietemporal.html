@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>13. Dataviz Code Session: Séries Temporais &#8212; Introdução à Visualização de Dados</title>
+    <title>16. Dataviz Code Session: Séries Temporais &#8212; Introdução à Visualização de Dados</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. Dataviz Workshop: Dashboarding com Dash" href="30-dw-dash.html" />
-    <link rel="prev" title="12. Dataviz Code Session: Visualização Científica" href="26-dcs-cientifica.html" />
+    <link rel="next" title="17. Dataviz Workshop: Dashboarding com Dash" href="30-dw-dash.html" />
+    <link rel="prev" title="15. Dataviz Code Session: Visualização Científica" href="26-dcs-cientifica.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -183,8 +183,35 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="24-dcs-multidimensional.html">
+  <a class="reference internal" href="20-dcs-quantidade.html">
    10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   13.
    <em>
     Dataviz Code Session
    </em>
@@ -193,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="25-dcs-redes.html">
-   11.
+   14.
    <em>
     Dataviz Code Session
    </em>
@@ -202,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="26-dcs-cientifica.html">
-   12.
+   15.
    <em>
     Dataviz Code Session
    </em>
@@ -211,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   13.
+   16.
    <em>
     Dataviz Code Session
    </em>
@@ -227,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="30-dw-dash.html">
-   14.
+   17.
    <em>
     Dataviz Workshop
    </em>
@@ -243,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   15.
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -256,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   16.
+   19.
    <em>
     Dataviz Workshop
    </em>
@@ -484,51 +511,51 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos-da-dcs">
-   13.1. Objetivos da DCS
+   16.1. Objetivos da DCS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ferramentas-utilizadas">
-   13.2. Ferramentas utilizadas
+   16.2. Ferramentas utilizadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
-   13.3. Aplicação do modelo referencial
+   16.3. Aplicação do modelo referencial
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
-   13.4. Dados de entrada pré-processados
+   16.4. Dados de entrada pré-processados
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#processamento-adicional">
-     13.4.1. Processamento adicional
+     16.4.1. Processamento adicional
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mapeamento">
-   13.5. Mapeamento
+   16.5. Mapeamento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizacao">
-   13.6. Visualização
+   16.6. Visualização
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterando-em-rvs-primarias">
-     13.6.1. Iterando em RVs primárias
+     16.6.1. Iterando em RVs primárias
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rv-finalistica">
-   13.7. RV finalística
+   16.7. RV finalística
   </a>
  </li>
 </ul>
@@ -552,51 +579,51 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos-da-dcs">
-   13.1. Objetivos da DCS
+   16.1. Objetivos da DCS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ferramentas-utilizadas">
-   13.2. Ferramentas utilizadas
+   16.2. Ferramentas utilizadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
-   13.3. Aplicação do modelo referencial
+   16.3. Aplicação do modelo referencial
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
-   13.4. Dados de entrada pré-processados
+   16.4. Dados de entrada pré-processados
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#processamento-adicional">
-     13.4.1. Processamento adicional
+     16.4.1. Processamento adicional
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mapeamento">
-   13.5. Mapeamento
+   16.5. Mapeamento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizacao">
-   13.6. Visualização
+   16.6. Visualização
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterando-em-rvs-primarias">
-     13.6.1. Iterando em RVs primárias
+     16.6.1. Iterando em RVs primárias
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rv-finalistica">
-   13.7. RV finalística
+   16.7. RV finalística
   </a>
  </li>
 </ul>
@@ -610,9 +637,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="dataviz-code-session-series-temporais">
-<h1><span class="section-number">13. </span><em>Dataviz Code Session</em>: Séries Temporais<a class="headerlink" href="#dataviz-code-session-series-temporais" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">16. </span><em>Dataviz Code Session</em>: Séries Temporais<a class="headerlink" href="#dataviz-code-session-series-temporais" title="Permalink to this headline">#</a></h1>
 <section id="objetivos-da-dcs">
-<h2><span class="section-number">13.1. </span>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.1. </span>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Aplicar técnicas de dataviz para plotagem e manipulação de séries temporais;</p></li>
 <li><p>Manipular séries temporais (STs) relativas a dados de repasses da arrecadação federal efetivados pela Secretaria Especial da Receita Federal do Brasil a outras entidades e fundos;</p></li>
@@ -620,7 +647,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="ferramentas-utilizadas">
-<h2><span class="section-number">13.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Módulos Python</p>
 <ul>
@@ -635,7 +662,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="aplicacao-do-modelo-referencial">
-<h2><span class="section-number">13.3. </span>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3. </span>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Vide <a class="reference internal" href="03a-estetica.html#cap-estetica"><span class="std std-numref">Capítulo 3</span></a>.</p></li>
 </ul>
@@ -655,7 +682,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="dados-de-entrada-pre-processados">
-<h2><span class="section-number">13.4. </span>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.4. </span>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># carrega dados da RFB</span>
@@ -671,7 +698,7 @@ Data loaded successfully.
 </div>
 </div>
 <section id="processamento-adicional">
-<h3><span class="section-number">13.4.1. </span>Processamento adicional<a class="headerlink" href="#processamento-adicional" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.4.1. </span>Processamento adicional<a class="headerlink" href="#processamento-adicional" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Listagem de entidades disponíveis para análise</p></li>
 </ul>
@@ -704,7 +731,7 @@ Data loaded successfully.
 </section>
 </section>
 <section id="mapeamento">
-<h2><span class="section-number">13.5. </span>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5. </span>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Criação de <em>string</em> representativa de temporalidade;</p></li>
 <li><p>Conversão de <em>string</em> para objeto <code class="docutils literal notranslate"><span class="pre">datetime</span></code>;</p></li>
@@ -758,9 +785,9 @@ Data loaded successfully.
 </div>
 </section>
 <section id="visualizacao">
-<h2><span class="section-number">13.6. </span>Visualização<a class="headerlink" href="#visualizacao" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.6. </span>Visualização<a class="headerlink" href="#visualizacao" title="Permalink to this headline">#</a></h2>
 <section id="iterando-em-rvs-primarias">
-<h3><span class="section-number">13.6.1. </span>Iterando em RVs primárias<a class="headerlink" href="#iterando-em-rvs-primarias" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.6.1. </span>Iterando em RVs primárias<a class="headerlink" href="#iterando-em-rvs-primarias" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Plotagem com eixo automaticamente controlado</p>
 <ul>
@@ -916,7 +943,7 @@ Data loaded successfully.
 </section>
 </section>
 <section id="rv-finalistica">
-<h2><span class="section-number">13.7. </span>RV finalística<a class="headerlink" href="#rv-finalistica" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.7. </span>RV finalística<a class="headerlink" href="#rv-finalistica" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Define função para plotar ST(s) específica(s) com alguma decoração.</p></li>
 </ul>
@@ -973,13 +1000,13 @@ Data loaded successfully.
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">12. </span><em>Dataviz Code Session</em>: Visualização Científica</p>
+            <p class="prev-next-title"><span class="section-number">15. </span><em>Dataviz Code Session</em>: Visualização Científica</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="30-dw-dash.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span><em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></p>
+        <p class="prev-next-title"><span class="section-number">17. </span><em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

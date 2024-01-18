@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Percepção Visual" href="05a-percepcao.html" />
@@ -185,8 +185,35 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="24-dcs-multidimensional.html">
+  <a class="reference internal" href="20-dcs-quantidade.html">
    10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   13.
    <em>
     Dataviz Code Session
    </em>
@@ -195,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="25-dcs-redes.html">
-   11.
+   14.
    <em>
     Dataviz Code Session
    </em>
@@ -204,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="26-dcs-cientifica.html">
-   12.
+   15.
    <em>
     Dataviz Code Session
    </em>
@@ -213,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="27-dcs-serietemporal.html">
-   13.
+   16.
    <em>
     Dataviz Code Session
    </em>
@@ -229,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="30-dw-dash.html">
-   14.
+   17.
    <em>
     Dataviz Workshop
    </em>
@@ -245,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   15.
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -258,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   16.
+   19.
    <em>
     Dataviz Workshop
    </em>
@@ -490,8 +517,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#serie-temporal-aleatoria">
-     4.1.1. Série temporal aleatória
+    <a class="reference internal nav-link" href="#sinal-estocastico">
+     4.1.1. Sinal estocástico
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -553,8 +580,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#serie-temporal-aleatoria">
-     4.1.1. Série temporal aleatória
+    <a class="reference internal nav-link" href="#sinal-estocastico">
+     4.1.1. Sinal estocástico
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -609,8 +636,9 @@ title="Print to PDF"
 <section id="sistemas-cartesianos-e-razoes-de-aspecto">
 <h2><span class="section-number">4.1. </span>Sistemas cartesianos e razões de aspecto<a class="headerlink" href="#sistemas-cartesianos-e-razoes-de-aspecto" title="Permalink to this headline">#</a></h2>
 <p>Vejamos um exemplo de como criar representações visuais cartesianas com diferentes razões de aspecto.</p>
-<section id="serie-temporal-aleatoria">
-<h3><span class="section-number">4.1.1. </span>Série temporal aleatória<a class="headerlink" href="#serie-temporal-aleatoria" title="Permalink to this headline">#</a></h3>
+<section id="sinal-estocastico">
+<h3><span class="section-number">4.1.1. </span>Sinal estocástico<a class="headerlink" href="#sinal-estocastico" title="Permalink to this headline">#</a></h3>
+<p>Um sinal estocástico (ou aleatório) é aquele em que nenhuma previsibilidade ou padrão são detectáveis. Comportamentos estocásticos estão presentes em eventos climáticos, ativos do mercado financeiro, sistemas eletrônicos e audiovisuais, atividades bioquímicas e em muitas outras áreas. Casos típicos buscam visualizar como uma dada grandeza varia em função do tempo.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -644,7 +672,7 @@ title="Print to PDF"
 <img alt="../_images/04a-eixos_3_7.png" src="../_images/04a-eixos_3_7.png" />
 </div>
 </div>
-<p>Dos casos anteriores, haja vista a natureza da informação plotada, qual opção seria considerada a mais adequada?</p>
+<p>Dos casos anteriores, haja vista a natureza da informação plotada, percebe-se que nem todas possuem um visual agradável. Na sua opinião, alguma representação visual é a mais adequada? Para tomar a decisão de escolha, que critério(s) você usaria?</p>
 </section>
 <section id="serie-temporal">
 <h3><span class="section-number">4.1.2. </span>Série temporal<a class="headerlink" href="#serie-temporal" title="Permalink to this headline">#</a></h3>
@@ -775,6 +803,10 @@ title="Print to PDF"
 <img alt="../_images/04a-eixos_11_0.png" src="../_images/04a-eixos_11_0.png" />
 </div>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>A metodologia do ranking global de universidades <a class="reference external" href="https://www.umultirank.org">U-Multirank</a> usa 36 indicadores divididos em 5 dimensões (ensino e aprendizagem, pesquisa, transferência de conhecimento, orientação internacional e engajamento regional) para avaliar o desempenho de uma instituição de ensino superior. Essas dimensões são representadas visualmente através de um “gráfico de raios de sol” (<a class="reference external" href="https://www.umultirank.org/press-media/media-center/infographics/">sunburst</a>), o qual, por sua vez, é construído sob um sistema de coordenadas polares. Porém, apenas as variações radiais (nível de excelência de uma dada dimensão) realmente importam.</p>
+</div>
 </section>
 <section id="sistemas-geoespaciais">
 <h2><span class="section-number">4.3. </span>Sistemas geoespaciais<a class="headerlink" href="#sistemas-geoespaciais" title="Permalink to this headline">#</a></h2>
@@ -792,20 +824,20 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04a-eixos_13_0.png" src="../_images/04a-eixos_13_0.png" />
+<img alt="../_images/04a-eixos_14_0.png" src="../_images/04a-eixos_14_0.png" />
 </div>
 </div>
 </section>
 <section id="visualizacoes-3d">
 <h2><span class="section-number">4.4. </span>Visualizações 3D<a class="headerlink" href="#visualizacoes-3d" title="Permalink to this headline">#</a></h2>
-<p>Visualizações bidimensionais são sempre preferíveis a tridimensionais devido à carga cognitiva exigida para interpretação da informação em 3D. Entretanto, nem sempre é possível atingir representações visuais satisfatórias com apenas 2 dimensões, especialmente quando a terceira dimensão possui variações. Este é o caso de uma superfície descrita como <span class="math notranslate nohighlight">\(z = f(x,y)\)</span> em que <span class="math notranslate nohighlight">\(z\)</span> é uma elevação de terreno, por exemplo. Eixos 3D são particularmente excelentes quando se quer interagir ou manipular o visual.</p>
+<p>Visualizações bidimensionais são sempre preferíveis a tridimensionais devido à carga cognitiva exigida para interpretação da informação em 3D. Entretanto, nem sempre é possível atingir representações visuais satisfatórias com apenas 2 dimensões, especialmente quando a terceira dimensão possui variações. Este é o caso de uma superfície descrita como <span class="math notranslate nohighlight">\(z = f(x,y)\)</span> em que <span class="math notranslate nohighlight">\(z\)</span> é uma elevação de terreno, por exemplo. Eixos 3D são particularmente excelentes quando se quer interagir com ou manipular o visual.</p>
 <section id="visualizacao-de-funcoes-matematicas">
 <h3><span class="section-number">4.4.1. </span>Visualização de funções matemáticas<a class="headerlink" href="#visualizacao-de-funcoes-matematicas" title="Permalink to this headline">#</a></h3>
 <p>O exemplo abaixo mostra como plotar a função dada por
-$<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
+<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
      \left[ \left( x -  \frac{a+b}{2} \right)^2  + \
-             \left( y -  \frac{c+d}{2} \right)^2 \right] },\)</span>$</p>
-<p>para o domínio bidimensional <span class="math notranslate nohighlight">\([a,b] \times [c,d]\)</span>.</p>
+             \left( y -  \frac{c+d}{2} \right)^2 \right] },\)</span>
+para o domínio bidimensional <span class="math notranslate nohighlight">\([a,b] \times [c,d]\)</span>. Esta função, em sentido genérico, poderia bem representar uma pequena montanha, um tipo de chapéu, ou mesmo uma protuberância, tal qual um puxão na pele ou uma ectasia corneana. Independentemente da aplicação, as representações visuais fornecidas forneceriam diferentes posto de vista para o fenômeno, ajudando o <em>viewer</em> a interpretá-lo melhor.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -860,8 +892,12 @@ $<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04a-eixos_17_0.png" src="../_images/04a-eixos_17_0.png" />
+<img alt="../_images/04a-eixos_18_0.png" src="../_images/04a-eixos_18_0.png" />
 </div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Curiosidade</p>
+<p>O <a class="reference external" href="https://pt.wikipedia.org/wiki/Ceratocone">ceratocone</a> é uma doença da córnea (estrutura do olho humano) que progride a curvatura normal dela, deixando-a cada vez mais no formato de um cone. Consequentemente, o elevado grau ocular faz com que a pessoa acometida da doença tenha uma visão superembaçada. De certa maneira, a superfície deformada da córnea pode ser aproximada por uma função matemática que, não surpreendentemente, dependerá de uma representação visual como a mostrada nesta seção para auxiliar oftalmologistas em seus diagnósticos.</p>
 </div>
 </section>
 <section id="visualizacao-de-dados-multidimensionais-categoricos">
