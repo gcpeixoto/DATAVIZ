@@ -270,9 +270,9 @@ dependencies:
   - pandas
   - matplotlib
   - seaborn
-  - plotly
+  - plotly  
   - scipy
-  - h5py
+  - h5py  
   - dash
   - geoviews
   - geopandas

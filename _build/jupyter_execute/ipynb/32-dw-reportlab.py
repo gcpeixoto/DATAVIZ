@@ -114,7 +114,7 @@ fig.write_image(imgout)
 
 # Por fim, a imagem é posta no PDF pela chamada da função de utilidade.
 
-# In[7]:
+# In[9]:
 
 
 img_to_pdf(pdfout,imgout,120,300,

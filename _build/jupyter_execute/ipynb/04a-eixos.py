@@ -13,7 +13,9 @@
 # 
 # Vejamos um exemplo de como criar representações visuais cartesianas com diferentes razões de aspecto.
 # 
-# ### Série temporal aleatória
+# ### Sinal estocástico
+# 
+# Um sinal estocástico (ou aleatório) é aquele em que nenhuma previsibilidade ou padrão são detectáveis. Comportamentos estocásticos estão presentes em eventos climáticos, ativos do mercado financeiro, sistemas eletrônicos e audiovisuais, atividades bioquímicas e em muitas outras áreas. Casos típicos buscam visualizar como uma dada grandeza varia em função do tempo.
 
 # In[261]:
 
@@ -37,7 +39,7 @@ for Lx in [2,4]:
         c += 1
 
 
-# Dos casos anteriores, haja vista a natureza da informação plotada, qual opção seria considerada a mais adequada?
+# Dos casos anteriores, haja vista a natureza da informação plotada, percebe-se que nem todas possuem um visual agradável. Na sua opinião, alguma representação visual é a mais adequada? Para tomar a decisão de escolha, que critério(s) você usaria?
 
 # ### Série temporal
 # 
@@ -155,6 +157,11 @@ ax.set_rmax(10)
 ax.set_title('Plotagem da função $\\theta(r) = \\frac{1}{2}r sen(r)$', va='center',fontsize=8);
 
 
+# ```{admonition} Curiosidade
+# :class: dropdown
+# A metodologia do ranking global de universidades [U-Multirank](https://www.umultirank.org) usa 36 indicadores divididos em 5 dimensões (ensino e aprendizagem, pesquisa, transferência de conhecimento, orientação internacional e engajamento regional) para avaliar o desempenho de uma instituição de ensino superior. Essas dimensões são representadas visualmente através de um "gráfico de raios de sol" ([sunburst](https://www.umultirank.org/press-media/media-center/infographics/)), o qual, por sua vez, é construído sob um sistema de coordenadas polares. Porém, apenas as variações radiais (nível de excelência de uma dada dimensão) realmente importam. 
+# ```
+
 # ## Sistemas geoespaciais
 # 
 # Sistemas geoespaciais são úteis para plotagem de dados cartográficos, mapas e geolocalizações.
@@ -173,16 +180,15 @@ ax.gridlines();
 
 # ## Visualizações 3D
 
-# Visualizações bidimensionais são sempre preferíveis a tridimensionais devido à carga cognitiva exigida para interpretação da informação em 3D. Entretanto, nem sempre é possível atingir representações visuais satisfatórias com apenas 2 dimensões, especialmente quando a terceira dimensão possui variações. Este é o caso de uma superfície descrita como $z = f(x,y)$ em que $z$ é uma elevação de terreno, por exemplo. Eixos 3D são particularmente excelentes quando se quer interagir ou manipular o visual.
+# Visualizações bidimensionais são sempre preferíveis a tridimensionais devido à carga cognitiva exigida para interpretação da informação em 3D. Entretanto, nem sempre é possível atingir representações visuais satisfatórias com apenas 2 dimensões, especialmente quando a terceira dimensão possui variações. Este é o caso de uma superfície descrita como $z = f(x,y)$ em que $z$ é uma elevação de terreno, por exemplo. Eixos 3D são particularmente excelentes quando se quer interagir com ou manipular o visual.
 
 # ### Visualização de funções matemáticas
 # 
 # O exemplo abaixo mostra como plotar a função dada por
-# $$f(x,y) = 4e^{ - \
+# $f(x,y) = 4e^{ - \
 #      \left[ \left( x -  \frac{a+b}{2} \right)^2  + \
-#              \left( y -  \frac{c+d}{2} \right)^2 \right] },$$
-# 
-# para o domínio bidimensional $[a,b] \times [c,d]$.
+#              \left( y -  \frac{c+d}{2} \right)^2 \right] },$
+# para o domínio bidimensional $[a,b] \times [c,d]$. Esta função, em sentido genérico, poderia bem representar uma pequena montanha, um tipo de chapéu, ou mesmo uma protuberância, tal qual um puxão na pele ou uma ectasia corneana. Independentemente da aplicação, as representações visuais fornecidas forneceriam diferentes posto de vista para o fenômeno, ajudando o _viewer_ a interpretá-lo melhor.
 
 # In[267]:
 
@@ -234,6 +240,12 @@ ax3.contourf(X,Y,Z,cmap=cm.jet)
 ax3.axis([a,b,c,d])
 ax3.set_title('Curvas de nível',fontsize=8);
 
+
+# ```{admonition} Curiosidade
+# :class: dropdown
+# O [ceratocone](https://pt.wikipedia.org/wiki/Ceratocone) é uma doença da córnea (estrutura do olho humano) que progride a curvatura normal dela, deixando-a cada vez mais no formato de um cone. Consequentemente, o elevado grau ocular faz com que a pessoa acometida da doença tenha uma visão superembaçada. De certa maneira, a superfície deformada da córnea pode ser aproximada por uma função matemática que, não surpreendentemente, dependerá de uma representação visual como a mostrada nesta seção para auxiliar oftalmologistas em seus diagnósticos. 
+# ```
+# 
 
 # ### Visualização de dados multidimensionais categóricos
 # 

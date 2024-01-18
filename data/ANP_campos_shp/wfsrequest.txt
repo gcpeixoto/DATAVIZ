@@ -1,0 +1,1 @@
+https://gishub.anp.gov.br/geoserver/BD_ANP/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=BD_ANP%3ACAMPOS_PRODUCAO_SIRGAS&maxFeatures=40000&outputFormat=SHAPE-ZIP

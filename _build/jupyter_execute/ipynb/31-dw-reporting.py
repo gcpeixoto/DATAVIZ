@@ -76,24 +76,27 @@ def html_data(table):
 
 # - Em seguida fazemos o carregamento dos dados que serão usados para compor o relatório. Na prática, poderia já ser um gráfico pós-processado.
 
-# In[3]:
+# In[4]:
 
 
 df = pd.read_csv('../data/crimes-pb-2015-2018.csv')
+df
 
 
 # - Fazemos o carregamento de um _template_ HTML para o relatório. Podemos ter tantos modelos para quantas forem as necessidades de projeto.
 
-# In[4]:
+# In[6]:
 
 
 # carregamento do modelo
 html_report_template = '../dw/reporting/report_template.html'
 
+get_ipython().system('cat ../dw/reporting/report_template.html')
+
 
 # - Por fim, escrevemos uma função de utilidade para converter o conteúdo de HTML para produzir o nosso PDF.
 
-# In[5]:
+# In[9]:
 
 
 # função de utilidade para conversão
@@ -116,7 +119,7 @@ def html_to_pdf(html_in, pdf_out):
 # 
 # No código abaixo, fazemos uma leve inserção de conteúdo no _template_, modificando o código-fonte HTML e exportando a saída para o documento `dw-report.pdf`.
 
-# In[6]:
+# In[15]:
 
 
 if __name__ == "__main__":
@@ -137,7 +140,11 @@ if __name__ == "__main__":
 
 # _Obs._: parte deste material é fictício. Qualquer semelhança com nomes, pessoas, factos ou situações da vida real terá sido mera coincidência.
 
-# 
+# In[16]:
+
+
+get_ipython().system("open '../dw/reporting/pdf-output/dw-report.pdf'")
+
 
 # ## Referências
 # 

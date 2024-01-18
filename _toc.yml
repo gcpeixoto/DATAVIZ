@@ -16,6 +16,9 @@ parts:
   - caption: Técnica
     numbered: true
     chapters:
+    - file: ipynb/20-dcs-quantidade.ipynb
+    - file: ipynb/21-dcs-distribuicoes.ipynb
+    - file: ipynb/23-dcs-geoespacial.ipynb
     - file: ipynb/24-dcs-multidimensional.ipynb
     - file: ipynb/25-dcs-redes.ipynb
     - file: ipynb/26-dcs-cientifica.ipynb

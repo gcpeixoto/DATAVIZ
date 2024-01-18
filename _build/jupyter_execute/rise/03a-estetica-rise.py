@@ -10,12 +10,6 @@
 # 
 # [gcpeixoto.github.com/DATAVIZ](http://gcpeixoto.github.com/DATAVIZ)
 
-# In[ ]:
-
-
-
-
-
 # ## Modelo referencial
 # 
 # - Componentes do modelo para geração de RVs:
@@ -98,7 +92,7 @@ for i in range(5):
 def print_h5_tree(name, obj):
     print(name, dict(obj.attrs))
 
-file_hdf = h5.File('../data/NEONDSTowerTemperatureData.hdf5','r')
+file_hdf = h5.File('../da ta/NEONDSTowerTemperatureData.hdf5','r')
 file_hdf.visititems(print_h5_tree)    
 
 
@@ -122,7 +116,7 @@ file_hdf.visititems(print_h5_tree)
 
 # #### Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos
 
-# In[17]:
+# In[1]:
 
 
 import pandas as pd
@@ -418,7 +412,7 @@ db = np.array(2*[str(i) + 'h' for i in range(0,24)])
 ax.xaxis.set_major_locator(mticker.FixedLocator(da))
 ax.set_xticklabels(db,fontsize=5)
 ax.tick_params(axis='x', labelsize=6)
-
+ 
 half = int(len(da)/2)
 
 ax.axvline(0,ls='--',lw=1,c='#d1886e',alpha=0.4)

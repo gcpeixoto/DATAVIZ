@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Marcos Históricos da Visualização de Dados" href="02a-historico.html" />
@@ -185,8 +185,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="24-dcs-multidimensional.html">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
    10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   12.
    <em>
     Dataviz Code Session
    </em>
@@ -195,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="25-dcs-redes.html">
-   11.
+   13.
    <em>
     Dataviz Code Session
    </em>
@@ -204,7 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="26-dcs-cientifica.html">
-   12.
+   14.
    <em>
     Dataviz Code Session
    </em>
@@ -213,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="27-dcs-serietemporal.html">
-   13.
+   15.
    <em>
     Dataviz Code Session
    </em>
@@ -229,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="30-dw-dash.html">
-   14.
+   16.
    <em>
     Dataviz Workshop
    </em>
@@ -245,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   15.
+   17.
    <em>
     Dataviz Workshop
    </em>
@@ -258,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   16.
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -963,29 +972,29 @@ A <a class="reference internal" href="#fig-integrity2"><span class="std std-numr
 <p class="admonition-title">Dica</p>
 <p>Crie um novo arquivo com <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">dataviz.yml</span></code>, então copie o conteúdo do arquivo YAML abaixo e cole.</p>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataviz.yml</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataviz.yml</span>
 
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dataviz</span><span class="w"></span>
-<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anaconda</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
-<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pandas</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">seaborn</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plotly</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scipy</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h5py</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dash</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoviews</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geopandas</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkx</span><span class="w"></span>
-<span class="nt">pip</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matplotlib-venn</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xhtml2pdf</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reportlab</span><span class="w"> </span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dataviz</span>
+<span class="nt">channels</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">anaconda</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pandas</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">matplotlib</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">seaborn</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">plotly</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scipy</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">h5py</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dash</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">geoviews</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">geopandas</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">networkx</span>
+<span class="nt">pip</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">matplotlib-venn</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">xhtml2pdf</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">reportlab</span> 
 </pre></div>
 </div>
 <p>Então,habilite o ambiente:</p>

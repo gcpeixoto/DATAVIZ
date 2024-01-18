@@ -287,7 +287,7 @@ crime_af.set_xlim(0,1);
 
 # A fim de criar as primeiras representações visuais para este grupo, usaremos dados estatísticos reais concernentes a ànalise de um processo de moldagem em uma linha de produção de uma indústria química do Rio Grande do Sul. O propósito da análise era investigar inconsistências do processo. A tabela a seguir registra massas de amostras extraídas de duas matrizes (2 e 7) ao longo de três dias a cada 30 minutos no período compreendido entre 07:00h e 13:00h ({cite:p}`saldanha2013analisando`).
 
-# In[337]:
+# In[14]:
 
 
 from IPython.display import display, Markdown
@@ -305,7 +305,7 @@ df_mq
 # 
 # Na figura a seguir plotamos histogramas para as massas dos produtos processados em cada uma das matrizes. Por brevidade, consideramos no histograma todos os valores registrados ao longo dos 3 dias. Observamos que há _lacunas_ nos histogramas pela ausência de massas reportadas nas respectivas massas.
 
-# In[45]:
+# In[15]:
 
 
 from seaborn import histplot
@@ -358,7 +358,7 @@ kdeplot(data=df_mq7,x='Peso (g)',fill=True,ax=ax[2],bw_adjust=bw,label=f'larg. b
 
 # No próximo exemplo, plotamos os histogramas juntamente com a curva estimada por _KDE_.
 
-# In[ ]:
+# In[17]:
 
 
 fig,ax = subplots(1,2,figsize=(8,2),constrained_layout=True,sharey=True)
@@ -378,7 +378,7 @@ hq_7 = histplot(data=df_mq7,x='Peso (g)',kde=True,stat='probability',binwidth=0.
 # Opostamente, _plots_ de densidade simplesmente mostram os dados de uma só vez, sem uso de parâmetros.
 # Para entender minimamente o conceito de _densidade cumulativa_, ou também de _densidade cumulativa empírica_ (representada pelo acrônimo ECDF), usaremos um rol de dados que contém a nota auferida por estudantes de uma classe de Engenharia formada por 60 pessoas na primeira avaliação. A tabela pode ser encontrada a seguir.
 
-# In[338]:
+# In[18]:
 
 
 df_est = pd.read_csv('../data/estudantes-notas.csv')
@@ -394,7 +394,7 @@ df_est
 # 
 # Em segundo lugar, sob o ponto de vista de proporção. Neste caso particular, a nota de cada estudante é disposta no eixo horizontal, enquanto que no eixo vertical consta a proporção de estudantes que atingiram determinada nota. A curva é idêntica, mas podemos verificar rapidamente o ranqueamento por percentuais. Por exemplo, o gráfico mostra que em torno de 25% da turma conseguiu nota, no máximo de 6,0.
 
-# In[44]:
+# In[19]:
 
 
 from seaborn import ecdfplot
@@ -424,7 +424,7 @@ fe2 = ecdfplot(data=df_est,x='Nota',stat='proportion',ax=ax[1])
 # 
 # Feitos esses passos, conseguimos gerar o seguinte gráfico de teste.
 
-# In[68]:
+# In[20]:
 
 
 from seaborn_qqplot import pplot
@@ -453,7 +453,7 @@ qq = pplot(data=df_est, x='Nota teórica',y='Nota',
 # 
 # Abaixo fazemos 
 
-# In[274]:
+# In[21]:
 
 
 from pandas import read_excel
@@ -464,7 +464,7 @@ df_parr = df_parr.drop(df_parr[df_parr['Classificação'] == '-'].index).reset_i
 df_parr
 
 
-# In[279]:
+# In[22]:
 
 
 df_parr_grp = df_parr.groupby('Classificação').sum()
@@ -492,7 +492,7 @@ sb.despine(ax=ax); ax.spines['left'].set_visible(False)
 
 # ### Fatias
 
-# In[298]:
+# In[23]:
 
 
 labels = df_parr_grp.index.to_list()
@@ -509,7 +509,7 @@ ax.set_title('Produção por classificação');
 
 # Vamos fazer um comparativo de um grupo de artistas que apenas cantam, apenas atuam ou cantam e atuam. A tabela está disposta a seguir:
 
-# In[32]:
+# In[24]:
 
 
 from matplotlib.pyplot import subplots
@@ -521,7 +521,7 @@ df_arts
 
 # Para plotar diagramas de Venn, é necessário instalar o módulo `matplotlib_venn` (use `pip`). Na representação simples abaixo, temos os conjuntos variando o diâmetro em função da cardinalidade de seus elementos.
 
-# In[334]:
+# In[25]:
 
 
 sn = df_arts[(df_arts['Canta'] == 'sim') & (df_arts['Atua'] == 'não')]
@@ -536,7 +536,7 @@ venn2(subsets=(len(sn),len(ss),len(ns)),
 # 
 # O diagrama de árvore estruturada (_treemap_) permite seccionar um todo em áreas representativas, como mostramos na apresentação deste curso. O _treemap_ abaixo exibe o conteúdo deste curso em termos de quadros de tamanhos que variam em função da carga horária aproximada dos módulos e avaliações. 
 
-# In[335]:
+# In[26]:
 
 
 import plotly.graph_objects as go
@@ -585,7 +585,7 @@ display(HTML('course-treemap.html'))
 # 
 # Este exemplo investiga a dispersão existente entre dois métodos que explicam o [crescimento fetal em função da semana gestacional](https://perinatology.com/calculators/Estimation%20of%20Fetal%20Weight%20and%20Age.htm). O gráfico à esquerda mostra a curva de Hadlock e de Duryea, ambas para o percentil 10. À direita, plotamos o gráfico de dispersão entre ambas as curvas para saber como elas se correlacionam. A existência de uma "barriga" abaixo da linha pontilhada mostra que elas, de fato, são diferentes, embora possuam uma tendência equivalente. Caso todos os pontos verdes estivessem sobre a reta tracejada, diríamos que elas seriam idênticas. Ou seja, a dispersão é baixa.
 
-# In[29]:
+# In[27]:
 
 
 from matplotlib import style
@@ -621,6 +621,48 @@ ax[1].set_ylabel('Duryea - 10th');
 # 
 # - coropletas, ou mapas coropléticos (_choropleth_), que colorem regiões do mapa para realizar associações com quantidades ou categorias.
 # - cartogramas, que se constituem em representações distorcidas ou simplificadas das regiões. Por exemplo, associar estados da federação a formas retangulares menores arranjadas sobre uma forma poligonal maior próxima ao formato do Brasil.
+
+# O exemplo a seguir é uma coropleta para a população brasileira segundo dados do IBGE para o Censo 2022. Os valores são exibidos na tabela.
+
+# In[28]:
+
+
+import json, geopandas as geo, pandas as pd, matplotlib.pyplot as plt
+from urllib.request import urlopen
+
+# A URL para raspar a população brasileira em 2020 
+# pode ser construída pelo Query Builder da API do IBGE.
+# Ver: https://servicodados.ibge.gov.br/api/docs/agregados?versao=3#api-bq
+
+# carrega o JSON, reconstroi daframe e limpa
+data = json.loads(urlopen('https://servicodados.ibge.gov.br/api/v3/agregados/4709/periodos/2022/variaveis/93?localidades=N3[all]').read())
+pop = pd.json_normalize(data[0]['resultados'][0]['series'])
+pop = pop.rename(columns={'localidade.nome':'UF','serie.2022':'Pop 2022'})
+pop = pop[['UF','Pop 2022']].sort_values(by='UF').reset_index(drop=True)
+pop['Pop 2022'] = pop['Pop 2022'].astype(float)
+
+# malha nacional
+geobr = geo.read_file('../data/gadm36_BRA_shp/gadm36_BRA_1.shp')
+
+
+# recupera polígonos de estados, visto que ordenação difere em ambos os dataframes
+geom = []
+for uf in pop.UF:
+    geom.append(geobr[geobr.NAME_1 == uf]['geometry'].values[0])
+pop['geometry'] = geom
+
+# cria objeto GeoDF
+pop = geo.GeoDataFrame(pop)
+
+# plota coropleta para população em 2022
+f,a = plt.subplots()
+pop.plot(ax=a,column='Pop 2022',
+         cmap="viridis", # Color palette
+         legend=True) # Add legend
+
+a.axis('off')
+a.set_title('População brasileira em 2022');
+
 
 # ## _Plots_ para visualizar incertezas
 # 

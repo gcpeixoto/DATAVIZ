@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>11. Dataviz Code Session: Redes Complexas &#8212; Introdução à Visualização de Dados</title>
+    <title>14. Dataviz Code Session: Redes Complexas &#8212; Introdução à Visualização de Dados</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. Dataviz Code Session: Visualização Científica" href="26-dcs-cientifica.html" />
-    <link rel="prev" title="10. Dataviz Code Session: Dados Multidimensionais" href="24-dcs-multidimensional.html" />
+    <link rel="next" title="15. Dataviz Code Session: Visualização Científica" href="26-dcs-cientifica.html" />
+    <link rel="prev" title="13. Dataviz Code Session: Dados Multidimensionais" href="24-dcs-multidimensional.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -185,8 +185,35 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="24-dcs-multidimensional.html">
+  <a class="reference internal" href="20-dcs-quantidade.html">
    10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   13.
    <em>
     Dataviz Code Session
    </em>
@@ -195,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11.
+   14.
    <em>
     Dataviz Code Session
    </em>
@@ -204,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="26-dcs-cientifica.html">
-   12.
+   15.
    <em>
     Dataviz Code Session
    </em>
@@ -213,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="27-dcs-serietemporal.html">
-   13.
+   16.
    <em>
     Dataviz Code Session
    </em>
@@ -229,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="30-dw-dash.html">
-   14.
+   17.
    <em>
     Dataviz Workshop
    </em>
@@ -245,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   15.
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -258,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   16.
+   19.
    <em>
     Dataviz Workshop
    </em>
@@ -486,27 +513,27 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos-da-dcs">
-   11.1. Objetivos da DCS
+   14.1. Objetivos da DCS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ferramentas-utilizadas">
-   11.2. Ferramentas utilizadas
+   14.2. Ferramentas utilizadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
-   11.3. Aplicação do modelo referencial
+   14.3. Aplicação do modelo referencial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
-     11.3.1. Dados de entrada pré-processados
+     14.3.1. Dados de entrada pré-processados
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#processamento-adicional">
-       11.3.1.1. Processamento adicional
+       14.3.1.1. Processamento adicional
       </a>
      </li>
     </ul>
@@ -515,24 +542,24 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mapeamento">
-   11.4. Mapeamento
+   14.4. Mapeamento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizacao">
-   11.5. Visualização
+   14.5. Visualização
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterando-em-rvs-primarias">
-     11.5.1. Iterando em RVs primárias
+     14.5.1. Iterando em RVs primárias
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rv-finalistica">
-   11.6. RV finalística
+   14.6. RV finalística
   </a>
  </li>
 </ul>
@@ -556,27 +583,27 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos-da-dcs">
-   11.1. Objetivos da DCS
+   14.1. Objetivos da DCS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ferramentas-utilizadas">
-   11.2. Ferramentas utilizadas
+   14.2. Ferramentas utilizadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
-   11.3. Aplicação do modelo referencial
+   14.3. Aplicação do modelo referencial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
-     11.3.1. Dados de entrada pré-processados
+     14.3.1. Dados de entrada pré-processados
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#processamento-adicional">
-       11.3.1.1. Processamento adicional
+       14.3.1.1. Processamento adicional
       </a>
      </li>
     </ul>
@@ -585,24 +612,24 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mapeamento">
-   11.4. Mapeamento
+   14.4. Mapeamento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizacao">
-   11.5. Visualização
+   14.5. Visualização
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterando-em-rvs-primarias">
-     11.5.1. Iterando em RVs primárias
+     14.5.1. Iterando em RVs primárias
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rv-finalistica">
-   11.6. RV finalística
+   14.6. RV finalística
   </a>
  </li>
 </ul>
@@ -616,16 +643,16 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="dataviz-code-session-redes-complexas">
-<h1><span class="section-number">11. </span><em>Dataviz Code Session</em>: Redes Complexas<a class="headerlink" href="#dataviz-code-session-redes-complexas" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">14. </span><em>Dataviz Code Session</em>: Redes Complexas<a class="headerlink" href="#dataviz-code-session-redes-complexas" title="Permalink to this headline">#</a></h1>
 <section id="objetivos-da-dcs">
-<h2><span class="section-number">11.1. </span>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.1. </span>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Aplicar técnicas de dataviz para plotagem e manipulação de representações visuais de redes simples e complexas.</p></li>
 <li><p>Elaborar RV para dados do comércio exterior, enfatizando fluxos de importação/exportação por meio de grafos.</p></li>
 </ul>
 </section>
 <section id="ferramentas-utilizadas">
-<h2><span class="section-number">11.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Módulos Python</p>
 <ul>
@@ -639,7 +666,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="aplicacao-do-modelo-referencial">
-<h2><span class="section-number">11.3. </span>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.3. </span>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Vide <a class="reference internal" href="03a-estetica.html#cap-estetica"><span class="std std-numref">Capítulo 3</span></a>.</p></li>
 </ul>
@@ -655,7 +682,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="dados-de-entrada-pre-processados">
-<h3><span class="section-number">11.3.1. </span>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1. </span>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Carregamento de dados</p></li>
 </ul>
@@ -680,7 +707,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="processamento-adicional">
-<h4><span class="section-number">11.3.1.1. </span>Processamento adicional<a class="headerlink" href="#processamento-adicional" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">14.3.1.1. </span>Processamento adicional<a class="headerlink" href="#processamento-adicional" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Fusões por código de país e meio de transporte</p></li>
 </ul>
@@ -739,7 +766,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="mapeamento">
-<h2><span class="section-number">11.4. </span>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.4. </span>Mapeamento<a class="headerlink" href="#mapeamento" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Criação de grafo para visualizar a rede de parcerias bilaterais do Brasil;</p></li>
 <li><p>Cada nó representa um país e cada aresta dirigida o fluxo de mercadorias;</p></li>
@@ -1378,9 +1405,9 @@ title="Print to PDF"
 </div>
 </section>
 <section id="visualizacao">
-<h2><span class="section-number">11.5. </span>Visualização<a class="headerlink" href="#visualizacao" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.5. </span>Visualização<a class="headerlink" href="#visualizacao" title="Permalink to this headline">#</a></h2>
 <section id="iterando-em-rvs-primarias">
-<h3><span class="section-number">11.5.1. </span>Iterando em RVs primárias<a class="headerlink" href="#iterando-em-rvs-primarias" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.5.1. </span>Iterando em RVs primárias<a class="headerlink" href="#iterando-em-rvs-primarias" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Vamos plotar os grafos de importação e exportação para a via e bloco escolhidos</p>
 <ul>
@@ -1577,7 +1604,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="rv-finalistica">
-<h2><span class="section-number">11.6. </span>RV finalística<a class="headerlink" href="#rv-finalistica" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.6. </span>RV finalística<a class="headerlink" href="#rv-finalistica" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Graph plot com adaptações</p></li>
 <li><p>Inclusão de legenda via patches</p></li>
@@ -1719,13 +1746,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10. </span><em>Dataviz Code Session</em>: Dados Multidimensionais</p>
+            <p class="prev-next-title"><span class="section-number">13. </span><em>Dataviz Code Session</em>: Dados Multidimensionais</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="26-dcs-cientifica.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span><em>Dataviz Code Session</em>: Visualização Científica</p>
+        <p class="prev-next-title"><span class="section-number">15. </span><em>Dataviz Code Session</em>: Visualização Científica</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -403,7 +403,7 @@ def get_prop(prop):
 
 # ## Impressão de paletas de cores disponíveis
 
-# In[17]:
+# In[1]:
 
 
 def print_palette(opt):

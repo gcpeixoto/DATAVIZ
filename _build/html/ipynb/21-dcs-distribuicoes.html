@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Dataviz Code Session: Distribuições &#8212; Introdução à Visualização de Dados</title>
+    <title>11. Dataviz Code Session: Distribuições &#8212; Introdução à Visualização de Dados</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. Dataviz Code Session: Dados Geoespaciais" href="23-dcs-geoespacial.html" />
+    <link rel="prev" title="10. Dataviz Code Session: Quantidades" href="20-dcs-quantidade.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -179,10 +181,37 @@ const thebe_selector_output = ".output, .cell_output"
   Técnica
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-dcs-quantidade.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="24-dcs-multidimensional.html">
-   10.
+   13.
    <em>
     Dataviz Code Session
    </em>
@@ -191,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="25-dcs-redes.html">
-   11.
+   14.
    <em>
     Dataviz Code Session
    </em>
@@ -200,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="26-dcs-cientifica.html">
-   12.
+   15.
    <em>
     Dataviz Code Session
    </em>
@@ -209,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="27-dcs-serietemporal.html">
-   13.
+   16.
    <em>
     Dataviz Code Session
    </em>
@@ -225,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="30-dw-dash.html">
-   14.
+   17.
    <em>
     Dataviz Workshop
    </em>
@@ -241,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   15.
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -254,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   16.
+   19.
    <em>
     Dataviz Workshop
    </em>
@@ -482,63 +511,63 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos-da-dcs">
-   Objetivos da DCS
+   11.1. Objetivos da DCS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ferramentas-utilizadas">
-   Ferramentas utilizadas
+   11.2. Ferramentas utilizadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
-   Aplicação do modelo referencial
+   11.3. Aplicação do modelo referencial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
-     Dados de entrada pré-processados
+     11.3.1. Dados de entrada pré-processados
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizacao-de-distribuicoes-univariadas">
-   Visualização de distribuições univariadas
+   11.4. Visualização de distribuições univariadas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kde-e-superposicao">
-     KDE e superposição
+     11.4.1. KDE e superposição
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#distribuicao-cumulativa">
-     Distribuição cumulativa
+     11.4.2. Distribuição cumulativa
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-tapete-ou-borla">
-     Plot tapete (ou borla)
+     11.4.3. Plot tapete (ou borla)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#superposicao-de-borlas">
-       Superposição de borlas
+       11.4.3.1. Superposição de borlas
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#outros-visuais">
-     Outros visuais
+     11.4.4. Outros visuais
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribuicoes-bivariadas">
-   Distribuições bivariadas
+   11.5. Distribuições bivariadas
   </a>
  </li>
 </ul>
@@ -562,63 +591,63 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objetivos-da-dcs">
-   Objetivos da DCS
+   11.1. Objetivos da DCS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ferramentas-utilizadas">
-   Ferramentas utilizadas
+   11.2. Ferramentas utilizadas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aplicacao-do-modelo-referencial">
-   Aplicação do modelo referencial
+   11.3. Aplicação do modelo referencial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dados-de-entrada-pre-processados">
-     Dados de entrada pré-processados
+     11.3.1. Dados de entrada pré-processados
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizacao-de-distribuicoes-univariadas">
-   Visualização de distribuições univariadas
+   11.4. Visualização de distribuições univariadas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kde-e-superposicao">
-     KDE e superposição
+     11.4.1. KDE e superposição
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#distribuicao-cumulativa">
-     Distribuição cumulativa
+     11.4.2. Distribuição cumulativa
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-tapete-ou-borla">
-     Plot tapete (ou borla)
+     11.4.3. Plot tapete (ou borla)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#superposicao-de-borlas">
-       Superposição de borlas
+       11.4.3.1. Superposição de borlas
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#outros-visuais">
-     Outros visuais
+     11.4.4. Outros visuais
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribuicoes-bivariadas">
-   Distribuições bivariadas
+   11.5. Distribuições bivariadas
   </a>
  </li>
 </ul>
@@ -632,9 +661,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="dataviz-code-session-distribuicoes">
-<h1><em>Dataviz Code Session</em>: Distribuições<a class="headerlink" href="#dataviz-code-session-distribuicoes" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">11. </span><em>Dataviz Code Session</em>: Distribuições<a class="headerlink" href="#dataviz-code-session-distribuicoes" title="Permalink to this headline">#</a></h1>
 <section id="objetivos-da-dcs">
-<h2>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.1. </span>Objetivos da DCS<a class="headerlink" href="#objetivos-da-dcs" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Aplicar técnicas de dataviz para plotagem e manipulação de representações visuais de distribuições.</p></li>
 <li><p>Elaborar RVs para dados de censo (Fonte: <a class="reference external" href="https://archive.ics.uci.edu/dataset/2/adult">UCI ML Repository</a>)</p>
@@ -645,7 +674,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="ferramentas-utilizadas">
-<h2>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.2. </span>Ferramentas utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Módulos Python</p>
 <ul>
@@ -657,7 +686,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="aplicacao-do-modelo-referencial">
-<h2>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.3. </span>Aplicação do modelo referencial<a class="headerlink" href="#aplicacao-do-modelo-referencial" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Vide <a class="reference internal" href="03a-estetica.html#cap-estetica"><span class="std std-numref">Capítulo 3</span></a>.</p></li>
 </ul>
@@ -673,7 +702,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="dados-de-entrada-pre-processados">
-<h3>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.1. </span>Dados de entrada pré-processados<a class="headerlink" href="#dados-de-entrada-pre-processados" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Carregamento de dados</p></li>
 </ul>
@@ -927,7 +956,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="visualizacao-de-distribuicoes-univariadas">
-<h2>Visualização de distribuições univariadas<a class="headerlink" href="#visualizacao-de-distribuicoes-univariadas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.4. </span>Visualização de distribuições univariadas<a class="headerlink" href="#visualizacao-de-distribuicoes-univariadas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Podemos usar <code class="docutils literal notranslate"><span class="pre">seaborn.displot</span></code> para plotagens gerais de distribuições:</p>
 <ul>
@@ -966,7 +995,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="kde-e-superposicao">
-<h3>KDE e superposição<a class="headerlink" href="#kde-e-superposicao" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>KDE e superposição<a class="headerlink" href="#kde-e-superposicao" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Com <code class="docutils literal notranslate"><span class="pre">kdeplot</span></code>, temos a curva estimada por núcleos, a qual pode ser superposta ao histograma por meio de <code class="docutils literal notranslate"><span class="pre">ax</span></code>.</p></li>
 </ul>
@@ -992,7 +1021,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="distribuicao-cumulativa">
-<h3>Distribuição cumulativa<a class="headerlink" href="#distribuicao-cumulativa" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.2. </span>Distribuição cumulativa<a class="headerlink" href="#distribuicao-cumulativa" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Distribuições cumulativas empíricas podem ser plotadas com <code class="docutils literal notranslate"><span class="pre">ecdfplot</span></code>.</p></li>
 </ul>
@@ -1021,7 +1050,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="plot-tapete-ou-borla">
-<h3>Plot tapete (ou borla)<a class="headerlink" href="#plot-tapete-ou-borla" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.3. </span>Plot tapete (ou borla)<a class="headerlink" href="#plot-tapete-ou-borla" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>O <code class="docutils literal notranslate"><span class="pre">rugplot</span></code> é uma representação visual que adiciona traços similares a ticks no gráfico. O nome  “rug” (tapete) deriva da lembrança de um tapete aberto com suas borlas (franjas) destacadas.</p>
 <ul>
@@ -1048,7 +1077,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="superposicao-de-borlas">
-<h4>Superposição de borlas<a class="headerlink" href="#superposicao-de-borlas" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">11.4.3.1. </span>Superposição de borlas<a class="headerlink" href="#superposicao-de-borlas" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f4</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dfa</span><span class="p">,</span>
@@ -1080,7 +1109,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="outros-visuais">
-<h3>Outros visuais<a class="headerlink" href="#outros-visuais" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.4.4. </span>Outros visuais<a class="headerlink" href="#outros-visuais" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Mapa com displot</p></li>
 </ul>
@@ -1121,7 +1150,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="distribuicoes-bivariadas">
-<h2>Distribuições bivariadas<a class="headerlink" href="#distribuicoes-bivariadas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.5. </span>Distribuições bivariadas<a class="headerlink" href="#distribuicoes-bivariadas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Usamos <code class="docutils literal notranslate"><span class="pre">jointplot</span></code> para exibir densidades a partir de relações entre duas variáveis.</p>
 <ul>
@@ -1230,6 +1259,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="20-dcs-quantidade.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">10. </span><em>Dataviz Code Session</em>: Quantidades</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="23-dcs-geoespacial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span><em>Dataviz Code Session</em>: Dados Geoespaciais</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
