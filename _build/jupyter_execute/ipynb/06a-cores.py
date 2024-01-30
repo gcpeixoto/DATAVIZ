@@ -1023,3 +1023,4 @@ for k in range(1,5):
 # - [Colour spaces - perceptual, historical and applicational background, Tkalcic M. e Tasic, J.](https://web.archive.org/web/20090306063001/http://ldos.fe.uni-lj.si/docs/documents/20030929092037_markot.pdf)
 # - [Color Spaces, Rolf Kuehni](https://web.archive.org/web/20090306062959/http://www4.ncsu.edu/~rgkuehni/PDFs/ColSp.pdf)
 # - [Bruce Lindbloom.com](http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html)
+# - [coloria](https://github.com/coloria-dev/coloria)

@@ -25,9 +25,9 @@
 # 
 # - Ou seja, _Dash_ é um ecossistema que nos permite criar aplicações para exploração e visualização de dados para a web de forma rápida e totalmente em Python. 
 # 
-# - Basicamente, o _Dash_ é uma possui três componentes fundamentais:
+# - Basicamente, o _Dash_ possui três componentes fundamentais:
 #     - [_Flask_](https://flask.palletsprojects.com/en/2.3.x/): a ferramenta de _backend_;
-#     - [_Plotly_](https://plotly.com/python/): a feramenta que provê as bibliotecas de plotagem (em nosso caso, usamos Python);
+#     - [_Plotly_](https://plotly.com/python/): a ferramenta que provê as bibliotecas de plotagem (em nosso caso, usamos Python);
 #     - [_React_](https://react.dev): a ferramenta que fornece o arcabouço interativo e de _frontend_;
 # 
 # - Uma vez que o Dash tem a vantagem de facilitar o desenvolvimento de aplicações puramente em Python, não é necessário conhecer profundamente HTML, CSS ou Javascript, por exemplo.
