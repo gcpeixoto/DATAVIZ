@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Guia rápido de plotagem - seaborn" href="A-quick-guide-seaborn.html" />
@@ -182,17 +184,35 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="23-dcs-geoespacial.html">
+  <a class="reference internal" href="20-dcs-quantidade.html">
    10.
    <em>
     Dataviz Code Session
    </em>
-   : Dados geoespaciais
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="24-dcs-multidimensional.html">
-   12.
+   13.
    <em>
     Dataviz Code Session
    </em>
@@ -201,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="25-dcs-redes.html">
-   13.
+   14.
    <em>
     Dataviz Code Session
    </em>
@@ -210,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="26-dcs-cientifica.html">
-   14.
+   15.
    <em>
     Dataviz Code Session
    </em>
@@ -219,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="27-dcs-serietemporal.html">
-   15.
+   16.
    <em>
     Dataviz Code Session
    </em>
@@ -235,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="30-dw-dash.html">
-   16.
+   17.
    <em>
     Dataviz Workshop
    </em>
@@ -251,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   17.
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -264,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   18.
+   19.
    <em>
     Dataviz Workshop
    </em>
@@ -535,6 +555,15 @@ title="Print to PDF"
    Renderização de Latex
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pontos-vs-pixels-e-resolucao">
+   Pontos vs.
+   <em>
+    pixels
+   </em>
+   e resolução
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -597,6 +626,15 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#renderizacao-de-latex">
    Renderização de Latex
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pontos-vs-pixels-e-resolucao">
+   Pontos vs.
+   <em>
+    pixels
+   </em>
+   e resolução
   </a>
  </li>
 </ul>
@@ -1105,7 +1143,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_palette</span><span class="p">(</span><span class="n">opt</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Print matplotlib color pallete according to category.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print matplotlib color pallete according to category.</span>
 <span class="sd">       </span>
 <span class="sd">       Parameters:</span>
 <span class="sd">       opt (int): option for palette</span>
@@ -1153,6 +1191,34 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/B-quick-guide-matplotlib_35_0.png" src="../_images/B-quick-guide-matplotlib_35_0.png" />
+</div>
+</div>
+</section>
+<section id="pontos-vs-pixels-e-resolucao">
+<h2>Pontos vs. <em>pixels</em> e resolução<a class="headerlink" href="#pontos-vs-pixels-e-resolucao" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>O <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> usa pontos e não pixels para medir o tamanho de figuras. Por padrão, 1 pt <span class="math notranslate nohighlight">\(\approx\)</span> 1/72 inch.</p></li>
+<li><p>O controle de resolução da imagem pronta para publicação a ser gerada é feito pela alteração dos “pontos por polegada” (<em>dots per inch</em>), i.e. o argumento <code class="docutils literal notranslate"><span class="pre">dpi</span></code> na geração de imagens.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># controle de interpadding</span>
+                       <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+                       <span class="n">dpi</span><span class="o">=</span><span class="mi">50</span>                       
+                       <span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># controle de interpadding</span>
+                       <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+                       <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span>                    
+                       <span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/B-quick-guide-matplotlib_37_0.png" src="../_images/B-quick-guide-matplotlib_37_0.png" />
+<img alt="../_images/B-quick-guide-matplotlib_37_1.png" src="../_images/B-quick-guide-matplotlib_37_1.png" />
 </div>
 </div>
 </section>
