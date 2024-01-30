@@ -160,6 +160,7 @@ ax2.get_xaxis().set_visible(False)
 ax2.get_yaxis().set_visible(False)
 
 
+
 # - Eixos apensados
 
 # In[8]:
@@ -233,7 +234,9 @@ ax[1].yaxis.set_visible(False)
 # In[10]:
 
 
-markers = ['.','o','s','P','X','*','p','D','<','>','^','v',              '1','2','3','4','+','x','|','_',4,5,6,7,          '$\\int$','$\\dagger$' ]
+markers = ['.','o','s','P','X','*','p','D','<','>','^','v', \
+             '1','2','3','4','+','x','|','_',4,5,6,7, \
+         '$\\int$','$\\dagger$' ]
 
 fig, ax = plt.subplots(figsize=(5,8),constrained_layout=True)
 
@@ -448,4 +451,25 @@ fig, ax = plt.subplots(figsize=(3,3))
 ax.plot(x,x)
 xlabel(r'\textbf{X-AXIS}', fontsize=10);
 ylabel(r'f(x)', fontsize=10);
+
+
+# ## Pontos vs. _pixels_ e resolução
+# 
+# - O `matplotlib` usa pontos e não pixels para medir o tamanho de figuras. Por padrão, 1 pt $\approx$ 1/72 inch. 
+# - O controle de resolução da imagem pronta para publicação a ser gerada é feito pela alteração dos "pontos por polegada" (_dots per inch_), i.e. o argumento `dpi` na geração de imagens.
+
+# In[71]:
+
+
+fig, ax = plt.subplots(constrained_layout=True, # controle de interpadding
+                       figsize=(2,2),
+                       dpi=50                       
+                       ) 
+ax.scatter(1,1,s=20)
+
+fig, ax = plt.subplots(constrained_layout=True, # controle de interpadding
+                       figsize=(2,2),
+                       dpi=100                    
+                       ) 
+ax.scatter(1,1,s=20);
 

@@ -209,6 +209,7 @@ f7 = sb.jointplot(data=dfa,
            )
 
 
+
 # In[37]:
 
 
@@ -221,6 +222,7 @@ f7a = sb.jointplot(data=dfa,
            hue='sex',
            kind='hist' # 'scatter', 'hist', 'hex', 'kde', 'reg', 'resid']
            )
+
 
 
 # In[38]:
@@ -247,4 +249,5 @@ f7d = sb.pairplot(data=dfa,
            #kind='scatter' # 'scatter', 'hist', 'hex', 'kde', 'reg', 'resid'],
            diag_kind='hist'
            )
+
 

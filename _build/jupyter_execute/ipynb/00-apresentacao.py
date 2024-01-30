@@ -43,9 +43,16 @@ labels = ['Visualização de Dados',
     'Conteúdo 2','Estudo de caso 2',
     'Conteúdo 3','Projeto de visualização']
 
-parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
+parents = [''] + \
+    3*['Visualização de Dados'] + \
+    2*['Módulo 1'] + \
+    2*['Módulo 2'] + \
+    2*['Módulo 3'] 
 
-values = [0] +     [.33,.33,.33] +     [.9,.1,.9,.1] +     [.7,.3]
+values = [0] + \
+    [.33,.33,.33] + \
+    [.9,.1,.9,.1] + \
+    [.7,.3]
 
 f = go.Figure(go.Treemap(
     labels = labels,
@@ -81,8 +88,8 @@ display(HTML('course-treemap.html'))
 # - Conteúdo (18h)
 #     - [_Dataviz Code Session_: Quantidades](20-dcs-quantidade.ipynb)
 #     - [_Dataviz Code Session_: Distribuições](21-dcs-distribuicoes.ipynb)
-#     - _Dataviz Code Session_: Proporções
-#     - _Dataviz Code Session_: Dados Geoespaciais
+#     <!--- _Dataviz Code Session_: Proporções-->
+#     - [_Dataviz Code Session_: Dados Geoespaciais](23-dcs-geoespacial.ipynb)
 #     - [_Dataviz Code Session_: Dados Multidimensionais](24-dcs-multidimensional.ipynb)
 #     - [_Dataviz Code Session_: Redes Complexas](25-dcs-redes.ipynb)
 #     - [_Dataviz Code Session_: Visualização Científica](26-dcs-cientifica.ipynb)
@@ -95,21 +102,23 @@ display(HTML('course-treemap.html'))
 # 
 # - Conteúdo (14h)
 #     - _Dashboarding_ (6h)
-#         - [_Dashboarding_ com _Dash_](30-dw-dash.ipynb)
+#         - [Objetos gráficos e _Plotly Express_](28-dw-plotly.ipynb) (2h)
+#         - [_Dashboarding_ com _Dash_](30-dw-dash.ipynb) (4h)
 #     - _Reporting_ (4h)
 #         - [_Data Reporting_ com HTML/PDF](31-dw-reporting.ipynb)
-#         - [_Data Reporting_ com `reportlab`](32-dw-reportlab.ipynb)
+#         - [_Data Reporting_ com _reportlab_](32-dw-reportlab.ipynb)
 #     - _Business Intelligence_ (4h)
+#         - Seminários e demonstrações
 # 
 # - Avaliação (6h)
 #     - [Projeto Final de Visualização de Dados (PFVD)](capstone-template.ipynb) (6h)
 # 
 # ### Suplemento
 # 
-# - [Guia rápido de plotagem: _seaborn_ *](A-quick-guide-seaborn.ipynb)
-# - [Guia rápido de plotagem: _matplotlib_ *](B-quick-guide-matplotlib.ipynb)
+# - [Guia rápido de plotagem: _seaborn_](A-quick-guide-seaborn.ipynb)
+# - [Guia rápido de plotagem: _matplotlib_](B-quick-guide-matplotlib.ipynb)
 # 
-# **Obs./(*):** capítulos não linkados estão em construção.
+# <!--**Obs./(*):** capítulos não linkados estão em construção.-->
 
 # ## Metodologia de avaliação
 

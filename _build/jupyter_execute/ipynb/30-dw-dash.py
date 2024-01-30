@@ -66,14 +66,14 @@
 
 # ### Execução com _JupyterDash_
 # 
-# A execução diretamente via Jupyter notebook pode ser feita com a ajuda do módulo [JupyterDash](https://github.com/plotly/jupyter-dash) por meio da opção `app.run_server(mode='inline')`. Abaixo, criamos um _demo app_ nesses moldes.
+# A execução diretamente via VSCode ou Jupyter notebook pode ser feita com a ajuda do módulo [JupyterDash](https://github.com/plotly/jupyter-dash) por meio da opção `app.run_server(mode='inline')`. Abaixo, criamos um _demo app_ nesses moldes.
 
-# In[ ]:
+# In[3]:
 
 
 # boilerplate imports 
 import plotly.express as px
-from jupyter_dash import JupyterDash
+from dash import Dash #from jupyter_dash import JupyterDash
 from dash import html, dcc, Output, Input
 from pandas import read_csv
 
@@ -81,7 +81,7 @@ from pandas import read_csv
 df = read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
 
 # constroi app
-app = JupyterDash(__name__)
+app = Dash(__name__) #app = JupyterDash(__name__) 
 app.layout = html.Div([
     html.H1(children='Crescimento populacional por país', 
             style={'color':'#117029'}),
@@ -99,7 +99,7 @@ def update_graph(value):
     return px.line(dff, x='year', y='pop')
 
 # executa app e mostra resultado inline
-app.run_server(mode='inline',inline_exceptions=True,PORT=8050)
+app.run(mode='inline',inline_exceptions=True,PORT=8050) #app.run_server(mode='inline',inline_exceptions=True,PORT=8050)
 
 
 # ### Modos de visualização
