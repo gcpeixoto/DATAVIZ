@@ -160,7 +160,6 @@ ax2.get_xaxis().set_visible(False)
 ax2.get_yaxis().set_visible(False)
 
 
-
 # - Eixos apensados
 
 # In[8]:
@@ -234,9 +233,7 @@ ax[1].yaxis.set_visible(False)
 # In[10]:
 
 
-markers = ['.','o','s','P','X','*','p','D','<','>','^','v', \
-             '1','2','3','4','+','x','|','_',4,5,6,7, \
-         '$\\int$','$\\dagger$' ]
+markers = ['.','o','s','P','X','*','p','D','<','>','^','v',              '1','2','3','4','+','x','|','_',4,5,6,7,          '$\\int$','$\\dagger$' ]
 
 fig, ax = plt.subplots(figsize=(5,8),constrained_layout=True)
 
@@ -406,7 +403,7 @@ def get_prop(prop):
 
 # ## Impressão de paletas de cores disponíveis
 
-# In[1]:
+# In[17]:
 
 
 def print_palette(opt):
@@ -434,7 +431,7 @@ def print_palette(opt):
 
 # ## Renderização de Latex
 
-# In[19]:
+# In[30]:
 
 
 from matplotlib.pyplot import xlabel, ylabel
@@ -453,12 +450,16 @@ xlabel(r'\textbf{X-AXIS}', fontsize=10);
 ylabel(r'f(x)', fontsize=10);
 
 
+from matplotlib import rcdefaults
+rcdefaults()
+
+
 # ## Pontos vs. _pixels_ e resolução
 # 
 # - O `matplotlib` usa pontos e não pixels para medir o tamanho de figuras. Por padrão, 1 pt $\approx$ 1/72 inch. 
 # - O controle de resolução da imagem pronta para publicação a ser gerada é feito pela alteração dos "pontos por polegada" (_dots per inch_), i.e. o argumento `dpi` na geração de imagens.
 
-# In[71]:
+# In[31]:
 
 
 fig, ax = plt.subplots(constrained_layout=True, # controle de interpadding
@@ -473,3 +474,264 @@ fig, ax = plt.subplots(constrained_layout=True, # controle de interpadding
                        ) 
 ax.scatter(1,1,s=20);
 
+
+# ## Trabalhando com objetos geométricos primitivos (`patches`)
+
+# - Para o `matplotlib`, um `patch` é um objeto da classe `Artist` que representa uma geometria primitiva 2D com face e aresta. 
+# 
+# - Classes disponíveis: `Annulus`, `Arc`, `Arrow`, `CirclePolygon`, `Circle`, `ConnectionPatch`, `Ellipse`, `FancyArrowPatch`, `FancyArrow`, `FancyBboxPatch`, `Patch`, `PathPatch`, `Polygon`, `Rectangle`, `RegularPolygon`, `Shadow`, `StepPatch`, `Wedge`, 
+
+# ### Imprimindo subclasses de `Patch`
+
+# In[32]:
+
+
+import matplotlib.patches as ptc
+
+# Classes do módulo 'patches'. Nota: 'type' é a classe base para todas as classes em Python
+all_ptc_cls = [cls for cls in ptc.__dict__.values() if isinstance(cls, type)] 
+
+# Filtra as classes que herdam de Patch
+ptc_cls = [cls for cls in all_ptc_cls if issubclass(cls, ptc.Patch)]
+
+# Imprime os nomes das classes de Patch
+ptc_c = []
+for cls in ptc_cls:
+    ptc_c.append(cls.__name__)
+      #print(cls.__name__,end=', ')
+ptc_c = sorted(ptc_c)
+
+
+# ### Exemplos gerais
+# 
+# - TODO
+
+# In[33]:
+
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as ptc
+
+fig, ax = plt.subplots(3,6,figsize=(12,6),constrained_layout=True)
+
+for (i,_) in enumerate(ax.flatten()):
+    _.set_xticks([]); _.set_yticks([])
+    _.set_title(ptc_c[i], fontsize=10, fontname='Courier')
+
+# --- ANNULUS
+a1 = ptc.Annulus(xy=(0.2,0.2),
+                r=0.2, # circular: raio do círculo exterior
+                width=0.05, # espessura do anel
+                angle=30,
+                facecolor='green')
+
+a2 = ptc.Annulus(xy=(0.7,0.5),
+                r=(0.2,0.3), # elíptico: eixo menor, eixo maior da elipse exterior
+                width=0.1,
+                angle=70,
+                facecolor='orange')
+
+ax[0,0].add_patch(a1); ax[0,0].add_patch(a2) 
+
+
+# --- ARC
+b1 = ptc.Arc(xy=(0.5,0.5),
+             width=0.2,
+             height=0.2,
+             angle=0,
+             theta1=0,
+             theta2=180,
+             edgecolor='red')
+
+b2 = ptc.Arc(xy=(0.5,0.2),
+             width=0.8,
+             height=0.2,
+             angle=0,
+             theta1=180,
+             theta2=360,
+             facecolor='blue',
+             ls=':',
+             lw=2)
+
+ax[0,1].add_patch(b1); ax[0,1].add_patch(b2) 
+
+# --- ARROW
+c1 = ptc.Arrow(x=0.7,y=0.5, # cauda
+               dx=0.2,dy=0.0, # comprimento
+               width = 1.0, # escala
+               fill = False)
+
+c2 = ptc.Arrow(x=0.4,y=0.4, # cauda
+               dx=-0.12,dy=-0.05, # comprimento
+               width = 1.0, # escala
+               fill = True)
+
+ax[0,2].add_patch(c1); ax[0,2].add_patch(c2)
+
+# --- CIRCLE
+d1 = ptc.Circle(xy=(0.6,0.6),
+                radius=0.1)
+
+d2 = ptc.Circle(xy=(0.3,0.3),
+                radius=0.05,
+                fill=False,
+                lw=3,
+                edgecolor='k')
+
+ax[0,3].add_patch(d1); ax[0,3].add_patch(d2)
+
+# --- CIRCLEPOLYGON
+e1 = ptc.CirclePolygon(xy=(0.5,0.5),
+                       radius=0.45,
+                       edgecolor='r',
+                       resolution=20,
+                       lw=4)
+
+e2 = ptc.CirclePolygon(xy=(0.5,0.5),
+                       radius=0.25,
+                       resolution=10,                       
+                       facecolor='k',
+                       edgecolor='w',
+                       lw=4)
+
+ax[0,4].add_patch(e1); ax[0,4].add_patch(e2)
+
+
+# --- ELLIPSE
+center = (0.5, 0.5)  
+width = 0.8  
+height = 0.4 
+angle = 30  
+
+g1 = ptc.Ellipse(center, width, height, angle=angle, edgecolor='blue', facecolor='none', linewidth=2)
+
+ax[1,0].add_patch(g1)
+
+# --- FANCYARROW
+start_point = (0.1, 0.1)  
+end_point = (0.7, 0.7)    
+
+h1 = ptc.FancyArrow(start_point[0], start_point[1], 
+                                 end_point[0] - start_point[0], end_point[1] - start_point[1],
+                                 color='green', width=0.03, head_width=0.1, head_length=0.1)
+
+ax[1,1].add_patch(h1);
+
+
+# #### Aplicação: bandeira do Brasil
+
+# In[34]:
+
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as ptc
+
+
+# altura/largura
+a = 3; b = 1.6*a
+
+# área de plotagem
+fig, ax = plt.subplots(figsize=(b,a))
+
+# retângulo
+rec = ptc.Rectangle(xy=(0,0), 
+                    height=a, 
+                    width=2.5*a,
+                    angle=0,
+                    facecolor='g',
+                    edgecolor='g')
+
+# losango
+los_vertices = [(0.05,0.5), (0.5,0.1), (0.95,0.5), (0.5,0.9)]
+los = ptc.Polygon(los_vertices, 
+                  closed=True,
+                  facecolor='y',
+                  edgecolor='y')
+
+# círculo
+circ = ptc.Circle(xy=(0.5,0.5), 
+                  radius = 0.2,
+                  facecolor='b',
+                  edgecolor='b')
+
+# arco
+center = (0.4, 0.0)
+width = 1.15
+height = 1.15
+angle_range = (58, 100)  # Start and stop angles (degrees)
+rotation_angle = 0  # Rotation angle (degrees)
+
+arc = ptc.Arc(center, width, height, 
+                  angle=rotation_angle, 
+                  theta1=angle_range[0], 
+                  theta2=angle_range[1], 
+                  edgecolor='w', 
+                  lw=4.5)
+
+# estrelas
+
+# adiciona patches
+ax.add_patch(rec)
+ax.add_patch(los)
+ax.add_patch(circ)
+ax.add_patch(arc)
+
+# decorações
+ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False); ax.spines['left'].set_visible(False)
+ax.set_xticks([]); ax.set_yticks([]); 
+
+
+
+# Ver: https://micromath.com.br/a-geometria-da-bandeira-do-brasil/
+
+
+# ### Desenhando com hachuras/tramas (`hatches`)
+
+# - Patching + hatching
+
+# In[55]:
+
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(2,5,figsize=(10,3),constrained_layout=True)
+
+hatches = ['//', '\\','|','-','+','x','o','O','.','*']
+
+def rect(hatch):
+    return ptc.Rectangle(xy=(0,0), 
+                        height=1, 
+                        width=2.5,
+                        angle=0,
+                        edgecolor='w',
+                        facecolor='lightblue',                        
+                        linewidth=2,
+                        hatch=hatch)
+
+for (i,_) in enumerate(ax.flatten()):
+    _.set_xticks([]); _.set_yticks([])
+    _.set_title(hatches[i], fontsize=10, fontname='Courier')
+    _.add_patch(rect(hatches[i]))
+
+
+# - Ploting + hatching
+
+# In[76]:
+
+
+import matplotlib.pyplot as plt
+
+categorias = ['A', 'B', 'C', 'D']
+valores = [1, 4, 3, 5]
+
+np.random.seed(110)
+x = np.random.rand(20); y = np.random.rand(20)
+
+fig, ax = plt.subplots(1,2,figsize=(8,3))
+
+ax[0].bar(categorias, valores, hatch='//', edgecolor='black', color='lightgreen')
+ax[1].scatter(x, y, s=500, c='red', edgecolors='b', linewidth=1, hatch='o');
+
+
+# 

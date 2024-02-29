@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Guia rápido de plotagem - seaborn" href="A-quick-guide-seaborn.html" />
@@ -254,8 +254,20 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="30-dw-dash.html">
+  <a class="reference internal" href="28-dw-plotly.html">
    17.
+   <em>
+    Dataviz Workshop
+   </em>
+   : objetos gráficos e
+   <em>
+    Plotly Express
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-dw-dash.html">
+   18.
    <em>
     Dataviz Workshop
    </em>
@@ -271,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="31-dw-reporting.html">
-   18.
+   19.
    <em>
     Dataviz Workshop
    </em>
@@ -284,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="32-dw-reportlab.html">
-   19.
+   20.
    <em>
     Dataviz Workshop
    </em>
@@ -564,6 +576,52 @@ title="Print to PDF"
    e resolução
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trabalhando-com-objetos-geometricos-primitivos-patches">
+   Trabalhando com objetos geométricos primitivos (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     patches
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imprimindo-subclasses-de-patch">
+     Imprimindo subclasses de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Patch
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplos-gerais">
+     Exemplos gerais
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aplicacao-bandeira-do-brasil">
+       Aplicação: bandeira do Brasil
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desenhando-com-hachuras-tramas-hatches">
+     Desenhando com hachuras/tramas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       hatches
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -636,6 +694,52 @@ title="Print to PDF"
    </em>
    e resolução
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trabalhando-com-objetos-geometricos-primitivos-patches">
+   Trabalhando com objetos geométricos primitivos (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     patches
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imprimindo-subclasses-de-patch">
+     Imprimindo subclasses de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Patch
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplos-gerais">
+     Exemplos gerais
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aplicacao-bandeira-do-brasil">
+       Aplicação: bandeira do Brasil
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desenhando-com-hachuras-tramas-hatches">
+     Desenhando com hachuras/tramas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       hatches
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -989,7 +1093,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ll/g0vl8b194pbfyp4cwpzz4p740000gn/T/ipykernel_61282/3390216078.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ll/g0vl8b194pbfyp4cwpzz4p740000gn/T/ipykernel_31821/3390216078.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
   ax.set_xticklabels(ax.get_xticks(),weight=&#39;bold&#39;);
 </pre></div>
 </div>
@@ -1143,7 +1247,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_palette</span><span class="p">(</span><span class="n">opt</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print matplotlib color pallete according to category.</span>
+    <span class="sd">&quot;&quot;&quot;Print matplotlib color pallete according to category.</span>
 <span class="sd">       </span>
 <span class="sd">       Parameters:</span>
 <span class="sd">       opt (int): option for palette</span>
@@ -1186,6 +1290,10 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\textbf{X-AXIS}&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;f(x)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcdefaults</span>
+<span class="n">rcdefaults</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1221,6 +1329,293 @@ title="Print to PDF"
 <img alt="../_images/B-quick-guide-matplotlib_37_1.png" src="../_images/B-quick-guide-matplotlib_37_1.png" />
 </div>
 </div>
+</section>
+<section id="trabalhando-com-objetos-geometricos-primitivos-patches">
+<h2>Trabalhando com objetos geométricos primitivos (<code class="docutils literal notranslate"><span class="pre">patches</span></code>)<a class="headerlink" href="#trabalhando-com-objetos-geometricos-primitivos-patches" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Para o <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, um <code class="docutils literal notranslate"><span class="pre">patch</span></code> é um objeto da classe <code class="docutils literal notranslate"><span class="pre">Artist</span></code> que representa uma geometria primitiva 2D com face e aresta.</p></li>
+<li><p>Classes disponíveis: <code class="docutils literal notranslate"><span class="pre">Annulus</span></code>, <code class="docutils literal notranslate"><span class="pre">Arc</span></code>, <code class="docutils literal notranslate"><span class="pre">Arrow</span></code>, <code class="docutils literal notranslate"><span class="pre">CirclePolygon</span></code>, <code class="docutils literal notranslate"><span class="pre">Circle</span></code>, <code class="docutils literal notranslate"><span class="pre">ConnectionPatch</span></code>, <code class="docutils literal notranslate"><span class="pre">Ellipse</span></code>, <code class="docutils literal notranslate"><span class="pre">FancyArrowPatch</span></code>, <code class="docutils literal notranslate"><span class="pre">FancyArrow</span></code>, <code class="docutils literal notranslate"><span class="pre">FancyBboxPatch</span></code>, <code class="docutils literal notranslate"><span class="pre">Patch</span></code>, <code class="docutils literal notranslate"><span class="pre">PathPatch</span></code>, <code class="docutils literal notranslate"><span class="pre">Polygon</span></code>, <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, <code class="docutils literal notranslate"><span class="pre">RegularPolygon</span></code>, <code class="docutils literal notranslate"><span class="pre">Shadow</span></code>, <code class="docutils literal notranslate"><span class="pre">StepPatch</span></code>, <code class="docutils literal notranslate"><span class="pre">Wedge</span></code>,</p></li>
+</ul>
+<section id="imprimindo-subclasses-de-patch">
+<h3>Imprimindo subclasses de <code class="docutils literal notranslate"><span class="pre">Patch</span></code><a class="headerlink" href="#imprimindo-subclasses-de-patch" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">ptc</span>
+
+<span class="c1"># Classes do módulo &#39;patches&#39;. Nota: &#39;type&#39; é a classe base para todas as classes em Python</span>
+<span class="n">all_ptc_cls</span> <span class="o">=</span> <span class="p">[</span><span class="bp">cls</span> <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">ptc</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">)]</span> 
+
+<span class="c1"># Filtra as classes que herdam de Patch</span>
+<span class="n">ptc_cls</span> <span class="o">=</span> <span class="p">[</span><span class="bp">cls</span> <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">all_ptc_cls</span> <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Patch</span><span class="p">)]</span>
+
+<span class="c1"># Imprime os nomes das classes de Patch</span>
+<span class="n">ptc_c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">ptc_cls</span><span class="p">:</span>
+    <span class="n">ptc_c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+      <span class="c1">#print(cls.__name__,end=&#39;, &#39;)</span>
+<span class="n">ptc_c</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ptc_c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplos-gerais">
+<h3>Exemplos gerais<a class="headerlink" href="#exemplos-gerais" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>TODO</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">ptc</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+    <span class="n">_</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">_</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ptc_c</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Courier&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- ANNULUS</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Annulus</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">),</span>
+                <span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="c1"># circular: raio do círculo exterior</span>
+                <span class="n">width</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="c1"># espessura do anel</span>
+                <span class="n">angle</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Annulus</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span>
+                <span class="n">r</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">),</span> <span class="c1"># elíptico: eixo menor, eixo maior da elipse exterior</span>
+                <span class="n">width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                <span class="n">angle</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+                <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span> 
+
+
+<span class="c1"># --- ARC</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Arc</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span>
+             <span class="n">width</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+             <span class="n">height</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+             <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+             <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+             <span class="n">theta2</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+             <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">b2</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Arc</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.2</span><span class="p">),</span>
+             <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+             <span class="n">height</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+             <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+             <span class="n">theta1</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+             <span class="n">theta2</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span>
+             <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+             <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>
+             <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span> 
+
+<span class="c1"># --- ARROW</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Arrow</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="c1"># cauda</span>
+               <span class="n">dx</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">dy</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="c1"># comprimento</span>
+               <span class="n">width</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="c1"># escala</span>
+               <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">c2</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Arrow</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="c1"># cauda</span>
+               <span class="n">dx</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span><span class="n">dy</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span> <span class="c1"># comprimento</span>
+               <span class="n">width</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="c1"># escala</span>
+               <span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">c1</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+
+<span class="c1"># --- CIRCLE</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">),</span>
+                <span class="n">radius</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">),</span>
+                <span class="n">radius</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">d1</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+
+<span class="c1"># --- CIRCLEPOLYGON</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">CirclePolygon</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span>
+                       <span class="n">radius</span><span class="o">=</span><span class="mf">0.45</span><span class="p">,</span>
+                       <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+                       <span class="n">resolution</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                       <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">e2</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">CirclePolygon</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span>
+                       <span class="n">radius</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+                       <span class="n">resolution</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>                       
+                       <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                       <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+                       <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">e1</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span>
+
+
+<span class="c1"># --- ELLIPSE</span>
+<span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.8</span>  
+<span class="n">height</span> <span class="o">=</span> <span class="mf">0.4</span> 
+<span class="n">angle</span> <span class="o">=</span> <span class="mi">30</span>  
+
+<span class="n">g1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="n">angle</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
+
+<span class="c1"># --- FANCYARROW</span>
+<span class="n">start_point</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>  
+<span class="n">end_point</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>    
+
+<span class="n">h1</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">FancyArrow</span><span class="p">(</span><span class="n">start_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">start_point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                                 <span class="n">end_point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">start_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end_point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">start_point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">h1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.FancyArrow at 0x7fe66992a820&gt;
+</pre></div>
+</div>
+<img alt="../_images/B-quick-guide-matplotlib_43_1.png" src="../_images/B-quick-guide-matplotlib_43_1.png" />
+</div>
+</div>
+<section id="aplicacao-bandeira-do-brasil">
+<h4>Aplicação: bandeira do Brasil<a class="headerlink" href="#aplicacao-bandeira-do-brasil" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">ptc</span>
+
+
+<span class="c1"># altura/largura</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">a</span>
+
+<span class="c1"># área de plotagem</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+
+<span class="c1"># retângulo</span>
+<span class="n">rec</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> 
+                    <span class="n">height</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> 
+                    <span class="n">width</span><span class="o">=</span><span class="mf">2.5</span><span class="o">*</span><span class="n">a</span><span class="p">,</span>
+                    <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span>
+                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+
+<span class="c1"># losango</span>
+<span class="n">los_vertices</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.9</span><span class="p">)]</span>
+<span class="n">los</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">los_vertices</span><span class="p">,</span> 
+                  <span class="n">closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+                  <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># círculo</span>
+<span class="n">circ</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> 
+                  <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+                  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                  <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="c1"># arco</span>
+<span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">1.15</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">1.15</span>
+<span class="n">angle_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Start and stop angles (degrees)</span>
+<span class="n">rotation_angle</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Rotation angle (degrees)</span>
+
+<span class="n">arc</span> <span class="o">=</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Arc</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> 
+                  <span class="n">angle</span><span class="o">=</span><span class="n">rotation_angle</span><span class="p">,</span> 
+                  <span class="n">theta1</span><span class="o">=</span><span class="n">angle_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+                  <span class="n">theta2</span><span class="o">=</span><span class="n">angle_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                  <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> 
+                  <span class="n">lw</span><span class="o">=</span><span class="mf">4.5</span><span class="p">)</span>
+
+<span class="c1"># estrelas</span>
+
+<span class="c1"># adiciona patches</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">los</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">arc</span><span class="p">)</span>
+
+<span class="c1"># decorações</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span> 
+
+
+
+<span class="c1"># Ver: https://micromath.com.br/a-geometria-da-bandeira-do-brasil/</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/B-quick-guide-matplotlib_45_0.png" src="../_images/B-quick-guide-matplotlib_45_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="desenhando-com-hachuras-tramas-hatches">
+<h3>Desenhando com hachuras/tramas (<code class="docutils literal notranslate"><span class="pre">hatches</span></code>)<a class="headerlink" href="#desenhando-com-hachuras-tramas-hatches" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Patching + hatching</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">hatches</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;//&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;|&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">rect</span><span class="p">(</span><span class="n">hatch</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ptc</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> 
+                        <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">width</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+                        <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+                        <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span>                        
+                        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                        <span class="n">hatch</span><span class="o">=</span><span class="n">hatch</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+    <span class="n">_</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">_</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">hatches</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Courier&#39;</span><span class="p">)</span>
+    <span class="n">_</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">(</span><span class="n">hatches</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/B-quick-guide-matplotlib_48_0.png" src="../_images/B-quick-guide-matplotlib_48_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Ploting + hatching</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">categorias</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
+<span class="n">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">110</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">categorias</span><span class="p">,</span> <span class="n">valores</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;//&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/B-quick-guide-matplotlib_50_0.png" src="../_images/B-quick-guide-matplotlib_50_0.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
