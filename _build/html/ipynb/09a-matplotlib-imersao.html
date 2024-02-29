@@ -881,7 +881,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/gustavo/opt/anaconda3/lib/python3.9/site-packages/matplotlib/mpl-data/matplotlibrc&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/gustavo/opt/anaconda3/envs/lecture/lib/python3.9/site-packages/matplotlib/mpl-data/matplotlibrc&#39;
 </pre></div>
 </div>
 </div>
@@ -985,7 +985,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -1050,39 +1050,38 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;axes.autolimit_mode&#39;, &#39;data&#39;)
-(&#39;axes.axisbelow&#39;, &#39;line&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;axes.autolimit_mode&#39;, &#39;round_numbers&#39;)
+(&#39;axes.axisbelow&#39;, False)
 (&#39;axes.edgecolor&#39;, &#39;white&#39;)
 (&#39;axes.facecolor&#39;, &#39;green&#39;)
-(&#39;axes.formatter.limits&#39;, [-5, 6])
+(&#39;axes.formatter.limits&#39;, [-7, 7])
 (&#39;axes.formatter.min_exponent&#39;, 0)
-(&#39;axes.formatter.offset_threshold&#39;, 4)
+(&#39;axes.formatter.offset_threshold&#39;, 2)
 (&#39;axes.formatter.use_locale&#39;, False)
 (&#39;axes.formatter.use_mathtext&#39;, False)
 (&#39;axes.formatter.useoffset&#39;, True)
-(&#39;axes.grid&#39;, False)
+(&#39;axes.grid&#39;, True)
 (&#39;axes.grid.axis&#39;, &#39;both&#39;)
 (&#39;axes.grid.which&#39;, &#39;major&#39;)
-(&#39;axes.labelcolor&#39;, &#39;black&#39;)
-(&#39;axes.labelpad&#39;, 4.0)
-(&#39;axes.labelsize&#39;, &#39;medium&#39;)
+(&#39;axes.labelcolor&#39;, (0.54, 0.54, 0.54))
+(&#39;axes.labelpad&#39;, 5.0)
+(&#39;axes.labelsize&#39;, 14.0)
 (&#39;axes.labelweight&#39;, &#39;normal&#39;)
-(&#39;axes.linewidth&#39;, 0.8)
-(&#39;axes.prop_cycle&#39;, cycler(&#39;color&#39;, [&#39;#1f77b4&#39;, &#39;#ff7f0e&#39;, &#39;#2ca02c&#39;, &#39;#d62728&#39;, &#39;#9467bd&#39;, &#39;#8c564b&#39;, &#39;#e377c2&#39;, &#39;#7f7f7f&#39;, &#39;#bcbd22&#39;, &#39;#17becf&#39;]))
+(&#39;axes.linewidth&#39;, 1.0)
+(&#39;axes.prop_cycle&#39;, cycler(&#39;color&#39;, [&#39;b&#39;, &#39;g&#39;, &#39;r&#39;, &#39;c&#39;, &#39;m&#39;, &#39;y&#39;, &#39;k&#39;]))
 (&#39;axes.spines.bottom&#39;, True)
 (&#39;axes.spines.left&#39;, True)
-(&#39;axes.spines.right&#39;, True)
-(&#39;axes.spines.top&#39;, True)
+(&#39;axes.spines.right&#39;, False)
+(&#39;axes.spines.top&#39;, False)
 (&#39;axes.titlecolor&#39;, &#39;auto&#39;)
 (&#39;axes.titlelocation&#39;, &#39;center&#39;)
-(&#39;axes.titlepad&#39;, 6.0)
-(&#39;axes.titlesize&#39;, &#39;large&#39;)
+(&#39;axes.titlepad&#39;, 5.0)
+(&#39;axes.titlesize&#39;, 16.0)
 (&#39;axes.titleweight&#39;, &#39;normal&#39;)
-(&#39;axes.titley&#39;, None)
+(&#39;axes.titley&#39;, 1.0)
 (&#39;axes.unicode_minus&#39;, True)
-(&#39;axes.xmargin&#39;, 0.05)
-(&#39;axes.ymargin&#39;, 0.05)
-(&#39;axes.zmargin&#39;, 0.05)
+(&#39;axes.xmargin&#39;, 0.0)
+(&#39;axes.ymargin&#39;, 0.0)
 (&#39;axes3d.grid&#39;, True)
 </pre></div>
 </div>
@@ -1157,7 +1156,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper function para gráficos simples e modificação de Line2D.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
@@ -1253,7 +1252,7 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
 <span class="n">jpa_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://www.ncei.noaa.gov/cag/global/time-series/-7.1,-35/land_ocean/12/12/2000-2022/data.csv&#39;</span><span class="p">,</span>
 <span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="n">ano</span><span class="p">,</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">jpa_temp</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">jpa_temp</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
+<span class="n">ano</span><span class="p">,</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">jpa_temp</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">jpa_temp</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1371,7 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
 <span class="s1">&#39;grayscale&#39;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">plot_test</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">sty</span><span class="p">):</span>
-    <span class="n">exec</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;plt.style.use(&#39;</span><span class="p">{</span><span class="n">sty</span><span class="p">}</span><span class="s1">&#39;)&#39;</span><span class="p">)</span>
+    <span class="n">exec</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;plt.style.use(</span><span class="se">\&#39;</span><span class="si">{</span><span class="n">sty</span><span class="si">}</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$y = x^2 - 1$&#39;</span><span class="p">)</span>
 
@@ -1438,7 +1437,7 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd4a0389280&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1193878b0&gt;
 </pre></div>
 </div>
 <img alt="../_images/09a-matplotlib-imersao_53_1.png" src="../_images/09a-matplotlib-imersao_53_1.png" />
@@ -1513,14 +1512,14 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
     axes_locator = None
     axisbelow = line
     box_aspect = None
-    children = [&lt;matplotlib.spines.Spine object at 0x7fd4d0dccee0...
+    children = [&lt;matplotlib.spines.Spine object at 0x119328730&gt;, ...
     clip_box = None
     clip_on = True
     clip_path = None
     contains = None
     data_ratio = 1.0
-    default_bbox_extra_artists = [&lt;matplotlib.spines.Spine object at 0x7fd4d0dccee0...
-    facecolor or fc = (1.0, 1.0, 1.0, 1.0)
+    default_bbox_extra_artists = [&lt;matplotlib.spines.Spine object at 0x119328730&gt;, ...
+    facecolor or fc = (0.51, 0.81, 0.58, 0.1)
     figure = Figure(640x480)
     frame_on = True
     gid = None
@@ -1536,10 +1535,10 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
     picker = None
     position = Bbox(x0=0.0, y0=1.5, x1=0.5, y1=1.6)
     rasterization_zorder = None
-    rasterized = False
+    rasterized = None
     renderer_cache = &lt;matplotlib.backends.backend_agg.RendererAgg objec...
-    shared_x_axes = &lt;matplotlib.cbook.Grouper object at 0x7fd4914731c0...
-    shared_y_axes = &lt;matplotlib.cbook.Grouper object at 0x7fd49147c430...
+    shared_x_axes = &lt;matplotlib.cbook.Grouper object at 0x10becb400&gt;
+    shared_y_axes = &lt;matplotlib.cbook.Grouper object at 0x10bf1f310&gt;
     sketch_params = None
     snap = None
     title = 
