@@ -17,7 +17,7 @@ def load_data(keep_orig: True, show_links: False):
         y.append('20' + i[1]) 
     df['Mês'] = m
     df['Ano'] = y
-    df['Total Repassado'] = df['Total Repassado'].str.replace('.','',regex=False).apply(lambda x: float(x))
+    df['Total Repassado'] = df['Total Repassado'].str.replace('.','',regex=False).str.replace(',','.',regex=False).apply(lambda x: float(x))
     df = df.drop('Mês / Ano de Referência',axis=1)
     
     # load
@@ -66,7 +66,7 @@ def plot_ts_rfb(df, entity, ax, color):
                         x='Período', y='Total Repassado',
                         color=color,
                         label=entity,
-                        errorbar=None, 
+                        #errorbar=None, 
                         ax=ax)
         
     return s1
