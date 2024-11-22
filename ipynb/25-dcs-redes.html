@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="15. Dataviz Code Session: Visualização Científica" href="26-dcs-cientifica.html" />
@@ -321,13 +321,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -741,6 +741,125 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">via</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Meio de transporte</th>
+      <th>Descrição da via</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>VIA NAO DECLARADA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>MARITIMA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>FLUVIAL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>LACUSTRE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>AEREA</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>POSTAL</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>FERROVIARIA</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>RODOVIARIA</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>CONDUTO/REDE DE TRANSMISSAO</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>MEIOS PROPRIOS</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>ENTRADA/SAIDA FICTA</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>99</td>
+      <td>VIA DESCONHECIDA</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>POR REBOQUE</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11</td>
+      <td>COURIER</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>VICINAL FRONTEIRICO</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>14</td>
+      <td>DUTOS</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>12</td>
+      <td>EM MAOS</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <ul class="simple">
 <li><p>Restrição de dados por escolha de via e bloco geográfico</p></li>
 </ul>
@@ -748,7 +867,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seletor de via e bloco</span>
-<span class="n">via_e</span> <span class="o">=</span> <span class="s1">&#39;MARITIMA&#39;</span>
+<span class="n">via_e</span> <span class="o">=</span> <span class="s1">&#39;AEREA&#39;</span>
 <span class="n">bloco_e</span> <span class="o">=</span> <span class="s1">&#39;União Europeia - UE&#39;</span>
 
 <span class="c1"># filtros</span>
@@ -773,6 +892,233 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_g</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nome do país</th>
+      <th>FOB_imp</th>
+      <th>FOB_exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aland, Ilhas</td>
+      <td>5.570000e+03</td>
+      <td>140.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alemanha</td>
+      <td>2.408373e+09</td>
+      <td>445676987.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bulgária</td>
+      <td>1.048810e+07</td>
+      <td>1095139.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bélgica</td>
+      <td>3.579592e+08</td>
+      <td>264325328.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Chipre</td>
+      <td>1.090164e+06</td>
+      <td>456850.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Croácia</td>
+      <td>5.911743e+06</td>
+      <td>197694.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Dinamarca</td>
+      <td>2.452543e+08</td>
+      <td>17600298.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Eslováquia</td>
+      <td>1.487331e+07</td>
+      <td>2123435.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Eslovênia</td>
+      <td>2.733640e+07</td>
+      <td>791051.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Espanha</td>
+      <td>3.249332e+08</td>
+      <td>128140171.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Estônia</td>
+      <td>1.922603e+07</td>
+      <td>3237512.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Finlândia</td>
+      <td>8.944374e+07</td>
+      <td>4228748.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>França</td>
+      <td>1.677680e+09</td>
+      <td>339518847.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Grécia</td>
+      <td>4.758132e+06</td>
+      <td>1795332.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Guernsey</td>
+      <td>NaN</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Hungria</td>
+      <td>8.063740e+07</td>
+      <td>9166220.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Ilha de Man</td>
+      <td>1.840790e+05</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Irlanda</td>
+      <td>4.763710e+08</td>
+      <td>32553334.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Itália</td>
+      <td>1.057513e+09</td>
+      <td>386954098.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Jersey</td>
+      <td>NaN</td>
+      <td>6349.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Letônia</td>
+      <td>3.166250e+06</td>
+      <td>158234.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Lituânia</td>
+      <td>5.960187e+06</td>
+      <td>1363212.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Luxemburgo</td>
+      <td>6.236162e+06</td>
+      <td>15671276.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Malta</td>
+      <td>5.745938e+06</td>
+      <td>125299.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Países Baixos (Holanda)</td>
+      <td>2.040769e+08</td>
+      <td>119144128.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Polônia</td>
+      <td>1.597044e+08</td>
+      <td>23621094.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Portugal</td>
+      <td>4.647189e+07</td>
+      <td>96051457.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Romênia</td>
+      <td>3.919266e+07</td>
+      <td>5494574.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Suécia</td>
+      <td>1.918735e+08</td>
+      <td>23023034.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Tcheca, República</td>
+      <td>9.571066e+07</td>
+      <td>8638781.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Terras Austrais Francesas</td>
+      <td>8.118000e+03</td>
+      <td>13848.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Áustria</td>
+      <td>2.756209e+08</td>
+      <td>9135070.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -854,7 +1200,7 @@ title="Print to PDF"
       <th>0</th>
       <td>1</td>
       <td>0</td>
-      <td>8.781000e+03</td>
+      <td>5.570000e+03</td>
       <td>Aland, Ilhas</td>
       <td>Brasil</td>
     </tr>
@@ -862,7 +1208,7 @@ title="Print to PDF"
       <th>1</th>
       <td>2</td>
       <td>0</td>
-      <td>6.949722e+09</td>
+      <td>2.408373e+09</td>
       <td>Alemanha</td>
       <td>Brasil</td>
     </tr>
@@ -870,7 +1216,7 @@ title="Print to PDF"
       <th>2</th>
       <td>3</td>
       <td>0</td>
-      <td>4.393028e+07</td>
+      <td>1.048810e+07</td>
       <td>Bulgária</td>
       <td>Brasil</td>
     </tr>
@@ -878,7 +1224,7 @@ title="Print to PDF"
       <th>3</th>
       <td>4</td>
       <td>0</td>
-      <td>1.051285e+09</td>
+      <td>3.579592e+08</td>
       <td>Bélgica</td>
       <td>Brasil</td>
     </tr>
@@ -886,7 +1232,7 @@ title="Print to PDF"
       <th>4</th>
       <td>5</td>
       <td>0</td>
-      <td>1.828693e+06</td>
+      <td>1.090164e+06</td>
       <td>Chipre</td>
       <td>Brasil</td>
     </tr>
@@ -894,7 +1240,7 @@ title="Print to PDF"
       <th>5</th>
       <td>6</td>
       <td>0</td>
-      <td>6.364156e+06</td>
+      <td>5.911743e+06</td>
       <td>Croácia</td>
       <td>Brasil</td>
     </tr>
@@ -902,7 +1248,7 @@ title="Print to PDF"
       <th>6</th>
       <td>7</td>
       <td>0</td>
-      <td>5.977325e+08</td>
+      <td>2.452543e+08</td>
       <td>Dinamarca</td>
       <td>Brasil</td>
     </tr>
@@ -910,7 +1256,7 @@ title="Print to PDF"
       <th>7</th>
       <td>8</td>
       <td>0</td>
-      <td>1.359530e+08</td>
+      <td>1.487331e+07</td>
       <td>Eslováquia</td>
       <td>Brasil</td>
     </tr>
@@ -918,7 +1264,7 @@ title="Print to PDF"
       <th>8</th>
       <td>9</td>
       <td>0</td>
-      <td>5.303828e+07</td>
+      <td>2.733640e+07</td>
       <td>Eslovênia</td>
       <td>Brasil</td>
     </tr>
@@ -926,7 +1272,7 @@ title="Print to PDF"
       <th>9</th>
       <td>10</td>
       <td>0</td>
-      <td>2.250628e+09</td>
+      <td>3.249332e+08</td>
       <td>Espanha</td>
       <td>Brasil</td>
     </tr>
@@ -934,7 +1280,7 @@ title="Print to PDF"
       <th>10</th>
       <td>11</td>
       <td>0</td>
-      <td>1.967509e+07</td>
+      <td>1.922603e+07</td>
       <td>Estônia</td>
       <td>Brasil</td>
     </tr>
@@ -942,7 +1288,7 @@ title="Print to PDF"
       <th>11</th>
       <td>12</td>
       <td>0</td>
-      <td>4.093947e+08</td>
+      <td>8.944374e+07</td>
       <td>Finlândia</td>
       <td>Brasil</td>
     </tr>
@@ -950,7 +1296,7 @@ title="Print to PDF"
       <th>12</th>
       <td>13</td>
       <td>0</td>
-      <td>2.325253e+09</td>
+      <td>1.677680e+09</td>
       <td>França</td>
       <td>Brasil</td>
     </tr>
@@ -958,7 +1304,7 @@ title="Print to PDF"
       <th>13</th>
       <td>14</td>
       <td>0</td>
-      <td>5.690164e+07</td>
+      <td>4.758132e+06</td>
       <td>Grécia</td>
       <td>Brasil</td>
     </tr>
@@ -966,136 +1312,144 @@ title="Print to PDF"
       <th>14</th>
       <td>15</td>
       <td>0</td>
-      <td>2.539416e+08</td>
-      <td>Hungria</td>
+      <td>NaN</td>
+      <td>Guernsey</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>15</th>
       <td>16</td>
       <td>0</td>
-      <td>3.324200e+04</td>
-      <td>Ilha de Man</td>
+      <td>8.063740e+07</td>
+      <td>Hungria</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>16</th>
       <td>17</td>
       <td>0</td>
-      <td>9.659275e+07</td>
-      <td>Irlanda</td>
+      <td>1.840790e+05</td>
+      <td>Ilha de Man</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>17</th>
       <td>18</td>
       <td>0</td>
-      <td>3.011262e+09</td>
-      <td>Itália</td>
+      <td>4.763710e+08</td>
+      <td>Irlanda</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>18</th>
       <td>19</td>
       <td>0</td>
-      <td>1.864000e+03</td>
-      <td>Jersey</td>
+      <td>1.057513e+09</td>
+      <td>Itália</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>19</th>
       <td>20</td>
       <td>0</td>
-      <td>1.576157e+07</td>
-      <td>Letônia</td>
+      <td>NaN</td>
+      <td>Jersey</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>20</th>
       <td>21</td>
       <td>0</td>
-      <td>2.681213e+07</td>
-      <td>Lituânia</td>
+      <td>3.166250e+06</td>
+      <td>Letônia</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>21</th>
       <td>22</td>
       <td>0</td>
-      <td>3.333120e+07</td>
-      <td>Luxemburgo</td>
+      <td>5.960187e+06</td>
+      <td>Lituânia</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>22</th>
       <td>23</td>
       <td>0</td>
-      <td>6.870955e+06</td>
-      <td>Malta</td>
+      <td>6.236162e+06</td>
+      <td>Luxemburgo</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>23</th>
       <td>24</td>
       <td>0</td>
-      <td>1.175004e+09</td>
-      <td>Países Baixos (Holanda)</td>
+      <td>5.745938e+06</td>
+      <td>Malta</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>24</th>
       <td>25</td>
       <td>0</td>
-      <td>4.566596e+08</td>
-      <td>Polônia</td>
+      <td>2.040769e+08</td>
+      <td>Países Baixos (Holanda)</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>25</th>
       <td>26</td>
       <td>0</td>
-      <td>7.575676e+08</td>
-      <td>Portugal</td>
+      <td>1.597044e+08</td>
+      <td>Polônia</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>26</th>
       <td>27</td>
       <td>0</td>
-      <td>2.007139e+08</td>
-      <td>Romênia</td>
+      <td>4.647189e+07</td>
+      <td>Portugal</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>27</th>
       <td>28</td>
       <td>0</td>
-      <td>1.014024e+09</td>
-      <td>Suécia</td>
+      <td>3.919266e+07</td>
+      <td>Romênia</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>28</th>
       <td>29</td>
       <td>0</td>
-      <td>3.509817e+08</td>
-      <td>Tcheca, República</td>
+      <td>1.918735e+08</td>
+      <td>Suécia</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>29</th>
       <td>30</td>
       <td>0</td>
-      <td>5.760617e+08</td>
-      <td>Áustria</td>
+      <td>9.571066e+07</td>
+      <td>Tcheca, República</td>
       <td>Brasil</td>
     </tr>
     <tr>
       <th>30</th>
       <td>31</td>
       <td>0</td>
-      <td>NaN</td>
+      <td>8.118000e+03</td>
       <td>Terras Austrais Francesas</td>
+      <td>Brasil</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>0</td>
+      <td>2.756209e+08</td>
+      <td>Áustria</td>
       <td>Brasil</td>
     </tr>
   </tbody>
@@ -1139,7 +1493,7 @@ title="Print to PDF"
       <th>0</th>
       <td>1</td>
       <td>0</td>
-      <td>1063</td>
+      <td>140.0</td>
       <td>Brasil</td>
       <td>Aland, Ilhas</td>
     </tr>
@@ -1147,7 +1501,7 @@ title="Print to PDF"
       <th>1</th>
       <td>2</td>
       <td>0</td>
-      <td>3649010919</td>
+      <td>445676987.0</td>
       <td>Brasil</td>
       <td>Alemanha</td>
     </tr>
@@ -1155,7 +1509,7 @@ title="Print to PDF"
       <th>2</th>
       <td>3</td>
       <td>0</td>
-      <td>83124262</td>
+      <td>1095139.0</td>
       <td>Brasil</td>
       <td>Bulgária</td>
     </tr>
@@ -1163,7 +1517,7 @@ title="Print to PDF"
       <th>3</th>
       <td>4</td>
       <td>0</td>
-      <td>2353187476</td>
+      <td>264325328.0</td>
       <td>Brasil</td>
       <td>Bélgica</td>
     </tr>
@@ -1171,7 +1525,7 @@ title="Print to PDF"
       <th>4</th>
       <td>5</td>
       <td>0</td>
-      <td>55978584</td>
+      <td>456850.0</td>
       <td>Brasil</td>
       <td>Chipre</td>
     </tr>
@@ -1179,7 +1533,7 @@ title="Print to PDF"
       <th>5</th>
       <td>6</td>
       <td>0</td>
-      <td>57711795</td>
+      <td>197694.0</td>
       <td>Brasil</td>
       <td>Croácia</td>
     </tr>
@@ -1187,7 +1541,7 @@ title="Print to PDF"
       <th>6</th>
       <td>7</td>
       <td>0</td>
-      <td>253726959</td>
+      <td>17600298.0</td>
       <td>Brasil</td>
       <td>Dinamarca</td>
     </tr>
@@ -1195,7 +1549,7 @@ title="Print to PDF"
       <th>7</th>
       <td>8</td>
       <td>0</td>
-      <td>22001890</td>
+      <td>2123435.0</td>
       <td>Brasil</td>
       <td>Eslováquia</td>
     </tr>
@@ -1203,7 +1557,7 @@ title="Print to PDF"
       <th>8</th>
       <td>9</td>
       <td>0</td>
-      <td>313247810</td>
+      <td>791051.0</td>
       <td>Brasil</td>
       <td>Eslovênia</td>
     </tr>
@@ -1211,7 +1565,7 @@ title="Print to PDF"
       <th>9</th>
       <td>10</td>
       <td>0</td>
-      <td>3915915046</td>
+      <td>128140171.0</td>
       <td>Brasil</td>
       <td>Espanha</td>
     </tr>
@@ -1219,7 +1573,7 @@ title="Print to PDF"
       <th>10</th>
       <td>11</td>
       <td>0</td>
-      <td>16562226</td>
+      <td>3237512.0</td>
       <td>Brasil</td>
       <td>Estônia</td>
     </tr>
@@ -1227,7 +1581,7 @@ title="Print to PDF"
       <th>11</th>
       <td>12</td>
       <td>0</td>
-      <td>289599966</td>
+      <td>4228748.0</td>
       <td>Brasil</td>
       <td>Finlândia</td>
     </tr>
@@ -1235,7 +1589,7 @@ title="Print to PDF"
       <th>12</th>
       <td>13</td>
       <td>0</td>
-      <td>1590076188</td>
+      <td>339518847.0</td>
       <td>Brasil</td>
       <td>França</td>
     </tr>
@@ -1243,7 +1597,7 @@ title="Print to PDF"
       <th>13</th>
       <td>14</td>
       <td>0</td>
-      <td>195895631</td>
+      <td>1795332.0</td>
       <td>Brasil</td>
       <td>Grécia</td>
     </tr>
@@ -1251,137 +1605,145 @@ title="Print to PDF"
       <th>14</th>
       <td>15</td>
       <td>0</td>
-      <td>44012682</td>
+      <td>30.0</td>
       <td>Brasil</td>
-      <td>Hungria</td>
+      <td>Guernsey</td>
     </tr>
     <tr>
       <th>15</th>
       <td>16</td>
       <td>0</td>
-      <td>6630332</td>
+      <td>9166220.0</td>
       <td>Brasil</td>
-      <td>Ilha de Man</td>
+      <td>Hungria</td>
     </tr>
     <tr>
       <th>16</th>
       <td>17</td>
       <td>0</td>
-      <td>163591759</td>
+      <td>NaN</td>
       <td>Brasil</td>
-      <td>Irlanda</td>
+      <td>Ilha de Man</td>
     </tr>
     <tr>
       <th>17</th>
       <td>18</td>
       <td>0</td>
-      <td>2667290634</td>
+      <td>32553334.0</td>
       <td>Brasil</td>
-      <td>Itália</td>
+      <td>Irlanda</td>
     </tr>
     <tr>
       <th>18</th>
       <td>19</td>
       <td>0</td>
-      <td>5346</td>
+      <td>386954098.0</td>
       <td>Brasil</td>
-      <td>Jersey</td>
+      <td>Itália</td>
     </tr>
     <tr>
       <th>19</th>
       <td>20</td>
       <td>0</td>
-      <td>23305014</td>
+      <td>6349.0</td>
       <td>Brasil</td>
-      <td>Letônia</td>
+      <td>Jersey</td>
     </tr>
     <tr>
       <th>20</th>
       <td>21</td>
       <td>0</td>
-      <td>25383200</td>
+      <td>158234.0</td>
       <td>Brasil</td>
-      <td>Lituânia</td>
+      <td>Letônia</td>
     </tr>
     <tr>
       <th>21</th>
       <td>22</td>
       <td>0</td>
-      <td>32453798</td>
+      <td>1363212.0</td>
       <td>Brasil</td>
-      <td>Luxemburgo</td>
+      <td>Lituânia</td>
     </tr>
     <tr>
       <th>22</th>
       <td>23</td>
       <td>0</td>
-      <td>108266774</td>
+      <td>15671276.0</td>
       <td>Brasil</td>
-      <td>Malta</td>
+      <td>Luxemburgo</td>
     </tr>
     <tr>
       <th>23</th>
       <td>24</td>
       <td>0</td>
-      <td>6539357475</td>
+      <td>125299.0</td>
       <td>Brasil</td>
-      <td>Países Baixos (Holanda)</td>
+      <td>Malta</td>
     </tr>
     <tr>
       <th>24</th>
       <td>25</td>
       <td>0</td>
-      <td>802316074</td>
+      <td>119144128.0</td>
       <td>Brasil</td>
-      <td>Polônia</td>
+      <td>Países Baixos (Holanda)</td>
     </tr>
     <tr>
       <th>25</th>
       <td>26</td>
       <td>0</td>
-      <td>1537907566</td>
+      <td>23621094.0</td>
       <td>Brasil</td>
-      <td>Portugal</td>
+      <td>Polônia</td>
     </tr>
     <tr>
       <th>26</th>
       <td>27</td>
       <td>0</td>
-      <td>282244028</td>
+      <td>96051457.0</td>
       <td>Brasil</td>
-      <td>Romênia</td>
+      <td>Portugal</td>
     </tr>
     <tr>
       <th>27</th>
       <td>28</td>
       <td>0</td>
-      <td>357842582</td>
+      <td>5494574.0</td>
       <td>Brasil</td>
-      <td>Suécia</td>
+      <td>Romênia</td>
     </tr>
     <tr>
       <th>28</th>
       <td>29</td>
       <td>0</td>
-      <td>35718952</td>
+      <td>23023034.0</td>
       <td>Brasil</td>
-      <td>Tcheca, República</td>
+      <td>Suécia</td>
     </tr>
     <tr>
       <th>29</th>
       <td>30</td>
       <td>0</td>
-      <td>104228312</td>
+      <td>8638781.0</td>
       <td>Brasil</td>
-      <td>Áustria</td>
+      <td>Tcheca, República</td>
     </tr>
     <tr>
       <th>30</th>
       <td>31</td>
       <td>0</td>
-      <td>219383</td>
+      <td>13848.0</td>
       <td>Brasil</td>
       <td>Terras Austrais Francesas</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>0</td>
+      <td>9135070.0</td>
+      <td>Brasil</td>
+      <td>Áustria</td>
     </tr>
   </tbody>
 </table>
@@ -1395,22 +1757,15 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_imp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_g_imp</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;node_from&#39;</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;node_to&#39;</span><span class="p">,</span><span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;FOB&#39;</span><span class="p">)</span>   
 
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_g_imp</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">G_imp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;node_from&#39;</span><span class="p">]][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;from_name&#39;</span><span class="p">]</span>
+     <span class="n">G_imp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;node_from&#39;</span><span class="p">]][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;from_name&#39;</span><span class="p">]</span>
     
 <span class="n">G_exp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_g_exp</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;node_from&#39;</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;node_to&#39;</span><span class="p">,</span><span class="n">edge_attr</span><span class="o">=</span><span class="s1">&#39;FOB&#39;</span><span class="p">)</span>   
 
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_g_exp</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">G_exp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;node_from&#39;</span><span class="p">]][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;from_name&#39;</span><span class="p">]</span>    
+     <span class="n">G_exp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;node_from&#39;</span><span class="p">]][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;from_name&#39;</span><span class="p">]</span>    
     
 <span class="c1"># impressão auxiliar</span>
-<span class="n">G_imp</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">G_exp</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(NodeDataView({1: {&#39;country&#39;: &#39;Aland, Ilhas&#39;}, 0: {}, 2: {&#39;country&#39;: &#39;Alemanha&#39;}, 3: {&#39;country&#39;: &#39;Bulgária&#39;}, 4: {&#39;country&#39;: &#39;Bélgica&#39;}, 5: {&#39;country&#39;: &#39;Chipre&#39;}, 6: {&#39;country&#39;: &#39;Croácia&#39;}, 7: {&#39;country&#39;: &#39;Dinamarca&#39;}, 8: {&#39;country&#39;: &#39;Eslováquia&#39;}, 9: {&#39;country&#39;: &#39;Eslovênia&#39;}, 10: {&#39;country&#39;: &#39;Espanha&#39;}, 11: {&#39;country&#39;: &#39;Estônia&#39;}, 12: {&#39;country&#39;: &#39;Finlândia&#39;}, 13: {&#39;country&#39;: &#39;França&#39;}, 14: {&#39;country&#39;: &#39;Grécia&#39;}, 15: {&#39;country&#39;: &#39;Hungria&#39;}, 16: {&#39;country&#39;: &#39;Ilha de Man&#39;}, 17: {&#39;country&#39;: &#39;Irlanda&#39;}, 18: {&#39;country&#39;: &#39;Itália&#39;}, 19: {&#39;country&#39;: &#39;Jersey&#39;}, 20: {&#39;country&#39;: &#39;Letônia&#39;}, 21: {&#39;country&#39;: &#39;Lituânia&#39;}, 22: {&#39;country&#39;: &#39;Luxemburgo&#39;}, 23: {&#39;country&#39;: &#39;Malta&#39;}, 24: {&#39;country&#39;: &#39;Países Baixos (Holanda)&#39;}, 25: {&#39;country&#39;: &#39;Polônia&#39;}, 26: {&#39;country&#39;: &#39;Portugal&#39;}, 27: {&#39;country&#39;: &#39;Romênia&#39;}, 28: {&#39;country&#39;: &#39;Suécia&#39;}, 29: {&#39;country&#39;: &#39;Tcheca, República&#39;}, 30: {&#39;country&#39;: &#39;Áustria&#39;}, 31: {&#39;country&#39;: &#39;Terras Austrais Francesas&#39;}}),
- EdgeDataView([(0, 1, {&#39;FOB&#39;: 1063}), (0, 2, {&#39;FOB&#39;: 3649010919}), (0, 3, {&#39;FOB&#39;: 83124262}), (0, 4, {&#39;FOB&#39;: 2353187476}), (0, 5, {&#39;FOB&#39;: 55978584}), (0, 6, {&#39;FOB&#39;: 57711795}), (0, 7, {&#39;FOB&#39;: 253726959}), (0, 8, {&#39;FOB&#39;: 22001890}), (0, 9, {&#39;FOB&#39;: 313247810}), (0, 10, {&#39;FOB&#39;: 3915915046}), (0, 11, {&#39;FOB&#39;: 16562226}), (0, 12, {&#39;FOB&#39;: 289599966}), (0, 13, {&#39;FOB&#39;: 1590076188}), (0, 14, {&#39;FOB&#39;: 195895631}), (0, 15, {&#39;FOB&#39;: 44012682}), (0, 16, {&#39;FOB&#39;: 6630332}), (0, 17, {&#39;FOB&#39;: 163591759}), (0, 18, {&#39;FOB&#39;: 2667290634}), (0, 19, {&#39;FOB&#39;: 5346}), (0, 20, {&#39;FOB&#39;: 23305014}), (0, 21, {&#39;FOB&#39;: 25383200}), (0, 22, {&#39;FOB&#39;: 32453798}), (0, 23, {&#39;FOB&#39;: 108266774}), (0, 24, {&#39;FOB&#39;: 6539357475}), (0, 25, {&#39;FOB&#39;: 802316074}), (0, 26, {&#39;FOB&#39;: 1537907566}), (0, 27, {&#39;FOB&#39;: 282244028}), (0, 28, {&#39;FOB&#39;: 357842582}), (0, 29, {&#39;FOB&#39;: 35718952}), (0, 30, {&#39;FOB&#39;: 104228312}), (0, 31, {&#39;FOB&#39;: 219383})]))
+<span class="c1">#G_imp.nodes(data=True), G_exp.edges(data=True)</span>
 </pre></div>
 </div>
 </div>
@@ -1440,7 +1795,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25-dcs-redes_24_0.png" src="../_images/25-dcs-redes_24_0.png" />
+<img alt="../_images/25-dcs-redes_26_0.png" src="../_images/25-dcs-redes_26_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1478,7 +1833,7 @@ title="Print to PDF"
                         <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span> <span class="c1"># atributo (nome do país)</span>
                         <span class="n">font_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="c1"># tamanho da fonte</span>
                         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>                        
-                        <span class="p">)</span>
+                        <span class="p">);</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rede de importação: </span><span class="si">{</span><span class="n">bloco_e</span><span class="si">}</span><span class="s1"> $</span><span class="se">\\</span><span class="s1">rightarrow$ Brasil&#39;</span><span class="p">)</span>
 
@@ -1513,7 +1868,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25-dcs-redes_26_0.png" src="../_images/25-dcs-redes_26_0.png" />
+<img alt="../_images/25-dcs-redes_28_0.png" src="../_images/25-dcs-redes_28_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1550,7 +1905,7 @@ title="Print to PDF"
                                <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 
-<span class="c1"># opções de legendas de nós</span>
+<span class="c1"># # opções de legendas de nós</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span>
                                  <span class="n">pos</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
                                  <span class="n">labels</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_imp</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">),</span>
@@ -1569,7 +1924,7 @@ title="Print to PDF"
                                            <span class="n">bbox</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fc&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
                                            <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;#aa0000&#39;</span><span class="p">)</span>
 
-<span class="c1"># --- EXPORTAÇÃO</span>
+<span class="c1"># # --- EXPORTAÇÃO</span>
 
 <span class="n">fob</span><span class="p">,</span> <span class="n">edge_colors</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">dcs25</span><span class="o">.</span><span class="n">base_data</span><span class="p">(</span><span class="n">G_exp</span><span class="p">,</span><span class="n">fob_scale</span><span class="o">=</span><span class="mf">1e8</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
@@ -1610,7 +1965,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25-dcs-redes_28_0.png" src="../_images/25-dcs-redes_28_0.png" />
+<img alt="../_images/25-dcs-redes_30_0.png" src="../_images/25-dcs-redes_30_0.png" />
 </div>
 </div>
 </section>
@@ -1721,7 +2076,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25-dcs-redes_31_0.png" src="../_images/25-dcs-redes_31_0.png" />
+<img alt="../_images/25-dcs-redes_33_0.png" src="../_images/25-dcs-redes_33_0.png" />
 </div>
 </div>
 </section>

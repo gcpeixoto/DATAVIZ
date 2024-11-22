@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Introdução à Visualização de Dados" href="01a-introducao.html" />
@@ -320,13 +320,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -719,17 +719,17 @@ title="Print to PDF"
 <section id="objetivos">
 <h2>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Elencar os marcos históricos de desenvolvimento da área denominada <em>visualização de dados</em>;</p></li>
+<li><p>Elencar os marcos históricos de desenvolvimento do campo do conhecimento denominado <em>visualização de dados</em>;</p></li>
 <li><p>Reconhecer conceitos de representação visual, percepção, estética, cores e seus impactos ao observador;</p></li>
-<li><p>Discutir técnicas diversas para representação visual de quantidades, proporções, tendências, redes e informações gerais, bem como de <em>storytelling</em> e <em>business storytelling</em>;</p></li>
-<li><p>Desenvolver códigos para visualização de dados multidimensionais e científicos;</p></li>
-<li><p>Experimentar ferramentas e plataformas modernas para construção de painéis analíticos (<em>dashboards</em>) e geração de relatórios automatizados;</p></li>
-<li><p>Propor soluções de <em>data reporting</em> para cases de negócio aplicáveis aos diversos setores da economia.</p></li>
+<li><p>Discutir técnicas diversas para representação visual de quantidades, proporções, tendências, dados geoespaciais e informações gerais, bem como de <em>storytelling</em> e <em>business storytelling</em>;</p></li>
+<li><p>Desenvolver códigos agnósticos para visualização de dados multidimensionais, mas com particular ênfase a objetivos negociais, técnicos ou científicas;</p></li>
+<li><p>Experimentar ferramentas e plataformas modernas para construção de painéis analíticos (<em>dashboards</em>); e</p></li>
+<li><p>Propor soluções de <em>data reporting</em> para geração de relatórios automatizados e casos de negócio dos diversos setores da economia.</p></li>
 </ul>
 </section>
 <section id="estrutura">
 <h2>Estrutura<a class="headerlink" href="#estrutura" title="Permalink to this headline">#</a></h2>
-<p>O curso é composto de 3 módulos subdivididos em duas partes, conteúdo e avaliação, segundo a seguinte estrutura:</p>
+<p>O curso é composto de 3 módulos. Cada módulo é subdividido em duas partes, conteúdo e avaliação, na seguinte estrutura:</p>
 <ul class="simple">
 <li><p>Módulo 1 (20h)</p>
 <ul>
@@ -846,7 +846,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </li>
 <li><p>Avaliação (2h)</p>
 <ul>
-<li><p><a class="reference internal" href="10a-ecvd1.html"><span class="doc std std-doc">Estudo de Caso de Visualização de Dados (ECVD1)</span></a> (2h)</p></li>
+<li><p><a class="reference internal" href="10a-acvd.html"><span class="doc std std-doc">Análise de Casos de Visualização de Dados (ECVD1)</span></a> (2h)</p></li>
 </ul>
 </li>
 </ul>
@@ -870,7 +870,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </li>
 <li><p>Avaliação (2h)</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="20a-ecvd2.html"><span class="doc std std-doc">Estudo de Caso de Visualização de Dados (ECVD2)</span></a> (2h)</p></li>
+<li><p><a class="reference internal" href="20a-ecvd.html"><span class="doc std std-doc">Análise de Casos de Visualização de Dados (ACVD)</span></a> (2h)</p></li>
 </ul>
 </li>
 </ul>
@@ -916,7 +916,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </section>
 <section id="metodologia-de-avaliacao">
 <h2>Metodologia de avaliação<a class="headerlink" href="#metodologia-de-avaliacao" title="Permalink to this headline">#</a></h2>
-<p>A metodologia de avaliação será guiada pela <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf"> Rubrica de Avaliação</a>, salvo adaptações pontuais e previamente informadas.</p>
+<p>A metodologia de avaliação será guiada pelo <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/orientador-avaliacoes.pdf"> Manual Orientador</a>, salvo adaptações previamente informadas.</p>
 <section id="templates">
 <h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">#</a></h3>
 <p>Para elaborar os mini-artigos avaliativos, pode-se usar o template em formato <em>.ODT</em> disponibilizado <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/templates/short-paper/odt/main.odt" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/templates/short-paper/odt/main.odt"> aqui</a>, ou, preferencialmente, o uso do template <em>.TEX</em> disponibilizado <a href="https://github.com/gcpeixoto/DATAVIZ/tree/main/templates/short-paper/tex"> aqui</a>.</p>

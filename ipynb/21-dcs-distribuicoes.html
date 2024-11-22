@@ -319,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -1016,19 +1016,15 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dfa</span><span class="p">,</span>
            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;capital_gain&#39;</span><span class="p">,</span>
            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#232a00&#39;</span><span class="p">,</span>
-           <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-           <span class="c1">#ax=f.ax # habilite para sobrepor</span>
+           <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+           <span class="n">ax</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">ax</span> <span class="c1"># habilite para sobrepor</span>
            <span class="p">)</span>
 
 <span class="n">f2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">f2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Ganho de capital&#39;</span><span class="p">);</span>
-    
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/21-dcs-distribuicoes_13_0.png" src="../_images/21-dcs-distribuicoes_13_0.png" />
 </div>
 </div>
 </section>
@@ -1231,7 +1227,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f7d</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dfa</span><span class="p">,</span>
            <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>     
            <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span>
-           <span class="c1">#kind=&#39;scatter&#39; # &#39;scatter&#39;, &#39;hist&#39;, &#39;hex&#39;, &#39;kde&#39;, &#39;reg&#39;, &#39;resid&#39;],</span>
+           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="c1"># &#39;scatter&#39;, &#39;hist&#39;, &#39;hex&#39;, &#39;kde&#39;, &#39;reg&#39;, &#39;resid&#39;],</span>
            <span class="n">diag_kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span>
            <span class="p">)</span>
 </pre></div>

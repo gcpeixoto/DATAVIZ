@@ -319,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -980,12 +980,12 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c1"># figura vazia</span>
-<span class="c1"># fig.show() # testar em prompt, visto que no Jupyter, o backend é inline.</span>
+<span class="c1">#fig.show() # testar em prompt, visto que no Jupyter, o backend é inline.</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -1008,7 +1008,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># figura com 2 eixo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># figura com 2 eixo</span>
 </pre></div>
 </div>
 </div>
@@ -1050,38 +1050,38 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;axes.autolimit_mode&#39;, &#39;round_numbers&#39;)
-(&#39;axes.axisbelow&#39;, False)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;axes.autolimit_mode&#39;, &#39;data&#39;)
+(&#39;axes.axisbelow&#39;, &#39;line&#39;)
 (&#39;axes.edgecolor&#39;, &#39;white&#39;)
 (&#39;axes.facecolor&#39;, &#39;green&#39;)
-(&#39;axes.formatter.limits&#39;, [-7, 7])
+(&#39;axes.formatter.limits&#39;, [-5, 6])
 (&#39;axes.formatter.min_exponent&#39;, 0)
-(&#39;axes.formatter.offset_threshold&#39;, 2)
+(&#39;axes.formatter.offset_threshold&#39;, 4)
 (&#39;axes.formatter.use_locale&#39;, False)
 (&#39;axes.formatter.use_mathtext&#39;, False)
 (&#39;axes.formatter.useoffset&#39;, True)
-(&#39;axes.grid&#39;, True)
+(&#39;axes.grid&#39;, False)
 (&#39;axes.grid.axis&#39;, &#39;both&#39;)
 (&#39;axes.grid.which&#39;, &#39;major&#39;)
-(&#39;axes.labelcolor&#39;, (0.54, 0.54, 0.54))
-(&#39;axes.labelpad&#39;, 5.0)
-(&#39;axes.labelsize&#39;, 14.0)
+(&#39;axes.labelcolor&#39;, &#39;black&#39;)
+(&#39;axes.labelpad&#39;, 4.0)
+(&#39;axes.labelsize&#39;, &#39;medium&#39;)
 (&#39;axes.labelweight&#39;, &#39;normal&#39;)
-(&#39;axes.linewidth&#39;, 1.0)
-(&#39;axes.prop_cycle&#39;, cycler(&#39;color&#39;, [&#39;b&#39;, &#39;g&#39;, &#39;r&#39;, &#39;c&#39;, &#39;m&#39;, &#39;y&#39;, &#39;k&#39;]))
+(&#39;axes.linewidth&#39;, 0.8)
+(&#39;axes.prop_cycle&#39;, cycler(&#39;color&#39;, [&#39;#1f77b4&#39;, &#39;#ff7f0e&#39;, &#39;#2ca02c&#39;, &#39;#d62728&#39;, &#39;#9467bd&#39;, &#39;#8c564b&#39;, &#39;#e377c2&#39;, &#39;#7f7f7f&#39;, &#39;#bcbd22&#39;, &#39;#17becf&#39;]))
 (&#39;axes.spines.bottom&#39;, True)
 (&#39;axes.spines.left&#39;, True)
-(&#39;axes.spines.right&#39;, False)
-(&#39;axes.spines.top&#39;, False)
+(&#39;axes.spines.right&#39;, True)
+(&#39;axes.spines.top&#39;, True)
 (&#39;axes.titlecolor&#39;, &#39;auto&#39;)
 (&#39;axes.titlelocation&#39;, &#39;center&#39;)
-(&#39;axes.titlepad&#39;, 5.0)
-(&#39;axes.titlesize&#39;, 16.0)
+(&#39;axes.titlepad&#39;, 6.0)
+(&#39;axes.titlesize&#39;, &#39;large&#39;)
 (&#39;axes.titleweight&#39;, &#39;normal&#39;)
-(&#39;axes.titley&#39;, 1.0)
+(&#39;axes.titley&#39;, None)
 (&#39;axes.unicode_minus&#39;, True)
-(&#39;axes.xmargin&#39;, 0.0)
-(&#39;axes.ymargin&#39;, 0.0)
+(&#39;axes.xmargin&#39;, 0.05)
+(&#39;axes.ymargin&#39;, 0.05)
 (&#39;axes3d.grid&#39;, True)
 </pre></div>
 </div>
@@ -1156,7 +1156,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper function para gráficos simples e modificação de Line2D.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
@@ -1182,7 +1182,8 @@ title="Print to PDF"
 <span class="n">h_plot</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">,{</span><span class="s1">&#39;ls&#39;</span><span class="p">:</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>
                   <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
                   <span class="s1">&#39;marker&#39;</span><span class="p">:</span><span class="s1">&#39;*&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;lw&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+                  <span class="s1">&#39;lw&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                  <span class="s1">&#39;ms&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                   <span class="s1">&#39;mfc&#39;</span><span class="p">:</span><span class="s1">&#39;y&#39;</span><span class="p">});</span>
 </pre></div>
 </div>
@@ -1314,7 +1315,7 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
 <span class="n">axm</span><span class="p">[</span><span class="s1">&#39;B2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ano</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
 <span class="n">axm</span><span class="p">[</span><span class="s1">&#39;B2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Série 2000 - 2021&#39;</span><span class="p">)</span>
 
-<span class="n">axm</span><span class="p">[</span><span class="s1">&#39;B2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$+</span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s1">^circ$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#f44336&#39;</span><span class="p">);</span>
+<span class="n">axm</span><span class="p">[</span><span class="s1">&#39;B2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$+</span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s1">^\circ$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#f44336&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1336,30 +1337,32 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 Solarize_Light2
 2 _classic_test_patch
-3 bmh
-4 classic
-5 dark_background
-6 fast
-7 fivethirtyeight
-8 ggplot
-9 grayscale
-10 seaborn
-11 seaborn-bright
-12 seaborn-colorblind
-13 seaborn-dark
-14 seaborn-dark-palette
-15 seaborn-darkgrid
-16 seaborn-deep
-17 seaborn-muted
-18 seaborn-notebook
-19 seaborn-paper
-20 seaborn-pastel
-21 seaborn-poster
-22 seaborn-talk
-23 seaborn-ticks
-24 seaborn-white
-25 seaborn-whitegrid
-26 tableau-colorblind10
+3 _mpl-gallery
+4 _mpl-gallery-nogrid
+5 bmh
+6 classic
+7 dark_background
+8 fast
+9 fivethirtyeight
+10 ggplot
+11 grayscale
+12 seaborn-v0_8
+13 seaborn-v0_8-bright
+14 seaborn-v0_8-colorblind
+15 seaborn-v0_8-dark
+16 seaborn-v0_8-dark-palette
+17 seaborn-v0_8-darkgrid
+18 seaborn-v0_8-deep
+19 seaborn-v0_8-muted
+20 seaborn-v0_8-notebook
+21 seaborn-v0_8-paper
+22 seaborn-v0_8-pastel
+23 seaborn-v0_8-poster
+24 seaborn-v0_8-talk
+25 seaborn-v0_8-ticks
+26 seaborn-v0_8-white
+27 seaborn-v0_8-whitegrid
+28 tableau-colorblind10
 </pre></div>
 </div>
 </div>
@@ -1374,6 +1377,7 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
     <span class="n">exec</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;plt.style.use(</span><span class="se">\&#39;</span><span class="si">{</span><span class="n">sty</span><span class="si">}</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$y = x^2 - 1$&#39;</span><span class="p">)</span>
+
 
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sty_test</span><span class="p">):</span>
@@ -1437,7 +1441,7 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1193878b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x11b9c9c70&gt;
 </pre></div>
 </div>
 <img alt="../_images/09a-matplotlib-imersao_53_1.png" src="../_images/09a-matplotlib-imersao_53_1.png" />
@@ -1512,13 +1516,13 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
     axes_locator = None
     axisbelow = line
     box_aspect = None
-    children = [&lt;matplotlib.spines.Spine object at 0x119328730&gt;, ...
+    children = [&lt;matplotlib.spines.Spine object at 0x11b9c9d30&gt;, ...
     clip_box = None
     clip_on = True
     clip_path = None
     contains = None
     data_ratio = 1.0
-    default_bbox_extra_artists = [&lt;matplotlib.spines.Spine object at 0x119328730&gt;, ...
+    default_bbox_extra_artists = [&lt;matplotlib.spines.Spine object at 0x11b9c9d30&gt;, ...
     facecolor or fc = (0.51, 0.81, 0.58, 0.1)
     figure = Figure(640x480)
     frame_on = True
@@ -1537,8 +1541,8 @@ pelo <a class="reference external" href="https://www.ncei.noaa.gov/">NOAA/NASA</
     rasterization_zorder = None
     rasterized = None
     renderer_cache = &lt;matplotlib.backends.backend_agg.RendererAgg objec...
-    shared_x_axes = &lt;matplotlib.cbook.Grouper object at 0x10becb400&gt;
-    shared_y_axes = &lt;matplotlib.cbook.Grouper object at 0x10bf1f310&gt;
+    shared_x_axes = &lt;matplotlib.cbook.Grouper object at 0x10ec0b610&gt;
+    shared_y_axes = &lt;matplotlib.cbook.Grouper object at 0x10ec4f2b0&gt;
     sketch_params = None
     snap = None
     title = 
