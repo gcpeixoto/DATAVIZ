@@ -33,8 +33,8 @@ parts:
   - caption: Avaliações
     numbered: false
     chapters:
-    - file: ipynb/10a-ecvd1.ipynb
-    - file: ipynb/20a-ecvd2.ipynb
+    - file: ipynb/10a-acvd.ipynb
+    - file: ipynb/20a-ecvd.ipynb
     - file: ipynb/capstone-template.ipynb
   - caption: Suplemento
     numbered: false

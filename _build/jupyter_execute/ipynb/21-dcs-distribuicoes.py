@@ -20,7 +20,7 @@
 # 
 # - Vide {numref}`Capítulo %s <cap:estetica>`.
 
-# In[27]:
+# In[1]:
 
 
 import pandas as pd
@@ -34,7 +34,7 @@ plt.style.use('../etc/gcpeixoto-datavis.mplstyle') # style sheet
 
 # - Carregamento de dados
 
-# In[28]:
+# In[2]:
 
 
 df = pd.read_csv('../data/adults.csv',skiprows=1)
@@ -48,7 +48,7 @@ df
 #     - `row` e `col` expandem plots
 #     - A inclusão de `y` e `hue` gerará RVs similares a mapas de calor ou, proporções, quando _hue_ for categórico.
 
-# In[29]:
+# In[3]:
 
 
 dfa = df[df['capital_gain'] > 0]
@@ -76,27 +76,26 @@ for ax in f.axes.flat:
 
 # - Com `kdeplot`, temos a curva estimada por núcleos, a qual pode ser superposta ao histograma por meio de `ax`.
 
-# In[30]:
+# In[4]:
 
 
 f2 = sb.kdeplot(data=dfa,
            x='capital_gain',
            color='#232a00',
-           fill=True,
-           alpha=0.1,
-           #ax=f.ax # habilite para sobrepor
+           fill=False,
+           alpha=0.9,
+           ax=f.ax # habilite para sobrepor
            )
 
 f2.grid(False)
 f2.set_xlabel('Ganho de capital');
-    
 
 
 # ### Distribuição cumulativa
 # 
 # - Distribuições cumulativas empíricas podem ser plotadas com `ecdfplot`.
 
-# In[31]:
+# In[5]:
 
 
 f2a = sb.ecdfplot(data=dfa,
@@ -120,7 +119,7 @@ f2a.set_xlabel('Ganho de capital');
 # - O `rugplot` é uma representação visual que adiciona traços similares a ticks no gráfico. O nome  "rug" (tapete) deriva da lembrança de um tapete aberto com suas borlas (franjas) destacadas.
 #     - Também podemos construir _rugs_ com a keyword `rug` em `displot`.
 
-# In[32]:
+# In[6]:
 
 
 f3 = sb.rugplot(data=dfa,
@@ -136,7 +135,7 @@ f3.set_xlabel('Ganho de capital');
 
 # #### Superposição de borlas
 
-# In[33]:
+# In[7]:
 
 
 f4 = sb.displot(data=dfa,
@@ -164,7 +163,7 @@ for ax in f4.axes.flat:
 
 # - Mapa com displot
 
-# In[34]:
+# In[8]:
 
 
 f5 = sb.displot(data=dfa,
@@ -177,7 +176,7 @@ f5 = sb.displot(data=dfa,
            )
 
 
-# In[35]:
+# In[9]:
 
 
 f6 = sb.displot(data=dfa,
@@ -195,7 +194,7 @@ f6 = sb.displot(data=dfa,
 # - Usamos `jointplot` para exibir densidades a partir de relações entre duas variáveis.
 #     - Controle o tipo com `kind` e o `hue`
 
-# In[36]:
+# In[10]:
 
 
 sb.set_style('darkgrid')
@@ -209,8 +208,7 @@ f7 = sb.jointplot(data=dfa,
            )
 
 
-
-# In[37]:
+# In[11]:
 
 
 sb.set_style('darkgrid')
@@ -224,8 +222,7 @@ f7a = sb.jointplot(data=dfa,
            )
 
 
-
-# In[38]:
+# In[12]:
 
 
 f7c = sb.jointplot(data=dfa,
@@ -240,14 +237,13 @@ f7c = sb.jointplot(data=dfa,
 
 # - Usamos `pairplot` para realizar plotagens de pareamentos em forma matricial
 
-# In[39]:
+# In[16]:
 
 
 f7d = sb.pairplot(data=dfa,
            height=6,     
            hue='sex',
-           #kind='scatter' # 'scatter', 'hist', 'hex', 'kde', 'reg', 'resid'],
+           kind='scatter', # 'scatter', 'hist', 'hex', 'kde', 'reg', 'resid'],
            diag_kind='hist'
            )
-
 

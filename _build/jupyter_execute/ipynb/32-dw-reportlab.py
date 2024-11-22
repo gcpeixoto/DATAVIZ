@@ -40,7 +40,7 @@
 
 # Começamos com as importações (_boilerplate_).
 
-# In[3]:
+# In[1]:
 
 
 import os
@@ -56,7 +56,7 @@ from reportlab.pdfgen import canvas
 # Os métodos `showPage` e `save` não devem ser ignorados, visto que são eles os responsáveis por inserir os elementos na página do PDF e fechar o buffer do arquivo.
 # ```
 
-# In[4]:
+# In[2]:
 
 
 # Função de utilidade
@@ -86,7 +86,7 @@ def img_to_pdf(pdfout,imgout,x,y,
 
 # Definimos alguns diretórios.
 
-# In[5]:
+# In[3]:
 
 
 imgext = 'png' # formatos OK: png (melhor), jpg, eps
@@ -102,7 +102,7 @@ imgout = os.path.join(basedir,'test.'+ imgext)
 
 # As figuras _plotly.express_ podem ser objetos genéricos da classe. 
 
-# In[6]:
+# In[4]:
 
 
 fig = px.line(x=[1, 2, 3],
@@ -114,7 +114,7 @@ fig.write_image(imgout)
 
 # Por fim, a imagem é posta no PDF pela chamada da função de utilidade.
 
-# In[9]:
+# In[5]:
 
 
 img_to_pdf(pdfout,imgout,120,300,

@@ -97,7 +97,7 @@
 # [_The Good, the Bad and the Ugly_](https://pt.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly), em português "Três homens em conflito", filme clássico de _western_ lançado em 1966 que consagrou [a trilha sonora do "assobio"](https://www.youtube.com/watch?v=1AyxDVBX2o0) de Ennio Morricone, conta a história de três homens, Tuco, Lourinho e Angel Eyes, que procuram por um tesouro. Dois deles (Tuco e Lourinho) apenas têm conhecimento de uma parte da sua localização, ao passo que Angel Eyes somente persegue os outros dois por não ter informação nenhuma. No final, o _Bom_ é o "mais ético", o _Feio_ é o "mais rude e de aparência tosca" e o "mau" é o "mais displicente".
 # ```
 
-# In[1]:
+# In[2]:
 
 
 # JSON TAG: remove-cell
@@ -407,11 +407,13 @@ plt.savefig('../figs/hists-lodo.png',dpi=300);
 # 
 # ```{admonition} Dica
 # :class: tip
-# Crie um novo arquivo com `touch dataviz.yml`, então copie o conteúdo do arquivo YAML abaixo e cole.
+# Crie um novo arquivo chamado `dataviz.yml`, então copie o conteúdo do arquivo YAML abaixo e cole nele.
 # ```
 # 
 # ```yaml
-# # dataviz.yml
+# # "dataviz.yml" é um arquivo-modelo YAML para construir o ambiente "dataviz".
+# # Para a sua correta execução, é necessário que a variável de ambiente "CONDA_PREFIX" seja configurada
+# # para apontar para o diretório padrão físico em seu computador onde "dataviz" será criado.
 # 
 # name: dataviz
 # channels:
@@ -419,34 +421,37 @@ plt.savefig('../figs/hists-lodo.png',dpi=300);
 #   - conda-forge
 #   - defaults
 # dependencies:
+#   - python=3.13
 #   - numpy
 #   - pandas
 #   - matplotlib
 #   - seaborn
 #   - plotly
 #   - scipy
-#   - h5py
 #   - dash
-#   - geoviews
+#   - h5py
+#   - statsmodels
 #   - geopandas
 #   - networkx
-# pip:
-#   - matplotlib-venn
-#   - xhtml2pdf
-#   - reportlab 
-#   ```
+#   - pip
+#   - pip:
+#     - matplotlib-venn
+#     - xhtml2pdf
+#     - reportlab 
+# prefix: ${CONDA_PREFIX}/dataviz
+# ```
 # 
-# Então,habilite o ambiente:
+# Por fim, habilite o ambiente:
 # 
 # ```
 # conda activate dataviz
 # ```
 # 
-# As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são `numpy`, para manipulação de _arrays_ e computação vetorizada, `pandas`, para manipulação de séries e _datasets_,  e `matplotlib`, para plotagem estática de dados. Os demais são utilizados para tarefas especializadas. `seaborn` é útil para análise exploratória de dados e para visualização de dados estatísticos. `plotly` serve para propósitos de visualização interativa. `scipy` é um pacote de computação científica, com diversos métodos numéricos. `h5py` manipula arquivos no formato HDF5 (_Hierarchical Data Format_), bastante utilizados em visualização científica e armazenamento de grandes estruturas de dados. `dash` é uma API para construção de _dashboards_. `geoviews` e `geopandas` suportam a visualização de dados geográficos e mapas. `networkx` oferece meios de plotagem de grafos e de redes complexas. `matplotlib-venn` gera diagramas de Venn. `xhtml2pdf` e `reportlab` são dedicados à manipulação de PDFs e úteis para geração de relatórios.
+# As dependências constituem pacotes essenciais para carregamento, limpeza, análise e visualização de uma enorme gama de dados. O resumo de cada um pode ser rapidamente localizado na internet. Os pacotes mais básicos para análise e visualização de dados são `numpy`, para manipulação de _arrays_ e computação vetorizada, `pandas`, para manipulação de séries e _datasets_,  e `matplotlib`, para plotagem estática de dados. Os demais são utilizados para tarefas especializadas. `seaborn` é útil para análise exploratória de dados e para visualização de dados estatísticos. `plotly` serve para propósitos de visualização interativa. `scipy` é um pacote de computação científica, com diversos métodos numéricos. `h5py` manipula arquivos no formato HDF5 (_Hierarchical Data Format_), bastante utilizados em visualização científica e armazenamento de grandes estruturas de dados. `dash` é uma API para construção de _dashboards_. `geopandas` suportam a visualização de dados geográficos. `networkx` oferece meios de plotagem de grafos e de redes complexas. `matplotlib-venn` gera diagramas de Venn. `xhtml2pdf` e `reportlab` são dedicados à manipulação de PDFs e úteis para geração de relatórios.
 # 
-# O ferramental Python disponível para visualização de dados é bastante vasto. Já existem hoje muitos outros pacotes baseados na linguagem para trabalhar com _big data_ multipropósito (e.g. `hvplot`, `datashader`, `xarray`, `dask` etc.) e cada um possui pontos positivos e negativos. Em sua atividade profissional, uma ferramenta poderá ser mais adequada do que outra e será você quem dará o veredito final.
+# O ferramental Python disponível para visualização de dados é bastante vasto. Já existem hoje muitos outros pacotes baseados na linguagem para trabalhar com _big data_ multipropósito (e.g. `polars`, `hvplot`, `datashader`, `xarray`, `dask` etc.) e cada um possui pontos positivos e negativos. Em sua atividade profissional, uma ferramenta poderá ser mais adequada do que outra e será você quem dará o veredito final.
 # 
-# Para manter uma linha mínima de ação no escopo técnico, neste curso utilizaremos `numpy`, `pandas`, `matplotlib` e `seaborn` para a visualização estática de dados, e `plotly` para a visualização interativa. Os demais pacotes serão utilizados sob demanda ao discutirmos  aplicações e exemplos mais elaborados.
+# Para manter uma linha mínima de ação no escopo técnico, neste curso utilizaremos `numpy`, `pandas`, `matplotlib` e `seaborn` para a visualização estática de dados, e `plotly` para a visualização interativa. Os demais pacotes serão utilizados sob demanda ao discutirmos aplicações e exemplos mais elaborados.
 
 # ### Exemplo aplicado
 # 
@@ -454,7 +459,7 @@ plt.savefig('../figs/hists-lodo.png',dpi=300);
 # 
 # Para a plotagem, usamos parte do [_dataset_](https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda/resource/a1e1955b-f340-415d-83bf-bbce710d142b) correspondente disponibilizado pela ANP no portal [Dados Abertos](https://dados.gov.br) do Governo Federal.
 
-# In[3]:
+# In[16]:
 
 
 from pandas import read_csv
@@ -462,7 +467,7 @@ from matplotlib.pyplot import subplots
 import seaborn as sns
 
 # pandas
-df = pd.read_csv('../data/preco-combs-pb-2022-02.csv')
+df = read_csv('../data/preco-combs-pb-2022-02.csv')
 
 # matplotlib
 fig, ax = subplots(figsize=(14,5))

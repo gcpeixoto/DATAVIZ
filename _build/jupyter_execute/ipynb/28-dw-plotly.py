@@ -38,6 +38,12 @@ df = pd.DataFrame({
 # In[2]:
 
 
+df
+
+
+# In[3]:
+
+
 import plotly.graph_objects as go
 from IPython.display import display, HTML
 from plotly.offline import plot
@@ -58,7 +64,7 @@ display(HTML('dw-plotly-exemplo-1.html'))
 
 # A estrutura complexa acima é reproduzida de maneira equivalente com `Plotly Express` com apenas uma linha:
 
-# In[3]:
+# In[5]:
 
 
 import plotly.express as px
@@ -75,7 +81,7 @@ display(HTML('dw-plotly-exemplo-2.html'))
 
 # - Para visualizar a estrutura, podemos usar `print`:
 
-# In[4]:
+# In[6]:
 
 
 import plotly.express as px
@@ -86,7 +92,7 @@ plot(fig, show_link=False,filename='dw-plotly-exemplo-3.html')
 display(HTML('dw-plotly-exemplo-3.html'))
 
 
-# In[5]:
+# In[7]:
 
 
 print(fig)
@@ -94,7 +100,7 @@ print(fig)
 
 # - Para visualizá-la como JSON, usamos:
 
-# In[6]:
+# In[8]:
 
 
 fig.show("json") 
@@ -102,7 +108,7 @@ fig.show("json")
 
 # - Para exportá-la para JSON:
 
-# In[7]:
+# In[9]:
 
 
 fig.to_json() 
@@ -110,7 +116,7 @@ fig.to_json()
 
 # - Adicionalmente, para exportá-la como um `dict` Python padrão, podemos usar:
 
-# In[8]:
+# In[10]:
 
 
 fig.to_dict() 
@@ -126,7 +132,7 @@ fig.to_dict()
 
 # Podemos criar uma RV do zero a partir de um dataframe acrescentando valores aos atributos explicitamente. Vejamos um exemplo:
 
-# In[9]:
+# In[11]:
 
 
 import plotly.express as px
@@ -135,7 +141,13 @@ import plotly.graph_objects as go
 df = px.data.tips()
 
 
-# In[10]:
+# In[12]:
+
+
+df
+
+
+# In[13]:
 
 
 # Figura vazia
@@ -143,7 +155,7 @@ fig = go.Figure()
 print(fig)
 
 
-# In[11]:
+# In[14]:
 
 
 # Adiciona traço do tipo histograma
@@ -151,7 +163,7 @@ fig.add_trace(go.Histogram(x=df['total_bill']),)
 print(fig)
 
 
-# In[12]:
+# In[15]:
 
 
 # Atualiza layout
@@ -165,7 +177,7 @@ fig.update_layout(
 print(fig)
 
 
-# In[13]:
+# In[16]:
 
 
 # Visualização
@@ -173,7 +185,7 @@ plot(fig, show_link=False,filename='dw-plotly-exemplo-4.html')
 display(HTML('dw-plotly-exemplo-4.html'))
 
 
-# In[14]:
+# In[17]:
 
 
 # Atualiza cor do traço
@@ -187,7 +199,7 @@ display(HTML('dw-plotly-exemplo-5.html'))
 # 
 # Quando não há necessidade de se criar algo do zero, pode-se usar as interfaces disponíveis. O dado anterior pode ser manipulado através dos passos a seguir:
 
-# In[15]:
+# In[18]:
 
 
 df = px.data.tips()
@@ -207,7 +219,7 @@ display(HTML('dw-plotly-exemplo-6.html'))
 
 # Agora, vamos manipular o estilo para ter uma RV melhor:
 
-# In[16]:
+# In[19]:
 
 
 # interface
@@ -264,8 +276,3 @@ fig.add_annotation(
 plot(fig, show_link=False,filename='dw-plotly-exemplo-7.html')
 display(HTML('dw-plotly-exemplo-7.html'))
 
-
-# ```{admonition} Curiosidade
-# :class: dropdown
-# A criação e atualização de RVs em plotly basicamente depende de funções de alto nível baseadas nos prefixos add* e update*. Novos traços são adicionados com "add_trace" e seus atributos atualizados com "update_trace". Já "uptade_layout" serve para atualizar layouts. Estas são as mais usadas, mas existem outras.
-# ```

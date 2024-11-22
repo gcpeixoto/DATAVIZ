@@ -20,13 +20,13 @@
 # 
 # - Vide {numref}`Capítulo %s <cap:estetica>`.
 
-# In[1]:
+# In[9]:
 
 
 import numpy as np, pandas as pd, matplotlib.pyplot as plt, seaborn as sb, geopandas as geo
 
 
-# In[2]:
+# In[10]:
 
 
 from warnings import filterwarnings; filterwarnings('ignore');
@@ -36,23 +36,35 @@ from warnings import filterwarnings; filterwarnings('ignore');
 
 # - Shapefiles dos campos de produção (ANP) - [[Fonte]](https://www.gov.br/anp/pt-br/assuntos/exploracao-e-producao-de-oleo-e-gas/dados-tecnicos/shapefile-de-dados) 
 
-# In[3]:
+# In[11]:
 
 
 geocp = geo.read_file('../data/ANP_campos_shp/CAMPOS_PRODUCAO_SIRGASPolygon.shp')
 
 
+# In[12]:
+
+
+geocp
+
+
 # - Shapefiles do território nacional
 
-# In[4]:
+# In[13]:
 
 
 geobr = geo.read_file('../data/gadm36_BRA_shp/gadm36_BRA_1.shp')
 
 
+# In[14]:
+
+
+geobr
+
+
 # - Planilhas de poços públicos (2022 e 2023)
 
-# In[5]:
+# In[15]:
 
 
 p2022 = pd.read_excel('../data/ANP_pocos_publicos/planilha-pocos-publicos-2022.xlsx')
@@ -61,7 +73,7 @@ p2023 = pd.read_excel('../data/ANP_pocos_publicos/planilha-pocos-publicos-2023.x
 
 # ### Processamento
 
-# In[6]:
+# In[16]:
 
 
 def filter_by_state(state,fluid,phase):
@@ -77,17 +89,17 @@ def filter_by_state(state,fluid,phase):
 
 # - Escolha de parâmetros e aplicação de filtragem
 
-# In[7]:
+# In[17]:
 
 
-state = ('RJ','Rio de Janeiro')
-basin = 'Campos'
+state = ('BA','Bahia')
+basin = 'Recôncavo'
 fluid = 'ÓLEO'
 stage = 'Produção'
 p2022_s, p2023_s, geo_s, geo_cp = filter_by_state(state,fluid,stage)
 
 
-# In[8]:
+# In[18]:
 
 
 # casting de coordenadas
@@ -99,31 +111,30 @@ p2023_s['LONGITUDE_BASE_DD'] = p2023_s['LONGITUDE_BASE_DD'].str.replace(',','.')
 
 # - Mapa geográfico de território e campos
 
-# In[9]:
+# In[19]:
 
 
 f, a = plt.subplots()
-
-geo_s.plot(ax=a,edgecolor='k',facecolor='r',alpha=.4)
+geo_s.plot(ax=a,edgecolor='k',facecolor='r',alpha=0.4)
 geo_cp.plot(ax=a,edgecolor='w',facecolor='g',alpha=1.0);
 
 
 # - Selecionando poços (onshore ou offshore) que se tornaram públicos em 2022 e em 2023
 
-# In[10]:
+# In[20]:
 
 
 # para onshore, 'T' 
-p2022_m = p2022_s[p2022_s['TERRA_MAR'] == 'M']
+p2022_m = p2022_s[p2022_s['TERRA_MAR'] == 'T']
 p2022_tcm = p2022_m['CAMPO'].unique()
 
-p2023_m = p2023_s[p2023_s['TERRA_MAR'] == 'M']
+p2023_m = p2023_s[p2023_s['TERRA_MAR'] == 'T']
 p2023_tcm = p2023_m['CAMPO'].unique()
 
 
 # - Selecionando campos relacionados aos poços
 
-# In[11]:
+# In[21]:
 
 
 geo_cp_m_2022 = geo_cp.apply(lambda row: row[geo_cp['NOM_CAMPO'].isin(p2022_tcm)])
@@ -132,19 +143,19 @@ geo_cp_m_2023 = geo_cp.apply(lambda row: row[geo_cp['NOM_CAMPO'].isin(p2023_tcm)
 
 # - Plota campos de interesse
 
-# In[12]:
+# In[22]:
 
 
 f, a = plt.subplots()
 
-geo_s.plot(ax=a,edgecolor='k',facecolor='gray',alpha=.2)
+#geo_s.plot(ax=a,edgecolor='k',facecolor='gray',alpha=.2)
 geo_cp_m_2022.plot(ax=a,edgecolor='k',lw=.5,facecolor='lightblue',alpha=.7)
 geo_cp_m_2023.plot(ax=a,edgecolor='k',lw=.5,facecolor='darkblue',alpha=.7);
 
 
 # - Lista de campos participantes da RV
 
-# In[13]:
+# In[23]:
 
 
 cp_list_2022 =  geo_cp_m_2022.NOM_CAMPO.tolist()
@@ -159,7 +170,7 @@ print(*[x for x in cp_list_2023], sep=', ', end='.\n')
 
 # ### RV finalística
 
-# In[14]:
+# In[24]:
 
 
 f, a = plt.subplots(2,1,figsize=(14,6),sharex=True)
@@ -169,12 +180,12 @@ f, a = plt.subplots(2,1,figsize=(14,6),sharex=True)
 geo_cp_m_2022.plot(ax=a[0],edgecolor='k',lw=.5,facecolor='lightblue',alpha=.5)
 p2022_m_1 = p2022_m[p2022_m['CAMPO'].isin(cp_list_2022)]
 p2022_m_1f = sb.scatterplot(data=p2022_m_1,
-                             x='LONGITUDE1',
-                             y='LATITUDE_1',
-                             hue='POCO',
-                             marker='o',edgecolor='k',
-                             palette='magma',
-                             ax=a[0])
+                              x='LONGITUDE1',
+                              y='LATITUDE_1',
+                              hue='POCO',
+                              marker='o',edgecolor='k',
+                              palette='magma',
+                              ax=a[0])
 p2022_m_1f.legend(bbox_to_anchor=(1.4,1),ncol=2,fontsize=8)
 
 a[0].set_ylabel('Longitude')
@@ -217,4 +228,10 @@ geo_cp_m_2023.apply(lambda x: a[1].annotate(
                             fontsize=6, 
                             weight='light'),                            
                             axis=1);
+
+
+# In[ ]:
+
+
+
 

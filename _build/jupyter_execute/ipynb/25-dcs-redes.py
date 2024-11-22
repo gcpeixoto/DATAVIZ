@@ -70,15 +70,21 @@ exp = exp.merge(cc,on='Código do país')
 exp = exp.merge(via,on='Meio de transporte')
 
 
+# In[4]:
+
+
+via
+
+
 # - Restrição de dados por escolha de via e bloco geográfico
 # 
 # **Nota:** execute `imp['Nome do bloco'].unique()` para a listagem de blocos.
 
-# In[17]:
+# In[5]:
 
 
 # seletor de via e bloco
-via_e = 'MARITIMA'
+via_e = 'AEREA'
 bloco_e = 'União Europeia - UE'
 
 # filtros
@@ -90,7 +96,7 @@ exp_p_via = exp[(exp['Descrição da via'] == via_e) & (exp['Nome do bloco'] == 
 
 # - Agrupamento por FOB
 
-# In[18]:
+# In[6]:
 
 
 imp_p_via_e = imp_p_via.groupby('Nome do país')['Valor Free On Board'].sum()
@@ -98,6 +104,12 @@ exp_p_via_e = exp_p_via.groupby('Nome do país')['Valor Free On Board'].sum()
 
 df_g = pd.merge(imp_p_via_e,exp_p_via_e,on='Nome do país',how='outer').reset_index()
 df_g = df_g.rename(columns={'Valor Free On Board_x':'FOB_imp','Valor Free On Board_y':'FOB_exp'})
+
+
+# In[7]:
+
+
+df_g
 
 
 # ## Mapeamento
@@ -116,7 +128,7 @@ df_g = df_g.rename(columns={'Valor Free On Board_x':'FOB_imp','Valor Free On Boa
 # - Como o modelo trata-se de um _grafo dirigido_, a criação de dois conjuntos independentes é necessária para fins de visualização.
 # - Valores de FOB como `nan` significam que não houve fluxo entre o Brasil e o país $j$.
 
-# In[19]:
+# In[8]:
 
 
 # grafo de importação
@@ -134,13 +146,13 @@ df_g_exp = pd.DataFrame({'node_to': np.arange(len(df_g))+1,
                          'to_name':df_g['Nome do país']})                         
 
 
-# In[20]:
+# In[9]:
 
 
 df_g_imp
 
 
-# In[21]:
+# In[10]:
 
 
 df_g_exp
@@ -148,22 +160,21 @@ df_g_exp
 
 # - Construção do grafos como objetos `Graph` do `networkx`
 
-# In[22]:
+# In[11]:
 
 
 G_imp = nx.from_pandas_edgelist(df_g_imp,source='node_from',target='node_to',edge_attr='FOB')   
 
 for index, row in df_g_imp.iterrows():
-    G_imp.nodes[row['node_from']]['country'] = row['from_name']
+     G_imp.nodes[row['node_from']]['country'] = row['from_name']
     
 G_exp = nx.from_pandas_edgelist(df_g_exp,source='node_from',target='node_to',edge_attr='FOB')   
 
 for index, row in df_g_exp.iterrows():
-    G_exp.nodes[row['node_from']]['country'] = row['from_name']    
+     G_exp.nodes[row['node_from']]['country'] = row['from_name']    
     
 # impressão auxiliar
-G_imp.nodes(data=True), G_exp.edges(data=True)
-    
+#G_imp.nodes(data=True), G_exp.edges(data=True)
 
 
 # ## Visualização
@@ -175,7 +186,7 @@ G_imp.nodes(data=True), G_exp.edges(data=True)
 #     - Legendas por número (pouco claras)
 #     - Fluxo ("pesos") não especificados
 
-# In[23]:
+# In[12]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(10,4))
@@ -187,7 +198,7 @@ ax[1].set_title(f'Rede de exportação: Brasil $\\rightarrow$ {bloco_e}');
 
 # - Controle de layout, tamanho de nós e legendas
 
-# In[24]:
+# In[13]:
 
 
 fig, ax = plt.subplots(1,2,figsize=(10,4))
@@ -220,7 +231,7 @@ nx.draw_networkx_labels(G_imp,
                         labels=nx.get_node_attributes(G_imp,'country'), # atributo (nome do país)
                         font_size=7, # tamanho da fonte
                         ax=ax[0],                        
-                        )
+                        );
 
 ax[0].set_title(f'Rede de importação: {bloco_e} $\\rightarrow$ Brasil')
 
@@ -255,7 +266,7 @@ ax[1].set_title(f'Rede de exportação: Brasil $\\rightarrow$ {bloco_e}');
 
 # - Sobrepondo os grafos
 
-# In[25]:
+# In[14]:
 
 
 fig, ax = plt.subplots(figsize=(12,8),constrained_layout=True)
@@ -287,7 +298,7 @@ edges = nx.draw_networkx_edges(G_imp,
                                ax=ax)
 
 
-# opções de legendas de nós
+# # opções de legendas de nós
 labels = nx.draw_networkx_labels(G_imp,
                                  pos=coords,
                                  labels=nx.get_node_attributes(G_imp,'country'),
@@ -306,7 +317,7 @@ edge_labels = nx.draw_networkx_edge_labels(G_imp,
                                            bbox = {'fc': 'white', "alpha": 0.05},
                                            font_color='#aa0000')
 
-# --- EXPORTAÇÃO
+# # --- EXPORTAÇÃO
 
 fob, edge_colors, coords = dcs25.base_data(G_exp,fob_scale=1e8,seed=12)
 
@@ -352,7 +363,7 @@ ax.set_axis_off()
 # - Remoção do indicador FOB
 #     - Onde colocar?
 
-# In[28]:
+# In[15]:
 
 
 fig, ax = plt.subplots(figsize=(12,8),constrained_layout=True)
@@ -444,4 +455,10 @@ ax.legend(handles=leg, loc='upper right')
 # título
 fig.suptitle('Rede bilateral: Brasil/países (Fluxo de importação/exportação FOB em bi USD)',fontsize=16)
 ax.set_title(f'Via de transporte: {via_e}; Bloco:{bloco_e}; Ano: {y}',fontsize=13);
+
+
+# In[ ]:
+
+
+
 

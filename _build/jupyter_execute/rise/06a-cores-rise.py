@@ -7,7 +7,7 @@
 # 
 # CI/DCC/UFPB
 # 
-# [gcpeixoto.github.com/DATAVIZ](gcpeixoto.github.com/DATAVIZ)
+# [gcpeixoto.github.com/DATAVIZ](https://gcpeixoto.github.com/DATAVIZ)
 
 # ## Introdução
 # 
@@ -29,20 +29,20 @@
 # 
 # - Várias escalas de cores qualitativas ou _mapas de cores_ (ex. 6, 10 e 14 cores segundo a paleta padrão)
 
-# In[4]:
+# In[1]:
 
 
 from seaborn import color_palette
 color_palette(n_colors=6)
 
 
-# In[5]:
+# In[2]:
 
 
 color_palette(n_colors=10)
 
 
-# In[6]:
+# In[3]:
 
 
 color_palette(n_colors=14)
@@ -50,22 +50,22 @@ color_palette(n_colors=14)
 
 # ### Insaturação proporcional com `desat`
 
-# In[5]:
+# In[4]:
 
 
 color_palette(n_colors=6,desat=0.1)
 
 
-# In[6]:
+# In[5]:
 
 
 color_palette(n_colors=10,desat=0.5)
 
 
-# In[7]:
+# In[14]:
 
 
-color_palette(n_colors=14,desat=0.9)
+color_palette(n_colors=14,desat=.0)
 
 
 # ### Paletas predefinidas
@@ -77,31 +77,31 @@ color_palette(n_colors=14,desat=0.9)
 #     - `dark`
 #     - `colorblind`
 
-# In[9]:
+# In[15]:
 
 
 color_palette('muted')
 
 
-# In[10]:
+# In[16]:
 
 
 color_palette('bright')
 
 
-# In[11]:
+# In[17]:
 
 
 color_palette('pastel')
 
 
-# In[12]:
+# In[18]:
 
 
 color_palette('dark')
 
 
-# In[8]:
+# In[19]:
 
 
 color_palette('colorblind')
@@ -120,19 +120,19 @@ color_palette('colorblind')
 
 # Cada uma pode ser invocada pela função `seaborn.color_palette()` naturalmente:
 
-# In[13]:
+# In[20]:
 
 
 color_palette('Paired',n_colors=10)
 
 
-# In[14]:
+# In[21]:
 
 
 color_palette('Set1',n_colors=10)
 
 
-# In[15]:
+# In[22]:
 
 
 color_palette('tab20b',n_colors=10)
@@ -223,13 +223,13 @@ plot_municipios_PB('Paired');
 
 # ### Sequenciais com percepção de uniformidade
 
-# In[16]:
+# In[23]:
 
 
 color_palette('viridis',n_colors=12)
 
 
-# In[17]:
+# In[24]:
 
 
 color_palette('magma',n_colors=12)
@@ -237,19 +237,19 @@ color_palette('magma',n_colors=12)
 
 # ### Sequenciais do grupo 1
 
-# In[23]:
+# In[25]:
 
 
 color_palette('Oranges',n_colors=35)
 
 
-# In[24]:
+# In[26]:
 
 
 color_palette('Blues',n_colors=35)
 
 
-# In[25]:
+# In[27]:
 
 
 color_palette('YlOrRd',n_colors=35)
@@ -257,19 +257,19 @@ color_palette('YlOrRd',n_colors=35)
 
 # ### Sequenciais do grupo 2
 
-# In[26]:
+# In[28]:
 
 
 color_palette('bone',n_colors=12)
 
 
-# In[27]:
+# In[29]:
 
 
 color_palette('hot',n_colors=12)
 
 
-# In[28]:
+# In[30]:
 
 
 color_palette('copper',n_colors=12)
@@ -277,39 +277,39 @@ color_palette('copper',n_colors=12)
 
 # ### Divergentes
 
-# In[29]:
+# In[36]:
 
 
-color_palette('RdBu',n_colors=12) 
+color_palette('RdBu',n_colors=17) 
 
 
-# In[30]:
+# In[37]:
 
 
-color_palette('Spectral',n_colors=12)
+color_palette('Spectral',n_colors=15)
 
 
-# In[31]:
+# In[39]:
 
 
-color_palette('seismic',n_colors=12)
+color_palette('seismic',n_colors=15)
 
 
 # ### Cíclicas
 
-# In[36]:
+# In[40]:
 
 
 color_palette('twilight',n_colors=25)
 
 
-# In[33]:
+# In[41]:
 
 
 color_palette('twilight_shifted',n_colors=12)
 
 
-# In[38]:
+# In[42]:
 
 
 color_palette('hsv',n_colors=25)
@@ -317,19 +317,19 @@ color_palette('hsv',n_colors=25)
 
 # ### Genéricas
 
-# In[42]:
+# In[43]:
 
 
 color_palette('prism',n_colors=12)
 
 
-# In[40]:
+# In[44]:
 
 
 color_palette('terrain',n_colors=12)
 
 
-# In[41]:
+# In[45]:
 
 
 color_palette('rainbow',n_colors=12)

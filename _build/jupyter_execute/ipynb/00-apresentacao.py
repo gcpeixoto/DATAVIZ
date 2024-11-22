@@ -7,16 +7,16 @@
 # 
 # ## Objetivos
 # 
-# - Elencar os marcos históricos de desenvolvimento da área denominada _visualização de dados_;
+# - Elencar os marcos históricos de desenvolvimento do campo do conhecimento denominado _visualização de dados_;
 # - Reconhecer conceitos de representação visual, percepção, estética, cores e seus impactos ao observador;
-# - Discutir técnicas diversas para representação visual de quantidades, proporções, tendências, redes e informações gerais, bem como de _storytelling_ e _business storytelling_;
-# - Desenvolver códigos para visualização de dados multidimensionais e científicos;
-# - Experimentar ferramentas e plataformas modernas para construção de painéis analíticos (_dashboards_) e geração de relatórios automatizados;
-# - Propor soluções de _data reporting_ para cases de negócio aplicáveis aos diversos setores da economia. 
+# - Discutir técnicas diversas para representação visual de quantidades, proporções, tendências, dados geoespaciais e informações gerais, bem como de _storytelling_ e _business storytelling_;
+# - Desenvolver códigos agnósticos para visualização de dados multidimensionais, mas com particular ênfase a objetivos negociais, técnicos ou científicas;
+# - Experimentar ferramentas e plataformas modernas para construção de painéis analíticos (_dashboards_); e
+# - Propor soluções de _data reporting_ para geração de relatórios automatizados e casos de negócio dos diversos setores da economia.
 
 # ## Estrutura
 # 
-# O curso é composto de 3 módulos subdivididos em duas partes, conteúdo e avaliação, segundo a seguinte estrutura:
+# O curso é composto de 3 módulos. Cada módulo é subdividido em duas partes, conteúdo e avaliação, na seguinte estrutura:
 # 
 # - Módulo 1 (20h)
 #     - Conteúdo (18h)
@@ -43,16 +43,9 @@ labels = ['Visualização de Dados',
     'Conteúdo 2','Estudo de caso 2',
     'Conteúdo 3','Projeto de visualização']
 
-parents = [''] + \
-    3*['Visualização de Dados'] + \
-    2*['Módulo 1'] + \
-    2*['Módulo 2'] + \
-    2*['Módulo 3'] 
+parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
 
-values = [0] + \
-    [.33,.33,.33] + \
-    [.9,.1,.9,.1] + \
-    [.7,.3]
+values = [0] +     [.33,.33,.33] +     [.9,.1,.9,.1] +     [.7,.3]
 
 f = go.Figure(go.Treemap(
     labels = labels,
@@ -81,7 +74,7 @@ display(HTML('course-treemap.html'))
 #     - [Técnicas de _Storytelling_](08a-storytelling.ipynb)
 #     - [Imersão em _matplotlib_](09a-matplotlib-imersao.ipynb)
 # - Avaliação (2h)
-#     - [Estudo de Caso de Visualização de Dados (ECVD1)](10a-ecvd1.ipynb) (2h)
+#     - [Análise de Casos de Visualização de Dados (ECVD1)](10a-acvd.ipynb) (2h)
 # 
 # ### Módulo 2: Técnica (20h)
 # 
@@ -96,7 +89,7 @@ display(HTML('course-treemap.html'))
 #     - [_Dataviz Code Session_: Séries Temporais e Tendências](27-dcs-serietemporal.ipynb)
 # 
 # - Avaliação (2h)
-#     - [Estudo de Caso de Visualização de Dados (ECVD2)](20a-ecvd2.ipynb) (2h)
+#     - [Análise de Casos de Visualização de Dados (ACVD)](20a-ecvd.ipynb) (2h)
 # 
 # ### Módulo 3: Aplicações (20h)
 # 
@@ -123,7 +116,7 @@ display(HTML('course-treemap.html'))
 # ## Metodologia de avaliação
 
 # 
-# A metodologia de avaliação será guiada pela <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf"> Rubrica de Avaliação</a>, salvo adaptações pontuais e previamente informadas.
+# A metodologia de avaliação será guiada pelo <a href="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/criterio-notas.pdf" download="https://github.com/gcpeixoto/DATAVIZ/blob/main/assess/orientador-avaliacoes.pdf"> Manual Orientador</a>, salvo adaptações previamente informadas.
 # 
 # ### Templates 
 # 

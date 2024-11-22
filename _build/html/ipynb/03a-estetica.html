@@ -319,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -753,7 +753,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">draw_my_arrow</span><span class="p">(</span><span class="n">A1</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">B1</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">C1</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">D</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">C2</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">B2</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">A2</span><span class="p">:</span><span class="nb">tuple</span><span class="p">):</span>
-<span class="w">      </span><span class="sd">&quot;&quot;&quot;</span>
+      <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">      Desenha uma seta com 7 vértices com largura e comprimento controláveis.</span>
 
 <span class="sd">                C1</span>
@@ -970,11 +970,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(b&#39;2014-04-01 00:00:00.0&#39;, 60, 15.061538, 14.968861, 15.156247, 0.002655, 0.006652, 0.016203)
-(b&#39;2014-04-01 00:01:00.0&#39;, 60, 14.998578, 14.937197, 15.042743, 0.001254, 0.004572, 0.013061)
-(b&#39;2014-04-01 00:02:00.0&#39;, 60, 15.262313, 15.035021, 15.566826, 0.041438, 0.02628, 0.053497)
-(b&#39;2014-04-01 00:03:00.0&#39;, 60, 15.453514, 15.385535, 15.534492, 0.001175, 0.004425, 0.012868)
-(b&#39;2014-04-01 00:04:00.0&#39;, 60, 15.353062, 15.237991, 15.423458, 0.003526, 0.007666, 0.017884)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(b&#39;2014-04-01 00:00:00.0&#39;, 60, 15.06153847, 14.96886086, 15.15624697, 0.00265502, 0.00665209, 0.01620325)
+(b&#39;2014-04-01 00:01:00.0&#39;, 60, 14.99857787, 14.93719665, 15.04274265, 0.00125412, 0.00457187, 0.01306111)
+(b&#39;2014-04-01 00:02:00.0&#39;, 60, 15.26231288, 15.03502109, 15.56682569, 0.04143754, 0.02627976, 0.05349682)
+(b&#39;2014-04-01 00:03:00.0&#39;, 60, 15.4535136, 15.3855348, 15.53449212, 0.00117476, 0.00442485, 0.01286833)
+(b&#39;2014-04-01 00:04:00.0&#39;, 60, 15.35306231, 15.23799073, 15.42345761, 0.00352644, 0.00766642, 0.01788372)
 </pre></div>
 </div>
 </div>
@@ -1528,11 +1528,11 @@ title="Print to PDF"
 <span class="n">df_h2</span><span class="p">[</span><span class="s1">&#39;Partos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_h2</span><span class="p">[</span><span class="s1">&#39;Partos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="c1"># plotagem principal</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Cirurgias&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df_h2</span><span class="p">,</span><span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Partos&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df_h2</span><span class="p">,</span><span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Cirurgias&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_h2</span><span class="p">,</span> <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Bloco&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Partos&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Porte&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_h2</span><span class="p">,</span> <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># eixos</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
@@ -1563,12 +1563,12 @@ title="Print to PDF"
 <span class="n">df_hours</span> <span class="o">=</span> <span class="n">df_t</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">::</span><span class="mi">60</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
 <span class="n">df_ti</span> <span class="o">=</span> <span class="n">df_t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df_hours</span><span class="p">][:</span><span class="mi">48</span><span class="p">]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_ti</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#be5631&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 
 <span class="n">da</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">((</span><span class="n">df_ti</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)))</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;h&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">)])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">da</span><span class="p">,</span><span class="n">db</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">da</span><span class="p">,</span><span class="n">db</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
 <span class="n">half</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">da</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
@@ -1579,8 +1579,8 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Tempo&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="s1">&#39;01/04/2014&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#d1886e&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1450</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="s1">&#39;02/04/2014&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#d1886e&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="s1">&#39;01/04/2014&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#d1886e&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1450</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="s1">&#39;02/04/2014&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#d1886e&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

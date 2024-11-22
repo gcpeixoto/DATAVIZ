@@ -23,37 +23,37 @@ fig, ax = plt.subplots(nrows=3,
                        ) 
 
 
-# - Controle da escala de eixos
+# - Controle de razão de aspecto de eixos
 
 # In[2]:
 
 
 fig, ax = plt.subplots(1,6,figsize=(10,2),constrained_layout=True)
-fig.suptitle('Escala de eixos',fontsize=8)
+fig.suptitle('Controle de razão de aspecto: ax.axis()',fontsize=10)
 
-xmin, xmax, ymin, ymax = ax[0].axis('off')
-ax[0].plot([-1,0,1],[1,2,3],'o')
+aspect_opt = [
+    'auto', # padrão
+    'equal',
+    'scaled',
+    'tight',
+    'square',
+    'personalizado'
+    ] 
 
-# mesma escala; círculos ficam circulares alterando limites
-ax[1].plot([-1,0,4],[1,2,3],'o')
-ax[1].axis('equal')
+for i, a in enumerate(ax.flatten()):
 
-# mesma escala; círculos ficam circulares alterando dimensões da Figure
-ax[2].plot([-1,0,4],[1,2,3],'o')
-ax[2].axis('scaled')
-
-# limites grandes o bastante para acomodação aos dados
-ax[3].plot([-1,0,4],[1,2,3],'o')
-ax[3].axis('tight')
-
-# xmax - xmin = ymax - ymin
-ax[4].plot([-1,0,4],[1,2,3],'o')
-ax[4].axis('square')
-
-# limites customizados
-ax[5].plot([-1,0,4],[1,2,3],'o')
-ax[5].axis([-3,5,-2,4]) # 1a. forma
-ax[5].set_xlim(-3,5); ax[5].set_ylim(-2,4); # 2a. forma
+    ax[i].plot([-1,0,4],[1,2,3],'o')
+    
+    if i != 5:    
+        ax[i].axis(aspect_opt[i])
+        title = "'" + aspect_opt[i] + "'"
+        ax[i].set_title(title, fontsize=8)
+    
+    else:
+        # Limites personalizados com 
+        ax[i].axis([-3,5,-2,4]) # 1a. forma: [xmin, xmax, ymin, ymax]
+        ax[i].set_xlim(-3,5); ax[5].set_ylim(-2,4); # 2a. forma
+        ax[i].set_title(aspect_opt[i], fontsize=8)
 
 
 # - Visibilidade de eixos
@@ -160,7 +160,6 @@ ax2.get_xaxis().set_visible(False)
 ax2.get_yaxis().set_visible(False)
 
 
-
 # - Eixos apensados
 
 # In[8]:
@@ -234,9 +233,9 @@ ax[1].yaxis.set_visible(False)
 # In[10]:
 
 
-markers = ['.','o','s','P','X','*','p','D','<','>','^','v', \
-             '1','2','3','4','+','x','|','_',4,5,6,7, \
-         '$\\int$','$\\dagger$' ]
+markers = ['.',',','o','s','p','d','h','P','D','H','X','*','<','>','^','v',             '1','2','3','4','8','+','x','|','_','$...$',4,5,6,7,             '$\\int$','$\\dagger$'
+ ]
+
 
 fig, ax = plt.subplots(figsize=(5,8),constrained_layout=True)
 
@@ -434,7 +433,7 @@ def print_palette(opt):
 
 # ## Renderização de Latex
 
-# In[30]:
+# In[18]:
 
 
 from matplotlib.pyplot import xlabel, ylabel
@@ -462,7 +461,7 @@ rcdefaults()
 # - O `matplotlib` usa pontos e não pixels para medir o tamanho de figuras. Por padrão, 1 pt $\approx$ 1/72 inch. 
 # - O controle de resolução da imagem pronta para publicação a ser gerada é feito pela alteração dos "pontos por polegada" (_dots per inch_), i.e. o argumento `dpi` na geração de imagens.
 
-# In[31]:
+# In[19]:
 
 
 fig, ax = plt.subplots(constrained_layout=True, # controle de interpadding
@@ -486,7 +485,7 @@ ax.scatter(1,1,s=20);
 
 # ### Imprimindo subclasses de `Patch`
 
-# In[32]:
+# In[20]:
 
 
 import matplotlib.patches as ptc
@@ -509,7 +508,7 @@ ptc_c = sorted(ptc_c)
 # 
 # - TODO
 
-# In[33]:
+# In[21]:
 
 
 import matplotlib.pyplot as plt
@@ -599,7 +598,6 @@ e2 = ptc.CirclePolygon(xy=(0.5,0.5),
 
 ax[0,4].add_patch(e1); ax[0,4].add_patch(e2)
 
-
 # --- ELLIPSE
 center = (0.5, 0.5)  
 width = 0.8  
@@ -620,10 +618,20 @@ h1 = ptc.FancyArrow(start_point[0], start_point[1],
 
 ax[1,1].add_patch(h1);
 
+# --- RECTANGLE
+f1 = ptc.Rectangle(xy=(0.2,0.4),
+                    width=0.6,
+                    height=0.3,
+                    angle=0,
+                    color='red',
+                    lw=2)
+
+ax[2,1].add_patch(f1);
+
 
 # #### Aplicação: bandeira do Brasil
 
-# In[34]:
+# In[22]:
 
 
 import matplotlib.pyplot as plt
@@ -693,7 +701,7 @@ ax.set_xticks([]); ax.set_yticks([]);
 
 # - Patching + hatching
 
-# In[55]:
+# In[23]:
 
 
 import matplotlib.pyplot as plt
@@ -720,7 +728,7 @@ for (i,_) in enumerate(ax.flatten()):
 
 # - Ploting + hatching
 
-# In[76]:
+# In[24]:
 
 
 import matplotlib.pyplot as plt

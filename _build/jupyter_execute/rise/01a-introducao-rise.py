@@ -305,9 +305,9 @@ ax.set_ylabel('litro (R$)')
 # seaborn
 sns.set_style("whitegrid")
 g = sns.boxplot(data=df, x="Bandeira", y="Valor de Venda",
-    hue='Produto',palette="deep",ax = ax)
+   hue='Produto',palette="deep",ax = ax)
 sns.move_legend(g, "upper center", title='', ncol=1,
-    frameon=True, bbox_to_anchor=(1.11, .8))
+   frameon=True, bbox_to_anchor=(1.11, .8))
 sns.despine(offset=5,trim=True)
 sns.set_style()
 

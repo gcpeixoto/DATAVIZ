@@ -549,16 +549,9 @@ labels = ['Visualização de Dados',
     'Conteúdo 2','Estudo de caso 2',
     'Conteúdo 3','Relatório Final']
 
-parents = [''] + \
-    3*['Visualização de Dados'] + \
-    2*['Módulo 1'] + \
-    2*['Módulo 2'] + \
-    2*['Módulo 3'] 
+parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
 
-values = [0] + \
-    [.33,.33,.33] + \
-    [.9,.1,.9,.1] + \
-    [.7,.3]
+values = [0] +     [.33,.33,.33] +     [.9,.1,.9,.1] +     [.7,.3]
 
 f = go.Figure(go.Treemap(
     labels = labels,
@@ -631,7 +624,7 @@ ax[1].set_ylabel('Duryea - 10th');
 
 # O exemplo a seguir é uma coropleta para a população brasileira segundo dados do IBGE para o Censo 2022. Os valores são exibidos na tabela.
 
-# In[28]:
+# In[1]:
 
 
 import json, geopandas as geo, pandas as pd, matplotlib.pyplot as plt
@@ -669,6 +662,12 @@ pop.plot(ax=a,column='Pop 2022',
 
 a.axis('off')
 a.set_title('População brasileira em 2022');
+
+
+# In[4]:
+
+
+pop
 
 
 # ## _Plots_ para visualizar incertezas

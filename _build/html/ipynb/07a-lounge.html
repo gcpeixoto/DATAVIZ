@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. Técnicas de Storytelling" href="08a-storytelling.html" />
@@ -321,13 +321,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -524,37 +524,66 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#barras-bar-plot">
-   7.1. Barras (
+  <a class="reference internal nav-link" href="#plots-para-visualizar-quantidades">
+   7.1.
    <em>
-    bar plot
+    Plots
    </em>
-   )
+   para visualizar quantidades
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barras-simples-bar-plot">
-     7.1.1. Barras simples (
+    <a class="reference internal nav-link" href="#barras-bar-plot">
+     7.1.1. Barras (
      <em>
       bar plot
      </em>
      )
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#barras-simples-bar-plot">
+       7.1.1.1. Barras simples (
+       <em>
+        bar plot
+       </em>
+       )
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#barras-agrupadas-grouped-bar-plot">
+       7.1.1.2. Barras agrupadas (
+       <em>
+        grouped bar plot
+       </em>
+       )
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#barras-empilhadas-stacked-bar-plot">
+       7.1.1.3. Barras empilhadas (
+       <em>
+        stacked bar plot
+       </em>
+       )
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barras-agrupadas-grouped-bar-plot">
-     7.1.2. Barras agrupadas (
+    <a class="reference internal nav-link" href="#pontos-dot-plot">
+     7.1.2. Pontos (
      <em>
-      grouped bar plot
+      dot plot
      </em>
      )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barras-empilhadas-stacked-bar-plot">
-     7.1.3. Barras empilhadas (
+    <a class="reference internal nav-link" href="#mapas-de-calor-heatmap">
+     7.1.3. Mapas de calor (
      <em>
-      stacked bar plot
+      heatmap
      </em>
      )
     </a>
@@ -562,26 +591,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pontos-dot-plot">
-   7.2. Pontos (
-   <em>
-    dot plot
-   </em>
-   )
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mapas-de-calor-heatmap">
-   7.3. Mapas de calor (
-   <em>
-    heatmap
-   </em>
-   )
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-distribuicoes">
-   7.4.
+   7.2.
    <em>
     Plots
    </em>
@@ -590,29 +601,29 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#histograma">
-     7.4.1. Histograma
+     7.2.1. Histograma
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#densidade-simples">
-     7.4.2. Densidade simples
+     7.2.2. Densidade simples
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#densidade-cumulativa">
-     7.4.3. Densidade cumulativa
+     7.2.3. Densidade cumulativa
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#quantis">
-     7.4.4. Quantis
+     7.2.4. Quantis
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-proporcoes">
-   7.5.
+   7.3.
    <em>
     Plots
    </em>
@@ -621,29 +632,29 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#barras">
-     7.5.1. Barras
+     7.3.1. Barras
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fatias">
-     7.5.2. Fatias
+     7.3.2. Fatias
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diagrama-de-venn">
-     7.5.3. Diagrama de Venn
+     7.3.3. Diagrama de Venn
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arvore-estruturada">
-     7.5.4. Árvore estruturada
+     7.3.4. Árvore estruturada
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-correlacoes">
-   7.6.
+   7.4.
    <em>
     Plots
    </em>
@@ -652,14 +663,14 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dispersao">
-     7.6.1. Dispersão
+     7.4.1. Dispersão
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-dados-geoespaciais">
-   7.7.
+   7.5.
    <em>
     Plots
    </em>
@@ -668,7 +679,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-incertezas">
-   7.8.
+   7.6.
    <em>
     Plots
    </em>
@@ -677,7 +688,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   7.9. Referências
+   7.7. Referências
   </a>
  </li>
 </ul>
@@ -700,37 +711,66 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#barras-bar-plot">
-   7.1. Barras (
+  <a class="reference internal nav-link" href="#plots-para-visualizar-quantidades">
+   7.1.
    <em>
-    bar plot
+    Plots
    </em>
-   )
+   para visualizar quantidades
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barras-simples-bar-plot">
-     7.1.1. Barras simples (
+    <a class="reference internal nav-link" href="#barras-bar-plot">
+     7.1.1. Barras (
      <em>
       bar plot
      </em>
      )
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#barras-simples-bar-plot">
+       7.1.1.1. Barras simples (
+       <em>
+        bar plot
+       </em>
+       )
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#barras-agrupadas-grouped-bar-plot">
+       7.1.1.2. Barras agrupadas (
+       <em>
+        grouped bar plot
+       </em>
+       )
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#barras-empilhadas-stacked-bar-plot">
+       7.1.1.3. Barras empilhadas (
+       <em>
+        stacked bar plot
+       </em>
+       )
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barras-agrupadas-grouped-bar-plot">
-     7.1.2. Barras agrupadas (
+    <a class="reference internal nav-link" href="#pontos-dot-plot">
+     7.1.2. Pontos (
      <em>
-      grouped bar plot
+      dot plot
      </em>
      )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barras-empilhadas-stacked-bar-plot">
-     7.1.3. Barras empilhadas (
+    <a class="reference internal nav-link" href="#mapas-de-calor-heatmap">
+     7.1.3. Mapas de calor (
      <em>
-      stacked bar plot
+      heatmap
      </em>
      )
     </a>
@@ -738,26 +778,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pontos-dot-plot">
-   7.2. Pontos (
-   <em>
-    dot plot
-   </em>
-   )
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mapas-de-calor-heatmap">
-   7.3. Mapas de calor (
-   <em>
-    heatmap
-   </em>
-   )
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-distribuicoes">
-   7.4.
+   7.2.
    <em>
     Plots
    </em>
@@ -766,29 +788,29 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#histograma">
-     7.4.1. Histograma
+     7.2.1. Histograma
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#densidade-simples">
-     7.4.2. Densidade simples
+     7.2.2. Densidade simples
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#densidade-cumulativa">
-     7.4.3. Densidade cumulativa
+     7.2.3. Densidade cumulativa
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#quantis">
-     7.4.4. Quantis
+     7.2.4. Quantis
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-proporcoes">
-   7.5.
+   7.3.
    <em>
     Plots
    </em>
@@ -797,29 +819,29 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#barras">
-     7.5.1. Barras
+     7.3.1. Barras
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fatias">
-     7.5.2. Fatias
+     7.3.2. Fatias
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diagrama-de-venn">
-     7.5.3. Diagrama de Venn
+     7.3.3. Diagrama de Venn
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arvore-estruturada">
-     7.5.4. Árvore estruturada
+     7.3.4. Árvore estruturada
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-correlacoes">
-   7.6.
+   7.4.
    <em>
     Plots
    </em>
@@ -828,14 +850,14 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dispersao">
-     7.6.1. Dispersão
+     7.4.1. Dispersão
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-dados-geoespaciais">
-   7.7.
+   7.5.
    <em>
     Plots
    </em>
@@ -844,7 +866,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plots-para-visualizar-incertezas">
-   7.8.
+   7.6.
    <em>
     Plots
    </em>
@@ -853,7 +875,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   7.9. Referências
+   7.7. Referências
   </a>
  </li>
 </ul>
@@ -878,8 +900,16 @@ title="Print to PDF"
 <li><p>dados geoespaciais; e</p></li>
 <li><p>incertezas.</p></li>
 </ul>
+<section id="plots-para-visualizar-quantidades">
+<h2><span class="section-number">7.1. </span><em>Plots</em> para visualizar quantidades<a class="headerlink" href="#plots-para-visualizar-quantidades" title="Permalink to this headline">#</a></h2>
+<p><em>Plots</em> para quantidades são naturalmente ligados a valores numéricos associados a algumas categorias. Neste grupo encontram-se os seguintes gráficos:</p>
+<ul class="simple">
+<li><p><strong>barras</strong>, simples, empilhadas (<em>stacked</em>) ou agrupadas (<em>grouped</em>), dispostas horizontal ou verticalmente;</p></li>
+<li><p><strong>pontos</strong>, uma versão simplificada dos gráficos de barras;</p></li>
+<li><p><strong>mapas de calor</strong> (<em>heatmap</em>), que quantificam a informação pela cor;</p></li>
+</ul>
 <section id="barras-bar-plot">
-<h2><span class="section-number">7.1. </span>Barras (<em>bar plot</em>)<a class="headerlink" href="#barras-bar-plot" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.1.1. </span>Barras (<em>bar plot</em>)<a class="headerlink" href="#barras-bar-plot" title="Permalink to this headline">#</a></h3>
 <p>Para explorar as possibilidades com gráficos de barras e verificar quando eles são ou não adequados, partiremos de uma fonte de dados relativos ao cinema. Os <em>dataframes</em> a seguir registram as 10 maiores bilheterias do cinema nos Estados Unidos e no Brasil, em milhões de dólares, de acordo com o website <a class="reference external" href="https://www.boxofficemojo.com">Box Office Mojo</a>. Os títulos aparecem conforme veiculados no Brasil.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1040,7 +1070,7 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <section id="barras-simples-bar-plot">
-<h3><span class="section-number">7.1.1. </span>Barras simples (<em>bar plot</em>)<a class="headerlink" href="#barras-simples-bar-plot" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">7.1.1.1. </span>Barras simples (<em>bar plot</em>)<a class="headerlink" href="#barras-simples-bar-plot" title="Permalink to this headline">#</a></h4>
 <p>A maneira mais direta de comparar esses números é plotando um gráfico de barras. Vamos testar a disposição vertical.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1062,7 +1092,7 @@ title="Print to PDF"
 <p>Com as barras horizontais, os nomes dos filmes são melhor identificáveis. Porém, há uma série de melhorias ainda a fazer neste visual. Vamos discuti-las posteriormente.</p>
 </section>
 <section id="barras-agrupadas-grouped-bar-plot">
-<h3><span class="section-number">7.1.2. </span>Barras agrupadas (<em>grouped bar plot</em>)<a class="headerlink" href="#barras-agrupadas-grouped-bar-plot" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">7.1.1.2. </span>Barras agrupadas (<em>grouped bar plot</em>)<a class="headerlink" href="#barras-agrupadas-grouped-bar-plot" title="Permalink to this headline">#</a></h4>
 <p>Enquanto as barras simples são capazes de mostrar como quantidades variam em relação a apenas uma categoria, as barras agrupadas são capazes de mostrar variação de quantidades em mais do que uma categoria. No exemplo anterior, a categoria única era o nome dos filmes. Agora, vamos criar um gráfico de barras agrupadas colocando lado a lado os filmes do TOP 10 internacional que também estiveram entre os TOP 10 do Brasil e criar uma categorização baseada na localização geográfica.</p>
 <p>Primeiramente, vamos localizar os filmes intersectantes.</p>
 <div class="cell tag_remove-input docutils container">
@@ -1242,7 +1272,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="barras-empilhadas-stacked-bar-plot">
-<h3><span class="section-number">7.1.3. </span>Barras empilhadas (<em>stacked bar plot</em>)<a class="headerlink" href="#barras-empilhadas-stacked-bar-plot" title="Permalink to this headline">#</a></h3>
+<h4><span class="section-number">7.1.1.3. </span>Barras empilhadas (<em>stacked bar plot</em>)<a class="headerlink" href="#barras-empilhadas-stacked-bar-plot" title="Permalink to this headline">#</a></h4>
 <p>Barras empilhadas são adequadas para visualizar quantidades que produzem um total significativo a partir de parcelas que exibem, com clareza, suas proporções para este todo. No exemplo a seguir, procuramos mostrar o peso das bilheterias dos filmes assistidos no Brasil comparado ao peso das bilheterias dos filmes assistidos nos Estados Unidos. Isto é, cada barra representa a soma, em reais, angariada por cada filme nos dois países e cada segmento as parcelas desta soma por localidade. Como se vê, a bilheteria americana é consideravelmente maior do que a brasileira em todos os filmes. Entretanto, percebemos que a ordem de preferência do público americano não se equiparou a da audiência brasileira.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1252,7 +1282,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="pontos-dot-plot">
-<h2><span class="section-number">7.2. </span>Pontos (<em>dot plot</em>)<a class="headerlink" href="#pontos-dot-plot" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.1.2. </span>Pontos (<em>dot plot</em>)<a class="headerlink" href="#pontos-dot-plot" title="Permalink to this headline">#</a></h3>
 <p>O <em>plot</em> de pontos simplifica a escala representada visualmente por gráficos de barra. A posição do ponto marca a quantidade expressa no eixo correspondente. Vimos um exemplo aplicado deste gráfico na <a class="reference internal" href="06a-cores.html#sec-aplicado-quantitativo"><span class="std std-numref">Seção 6.1.1.2.7</span></a>. Na representação abaixo, utilizamos a mesma fonte de dados para plotar as áreas de uma amostra de 35 municípios. A escala logarítmica permite que tenhamos uma visão ampla da extensão em quilômetros quadrados por meio de potências de 10.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1261,7 +1291,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="mapas-de-calor-heatmap">
-<h2><span class="section-number">7.3. </span>Mapas de calor (<em>heatmap</em>)<a class="headerlink" href="#mapas-de-calor-heatmap" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">7.1.3. </span>Mapas de calor (<em>heatmap</em>)<a class="headerlink" href="#mapas-de-calor-heatmap" title="Permalink to this headline">#</a></h3>
 <p>Alternativamente às representações visuais quantitativas criadas por barras, podemos utilizar os chamados <em>mapas de calor</em>, que permite mapear valores em cores. Utilizaremos um mapa de calor para quantificar visualmente dados sobre crimes violentos.</p>
 <p>No <em>dataframe</em> abaixo estão os resultados de uma pesquisa sobre Crimes Violentos Letais Intencionais (CVLI) cometidos em João Pessoa entre 2015 e 2018 (Dados disponíveis <a class="reference external" href="https://repositorio.ufpb.br/jspui/bitstream/123456789/16029/1/PMS09102019.pdf">aqui</a>). Em particular, constam nele a prevalência dos crimes além das tipologias de armas utilizadas entre 2015 e o primeiro semestre de 2019.</p>
 <p>A prevalência permite compreender o quanto é comum, ou rara, uma determinada ocorrência ou situação numa população. A prevalência <span class="math notranslate nohighlight">\(p\)</span> é dada pela equação</p>
@@ -1647,8 +1677,9 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+</section>
 <section id="plots-para-visualizar-distribuicoes">
-<h2><span class="section-number">7.4. </span><em>Plots</em> para visualizar distribuições<a class="headerlink" href="#plots-para-visualizar-distribuicoes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span><em>Plots</em> para visualizar distribuições<a class="headerlink" href="#plots-para-visualizar-distribuicoes" title="Permalink to this headline">#</a></h2>
 <p>A estatística descritiva é limitada para resumir dados, visto que dados com características completamente distintas podem ter os mesmos valores para média, mediana e variância, por exemplo. Uma forma aprofundada de reconhecer as características dos dados é inspecionar a sua <em>distribuição</em>. No grupo das distribuições, consideraremos os seguintes <em>plots</em>:</p>
 <ul class="simple">
 <li><p><strong>histogramas</strong>, com intervalo de classes uniforme;</p></li>
@@ -1767,7 +1798,7 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <section id="histograma">
-<h3><span class="section-number">7.4.1. </span>Histograma<a class="headerlink" href="#histograma" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Histograma<a class="headerlink" href="#histograma" title="Permalink to this headline">#</a></h3>
 <p>O histograma é a representação visual mais comumemente empregada para retratar distribuições. O gráfico é composto de retângulos preenchidos cujas alturas correspondem às frequências de observação de determinados valores que compreendem um <em>intervalo de classe</em>.</p>
 <p>Na figura a seguir plotamos histogramas para as massas dos produtos processados em cada uma das matrizes. Por brevidade, consideramos no histograma todos os valores registrados ao longo dos 3 dias. Observamos que há <em>lacunas</em> nos histogramas pela ausência de massas reportadas nas respectivas massas.</p>
 <div class="cell tag_remove-input docutils container">
@@ -1777,7 +1808,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="densidade-simples">
-<h3><span class="section-number">7.4.2. </span>Densidade simples<a class="headerlink" href="#densidade-simples" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.2. </span>Densidade simples<a class="headerlink" href="#densidade-simples" title="Permalink to this headline">#</a></h3>
 <p><em>Plots</em> de densidade simples são versões contínuas dos histogramas e vem ganhando popularidade devido à facilitação de sua construção por ferramentas computacionais modernas. Nesses gráficos, a frequência das quantidades é representada por uma curva suave que, na verdade, é uma aproximação da distribuição de probabilidade fundamental que explica o comportamento real – a qual é <strong>desconhecida</strong>. Tem sido frequente a estimativa da curva de densidade pela técnica dos estimadores de núcleo (<em>kernel density estimator</em>, ou simplesmente, <em>KDE</em>).</p>
 <p>A metodologia do KDE recompõe a curva contínua através da mistura (combinação) de várias funções conhecidas como “núcleos” (<em>kernels</em>) que são abertos em torno de cada ponto amostrado dentro de uma <em>largura de banda</em> predefinida. Há diversos tipos de <em>kernel</em> possíveis de se trabalhar, tais como <em>exponencial</em>, <em>linear</em>, <em>epanechnikov</em> e o mais popular de todos, o <em>gaussiano</em>.</p>
 <p>Abaixo, fazemos plotagens da densidade de distribuição para cada matriz da indústria. O último <em>plot</em> contém as duas distribuições. Vê-se que a curva “imita” o comportamento já visualizado no gráfico.</p>
@@ -1794,7 +1825,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="densidade-cumulativa">
-<h3><span class="section-number">7.4.3. </span>Densidade cumulativa<a class="headerlink" href="#densidade-cumulativa" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.3. </span>Densidade cumulativa<a class="headerlink" href="#densidade-cumulativa" title="Permalink to this headline">#</a></h3>
 <p>Histogramas e <em>plots de densidade</em> possuem o revés de dependerem de parâmetros que são escolhidos pelo usuário, tais como o número de intervalos de classe (<em>bins</em>, ou <em>bin widths</em>) e a largura de banda. Pelo fato de que eles podem ser livremente alterados, esses gráficos tornam-se mais uma interpretação dos dados do que uma visualização direta deles. A desvantagem é que eles são menos intuitivos.</p>
 <p>Opostamente, <em>plots</em> de densidade simplesmente mostram os dados de uma só vez, sem uso de parâmetros.
 Para entender minimamente o conceito de <em>densidade cumulativa</em>, ou também de <em>densidade cumulativa empírica</em> (representada pelo acrônimo ECDF), usaremos um rol de dados que contém a nota auferida por estudantes de uma classe de Engenharia formada por 60 pessoas na primeira avaliação. A tabela pode ser encontrada a seguir.</p>
@@ -2137,7 +2168,7 @@ Para entender minimamente o conceito de <em>densidade cumulativa</em>, ou també
 </div>
 </section>
 <section id="quantis">
-<h3><span class="section-number">7.4.4. </span>Quantis<a class="headerlink" href="#quantis" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.4. </span>Quantis<a class="headerlink" href="#quantis" title="Permalink to this headline">#</a></h3>
 <p>Quantis são uma espécie de “ranqueamento” dos dados. Quando divididos em frações de 100, são chamados de percentis. Um jogador de futebol avaliado estatisticamete com percentil de 86%, por exemplo, indicaria que ele está entre os 14% melhores jogadores de futebol. Quantis então servem para dividir os dados ordenados em subconjuntos.</p>
 <p>O <em>plot</em> chamado de quantil-quantil, ou QQ <em>plot</em>, é bastante utilizado para testar se os dados observados seguem uma determinada distribuição teórica. Quando a distribuição teórica é a <em>normal</em>, chamamos o gráfico de <em>plot de probabilidades normal</em> (veja também similaridades com o <em>plot de probabilidades</em>, PP-<em>plot</em>).</p>
 <p>Um QQ-<em>plot</em> é um plot de pontos. Geralmente, coloca-se uma reta de referência. Quando os pontos desviam-se desta reta, os dados observados supostamente seguem uma distribuição que não coincide com a teórica. Em geral, é quase impossível atingir tal coincidência.</p>
@@ -2151,11 +2182,11 @@ Para entender minimamente o conceito de <em>densidade cumulativa</em>, ou també
 </section>
 </section>
 <section id="plots-para-visualizar-proporcoes">
-<h2><span class="section-number">7.5. </span><em>Plots</em> para visualizar proporções<a class="headerlink" href="#plots-para-visualizar-proporcoes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span><em>Plots</em> para visualizar proporções<a class="headerlink" href="#plots-para-visualizar-proporcoes" title="Permalink to this headline">#</a></h2>
 <p>A visualização de proporções deve levar em conta projetos gráficos que sejam capazes de mostrar como algum grupo, entitade ou quantidade pode ser “quebrada” em partes menores, assim constituindo uma proporção do todo. Classicamente, o gráfico de “torta” (<em>pie chart</em>) é o mais tradicionalmente aplicado quando o interesse é visualizar proporções. Entretanto, muitos profissionais criticam seu uso exagerado.</p>
 <p>Torna-se complicado interpretar gráficos de torta quando ele possui “fatias” excessivas. Por outro lado, quando ele é dividido em poucas partes, seu uso é recomendado. A polêmica em torno deste gráfico não é puramente nociva. Ela apenas ressalta a inexistência de representações “ótimas” para proporções. De fato, neste grupo de plotagem, não faremos uma separação explícita sobre os estilos, mas consideraremos uma miscelânea de <em>plots</em>, tanto inspirados na estrutura de outros grupos, mas adequados para representar proporções, quanto mais genéricos, que incorporam mosaicos, árvores estruturadas (<em>treemap</em>), diagramas de Venn, <em>donut</em>, dendrogramas e raios de sol (<em>sunburst</em>).</p>
 <section id="barras">
-<h3><span class="section-number">7.5.1. </span>Barras<a class="headerlink" href="#barras" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Barras<a class="headerlink" href="#barras" title="Permalink to this headline">#</a></h3>
 <p>Podemos visualizar proporções diretamente a partir de gráficos de barras. Usaremos dados do <a class="reference external" href="https://mapa-indicadores.agricultura.gov.br/publico/extensions/SIVIBE/SIVIBE.html">SIVIBE/MAPA</a> sobre vinhos e bebidas para exemplos. (Nota: para operacionalizar planilhas do Excel, poderá ser necessária a instalação do módulo <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code>).</p>
 <p>Abaixo fazemos</p>
 <div class="cell tag_remove-input docutils container">
@@ -2262,7 +2293,7 @@ Para entender minimamente o conceito de <em>densidade cumulativa</em>, ou també
 </div>
 </section>
 <section id="fatias">
-<h3><span class="section-number">7.5.2. </span>Fatias<a class="headerlink" href="#fatias" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>Fatias<a class="headerlink" href="#fatias" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../_images/07a-lounge_47_0.png" src="../_images/07a-lounge_47_0.png" />
@@ -2270,7 +2301,7 @@ Para entender minimamente o conceito de <em>densidade cumulativa</em>, ou també
 </div>
 </section>
 <section id="diagrama-de-venn">
-<h3><span class="section-number">7.5.3. </span>Diagrama de Venn<a class="headerlink" href="#diagrama-de-venn" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.3. </span>Diagrama de Venn<a class="headerlink" href="#diagrama-de-venn" title="Permalink to this headline">#</a></h3>
 <p>Vamos fazer um comparativo de um grupo de artistas que apenas cantam, apenas atuam ou cantam e atuam. A tabela está disposta a seguir:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -2454,7 +2485,7 @@ Para entender minimamente o conceito de <em>densidade cumulativa</em>, ou també
 </div>
 </section>
 <section id="arvore-estruturada">
-<h3><span class="section-number">7.5.4. </span>Árvore estruturada<a class="headerlink" href="#arvore-estruturada" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.4. </span>Árvore estruturada<a class="headerlink" href="#arvore-estruturada" title="Permalink to this headline">#</a></h3>
 <p>O diagrama de árvore estruturada (<em>treemap</em>) permite seccionar um todo em áreas representativas, como mostramos na apresentação deste curso. O <em>treemap</em> abaixo exibe o conteúdo deste curso em termos de quadros de tamanhos que variam em função da carga horária aproximada dos módulos e avaliações.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -2533,7 +2564,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </section>
 </section>
 <section id="plots-para-visualizar-correlacoes">
-<h2><span class="section-number">7.6. </span><em>Plots</em> para visualizar correlações<a class="headerlink" href="#plots-para-visualizar-correlacoes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.4. </span><em>Plots</em> para visualizar correlações<a class="headerlink" href="#plots-para-visualizar-correlacoes" title="Permalink to this headline">#</a></h2>
 <p>Correlação é qualquer associação estatística entre um par de variáveis. Quanto mais correlacionadas estão duas variáveis, mais “alinhamento” há entre elas. Isto é, uma análise de correlação fornece um número que resume o grau de relacionamento linear entre duas variáveis. Introduziremos este assunto com alguns conceitos fundamentais.</p>
 <p>Podemos interpretar a <em>correlação</em> também pelo ponto de vista de “dependência linear”. Duas variáveis perfeitamente correlacionadas são similares a dois vetores paralelos, ou seja, linearmente dependentes. Por outro lado, duas variáveis totalmente não correlacionadas são similares a dois vetores perpendiculares, ou seja, linearmente independentes.</p>
 <p>Neste grupo também não apresentaremos uma divisão enfática dos tipos de representações dada a sua variedade. Estão incluídos aqui os seguintes <em>plots</em>:</p>
@@ -2545,7 +2576,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 <p>Para grandes dados, plots de dispersão tornam-se pouco informativos devido ao emaranhado de pontos. Em um cenário como este, são preferíveis os <em>plots</em> de contornos e classes. Para mais do que duas quantidades, correlogramas são recomendados.</p>
 <p>Discutiremos apenas alguns exemplos.</p>
 <section id="dispersao">
-<h3><span class="section-number">7.6.1. </span>Dispersão<a class="headerlink" href="#dispersao" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.4.1. </span>Dispersão<a class="headerlink" href="#dispersao" title="Permalink to this headline">#</a></h3>
 <p>Este exemplo investiga a dispersão existente entre dois métodos que explicam o <a class="reference external" href="https://perinatology.com/calculators/Estimation%20of%20Fetal%20Weight%20and%20Age.htm">crescimento fetal em função da semana gestacional</a>. O gráfico à esquerda mostra a curva de Hadlock e de Duryea, ambas para o percentil 10. À direita, plotamos o gráfico de dispersão entre ambas as curvas para saber como elas se correlacionam. A existência de uma “barriga” abaixo da linha pontilhada mostra que elas, de fato, são diferentes, embora possuam uma tendência equivalente. Caso todos os pontos verdes estivessem sobre a reta tracejada, diríamos que elas seriam idênticas. Ou seja, a dispersão é baixa.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -2555,7 +2586,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </section>
 </section>
 <section id="plots-para-visualizar-dados-geoespaciais">
-<h2><span class="section-number">7.7. </span><em>Plots</em> para visualizar dados geoespaciais<a class="headerlink" href="#plots-para-visualizar-dados-geoespaciais" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.5. </span><em>Plots</em> para visualizar dados geoespaciais<a class="headerlink" href="#plots-para-visualizar-dados-geoespaciais" title="Permalink to this headline">#</a></h2>
 <p>Dados geoespaciais são melhor dispostos através de mapas que projetam coordenadas do globo terrestre em superfícies planas. Geralmente, os mapas seguem o formato e as fronteiras de territórios. Neste grupo encontram-se:</p>
 <ul class="simple">
 <li><p>coropletas, ou mapas coropléticos (<em>choropleth</em>), que colorem regiões do mapa para realizar associações com quantidades ou categorias.</p></li>
@@ -2564,21 +2595,217 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 <p>O exemplo a seguir é uma coropleta para a população brasileira segundo dados do IBGE para o Censo 2022. Os valores são exibidos na tabela.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/gustavo/opt/anaconda3/envs/dataviz/lib/python3.9/site-packages/pandas/core/dtypes/cast.py:1983: ShapelyDeprecationWarning:
-
-__len__ for multi-part geometries is deprecated and will be removed in Shapely 2.0. Check the length of the `geoms` property instead to get the  number of parts of a multi-part geometry.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/gustavo/opt/anaconda3/envs/dataviz/lib/python3.9/site-packages/geopandas/plotting.py:48: ShapelyDeprecationWarning: The &#39;type&#39; attribute is deprecated, and will be removed in the future. You can use the &#39;geom_type&#39; attribute instead.
+  if geom is not None and geom.type.startswith(prefix) and not geom.is_empty:
 </pre></div>
 </div>
 <img alt="../_images/07a-lounge_61_1.png" src="../_images/07a-lounge_61_1.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>UF</th>
+      <th>Pop 2022</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Acre</td>
+      <td>830018.0</td>
+      <td>POLYGON ((-68.10553 -10.72192, -68.10547 -10.7...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alagoas</td>
+      <td>3127683.0</td>
+      <td>MULTIPOLYGON (((-35.88986 -9.84431, -35.88986 ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Amapá</td>
+      <td>733759.0</td>
+      <td>MULTIPOLYGON (((-50.82570 2.52208, -50.82570 2...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amazonas</td>
+      <td>3941613.0</td>
+      <td>POLYGON ((-58.13699 -7.35614, -58.13682 -7.356...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bahia</td>
+      <td>14141626.0</td>
+      <td>MULTIPOLYGON (((-38.69208 -17.95958, -38.69208...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Ceará</td>
+      <td>8794957.0</td>
+      <td>MULTIPOLYGON (((-40.83181 -2.88125, -40.83181 ...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Distrito Federal</td>
+      <td>2817381.0</td>
+      <td>POLYGON ((-47.93915 -16.05135, -48.02110 -16.0...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Espírito Santo</td>
+      <td>3833712.0</td>
+      <td>MULTIPOLYGON (((-40.88403 -21.16125, -40.88403...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Goiás</td>
+      <td>7056495.0</td>
+      <td>POLYGON ((-49.00480 -18.53718, -49.01248 -18.5...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Maranhão</td>
+      <td>6776699.0</td>
+      <td>MULTIPOLYGON (((-44.54986 -1.88458, -44.54986 ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Mato Grosso</td>
+      <td>3658649.0</td>
+      <td>POLYGON ((-52.47143 -16.12672, -52.48842 -16.1...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Mato Grosso do Sul</td>
+      <td>2757013.0</td>
+      <td>POLYGON ((-54.16836 -23.99920, -54.17063 -24.0...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Minas Gerais</td>
+      <td>20539989.0</td>
+      <td>POLYGON ((-50.84402 -19.96758, -50.85332 -19.9...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Paraná</td>
+      <td>11444380.0</td>
+      <td>MULTIPOLYGON (((-48.36514 -25.73403, -48.36514...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Paraíba</td>
+      <td>3974687.0</td>
+      <td>MULTIPOLYGON (((-43.01208 -9.40801, -43.01453 ...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Pará</td>
+      <td>8120131.0</td>
+      <td>MULTIPOLYGON (((-47.29792 -0.63375, -47.29792 ...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Pernambuco</td>
+      <td>9058931.0</td>
+      <td>MULTIPOLYGON (((-35.13597 -8.83792, -35.13597 ...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Piauí</td>
+      <td>3271199.0</td>
+      <td>POLYGON ((-42.69078 -9.54547, -42.69122 -9.545...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Rio Grande do Norte</td>
+      <td>3302729.0</td>
+      <td>MULTIPOLYGON (((-35.10958 -6.19375, -35.10958 ...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Rio Grande do Sul</td>
+      <td>10882965.0</td>
+      <td>MULTIPOLYGON (((-52.07069 -32.02847, -52.07069...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Rio de Janeiro</td>
+      <td>16055174.0</td>
+      <td>MULTIPOLYGON (((-44.67125 -23.35458, -44.67125...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Rondônia</td>
+      <td>1581196.0</td>
+      <td>POLYGON ((-62.89219 -12.86014, -62.89212 -12.8...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Roraima</td>
+      <td>636707.0</td>
+      <td>POLYGON ((-60.03790 0.26349, -60.04676 0.23211...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Santa Catarina</td>
+      <td>7610361.0</td>
+      <td>MULTIPOLYGON (((-48.54236 -27.93180, -48.54236...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Sergipe</td>
+      <td>2210004.0</td>
+      <td>MULTIPOLYGON (((-37.38458 -11.45986, -37.38458...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>São Paulo</td>
+      <td>44411238.0</td>
+      <td>MULTIPOLYGON (((-48.08236 -25.28431, -48.08236...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Tocantins</td>
+      <td>1511460.0</td>
+      <td>POLYGON ((-49.23736 -12.88397, -49.23532 -12.8...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 <section id="plots-para-visualizar-incertezas">
-<h2><span class="section-number">7.8. </span><em>Plots</em> para visualizar incertezas<a class="headerlink" href="#plots-para-visualizar-incertezas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.6. </span><em>Plots</em> para visualizar incertezas<a class="headerlink" href="#plots-para-visualizar-incertezas" title="Permalink to this headline">#</a></h2>
 <p>Incertezas são inerentes a medições experimentais e laboratoriais, bem como a cálculos que envolvem estimativas e previsões sobre ocorrências futuras. Geralmente, incertezas são representadas por barras ou áreas que se estendem em torno de um ponto ou linha de referência. Neste grupo, incluem-se os plots acompanhados de barras de erro de intervalos de confiança.</p>
 </section>
 <section id="referencias">
-<h2><span class="section-number">7.9. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.7. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">SRB+13</a></span></dt>

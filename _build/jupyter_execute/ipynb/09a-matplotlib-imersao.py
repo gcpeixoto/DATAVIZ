@@ -24,7 +24,7 @@
 # 
 # - Localize o arquivo:
 
-# In[36]:
+# In[1]:
 
 
 import matplotlib as mpl
@@ -102,7 +102,7 @@ mpl.matplotlib_fname()
 # 
 # A maneira mais simples de se plotar algo é usando `pyplot.subplots` e `Axes.plot` como comandos essenciais.
 
-# In[37]:
+# In[3]:
 
 
 import matplotlib.pyplot as plt
@@ -131,16 +131,16 @@ ax.plot(['a','b','c'],[1,-1,0]); # cria objeto lines.Line2D
 # 
 # - Figura vazia sem eixos
 
-# In[38]:
+# In[8]:
 
 
 fig = plt.figure() # figura vazia
-# fig.show() # testar em prompt, visto que no Jupyter, o backend é inline.
+#fig.show() # testar em prompt, visto que no Jupyter, o backend é inline.
 
 
 # - Figura vazia com 1 eixo
 
-# In[39]:
+# In[4]:
 
 
 fig, ax = plt.subplots() # figura com 1 eixo
@@ -148,15 +148,15 @@ fig, ax = plt.subplots() # figura com 1 eixo
 
 # - Figura vazia com dois eixos
 
-# In[40]:
+# In[13]:
 
 
-fig, ax = plt.subplots(1,2) # figura com 2 eixo
+fig, ax = plt.subplots(10,2) # figura com 2 eixo
 
 
 # - Figura com propriedades alteradas
 
-# In[41]:
+# In[14]:
 
 
 # altera propriedades
@@ -168,7 +168,7 @@ fig, ax = plt.subplots()
 
 # - Acessando _rc settings_. 
 
-# In[42]:
+# In[23]:
 
 
 # localiza parâmetros do objeto especificado
@@ -183,7 +183,7 @@ for k,v in mpl.rcParams.items():
 
 # - Alteração de propriedades selecionadas
 
-# In[43]:
+# In[8]:
 
 
 mpl.rcParams['axes.spines.left'] = False
@@ -193,7 +193,7 @@ fig, ax = plt.subplots()
 
 # - Alteração de figura com eixos independentes
 
-# In[44]:
+# In[36]:
 
 
 mpl.rcdefaults() # reset de parâmetros
@@ -212,7 +212,7 @@ axs[1].tick_params(axis='x', colors='blue')
 
 # - Plotagem de curvas
 
-# In[45]:
+# In[44]:
 
 
 import numpy as np
@@ -232,7 +232,7 @@ fig
 # 
 # O código abaixo define uma função de auxílio básica para plotagem genérica usando `plot`.
 
-# In[46]:
+# In[45]:
 
 
 def h_plot(ax, x, y, params):
@@ -243,7 +243,7 @@ def h_plot(ax, x, y, params):
     return p
 
 
-# In[47]:
+# In[48]:
 
 
 np.random.seed(3456)
@@ -261,7 +261,8 @@ h_plot(ax1,x1,y1,{'ls':'--',
 h_plot(ax2,x2,y2,{'ls':':',
                   'c':'r',
                   'marker':'*',
-                  'lw':2,
+                  'lw':0,
+                  'ms': 10,
                   'mfc':'y'});
 
 
@@ -274,7 +275,7 @@ h_plot(ax2,x2,y2,{'ls':':',
 
 # Todas as plotagens anteriores foram realizadas pelo modo explícito, mas, vejamos mais um exemplo e como ele se contrasta com o caso implícito.
 
-# In[48]:
+# In[51]:
 
 
 # exemplo de plotagem EXPLÍCITA (estilo POO)
@@ -288,7 +289,7 @@ ax.set_ylabel('eixo y')
 ax.legend();
 
 
-# In[49]:
+# In[14]:
 
 
 # exemplo de plotagem IMPLÍCITA (estilo pyplot)
@@ -309,7 +310,7 @@ plt.legend();
 # Para exemplificar estilos, tomaremos como dado de exemplo a série temporal de anomalia de temperatura no período 2020 - 2021 para as coordenadas próximas à cidade de João Pessoa (7.1S,35.0W), disponibilizadas 
 # pelo [NOAA/NASA](https://www.ncei.noaa.gov/).
 
-# In[50]:
+# In[15]:
 
 
 import pandas as pd
@@ -328,7 +329,7 @@ ano, temp = jpa_temp['Year'],jpa_temp['Anomaly']
 # 
 # Primeiramente, plotamos o esquema.
 
-# In[51]:
+# In[16]:
 
 
 fix, axm = plt.subplot_mosaic([['A1','A1','A3'],['B1','B2','B2']],figsize=(10,7))
@@ -353,7 +354,7 @@ axm['B2'].set_title('B2' + ''.center(48,' ') + ' B3 '.center(20,'.'));
 
 # Em segundo lugar, plotamos os dados reais.
 
-# In[52]:
+# In[17]:
 
 
 fix, axm = plt.subplot_mosaic([['A1','A1','A3'],['B1','B2','B2']],figsize=(10,7))
@@ -380,14 +381,14 @@ axm['B1'].set_title('Série 2000 - 2003')
 axm['B2'].bar(ano,temp,color=c)
 axm['B2'].set_title('Série 2000 - 2021')
 
-axm['B2'].text(2019, -.1, f'$+{temp.max()}^circ$',color='#f44336');
+axm['B2'].text(2019, -.1, f'$+{temp.max()}^\circ$',color='#f44336');
 
 
 # ## Estilos padronizados
 # 
 # O _matplotlib_ dispõe de algumas dezenas de estilos padronizados para uso imediato. Para listá-los, invocamos `plt.style.available`. 
 
-# In[53]:
+# In[29]:
 
 
 for i,e in enumerate(plt.style.available):
@@ -396,7 +397,7 @@ for i,e in enumerate(plt.style.available):
 
 # Para carregar os estilos, usamos `plt.style.use(<style>)`, passando como o estilo como argumento.
 
-# In[54]:
+# In[19]:
 
 
 sty_test = ['classic','ggplot','fivethirtyeight',
@@ -406,6 +407,7 @@ def plot_test(ax,sty):
     exec(f'plt.style.use(\'{sty}\')')
     x = np.linspace(-2,2)
     ax.plot(x,x**2 - 1,label='$y = x^2 - 1$')
+
 
 
 for i,s in enumerate(sty_test):
@@ -439,7 +441,7 @@ plt.rcdefaults();
 # 
 # O código carrega a folha de estilo personalizada deste livro. Depois disso, o estilo das plotagens passa a obedecer às novas regras.
 
-# In[55]:
+# In[20]:
 
 
 # plotagens em estilo personalizado
@@ -448,7 +450,7 @@ for k in range(1,6):
     plt.plot(x,k*x)
 
 
-# In[56]:
+# In[21]:
 
 
 from numpy import sin, pi, linspace, random
@@ -487,7 +489,7 @@ plt.scatter(x,y,s=8)
 
 # ### Manipulando objetos
 
-# In[57]:
+# In[22]:
 
 
 # nova figura
@@ -507,14 +509,14 @@ ax3 = fig.add_axes(rect3)
 # 
 # As propriedades dos objetos são acessadas por `get` e modificadas por `set`.
 
-# In[58]:
+# In[23]:
 
 
 # busca todas as propriedades
 mpl.artist.getp(ax1)
 
 
-# In[59]:
+# In[24]:
 
 
 # busca valor da propriedade `get_frame_on()`
@@ -522,7 +524,7 @@ ax1.get_frame_on()
 fig
 
 
-# In[60]:
+# In[25]:
 
 
 # altera valor da propriedade `get_frame_on()`
@@ -530,7 +532,7 @@ ax1.set_frame_on(False)
 fig
 
 
-# In[61]:
+# In[26]:
 
 
 plt.rcdefaults(); 
@@ -538,7 +540,7 @@ plt.rcdefaults();
 
 # ## Estilização temporária
 
-# In[62]:
+# In[27]:
 
 
 import matplotlib.pyplot as plt
@@ -550,7 +552,7 @@ with plt.style.context('seaborn'):
     plt.plot(x,np.log(x),c='#117029');
 
 
-# In[63]:
+# In[28]:
 
 
 with plt.style.context('seaborn-talk'):

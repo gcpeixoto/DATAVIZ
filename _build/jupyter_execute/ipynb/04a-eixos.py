@@ -17,7 +17,7 @@
 # 
 # Um sinal estocástico (ou aleatório) é aquele em que nenhuma previsibilidade ou padrão são detectáveis. Comportamentos estocásticos estão presentes em eventos climáticos, ativos do mercado financeiro, sistemas eletrônicos e audiovisuais, atividades bioquímicas e em muitas outras áreas. Casos típicos buscam visualizar como uma dada grandeza varia em função do tempo.
 
-# In[261]:
+# In[ ]:
 
 
 import matplotlib.pyplot as plt
@@ -25,11 +25,15 @@ import numpy as np
 from string import ascii_lowercase as lc
 
 def test_aspect_ratio(Lx,fator,tag):
+    
     dist = np.random.normal(size=(200),loc=0.0,scale=1.0)
+    
     fig, ax = plt.subplots(figsize=(Lx,fator*Lx))
+    
     ax.plot(dist,lw=1.0,c='#117029')
     ax.set_xlabel('x',fontsize=8)
     ax.set_ylabel('y',fontsize=8)
+    
     ax.set_title(f'{tag}) Lx = {Lx}; Ly = {fator*Lx}',fontsize=8)
 
 c = 0
@@ -40,6 +44,11 @@ for Lx in [2,4]:
 
 
 # Dos casos anteriores, haja vista a natureza da informação plotada, percebe-se que nem todas possuem um visual agradável. Na sua opinião, alguma representação visual é a mais adequada? Para tomar a decisão de escolha, que critério(s) você usaria?
+
+# ```{admonition} Dica
+# :class: dropdown
+# Para aprofundamento, estude sobre o controle de razão de aspecto de eixos com ax.axis() no Guia Rápido de Plotagem - matplotlib.
+# ```
 
 # ### Série temporal
 # 
@@ -216,9 +225,7 @@ Z = 4*np.exp(-( ( X - (a+b)/2 )**2 + ( Y - (c+d)/2 )**2 ))
 
 # plotagem
 fig = plt.figure(figsize=(10,4),constrained_layout=True)
-fig.suptitle('$f(x,y) = 4e^{ - \
-     \\left[ \\left( x -  \\frac{a+b}{2} \\right)^2  + \
-             \\left( y -  \\frac{c+d}{2} \\right)^2 \\right] }$')
+fig.suptitle('$f(x,y) = 4e^{ -      \\left[ \\left( x -  \\frac{a+b}{2} \\right)^2  +              \\left( y -  \\frac{c+d}{2} \\right)^2 \\right] }$')
 
 gs = fig.add_gridspec(1,3) 
 ax1 = fig.add_subplot(gs[0],projection='3d')

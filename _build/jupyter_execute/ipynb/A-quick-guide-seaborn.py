@@ -13,7 +13,7 @@
 # 3. carregar dataset
 # 4. criar plot
 
-# In[35]:
+# In[3]:
 
 
 # passo 1
@@ -28,7 +28,7 @@ bay_etanol = df[ (df['Municipio'] == 'BAYEUX') & (df['Produto'] == 'ETANOL')]
 
 # passo 4
 fig, ax = plt.subplots(figsize=(7,2))
-f = sns.barplot(x='Bandeira',y='Valor de Venda',data=bay_etanol,palette="Paired");
+f = sns.barplot(x='Bandeira',y='Valor de Venda',hue='Bandeira', data=bay_etanol,palette="Paired");
 
 
 # ## Classes de funções de plotagem

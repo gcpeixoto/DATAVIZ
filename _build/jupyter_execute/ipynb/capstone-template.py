@@ -43,7 +43,7 @@
 # 
 # #### Produto de visualização material
 # 
-# - O produto material e suas funcionalidades será demonstrado por meio de apresentação (em até 12 minutos) para a classe.
+# - O produto material e suas funcionalidades será demonstrado por meio de apresentação (em até 10 minutos) para a classe.
 #  
 # ### Nota
 # 

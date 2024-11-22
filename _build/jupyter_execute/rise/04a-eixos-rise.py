@@ -7,7 +7,7 @@
 # 
 # CI/DCC/UFPB
 # 
-# [gcpeixoto.github.com/DATAVIZ](gcpeixoto.github.com/DATAVIZ)
+# [gcpeixoto.github.com/DATAVIZ](https://gcpeixoto.github.com/DATAVIZ)
 
 # - Definir escalas de posição é imprescindível para visualizar informações, especialmente quantitativas
 # - Escalas de posição em conjunto com um arranjo geométrico formam um _sistema de coordenadas_

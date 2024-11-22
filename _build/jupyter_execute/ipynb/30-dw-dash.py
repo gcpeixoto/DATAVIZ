@@ -68,7 +68,7 @@
 # 
 # A execução diretamente via VSCode ou Jupyter notebook pode ser feita com a ajuda do módulo [JupyterDash](https://github.com/plotly/jupyter-dash) por meio da opção `app.run_server(mode='inline')`. Abaixo, criamos um _demo app_ nesses moldes.
 
-# In[3]:
+# In[ ]:
 
 
 # boilerplate imports 
@@ -99,7 +99,7 @@ def update_graph(value):
     return px.line(dff, x='year', y='pop')
 
 # executa app e mostra resultado inline
-app.run(mode='inline',inline_exceptions=True,PORT=8050) #app.run_server(mode='inline',inline_exceptions=True,PORT=8050)
+app.run() #app.run_server(mode='inline',inline_exceptions=True,PORT=8050)
 
 
 # ### Modos de visualização

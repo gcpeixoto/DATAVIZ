@@ -319,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -975,7 +975,8 @@ title="Print to PDF"
                            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma (faixa de usuários)&#39;</span><span class="p">,</span>
                            <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
                            <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Usuários&#39;</span><span class="p">,</span>
-                           <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Idade&#39;</span><span class="p">);</span>
+                           <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Idade&#39;</span><span class="p">,</span>
+                          <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -996,7 +997,7 @@ title="Print to PDF"
         <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
         <span class="n">align</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">,</span>
-        <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+        <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#99ba00&#39;</span><span class="p">,</span>
         <span class="n">bins</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
@@ -1014,8 +1015,8 @@ title="Print to PDF"
         <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span>
         <span class="n">align</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">,</span>
-        <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
-        <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#74bbff&#39;</span><span class="p">,</span><span class="s1">&#39;#de45fb&#39;</span><span class="p">],</span>
         <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
@@ -1078,22 +1079,22 @@ title="Print to PDF"
 <span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;mask&#39;</span>
 
 <span class="k">if</span> <span class="n">test</span> <span class="o">==</span> <span class="s1">&#39;full&#39;</span><span class="p">:</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dfpt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>   
+     <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dfpt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>   
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dfpt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
-    <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">dfpt</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">39</span><span class="p">)</span>    
-    <span class="n">mask</span><span class="p">[</span><span class="n">indices</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">indices</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">True</span>
+     <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dfpt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+     <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">dfpt</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">37</span><span class="p">)</span>    
+     <span class="n">mask</span><span class="p">[</span><span class="n">indices</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">indices</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dfpt</span><span class="p">,</span>
-               <span class="n">cmap</span><span class="o">=</span><span class="n">sb</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;YlGnBu&#39;</span><span class="p">),</span>
-               <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-               <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-               <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
-               <span class="n">square</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-               <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-               <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-               <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-               <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+                 <span class="n">cmap</span><span class="o">=</span><span class="n">sb</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;mako&#39;</span><span class="p">),</span>
+                 <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">linewidths</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                 <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+                 <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">xticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
                <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1101,6 +1102,132 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <img alt="../_images/20-dcs-quantidade_24_0.png" src="../_images/20-dcs-quantidade_24_0.png" />
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Australia&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Device&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Laptop&#39;</span><span class="p">)]</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(38.361702127659576)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfpt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Device</th>
+      <th>Laptop</th>
+      <th>Smart TV</th>
+      <th>Smartphone</th>
+      <th>Tablet</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Australia</th>
+      <td>38.361702</td>
+      <td>39.157895</td>
+      <td>38.709091</td>
+      <td>37.186047</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>39.227273</td>
+      <td>37.475000</td>
+      <td>38.272727</td>
+      <td>38.272727</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>38.437500</td>
+      <td>38.397436</td>
+      <td>39.462500</td>
+      <td>38.473684</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>40.942308</td>
+      <td>38.767442</td>
+      <td>36.914894</td>
+      <td>39.658537</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>39.349206</td>
+      <td>38.619048</td>
+      <td>38.527778</td>
+      <td>39.428571</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>39.280000</td>
+      <td>37.826087</td>
+      <td>38.319149</td>
+      <td>38.750000</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>38.636364</td>
+      <td>39.414634</td>
+      <td>38.934783</td>
+      <td>38.442308</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>39.224299</td>
+      <td>38.444444</td>
+      <td>38.294118</td>
+      <td>39.241379</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>38.250000</td>
+      <td>40.025000</td>
+      <td>40.259259</td>
+      <td>38.088889</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>38.727273</td>
+      <td>39.060345</td>
+      <td>39.030303</td>
+      <td>38.913043</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>

@@ -92,7 +92,8 @@ df.iloc[10:40]['Age'].plot(kind='bar',
                            title='Histograma (faixa de usuários)',
                            figsize=(8,2),
                            xlabel='Usuários',
-                           ylabel='Idade');
+                           ylabel='Idade',
+                          grid=False);
 
 
 # ### Plotagem com `matplotlib`
@@ -107,7 +108,7 @@ ax.hist(x=df['Age'],
         density=True,
         histtype='bar',
         align='mid',
-        rwidth=0.8,
+        rwidth=0.9,
         color='#99ba00',
         bins=8,
         alpha=0.5);
@@ -121,8 +122,8 @@ ax.hist(x=df[['Age','Monthly Revenue']],
         density=True,
         histtype='step',
         align='mid',
-        rwidth=0.3,
-        linewidth=1,
+        rwidth=0.1,
+        linewidth=10,
         color=['#74bbff','#de45fb'],
         bins=10);
 
@@ -170,21 +171,34 @@ dfpt = pd.pivot_table(df, index='Country', columns='Device', values='Age')
 test = 'mask'
 
 if test == 'full':
-    mask = ~np.ones(dfpt.shape,dtype=bool)   
+     mask = ~np.ones(dfpt.shape,dtype=bool)   
 else:
-    mask = ~np.ones(dfpt.shape,dtype=bool)
-    indices = np.argwhere(dfpt.values > 39)    
-    mask[indices[:,0], indices[:,1]] = True
+     mask = ~np.ones(dfpt.shape,dtype=bool)
+     indices = np.argwhere(dfpt.values > 37)    
+     mask[indices[:,0], indices[:,1]] = True
 
 g = sb.heatmap(data=dfpt,
-               cmap=sb.color_palette('YlGnBu'),
-               annot=True,
-               linewidths=1,
-               linecolor='white',
-               square=False,
-               cbar=True,
-               xticklabels=True,
-               yticklabels=True,
-               mask=mask,
+                 cmap=sb.color_palette('mako'),
+                 annot=False,
+                 linewidths=10,
+                 linecolor='white',
+                 square=True,
+                 cbar=False,
+                 xticklabels=False,
+                 yticklabels=False,
+                 mask=mask,
                ax=a)
+
+
+# In[10]:
+
+
+df2 = df[ (df['Country'] == 'Australia') & (df['Device'] == 'Laptop')]
+df2['Age'].mean()
+
+
+# In[11]:
+
+
+dfpt
 

@@ -41,7 +41,7 @@ plt.style.use('../etc/gcpeixoto-datavis.mplstyle') # style sheet
 
 # - Carregamento de dados
 
-# In[16]:
+# In[2]:
 
 
 # carrega valores para ano y
@@ -197,7 +197,7 @@ ax.plot(FOB_GDP_2020['FOB_imp/GDP_bra'],FOB_GDP_2020['FOB_imp/GDP_bra'],'--g');
 #         - Identificação: posição do elemento gráfico em relação ao eixo
 #     - Exploração de propriedades do `plotly`
 
-# In[8]:
+# In[9]:
 
 
 fig = px.scatter_3d(FOB_GDP_2020, 
@@ -217,11 +217,11 @@ display(HTML(os.path.join(tgt_dir,'comex-example.html')))
 #     - Adicionando cor para identificar país
 #     - Paleta de cor adequada?
 
-# In[9]:
+# In[10]:
 
 
 fig, ax = plt.subplots(figsize=(6,4),constrained_layout=True)
-f = sb.scatterplot(data=FOB_GDP_2020,x='FOB_imp/GDP_bra', y='FOB_exp/GDP', 
+f = sb.scatterplot(data=FOB_GDP_2020.sort_values('País'),x='FOB_imp/GDP_bra', y='FOB_exp/GDP', 
                    hue='País', palette='Oranges',
                    legend='brief', ax=ax)
 ax.legend(loc='upper right', bbox_to_anchor=(1, 1.6),ncol=4)
@@ -237,14 +237,14 @@ ax.set_axisbelow(True) # below grid lines
 #         - `set_axis_below`
 #     - Problemas?
 
-# In[10]:
+# In[11]:
 
 
 min_gdp = min(FOB_GDP_2020['GDP 2020 scaled'])
 max_gdp = max(FOB_GDP_2020['GDP 2020 scaled'])
 
 fig, ax = plt.subplots(figsize=(6,4),constrained_layout=True)
-f = sb.scatterplot(data=FOB_GDP_2020,x='FOB_imp/GDP_bra', y='FOB_exp/GDP', 
+f = sb.scatterplot(data=FOB_GDP_2020.sort_values('País'),x='FOB_imp/GDP_bra', y='FOB_exp/GDP', 
                    size='GDP 2020 scaled', palette='Oranges', sizes = (min_gdp,max_gdp),
                    legend='brief', ax=ax)
 ax.set_axisbelow(True) # below grid lines
@@ -259,6 +259,7 @@ plt.legend(loc='upper right', bbox_to_anchor=(1, 1.2),ncol=4);
 #     - Melhoria da estétitca
 
 # In[12]:
+
 
 
 fig, ax = plt.subplots(figsize=(6,4),constrained_layout=True)

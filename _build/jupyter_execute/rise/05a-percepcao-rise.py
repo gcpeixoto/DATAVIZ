@@ -7,7 +7,7 @@
 # 
 # CI/DCC/UFPB
 # 
-# [gcpeixoto.github.com/DATAVIZ](gcpeixoto.github.com/DATAVIZ)
+# [gcpeixoto.github.com/DATAVIZ](https://gcpeixoto.github.com/DATAVIZ)
 
 # ## Introdução
 # 

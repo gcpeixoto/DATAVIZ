@@ -319,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -670,6 +670,276 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geocp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NUM_RODADA</th>
+      <th>NOM_CAMPO</th>
+      <th>AREA</th>
+      <th>OPERADOR_C</th>
+      <th>NUM_CONTRA</th>
+      <th>DAT_ASSINA</th>
+      <th>DAT_TERMIN</th>
+      <th>NOM_BACIA</th>
+      <th>COD_CAMPO</th>
+      <th>SIG_CAMPO</th>
+      <th>DAT_DESCOB</th>
+      <th>DAT_INICIO</th>
+      <th>ETAPA</th>
+      <th>MED_LAMINA</th>
+      <th>FLUIDO_PRI</th>
+      <th>ID</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Rodada 11</td>
+      <td>IRARA</td>
+      <td>6.0</td>
+      <td>BGM Petróleo e Gás Ltda.</td>
+      <td>48610005457201381</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Espírito Santo</td>
+      <td>4841.0</td>
+      <td>IRAR</td>
+      <td>03/01/2022</td>
+      <td>13/07/2022</td>
+      <td>Produção</td>
+      <td>0.0</td>
+      <td>ÓLEO</td>
+      <td>2460.0</td>
+      <td>POLYGON ((-39.81288 -19.25048, -39.81288 -19.2...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Rodada 0</td>
+      <td>PESCADA</td>
+      <td>55.0</td>
+      <td>Petróleo Brasileiro S.A.</td>
+      <td>480000039129784</td>
+      <td>06-08-1998</td>
+      <td>None</td>
+      <td>Potiguar</td>
+      <td>213.0</td>
+      <td>PE</td>
+      <td>24-10-1980</td>
+      <td>01-05-1999</td>
+      <td>Produção</td>
+      <td>19.0</td>
+      <td>GÁS</td>
+      <td>1100.0</td>
+      <td>POLYGON ((-36.76596 -4.73997, -36.76856 -4.739...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Rodada 0</td>
+      <td>SALGO</td>
+      <td>11.0</td>
+      <td>Petróleo Brasileiro S.A.</td>
+      <td>480000038419738</td>
+      <td>06-08-1998</td>
+      <td>None</td>
+      <td>Sergipe</td>
+      <td>275.0</td>
+      <td>SG</td>
+      <td>01-12-1984</td>
+      <td>31-12-1986</td>
+      <td>Em Devolução</td>
+      <td>14.0</td>
+      <td>ÓLEO</td>
+      <td>1102.0</td>
+      <td>POLYGON ((-36.57586 -10.63324, -36.57846 -10.6...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Rodada 0</td>
+      <td>CAXAREU</td>
+      <td>34.0</td>
+      <td>Petróleo Brasileiro S.A.</td>
+      <td>480000035609749</td>
+      <td>06/08/1998</td>
+      <td>None</td>
+      <td>Campos</td>
+      <td>1164.0</td>
+      <td>CXR</td>
+      <td>07-08-2002</td>
+      <td>None</td>
+      <td>Desenvolvimento</td>
+      <td>1141.0</td>
+      <td>ÓLEO</td>
+      <td>1125.0</td>
+      <td>POLYGON ((-40.07812 -21.39323, -40.07812 -21.3...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Rodada 0</td>
+      <td>CEXIS</td>
+      <td>54.0</td>
+      <td>3R Candeias  S.A.</td>
+      <td>480000036419749</td>
+      <td>06-08-1998</td>
+      <td>None</td>
+      <td>Recôncavo</td>
+      <td>88.0</td>
+      <td>CX</td>
+      <td>07-03-1966</td>
+      <td>30-06-1966</td>
+      <td>Produção</td>
+      <td>0.0</td>
+      <td>GÁS</td>
+      <td>1126.0</td>
+      <td>POLYGON ((-38.4639 -12.62544, -38.4613 -12.625...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>AM2</td>
+      <td>Porto do Mangue</td>
+      <td>6.0</td>
+      <td>Máxima 07 Exploração e Produção de Petróleo Ltda</td>
+      <td>48610007488200648</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Potiguar</td>
+      <td>4535.0</td>
+      <td>4201</td>
+      <td>10/10/2011</td>
+      <td>None</td>
+      <td>Plano de Avaliação (Teste de longa duração)</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>2623.0</td>
+      <td>POLYGON ((-36.79461 -5.09674, -36.79461 -5.099...</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Rodada 0</td>
+      <td>MIRANGA LESTE</td>
+      <td>1.0</td>
+      <td>Petróleo Brasileiro S.A.</td>
+      <td>480000036759761</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Recôncavo</td>
+      <td>182.0</td>
+      <td>MGL</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Em Devolução</td>
+      <td>0.0</td>
+      <td>OUTROS</td>
+      <td>2661.0</td>
+      <td>POLYGON ((-38.14358 -12.32336, -38.14619 -12.3...</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Rodada 13 (AM)</td>
+      <td>SÃO JOÃO</td>
+      <td>6.0</td>
+      <td>Petro-Victory Energia Ltda.</td>
+      <td>48610002005201691</td>
+      <td>12/5/2016</td>
+      <td>None</td>
+      <td>Barreirinhas</td>
+      <td>4695.0</td>
+      <td>SJ</td>
+      <td>01/08/1966</td>
+      <td>01/07/2020</td>
+      <td>Produção</td>
+      <td>0.0</td>
+      <td>Óleo</td>
+      <td>2662.0</td>
+      <td>POLYGON ((-43.32852 -2.59932, -43.32852 -2.596...</td>
+    </tr>
+    <tr>
+      <th>425</th>
+      <td>Rodada 9</td>
+      <td>GAVIÃO CARIJÓ</td>
+      <td>163.0</td>
+      <td>Eneva S.A.</td>
+      <td>48610001413200815</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Parnaíba</td>
+      <td>4629.0</td>
+      <td>GVCA</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Desenvolvimento</td>
+      <td>0.0</td>
+      <td>GÁS</td>
+      <td>2700.0</td>
+      <td>POLYGON ((-44.33073 -5.66927, -44.33073 -5.684...</td>
+    </tr>
+    <tr>
+      <th>426</th>
+      <td>Rodada 0</td>
+      <td>LESTE DE POÇO XAVIER</td>
+      <td>22.0</td>
+      <td>Potiguar E&amp;P S.A.</td>
+      <td>4861000400098</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Potiguar</td>
+      <td>167.0</td>
+      <td>LPX</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Produção</td>
+      <td>0.0</td>
+      <td>ÓLEO</td>
+      <td>2701.0</td>
+      <td>POLYGON ((-37.67708 -5.52122, -37.67448 -5.521...</td>
+    </tr>
+  </tbody>
+</table>
+<p>427 rows × 17 columns</p>
+</div></div></div>
+</div>
 <ul class="simple">
 <li><p>Shapefiles do território nacional</p></li>
 </ul>
@@ -679,6 +949,427 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geobr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GID_0</th>
+      <th>NAME_0</th>
+      <th>GID_1</th>
+      <th>NAME_1</th>
+      <th>VARNAME_1</th>
+      <th>NL_NAME_1</th>
+      <th>TYPE_1</th>
+      <th>ENGTYPE_1</th>
+      <th>CC_1</th>
+      <th>HASC_1</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.1_1</td>
+      <td>Acre</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.AC</td>
+      <td>POLYGON ((-68.10553 -10.72192, -68.10547 -10.7...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.2_1</td>
+      <td>Alagoas</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.AL</td>
+      <td>MULTIPOLYGON (((-35.88986 -9.84431, -35.88986 ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.3_1</td>
+      <td>Amapá</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.AP</td>
+      <td>MULTIPOLYGON (((-50.8257 2.52208, -50.8257 2.5...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.4_1</td>
+      <td>Amazonas</td>
+      <td>Amazone</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.AM</td>
+      <td>POLYGON ((-58.13699 -7.35614, -58.13682 -7.356...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.5_1</td>
+      <td>Bahia</td>
+      <td>Ba¡a</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.BA</td>
+      <td>MULTIPOLYGON (((-38.69208 -17.95958, -38.69208...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.6_1</td>
+      <td>Ceará</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.CE</td>
+      <td>MULTIPOLYGON (((-40.83181 -2.88125, -40.83181 ...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.7_1</td>
+      <td>Distrito Federal</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Distrito Federal</td>
+      <td>Federal District</td>
+      <td>None</td>
+      <td>BR.DF</td>
+      <td>POLYGON ((-47.93915 -16.05135, -48.0211 -16.05...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.8_1</td>
+      <td>Espírito Santo</td>
+      <td>Espiritu Santo</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.ES</td>
+      <td>MULTIPOLYGON (((-40.88403 -21.16125, -40.88403...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.9_1</td>
+      <td>Goiás</td>
+      <td>Goiáz|Goyáz</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.GO</td>
+      <td>POLYGON ((-49.0048 -18.53718, -49.01248 -18.53...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.10_1</td>
+      <td>Maranhão</td>
+      <td>São Luíz de Maranhão</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.MA</td>
+      <td>MULTIPOLYGON (((-44.54986 -1.88458, -44.54986 ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.12_1</td>
+      <td>Mato Grosso</td>
+      <td>Matto Grosso</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.MT</td>
+      <td>POLYGON ((-52.47143 -16.12672, -52.48842 -16.1...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.11_1</td>
+      <td>Mato Grosso do Sul</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.MS</td>
+      <td>POLYGON ((-54.16836 -23.9992, -54.17063 -24.00...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.13_1</td>
+      <td>Minas Gerais</td>
+      <td>Minas|Minas Geraes</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.MG</td>
+      <td>POLYGON ((-50.84402 -19.96758, -50.85332 -19.9...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.14_1</td>
+      <td>Pará</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.PA</td>
+      <td>MULTIPOLYGON (((-47.29792 -0.63375, -47.29792 ...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.15_1</td>
+      <td>Paraíba</td>
+      <td>Parahyba</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.PB</td>
+      <td>MULTIPOLYGON (((-43.01208 -9.40801, -43.01453 ...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.16_1</td>
+      <td>Paraná</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.PR</td>
+      <td>MULTIPOLYGON (((-48.36514 -25.73403, -48.36514...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.17_1</td>
+      <td>Pernambuco</td>
+      <td>Pernambouc</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.PE</td>
+      <td>MULTIPOLYGON (((-35.13597 -8.83792, -35.13597 ...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.18_1</td>
+      <td>Piauí</td>
+      <td>Piauhy</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.PI</td>
+      <td>POLYGON ((-42.69078 -9.54547, -42.69122 -9.545...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.19_1</td>
+      <td>Rio de Janeiro</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.RJ</td>
+      <td>MULTIPOLYGON (((-44.67125 -23.35458, -44.67125...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.20_1</td>
+      <td>Rio Grande do Norte</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.RN</td>
+      <td>MULTIPOLYGON (((-35.10958 -6.19375, -35.10958 ...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.21_1</td>
+      <td>Rio Grande do Sul</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.RS</td>
+      <td>MULTIPOLYGON (((-52.07069 -32.02847, -52.07069...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.22_1</td>
+      <td>Rondônia</td>
+      <td>Guaporé</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.RO</td>
+      <td>POLYGON ((-62.89219 -12.86014, -62.89212 -12.8...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.23_1</td>
+      <td>Roraima</td>
+      <td>Rio Branco</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.RR</td>
+      <td>POLYGON ((-60.0379 0.26349, -60.04676 0.23211,...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.24_1</td>
+      <td>Santa Catarina</td>
+      <td>Santa Catharina</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.SC</td>
+      <td>MULTIPOLYGON (((-48.54236 -27.9318, -48.54236 ...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.25_1</td>
+      <td>São Paulo</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.SP</td>
+      <td>MULTIPOLYGON (((-48.08236 -25.28431, -48.08236...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.26_1</td>
+      <td>Sergipe</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.SE</td>
+      <td>MULTIPOLYGON (((-37.38458 -11.45986, -37.38458...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>BRA.27_1</td>
+      <td>Tocantins</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Estado</td>
+      <td>State</td>
+      <td>None</td>
+      <td>BR.TO</td>
+      <td>POLYGON ((-49.23736 -12.88397, -49.23532 -12.8...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ul class="simple">
 <li><p>Planilhas de poços públicos (2022 e 2023)</p></li>
@@ -697,7 +1388,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filter_by_state</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">fluid</span><span class="p">,</span><span class="n">phase</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Seleciona poços e campos para estado, bacia e propriedades especificados.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Seleciona poços e campos para estado, bacia e propriedades especificados.&quot;&quot;&quot;</span>
     
     <span class="n">a</span> <span class="o">=</span> <span class="n">p2022</span><span class="p">[</span><span class="n">p2022</span><span class="o">.</span><span class="n">ESTADO</span> <span class="o">==</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">p2023</span><span class="p">[</span><span class="n">p2023</span><span class="o">.</span><span class="n">ESTADO</span> <span class="o">==</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
@@ -714,8 +1405,8 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;RJ&#39;</span><span class="p">,</span><span class="s1">&#39;Rio de Janeiro&#39;</span><span class="p">)</span>
-<span class="n">basin</span> <span class="o">=</span> <span class="s1">&#39;Campos&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;BA&#39;</span><span class="p">,</span><span class="s1">&#39;Bahia&#39;</span><span class="p">)</span>
+<span class="n">basin</span> <span class="o">=</span> <span class="s1">&#39;Recôncavo&#39;</span>
 <span class="n">fluid</span> <span class="o">=</span> <span class="s1">&#39;ÓLEO&#39;</span>
 <span class="n">stage</span> <span class="o">=</span> <span class="s1">&#39;Produção&#39;</span>
 <span class="n">p2022_s</span><span class="p">,</span> <span class="n">p2023_s</span><span class="p">,</span> <span class="n">geo_s</span><span class="p">,</span> <span class="n">geo_cp</span> <span class="o">=</span> <span class="n">filter_by_state</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="n">fluid</span><span class="p">,</span><span class="n">stage</span><span class="p">)</span>
@@ -741,14 +1432,13 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
-<span class="n">geo_s</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.4</span><span class="p">)</span>
+<span class="n">geo_s</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="n">geo_cp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/23-dcs-geoespacial_20_0.png" src="../_images/23-dcs-geoespacial_20_0.png" />
+<img alt="../_images/23-dcs-geoespacial_22_0.png" src="../_images/23-dcs-geoespacial_22_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -757,10 +1447,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># para onshore, &#39;T&#39; </span>
-<span class="n">p2022_m</span> <span class="o">=</span> <span class="n">p2022_s</span><span class="p">[</span><span class="n">p2022_s</span><span class="p">[</span><span class="s1">&#39;TERRA_MAR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>
+<span class="n">p2022_m</span> <span class="o">=</span> <span class="n">p2022_s</span><span class="p">[</span><span class="n">p2022_s</span><span class="p">[</span><span class="s1">&#39;TERRA_MAR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">]</span>
 <span class="n">p2022_tcm</span> <span class="o">=</span> <span class="n">p2022_m</span><span class="p">[</span><span class="s1">&#39;CAMPO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
-<span class="n">p2023_m</span> <span class="o">=</span> <span class="n">p2023_s</span><span class="p">[</span><span class="n">p2023_s</span><span class="p">[</span><span class="s1">&#39;TERRA_MAR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>
+<span class="n">p2023_m</span> <span class="o">=</span> <span class="n">p2023_s</span><span class="p">[</span><span class="n">p2023_s</span><span class="p">[</span><span class="s1">&#39;TERRA_MAR&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">]</span>
 <span class="n">p2023_tcm</span> <span class="o">=</span> <span class="n">p2023_m</span><span class="p">[</span><span class="s1">&#39;CAMPO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -784,14 +1474,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="n">geo_s</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="c1">#geo_s.plot(ax=a,edgecolor=&#39;k&#39;,facecolor=&#39;gray&#39;,alpha=.2)</span>
 <span class="n">geo_cp_m_2022</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
 <span class="n">geo_cp_m_2023</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/23-dcs-geoespacial_26_0.png" src="../_images/23-dcs-geoespacial_26_0.png" />
+<img alt="../_images/23-dcs-geoespacial_28_0.png" src="../_images/23-dcs-geoespacial_28_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -812,10 +1502,10 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Atividade de divulgação em 2022 nos campos de: 
-POLVO, MARLIM LESTE, MARLIM SUL, RONCADOR, TARTARUGA VERDE, PEREGRINO, ALBACORA, PAPA-TERRA.
+TIÊ, ARAÇÁS, MATA DE SÃO JOÃO.
 
 Atividade de divulgação em 2023 nos campos de: 
-POLVO, MARLIM SUL, RONCADOR, PEREGRINO, ALBACORA.
+TIÊ.
 </pre></div>
 </div>
 </div>
@@ -832,12 +1522,12 @@ POLVO, MARLIM SUL, RONCADOR, PEREGRINO, ALBACORA.
 <span class="n">geo_cp_m_2022</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
 <span class="n">p2022_m_1</span> <span class="o">=</span> <span class="n">p2022_m</span><span class="p">[</span><span class="n">p2022_m</span><span class="p">[</span><span class="s1">&#39;CAMPO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cp_list_2022</span><span class="p">)]</span>
 <span class="n">p2022_m_1f</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">p2022_m_1</span><span class="p">,</span>
-                             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LONGITUDE1&#39;</span><span class="p">,</span>
-                             <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LATITUDE_1&#39;</span><span class="p">,</span>
-                             <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;POCO&#39;</span><span class="p">,</span>
-                             <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
-                             <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span>
-                             <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                              <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LONGITUDE1&#39;</span><span class="p">,</span>
+                              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LATITUDE_1&#39;</span><span class="p">,</span>
+                              <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;POCO&#39;</span><span class="p">,</span>
+                              <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                              <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span>
+                              <span class="n">ax</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">p2022_m_1f</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
@@ -884,7 +1574,7 @@ POLVO, MARLIM SUL, RONCADOR, PEREGRINO, ALBACORA.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/23-dcs-geoespacial_30_0.png" src="../_images/23-dcs-geoespacial_30_0.png" />
+<img alt="../_images/23-dcs-geoespacial_32_0.png" src="../_images/23-dcs-geoespacial_32_0.png" />
 </div>
 </div>
 </section>

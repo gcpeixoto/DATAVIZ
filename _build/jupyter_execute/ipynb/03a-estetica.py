@@ -19,7 +19,7 @@
 # 
 # Detalharemos as etapas importantes nas subseções a seguir.
 
-# In[121]:
+# In[1]:
 
 
 import matplotlib.colors as clr
@@ -235,7 +235,7 @@ ax.text(0.96,0.45,
 # Torre de monitoramento climático com sensores (_boom_) distribuídos em 4 diferentes alturas e o quinto sensor posicionado no topo da torre, para captação de temperatura dos domínios ecoclimáticos terrestres americanos. Fonte: National Ecological Observatory Network/EUA.
 # ```
 
-# In[109]:
+# In[2]:
 
 
 # importa módulo para ler HDF
@@ -290,7 +290,7 @@ for i in range(5):
 
 # #### Exemplo 1: reorganizando o arquivo de registros cirúrgicos e obstétricos
 
-# In[665]:
+# In[3]:
 
 
 import pandas as pd
@@ -300,9 +300,7 @@ df_h = pd.read_csv('../data/raw-data-hospital.txt',sep=' ',names=['Bloco','Data'
 
 # remoção de inconsistências nas séries
 df_h['Bloco'] = df_h['Bloco'].str.upper().str.strip(':BLC').str.strip('.BLC')
-df_h['Data'] = df_h['Data'].str.replace('-','/').str.replace('.','/').\
-                str.replace('/','-').str.replace('06','Jun').\
-                str.replace(r'([A-Z][a-z][a-z])',lambda x: x.group().lower(),regex=True)
+df_h['Data'] = df_h['Data'].str.replace('-','/').str.replace('.','/').                str.replace('/','-').str.replace('06','Jun').                str.replace(r'([A-Z][a-z][a-z])',lambda x: x.group().lower(),regex=True)
 df_h['Cirurgias'] = df_h['Cirurgias'].str.strip('C').str.strip('c')
 df_h['Partos'] = df_h['Partos'].str.strip('P').str.strip('p')
 
@@ -312,7 +310,7 @@ df_h.set_index('Data',inplace=True)
 
 # A tabela que resulta do processamento realizado pelo código acima é a seguinte:
 
-# In[666]:
+# In[4]:
 
 
 df_h
@@ -322,7 +320,7 @@ df_h
 # 
 # Como o arquivo HDF possui uma hierarquia bem definida, podemos usar `keys` para acessar os _datasets_ e usar métodos do `numpy` e do `pandas` para recuperar a estrutura e criar os _dataframes_ diretamente.
 
-# In[771]:
+# In[5]:
 
 
 from pandas import DataFrame
@@ -387,10 +385,11 @@ df_t.set_index('date')
 # 
 # A figura abaixo, produzida unicamente com `matplotlib`, ilustra esses conceitos.
 
-# In[661]:
+# In[6]:
 
 
 import matplotlib.pyplot as plt
+import matplotlib.patches as ptc
 
 fig, ax = plt.subplots(4,2,figsize=(10,6))
 
@@ -541,7 +540,7 @@ ax[3,1].set_axis_off()
 # 
 # Exemplos desses elementos visuais também puramente criados com `matplotlib` são desenhados a seguir.
 
-# In[512]:
+# In[7]:
 
 
 import matplotlib.pyplot as plt
@@ -639,7 +638,7 @@ ax[1,1].text(0.38,0.0, s='Volumes', size=10, style='normal',
 
 # #### Exemplo 1: visualizando o número de cirurgias e partos por bloco
 
-# In[740]:
+# In[8]:
 
 
 import seaborn as sns
@@ -652,11 +651,11 @@ df_h2['Cirurgias'] = df_h2['Cirurgias'].astype(int)
 df_h2['Partos'] = df_h2['Partos'].astype(int)
 
 # plotagem principal
-fig, ax = plt.subplots(1,2,figsize=(10,2),sharey=True)
+fig, ax = plt.subplots(1,2,figsize=(10,2))
 ax[0].grid(alpha=0.5)
 ax[1].grid(alpha=0.5)
-p1 = sns.barplot(x='Bloco',y='Cirurgias',hue='Porte',data=df_h2,errorbar=None,palette='Blues',ax=ax[0])
-p2 = sns.barplot(x='Bloco',y='Partos',hue='Porte',data=df_h2,errorbar=None,palette='Blues',ax=ax[1])
+p1 = sns.barplot(x='Bloco', y='Cirurgias', hue='Porte', data=df_h2, errorbar=None, palette='Blues', ax=ax[0])
+p2 = sns.barplot(x='Bloco', y='Partos', hue='Porte', data=df_h2, errorbar=None, palette='Blues', ax=ax[1])
 
 # eixos
 p1.spines['top'].set_visible(False)
@@ -674,7 +673,7 @@ p2.legend(title='Porte',bbox_to_anchor=(1.2,1.0));
 
 # #### Exemplo 2: plotando série temporal de temperatura
 
-# In[928]:
+# In[9]:
 
 
 import numpy as np
@@ -682,12 +681,12 @@ import numpy as np
 df_hours = df_t['date'][0::60].index
 df_ti = df_t.iloc[df_hours][:48]
 
-fig, ax = plt.subplots(figsize=(10,2))
+fig, ax = plt.subplots(figsize=(14,2))
 ax.plot(df_ti['mean'],c='#be5631',lw=1.5)
 
 da = np.array(list((df_ti['mean'].index)))
 db = np.array(2*[str(i) + 'h' for i in range(0,24)])
-ax.set_xticks(da,db,fontsize=5)
+ax.set_xticks(da,db,fontsize=7)
 
 half = int(len(da)/2)
 
@@ -698,8 +697,8 @@ ax.grid(axis='y',ls=':',c='k',alpha=0.4)
 ax.set_xlabel('Tempo',fontsize=9)
 ax.set_ylabel('Temperatura',fontsize=9)
 
-ax.text(10,-4,s='01/04/2014',fontsize=7,c='#d1886e')
-ax.text(1450,-4,s='02/04/2014',fontsize=7,c='#d1886e');
+ax.text(10,-4,s='01/04/2014',fontsize=8,c='#d1886e')
+ax.text(1450,-4,s='02/04/2014',fontsize=8,c='#d1886e');
 
 
 # ## Referências

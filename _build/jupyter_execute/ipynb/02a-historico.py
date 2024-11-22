@@ -176,3 +176,7 @@
 # ```{bibliography}
 # :filter: docname in docnames
 # ```
+
+# ## Links recomendados
+# 
+# - [datavis.ca](https://www.datavis.ca/index.php)

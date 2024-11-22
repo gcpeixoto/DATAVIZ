@@ -7,7 +7,7 @@
 # 
 # CI/DCC/UFPB
 # 
-# [gcpeixoto.github.com/DATAVIZ](gcpeixoto.github.com/DATAVIZ)
+# [gcpeixoto.github.com/DATAVIZ](https://gcpeixoto.github.com/DATAVIZ)
 
 # ## Introdução 
 # 
@@ -608,16 +608,9 @@ labels = ['Visualização de Dados',
     'Conteúdo 2','Estudo de caso 2',
     'Conteúdo 3','Relatório Final']
 
-parents = [''] + \
-    3*['Visualização de Dados'] + \
-    2*['Módulo 1'] + \
-    2*['Módulo 2'] + \
-    2*['Módulo 3'] 
+parents = [''] +     3*['Visualização de Dados'] +     2*['Módulo 1'] +     2*['Módulo 2'] +     2*['Módulo 3'] 
 
-values = [0] + \
-    [.33,.33,.33] + \
-    [.9,.1,.9,.1] + \
-    [.7,.3]
+values = [0] +     [.33,.33,.33] +     [.9,.1,.9,.1] +     [.7,.3]
 
 f = go.Figure(go.Treemap(
     labels = labels,

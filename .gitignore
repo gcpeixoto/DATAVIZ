@@ -7,3 +7,5 @@
 /dcs/__pycache__
 /rise/.pytest_cache
 .vscode
+/assess/acvd/**
+.ipynb_checkpoints

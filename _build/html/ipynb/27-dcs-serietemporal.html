@@ -319,13 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="10a-ecvd1.html">
-   Estudo de Caso de Visualização de Dados - ECVD 1
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="20a-ecvd2.html">
-   Estudo de Caso de Visualização de Dados - ECVD 2
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
   </a>
  </li>
  <li class="toctree-l1">
@@ -709,6 +709,120 @@ Data loaded successfully.
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>Entidade</th>
+      <th>Total Repassado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>jan</td>
+      <td>2015</td>
+      <td>FNDE</td>
+      <td>2.604078e+09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>jan</td>
+      <td>2015</td>
+      <td>INCRA</td>
+      <td>1.814560e+08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>jan</td>
+      <td>2015</td>
+      <td>SENAI</td>
+      <td>2.191193e+08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jan</td>
+      <td>2015</td>
+      <td>SESI</td>
+      <td>3.133701e+08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jan</td>
+      <td>2015</td>
+      <td>SENAC</td>
+      <td>3.340052e+08</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>out</td>
+      <td>2024</td>
+      <td>SENAT</td>
+      <td>5.100038e+07</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>out</td>
+      <td>2024</td>
+      <td>SESCOOP</td>
+      <td>5.394943e+07</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>out</td>
+      <td>2024</td>
+      <td>SDR</td>
+      <td>1.334507e+05</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>out</td>
+      <td>2024</td>
+      <td>APEX-BR</td>
+      <td>6.206777e+07</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>out</td>
+      <td>2024</td>
+      <td>ABDI</td>
+      <td>9.939801e+06</td>
+    </tr>
+  </tbody>
+</table>
+<p>2006 rows × 4 columns</p>
+</div></div></div>
+</div>
 <section id="processamento-adicional">
 <h3><span class="section-number">16.4.1. </span>Processamento adicional<a class="headerlink" href="#processamento-adicional" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -764,6 +878,132 @@ Data loaded successfully.
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_e</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>Entidade</th>
+      <th>Total Repassado</th>
+      <th>Período</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>jan</td>
+      <td>2015</td>
+      <td>INCRA</td>
+      <td>1.814560e+08</td>
+      <td>jan/2015</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>fev</td>
+      <td>2015</td>
+      <td>INCRA</td>
+      <td>1.062026e+08</td>
+      <td>fev/2015</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>mar</td>
+      <td>2015</td>
+      <td>INCRA</td>
+      <td>1.044018e+08</td>
+      <td>mar/2015</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>abr</td>
+      <td>2015</td>
+      <td>INCRA</td>
+      <td>1.042058e+08</td>
+      <td>abr/2015</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mai</td>
+      <td>2015</td>
+      <td>INCRA</td>
+      <td>1.026660e+08</td>
+      <td>mai/2015</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>jun</td>
+      <td>2024</td>
+      <td>INCRA</td>
+      <td>2.094306e+08</td>
+      <td>jun/2024</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>jul</td>
+      <td>2024</td>
+      <td>INCRA</td>
+      <td>2.275669e+08</td>
+      <td>jul/2024</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>ago</td>
+      <td>2024</td>
+      <td>INCRA</td>
+      <td>2.239196e+08</td>
+      <td>ago/2024</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>set</td>
+      <td>2024</td>
+      <td>INCRA</td>
+      <td>2.471706e+08</td>
+      <td>set/2024</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>out</td>
+      <td>2024</td>
+      <td>INCRA</td>
+      <td>2.151508e+08</td>
+      <td>out/2024</td>
+    </tr>
+  </tbody>
+</table>
+<p>118 rows × 5 columns</p>
+</div></div></div>
+</div>
 <ul class="simple">
 <li><p>Plotagem simples</p>
 <ul>
@@ -775,13 +1015,15 @@ Data loaded successfully.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_e</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Período&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Repassado&#39;</span><span class="p">,</span><span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_e</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Período&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Repassado&#39;</span><span class="p">,</span>
+                 <span class="c1">#errorbar=None,</span>
+                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">labelsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27-dcs-serietemporal_16_0.png" src="../_images/27-dcs-serietemporal_16_0.png" />
+<img alt="../_images/27-dcs-serietemporal_18_0.png" src="../_images/27-dcs-serietemporal_18_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -814,13 +1056,14 @@ Data loaded successfully.
 <span class="n">s1</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_e</span><span class="p">,</span>
                  <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Período&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Repassado&#39;</span><span class="p">,</span>
                  <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.edgecolor&#39;</span><span class="p">],</span> <span class="c1"># cor do estilo customizado</span>
-                 <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+                 <span class="c1">#errorbar=None, </span>
+                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Série histórica: repasse RFB para </span><span class="si">{</span><span class="n">entity</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27-dcs-serietemporal_21_0.png" src="../_images/27-dcs-serietemporal_21_0.png" />
+<img alt="../_images/27-dcs-serietemporal_23_0.png" src="../_images/27-dcs-serietemporal_23_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -835,6 +1078,127 @@ Data loaded successfully.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_em</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mês</th>
+      <th>Entidade</th>
+      <th>Total Repassado</th>
+      <th>Período</th>
+    </tr>
+    <tr>
+      <th>Ano</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>jan</td>
+      <td>INCRA</td>
+      <td>1.814560e+08</td>
+      <td>2015-01-01</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>fev</td>
+      <td>INCRA</td>
+      <td>1.062026e+08</td>
+      <td>2015-02-01</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>mar</td>
+      <td>INCRA</td>
+      <td>1.044018e+08</td>
+      <td>2015-03-01</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>abr</td>
+      <td>INCRA</td>
+      <td>1.042058e+08</td>
+      <td>2015-04-01</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>mai</td>
+      <td>INCRA</td>
+      <td>1.026660e+08</td>
+      <td>2015-05-01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>jun</td>
+      <td>INCRA</td>
+      <td>2.094306e+08</td>
+      <td>2024-06-01</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>jul</td>
+      <td>INCRA</td>
+      <td>2.275669e+08</td>
+      <td>2024-07-01</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>ago</td>
+      <td>INCRA</td>
+      <td>2.239196e+08</td>
+      <td>2024-08-01</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>set</td>
+      <td>INCRA</td>
+      <td>2.471706e+08</td>
+      <td>2024-09-01</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>out</td>
+      <td>INCRA</td>
+      <td>2.151508e+08</td>
+      <td>2024-10-01</td>
+    </tr>
+  </tbody>
+</table>
+<p>118 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># paleta de cores</span>
@@ -842,13 +1206,18 @@ Data loaded successfully.
 
 <span class="c1"># </span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_em</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
-    <span class="n">sy</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_em</span><span class="p">,</span>
-                     <span class="n">x</span><span class="o">=</span><span class="n">df_em</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="s1">&#39;Mês&#39;</span><span class="p">],</span>
-                     <span class="n">y</span><span class="o">=</span><span class="n">df_em</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="s1">&#39;Total Repassado&#39;</span><span class="p">],</span>
-                     <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
-                     <span class="n">color</span><span class="o">=</span><span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                     <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="c1">#     sy = sb.lineplot(data=df_em,</span>
+<span class="c1">#                      x=df_em.loc[y][&#39;Mês&#39;],</span>
+<span class="c1">#                      y=df_em.loc[y][&#39;Total Repassado&#39;],</span>
+<span class="c1">#                      marker=&#39;o&#39;,</span>
+<span class="c1">#                      color=pal[i],</span>
+<span class="c1">#                      #errorbar=None, </span>
+<span class="c1">#                      #ax=ax, </span>
+<span class="c1">#                      label=y)</span>
 
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_em</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="s1">&#39;Mês&#39;</span><span class="p">],</span><span class="n">df_em</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="s1">&#39;Total Repassado&#39;</span><span class="p">],</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+    
+    
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ano&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Série histórica (mensal): repasse RFB para </span><span class="si">{</span><span class="n">entity</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
@@ -856,7 +1225,7 @@ Data loaded successfully.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27-dcs-serietemporal_24_0.png" src="../_images/27-dcs-serietemporal_24_0.png" />
+<img alt="../_images/27-dcs-serietemporal_27_0.png" src="../_images/27-dcs-serietemporal_27_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -897,10 +1266,7 @@ Data loaded successfully.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Componentes da ST: modelo aditivo&#39;)
-</pre></div>
-</div>
-<img alt="../_images/27-dcs-serietemporal_27_1.png" src="../_images/27-dcs-serietemporal_27_1.png" />
+<img alt="../_images/27-dcs-serietemporal_30_0.png" src="../_images/27-dcs-serietemporal_30_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -933,10 +1299,7 @@ Data loaded successfully.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Componentes da ST: modelo multiplicativo&#39;)
-</pre></div>
-</div>
-<img alt="../_images/27-dcs-serietemporal_29_1.png" src="../_images/27-dcs-serietemporal_29_1.png" />
+<img alt="../_images/27-dcs-serietemporal_32_0.png" src="../_images/27-dcs-serietemporal_32_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -949,7 +1312,7 @@ Data loaded successfully.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27-dcs-serietemporal_31_0.png" src="../_images/27-dcs-serietemporal_31_0.png" />
+<img alt="../_images/27-dcs-serietemporal_34_0.png" src="../_images/27-dcs-serietemporal_34_0.png" />
 </div>
 </div>
 </section>
@@ -961,8 +1324,22 @@ Data loaded successfully.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Entidade&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;FNDE&#39;, &#39;INCRA&#39;, &#39;SENAI&#39;, &#39;SESI&#39;, &#39;SENAC&#39;, &#39;SESC&#39;, &#39;SEBRAE&#39;,
+       &#39;EMBRATUR&#39;, &#39;DPC&#39;, &#39;ANAC&#39;, &#39;SENAR&#39;, &#39;SEST&#39;, &#39;SENAT&#39;, &#39;SESCOOP&#39;,
+       &#39;SDR&#39;, &#39;APEX-BR&#39;, &#39;ABDI&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># entidades do sistema S</span>
-<span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SENAI&#39;</span><span class="p">,</span> <span class="s1">&#39;SESI&#39;</span><span class="p">,</span> <span class="s1">&#39;SENAC&#39;</span><span class="p">]</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ABDI&#39;</span><span class="p">]</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -975,7 +1352,7 @@ Data loaded successfully.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27-dcs-serietemporal_33_0.png" src="../_images/27-dcs-serietemporal_33_0.png" />
+<img alt="../_images/27-dcs-serietemporal_37_0.png" src="../_images/27-dcs-serietemporal_37_0.png" />
 </div>
 </div>
 </section>

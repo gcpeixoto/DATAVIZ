@@ -38,18 +38,24 @@ plt.style.use('../etc/gcpeixoto-datavis.mplstyle') # style sheet
 
 # ## Dados de entrada pré-processados
 
-# In[2]:
+# In[3]:
 
 
 # carrega dados da RFB
 df = dcs27.load_data(keep_orig=False,show_links=False)
 
 
+# In[4]:
+
+
+df
+
+
 # ### Processamento adicional
 
 # - Listagem de entidades disponíveis para análise
 
-# In[3]:
+# In[5]:
 
 
 # lista de entidades disponíveis
@@ -58,7 +64,7 @@ df['Entidade'].unique()
 
 # - Escolha de entidade e filtragem
 
-# In[4]:
+# In[6]:
 
 
 entity = 'INCRA'
@@ -75,27 +81,35 @@ df_e = df[df['Entidade'] == entity].reset_index(drop=True)
 
 # - Montagem de _string_ representativa da temporalidade (período)
 
-# In[5]:
+# In[7]:
 
 
 df_e['Período'] = pd.Series([v['Mês'] + '/' + v['Ano'] for i,v in df_e.iterrows()])
+
+
+# In[8]:
+
+
+df_e
 
 
 # - Plotagem simples
 #     - Eixo emaranhado;
 #     - Falta de controle de espaçamento;
 
-# In[6]:
+# In[9]:
 
 
 fig, ax = plt.subplots(figsize=(12,3),constrained_layout=True)
-s1 = sb.lineplot(data=df_e,x='Período',y='Total Repassado',errorbar=None,ax=ax)
+s1 = sb.lineplot(data=df_e,x='Período',y='Total Repassado',
+                 #errorbar=None,
+                 ax=ax)
 ax.tick_params(axis='x', rotation=90, labelsize = 8)
 
 
 # - Transformação para objeto `datetime`
 
-# In[7]:
+# In[10]:
 
 
 # ver função 'map_my' auxiliar
@@ -110,26 +124,33 @@ df_e['Período'] = pd.to_datetime(df_e['Período'].apply(lambda x: dcs27.map_my(
 #     - Exploração de `seaborn.lineplot`
 # - Quadro de STs (frequência mensal)
 
-# In[8]:
+# In[11]:
 
 
 fig, ax = plt.subplots(figsize=(12,3),constrained_layout=True)
 s1 = sb.lineplot(data=df_e,
                  x='Período', y='Total Repassado',
                  color=plt.rcParams['axes.edgecolor'], # cor do estilo customizado
-                 errorbar=None, ax=ax)
+                 #errorbar=None, 
+                 ax=ax)
 ax.set_title(f'Série histórica: repasse RFB para {entity}',fontsize=14);
 
 
 # - Plotagem de séries por frequência mensal
 
-# In[9]:
+# In[12]:
 
 
 df_em = df_e.set_index('Ano')
 
 
-# In[10]:
+# In[13]:
+
+
+df_em
+
+
+# In[14]:
 
 
 fig, ax = plt.subplots(figsize=(12,3),constrained_layout=True)
@@ -139,13 +160,18 @@ pal = sb.color_palette('Oranges',len(df_em.index.unique()))
 
 # 
 for i,y in enumerate(df_em.index.unique()):
-    sy = sb.lineplot(data=df_em,
-                     x=df_em.loc[y]['Mês'],
-                     y=df_em.loc[y]['Total Repassado'],
-                     marker='o',
-                     color=pal[i],
-                     errorbar=None, ax=ax, label=y)
+#     sy = sb.lineplot(data=df_em,
+#                      x=df_em.loc[y]['Mês'],
+#                      y=df_em.loc[y]['Total Repassado'],
+#                      marker='o',
+#                      color=pal[i],
+#                      #errorbar=None, 
+#                      #ax=ax, 
+#                      label=y)
 
+        plt.plot(df_em.loc[y]['Mês'],df_em.loc[y]['Total Repassado'],'o-',color=pal[i],label=y)
+    
+    
 ax.legend(loc='best', bbox_to_anchor=(1.1,1.1), title='Ano')
 ax.grid(axis='x')
 ax.set_title(f'Série histórica (mensal): repasse RFB para {entity}',fontsize=14);
@@ -161,7 +187,7 @@ ax.set_title(f'Série histórica (mensal): repasse RFB para {entity}',fontsize=1
 
 # - ST aditiva: _valor = tendência + ciclo + sazonalidade + irregularidade_
 
-# In[11]:
+# In[15]:
 
 
 # componentes por modelo aditivo
@@ -189,7 +215,7 @@ fig.suptitle('Componentes da ST: modelo aditivo');
 
 # - ST multiplicativa: _valor = tendência x ciclo x sazonalidade x irregularidade_
 
-# In[12]:
+# In[16]:
 
 
 # componentes por modelo multiplicativo
@@ -217,7 +243,7 @@ fig.suptitle('Componentes da ST: modelo multiplicativo');
 
 # - Mecanismo de plotagem direta
 
-# In[13]:
+# In[17]:
 
 
 dp = df_add.plot()
@@ -227,11 +253,17 @@ dp = df_add.plot()
 # 
 # - Define função para plotar ST(s) específica(s) com alguma decoração.
 
-# In[14]:
+# In[18]:
+
+
+df['Entidade'].unique()
+
+
+# In[19]:
 
 
 # entidades do sistema S
-S = ['SENAI', 'SESI', 'SENAC']
+S = ['ABDI']
 
 fig, ax = plt.subplots(figsize=(12,3),constrained_layout=True)
 
@@ -240,4 +272,10 @@ for i,s in enumerate(S):
     s1 = dcs27.plot_ts_rfb(df,s,ax,pal[i+3]) # função auxiliar
 
 ax.set_title(f'Série histórica: repasses anuais da RFB para entidades do Sistema S',fontsize=14);
+
+
+# In[ ]:
+
+
+
 
