@@ -18,7 +18,7 @@ HEADER="# Use this file for detailed environment creation through conda:
 # Use this for recreation after any additions
 # conda env export > environment.yml"
 
-echo -e "$HEADER\n$(cat environment.yml)" > environment.yml && mv environment.yml ../.
+echo -e "$HEADER\n$(cat environment.yml)" > environment.yml 
 
 echo "environment.yml recreated on root."
 
