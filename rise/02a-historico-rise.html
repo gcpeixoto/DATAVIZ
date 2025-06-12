@@ -1,802 +1,437 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Marcos Históricos da Visualização de Dados &#8212; Introdução à Visualização de Dados</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css?v=1df44834" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'rise/02a-historico-rise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
     
-    <div class="container-fluid" id="banner"></div>
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../ipynb/00-apresentacao.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo-dataviz.png" class="logo__image only-light" alt="Introdução à Visualização de Dados - Home"/>
+    <img src="../_static/logo-dataviz.png" class="logo__image only-dark pst-js-only" alt="Introdução à Visualização de Dados - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../ipynb/00-apresentacao.html">
-                    Apresentação do curso
+                    Apresentação
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Fundamentos
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/01a-introducao.html">
-   1. Introdução à Visualização de Dados
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/02a-historico.html">
-   2. Marcos Históricos da Visualização de Dados
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/03a-estetica.html">
-   3. Criação de Representações Visuais e Estética
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/04a-eixos.html">
-   4. Eixos, Escalas e Sistemas de Coordenadas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/05a-percepcao.html">
-   5. Percepção Visual
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/06a-cores.html">
-   6. Cores
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/07a-lounge.html">
-   7.
-   <em>
-    Lounge
-   </em>
-   das Representações Visuais
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/08a-storytelling.html">
-   8. Técnicas de
-   <em>
-    Storytelling
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">
-   9. Imersão em
-   <em>
-    matplotlib
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/01a-introducao.html">1. Introdução à Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/02a-historico.html">2. Marcos Históricos da Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/03a-estetica.html">3. Criação de Representações Visuais e Estética</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/04a-eixos.html">4. Eixos, Escalas e Sistemas de Coordenadas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/05a-percepcao.html">5. Percepção Visual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/06a-cores.html">6. Cores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/07a-lounge.html">7. <em>Lounge</em> das Representações Visuais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/08a-storytelling.html">8. Técnicas de <em>Storytelling</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">9. Imersão em <em>matplotlib</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Técnica
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Técnica</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/20-dcs-quantidade.html">
-   10.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Quantidades
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/21-dcs-distribuicoes.html">
-   11.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Distribuições
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/23-dcs-geoespacial.html">
-   12.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Dados Geoespaciais
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">
-   13.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Dados Multidimensionais
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/25-dcs-redes.html">
-   14.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Redes Complexas
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/26-dcs-cientifica.html">
-   15.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Visualização Científica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/27-dcs-serietemporal.html">
-   16.
-   <em>
-    Dataviz Code Session
-   </em>
-   : Séries Temporais
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/20-dcs-quantidade.html">10. <em>Dataviz Code Session</em>: Quantidades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/21-dcs-distribuicoes.html">11. <em>Dataviz Code Session</em>: Distribuições</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/23-dcs-geoespacial.html">12. <em>Dataviz Code Session</em>: Dados Geoespaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">13. <em>Dataviz Code Session</em>: Dados Multidimensionais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/25-dcs-redes.html">14. <em>Dataviz Code Session</em>: Redes Complexas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/26-dcs-cientifica.html">15. <em>Dataviz Code Session</em>: Visualização Científica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/27-dcs-serietemporal.html">16. <em>Dataviz Code Session</em>: Séries Temporais</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Aplicações
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicações</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/28-dw-plotly.html">
-   17.
-   <em>
-    Dataviz Workshop
-   </em>
-   : objetos gráficos e
-   <em>
-    Plotly Express
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/30-dw-dash.html">
-   18.
-   <em>
-    Dataviz Workshop
-   </em>
-   :
-   <em>
-    Dashboarding
-   </em>
-   com
-   <em>
-    Dash
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/31-dw-reporting.html">
-   19.
-   <em>
-    Dataviz Workshop
-   </em>
-   :
-   <em>
-    Data Reporting
-   </em>
-   com HTML/PDF
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/32-dw-reportlab.html">
-   20.
-   <em>
-    Dataviz Workshop
-   </em>
-   :
-   <em>
-    Data Reporting
-   </em>
-   com
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     reportlab
-    </span>
-   </code>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/28-dw-plotly.html">17. <em>Dataviz Workshop</em>: objetos gráficos e <em>Plotly Express</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/30-dw-dash.html">18. <em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/31-dw-reporting.html">19. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com HTML/PDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/32-dw-reportlab.html">20. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com <code class="docutils literal notranslate"><span class="pre">reportlab</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Avaliações
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avaliações</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/10a-acvd.html">
-   Análise de Casos de Visualização de Dados - ACVD
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/20a-ecvd.html">
-   Estudo de Caso de Visualização de Dados - ECVD
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/capstone-template.html">
-   Projeto Final de Visualização de Dados - PFVD
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/10a-acvd.html">Análise de Casos de Visualização de Dados - ACVD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/20a-ecvd.html">Estudo de Caso de Visualização de Dados - ECVD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/capstone-template.html">Projeto Final de Visualização de Dados - PFVD</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Suplemento
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suplemento</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/A-quick-guide-seaborn.html">
-   Guia rápido de plotagem -
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     seaborn
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/B-quick-guide-matplotlib.html">
-   Guia rápido de plotagem -
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     matplotlib
-    </span>
-   </code>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/A-quick-guide-seaborn.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/B-quick-guide-matplotlib.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/02a-historico-rise.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/02a-historico-rise.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/rise/02a-historico-rise.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/rise/02a-historico-rise.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button>
 
-      </li>
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#consideracoes-iniciais">
-   Considerações iniciais
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cronologia">
-   Cronologia
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-1699-medicoes-e-teoria">
-     1600 a 1699 - Medições e teoria
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grafico-de-van-langren">
-     Gráfico de Van Langren
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#notas">
-       Notas
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#como-van-langren-influenciou-as-rvs">
-       Como Van Langren influenciou as RVs
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-1799-novas-formas-graficas">
-     1700 a 1799 - Novas formas gráficas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joseph-priestley">
-     Joseph Priestley
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#william-playfair">
-     William Playfair
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec">
-     Mapa da história do comércio exterior da Inglaterra (1500 AEC - 1800 DEC)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#balanca-comercial-da-inglaterra">
-     Balança comercial da Inglaterra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#serie-temporal-da-inglaterra">
-     Série temporal da Inglaterra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#divida-publica-da-inglaterra">
-     Dívida pública da Inglaterra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grafico-de-pizza">
-     Gráfico de “pizza”
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1800-1850-principio-dos-graficos-modernos">
-     Período de 1800 - 1850: princípio dos gráficos modernos
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#charles-minard">
-       Charles Minard
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#campanha-militar-de-napoleao">
-     Campanha militar de Napoleão
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tableau-grafico">
-     Tableau gráfico
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1850-1900">
-     Período de 1850 - 1900
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1900-1950">
-     Período de 1900 - 1950
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1950-1975">
-     Período de 1950 - 1975
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1975-em-diante">
-     Período de 1975 em diante
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fatos-emblematicos">
-     Fatos emblemáticos
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Marcos Históricos da Visualização de Dados</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#consideracoes-iniciais">
-   Considerações iniciais
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cronologia">
-   Cronologia
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-1699-medicoes-e-teoria">
-     1600 a 1699 - Medições e teoria
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grafico-de-van-langren">
-     Gráfico de Van Langren
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#notas">
-       Notas
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#como-van-langren-influenciou-as-rvs">
-       Como Van Langren influenciou as RVs
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-1799-novas-formas-graficas">
-     1700 a 1799 - Novas formas gráficas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joseph-priestley">
-     Joseph Priestley
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#william-playfair">
-     William Playfair
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec">
-     Mapa da história do comércio exterior da Inglaterra (1500 AEC - 1800 DEC)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#balanca-comercial-da-inglaterra">
-     Balança comercial da Inglaterra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#serie-temporal-da-inglaterra">
-     Série temporal da Inglaterra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#divida-publica-da-inglaterra">
-     Dívida pública da Inglaterra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grafico-de-pizza">
-     Gráfico de “pizza”
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1800-1850-principio-dos-graficos-modernos">
-     Período de 1800 - 1850: princípio dos gráficos modernos
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#charles-minard">
-       Charles Minard
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#campanha-militar-de-napoleao">
-     Campanha militar de Napoleão
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tableau-grafico">
-     Tableau gráfico
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1850-1900">
-     Período de 1850 - 1900
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1900-1950">
-     Período de 1900 - 1950
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1950-1975">
-     Período de 1950 - 1975
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#periodo-de-1975-em-diante">
-     Período de 1975 em diante
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fatos-emblematicos">
-     Fatos emblemáticos
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Marcos Históricos da Visualização de Dados</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-iniciais">Considerações iniciais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cronologia">Cronologia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1699-medicoes-e-teoria">1600 a 1699 - Medições e teoria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-van-langren">Gráfico de Van Langren</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notas">Notas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-van-langren-influenciou-as-rvs">Como Van Langren influenciou as RVs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1799-novas-formas-graficas">1700 a 1799 - Novas formas gráficas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joseph-priestley">Joseph Priestley</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#william-playfair">William Playfair</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec">Mapa da história do comércio exterior da Inglaterra (1500 AEC - 1800 DEC)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balanca-comercial-da-inglaterra">Balança comercial da Inglaterra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-temporal-da-inglaterra">Série temporal da Inglaterra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divida-publica-da-inglaterra">Dívida pública da Inglaterra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-pizza">Gráfico de “pizza”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1800-1850-principio-dos-graficos-modernos">Período de 1800 - 1850: princípio dos gráficos modernos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#charles-minard">Charles Minard</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campanha-militar-de-napoleao">Campanha militar de Napoleão</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tableau-grafico">Tableau gráfico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1850-1900">Período de 1850 - 1900</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1900-1950">Período de 1900 - 1950</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1950-1975">Período de 1950 - 1975</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1975-em-diante">Período de 1975 em diante</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fatos-emblematicos">Fatos emblemáticos</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="marcos-historicos-da-visualizacao-de-dados">
-<h1>Marcos Históricos da Visualização de Dados<a class="headerlink" href="#marcos-historicos-da-visualizacao-de-dados" title="Permalink to this headline">#</a></h1>
+<h1>Marcos Históricos da Visualização de Dados<a class="headerlink" href="#marcos-historicos-da-visualizacao-de-dados" title="Link to this heading">#</a></h1>
 <p>Prof. Gustavo Oliveira</p>
 <p>CI/DCC/UFPB</p>
 <p><a class="reference external" href="http://gcpeixoto.github.com/DATAVIZ">gcpeixoto.github.com/DATAVIZ</a></p>
 <section id="consideracoes-iniciais">
-<h2>Considerações iniciais<a class="headerlink" href="#consideracoes-iniciais" title="Permalink to this headline">#</a></h2>
+<h2>Considerações iniciais<a class="headerlink" href="#consideracoes-iniciais" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Mapeamento pleno dos fatos históricos de dataviz é quase impossível</p></li>
 <li><p>Faremos um breve resumo dos principais eventos que marcaram época</p></li>
@@ -804,7 +439,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="cronologia">
-<h2>Cronologia<a class="headerlink" href="#cronologia" title="Permalink to this headline">#</a></h2>
+<h2>Cronologia<a class="headerlink" href="#cronologia" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Registros da informação quantitativa técnica mais especializada remonta ao século XV</p></li>
 <li><p>Motivação: cartografia e pensamento estatístico</p></li>
@@ -813,7 +448,7 @@ title="Print to PDF"
 </ul>
 <a class="reference internal image-reference" href="../_images/dataviz-milestones.png"><img alt="../_images/dataviz-milestones.png" src="../_images/dataviz-milestones.png" style="width: 700px; height: 700px;" /></a>
 <section id="a-1699-medicoes-e-teoria">
-<h3>1600 a 1699 - Medições e teoria<a class="headerlink" href="#a-1699-medicoes-e-teoria" title="Permalink to this headline">#</a></h3>
+<h3>1600 a 1699 - Medições e teoria<a class="headerlink" href="#a-1699-medicoes-e-teoria" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Início do século: interesse em medir quantidades físicas (tempo, distância, espaço)</p></li>
 <li><p>Navegação, expansão territorial e estudo dos astros.</p></li>
@@ -822,7 +457,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="grafico-de-van-langren">
-<h3>Gráfico de <a class="reference external" href="http://galileo.rice.edu/Catalog/NewFiles/langren.html">Van Langren</a><a class="headerlink" href="#grafico-de-van-langren" title="Permalink to this headline">#</a></h3>
+<h3>Gráfico de <a class="reference external" href="http://galileo.rice.edu/Catalog/NewFiles/langren.html">Van Langren</a><a class="headerlink" href="#grafico-de-van-langren" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://archive.org/details/ayer_qb_225_l36_1644/page/n9/mode/2up">Obra original</a></p>
 <ul class="simple">
 <li><p>Nasceu em Amsterdam (1598); morreu em Bruxelas (1675)</p></li>
@@ -831,7 +466,7 @@ title="Print to PDF"
 </ul>
 <a class="reference internal image-reference" href="../_images/langren.png"><img alt="../_images/langren.png" src="../_images/langren.png" style="width: 500px; height: 500px;" /></a>
 <section id="notas">
-<h4>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h4>
+<h4>Notas<a class="headerlink" href="#notas" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>O gráfico de Van Langren foi a 1a. RV de um dado estatístico</p></li>
 <li><p>Diferenciou-se por ser baseado em dados</p></li>
@@ -839,12 +474,12 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="como-van-langren-influenciou-as-rvs">
-<h4>Como Van Langren influenciou as RVs<a class="headerlink" href="#como-van-langren-influenciou-as-rvs" title="Permalink to this headline">#</a></h4>
+<h4>Como Van Langren influenciou as RVs<a class="headerlink" href="#como-van-langren-influenciou-as-rvs" title="Link to this heading">#</a></h4>
 <a class="reference internal image-reference" href="../_images/timeline-vanlangren.png"><img alt="../_images/timeline-vanlangren.png" src="../_images/timeline-vanlangren.png" style="width: 700px; height: 700px;" /></a>
 </section>
 </section>
 <section id="a-1799-novas-formas-graficas">
-<h3>1700 a 1799 - Novas formas gráficas<a class="headerlink" href="#a-1799-novas-formas-graficas" title="Permalink to this headline">#</a></h3>
+<h3>1700 a 1799 - Novas formas gráficas<a class="headerlink" href="#a-1799-novas-formas-graficas" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Formas gráficas mais elaboradas passaram a enriquecer os mapas</p></li>
 <li><p>Caminhos foram abertos para isolinhas e isocontornos, mapeamento temático de dados físicos, geológicos, econômicos e médicos.</p></li>
@@ -852,7 +487,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="joseph-priestley">
-<h3><a class="reference external" href="https://en.wikipedia.org/wiki/Joseph_Priestley">Joseph Priestley</a><a class="headerlink" href="#joseph-priestley" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://en.wikipedia.org/wiki/Joseph_Priestley">Joseph Priestley</a><a class="headerlink" href="#joseph-priestley" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Nasceu na Inglaterra em 1733; morreu nos EUA em 1804</p></li>
 <li><p>Desenvolveu gráfico de barra (tempo de vida de pessoas)</p></li>
@@ -860,7 +495,7 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="../_images/priestley-chart.png"><img alt="../_images/priestley-chart.png" src="../_images/priestley-chart.png" style="width: 700px; height: 700px;" /></a>
 </section>
 <section id="william-playfair">
-<h3><a class="reference external" href="https://en.wikipedia.org/wiki/William_Playfair">William Playfair</a><a class="headerlink" href="#william-playfair" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://en.wikipedia.org/wiki/William_Playfair">William Playfair</a><a class="headerlink" href="#william-playfair" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Nasceu na Escócia em 1759; morreu em 1823</p></li>
 <li><p>Considerado o principal inventor da época</p></li>
@@ -873,51 +508,51 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec">
-<h3>Mapa da história do comércio exterior da Inglaterra (1500 AEC - 1800 DEC)<a class="headerlink" href="#mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec" title="Permalink to this headline">#</a></h3>
+<h3>Mapa da história do comércio exterior da Inglaterra (1500 AEC - 1800 DEC)<a class="headerlink" href="#mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec" title="Link to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/universal-map-trade.png"><img alt="../_images/universal-map-trade.png" src="../_images/universal-map-trade.png" style="width: 700px; height: 700px;" /></a>
 </section>
 <section id="balanca-comercial-da-inglaterra">
-<h3>Balança comercial da Inglaterra<a class="headerlink" href="#balanca-comercial-da-inglaterra" title="Permalink to this headline">#</a></h3>
+<h3>Balança comercial da Inglaterra<a class="headerlink" href="#balanca-comercial-da-inglaterra" title="Link to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/playfair1.png"><img alt="../_images/playfair1.png" src="../_images/playfair1.png" style="width: 600px; height: 600px;" /></a>
 </section>
 <section id="serie-temporal-da-inglaterra">
-<h3>Série temporal da Inglaterra<a class="headerlink" href="#serie-temporal-da-inglaterra" title="Permalink to this headline">#</a></h3>
+<h3>Série temporal da Inglaterra<a class="headerlink" href="#serie-temporal-da-inglaterra" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Série temporal tripla: variação de preço do trigo, do salário semanal e do monarca reinante ao longo de 250 anos (1565 - 1820).</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/playfair2.png"><img alt="../_images/playfair2.png" src="../_images/playfair2.png" style="width: 600px; height: 600px;" /></a>
 </section>
 <section id="divida-publica-da-inglaterra">
-<h3>Dívida pública da Inglaterra<a class="headerlink" href="#divida-publica-da-inglaterra" title="Permalink to this headline">#</a></h3>
+<h3>Dívida pública da Inglaterra<a class="headerlink" href="#divida-publica-da-inglaterra" title="Link to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/playfair3.png"><img alt="../_images/playfair3.png" src="../_images/playfair3.png" style="width: 300px; height: 180px;" /></a>
 </section>
 <section id="grafico-de-pizza">
-<h3>Gráfico de “pizza”<a class="headerlink" href="#grafico-de-pizza" title="Permalink to this headline">#</a></h3>
+<h3>Gráfico de “pizza”<a class="headerlink" href="#grafico-de-pizza" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Proporções do Império Turco na Ásia, Europa e África antes de 1789</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/pieChart-playfair.jpg"><img alt="../_images/pieChart-playfair.jpg" src="../_images/pieChart-playfair.jpg" style="width: 300px; height: 300px;" /></a>
 </section>
 <section id="periodo-de-1800-1850-principio-dos-graficos-modernos">
-<h3>Período de 1800 - 1850: princípio dos gráficos modernos<a class="headerlink" href="#periodo-de-1800-1850-principio-dos-graficos-modernos" title="Permalink to this headline">#</a></h3>
+<h3>Período de 1800 - 1850: princípio dos gráficos modernos<a class="headerlink" href="#periodo-de-1800-1850-principio-dos-graficos-modernos" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Explodiram os gráficos estatísticos e os mapas temáticos modernos</p></li>
 <li><p>Histogramas, séries temporais, gráficos de dispersão e atlas compreensivos</p></li>
 <li><p>Diversas formas de simbolismo em tópicos econômicos, sociais, morais</p></li>
 </ul>
 <section id="charles-minard">
-<h4><a class="reference external" href="https://en.wikipedia.org/wiki/Charles_Joseph_Minard">Charles Minard</a><a class="headerlink" href="#charles-minard" title="Permalink to this headline">#</a></h4>
+<h4><a class="reference external" href="https://en.wikipedia.org/wiki/Charles_Joseph_Minard">Charles Minard</a><a class="headerlink" href="#charles-minard" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Minard é o mais proeminente deste tempo</p></li>
 </ul>
 </section>
 </section>
 <section id="campanha-militar-de-napoleao">
-<h3>Campanha militar de Napoleão<a class="headerlink" href="#campanha-militar-de-napoleao" title="Permalink to this headline">#</a></h3>
+<h3>Campanha militar de Napoleão<a class="headerlink" href="#campanha-militar-de-napoleao" title="Link to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/minard1.png"><img alt="../_images/minard1.png" src="../_images/minard1.png" style="width: 700px; height: 400px;" /></a>
 </section>
 <section id="tableau-grafico">
-<h3>Tableau gráfico<a class="headerlink" href="#tableau-grafico" title="Permalink to this headline">#</a></h3>
+<h3>Tableau gráfico<a class="headerlink" href="#tableau-grafico" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Transporte de artigos comerciais pelo Canal du Centre</p></li>
 <li><p>Paradas intermediárias espaçadas por distância</p></li>
@@ -925,7 +560,7 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="../_images/minard-tableau.png"><img alt="../_images/minard-tableau.png" src="../_images/minard-tableau.png" style="width: 700px; height: 400px;" /></a>
 </section>
 <section id="periodo-de-1850-1900">
-<h3>Período de 1850 - 1900<a class="headerlink" href="#periodo-de-1850-1900" title="Permalink to this headline">#</a></h3>
+<h3>Período de 1850 - 1900<a class="headerlink" href="#periodo-de-1850-1900" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Na segunda metade do século XIX, cenário pronto para consolidação da dataviz</p></li>
 <li><p>Escritórios oficiais sobre análises estatísticas foram estabelecidos por toda a Europa</p></li>
@@ -934,7 +569,7 @@ title="Print to PDF"
 <p>(Ver slides Friendly)</p>
 </section>
 <section id="periodo-de-1900-1950">
-<h3>Período de 1900 - 1950<a class="headerlink" href="#periodo-de-1900-1950" title="Permalink to this headline">#</a></h3>
+<h3>Período de 1900 - 1950<a class="headerlink" href="#periodo-de-1900-1950" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Pouca inovação para gráficos estatísticos</p></li>
 <li><p>Figuras passaram a ser meras ilustrações.</p></li>
@@ -944,7 +579,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="periodo-de-1950-1975">
-<h3>Período de 1950 - 1975<a class="headerlink" href="#periodo-de-1950-1975" title="Permalink to this headline">#</a></h3>
+<h3>Período de 1950 - 1975<a class="headerlink" href="#periodo-de-1950-1975" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Espírito numérico e formal estabelecido em meados da década de 1930</p></li>
 <li><p>Renascimento da visualização de dados por volta de 1960</p></li>
@@ -958,7 +593,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="periodo-de-1975-em-diante">
-<h3>Período de 1975 em diante<a class="headerlink" href="#periodo-de-1975-em-diante" title="Permalink to this headline">#</a></h3>
+<h3>Período de 1975 em diante<a class="headerlink" href="#periodo-de-1975-em-diante" title="Link to this heading">#</a></h3>
 <p>No final do século XX, a ciência multidisciplinar intermediou o florescimento da visualização de dados. Métodos computacionais hoje estão disponíveis para qualquer sistema operacional, preferidos por cientistas e analistas provenientes das mais diversas áreas de conhecimento. Alguns pontos de destaque são:</p>
 <ul class="simple">
 <li><p>Desenvolvimento de sistemas interativos;</p></li>
@@ -971,74 +606,77 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="fatos-emblematicos">
-<h3>Fatos emblemáticos<a class="headerlink" href="#fatos-emblematicos" title="Permalink to this headline">#</a></h3>
+<h3>Fatos emblemáticos<a class="headerlink" href="#fatos-emblematicos" title="Link to this heading">#</a></h3>
 <p>A seguinte tabela mostra uma cronologia breve sobre fatos emblemáticos da dataviz.</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Período</p></th>
-<th class="text-align:left head"><p>Evento</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Período</p></th>
+<th class="head text-left"><p>Evento</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>1750 - 1800</p></td>
-<td class="text-align:left"><p>William Playfair produz os primeiros gráficos modernos.</p></td>
+<tr class="row-even"><td class="text-left"><p>1750 - 1800</p></td>
+<td class="text-left"><p>William Playfair produz os primeiros gráficos modernos.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>1858</p></td>
-<td class="text-align:left"><p>Florence Nightingale cria o seu “diagrama Coxcomb” (circular) para ilustrar frações de mortalidade por doenças no exército britânico.</p></td>
+<tr class="row-odd"><td class="text-left"><p>1858</p></td>
+<td class="text-left"><p>Florence Nightingale cria o seu “diagrama Coxcomb” (circular) para ilustrar frações de mortalidade por doenças no exército britânico.</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>1861</p></td>
-<td class="text-align:left"><p>Charles Minard publica a Carte Figurative.</p></td>
+<tr class="row-even"><td class="text-left"><p>1861</p></td>
+<td class="text-left"><p>Charles Minard publica a Carte Figurative.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>1914</p></td>
-<td class="text-align:left"><p>Willard Brinton publica o primeiro livro sobre visualização para negócios: Graphic Methods for Presenting Facts.</p></td>
+<tr class="row-odd"><td class="text-left"><p>1914</p></td>
+<td class="text-left"><p>Willard Brinton publica o primeiro livro sobre visualização para negócios: Graphic Methods for Presenting Facts.</p></td>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-auto table">
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Período</p></th>
-<th class="text-align:left head"><p>Evento</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Período</p></th>
+<th class="head text-left"><p>Evento</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>1952</p></td>
-<td class="text-align:left"><p>Mary Eleanor Spear publica Charting Statistics, um livro de melhores práticas de criação de gráficos.</p></td>
+<tr class="row-even"><td class="text-left"><p>1952</p></td>
+<td class="text-left"><p>Mary Eleanor Spear publica Charting Statistics, um livro de melhores práticas de criação de gráficos.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>1967</p></td>
-<td class="text-align:left"><p>Jacques Bertin publica Sémiologie Graphique.</p></td>
+<tr class="row-odd"><td class="text-left"><p>1967</p></td>
+<td class="text-left"><p>Jacques Bertin publica Sémiologie Graphique.</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>1970 - 1980</p></td>
-<td class="text-align:left"><p>John Tukey inaugura a visualização de dados por meio de computadores e populariza os conceito de análise exploratória de dados.</p></td>
+<tr class="row-even"><td class="text-left"><p>1970 - 1980</p></td>
+<td class="text-left"><p>John Tukey inaugura a visualização de dados por meio de computadores e populariza os conceito de análise exploratória de dados.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>1983</p></td>
-<td class="text-align:left"><p>Edward Tufte publica The Visual Display of Quantitative Information.</p></td>
+<tr class="row-odd"><td class="text-left"><p>1983</p></td>
+<td class="text-left"><p>Edward Tufte publica The Visual Display of Quantitative Information.</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>1984</p></td>
-<td class="text-align:left"><p>William Cleveland e Robert McGill publicam o primeiro de vários trabalhos de pesquisa que tentam medir a “percepção gráfica”.</p></td>
+<tr class="row-even"><td class="text-left"><p>1984</p></td>
+<td class="text-left"><p>William Cleveland e Robert McGill publicam o primeiro de vários trabalhos de pesquisa que tentam medir a “percepção gráfica”.</p></td>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-auto table">
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Período</p></th>
-<th class="text-align:left head"><p>Evento</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Período</p></th>
+<th class="head text-left"><p>Evento</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>1986</p></td>
-<td class="text-align:left"><p>Jock Mackinlay publica uma influente tese de doutorado que levou o trabalho de Jacques Bertin para a era digital.</p></td>
+<tr class="row-even"><td class="text-left"><p>1986</p></td>
+<td class="text-left"><p>Jock Mackinlay publica uma influente tese de doutorado que levou o trabalho de Jacques Bertin para a era digital.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>1990 - 2000</p></td>
-<td class="text-align:left"><p>Abordagens divergentes surgem entre agentes da visualização científica de dados e jornalistas orientados por design.</p></td>
+<tr class="row-odd"><td class="text-left"><p>1990 - 2000</p></td>
+<td class="text-left"><p>Abordagens divergentes surgem entre agentes da visualização científica de dados e jornalistas orientados por design.</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>2010</p></td>
-<td class="text-align:left"><p>Dataviz torna-se democrática por causa da internet.</p></td>
+<tr class="row-even"><td class="text-left"><p>2010</p></td>
+<td class="text-left"><p>Dataviz torna-se democrática por causa da internet.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Hoje</p></td>
-<td class="text-align:left"><p>Dataviz se expande por um amplo espectro de disciplinas com gráficos dinâmicos e alta interatividade.</p></td>
+<tr class="row-odd"><td class="text-left"><p>Hoje</p></td>
+<td class="text-left"><p>Dataviz se expande por um amplo espectro de disciplinas com gráficos dinâmicos e alta interatividade.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 </section>
 </section>
@@ -1055,7 +693,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./rise"
         },
         predefinedOutput: true
@@ -1063,36 +701,114 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-iniciais">Considerações iniciais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cronologia">Cronologia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1699-medicoes-e-teoria">1600 a 1699 - Medições e teoria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-van-langren">Gráfico de Van Langren</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notas">Notas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-van-langren-influenciou-as-rvs">Como Van Langren influenciou as RVs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1799-novas-formas-graficas">1700 a 1799 - Novas formas gráficas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joseph-priestley">Joseph Priestley</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#william-playfair">William Playfair</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-da-historia-do-comercio-exterior-da-inglaterra-1500-aec-1800-dec">Mapa da história do comércio exterior da Inglaterra (1500 AEC - 1800 DEC)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balanca-comercial-da-inglaterra">Balança comercial da Inglaterra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-temporal-da-inglaterra">Série temporal da Inglaterra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divida-publica-da-inglaterra">Dívida pública da Inglaterra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-pizza">Gráfico de “pizza”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1800-1850-principio-dos-graficos-modernos">Período de 1800 - 1850: princípio dos gráficos modernos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#charles-minard">Charles Minard</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campanha-militar-de-napoleao">Campanha militar de Napoleão</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tableau-grafico">Tableau gráfico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1850-1900">Período de 1850 - 1900</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1900-1950">Período de 1900 - 1950</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1950-1975">Período de 1950 - 1975</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodo-de-1975-em-diante">Período de 1975 em diante</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fatos-emblematicos">Fatos emblemáticos</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Prof. Gustavo Oliveira<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Prof. Gustavo Oliveira
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
