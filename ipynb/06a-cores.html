@@ -1,168 +1,113 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="../" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>6. Cores &#8212; Introdução à Visualização de Dados</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css?v=1df44834" />
-  
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ipynb/06a-cores';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Lounge das Representações Visuais" href="07a-lounge.html" />
     <link rel="prev" title="5. Percepção Visual" href="05a-percepcao.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
-  
-  <dialog id="pst-search-dialog">
     
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+    <div class="container-fluid" id="banner"></div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
+    
 
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      
-      
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-    
-  
-
-<a class="navbar-brand logo" href="00-apresentacao.html">
-  
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/logo-dataviz.png" class="logo__image only-light" alt="Introdução à Visualização de Dados - Home"/>
-    <img src="../_static/logo-dataviz.png" class="logo__image only-dark pst-js-only" alt="Introdução à Visualização de Dados - Home"/>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -171,286 +116,789 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01a-introducao.html">1. Introdução à Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02a-historico.html">2. Marcos Históricos da Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03a-estetica.html">3. Criação de Representações Visuais e Estética</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04a-eixos.html">4. Eixos, Escalas e Sistemas de Coordenadas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05a-percepcao.html">5. Percepção Visual</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Cores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07a-lounge.html">7. <em>Lounge</em> das Representações Visuais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08a-storytelling.html">8. Técnicas de <em>Storytelling</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="09a-matplotlib-imersao.html">9. Imersão em <em>matplotlib</em></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Técnica</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Técnica
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="20-dcs-quantidade.html">10. <em>Dataviz Code Session</em>: Quantidades</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21-dcs-distribuicoes.html">11. <em>Dataviz Code Session</em>: Distribuições</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23-dcs-geoespacial.html">12. <em>Dataviz Code Session</em>: Dados Geoespaciais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="24-dcs-multidimensional.html">13. <em>Dataviz Code Session</em>: Dados Multidimensionais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="25-dcs-redes.html">14. <em>Dataviz Code Session</em>: Redes Complexas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="26-dcs-cientifica.html">15. <em>Dataviz Code Session</em>: Visualização Científica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="27-dcs-serietemporal.html">16. <em>Dataviz Code Session</em>: Séries Temporais</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-dcs-quantidade.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-dcs-multidimensional.html">
+   13.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-dcs-redes.html">
+   14.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-dcs-cientifica.html">
+   15.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Visualização Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-dcs-serietemporal.html">
+   16.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Séries Temporais
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicações</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicações
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="28-dw-plotly.html">17. <em>Dataviz Workshop</em>: objetos gráficos e <em>Plotly Express</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="30-dw-dash.html">18. <em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="31-dw-reporting.html">19. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com HTML/PDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="32-dw-reportlab.html">20. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com <code class="docutils literal notranslate"><span class="pre">reportlab</span></code></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="28-dw-plotly.html">
+   17.
+   <em>
+    Dataviz Workshop
+   </em>
+   : objetos gráficos e
+   <em>
+    Plotly Express
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-dw-dash.html">
+   18.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Dashboarding
+   </em>
+   com
+   <em>
+    Dash
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="31-dw-reporting.html">
+   19.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com HTML/PDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="32-dw-reportlab.html">
+   20.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reportlab
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avaliações</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="10a-acvd.html">Análise de Casos de Visualização de Dados - ACVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20a-ecvd.html">Estudo de Caso de Visualização de Dados - ECVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capstone-template.html">Projeto Final de Visualização de Dados - PFVD</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suplemento</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Suplemento
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="A-quick-guide-seaborn.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="B-quick-guide-matplotlib.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="A-quick-guide-seaborn.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="B-quick-guide-matplotlib.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
-  </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/06a-cores.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/ipynb/06a-cores.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/ipynb/06a-cores.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
-
-
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
-    </div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ipynb/06a-cores.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Cores</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalas-de-cor">6.1. Escalas de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paletas-predefinidas">6.1.1. Paletas predefinidas</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paletas-qualitativas">6.1.1.1. Paletas qualitativas</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-aplicacao-dado-qualitativo-categorico">6.1.1.1.1. Exemplo de aplicação: dado qualitativo categórico</a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paletas-continuas-e-demais-paletas-predefinidas">6.1.1.2. Paletas contínuas e demais paletas predefinidas</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sequenciais-com-percepcao-de-uniformidade">6.1.1.2.1. Sequenciais com percepção de uniformidade</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sequenciais-do-grupo-1">6.1.1.2.2. Sequenciais do grupo 1</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sequenciais-do-grupo-2">6.1.1.2.3. Sequenciais do grupo 2</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#divergentes">6.1.1.2.4. Divergentes</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclicas">6.1.1.2.5. Cíclicas</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#genericas">6.1.1.2.6. Genéricas</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aplicado-dado-quantitativo-numerico">6.1.1.2.7. Exemplo aplicado: dado quantitativo numérico</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-cor">6.2. Modelos de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optica-ondas-e-cores">6.2.1. Óptica, ondas e cores</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-aditivos-e-subtrativos">6.2.2. Modelos aditivos e subtrativos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">6.2.2.1. RGB</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cmyk">6.2.2.2. CMYK</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-geometricos">6.2.3. Modelos geométricos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hsl">6.2.3.1. HSL</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cores-em-codigo-hex">6.2.4. Cores em código HEX</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-conversao-rgb-hex">6.2.4.1. Exemplo de conversão RGB &gt; HEX</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-de-cores-css">6.2.4.2. Exemplos de cores CSS</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misturas-de-cor">6.2.5. Misturas de cor</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-esquemas-de-cor">6.3. Outros esquemas de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquemas-de-propriedade-comercial">6.3.1. Esquemas de propriedade comercial</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-dos-espacos-de-cor">6.4. Teoria dos espaços de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#espacos-de-cor-cie">6.4.1. Espaços de cor CIE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#espectro-e-componentes">6.4.2. Espectro e componentes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacionamento-com-a-algebra-linear">6.4.3. Relacionamento com a Álgebra Linear</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">6.5. Referências</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-complementares">6.6. Referências complementares</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escalas-de-cor">
+   6.1. Escalas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paletas-predefinidas">
+     6.1.1. Paletas predefinidas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-qualitativas">
+       6.1.1.1. Paletas qualitativas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-de-aplicacao-dado-qualitativo-categorico">
+         6.1.1.1.1. Exemplo de aplicação: dado qualitativo categórico
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-continuas-e-demais-paletas-predefinidas">
+       6.1.1.2. Paletas contínuas e demais paletas predefinidas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-com-percepcao-de-uniformidade">
+         6.1.1.2.1. Sequenciais com percepção de uniformidade
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-1">
+         6.1.1.2.2. Sequenciais do grupo 1
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-2">
+         6.1.1.2.3. Sequenciais do grupo 2
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#divergentes">
+         6.1.1.2.4. Divergentes
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ciclicas">
+         6.1.1.2.5. Cíclicas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#genericas">
+         6.1.1.2.6. Genéricas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-aplicado-dado-quantitativo-numerico">
+         6.1.1.2.7. Exemplo aplicado: dado quantitativo numérico
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelos-de-cor">
+   6.2. Modelos de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optica-ondas-e-cores">
+     6.2.1. Óptica, ondas e cores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-aditivos-e-subtrativos">
+     6.2.2. Modelos aditivos e subtrativos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rgb">
+       6.2.2.1. RGB
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cmyk">
+       6.2.2.2. CMYK
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-geometricos">
+     6.2.3. Modelos geométricos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hsl">
+       6.2.3.1. HSL
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cores-em-codigo-hex">
+     6.2.4. Cores em código HEX
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-de-conversao-rgb-hex">
+       6.2.4.1. Exemplo de conversão RGB &gt; HEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplos-de-cores-css">
+       6.2.4.2. Exemplos de cores CSS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#misturas-de-cor">
+     6.2.5. Misturas de cor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outros-esquemas-de-cor">
+   6.3. Outros esquemas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#esquemas-de-propriedade-comercial">
+     6.3.1. Esquemas de propriedade comercial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teoria-dos-espacos-de-cor">
+   6.4. Teoria dos espaços de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espacos-de-cor-cie">
+     6.4.1. Espaços de cor CIE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espectro-e-componentes">
+     6.4.2. Espectro e componentes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relacionamento-com-a-algebra-linear">
+     6.4.3. Relacionamento com a Álgebra Linear
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   6.5. Referências
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias-complementares">
+   6.6. Referências complementares
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cores</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escalas-de-cor">
+   6.1. Escalas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paletas-predefinidas">
+     6.1.1. Paletas predefinidas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-qualitativas">
+       6.1.1.1. Paletas qualitativas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-de-aplicacao-dado-qualitativo-categorico">
+         6.1.1.1.1. Exemplo de aplicação: dado qualitativo categórico
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paletas-continuas-e-demais-paletas-predefinidas">
+       6.1.1.2. Paletas contínuas e demais paletas predefinidas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-com-percepcao-de-uniformidade">
+         6.1.1.2.1. Sequenciais com percepção de uniformidade
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-1">
+         6.1.1.2.2. Sequenciais do grupo 1
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sequenciais-do-grupo-2">
+         6.1.1.2.3. Sequenciais do grupo 2
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#divergentes">
+         6.1.1.2.4. Divergentes
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ciclicas">
+         6.1.1.2.5. Cíclicas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#genericas">
+         6.1.1.2.6. Genéricas
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemplo-aplicado-dado-quantitativo-numerico">
+         6.1.1.2.7. Exemplo aplicado: dado quantitativo numérico
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelos-de-cor">
+   6.2. Modelos de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optica-ondas-e-cores">
+     6.2.1. Óptica, ondas e cores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-aditivos-e-subtrativos">
+     6.2.2. Modelos aditivos e subtrativos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rgb">
+       6.2.2.1. RGB
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cmyk">
+       6.2.2.2. CMYK
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-geometricos">
+     6.2.3. Modelos geométricos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hsl">
+       6.2.3.1. HSL
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cores-em-codigo-hex">
+     6.2.4. Cores em código HEX
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-de-conversao-rgb-hex">
+       6.2.4.1. Exemplo de conversão RGB &gt; HEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplos-de-cores-css">
+       6.2.4.2. Exemplos de cores CSS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#misturas-de-cor">
+     6.2.5. Misturas de cor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outros-esquemas-de-cor">
+   6.3. Outros esquemas de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#esquemas-de-propriedade-comercial">
+     6.3.1. Esquemas de propriedade comercial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teoria-dos-espacos-de-cor">
+   6.4. Teoria dos espaços de cor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espacos-de-cor-cie">
+     6.4.1. Espaços de cor CIE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espectro-e-componentes">
+     6.4.2. Espectro e componentes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relacionamento-com-a-algebra-linear">
+     6.4.3. Relacionamento com a Álgebra Linear
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   6.5. Referências
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias-complementares">
+   6.6. Referências complementares
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="cores">
-<h1><span class="section-number">6. </span>Cores<a class="headerlink" href="#cores" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Cores<a class="headerlink" href="#cores" title="Permalink to this headline">#</a></h1>
 <p>Cores são constituintes fundamentais da aparência das representações visuais. Com elas, conseguimos enaltecer o estímulo visual da audiência e impactar a percepção visual dos espectadores. Variar matizes e colorações traz compreensões àquilo que desejamos mostrar. As cores, por sua vez, podem ser usadas para, principalmente:</p>
 <ul class="simple">
 <li><p>distinguir grupos de dados;</p></li>
@@ -459,13 +907,13 @@
 </ul>
 <p>Entretanto, antes de se preocupar com a decoração de nossas representações visuais, é preciso se dedicar ao significado delas <span id="id1">[<a class="reference internal" href="#id3" title="Andy Kirk. Data visualisation: A handbook for data driven design. Sage, 2016.">Kirk, 2016</a>]</span>.</p>
 <section id="escalas-de-cor">
-<span id="sec-escalas-cor"></span><h2><span class="section-number">6.1. </span>Escalas de cor<a class="headerlink" href="#escalas-de-cor" title="Link to this heading">#</a></h2>
+<span id="sec-escalas-cor"></span><h2><span class="section-number">6.1. </span>Escalas de cor<a class="headerlink" href="#escalas-de-cor" title="Permalink to this headline">#</a></h2>
 <p>Como enunciamos, um dos objetivos de usar cores em visualização de dados é distinguir grupos através da plotagem de dados qualitativos categóricos. Para esta finalidade, podemos usar paletas de cores discretas, também chamadas de <em>escalas de cor qualitativas</em>. Essas paletas são compostas de uma quantidade limitada de cores que produzem uma percepção de “grupos finitos” de informação.</p>
 <p>Usando a função <code class="docutils literal notranslate"><span class="pre">seaborn.color_palette()</span></code>, por exemplo, podemos invocar uma enorme quantidade de escalas de cores qualitativas do próprio módulo, ou qualquer outro <em>mapa de cores</em> predefinido ou mesmo construído por nós. Entenderemos <em>mapas de cores</em> mais à frente.</p>
 <p>A seguir, exibimos 3 escalas qualitativas com 6, 10 e 14 cores segundo a paleta padrão.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="kn">import</span> <span class="n">color_palette</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">color_palette</span>
 <span class="n">color_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -475,7 +923,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>open<span class="w"> </span>/Users/gustavo/opt/anaconda3/envs/dataviz/lib/python3.9/site-packages/seaborn/palettes.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>open /Users/gustavo/opt/anaconda3/envs/dataviz/lib/python3.9/site-packages/seaborn/palettes.py
 </pre></div>
 </div>
 </div>
@@ -502,7 +950,7 @@
 <p>A paleta padrão utilizada pelo <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, chamada de <code class="docutils literal notranslate"><span class="pre">prop_cycle</span></code>, é herdada do <code class="docutils literal notranslate"><span class="pre">matplotlib</span> <span class="pre">2.0</span></code>, quando passou a substituir a paleta circular anterior, baseada em 7 cores: azul, verde, vermelho, ciano, magenta, amarelo e preto (<code class="docutils literal notranslate"><span class="pre">bgrcmyk</span></code>). As cores da paleta padrão podem ser prontamente obtidas com as seguintes instruções.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
@@ -514,7 +962,7 @@
 </div>
 </div>
 </div>
-<p>A alteração das propriedades “circulares” de cor depende da API <a class="reference external" href="https://matplotlib.org/cycler/"><code class="docutils literal notranslate"><span class="pre">cycler</span></code></a>, a qual serve para estilizações customizadas. Para maior detalhamento, consulte este <a class="reference external" href="https://matplotlib.org/stable/tutorials/intermediate/color_cycle.html">link</a>. Para uma apresentação dos motivos por trás da escala padrão, assista este <a class="reference external" href="https://www.youtube.com/watch?v=xAoljeRJ3lU&amp;amp;t=1s">vídeo</a>.</p>
+<p>A alteração das propriedades “circulares” de cor depende da API <a class="reference external" href="https://matplotlib.org/cycler/"><code class="docutils literal notranslate"><span class="pre">cycler</span></code></a>, a qual serve para estilizações customizadas. Para maior detalhamento, consulte este <a class="reference external" href="https://matplotlib.org/stable/tutorials/intermediate/color_cycle.html">link</a>. Para uma apresentação dos motivos por trás da escala padrão, assista este <a class="reference external" href="https://www.youtube.com/watch?v=xAoljeRJ3lU&amp;t=1s">vídeo</a>.</p>
 <p>Podemos reduzir as saturações dessas paletas por uma certa proporção para criar cores menos vívidas incorporando o parâmetro <code class="docutils literal notranslate"><span class="pre">desat</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -544,7 +992,7 @@
 <div class="output text_html"><svg  width="770" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#2676ad;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#f3801a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#329a32;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#cd3031;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#946bb9;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#89584e;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#de7cc0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#7f7f7f;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#b4b52a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#20b6c6;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#2676ad;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#f3801a;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="660" y="0" width="55" height="55" style="fill:#329a32;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="715" y="0" width="55" height="55" style="fill:#cd3031;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
 </div>
 <section id="paletas-predefinidas">
-<h3><span class="section-number">6.1.1. </span>Paletas predefinidas<a class="headerlink" href="#paletas-predefinidas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.1. </span>Paletas predefinidas<a class="headerlink" href="#paletas-predefinidas" title="Permalink to this headline">#</a></h3>
 <p>O <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> possui algumas paletas de cores predefinidas que alteram as tonalidades das cores. São elas:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">muted</span></code>;</p></li>
@@ -599,7 +1047,7 @@
 <div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#0173b2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#de8f05;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#029e73;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#d55e00;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#cc78bc;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#ca9161;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fbafe4;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#949494;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#ece133;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#56b4e9;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
 </div>
 <section id="paletas-qualitativas">
-<h4><span class="section-number">6.1.1.1. </span>Paletas qualitativas<a class="headerlink" href="#paletas-qualitativas" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.1.1. </span>Paletas qualitativas<a class="headerlink" href="#paletas-qualitativas" title="Permalink to this headline">#</a></h4>
 <p>O <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> também possui uma série de paletas de cores. Em particular, as qualitativas são:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Pastel1</span></code>, <code class="docutils literal notranslate"><span class="pre">Pastel2</span></code>;</p></li>
@@ -637,22 +1085,17 @@
 <div class="output text_html"><svg  width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#393b79;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#5254a3;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#6b6ecf;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#9c9ede;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#637939;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#8ca252;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#b5cf6b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#cedb9c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#8c6d31;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#bd9e39;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
 </div>
 <section id="exemplo-de-aplicacao-dado-qualitativo-categorico">
-<h5><span class="section-number">6.1.1.1.1. </span>Exemplo de aplicação: dado qualitativo categórico<a class="headerlink" href="#exemplo-de-aplicacao-dado-qualitativo-categorico" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.1.1. </span>Exemplo de aplicação: dado qualitativo categórico<a class="headerlink" href="#exemplo-de-aplicacao-dado-qualitativo-categorico" title="Permalink to this headline">#</a></h5>
 <p>Para um exemplo aplicado, vamos plotar a malha geográfica de municípios do estado da Paraíba usando uma das escalas de cor disponíveis no <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Definiremos a função <code class="docutils literal notranslate"><span class="pre">plot_municipios_PB(escala)</span></code>; para trabalhar com sistemas de coordenadas existentes no módulo <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>, a qual gerará uma paleta de 223 cores (uma para cada município) com base na <code class="docutils literal notranslate"><span class="pre">escala</span></code> escolhida pelo usuário e, em seguida, fará a representação visual dos dados categorizados.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.io.shapereader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">shpreader</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="kn">import</span> <span class="n">color_palette</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.shapereader</span> <span class="k">as</span> <span class="nn">shpreader</span>
+<span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">color_palette</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">plot_municipios_PB</span><span class="p">(</span><span class="n">plte</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Plota a malha de municípios do estado da Paraíba a partir</span>
+<span class="k">def</span> <span class="nf">plot_municipios_PB</span><span class="p">(</span><span class="n">plte</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Plota a malha de municípios do estado da Paraíba a partir</span>
 <span class="sd">       de uma escala de cores escolhida pelo usuário.&#39;&#39;&#39;</span>
 
     <span class="c1"># eixo e projeções</span>
@@ -678,7 +1121,6 @@
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -688,15 +1130,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1aaa6e25a808227b2742839eb0d3552167a17c3e922e140c38e8c376293bdee.png" src="../_images/a1aaa6e25a808227b2742839eb0d3552167a17c3e922e140c38e8c376293bdee.png" />
+<img alt="../_images/06a-cores_27_0.png" src="../_images/06a-cores_27_0.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="paletas-continuas-e-demais-paletas-predefinidas">
-<h4><span class="section-number">6.1.1.2. </span>Paletas contínuas e demais paletas predefinidas<a class="headerlink" href="#paletas-continuas-e-demais-paletas-predefinidas" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.1.2. </span>Paletas contínuas e demais paletas predefinidas<a class="headerlink" href="#paletas-continuas-e-demais-paletas-predefinidas" title="Permalink to this headline">#</a></h4>
 <p>O <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> dispõe de outras dezenas de paletas com características diversas. Em particular, <em>paletas contínuas</em> são aquelas que geram uma percepção de continuidade e são bastante úteis para a plotagem de dados quantitativos numéricos e dados onde prevaleça algum ordenamento. As classes de paletas do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> são:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Sequenciais com percepção de uniformidade: <code class="docutils literal notranslate"><span class="pre">viridis</span></code>, <code class="docutils literal notranslate"><span class="pre">plasma</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno</span></code>, <code class="docutils literal notranslate"><span class="pre">magma</span></code> e <code class="docutils literal notranslate"><span class="pre">cividis</span></code></p></li>
 <li><p>Sequenciais do grupo 1: <code class="docutils literal notranslate"><span class="pre">Greys</span></code>, <code class="docutils literal notranslate"><span class="pre">Purples</span></code>, <code class="docutils literal notranslate"><span class="pre">Blues</span></code>, <code class="docutils literal notranslate"><span class="pre">Greens</span></code>, <code class="docutils literal notranslate"><span class="pre">Oranges</span></code>, <code class="docutils literal notranslate"><span class="pre">Reds</span></code>, <code class="docutils literal notranslate"><span class="pre">YlOrBr</span></code>, <code class="docutils literal notranslate"><span class="pre">YlOrRd</span></code>, <code class="docutils literal notranslate"><span class="pre">OrRd</span></code>, <code class="docutils literal notranslate"><span class="pre">PuRd</span></code>, <code class="docutils literal notranslate"><span class="pre">RdPu</span></code>, <code class="docutils literal notranslate"><span class="pre">BuPu</span></code>, <code class="docutils literal notranslate"><span class="pre">GnBu</span></code>, <code class="docutils literal notranslate"><span class="pre">PuBu</span></code>, <code class="docutils literal notranslate"><span class="pre">YlGnBu</span></code>, <code class="docutils literal notranslate"><span class="pre">PuBuGn</span></code>, <code class="docutils literal notranslate"><span class="pre">BuGn</span></code> e <code class="docutils literal notranslate"><span class="pre">YlGn</span></code>;</p></li>
 <li><p>Sequenciais do grupo 2: <code class="docutils literal notranslate"><span class="pre">binary</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_yarg</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_gray</span></code>, <code class="docutils literal notranslate"><span class="pre">gray</span></code>, <code class="docutils literal notranslate"><span class="pre">bone</span></code>, <code class="docutils literal notranslate"><span class="pre">pink</span></code>, <code class="docutils literal notranslate"><span class="pre">spring</span></code>, <code class="docutils literal notranslate"><span class="pre">summer</span></code>, <code class="docutils literal notranslate"><span class="pre">autumn</span></code>, <code class="docutils literal notranslate"><span class="pre">winter</span></code>, <code class="docutils literal notranslate"><span class="pre">cool</span></code>, <code class="docutils literal notranslate"><span class="pre">Wistia</span></code>, <code class="docutils literal notranslate"><span class="pre">hot</span></code>, <code class="docutils literal notranslate"><span class="pre">afmhot</span></code>, <code class="docutils literal notranslate"><span class="pre">gist_heat</span></code> e <code class="docutils literal notranslate"><span class="pre">copper</span></code>;</p></li>
@@ -718,7 +1160,7 @@
 <li><p>tradição do campo do conhecimento (p.ex. cores binárias em imagens médicas).</p></li>
 </ul>
 <p>Segundo a documentação do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, as escalas de cor são explicadas da seguinte forma:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Sequenciais: mudanças incrementais na luminosidade e na saturação de cor, muitas vezes usando um único matiz; deve ser usado para representar dados que possuam alguma ordenação.</p></li>
 <li><p>Divergentes: mudança na luminosidade e possivelmente na saturação de duas cores diferentes que se encontram no meio a uma cor insaturada; deve ser usada quando a informação que está sendo plotada tem um valor médio crítico ou quando os dados se desviam em relação a zero.</p></li>
 <li><p>Cíclicas: mudança na luminosidade de duas cores diferentes que se encontram no meio e início/fim em uma cor insaturada; deve ser usado para valores relativos a fenômenos cíclicos/periódicos, tais como ângulo de fase, direção do vento ou hora do dia.</p></li>
@@ -726,7 +1168,7 @@
 </ol>
 <p>A seguir mostramos o visual de algumas dessas escalas:</p>
 <section id="sequenciais-com-percepcao-de-uniformidade">
-<h5><span class="section-number">6.1.1.2.1. </span>Sequenciais com percepção de uniformidade<a class="headerlink" href="#sequenciais-com-percepcao-de-uniformidade" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.2.1. </span>Sequenciais com percepção de uniformidade<a class="headerlink" href="#sequenciais-com-percepcao-de-uniformidade" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -747,7 +1189,7 @@
 </div>
 </section>
 <section id="sequenciais-do-grupo-1">
-<h5><span class="section-number">6.1.1.2.2. </span>Sequenciais do grupo 1<a class="headerlink" href="#sequenciais-do-grupo-1" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.2.2. </span>Sequenciais do grupo 1<a class="headerlink" href="#sequenciais-do-grupo-1" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;Oranges&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -777,7 +1219,7 @@
 </div>
 </section>
 <section id="sequenciais-do-grupo-2">
-<h5><span class="section-number">6.1.1.2.3. </span>Sequenciais do grupo 2<a class="headerlink" href="#sequenciais-do-grupo-2" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.2.3. </span>Sequenciais do grupo 2<a class="headerlink" href="#sequenciais-do-grupo-2" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;bone&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -807,7 +1249,7 @@
 </div>
 </section>
 <section id="divergentes">
-<h5><span class="section-number">6.1.1.2.4. </span>Divergentes<a class="headerlink" href="#divergentes" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.2.4. </span>Divergentes<a class="headerlink" href="#divergentes" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;RdBu&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -837,7 +1279,7 @@
 </div>
 </section>
 <section id="ciclicas">
-<h5><span class="section-number">6.1.1.2.5. </span>Cíclicas<a class="headerlink" href="#ciclicas" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.2.5. </span>Cíclicas<a class="headerlink" href="#ciclicas" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;twilight&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -867,7 +1309,7 @@
 </div>
 </section>
 <section id="genericas">
-<h5><span class="section-number">6.1.1.2.6. </span>Genéricas<a class="headerlink" href="#genericas" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.1.1.2.6. </span>Genéricas<a class="headerlink" href="#genericas" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;prism&#39;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -901,21 +1343,16 @@
 </div>
 </section>
 <section id="exemplo-aplicado-dado-quantitativo-numerico">
-<span id="sec-aplicado-quantitativo"></span><h5><span class="section-number">6.1.1.2.7. </span>Exemplo aplicado: dado quantitativo numérico<a class="headerlink" href="#exemplo-aplicado-dado-quantitativo-numerico" title="Link to this heading">#</a></h5>
+<span id="sec-aplicado-quantitativo"></span><h5><span class="section-number">6.1.1.2.7. </span>Exemplo aplicado: dado quantitativo numérico<a class="headerlink" href="#exemplo-aplicado-dado-quantitativo-numerico" title="Permalink to this headline">#</a></h5>
 <p>Neste segundo exemplo aplicado, recuperamos os valores das áreas (em quilômetros quadrados) de todos os municípios do estado da Paraíba a partir dos arquivos de geolocalização e construímos um gráfico de dispersão ordenado. A representação visual mostra a variação do escore padronizado (também conhecido como Fator Z, ou <em>Z-score</em>) das áreas dos municípios. Um Fator Z igual a zero representa a média do conjunto. Valores de Fator Z negativos representam municípios cuja área é menor do que a média do estado; positivos, municípios com área acima da média.</p>
 <p>Além disso, escolhemos uma escala de cor divergente que muda a tonalidade consoante variação do Fator Z. Os dados ordenados permitem que detectemos rapidamente os municípios de menor e maior extensão territorial.Observa-se pelo visual que, Bonito de Santa Fé, Mãe D’Água e Araçagi parecem disputar a posição média, mas é evidente que Lucena e Pombal possuem, nesta ordem, a menor e maior variação em relação à média.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">subplots</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_palette</span><span class="p">,</span> <span class="n">lineplot</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">zscore</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFrame</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.io.shapereader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">shpreader</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">set_palette</span><span class="p">,</span> <span class="n">lineplot</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">zscore</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.shapereader</span> <span class="k">as</span> <span class="nn">shpreader</span>
 
 <span class="c1"># recupera dados do shapefile</span>
 <span class="n">shp</span> <span class="o">=</span> <span class="n">shpreader</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="s1">&#39;../data/PB_Municipios_2021/&#39;</span><span class="p">)</span>
@@ -962,9 +1399,8 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/698540e5a564e261835daa1b92be8ee40a739f0b39dab0e2634b18a875746d83.png" src="../_images/698540e5a564e261835daa1b92be8ee40a739f0b39dab0e2634b18a875746d83.png" />
+<img alt="../_images/06a-cores_54_0.png" src="../_images/06a-cores_54_0.png" />
 </div>
 </div>
 <p>De fato, uma rápida investigação no <em>dataframe</em> permite-nos asseverar o que foi dito sobre Lucena e Pombal e afirmar com mais certeza que Araçagi disputa, na verdade, com Solânea a extensão média, visto que a inflexão do Fator Z ocorre entre as duas localidades.</p>
@@ -1047,10 +1483,10 @@
 </section>
 </section>
 <section id="modelos-de-cor">
-<h2><span class="section-number">6.2. </span>Modelos de cor<a class="headerlink" href="#modelos-de-cor" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Modelos de cor<a class="headerlink" href="#modelos-de-cor" title="Permalink to this headline">#</a></h2>
 <p>As cores podem ser representadas de forma abstrata através de um modelo matemático baseado em ênuplas geralmente de 3 ou 4 coordenadas. Ou seja, de forma mais geral, uma cor é uma estrutura do tipo <span class="math notranslate nohighlight">\(c = (c_1,c_2,c_3)\)</span>, ou <span class="math notranslate nohighlight">\(c = (c_1,c_2,c_3,c_4)\)</span>. Quando cada uma das componentes <span class="math notranslate nohighlight">\(c_i\)</span> são associadas a aspectos da percepção visual, elas podem ter diferentes interpretações e dar origens a um <em>espaço de cores</em>. Porém, antes de adentrarmos em particularidades, vamos entender brevemente o aspecto físico das cores e o que, de fato, é uma cor.</p>
 <section id="optica-ondas-e-cores">
-<span id="sec-optica-cor"></span><h3><span class="section-number">6.2.1. </span>Óptica, ondas e cores<a class="headerlink" href="#optica-ondas-e-cores" title="Link to this heading">#</a></h3>
+<span id="sec-optica-cor"></span><h3><span class="section-number">6.2.1. </span>Óptica, ondas e cores<a class="headerlink" href="#optica-ondas-e-cores" title="Permalink to this headline">#</a></h3>
 <p><em>Cor</em> é o nome que damos à qualidade perceptiva da luz, que se dá por uma resposta subjetiva do cérebro quando a retina de nossos olhos é estimulada. A nossa percepção das cores baseia-se em nossa sensibilidade a ondas eletromagnéticas com frequencias distintas que se misturam para produzir respostas em nossos “cones visuais” (células receptoras localizadas na retina). O espectro de energia visível – gráfico de intensidade vs. comprimento de onda (ou frequencia) – é caracterizado por comprimentos de onda na faixa de 400 - 700 nm. Esta faixa de valores determina o que chamamos de “luz visível”, que cobre matizes que vão do violeta ao vermelho. Valores abaixo do espectro visível constituem a chamada “luz ultravioleta” e acima, a “luz infravermelha”.</p>
 <p>Na retina, temos 3 “cones” (células fotoreceptoras) que respondem a estímulos em três regiões do espectro visível:</p>
 <ul class="simple">
@@ -1074,7 +1510,7 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/bfb90ae9173344ce404486f6c286302d4a63c6bbb514340e8c79b408be130b0d.png" src="../_images/bfb90ae9173344ce404486f6c286302d4a63c6bbb514340e8c79b408be130b0d.png" />
+<img alt="../_images/06a-cores_62_0.png" src="../_images/06a-cores_62_0.png" />
 </div>
 </div>
 <p>A cor da luz que emana de objetos origina-se por processos físicos. Podemos citar, por exemplo</p>
@@ -1086,9 +1522,9 @@
 </ul>
 </section>
 <section id="modelos-aditivos-e-subtrativos">
-<h3><span class="section-number">6.2.2. </span>Modelos aditivos e subtrativos<a class="headerlink" href="#modelos-aditivos-e-subtrativos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>Modelos aditivos e subtrativos<a class="headerlink" href="#modelos-aditivos-e-subtrativos" title="Permalink to this headline">#</a></h3>
 <section id="rgb">
-<h4><span class="section-number">6.2.2.1. </span>RGB<a class="headerlink" href="#rgb" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.2.2.1. </span>RGB<a class="headerlink" href="#rgb" title="Permalink to this headline">#</a></h4>
 <p>O modelo de cor <em>RGB</em> assume que uma cor é identificada por uma tripleta do tipo <span class="math notranslate nohighlight">\(c = (r,g,b)\)</span>, em que <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span> correspondem a proporções de vermelho, verde e azul, respectivamente, que são consideradas cores primárias. Quando <span class="math notranslate nohighlight">\(0 \leq r,g,b \leq 1\)</span>, podemos representar cada cor no modelo <em>RGB</em> por um vetor do espaço 3D com origem em <span class="math notranslate nohighlight">\((0,0,0)\)</span> e extremidade imersa no “cubo unitário” formado pelos eixos <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span>.</p>
 <p>Geometricamente, a cor preta seria então representada justamente pelo vetor <span class="math notranslate nohighlight">\(\vec{o} = (r=0,g=0,b=0)\)</span>, o que remete à ausência de luz, em certo sentido, razão pela qual preto não é considerada uma cor propriamente dita. Analogamente aos vetores canônicos <span class="math notranslate nohighlight">\(\vec{i}\)</span>, <span class="math notranslate nohighlight">\(\vec{j}\)</span> e <span class="math notranslate nohighlight">\(\vec{k}\)</span> do espaço 3D, os vetores <span class="math notranslate nohighlight">\((1,0,0)\)</span>, <span class="math notranslate nohighlight">\((0,1,0)\)</span> e <span class="math notranslate nohighlight">\((0,0,1)\)</span> formariam uma base para que, a partir de tonalidades das cores vermelho, verde e azul. A partir disso, é imeditado reconhecer que, segundo o modelo <em>RGB</em>, qualquer cor é dada por uma combinação linear de tonalidades de <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(g\)</span> e <span class="math notranslate nohighlight">\(b\)</span>, ou seja:</p>
 <div class="math notranslate nohighlight">
@@ -1098,7 +1534,7 @@
 <figure class="align-center" id="fig-rgb-cube">
 <a class="reference internal image-reference" href="../_images/rgb-cube.jpg"><img alt="Cubo RGB." src="../_images/rgb-cube.jpg" style="width: 550px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Cubo de cores RGB: representação geométrica do espectro de cores possíveis para valores 0 - 255.</span><a class="headerlink" href="#fig-rgb-cube" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Cubo de cores RGB: representação geométrica do espectro de cores possíveis para valores 0 - 255.</span><a class="headerlink" href="#fig-rgb-cube" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-curiosidade admonition">
@@ -1121,12 +1557,12 @@
 <figure class="align-center" id="fig-cores-aditivas">
 <a class="reference internal image-reference" href="../_images/cores-aditivas.png"><img alt="Cores aditivas." src="../_images/cores-aditivas.png" style="width: 550px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Modelo fundamental de mistura aditiva de cores RGB.</span><a class="headerlink" href="#fig-cores-aditivas" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Modelo fundamental de mistura aditiva de cores RGB.</span><a class="headerlink" href="#fig-cores-aditivas" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="cmyk">
-<h4><span class="section-number">6.2.2.2. </span>CMYK<a class="headerlink" href="#cmyk" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.2.2.2. </span>CMYK<a class="headerlink" href="#cmyk" title="Permalink to this headline">#</a></h4>
 <p>Diferentemente do modelo <em>RGB</em>, o modelo de cor <em>CMYK</em> assume que uma cor é identificada por uma quadripleta do tipo <span class="math notranslate nohighlight">\(c = (c,m,y,k)\)</span>, em que <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, e <span class="math notranslate nohighlight">\(k\)</span> correspondem a proporções de ciano, magenta, amarelo e preto, respectivamente. As três primeiras são consideradas <em>cores subtrativas primárias</em> e preto uma quarta componente que gera tonalidades escuras. Por isso, este modelo também é conhecido como <em>CMY</em>.</p>
 <p>As cores subtrativas (<a class="reference internal" href="#fig-cores-subtrativas"><span class="std std-numref">Fig. 6.3</span></a>) agem em complementaridade às aditivas primárias e servem como filtros que as absorvem. Assim, ciano, magenta e amarelo são cores complementares a vermelho, verde e azul, nesta ordem. O modelo CMYK é preferível para impressão porque o espectro de cores CMYK é significativamente menor e composto por pigmentos, ao passo que RGB é preferível para telas e dispositivos eletrônicos por ser composto por luz.</p>
 <p>A ausência de pigmentos é o papel branco. Isto significa que o papel permanece “branco” quando iluminado pela luz branca. Adicionar pigmentos a ele é como subtrair certos comprimentos de onda. Então, algebricamente:</p>
@@ -1151,22 +1587,22 @@
 <figure class="align-center" id="fig-cores-subtrativas">
 <a class="reference internal image-reference" href="../_images/cores-subtrativas.png"><img alt="Cores subtrativas." src="../_images/cores-subtrativas.png" style="width: 550px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Modelo fundamental de mistura subtrativa de cores CMY/K.</span><a class="headerlink" href="#fig-cores-subtrativas" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Modelo fundamental de mistura subtrativa de cores CMY/K.</span><a class="headerlink" href="#fig-cores-subtrativas" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="modelos-geometricos">
-<h3><span class="section-number">6.2.3. </span>Modelos geométricos<a class="headerlink" href="#modelos-geometricos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3. </span>Modelos geométricos<a class="headerlink" href="#modelos-geometricos" title="Permalink to this headline">#</a></h3>
 <p>Outros diversos modelos de cor tridimensionais em formatos cônicos, cilíndricos ou esféricos foram desenvolvidos ao longo do tempo, tais como HSL, HSV, HSI, HCL, HSB, NCS, XYZ, entre outros. A <a class="reference internal" href="#fig-color-solid-comparison"><span class="std std-numref">Fig. 6.4</span></a> (disponível <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Color_solid_comparison_hsl_hsv_rgb_cone_sphere_cube_cylinder.png">aqui</a>) exibe os modelos HSL e HSV em formas geométricas diferentes. Desses, o HSL (<em>Hue</em>, <em>Saturation</em>, <em>Luminosity</em>) é considerado um dos mais acessíveis para aplicação em visualização de dados. Ele é uma representação cilíndrica do modelo RGB. Portanto, nós o consideraremos para estudo.</p>
 <figure class="align-center" id="fig-color-solid-comparison">
 <a class="reference internal image-reference" href="../_images/color-solid-comparison.png"><img alt="Comparador de modelos." src="../_images/color-solid-comparison.png" style="width: 550px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Modelos HSL e HSV com variadas representações geométricas.</span><a class="headerlink" href="#fig-color-solid-comparison" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Modelos HSL e HSV com variadas representações geométricas.</span><a class="headerlink" href="#fig-color-solid-comparison" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="hsl">
-<h4><span class="section-number">6.2.3.1. </span>HSL<a class="headerlink" href="#hsl" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.2.3.1. </span>HSL<a class="headerlink" href="#hsl" title="Permalink to this headline">#</a></h4>
 <p>O modelo HSL também é tridimensional. Suas componentes são:</p>
 <ul class="simple">
 <li><p><em>Hue</em> (matiz), que varia na direção azimutal do cilindro e define a cor “verdadeira”. Para o modelo CIECAM02 de colorimetria, o matiz é tecnicamente definido como <em>“o grau com que um estímulo pode ser descrito como semelhante ou diferente de estímulos descritos como vermelho, laranja, amarelo, verde, azul ou violeta”</em>. No sistema cilíndrico de coordenadas, a cor vermelha primária (matiz puro) está na coordenada 0 grau, a cor verde primária em 120 graus e a azul em 240 graus. O matiz é um atributo qualitativo da cor porque é definido por diferença e não por escala. Não existem <em>tints</em>, <em>shades</em> ou <em>tints</em> (vide <a class="reference internal" href="#sec-misturas-cor"><span class="std std-numref">Seção 6.2.5</span></a>).</p></li>
@@ -1179,14 +1615,14 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="kn">import</span> <span class="n">palplot</span><span class="p">,</span> <span class="n">hls_palette</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">palplot</span><span class="p">,</span> <span class="n">hls_palette</span>
 <span class="c1"># cores puras do arco-íris</span>
 <span class="n">palplot</span><span class="p">(</span><span class="n">hls_palette</span><span class="p">(</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/29b7bc1b20ed20fbe17b4781eba647e7a569a13c1b8b1cfe7266bf2a9545b6fd.png" src="../_images/29b7bc1b20ed20fbe17b4781eba647e7a569a13c1b8b1cfe7266bf2a9545b6fd.png" />
+<img alt="../_images/06a-cores_67_0.png" src="../_images/06a-cores_67_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1197,7 +1633,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e6f8cd614d49444696c180886b9e7a162ba5972c6beb14df1381ad1987e17f71.png" src="../_images/e6f8cd614d49444696c180886b9e7a162ba5972c6beb14df1381ad1987e17f71.png" />
+<img alt="../_images/06a-cores_68_0.png" src="../_images/06a-cores_68_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1208,7 +1644,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d6676acb544b31f628d9b8f7d02b1a347faaffb563a05776c6cca4254b99255a.png" src="../_images/d6676acb544b31f628d9b8f7d02b1a347faaffb563a05776c6cca4254b99255a.png" />
+<img alt="../_images/06a-cores_69_0.png" src="../_images/06a-cores_69_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1222,7 +1658,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/082dd2f80e258f5acfe4f17e999c546c5c6fff5436b9cbe6ffb5035e3a36d0e3.png" src="../_images/082dd2f80e258f5acfe4f17e999c546c5c6fff5436b9cbe6ffb5035e3a36d0e3.png" />
+<img alt="../_images/06a-cores_71_0.png" src="../_images/06a-cores_71_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1233,7 +1669,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d246e1bb62364b915176f0d74771a59250441f3c959148016c80f7da7bcd4de.png" src="../_images/9d246e1bb62364b915176f0d74771a59250441f3c959148016c80f7da7bcd4de.png" />
+<img alt="../_images/06a-cores_72_0.png" src="../_images/06a-cores_72_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1244,7 +1680,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e7e34f5f3869f8e5df242d171955da9c62b2da51947d606817069ba79521df6a.png" src="../_images/e7e34f5f3869f8e5df242d171955da9c62b2da51947d606817069ba79521df6a.png" />
+<img alt="../_images/06a-cores_73_0.png" src="../_images/06a-cores_73_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1258,7 +1694,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b34da7c0a2908f57ad8bf750e5a8f7b9bdc9fb59ccce0adb1dbe721e80af8f32.png" src="../_images/b34da7c0a2908f57ad8bf750e5a8f7b9bdc9fb59ccce0adb1dbe721e80af8f32.png" />
+<img alt="../_images/06a-cores_75_0.png" src="../_images/06a-cores_75_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1269,7 +1705,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/10ac304c4d8a0c09cea60d55c33d3b3b5af28b167d6e8e2850a116e660d8edf7.png" src="../_images/10ac304c4d8a0c09cea60d55c33d3b3b5af28b167d6e8e2850a116e660d8edf7.png" />
+<img alt="../_images/06a-cores_76_0.png" src="../_images/06a-cores_76_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1280,18 +1716,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6a600187b40c3f9902b583356a99941a49c4e23e2fe8324f09d2792675f844f8.png" src="../_images/6a600187b40c3f9902b583356a99941a49c4e23e2fe8324f09d2792675f844f8.png" />
+<img alt="../_images/06a-cores_77_0.png" src="../_images/06a-cores_77_0.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="cores-em-codigo-hex">
-<h3><span class="section-number">6.2.4. </span>Cores em código HEX<a class="headerlink" href="#cores-em-codigo-hex" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4. </span>Cores em código HEX<a class="headerlink" href="#cores-em-codigo-hex" title="Permalink to this headline">#</a></h3>
 <p>A representação de cores por código hexadecimal (<em>hex codes</em>) emergiu como um sistema prático para trabalhar com desenvolvimento <em>web</em>. Entretanto, passou a ser utilizado para diversos fins em visualização de dados devido à sua simplicidade de uso e facilidade de compreensão. Uma tripleta HEX é um número de 6 dígitos (3 bytes) hexadecimais do tipo <code class="docutils literal notranslate"><span class="pre">AABB00</span></code> bastante utilizada em linguagens HTML e CSS para estilizar páginas da internet e também em artes gráficas. Em geral, usa-se uma tralha (<code class="docutils literal notranslate"><span class="pre">#</span></code>) antes do código por razões sintáticas.</p>
 <p>O código HEX nada mais é do que uma representação implícita do modelo RGB. Os dígitos 1 e 2 (byte 1) controlam a proporção de vermelho, 3 e 4 a proporção de verde (byte 2), e 5 e 6 a proporção de azul (byte 3). Como o sistema hexadecimal admite os dígitos de 0 a 9 e as letras de A a F (equivalentes aos dígitos de 10 a 15), existem exatamente 16 possibilidades por dígito de <em>hex code</em>, ou seja até <span class="math notranslate nohighlight">\(16^6 = 16.777.216\)</span> cores representáveis.</p>
 <p>Para se converter valores RGB em HEX, devemos adotar as coordenadas discretas de 0 a 255 ou converter a escala 0 - 1 para 0 - 255 multiplicando o número por 255 e, então realizar a divisão inteira por 16. O quociente da divisão equivale ao primeiro dígito, o resto ao segundo. Fazendo o mesmo para cada coordenada, obteremos o <em>hex code</em> correspondente.</p>
 <section id="exemplo-de-conversao-rgb-hex">
-<h4><span class="section-number">6.2.4.1. </span>Exemplo de conversão RGB &gt; HEX<a class="headerlink" href="#exemplo-de-conversao-rgb-hex" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.2.4.1. </span>Exemplo de conversão RGB &gt; HEX<a class="headerlink" href="#exemplo-de-conversao-rgb-hex" title="Permalink to this headline">#</a></h4>
 <p>Para a cor RGB(1,0.5,0.3):</p>
 <ul class="simple">
 <li><p>multiplicamos por 255 para ter RGB(255,127,76). <em>Obs.: se a tupla já for inteira, este passo é ignorado.</em></p></li>
@@ -1303,8 +1739,8 @@
 <p>Abaixo, plotamos dois retângulos especificando as cores por tupla RGB e código HEX para compararmos o resultado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">subplots</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -1321,21 +1757,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83240d64d3621f252abc3ebd38352fe7a7fefaeb7882bba3b8ee7214cef50725.png" src="../_images/83240d64d3621f252abc3ebd38352fe7a7fefaeb7882bba3b8ee7214cef50725.png" />
+<img alt="../_images/06a-cores_79_0.png" src="../_images/06a-cores_79_0.png" />
 </div>
 </div>
 <p>Uma função para converter tuplas RGB em código HEX poderia ser codificada conforme abaixo. Você pode aperfeiçoá-la para tratar a exceção do caso em que o usuário entra com valores numéricos válidos, porém misturados entre tipos <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">float</span></code>, ou modificar os argumentos de entrada para a forma <code class="docutils literal notranslate"><span class="pre">(r:</span> <span class="pre">int,</span> <span class="pre">g:</span> <span class="pre">int,</span> <span class="pre">b:</span> <span class="pre">int)</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rgb2hex</span><span class="p">(</span><span class="n">rgb</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Conversor simples de cor RGB para HEX code&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rgb2hex</span><span class="p">(</span><span class="n">rgb</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Conversor simples de cor RGB para HEX code&#39;&#39;&#39;</span>
 
-    <span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">asarray</span><span class="p">,</span> <span class="n">array</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">asarray</span><span class="p">,</span> <span class="n">array</span>
 
     <span class="n">rgb</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
 
@@ -1365,15 +1796,9 @@
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <p>Pelos testes abaixo, conseguimos verificar que a função se comporta como esperaríamos tanto para tuplas de valores fracionados quanto para tuplas de valores inteiros (0 - 255).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># teste 1</span>
 <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
@@ -1381,7 +1806,6 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#ff7f4c&#39;
 </pre></div>
@@ -1389,11 +1813,6 @@
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># teste 2</span>
 <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">76</span><span class="p">)</span>
@@ -1401,7 +1820,6 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#ff7f4c&#39;
 </pre></div>
@@ -1410,13 +1828,13 @@
 </div>
 </section>
 <section id="exemplos-de-cores-css">
-<h4><span class="section-number">6.2.4.2. </span>Exemplos de cores CSS<a class="headerlink" href="#exemplos-de-cores-css" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.2.4.2. </span>Exemplos de cores CSS<a class="headerlink" href="#exemplos-de-cores-css" title="Permalink to this headline">#</a></h4>
 <p>A seguir plotamos um mosaico das cores CSS predefinidas do <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> e seus <em>hex codes</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">CSS4_COLORS</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">subplots</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">CSS4_COLORS</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Cores CSS predefinidas do matplotlib e seus hex codes&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
@@ -1439,13 +1857,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea7f0ad138cbf438cb569d338531e0b1b74cacde363144b5a6474829d26cad43.png" src="../_images/ea7f0ad138cbf438cb569d338531e0b1b74cacde363144b5a6474829d26cad43.png" />
+<img alt="../_images/06a-cores_86_0.png" src="../_images/06a-cores_86_0.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="misturas-de-cor">
-<span id="sec-misturas-cor"></span><h3><span class="section-number">6.2.5. </span>Misturas de cor<a class="headerlink" href="#misturas-de-cor" title="Link to this heading">#</a></h3>
+<span id="sec-misturas-cor"></span><h3><span class="section-number">6.2.5. </span>Misturas de cor<a class="headerlink" href="#misturas-de-cor" title="Permalink to this headline">#</a></h3>
 <p>Alguns termos utilizados para fazer referência a misturas de cor decorrentes de <em>cores puras</em> (cores que não podem ser obtidas a partir de outras) são empregados pelos teóricos da cor. Esses termos não possuem tradução imediata para o português, mas podem ser especificados com auxílio de prefixo “tons de”. São eles:</p>
 <ul class="simple">
 <li><p><em>Tints</em> (tons de branco): são cores que, misturadas com branco, produzem variações de luminosidade;</p></li>
@@ -1456,13 +1874,13 @@
 <figure class="align-center" id="fig-tint-tone-shade">
 <a class="reference internal image-reference" href="../_images/tint-tone-shade.png"><img alt="Cores aditivas." src="../_images/tint-tone-shade.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Diagrama de termos relativos a tonalidades de cor.</span><a class="headerlink" href="#fig-tint-tone-shade" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Diagrama de termos relativos a tonalidades de cor.</span><a class="headerlink" href="#fig-tint-tone-shade" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="outros-esquemas-de-cor">
-<h2><span class="section-number">6.3. </span>Outros esquemas de cor<a class="headerlink" href="#outros-esquemas-de-cor" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Outros esquemas de cor<a class="headerlink" href="#outros-esquemas-de-cor" title="Permalink to this headline">#</a></h2>
 <p>As escalas de cor que estudamos na <a class="reference internal" href="#sec-escalas-cor"><span class="std std-numref">Seção 6.1</span></a> às vezes são chamadas de <em>esquemas de cor</em>. Existem diversos esquemas com aplicações e usos específicos (p.ex. triádico, tetrádico, análogo) que não exploraremos com detalhes neste capítulo.Porém, vale ressaltar ainda alguns deles, que também sugerem terminologias úteis:</p>
 <ul class="simple">
 <li><p><em>Esquema monocromático</em>: composto por cores derivadas de um único matiz adicionadas de branco, cinza ou preto, isto é, seus <em>tints</em>, <em>tones</em> e <em>shades</em>.</p></li>
@@ -1471,7 +1889,7 @@
 </ul>
 <p>Outros termos úteis neste contexto são relacionados a paletas de cores, a exemplo de <em>color swatch</em> e <em>color wheel</em>.</p>
 <section id="esquemas-de-propriedade-comercial">
-<h3><span class="section-number">6.3.1. </span>Esquemas de propriedade comercial<a class="headerlink" href="#esquemas-de-propriedade-comercial" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.3.1. </span>Esquemas de propriedade comercial<a class="headerlink" href="#esquemas-de-propriedade-comercial" title="Permalink to this headline">#</a></h3>
 <p>No cenário internacional, muitas empresas disputam o “mercado da cor” e das artes gráficas. Algumas delas possuem sistemas de classificação de cor próprios e patenteados. Uma parte delas é bastante conhecida no Brasil, outra nem tanto. Para efeito de expansão de conhecimento, seguem abaixo links para algumas marcas devotadas às cores:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.faber-castell.com">Faber-Castell©</a> (veja tabela de cores <a class="reference external" href="https://www.faber-castell.com/-/media/Faber-Castell-new/PDF/en/Farbtabelle-AG-ENG-0214.ashx">aqui</a></p></li>
@@ -1486,16 +1904,16 @@
 </section>
 </section>
 <section id="teoria-dos-espacos-de-cor">
-<h2><span class="section-number">6.4. </span>Teoria dos espaços de cor<a class="headerlink" href="#teoria-dos-espacos-de-cor" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Teoria dos espaços de cor<a class="headerlink" href="#teoria-dos-espacos-de-cor" title="Permalink to this headline">#</a></h2>
 <section id="espacos-de-cor-cie">
-<h3><span class="section-number">6.4.1. </span>Espaços de cor CIE<a class="headerlink" href="#espacos-de-cor-cie" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>Espaços de cor CIE<a class="headerlink" href="#espacos-de-cor-cie" title="Permalink to this headline">#</a></h3>
 <p>Modelos de cor e espaços de cor às vezes são terminologias que se confundem, embora existam propriedades intrínsecas a serem destacadas para que um espaço de cor seja realmente definido. Um <em>espaço de cor</em>, compreendido de maneira direta, é uma estrutura de organização de cores. Porém, esta resposta pode ser pouco esclarecedora, levando-nos a adentrar um pouco mais no conhecimento teórico.</p>
 <p>O que separa um modelo de cor, como o RGB, por exemplo, de um espaço de cor, como o CIELAB, é uma espécie de <em>função de mapeamento de cor</em> que está vinculada à percepção real do olho humano das cores. Em 1931, a <a class="reference external" href="http://cie.co.at"><em>International Commission on Illumination</em></a> (em francês, <em>Commission Internationale de l’Éclairage</em> - CIE), a autoridade internacional em matéria de padrões para luz e cor, estabeleceu o <em>observador padrão (colorimétrico)</em> como a função de mapeamento. Uma vez que os cones triestimulares S, M, L (veja a <a class="reference internal" href="#sec-escalas-cor"><span class="std std-numref">Seção 6.1</span></a>) dependem do campo de visão do observador, o observador padrão é uma ponderação das respostas aos estímulos da visão considerando parâmetros experimentais e a ciência da colorimetria, que forma a base para descrever uma cor como três numeros.</p>
 <p>No princípio, o experimento do observador padrão tratou as componentes de cromaticidade formadoras da cor como <span class="math notranslate nohighlight">\(L^{*}\)</span>, <span class="math notranslate nohighlight">\(a^{*}\)</span> e <span class="math notranslate nohighlight">\(b^{*}\)</span>, representando nesta ordem, a luminosidade, a resposta a estímulos de verde/vermelho e a resposta a estímulos de azul-amarelo. Da junção de CIE com as iniciais utilizadas decorre o nome <em>CIELAB</em>, ou espaço <em>CIE 1931</em>, que é um espaço de cor <em>independente de dispositivo</em>. Na prática, monitores, telas e dispositivos eletrônicos para visualização de imagens coloridas representam as cores de maneira diferente, razão pela qual a necessidade por um padrão emergiu.</p>
 <p>Relacionados ao espaço <em>CIELAB</em>, estão os espaços <em>CIEXYZ</em> e <em>CIERGB</em>. No espaço CIEXYZ, <span class="math notranslate nohighlight">\(Z\)</span> é a componente da luminosidade, <span class="math notranslate nohighlight">\(Z\)</span> é a componente “quase-azul” (equivalente a azul no CIERGB) e <span class="math notranslate nohighlight">\(X\)</span> é a componente das misturas das cores RGB.</p>
 </section>
 <section id="espectro-e-componentes">
-<h3><span class="section-number">6.4.2. </span>Espectro e componentes<a class="headerlink" href="#espectro-e-componentes" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.2. </span>Espectro e componentes<a class="headerlink" href="#espectro-e-componentes" title="Permalink to this headline">#</a></h3>
 <p>A energia física (radiância) é expressa em um espectro de 31 componentes representando bandas de 10 nanômetros, o que leva à faixa do espectro visível de aproximadamente 400 - 700 nm. Isto significa que, a rigor, uma cor seria representada por 31 componentes. Uma vez que isso é irrazoável, a ponderação dessas componentes no espectro permite que reduzamos sua complexidade a apenas 3 componentes.</p>
 <p>As 3 componentes geralmente utilizadas dependerão, por sua vez, do espectro de energia. Nos experimentos primários da CIE, as funções de mapeamento – também chamadas de <em>color matching functions</em> (CMFs) – para o observador padrão foram definidas como superposições de curvas gaussianas dadas pela expressão</p>
 <div class="math notranslate nohighlight">
@@ -1532,7 +1950,7 @@ e^{-\frac{1}{2}\left(\frac{ \lambda - \mu}{\sigma_2}\right)^2}, \ \ \text{se} \ 
 <p>para o espectro compreendido entre comprimentos de onda no intervalo <span class="math notranslate nohighlight">\([\lambda_{min},\lambda_{max}]\)</span>.</p>
 </section>
 <section id="relacionamento-com-a-algebra-linear">
-<h3><span class="section-number">6.4.3. </span>Relacionamento com a Álgebra Linear<a class="headerlink" href="#relacionamento-com-a-algebra-linear" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.3. </span>Relacionamento com a Álgebra Linear<a class="headerlink" href="#relacionamento-com-a-algebra-linear" title="Permalink to this headline">#</a></h3>
 <p>Tendo em vista que a interpretação triestimular dependerá do espaço de cor considerado, haja vista os parâmetros que o definem, uma cor, genericamente, é função de um espectro de distribuição da luz, <span class="math notranslate nohighlight">\(p(\lambda)\)</span>, e da sensibilidade dos 3 cones de percepção visual. Escrevendo a função de sensibilidade do i-ésimo cone como <span class="math notranslate nohighlight">\(s_i(\lambda)\)</span> para um espaço de cor <span class="math notranslate nohighlight">\(E\)</span>, podemos expressar as componentes de uma cor <span class="math notranslate nohighlight">\(c\)</span> em <span class="math notranslate nohighlight">\(E\)</span> como</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1607,18 +2025,17 @@ B \\
 </section>
 </section>
 <section id="referencias">
-<h2><span class="section-number">6.5. </span>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Kir16</a><span class="fn-bracket">]</span></span>
-<p>Andy Kirk. <em>Data visualisation: A handbook for data driven design</em>. Sage, 2016.</p>
-</div>
-</div>
+<dl class="citation">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">Kir16</a></span></dt>
+<dd><p>Andy Kirk. <em>Data visualisation: A handbook for data driven design</em>. Sage, 2016.</p>
+</dd>
+</dl>
 </div>
 </section>
 <section id="referencias-complementares">
-<h2><span class="section-number">6.6. </span>Referências complementares<a class="headerlink" href="#referencias-complementares" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>Referências complementares<a class="headerlink" href="#referencias-complementares" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Color_space">Color space</a></p></li>
 <li><p><a class="reference external" href="http://docs-hoffmann.de/ciexyz29082000.pdf">CIE Color Space, Gernot Hoffmann</a></p></li>
@@ -1644,7 +2061,7 @@ B \\
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./ipynb"
         },
         predefinedOutput: true
@@ -1652,154 +2069,50 @@ B \\
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="05a-percepcao.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Percepção Visual</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="05a-percepcao.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Percepção Visual</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="07a-lounge.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="07a-lounge.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">7. </span><em>Lounge</em> das Representações Visuais</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalas-de-cor">6.1. Escalas de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paletas-predefinidas">6.1.1. Paletas predefinidas</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paletas-qualitativas">6.1.1.1. Paletas qualitativas</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-aplicacao-dado-qualitativo-categorico">6.1.1.1.1. Exemplo de aplicação: dado qualitativo categórico</a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paletas-continuas-e-demais-paletas-predefinidas">6.1.1.2. Paletas contínuas e demais paletas predefinidas</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sequenciais-com-percepcao-de-uniformidade">6.1.1.2.1. Sequenciais com percepção de uniformidade</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sequenciais-do-grupo-1">6.1.1.2.2. Sequenciais do grupo 1</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sequenciais-do-grupo-2">6.1.1.2.3. Sequenciais do grupo 2</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#divergentes">6.1.1.2.4. Divergentes</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclicas">6.1.1.2.5. Cíclicas</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#genericas">6.1.1.2.6. Genéricas</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aplicado-dado-quantitativo-numerico">6.1.1.2.7. Exemplo aplicado: dado quantitativo numérico</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-cor">6.2. Modelos de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optica-ondas-e-cores">6.2.1. Óptica, ondas e cores</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-aditivos-e-subtrativos">6.2.2. Modelos aditivos e subtrativos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">6.2.2.1. RGB</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cmyk">6.2.2.2. CMYK</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-geometricos">6.2.3. Modelos geométricos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hsl">6.2.3.1. HSL</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cores-em-codigo-hex">6.2.4. Cores em código HEX</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-conversao-rgb-hex">6.2.4.1. Exemplo de conversão RGB &gt; HEX</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-de-cores-css">6.2.4.2. Exemplos de cores CSS</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misturas-de-cor">6.2.5. Misturas de cor</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-esquemas-de-cor">6.3. Outros esquemas de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquemas-de-propriedade-comercial">6.3.1. Esquemas de propriedade comercial</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-dos-espacos-de-cor">6.4. Teoria dos espaços de cor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#espacos-de-cor-cie">6.4.1. Espaços de cor CIE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#espectro-e-componentes">6.4.2. Espectro e componentes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacionamento-com-a-algebra-linear">6.4.3. Relacionamento com a Álgebra Linear</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">6.5. Referências</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-complementares">6.6. Referências complementares</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Prof. Gustavo Oliveira
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

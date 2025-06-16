@@ -1,168 +1,111 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="../" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Introdução à Visualização de Dados &#8212; Introdução à Visualização de Dados</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css?v=1df44834" />
-  
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'rise/01a-introducao-rise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
-  
-  <dialog id="pst-search-dialog">
     
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+    <div class="container-fluid" id="banner"></div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
+    
 
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      
-      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-    
-  
-
-<a class="navbar-brand logo" href="../ipynb/00-apresentacao.html">
-  
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/logo-dataviz.png" class="logo__image only-light" alt="Introdução à Visualização de Dados - Home"/>
-    <img src="../_static/logo-dataviz.png" class="logo__image only-dark pst-js-only" alt="Introdução à Visualização de Dados - Home"/>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -171,281 +114,821 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/01a-introducao.html">1. Introdução à Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/02a-historico.html">2. Marcos Históricos da Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/03a-estetica.html">3. Criação de Representações Visuais e Estética</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/04a-eixos.html">4. Eixos, Escalas e Sistemas de Coordenadas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/05a-percepcao.html">5. Percepção Visual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/06a-cores.html">6. Cores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/07a-lounge.html">7. <em>Lounge</em> das Representações Visuais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/08a-storytelling.html">8. Técnicas de <em>Storytelling</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">9. Imersão em <em>matplotlib</em></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/06a-cores.html">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Técnica</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Técnica
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/20-dcs-quantidade.html">10. <em>Dataviz Code Session</em>: Quantidades</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/21-dcs-distribuicoes.html">11. <em>Dataviz Code Session</em>: Distribuições</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/23-dcs-geoespacial.html">12. <em>Dataviz Code Session</em>: Dados Geoespaciais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">13. <em>Dataviz Code Session</em>: Dados Multidimensionais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/25-dcs-redes.html">14. <em>Dataviz Code Session</em>: Redes Complexas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/26-dcs-cientifica.html">15. <em>Dataviz Code Session</em>: Visualização Científica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/27-dcs-serietemporal.html">16. <em>Dataviz Code Session</em>: Séries Temporais</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/20-dcs-quantidade.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">
+   13.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/25-dcs-redes.html">
+   14.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/26-dcs-cientifica.html">
+   15.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Visualização Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/27-dcs-serietemporal.html">
+   16.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Séries Temporais
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicações</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicações
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/28-dw-plotly.html">17. <em>Dataviz Workshop</em>: objetos gráficos e <em>Plotly Express</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/30-dw-dash.html">18. <em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/31-dw-reporting.html">19. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com HTML/PDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/32-dw-reportlab.html">20. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com <code class="docutils literal notranslate"><span class="pre">reportlab</span></code></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/28-dw-plotly.html">
+   17.
+   <em>
+    Dataviz Workshop
+   </em>
+   : objetos gráficos e
+   <em>
+    Plotly Express
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/30-dw-dash.html">
+   18.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Dashboarding
+   </em>
+   com
+   <em>
+    Dash
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/31-dw-reporting.html">
+   19.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com HTML/PDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/32-dw-reportlab.html">
+   20.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reportlab
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avaliações</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/10a-acvd.html">Análise de Casos de Visualização de Dados - ACVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/20a-ecvd.html">Estudo de Caso de Visualização de Dados - ECVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/capstone-template.html">Projeto Final de Visualização de Dados - PFVD</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suplemento</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Suplemento
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/A-quick-guide-seaborn.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/B-quick-guide-matplotlib.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/A-quick-guide-seaborn.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/B-quick-guide-matplotlib.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
-  </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/01a-introducao-rise.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/rise/01a-introducao-rise.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/01a-introducao-rise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
-
-
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
-    </div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/rise/01a-introducao-rise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introdução à Visualização de Dados</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontos-de-equilibrio">Pontos de equilíbrio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visao-geral-do-curso">Visão geral do curso</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitetura-visual-x-engenharia-visual">Arquitetura visual x engenharia visual</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-visualizacao-de-dados">Definindo <em>Visualização de Dados</em></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#as-3-fases-da-compreensao-de-uma-representacao-visual">As 3 fases da compreensão de uma representação visual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figuras-feias-ruins-e-erradas">Figuras feias, ruins e erradas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataviz-o-pensamento-visual-e-o-bom-plot"><em>Dataviz</em>, o pensamento visual e o bom plot</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-da-boa-representacao-visual"><em>Matriz da Boa Representação Visual</em></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principios-de-tufte">Princípios de Tufte</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-de-falta-de-integridade-visual">Exemplos de (falta de) integridade visual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-maximizacao-da-rtd">Exemplo de maximização da RTD</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fator-de-lie-l">Fator de Lie (<span class="math notranslate nohighlight">\(L\)</span>)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-calculo-de-l">Exemplo de cálculo de <span class="math notranslate nohighlight">\(L\)</span></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chartjunks"><em>Chartjunks</em></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ferramentas-tecnicas-do-curso">Ferramentas técnicas do curso</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criacao-do-novo-ambiente">Criação do novo ambiente</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aplicado">Exemplo aplicado</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminologias">Terminologias</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termos-para-pessoas">Termos para pessoas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termos-para-dados">Termos para dados</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termos-para-visualizacao">Termos para visualização</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacoes-visuais-para-analise">Representações visuais para análise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#industria-global-da-musica">Indústria global da música</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-da-terra-para-bioplasticos-2017-2022">Uso da terra para bioplásticos (2017-2022)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ranqueamento-universitario-2020">Ranqueamento universitário (2020)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe">Tipologia biofísica do mangue na América do Norte, Central e Caribe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potencial-de-solucoes-baseadas-em-carbono-azul">Potencial de soluções baseadas em carbono azul</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-navegadores-para-internet">Uso de navegadores para internet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrida-por-usuarios-de-servicos-remotos">Corrida por usuários de serviços remotos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importadores-de-gas-natural">Importadores de gás natural</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reservas-hoteleiras">Reservas hoteleiras</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-do-mercado-financeiro-global">Momentum do mercado financeiro global</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pontos-de-equilibrio">
+   Pontos de equilíbrio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visao-geral-do-curso">
+   Visão geral do curso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arquitetura-visual-x-engenharia-visual">
+   Arquitetura visual x engenharia visual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definindo-visualizacao-de-dados">
+   Definindo
+   <em>
+    Visualização de Dados
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-3-fases-da-compreensao-de-uma-representacao-visual">
+     As 3 fases da compreensão de uma representação visual
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figuras-feias-ruins-e-erradas">
+     Figuras feias, ruins e erradas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataviz-o-pensamento-visual-e-o-bom-plot">
+     <em>
+      Dataviz
+     </em>
+     , o pensamento visual e o bom plot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matriz-da-boa-representacao-visual">
+       <em>
+        Matriz da Boa Representação Visual
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principios-de-tufte">
+   Princípios de Tufte
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplos-de-falta-de-integridade-visual">
+     Exemplos de (falta de) integridade visual
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplo-de-maximizacao-da-rtd">
+     Exemplo de maximização da RTD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fator-de-lie-l">
+     Fator de Lie (
+     <span class="math notranslate nohighlight">
+      \(L\)
+     </span>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-de-calculo-de-l">
+       Exemplo de cálculo de
+       <span class="math notranslate nohighlight">
+        \(L\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chartjunks">
+     <em>
+      Chartjunks
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-tecnicas-do-curso">
+   Ferramentas técnicas do curso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criacao-do-novo-ambiente">
+     Criação do novo ambiente
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplo-aplicado">
+     Exemplo aplicado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminologias">
+   Terminologias
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-pessoas">
+     Termos para pessoas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-dados">
+     Termos para dados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-visualizacao">
+     Termos para visualização
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representacoes-visuais-para-analise">
+   Representações visuais para análise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#industria-global-da-musica">
+     Indústria global da música
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uso-da-terra-para-bioplasticos-2017-2022">
+     Uso da terra para bioplásticos (2017-2022)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ranqueamento-universitario-2020">
+     Ranqueamento universitário (2020)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe">
+     Tipologia biofísica do mangue na América do Norte, Central e Caribe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#potencial-de-solucoes-baseadas-em-carbono-azul">
+     Potencial de soluções baseadas em carbono azul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uso-de-navegadores-para-internet">
+     Uso de navegadores para internet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corrida-por-usuarios-de-servicos-remotos">
+     Corrida por usuários de serviços remotos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importadores-de-gas-natural">
+     Importadores de gás natural
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reservas-hoteleiras">
+     Reservas hoteleiras
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#momentum-do-mercado-financeiro-global">
+     Momentum do mercado financeiro global
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introdução à Visualização de Dados</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pontos-de-equilibrio">
+   Pontos de equilíbrio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visao-geral-do-curso">
+   Visão geral do curso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arquitetura-visual-x-engenharia-visual">
+   Arquitetura visual x engenharia visual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definindo-visualizacao-de-dados">
+   Definindo
+   <em>
+    Visualização de Dados
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-3-fases-da-compreensao-de-uma-representacao-visual">
+     As 3 fases da compreensão de uma representação visual
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figuras-feias-ruins-e-erradas">
+     Figuras feias, ruins e erradas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataviz-o-pensamento-visual-e-o-bom-plot">
+     <em>
+      Dataviz
+     </em>
+     , o pensamento visual e o bom plot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matriz-da-boa-representacao-visual">
+       <em>
+        Matriz da Boa Representação Visual
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principios-de-tufte">
+   Princípios de Tufte
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplos-de-falta-de-integridade-visual">
+     Exemplos de (falta de) integridade visual
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplo-de-maximizacao-da-rtd">
+     Exemplo de maximização da RTD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fator-de-lie-l">
+     Fator de Lie (
+     <span class="math notranslate nohighlight">
+      \(L\)
+     </span>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemplo-de-calculo-de-l">
+       Exemplo de cálculo de
+       <span class="math notranslate nohighlight">
+        \(L\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chartjunks">
+     <em>
+      Chartjunks
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ferramentas-tecnicas-do-curso">
+   Ferramentas técnicas do curso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criacao-do-novo-ambiente">
+     Criação do novo ambiente
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplo-aplicado">
+     Exemplo aplicado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminologias">
+   Terminologias
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-pessoas">
+     Termos para pessoas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-dados">
+     Termos para dados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termos-para-visualizacao">
+     Termos para visualização
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representacoes-visuais-para-analise">
+   Representações visuais para análise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#industria-global-da-musica">
+     Indústria global da música
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uso-da-terra-para-bioplasticos-2017-2022">
+     Uso da terra para bioplásticos (2017-2022)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ranqueamento-universitario-2020">
+     Ranqueamento universitário (2020)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe">
+     Tipologia biofísica do mangue na América do Norte, Central e Caribe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#potencial-de-solucoes-baseadas-em-carbono-azul">
+     Potencial de soluções baseadas em carbono azul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uso-de-navegadores-para-internet">
+     Uso de navegadores para internet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corrida-por-usuarios-de-servicos-remotos">
+     Corrida por usuários de serviços remotos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importadores-de-gas-natural">
+     Importadores de gás natural
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reservas-hoteleiras">
+     Reservas hoteleiras
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#momentum-do-mercado-financeiro-global">
+     Momentum do mercado financeiro global
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="introducao-a-visualizacao-de-dados">
-<h1>Introdução à Visualização de Dados<a class="headerlink" href="#introducao-a-visualizacao-de-dados" title="Link to this heading">#</a></h1>
+<h1>Introdução à Visualização de Dados<a class="headerlink" href="#introducao-a-visualizacao-de-dados" title="Permalink to this headline">#</a></h1>
 <p>Prof. Gustavo Oliveira</p>
 <p>CI/DCC/UFPB</p>
 <p><a class="reference external" href="http://gcpeixoto.github.com/DATAVIZ">gcpeixoto.github.com/DATAVIZ</a></p>
@@ -459,8 +942,8 @@
 <li><p><em>Conhecimento técnico</em> de pelo menos uma ferramenta para plotagem.</p></li>
 </ul>
 <section id="pontos-de-equilibrio">
-<h2>Pontos de equilíbrio<a class="headerlink" href="#pontos-de-equilibrio" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<h2>Pontos de equilíbrio<a class="headerlink" href="#pontos-de-equilibrio" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
 <li><p>É melhor aprender visualização de dados através de um guia ou manual, que discute princípios, conceitos e orientações, ou através de um tutorial, que contém exemplos de código e demonstrações de gráficos incríveis?</p></li>
 <li><p>Devemos dissertar sobre as nuances artísticas, com toda a beleza do design, ou sobre a elegância simples e útil do cotidiano?</p></li>
 <li><p>Faz sentido compreender conceitos teóricos da visualização de dados, ou ser apenas pragmático?</p></li>
@@ -469,7 +952,7 @@
 </ol>
 </section>
 <section id="visao-geral-do-curso">
-<h2>Visão geral do curso<a class="headerlink" href="#visao-geral-do-curso" title="Link to this heading">#</a></h2>
+<h2>Visão geral do curso<a class="headerlink" href="#visao-geral-do-curso" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Fundamentos</strong>: módulo dedicado ao estudo dos conceitos primários da visualização de dados, tais como seu desenvolvimento histórico, princípios, percepção, estética e cores.</p></li>
 <li><p><strong>Técnicas</strong>: módulo dedicado à discussão de técnicas diversas para representação visual de quantidades, proporções, tendências, redes e informações gerais, através de exemplos de códigos.</p></li>
@@ -477,7 +960,7 @@
 </ul>
 </section>
 <section id="arquitetura-visual-x-engenharia-visual">
-<h2>Arquitetura visual x engenharia visual<a class="headerlink" href="#arquitetura-visual-x-engenharia-visual" title="Link to this heading">#</a></h2>
+<h2>Arquitetura visual x engenharia visual<a class="headerlink" href="#arquitetura-visual-x-engenharia-visual" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><em>Arquitetura visual</em>: área profissional que cuida da especificação dos projetos de visualização de dados;</p></li>
 <li><p><em>Engenharia visual</em>: área que executa tais projetos.</p></li>
@@ -486,7 +969,7 @@
 <p><em>Nota</em>: as definições são do professor.</p>
 </section>
 <section id="definindo-visualizacao-de-dados">
-<h2>Definindo <em>Visualização de Dados</em><a class="headerlink" href="#definindo-visualizacao-de-dados" title="Link to this heading">#</a></h2>
+<h2>Definindo <em>Visualização de Dados</em><a class="headerlink" href="#definindo-visualizacao-de-dados" title="Permalink to this headline">#</a></h2>
 <p>Neste curso, usaremo a seguinte definição, adaptada de <a class="reference external" href="https://twitter.com/visualisingdata">Andy Kirk</a>:</p>
 <blockquote>
 <div><p><em>Visualização de dados é a arte de combinar representações visuais e apresentações para facilitar a compreensão dos dados.</em></p>
@@ -507,17 +990,17 @@
 <li><p>A parte final da definição diz respeito à <em>compreensão facilitada</em> dos dados,</p></li>
 <li><p>Processo de captura da mensagem lançada pelo contador de história (<em>storyteller</em>) ao espectador (<em>viewer</em>) em 3 etapas cognitivas:</p></li>
 </ul>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p><em>Percepção</em> (o que vejo?)</p></li>
 <li><p><em>Interpretação</em> (o que significa?)</p></li>
 <li><p><em>Compreensão</em> (o que significa para mim?)</p></li>
 </ol>
 <section id="as-3-fases-da-compreensao-de-uma-representacao-visual">
-<h3>As 3 fases da compreensão de uma representação visual<a class="headerlink" href="#as-3-fases-da-compreensao-de-uma-representacao-visual" title="Link to this heading">#</a></h3>
+<h3>As 3 fases da compreensão de uma representação visual<a class="headerlink" href="#as-3-fases-da-compreensao-de-uma-representacao-visual" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/3-steps-cognition.png"><img alt="../_images/3-steps-cognition.png" src="../_images/3-steps-cognition.png" style="width: 1200px; height: 1200px;" /></a>
 </section>
 <section id="figuras-feias-ruins-e-erradas">
-<h3>Figuras feias, ruins e erradas<a class="headerlink" href="#figuras-feias-ruins-e-erradas" title="Link to this heading">#</a></h3>
+<h3>Figuras feias, ruins e erradas<a class="headerlink" href="#figuras-feias-ruins-e-erradas" title="Permalink to this headline">#</a></h3>
 <p>Diferentes versões de figuras com a mesma representação visual subjacente podem existir.</p>
 <ul class="simple">
 <li><p><em>feia</em> é aquela que tem problemas estéticos, apesar de clara e informativa.</p></li>
@@ -534,14 +1017,14 @@
 </ul>
 </section>
 <section id="dataviz-o-pensamento-visual-e-o-bom-plot">
-<h3><em>Dataviz</em>, o pensamento visual e o bom plot<a class="headerlink" href="#dataviz-o-pensamento-visual-e-o-bom-plot" title="Link to this heading">#</a></h3>
+<h3><em>Dataviz</em>, o pensamento visual e o bom plot<a class="headerlink" href="#dataviz-o-pensamento-visual-e-o-bom-plot" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A visualização de dados (<em>dataviz</em>, de <em>data visualization</em>) é uma disciplina obrigatória para um novo modo de pensar: o <em>pensamento visual</em></p></li>
 <li><p>No mundo dos negócios, pensar visualmente é ser capaz de construir representações visuais com grande potencial atrativo.</p></li>
 <li><p>Para empresas competitivas, a mensagem clara e acessível transmitida graficamente é uma das grandes vantagens de <em>marketing</em>.</p></li>
 </ul>
 <section id="matriz-da-boa-representacao-visual">
-<h4><em>Matriz da Boa Representação Visual</em><a class="headerlink" href="#matriz-da-boa-representacao-visual" title="Link to this heading">#</a></h4>
+<h4><em>Matriz da Boa Representação Visual</em><a class="headerlink" href="#matriz-da-boa-representacao-visual" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Sugere que um plot considerado “bom” deve aproximar-se cada vez mais da quina superior direita, onde reside a perfeição.</p></li>
 </ul>
@@ -550,7 +1033,7 @@
 </section>
 </section>
 <section id="principios-de-tufte">
-<h2>Princípios de Tufte<a class="headerlink" href="#principios-de-tufte" title="Link to this heading">#</a></h2>
+<h2>Princípios de Tufte<a class="headerlink" href="#principios-de-tufte" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>apresentar dados;</p></li>
 <li><p>induzir o espectador a pensar a substância da representação visual e não os métodos ou técnicas que a estruturaram;</p></li>
@@ -569,7 +1052,7 @@
 </ul>
 <ul class="simple">
 <li><p>Regras para a integridade:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Dizer a verdade sobre os dados;</p></li>
 <li><p>Mostrar a variação dos dados, não do design;</p></li>
 <li><p>Tornar grandes conjuntos de dados coerentes;</p></li>
@@ -578,7 +1061,7 @@
 </li>
 </ul>
 <section id="exemplos-de-falta-de-integridade-visual">
-<h3>Exemplos de (falta de) integridade visual<a class="headerlink" href="#exemplos-de-falta-de-integridade-visual" title="Link to this heading">#</a></h3>
+<h3>Exemplos de (falta de) integridade visual<a class="headerlink" href="#exemplos-de-falta-de-integridade-visual" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Número de camisas <em>jersey</em> de alguns jogadores vendidas (<a class="reference external" href="https://www.linkedin.com/pulse/edward-tuftes-six-principles-graphical-integrity-radhika-raghu/">Fonte</a>)</p></li>
 </ul>
@@ -604,7 +1087,7 @@
 <p>onde <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, e <span class="math notranslate nohighlight">\(T\)</span> denotam, nesta ordem, a quantidade de tinta usada para os dados, para os adereços e para ambos, no total. Maximizar a <span class="math notranslate nohighlight">\(\text{RTD}\)</span> implica em eliminar do visual aquilo que é inútil ou não essencial.</p>
 <ul class="simple">
 <li><p>As leis de Tufte para a “tinta”:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Mostre os dados;</p></li>
 <li><p>Maximize a RTD;</p></li>
 <li><p>Remova elementos desnecessários;</p></li>
@@ -615,7 +1098,7 @@
 </ul>
 </section>
 <section id="exemplo-de-maximizacao-da-rtd">
-<h3>Exemplo de maximização da RTD<a class="headerlink" href="#exemplo-de-maximizacao-da-rtd" title="Link to this heading">#</a></h3>
+<h3>Exemplo de maximização da RTD<a class="headerlink" href="#exemplo-de-maximizacao-da-rtd" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Calorias/100g para diferentes “junk foods” (<a class="reference external" href="https://www.codeconquest.com/blog/data-ink-ratio-explained-with-example/">Fonte</a>)</p></li>
 </ul>
@@ -671,7 +1154,7 @@
 <a class="reference internal image-reference" href="../_images/aesthetics3.png"><img alt="../_images/aesthetics3.png" src="../_images/aesthetics3.png" style="width: 500px;" /></a>
 </section>
 <section id="fator-de-lie-l">
-<h3>Fator de Lie (<span class="math notranslate nohighlight">\(L\)</span>)<a class="headerlink" href="#fator-de-lie-l" title="Link to this heading">#</a></h3>
+<h3>Fator de Lie (<span class="math notranslate nohighlight">\(L\)</span>)<a class="headerlink" href="#fator-de-lie-l" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(L\)</span> = tamanho do efeito mostrado na RV / tamanho do efeito nos dados</p>
 <ul class="simple">
 <li><p>Na figura abaixo, <span class="math notranslate nohighlight">\(L =783/53=14.8\)</span> (há 53% de aumento na economia de combustível, mas a linha de 27.5 aumentou 783%).</p></li>
@@ -679,7 +1162,7 @@
 </ul>
 <a class="reference internal image-reference" href="../_images/lieFactor.jpg"><img alt="../_images/lieFactor.jpg" src="../_images/lieFactor.jpg" style="width: 600px;" /></a>
 <section id="exemplo-de-calculo-de-l">
-<h4>Exemplo de cálculo de <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#exemplo-de-calculo-de-l" title="Link to this heading">#</a></h4>
+<h4>Exemplo de cálculo de <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#exemplo-de-calculo-de-l" title="Permalink to this headline">#</a></h4>
 <p>Suponha uma RV em que 20 unidades são representadas por 1 cm de comprimento visual e 30 unidades são representadas por 5 cm. Tem-se (mudança relativa):</p>
 <ul class="simple">
 <li><p>tamanho do efeito no gráfico = (5 - 1)/1 = 4</p></li>
@@ -689,7 +1172,7 @@
 </section>
 </section>
 <section id="chartjunks">
-<h3><em>Chartjunks</em><a class="headerlink" href="#chartjunks" title="Link to this heading">#</a></h3>
+<h3><em>Chartjunks</em><a class="headerlink" href="#chartjunks" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>RVs contaminadas por “elementos estranhos” que distraem o <em>viewer</em> da mensagem central.</p></li>
 <li><p>Trazem extradimensionalidade, decoração excessiva e coloração não informativa</p></li>
@@ -699,14 +1182,14 @@
 </section>
 </section>
 <section id="ferramentas-tecnicas-do-curso">
-<h2>Ferramentas técnicas do curso<a class="headerlink" href="#ferramentas-tecnicas-do-curso" title="Link to this heading">#</a></h2>
+<h2>Ferramentas técnicas do curso<a class="headerlink" href="#ferramentas-tecnicas-do-curso" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Python 3.x como linguagem de programação básica</p></li>
 <li><p>Diversidade de pacotes para construção de plotagens e utilidades.</p></li>
 <li><p>Recomendação: ambiente virtual <code class="docutils literal notranslate"><span class="pre">conda</span></code></p></li>
 </ul>
 <section id="criacao-do-novo-ambiente">
-<h3>Criação do novo ambiente<a class="headerlink" href="#criacao-do-novo-ambiente" title="Link to this heading">#</a></h3>
+<h3>Criação do novo ambiente<a class="headerlink" href="#criacao-do-novo-ambiente" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Execute o comando:</p></li>
 </ul>
@@ -721,21 +1204,16 @@
 </div>
 </section>
 <section id="exemplo-aplicado">
-<h3>Exemplo aplicado<a class="headerlink" href="#exemplo-aplicado" title="Link to this heading">#</a></h3>
+<h3>Exemplo aplicado<a class="headerlink" href="#exemplo-aplicado" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Visualizando a variação do preço por litro, em R$, de 6 tipos de combustíveis comercializados no estado da Paraíba por 8 operadoras durante o primeiro semestre de 2022.</p></li>
 <li><p>Para a plotagem, usamos parte do <a class="reference external" href="https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda/resource/a1e1955b-f340-415d-83bf-bbce710d142b"><em>dataset</em></a> correspondente disponibilizado pela ANP no portal <a class="reference external" href="https://dados.gov.br">Dados Abertos</a> do Governo Federal.</p></li>
 </ul>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_csv</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">subplots</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="c1"># pandas</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/preco-combs-pb-2022-02.csv&#39;</span><span class="p">)</span>
@@ -756,17 +1234,16 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/18df40b4e6fea93feef0c2e49c0cb5d90cd90bc195023c93c7b673e142ae63bb.png" src="../_images/18df40b4e6fea93feef0c2e49c0cb5d90cd90bc195023c93c7b673e142ae63bb.png" />
+<img alt="../_images/01a-introducao-rise_40_0.png" src="../_images/01a-introducao-rise_40_0.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="terminologias">
-<h2>Terminologias<a class="headerlink" href="#terminologias" title="Link to this heading">#</a></h2>
+<h2>Terminologias<a class="headerlink" href="#terminologias" title="Permalink to this headline">#</a></h2>
 <section id="termos-para-pessoas">
-<h3>Termos para pessoas<a class="headerlink" href="#termos-para-pessoas" title="Link to this heading">#</a></h3>
+<h3>Termos para pessoas<a class="headerlink" href="#termos-para-pessoas" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><em>Storyteller</em>: você, que está construindo o produto de visualização (cf. <em>visualiser</em>, <em>analyst</em>,<em>visualist</em>, <em>designer</em>).</p></li>
 <li><p><em>Viewer</em>: a pessoa que visualiza o produto construído (cf. <em>consumer</em>, <em>reader</em>, <em>user</em>).</p></li>
@@ -774,7 +1251,7 @@
 </ul>
 </section>
 <section id="termos-para-dados">
-<h3>Termos para dados<a class="headerlink" href="#termos-para-dados" title="Link to this heading">#</a></h3>
+<h3>Termos para dados<a class="headerlink" href="#termos-para-dados" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><em>Dado bruto</em>: estado inicial de um dado coletado, recebido ou baixado de um repositório ainda não tratado ou sujeito a análises (cf. <em>raw data</em>).</p></li>
 <li><p><em>Fonte</em>: origem do dado bruto utilizado para a visualização (cf. <em>data source</em>).</p></li>
@@ -784,7 +1261,7 @@
 </ul>
 </section>
 <section id="termos-para-visualizacao">
-<h3>Termos para visualização<a class="headerlink" href="#termos-para-visualizacao" title="Link to this heading">#</a></h3>
+<h3>Termos para visualização<a class="headerlink" href="#termos-para-visualizacao" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><em>Projeto de visualização</em>: conjunto de etapas progressivas que culminam na geração de um produto de visualização.</p></li>
 <li><p><em>Produto de visualização</em>: entregável de um projeto de visualização. Em geral, será uma <em>representação visual de dados</em>.</p></li>
@@ -794,53 +1271,53 @@
 </section>
 </section>
 <section id="representacoes-visuais-para-analise">
-<h2>Representações visuais para análise<a class="headerlink" href="#representacoes-visuais-para-analise" title="Link to this heading">#</a></h2>
+<h2>Representações visuais para análise<a class="headerlink" href="#representacoes-visuais-para-analise" title="Permalink to this headline">#</a></h2>
 <section id="industria-global-da-musica">
-<h3>Indústria global da música<a class="headerlink" href="#industria-global-da-musica" title="Link to this heading">#</a></h3>
+<h3>Indústria global da música<a class="headerlink" href="#industria-global-da-musica" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/streaming-revenue.jpeg"><img alt="../_images/streaming-revenue.jpeg" src="../_images/streaming-revenue.jpeg" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.statista.com/chart/4713/global-recorded-music-industry-revenues/">Fonte</a></p>
 </section>
 <section id="uso-da-terra-para-bioplasticos-2017-2022">
-<h3>Uso da terra para bioplásticos (2017-2022)<a class="headerlink" href="#uso-da-terra-para-bioplasticos-2017-2022" title="Link to this heading">#</a></h3>
+<h3>Uso da terra para bioplásticos (2017-2022)<a class="headerlink" href="#uso-da-terra-para-bioplasticos-2017-2022" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/Land_use_estimation.jpg"><img alt="../_images/Land_use_estimation.jpg" src="../_images/Land_use_estimation.jpg" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.european-bioplastics.org/how-much-land-do-we-really-need-to-produce-bio-based-plastics/">Fonte</a></p>
 </section>
 <section id="ranqueamento-universitario-2020">
-<h3>Ranqueamento universitário (2020)<a class="headerlink" href="#ranqueamento-universitario-2020" title="Link to this heading">#</a></h3>
+<h3>Ranqueamento universitário (2020)<a class="headerlink" href="#ranqueamento-universitario-2020" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/u-multirank.png"><img alt="../_images/u-multirank.png" src="../_images/u-multirank.png" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.umultirank.org/export/sites/default/press-media/media-center/universities/2020/country-reports/US-Country-report-2020.pdf">Fonte</a></p>
 </section>
 <section id="tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe">
-<h3>Tipologia biofísica do mangue na América do Norte, Central e Caribe<a class="headerlink" href="#tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe" title="Link to this heading">#</a></h3>
+<h3>Tipologia biofísica do mangue na América do Norte, Central e Caribe<a class="headerlink" href="#tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/mangrove-america.png"><img alt="../_images/mangrove-america.png" src="../_images/mangrove-america.png" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.nature.com/articles/s41598-020-71194-5">Fonte</a></p>
 </section>
 <section id="potencial-de-solucoes-baseadas-em-carbono-azul">
-<h3>Potencial de soluções baseadas em carbono azul<a class="headerlink" href="#potencial-de-solucoes-baseadas-em-carbono-azul" title="Link to this heading">#</a></h3>
+<h3>Potencial de soluções baseadas em carbono azul<a class="headerlink" href="#potencial-de-solucoes-baseadas-em-carbono-azul" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/blue-carbon-potential.png"><img alt="../_images/blue-carbon-potential.png" src="../_images/blue-carbon-potential.png" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.mckinsey.com/capabilities/sustainability/our-insights/blue-carbon-the-potential-of-coastal-and-oceanic-climate-action">Fonte</a></p>
 </section>
 <section id="uso-de-navegadores-para-internet">
-<h3>Uso de navegadores para internet<a class="headerlink" href="#uso-de-navegadores-para-internet" title="Link to this heading">#</a></h3>
+<h3>Uso de navegadores para internet<a class="headerlink" href="#uso-de-navegadores-para-internet" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/browsers.jpeg"><img alt="../_images/browsers.jpeg" src="../_images/browsers.jpeg" style="width: 600px;" /></a>
 </section>
 <section id="corrida-por-usuarios-de-servicos-remotos">
-<h3>Corrida por usuários de serviços remotos<a class="headerlink" href="#corrida-por-usuarios-de-servicos-remotos" title="Link to this heading">#</a></h3>
+<h3>Corrida por usuários de serviços remotos<a class="headerlink" href="#corrida-por-usuarios-de-servicos-remotos" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/chat-gpt.jpeg"><img alt="../_images/chat-gpt.jpeg" src="../_images/chat-gpt.jpeg" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.statista.com/chart/29174/time-to-one-million-users/">Fonte</a></p>
 </section>
 <section id="importadores-de-gas-natural">
-<h3>Importadores de gás natural<a class="headerlink" href="#importadores-de-gas-natural" title="Link to this heading">#</a></h3>
+<h3>Importadores de gás natural<a class="headerlink" href="#importadores-de-gas-natural" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/gas-natural-importadores.png"><img alt="../_images/gas-natural-importadores.png" src="../_images/gas-natural-importadores.png" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.ibp.org.br/observatorio-do-setor/snapshots/maiores-importadores-de-gas-natural/">Fonte</a></p>
 </section>
 <section id="reservas-hoteleiras">
-<h3>Reservas hoteleiras<a class="headerlink" href="#reservas-hoteleiras" title="Link to this heading">#</a></h3>
+<h3>Reservas hoteleiras<a class="headerlink" href="#reservas-hoteleiras" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/reservas-hoteleiras.jpeg"><img alt="../_images/reservas-hoteleiras.jpeg" src="../_images/reservas-hoteleiras.jpeg" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://www.panrotas.com.br/hotelaria/mercado/2020/05/centro-oeste-e-sul-puxam-crescimento-de-reservas-hoteleiras-no-brasil_173356.html">Fonte</a></p>
 </section>
 <section id="momentum-do-mercado-financeiro-global">
-<h3>Momentum do mercado financeiro global<a class="headerlink" href="#momentum-do-mercado-financeiro-global" title="Link to this heading">#</a></h3>
+<h3>Momentum do mercado financeiro global<a class="headerlink" href="#momentum-do-mercado-financeiro-global" title="Permalink to this headline">#</a></h3>
 <a class="reference internal image-reference" href="../_images/global-market-momentum.png"><img alt="../_images/global-market-momentum.png" src="../_images/global-market-momentum.png" style="width: 600px;" /></a>
 <p><a class="reference external" href="https://blog.mipimworld.com/investment/resurgent-asia-a-top-source-of-cross-border-investment-capital/attachment/mipim-asia-blog-bubble-chart-171003/#prettyPhoto">Fonte</a></p>
 </section>
@@ -859,7 +1336,7 @@
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./rise"
         },
         predefinedOutput: true
@@ -867,131 +1344,36 @@
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontos-de-equilibrio">Pontos de equilíbrio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visao-geral-do-curso">Visão geral do curso</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitetura-visual-x-engenharia-visual">Arquitetura visual x engenharia visual</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-visualizacao-de-dados">Definindo <em>Visualização de Dados</em></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#as-3-fases-da-compreensao-de-uma-representacao-visual">As 3 fases da compreensão de uma representação visual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figuras-feias-ruins-e-erradas">Figuras feias, ruins e erradas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataviz-o-pensamento-visual-e-o-bom-plot"><em>Dataviz</em>, o pensamento visual e o bom plot</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-da-boa-representacao-visual"><em>Matriz da Boa Representação Visual</em></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principios-de-tufte">Princípios de Tufte</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-de-falta-de-integridade-visual">Exemplos de (falta de) integridade visual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-maximizacao-da-rtd">Exemplo de maximização da RTD</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fator-de-lie-l">Fator de Lie (<span class="math notranslate nohighlight">\(L\)</span>)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-calculo-de-l">Exemplo de cálculo de <span class="math notranslate nohighlight">\(L\)</span></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chartjunks"><em>Chartjunks</em></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ferramentas-tecnicas-do-curso">Ferramentas técnicas do curso</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criacao-do-novo-ambiente">Criação do novo ambiente</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aplicado">Exemplo aplicado</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminologias">Terminologias</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termos-para-pessoas">Termos para pessoas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termos-para-dados">Termos para dados</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termos-para-visualizacao">Termos para visualização</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacoes-visuais-para-analise">Representações visuais para análise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#industria-global-da-musica">Indústria global da música</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-da-terra-para-bioplasticos-2017-2022">Uso da terra para bioplásticos (2017-2022)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ranqueamento-universitario-2020">Ranqueamento universitário (2020)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipologia-biofisica-do-mangue-na-america-do-norte-central-e-caribe">Tipologia biofísica do mangue na América do Norte, Central e Caribe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potencial-de-solucoes-baseadas-em-carbono-azul">Potencial de soluções baseadas em carbono azul</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-navegadores-para-internet">Uso de navegadores para internet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrida-por-usuarios-de-servicos-remotos">Corrida por usuários de serviços remotos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importadores-de-gas-natural">Importadores de gás natural</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reservas-hoteleiras">Reservas hoteleiras</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-do-mercado-financeiro-global">Momentum do mercado financeiro global</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Prof. Gustavo Oliveira
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
