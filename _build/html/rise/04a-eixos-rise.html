@@ -1,168 +1,111 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="../" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Eixos, Escalas e Sistemas de Coordenadas &#8212; Introdução à Visualização de Dados</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css?v=1df44834" />
-  
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'rise/04a-eixos-rise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
-  
-  <dialog id="pst-search-dialog">
     
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+    <div class="container-fluid" id="banner"></div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
+    
 
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      
-      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-    
-  
-
-<a class="navbar-brand logo" href="../ipynb/00-apresentacao.html">
-  
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/logo-dataviz.png" class="logo__image only-light" alt="Introdução à Visualização de Dados - Home"/>
-    <img src="../_static/logo-dataviz.png" class="logo__image only-dark pst-js-only" alt="Introdução à Visualização de Dados - Home"/>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      <img src="../_static/logo-dataviz.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introdução à Visualização de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -171,251 +114,551 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentos
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/01a-introducao.html">1. Introdução à Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/02a-historico.html">2. Marcos Históricos da Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/03a-estetica.html">3. Criação de Representações Visuais e Estética</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/04a-eixos.html">4. Eixos, Escalas e Sistemas de Coordenadas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/05a-percepcao.html">5. Percepção Visual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/06a-cores.html">6. Cores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/07a-lounge.html">7. <em>Lounge</em> das Representações Visuais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/08a-storytelling.html">8. Técnicas de <em>Storytelling</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">9. Imersão em <em>matplotlib</em></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/01a-introducao.html">
+   1. Introdução à Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/02a-historico.html">
+   2. Marcos Históricos da Visualização de Dados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/03a-estetica.html">
+   3. Criação de Representações Visuais e Estética
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/04a-eixos.html">
+   4. Eixos, Escalas e Sistemas de Coordenadas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/05a-percepcao.html">
+   5. Percepção Visual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/06a-cores.html">
+   6. Cores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/07a-lounge.html">
+   7.
+   <em>
+    Lounge
+   </em>
+   das Representações Visuais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/08a-storytelling.html">
+   8. Técnicas de
+   <em>
+    Storytelling
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/09a-matplotlib-imersao.html">
+   9. Imersão em
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Técnica</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Técnica
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/20-dcs-quantidade.html">10. <em>Dataviz Code Session</em>: Quantidades</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/21-dcs-distribuicoes.html">11. <em>Dataviz Code Session</em>: Distribuições</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/23-dcs-geoespacial.html">12. <em>Dataviz Code Session</em>: Dados Geoespaciais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">13. <em>Dataviz Code Session</em>: Dados Multidimensionais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/25-dcs-redes.html">14. <em>Dataviz Code Session</em>: Redes Complexas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/26-dcs-cientifica.html">15. <em>Dataviz Code Session</em>: Visualização Científica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/27-dcs-serietemporal.html">16. <em>Dataviz Code Session</em>: Séries Temporais</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/20-dcs-quantidade.html">
+   10.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Quantidades
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/21-dcs-distribuicoes.html">
+   11.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Distribuições
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/23-dcs-geoespacial.html">
+   12.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Geoespaciais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/24-dcs-multidimensional.html">
+   13.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Dados Multidimensionais
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/25-dcs-redes.html">
+   14.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Redes Complexas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/26-dcs-cientifica.html">
+   15.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Visualização Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/27-dcs-serietemporal.html">
+   16.
+   <em>
+    Dataviz Code Session
+   </em>
+   : Séries Temporais
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicações</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicações
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/28-dw-plotly.html">17. <em>Dataviz Workshop</em>: objetos gráficos e <em>Plotly Express</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/30-dw-dash.html">18. <em>Dataviz Workshop</em>: <em>Dashboarding</em> com <em>Dash</em></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/31-dw-reporting.html">19. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com HTML/PDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/32-dw-reportlab.html">20. <em>Dataviz Workshop</em>: <em>Data Reporting</em> com <code class="docutils literal notranslate"><span class="pre">reportlab</span></code></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/28-dw-plotly.html">
+   17.
+   <em>
+    Dataviz Workshop
+   </em>
+   : objetos gráficos e
+   <em>
+    Plotly Express
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/30-dw-dash.html">
+   18.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Dashboarding
+   </em>
+   com
+   <em>
+    Dash
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/31-dw-reporting.html">
+   19.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com HTML/PDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/32-dw-reportlab.html">
+   20.
+   <em>
+    Dataviz Workshop
+   </em>
+   :
+   <em>
+    Data Reporting
+   </em>
+   com
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     reportlab
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avaliações</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Avaliações
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/10a-acvd.html">Análise de Casos de Visualização de Dados - ACVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/20a-ecvd.html">Estudo de Caso de Visualização de Dados - ECVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/capstone-template.html">Projeto Final de Visualização de Dados - PFVD</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/10a-acvd.html">
+   Análise de Casos de Visualização de Dados - ACVD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/20a-ecvd.html">
+   Estudo de Caso de Visualização de Dados - ECVD
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suplemento</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Suplemento
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/A-quick-guide-seaborn.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ipynb/B-quick-guide-matplotlib.html">Guia rápido de plotagem - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/A-quick-guide-seaborn.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/B-quick-guide-matplotlib.html">
+   Guia rápido de plotagem -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
-  </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/04a-eixos-rise.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/rise/04a-eixos-rise.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://colab.research.google.com/github/gcpeixoto/DATAVIZ/blob/master/rise/04a-eixos-rise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
-
-
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
-    </div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/rise/04a-eixos-rise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eixos, Escalas e Sistemas de Coordenadas</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">Sistema de coordenadas cartesianas e razões de aspecto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-temporal-aleatoria">Série temporal aleatória</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-temporal-de-temperatura-aula-3">Série temporal de temperatura (Aula 3)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escalas">Escalas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-coordenadas-polares">Sistema de coordenadas polares</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulacao-de-teste-de-balistica">Simulação de teste de balística</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-coordenadas-geoespaciais">Sistemas de coordenadas geoespaciais</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacoes-3d">Visualizações 3D</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-de-funcoes-matematicas">Visualização de funções matemáticas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-de-dados-multidimensionais-categoricos">Visualização de dados multidimensionais categóricos</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">
+   Sistema de coordenadas cartesianas e razões de aspecto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-aleatoria">
+     Série temporal aleatória
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-de-temperatura-aula-3">
+     Série temporal de temperatura (Aula 3)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escalas">
+     Escalas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-polares">
+   Sistema de coordenadas polares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulacao-de-teste-de-balistica">
+     Simulação de teste de balística
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-de-coordenadas-geoespaciais">
+   Sistemas de coordenadas geoespaciais
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacoes-3d">
+   Visualizações 3D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-funcoes-matematicas">
+     Visualização de funções matemáticas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-dados-multidimensionais-categoricos">
+     Visualização de dados multidimensionais categóricos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Eixos, Escalas e Sistemas de Coordenadas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">
+   Sistema de coordenadas cartesianas e razões de aspecto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-aleatoria">
+     Série temporal aleatória
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serie-temporal-de-temperatura-aula-3">
+     Série temporal de temperatura (Aula 3)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escalas">
+     Escalas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-coordenadas-polares">
+   Sistema de coordenadas polares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulacao-de-teste-de-balistica">
+     Simulação de teste de balística
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-de-coordenadas-geoespaciais">
+   Sistemas de coordenadas geoespaciais
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacoes-3d">
+   Visualizações 3D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-funcoes-matematicas">
+     Visualização de funções matemáticas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacao-de-dados-multidimensionais-categoricos">
+     Visualização de dados multidimensionais categóricos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="eixos-escalas-e-sistemas-de-coordenadas">
-<h1>Eixos, Escalas e Sistemas de Coordenadas<a class="headerlink" href="#eixos-escalas-e-sistemas-de-coordenadas" title="Link to this heading">#</a></h1>
+<h1>Eixos, Escalas e Sistemas de Coordenadas<a class="headerlink" href="#eixos-escalas-e-sistemas-de-coordenadas" title="Permalink to this headline">#</a></h1>
 <p>Prof. Gustavo Oliveira</p>
 <p>CI/DCC/UFPB</p>
 <p><a class="reference external" href="https://gcpeixoto.github.com/DATAVIZ">gcpeixoto.github.com/DATAVIZ</a></p>
@@ -431,20 +674,15 @@
 <li><p>Razões de aspecto são totalmente dependentes do projeto visual</p></li>
 </ul>
 <section id="sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">
-<h2>Sistema de coordenadas cartesianas e razões de aspecto<a class="headerlink" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto" title="Link to this heading">#</a></h2>
+<h2>Sistema de coordenadas cartesianas e razões de aspecto<a class="headerlink" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto" title="Permalink to this headline">#</a></h2>
 <section id="serie-temporal-aleatoria">
-<h3>Série temporal aleatória<a class="headerlink" href="#serie-temporal-aleatoria" title="Link to this heading">#</a></h3>
+<h3>Série temporal aleatória<a class="headerlink" href="#serie-temporal-aleatoria" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">test_aspect_ratio</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="n">fator</span><span class="p">,</span><span class="n">tag</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">test_aspect_ratio</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="n">fator</span><span class="p">,</span><span class="n">tag</span><span class="p">):</span>
     <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span><span class="n">fator</span><span class="o">*</span><span class="n">Lx</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#117029&#39;</span><span class="p">)</span>
@@ -454,7 +692,6 @@
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -463,7 +700,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4db35d3fa60d4251275151a2c35dd8c85287f0417c59634193406d8481408f7.png" src="../_images/e4db35d3fa60d4251275151a2c35dd8c85287f0417c59634193406d8481408f7.png" />
+<img alt="../_images/04a-eixos-rise_4_0.png" src="../_images/04a-eixos-rise_4_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -473,7 +710,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/72f31214ad98f0c53bcbb0d2bfbb87dba1a8ab560ac8f2b9f179c8974153db63.png" src="../_images/72f31214ad98f0c53bcbb0d2bfbb87dba1a8ab560ac8f2b9f179c8974153db63.png" />
+<img alt="../_images/04a-eixos-rise_5_0.png" src="../_images/04a-eixos-rise_5_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -483,7 +720,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc2b8619882a6e5a32c69835a2aa4e8180432ceb63e40fbd15f17a72dd14505c.png" src="../_images/bc2b8619882a6e5a32c69835a2aa4e8180432ceb63e40fbd15f17a72dd14505c.png" />
+<img alt="../_images/04a-eixos-rise_6_0.png" src="../_images/04a-eixos-rise_6_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -493,7 +730,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f46b2bdedd5e05c406bcfffb5ca90ccaa0323f847a98e5dd451f320fc53964c2.png" src="../_images/f46b2bdedd5e05c406bcfffb5ca90ccaa0323f847a98e5dd451f320fc53964c2.png" />
+<img alt="../_images/04a-eixos-rise_7_0.png" src="../_images/04a-eixos-rise_7_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -503,7 +740,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a9e428b315037ca30f02af84f321b9d74a801aaf68005b46e071f86b84401a12.png" src="../_images/a9e428b315037ca30f02af84f321b9d74a801aaf68005b46e071f86b84401a12.png" />
+<img alt="../_images/04a-eixos-rise_8_0.png" src="../_images/04a-eixos-rise_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -513,7 +750,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a4fe95d3b67aa55a547cb50ceed485149dd46ea08f8bd0aa5d4953e58e7dba2.png" src="../_images/2a4fe95d3b67aa55a547cb50ceed485149dd46ea08f8bd0aa5d4953e58e7dba2.png" />
+<img alt="../_images/04a-eixos-rise_9_0.png" src="../_images/04a-eixos-rise_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -523,7 +760,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73daac72e927c92b9bfd2410198a79337883c72cf9ee870fdb0757f75ed3eb95.png" src="../_images/73daac72e927c92b9bfd2410198a79337883c72cf9ee870fdb0757f75ed3eb95.png" />
+<img alt="../_images/04a-eixos-rise_10_0.png" src="../_images/04a-eixos-rise_10_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -533,20 +770,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea225dd39eae5777a45f23547b15f134984ce7d959b8d54b3dd537262758fd28.png" src="../_images/ea225dd39eae5777a45f23547b15f134984ce7d959b8d54b3dd537262758fd28.png" />
+<img alt="../_images/04a-eixos-rise_11_0.png" src="../_images/04a-eixos-rise_11_0.png" />
 </div>
 </div>
 </section>
 <section id="serie-temporal-de-temperatura-aula-3">
-<h3>Série temporal de temperatura (Aula 3)<a class="headerlink" href="#serie-temporal-de-temperatura-aula-3" title="Link to this heading">#</a></h3>
+<h3>Série temporal de temperatura (Aula 3)<a class="headerlink" href="#serie-temporal-de-temperatura-aula-3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">h5</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">h5py</span> <span class="k">as</span> <span class="nn">h5</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">plot_temperature</span><span class="p">(</span><span class="n">__horiz</span><span class="p">,</span><span class="n">__vert</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_temperature</span><span class="p">(</span><span class="n">__horiz</span><span class="p">,</span><span class="n">__vert</span><span class="p">):</span>
     <span class="n">file_hdf</span> <span class="o">=</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;../data/NEONDSTowerTemperatureData.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">df_t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">file_hdf</span><span class="p">[</span><span class="s1">&#39;Domain_10&#39;</span><span class="p">][</span><span class="s1">&#39;STER&#39;</span><span class="p">][</span><span class="s1">&#39;min_1&#39;</span><span class="p">][</span><span class="s1">&#39;boom_2&#39;</span><span class="p">][</span><span class="s1">&#39;temperature&#39;</span><span class="p">]))</span>
     <span class="n">df_hours</span> <span class="o">=</span> <span class="n">df_t</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">::</span><span class="mi">60</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
@@ -573,7 +810,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e509a77efbb4a2148efa33742f4d7692e2a3da36f68166fd2072e6b163c39a78.png" src="../_images/e509a77efbb4a2148efa33742f4d7692e2a3da36f68166fd2072e6b163c39a78.png" />
+<img alt="../_images/04a-eixos-rise_14_0.png" src="../_images/04a-eixos-rise_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -583,7 +820,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc5039cd600140c72a6af0e2911c7716ac6da7e971ffeca9afa015643b35873e.png" src="../_images/bc5039cd600140c72a6af0e2911c7716ac6da7e971ffeca9afa015643b35873e.png" />
+<img alt="../_images/04a-eixos-rise_15_0.png" src="../_images/04a-eixos-rise_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -593,7 +830,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d1db7afd8eb63151f37ac978ecc5542fa6dff6a93f4113f07cc572eacc5222aa.png" src="../_images/d1db7afd8eb63151f37ac978ecc5542fa6dff6a93f4113f07cc572eacc5222aa.png" />
+<img alt="../_images/04a-eixos-rise_16_0.png" src="../_images/04a-eixos-rise_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -603,7 +840,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c76e6ee65e65961657ddf7b863a731fd7b2e7ca46c9ad9257ef165c87dfe82a0.png" src="../_images/c76e6ee65e65961657ddf7b863a731fd7b2e7ca46c9ad9257ef165c87dfe82a0.png" />
+<img alt="../_images/04a-eixos-rise_17_0.png" src="../_images/04a-eixos-rise_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -613,22 +850,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/94c8c3f16f407882eceee155b49f5d34234b8f90047d2436e7b8ed0294e99b05.png" src="../_images/94c8c3f16f407882eceee155b49f5d34234b8f90047d2436e7b8ed0294e99b05.png" />
+<img alt="../_images/04a-eixos-rise_18_0.png" src="../_images/04a-eixos-rise_18_0.png" />
 </div>
 </div>
 </section>
 <section id="escalas">
-<h3>Escalas<a class="headerlink" href="#escalas" title="Link to this heading">#</a></h3>
+<h3>Escalas<a class="headerlink" href="#escalas" title="Permalink to this headline">#</a></h3>
 <p>A visualização abaixo corresponde a dados reais de montantes repassados pela Petrobras ao Fundo Amazônia - BNDES entre 2012 e 2018 de acordo com o Ministério do Meio Ambiente.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="c1"># dados </span>
 <span class="n">f_amaz</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/petr-repasse-redd-amazonia.csv&#39;</span><span class="p">)</span>
@@ -637,7 +869,6 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -702,11 +933,6 @@
 </div></div></div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualização</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
@@ -724,9 +950,8 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/eb438d2baccdfa65e9538eec32e0111f889f563d419abe122444e2dd94a2ea7b.png" src="../_images/eb438d2baccdfa65e9538eec32e0111f889f563d419abe122444e2dd94a2ea7b.png" />
+<img alt="../_images/04a-eixos-rise_21_0.png" src="../_images/04a-eixos-rise_21_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -735,22 +960,17 @@
 </ul>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/feee837ba0149a80aaec7f7bac69cf89aac6cb0a1d9112464b08b03bce0e55fc.png" src="../_images/feee837ba0149a80aaec7f7bac69cf89aac6cb0a1d9112464b08b03bce0e55fc.png" />
+<img alt="../_images/04a-eixos-rise_23_0.png" src="../_images/04a-eixos-rise_23_0.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="sistema-de-coordenadas-polares">
-<h2>Sistema de coordenadas polares<a class="headerlink" href="#sistema-de-coordenadas-polares" title="Link to this heading">#</a></h2>
+<h2>Sistema de coordenadas polares<a class="headerlink" href="#sistema-de-coordenadas-polares" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Funções matemáticas</p></li>
 </ul>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
@@ -763,9 +983,8 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/53765a47d6e38b9a0833ee8a4b7e8a556ca9b43a3eea595af863f9425c47a938.png" src="../_images/53765a47d6e38b9a0833ee8a4b7e8a556ca9b43a3eea595af863f9425c47a938.png" />
+<img alt="../_images/04a-eixos-rise_25_0.png" src="../_images/04a-eixos-rise_25_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -785,7 +1004,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ce6d67df9b9b27c7e487178844e64ce96dbeb01d63040cdcd1a190bc305895ec.png" src="../_images/ce6d67df9b9b27c7e487178844e64ce96dbeb01d63040cdcd1a190bc305895ec.png" />
+<img alt="../_images/04a-eixos-rise_27_0.png" src="../_images/04a-eixos-rise_27_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -810,11 +1029,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5deed96f81c12f103eabde46760ee6ff586f7097322d715973fbb62fbcca5988.png" src="../_images/5deed96f81c12f103eabde46760ee6ff586f7097322d715973fbb62fbcca5988.png" />
+<img alt="../_images/04a-eixos-rise_29_0.png" src="../_images/04a-eixos-rise_29_0.png" />
 </div>
 </div>
 <section id="simulacao-de-teste-de-balistica">
-<h3>Simulação de teste de balística<a class="headerlink" href="#simulacao-de-teste-de-balistica" title="Link to this heading">#</a></h3>
+<h3>Simulação de teste de balística<a class="headerlink" href="#simulacao-de-teste-de-balistica" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -827,23 +1046,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6c5d9d0b491ac608b138255c4ea671191fbca37da07e132702879adb8ee890ec.png" src="../_images/6c5d9d0b491ac608b138255c4ea671191fbca37da07e132702879adb8ee890ec.png" />
+<img alt="../_images/04a-eixos-rise_31_0.png" src="../_images/04a-eixos-rise_31_0.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="sistemas-de-coordenadas-geoespaciais">
-<h2>Sistemas de coordenadas geoespaciais<a class="headerlink" href="#sistemas-de-coordenadas-geoespaciais" title="Link to this heading">#</a></h2>
+<h2>Sistemas de coordenadas geoespaciais<a class="headerlink" href="#sistemas-de-coordenadas-geoespaciais" title="Permalink to this headline">#</a></h2>
 <p>Sistemas geoespaciais são úteis para plotagem de dados cartográficos, mapas e geolocalizações.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mercator</span><span class="p">())</span>
@@ -852,9 +1066,8 @@
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/08bceffb9740238c51ef85eedd932944d3ca04572a002fb61a0081343650519e.png" src="../_images/08bceffb9740238c51ef85eedd932944d3ca04572a002fb61a0081343650519e.png" />
+<img alt="../_images/04a-eixos-rise_33_0.png" src="../_images/04a-eixos-rise_33_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -867,7 +1080,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7f0458da2d43b4b83d4d5a6f64b4dffe88bb9b1eaae72a6840563306aaf6590f.png" src="../_images/7f0458da2d43b4b83d4d5a6f64b4dffe88bb9b1eaae72a6840563306aaf6590f.png" />
+<img alt="../_images/04a-eixos-rise_34_0.png" src="../_images/04a-eixos-rise_34_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -892,12 +1105,12 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-13.135034107925277, 40.775693950446474, &#39;LIS&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b84eddd97fb3bde25d0e36ef50c7177d91821514bceaed4f0857c81a9443ad4a.png" src="../_images/b84eddd97fb3bde25d0e36ef50c7177d91821514bceaed4f0857c81a9443ad4a.png" />
+<img alt="../_images/04a-eixos-rise_35_1.png" src="../_images/04a-eixos-rise_35_1.png" />
 </div>
 </div>
 </section>
 <section id="visualizacoes-3d">
-<h2>Visualizações 3D<a class="headerlink" href="#visualizacoes-3d" title="Link to this heading">#</a></h2>
+<h2>Visualizações 3D<a class="headerlink" href="#visualizacoes-3d" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Visualizações 2D preferíveis a 3D devido à carga cognitiva exigida para interpretação</p></li>
 <li><p>Entretanto, nem sempre é possível atingir RVs satisfatórias em 2D</p>
@@ -908,41 +1121,35 @@
 <li><p>Eixos 3D são particularmente excelentes quando se quer interagir ou manipular o visual</p></li>
 </ul>
 <section id="visualizacao-de-funcoes-matematicas">
-<h3>Visualização de funções matemáticas<a class="headerlink" href="#visualizacao-de-funcoes-matematicas" title="Link to this heading">#</a></h3>
+<h3>Visualização de funções matemáticas<a class="headerlink" href="#visualizacao-de-funcoes-matematicas" title="Permalink to this headline">#</a></h3>
 <p>O exemplo abaixo mostra como plotar a função dada por
 $<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
      \left[ \left( x -  \frac{a+b}{2} \right)^2  + \
              \left( y -  \frac{c+d}{2} \right)^2 \right] },\)</span>$</p>
 <p>para o domínio bidimensional <span class="math notranslate nohighlight">\([a,b] \times [c,d]\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">aux04a2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">aux04a2</span>
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/dc3bc1c8163d65dccf18f0bced436da6382db07474a05c4c34da7a3a346c56e5.png" src="../_images/dc3bc1c8163d65dccf18f0bced436da6382db07474a05c4c34da7a3a346c56e5.png" />
+<img alt="../_images/04a-eixos-rise_39_0.png" src="../_images/04a-eixos-rise_39_0.png" />
 </div>
 </div>
 </section>
 <section id="visualizacao-de-dados-multidimensionais-categoricos">
-<h3>Visualização de dados multidimensionais categóricos<a class="headerlink" href="#visualizacao-de-dados-multidimensionais-categoricos" title="Link to this heading">#</a></h3>
+<h3>Visualização de dados multidimensionais categóricos<a class="headerlink" href="#visualizacao-de-dados-multidimensionais-categoricos" title="Permalink to this headline">#</a></h3>
 <p>A representação visual abaixo lida com os preços de combustíveis aplicados em diversos municípios da Paraíba por diferentes operadoras (bandeiras).</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">fec9ba1972b0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">plotly.offline</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;plotly&#39;
@@ -966,7 +1173,7 @@ $<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./rise"
         },
         predefinedOutput: true
@@ -974,101 +1181,36 @@ $<span class="math notranslate nohighlight">\(f(x,y) = 4e^{ - \
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-coordenadas-cartesianas-e-razoes-de-aspecto">Sistema de coordenadas cartesianas e razões de aspecto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-temporal-aleatoria">Série temporal aleatória</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-temporal-de-temperatura-aula-3">Série temporal de temperatura (Aula 3)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escalas">Escalas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-coordenadas-polares">Sistema de coordenadas polares</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulacao-de-teste-de-balistica">Simulação de teste de balística</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-coordenadas-geoespaciais">Sistemas de coordenadas geoespaciais</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacoes-3d">Visualizações 3D</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-de-funcoes-matematicas">Visualização de funções matemáticas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-de-dados-multidimensionais-categoricos">Visualização de dados multidimensionais categóricos</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Prof. Gustavo Oliveira
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Gustavo Oliveira<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
