@@ -1,0 +1,24 @@
+name: dataviz
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - plotly
+  - scipy
+  - dash
+  - h5py
+  - statsmodels
+  - geopandas
+  - networkx
+  - pip
+  - pip:
+    - openpyxl
+    - matplotlib-venn
+    - xhtml2pdf
+    - reportlab
+prefix: ${CONDA_PREFIX}/envs

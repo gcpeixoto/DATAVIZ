@@ -1,0 +1,39 @@
+# Two ways to use:
+# 1. call `import matplotlib.pyplot as plt; plt.style.use('../styles/gcpeixoto-book.mplstyle')` on top of each notebook
+# 2. save this file into `styles/matplotlibrc`; then, plug `import matplotlib.pyplot as plt` on top of each notebook and `jb build .`
+
+axes.facecolor     : (0.92,0.92,0.96)
+axes.edgecolor     : black
+axes.grid          : True
+axes.axisbelow     : True
+axes.labelcolor    : black
+axes.titlesize     : 12
+axes.labelsize     : 10
+axes.linewidth     : 1.0
+axes.spines.top    : False
+axes.spines.right  : False
+axes.spines.bottom : True
+axes.spines.left   : True
+
+figure.facecolor   : white
+figure.edgecolor   : white
+figure.figsize     : 6.4, 4
+
+grid.color         : white
+grid.linestyle     : -
+grid.linewidth     : 1.5
+
+xtick.color        : black
+ytick.color        : black
+
+lines.linewidth    : 1.5
+lines.markersize   : 6
+
+savefig.facecolor  : white
+savefig.edgecolor  : white
+savefig.transparent: False
+
+text.color         : black
+
+xtick.labelsize    : 8
+ytick.labelsize    : 8

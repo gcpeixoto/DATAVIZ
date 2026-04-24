@@ -1,0 +1,14 @@
+/todo/**
+/ipynb/.ipynb_checkpoints
+.DS_Store
+.pytest_cache
+/rise/__pycache__
+/data/comex-*
+/dcs/__pycache__
+/rise/.pytest_cache
+.vscode
+/assess/acvd/**
+.ipynb_checkpoints
+
+# MyST build outputs
+_build

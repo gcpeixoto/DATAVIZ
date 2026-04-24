@@ -1,0 +1,17 @@
+numpy
+matplotlib
+seaborn
+scipy
+pandas
+plotly
+dash
+h5py
+geopandas
+networkx
+statsmodels
+matplotlib-venn
+xhtml2pdf
+reportlab
+jupyter-book
+cartopy
+

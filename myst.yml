@@ -1,0 +1,50 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 428aae06-861c-4a11-86c0-1b41ac8584e8
+  title: "Introdução à Visualização de Dados com Python"  
+  description: "Repositório digital do curso de DATAVIZ/CDIA/UFPB."
+  keywords: ["Visualização de Dados", "Visualização da Informação", "Python"]
+  authors: ["Gustavo Oliveira"]
+  github: "https://github.com/gcpeixoto/DATAVIZ"  
+  toc:
+    - file: README.md
+    - title: Fundamentos    
+      children:
+        - file: ipynb/01-introducao.ipynb
+        - file: ipynb/02-estetica.ipynb
+        - file: ipynb/03-sistemas.ipynb
+        - file: ipynb/04-percepcao.ipynb
+        - file: ipynb/05-cores.ipynb
+        - file: ipynb/06-lounge.ipynb
+        - file: ipynb/07-matplotlib.ipynb
+    # - title: Tecnicalidades
+    #   children:
+    #     # - file: ipynb/20-dcs-quantidade.ipynb
+    #     # - file: ipynb/21-dcs-distribuicoes.ipynb
+    #     # - file: ipynb/23-dcs-geoespacial.ipynb        
+    #     # - file: ipynb/24-dcs-temporal.ipynb
+    #     # - file: ipynb/24-dcs-textual.ipynb
+    #     # - file: ipynb/25-dcs-rede.ipynb
+    #     # - file: ipynb/26-dcs-multivariada.ipynb
+    # - title: Aplicações
+    #   children:
+    #     # - file: ipynb/30-plotly.ipynb
+    #     # - file: ipynb/31-bokeh.ipynb
+    # - title: Suplemento
+    #   children:
+    #     - file: ipynb/S1-guia-matplotlib.ipynb
+    #     - file: ipynb/S2-guia-seaborn.ipynb
+    #     - file: ipynb/S3-diretrizes.ipynb
+  numbering:
+     title: false
+     headings: false
+site:
+  template: book-theme
+  options:
+  #   favicon: favicon.ico
+      style: ./styles/custom.css
+      logo: ./styles/dataviz.png
+      logo_dark: ./styles/dataviz-dark.png
+      logo_text: "Introdução à Visualização de Dados com Python"
+      numbered_references : true

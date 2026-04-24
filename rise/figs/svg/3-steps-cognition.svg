@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   sodipodi:docname="3-steps-cognition.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-global="true"
+     inkscape:snap-bbox="true"
+     inkscape:zoom="0.90583672"
+     inkscape:cx="360.99221"
+     inkscape:cy="362.64814"
+     inkscape:window-width="1949"
+     inkscape:window-height="969"
+     inkscape:window-x="607"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid932" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient14876">
+      <stop
+         style="stop-color:#117029;stop-opacity:0.98431373"
+         offset="0"
+         id="stop14872" />
+      <stop
+         style="stop-color:#8eb353;stop-opacity:1"
+         offset="1"
+         id="stop14874" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14876"
+       id="linearGradient1639"
+       x1="4.9388885"
+       y1="105.83332"
+       x2="206.72777"
+       y2="105.83332"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,10.583333)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14876"
+       id="linearGradient14870"
+       x1="81.154594"
+       y1="64.891762"
+       x2="130.8306"
+       y2="64.891762"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-4.8399427,-10.583333)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g104630"
+       transform="matrix(0.9,0,0,0.9,10.368031,7.2913386)"
+       inkscape:export-filename="/Users/gustavo/Dropbox/courses/visualizacao-dados/DATAVIZ/figs/3-steps-cognition.png"
+       inkscape:export-xdpi="300.16"
+       inkscape:export-ydpi="300.16">
+      <g
+         id="g58975"
+         transform="translate(-0.83333063,-5.2916667)">
+        <rect
+           style="fill:url(#linearGradient1639);fill-opacity:1;stroke:#646464;stroke-width:0.705556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect1525"
+           width="201.08333"
+           height="10.583333"
+           x="5.2916665"
+           y="111.12498" />
+        <text
+           xml:space="preserve"
+           style="font-size:4.93889px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+           x="9.7785587"
+           y="118.18433"
+           id="text6285-6"><tspan
+             sodipodi:role="line"
+             id="tspan6283-2"
+             style="font-size:4.93889px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="9.7785587"
+             y="118.18433">Domínio do STORYTELLER</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:4.93889px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+           x="148.77299"
+           y="118.18433"
+           id="text6285-6-3"><tspan
+             sodipodi:role="line"
+             id="tspan6283-2-0"
+             style="font-size:4.93889px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="148.77299"
+             y="118.18433">Domínio do VIEWER</tspan></text>
+      </g>
+      <circle
+         style="fill:#117029;fill-opacity:1;stroke:none;stroke-width:0.324004"
+         id="path846"
+         cx="25.766701"
+         cy="54.308426"
+         r="24.837997" />
+      <circle
+         style="fill:url(#linearGradient14870);fill-opacity:1;stroke:none;stroke-width:0.324004"
+         id="circle928"
+         cx="101.15265"
+         cy="54.308426"
+         r="24.837997" />
+      <circle
+         style="fill:#8eb353;fill-opacity:1;stroke:none;stroke-width:0.324004"
+         id="circle930"
+         cx="176.5386"
+         cy="53.895348"
+         r="24.837997" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#646464;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 52.848945,47.624993 v 10.58334 h 10.583333 v 5.29166 L 74.015611,52.916663 63.432278,42.333333 v 5.29166 z"
+         id="path967" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#646464;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 128.2349,47.624999 v 10.58334 h 10.58333 v 5.29166 l 10.58334,-10.58333 -10.58334,-10.58333 v 5.29166 z"
+         id="path1049" />
+      <text
+         xml:space="preserve"
+         style="font-size:7.76111px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+         x="9.6551943"
+         y="57.038834"
+         id="text6285"><tspan
+           sodipodi:role="line"
+           id="tspan6283"
+           style="font-size:7.76111px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="9.6551943"
+           y="57.038834">Perceber</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.76111px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+         x="82.831802"
+         y="56.313126"
+         id="text6285-8"><tspan
+           sodipodi:role="line"
+           id="tspan6283-3"
+           style="font-size:7.76111px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="82.831802"
+           y="56.313126">Interpretar</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:7.76111px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+         x="152.54092"
+         y="55.947418"
+         id="text6285-8-8"><tspan
+           sodipodi:role="line"
+           id="tspan6283-3-1"
+           style="font-size:7.76111px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="152.54092"
+           y="55.947418">Compreender</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+         x="10.547658"
+         y="85.932831"
+         id="text53023"><tspan
+           sodipodi:role="line"
+           id="tspan53021"
+           style="font-size:5.64444px;stroke-width:0.264583"
+           x="10.547658"
+           y="85.932831">O que vejo?</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+         x="80.912041"
+         y="85.930077"
+         id="text53023-3"><tspan
+           sodipodi:role="line"
+           id="tspan53021-1"
+           style="font-size:5.64444px;stroke-width:0.264583"
+           x="80.912041"
+           y="85.930077">O que significa?</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';stroke-width:0.264583"
+         x="143.74132"
+         y="85.930077"
+         id="text53023-3-3"><tspan
+           sodipodi:role="line"
+           id="tspan53021-1-4"
+           style="font-size:5.64444px;stroke-width:0.264583"
+           x="143.74132"
+           y="85.930077">O que significa para mim?</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="25.7698"
+         y="93.558563"
+         id="text62479"><tspan
+           sodipodi:role="line"
+           id="tspan62477"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="25.769802"
+           y="93.558563">O que os dados mostram?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="25.7698"
+           y="97.527313"
+           id="tspan62481">Como são representados?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="25.769802"
+           y="101.49606"
+           id="tspan62483">Quais características são observáveis?</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="101.15575"
+         y="93.280975"
+         id="text62479-1"><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="101.15575"
+           y="93.280975"
+           id="tspan93505">Quais características são: interessantes?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="101.15575"
+           y="97.249725"
+           id="tspan93513">Quais são inesperadas?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="101.15575"
+           y="101.21848"
+           id="tspan93515">Quais são importantes?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="101.15575"
+           y="105.18723"
+           id="tspan90887" /></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;line-height:1.25;font-family:'Arial Unicode MS';-inkscape-font-specification:'Arial Unicode MS';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="176.5417"
+         y="93.260132"
+         id="text62479-1-1"><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="176.5417"
+           y="93.260132"
+           id="tspan93505-9">O que aprendi?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="176.5417"
+           y="97.228882"
+           id="tspan93513-6">O que senti?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="176.5417"
+           y="101.19763"
+           id="tspan93515-7">O que faço em seguida?</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:3.175px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="176.5417"
+           y="105.16638"
+           id="tspan90887-8" /></text>
+    </g>
+  </g>
+</svg>
