@@ -6,7 +6,7 @@ Este repositório digital concentra o material relativo à componente curricular
 
 ## História e impacto
 
-A primeira versão do material começou a ser desenvolvida pelo professor no primeiro semestre de 2022 e lançada na _web_ no segundo semestre do mesmo ano. Até o ano de 2023, recebeu suporte do Programa Institucional de Monitoria com contribuições parciais. Desde então, ele permanece em desenvolvimento de forma esporádica. Em 2026, o material passou pela primeira grande atualização tecnológica. Oferecida semestralmente, a disciplina já alcançou cerca de 200 discentes de CDIA e de outros cursos de graduação da UFPB matriculados na disciplina eletivamente. 
+O material começou a ser desenvolvido pelo professor no primeiro semestre de 2022 e lançada na _web_ no segundo semestre do mesmo ano. Até 2023, recebeu suporte do Programa Institucional de Monitoria com contribuições parciais. Desde então, permanece em desenvolvimento de forma esporádica. Em 2026, o material passou pela primeira grande atualização tecnológica. Oferecida semestralmente, a disciplina já alcançou cerca de 200 discentes de CDIA e de outros cursos de graduação da UFPB matriculados na disciplina eletivamente. 
 
 ## Objetivos
 

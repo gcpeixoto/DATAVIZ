@@ -10,6 +10,9 @@
    xml:space="preserve"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="dataviz.svg"
+   inkscape:export-filename="dataviz-dark.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -28,11 +31,11 @@
      inkscape:cy="95.492204"
      inkscape:window-width="1387"
      inkscape:window-height="727"
-     inkscape:window-x="86"
-     inkscape:window-y="82"
+     inkscape:window-x="85"
+     inkscape:window-y="54"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
-     inkscape:export-bgcolor="#ffffffff" /><defs
+     inkscape:export-bgcolor="#1b1917ff" /><defs
      id="defs1" /><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

@@ -18,24 +18,24 @@ project:
         - file: ipynb/05-cores.ipynb
         - file: ipynb/06-lounge.ipynb
         - file: ipynb/07-matplotlib.ipynb
-    # - title: Tecnicalidades
-    #   children:
-    #     # - file: ipynb/20-dcs-quantidade.ipynb
-    #     # - file: ipynb/21-dcs-distribuicoes.ipynb
-    #     # - file: ipynb/23-dcs-geoespacial.ipynb        
-    #     # - file: ipynb/24-dcs-temporal.ipynb
-    #     # - file: ipynb/24-dcs-textual.ipynb
-    #     # - file: ipynb/25-dcs-rede.ipynb
-    #     # - file: ipynb/26-dcs-multivariada.ipynb
+    - title: Tecnicalidades
+      children:
+        - file: ipynb/20-dcs-quantidade.ipynb
+        - file: ipynb/21-dcs-distribuicoes.ipynb
+        - file: ipynb/23-dcs-geoespacial.ipynb        
+        - file: ipynb/24-dcs-temporal.ipynb
+        - file: ipynb/24-dcs-textual.ipynb
+        - file: ipynb/25-dcs-rede.ipynb
+        - file: ipynb/26-dcs-multivariada.ipynb
     # - title: Aplicações
     #   children:
     #     # - file: ipynb/30-plotly.ipynb
     #     # - file: ipynb/31-bokeh.ipynb
-    # - title: Suplemento
-    #   children:
-    #     - file: ipynb/S1-guia-matplotlib.ipynb
-    #     - file: ipynb/S2-guia-seaborn.ipynb
-    #     - file: ipynb/S3-diretrizes.ipynb
+    - title: Suplemento
+      children:
+        - file: ipynb/S1-guia-matplotlib.ipynb
+        - file: ipynb/S2-guia-seaborn.ipynb
+        - file: ipynb/S3-diretrizes.ipynb
   numbering:
      title: false
      headings: false

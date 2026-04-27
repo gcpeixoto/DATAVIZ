@@ -9,6 +9,7 @@ dependencies = [
     "dash>=4.1.0",
     "geopandas>=1.1.3",
     "h5py>=3.16.0",
+    "jupyter>=1.1.1",
     "jupyter-book>=2.1.4",
     "matplotlib>=3.10.9",
     "matplotlib-venn>=1.1.2",
