@@ -65,7 +65,7 @@ O conteúdo do curso segue abaixo:
 - _Dashboarding_ 
 
     - [Objetos gráficos e _Plotly Express_](ipynb/28-dw-plotly.ipynb)
-    - [_Dashboarding_ com _Dash_](ipynb/30-dw-dash.ipynb)
+    - [_Dashboarding_ com _Dash_](ipynb/29-dw-dash.ipynb)
 
 - _Reporting_
 
@@ -81,8 +81,12 @@ O conteúdo do curso segue abaixo:
 
 - _Graphical Design_
 
-    - Inkscape: vetorização e manipulação
-
+    - Vídeo-aulas e playlists recomendadas sobre dataviz com Inkscape:
+        - [How To Make Charts With Inkscape (Free Course), by Michael Brig](https://www.youtube.com/watch?v=eTCQqghq_P4)
+        - [Data Viz in Inkscape: the Basics! Stroke and Fill, by Shannon Belmont](https://www.youtube.com/watch?v=ncyqy-cwziY)
+        - [Inkscape for scientists, by InSearch](https://www.youtube.com/watch?v=eyqH0IrzYLc&list=PLxtauMB7RON_2tg-mRQTuieFUr29IOKzW)
+        - [Use Matplotlib Directly in Inkscape, by Youven](https://www.youtube.com/watch?v=lmj0Jzv106A)
+        - [Combine Inkscape + LaTeX for Stunning Visuals | TikZ & PGF Integration Tutorial, by Youven](https://www.youtube.com/watch?v=85kKPOkd9oo)
 
 ### Módulo 4: Seminários
 
@@ -111,7 +115,7 @@ Para elaborar o ECVD, pode-se usar o template em formato `.ODT` ou `.TEX` dispon
 
 ### Exemplos de projetos
 
-- Para exemplo de projetos _high-grade_, clique [aqui](https://drive.google.com/drive/folders/1sJmXAr5zc3OqJ3ZjWpQmA439nNgmI5g9?usp=sharing).
+- Para exemplo de projetos _high-grade_, clique [aqui](https://drive.google.com/drive/folders/1TvuS3rxMweCUFv5JUBcHDYvbJa2faAG4?usp=sharing).
 
 ## Inspirações para projetos
 

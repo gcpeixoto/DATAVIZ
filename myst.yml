@@ -23,14 +23,16 @@ project:
         - file: ipynb/20-dcs-quantidade.ipynb
         - file: ipynb/21-dcs-distribuicoes.ipynb
         - file: ipynb/23-dcs-geoespacial.ipynb        
-        - file: ipynb/24-dcs-temporal.ipynb
-        - file: ipynb/24-dcs-textual.ipynb
-        - file: ipynb/25-dcs-rede.ipynb
-        - file: ipynb/26-dcs-multivariada.ipynb
-    # - title: Aplicações
-    #   children:
-    #     # - file: ipynb/30-plotly.ipynb
-    #     # - file: ipynb/31-bokeh.ipynb
+        - file: ipynb/24-dcs-multidimensional.ipynb
+        - file: ipynb/25-dcs-redes.ipynb
+        - file: ipynb/27-dcs-serietemporal.ipynb
+        - file: ipynb/26-dcs-cientifica.ipynb
+    - title: Aplicações
+      children:
+        - file: ipynb/28-dw-plotly.ipynb
+        - file: ipynb/29-dw-dash.ipynb
+        - file: ipynb/31-dw-reporting.ipynb
+        - file: ipynb/32-dw-reportlab.ipynb
     - title: Suplemento
       children:
         - file: ipynb/S1-guia-matplotlib.ipynb
@@ -42,7 +44,7 @@ project:
 site:
   template: book-theme
   options:
-  #   favicon: favicon.ico
+      favicon: ./styles/dataviz.ico
       style: ./styles/custom.css
       logo: ./styles/dataviz.png
       logo_dark: ./styles/dataviz-dark.png
